@@ -115,7 +115,7 @@ const ContactForm = () => {
                 </div>
       
               <div className="mb-4">
-                <label htmlFor="deck" lassName="block text-gray-700 font-bold mb-2">Deck:</label>
+                <label htmlFor="deck" className="block text-gray-700 font-bold mb-2">Deck:</label>
                 <Field 
                 type="text" 
                 id="deck" 
