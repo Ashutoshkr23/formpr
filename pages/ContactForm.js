@@ -39,7 +39,7 @@ const ContactForm = () => {
             validationSchema={validationSchema}
             onSubmit={onSubmit}
           >
-            {({ isSubmitting }) => (
+            {({ isSubmitting ,setFieldValue}) => (
               <Form className="w-full max-w-md">
                 <div className="mb-4 mt-4">
                   <label htmlFor="firstName" className="block text-gray-700 font-bold mb-2">
@@ -113,6 +113,19 @@ const ContactForm = () => {
                   />
                   <ErrorMessage name="companyLogo" component="div" className="text-red-500" />
                 </div>
+                
+                <Field name="logo">
+            {({ Field }) => (
+              <div>
+                <input
+                  type="file"
+                  onChange={(event) => {
+                    setFieldValue('logo', event.currentTarget.files[0]);
+                  }}
+                />
+              </div>
+            )}
+          </Field>
       
               <div className="mb-4">
                 <label htmlFor="deck" className="block text-gray-700 font-bold mb-2">Deck:</label>
