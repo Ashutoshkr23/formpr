@@ -1,7 +1,10 @@
 import mongoose from 'mongoose';
-import { number } from 'yup';
+import { v4 as uuidv4 } from 'uuid';
+
+// import { number } from 'yup';
 
 const ContactSchema = new mongoose.Schema({
+  uuid: { type: String, default: uuidv4 },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   mobileNumber: { type: Number, required: true },

@@ -1,6 +1,8 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const ContactForm = () => {
   const initialValues = {
@@ -24,7 +26,9 @@ const ContactForm = () => {
     });
     const onSubmit = async (values, { resetForm }) => {
         try {
-          const response = await axios.post('/api/contact', values);
+          const uuid = uuidv4(); // generate UUID
+    const data = { ...values, uuid };
+          const response = await axios.post('/api/contact', data);
           console.log(response.data.message);
           resetForm();
         } catch (error) {
