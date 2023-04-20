@@ -5,10 +5,14 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
       await connectToDatabase();
-      const contacts = await Contact.find();
-      return res.status(200).json({ contacts });
+      const { uuid } = req.query;
+      const contact = await Contact.findOne({ uuid });
+      if (contact) {
+        return res.status(200).json({ contact });
+      }
+      return res.status(404).json({ message: 'Contact not found' });
     } catch (error) {
-      return res.status(500).json({ message: 'Unable to retrieve contacts', error });
+      return res.status(500).json({ message: 'Unable to retrieve contact', error });
     }
   }
 
@@ -38,3 +42,4 @@ export default async function handler(req, res) {
 
   return res.status(405).json({ message: 'Method not allowed' });
 }
+
