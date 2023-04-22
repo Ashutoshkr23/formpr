@@ -9,7 +9,7 @@ export default function ContactDetails() {
 
   useEffect(() => {
     const { slug } = router.query;
-
+// console.log(slug)
     async function fetchContact() {
       const res = await fetch(`/api/contact?uuid=${slug}`);
       const data = await res.json();
@@ -46,7 +46,7 @@ END:VCARD`;
           <p>Email: {contact.email}</p>
           <p>Company Logo: {contact.companyLogo}</p>
           <p>Deck: {contact.deck}</p>
-          <button className='bg-green-600 text-white' onClick={downloadVCard}>Download vCard</button> 
+          <button className='bg-green-600 text-white' onClick={downloadVCard}>Add Contact</button> 
         </div>
       ) : (
         <p>Loading...</p>
