@@ -13,10 +13,17 @@ const Navbar = () => {
         <div>
         
           <Link href="/ContactForm">
-           Information
+           Create Card
           </Link>
        
         </div>
+        <div>
+        
+        <Link href="/edit">
+         Edit Card
+        </Link>
+     
+      </div>
         <div>
         
           <button className=' bg-red-400 rounded-xl'>btn</button>

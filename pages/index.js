@@ -1,12 +1,31 @@
 import First from "@/components/First";
-import ContactForm from "./ContactForm";
+import { useSession, getSession } from "next-auth/react"
 
 
 export default function Home() {
   return (
    <div>
-    {/* <ContactForm/> */}
     <First/>
    </div>
   )
-}
+  
+
+  }
+  export async function getServerSideProps({ req }) {
+    const session = await getSession({ req });
+    console.log(session, "session")
+    if (!session) {
+      return {
+        redirect: {
+          destination: '/login',
+          permanent: false,
+        },
+      };
+    }
+  
+    return {
+      props: {
+        session,
+      },
+    };
+  }

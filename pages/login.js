@@ -27,7 +27,7 @@ function Login() {
         } else {
             // Show a message or handle the response as needed
             console.log('Magic link sent');
-            setModalMessage('Magic link sent. Check your email.');
+            setModalMessage(' link sent in your email.');
             setIsModalVisible(true);
         }
     };
