@@ -1,6 +1,10 @@
 import Link from 'next/link';
+import { useSession , signOut } from 'next-auth/react';
 
 const Navbar = () => {
+  function handleSignOut() {
+    signOut()
+}
   return (
     <nav className='flex flex-row justify-around mt-5'>
     <div>
@@ -19,14 +23,14 @@ const Navbar = () => {
         </div>
         <div>
         
-        <Link href="/edit">
+        <Link href="/EditForm">
          Edit Card
         </Link>
      
       </div>
         <div>
         
-          <button className=' bg-red-400 rounded-xl'>btn</button>
+          <button onClick={handleSignOut} className=' bg-red-400 rounded-xl'>btn</button>
         
       </div>
     </nav>
