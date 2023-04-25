@@ -23,7 +23,7 @@ function Login() {
         const response = await signIn('email', { email, redirect: false, callbackUrl: '/' });
 
         if (response.error) {
-            console.error('Error sending magic link:', response.error);
+            console.error('Error sending  link:', response.error);
         } else {
             // Show a message or handle the response as needed
             console.log('Magic link sent');
@@ -36,7 +36,7 @@ function Login() {
 
 
   return (
-    <div>
+    <div className='flex justify-center'>
           <div className="flex flex-col w-full lg:w-[312px] items-center  h-screen bg-black">
               {isModalVisible && (
                   <div className="fixed z-10 inset-0 overflow-y-auto">
