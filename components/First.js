@@ -5,6 +5,14 @@ const Navbar = () => {
   function handleSignOut() {
     signOut()
 }
+const { data: session } = useSession()
+if (!session) {
+  return (
+      <div className='absolute top-20 right-0'>
+          <Link legacyBehavior href={'/login'}><a className='mt-5 px-10 py-1 rounded-sm bg-indigo-500 text-gray-50'>Login</a></Link>
+      </div>
+  );
+}
   return (
     <nav className='flex flex-row justify-around mt-5'>
     <div>
