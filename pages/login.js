@@ -1,37 +1,64 @@
-import React, {useState} from 'react'
-import { signIn, signOut } from "next-auth/react"
+import React, { useState,useEffect } from 'react';
+import { signIn, useSession,getSession } from 'next-auth/react';
+import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
 
 function Login() {
+  const [modalMessage, setModalMessage] = useState('');
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [email, setEmail] = useState('');
+  const { data: session } = useSession(); // get the user's session
 
-    const [modalMessage, setModalMessage] = useState('');
-    const [isModalVisible, setIsModalVisible] = useState(false);
-    async function handleGoogleSignin() {
-        signIn('google', { callbackUrl: "/" })
-    } 
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
 
-    const [email, setEmail] = useState('');
-    const closeModal = () => {
-        setIsModalVisible(false);
-    };
+  const handleGoogleSignin =  () => {
+    signIn('google', { callbackUrl: '/' });
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!email) return false;
+  
+  
+  };
 
-        const currentUrl = window.location.href;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) return false;
 
-        const response = await signIn('email', { email, redirect: false, callbackUrl: '/' });
+    const response = await signIn('email', {
+      email,
+      redirect: false,
+      callbackUrl: '/',
+    });
 
-        if (response.error) {
-            console.error('Error sending  link:', response.error);
-        } else {
-            // Show a message or handle the response as needed
-            console.log('Magic link sent');
-            setModalMessage(' link sent in your email.');
-            setIsModalVisible(true);
-        }
-    };
+    if (response.error) {
+      console.error('Error sending link:', response.error);
+    } else {
+      console.log('Magic link sent');
+      setModalMessage('Link sent in your email.');
+      setIsModalVisible(true);
+    }
+  };
 
+//   const handleSaveUserToDatabase = async (session) => {
+//     try {
+//       if (session) {
+//         const uuid = uuidv4();
+//         const response = await axios.post('/api/userprofile', {
+//           email: session.user.email,
+//           uuid,
+//         });
+//         console.log(response.data);
+//       }
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+//   useEffect(() => {
+//     if (session) {
+//       handleSaveUserToDatabase(session);
+//     }
+//   }, [session]);
+  
     
 
 

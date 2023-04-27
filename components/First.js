@@ -1,20 +1,17 @@
 import Link from 'next/link';
 import { useSession , signOut } from 'next-auth/react';
 
-const Navbar = () => {
+const First = () => {
+
   function handleSignOut() {
     signOut()
 }
-const { data: session } = useSession()
-if (!session) {
+
+
+   
   return (
-      <div className='absolute top-20 right-0'>
-          <Link legacyBehavior href={'/login'}><a className='mt-5 px-10 py-1 rounded-sm bg-indigo-500 text-gray-50'>Login</a></Link>
-      </div>
-  );
-}
-  return (
-    <nav className='flex flex-row justify-around mt-5'>
+    <div>
+      <nav className='flex flex-row justify-around mt-5'>
     <div>
         
           <Link href="/">
@@ -42,14 +39,9 @@ if (!session) {
         
       </div>
     </nav>
-  );
-};
-
-const Cards = () => {
- 
-
-  return (
-    <div className='flex flex-row justify-around'>
+      
+      <div className='flex justify-center  pb-10 text-2xl mt-40'>  <h1 className="title">Get Your Card</h1></div>
+      <div className='flex flex-row justify-around'>
         <div>
 <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
    
@@ -110,16 +102,6 @@ const Cards = () => {
 </div>
 
 </div>
-  );
-};
-
-const First = () => {
-  return (
-    <div>
-      <Navbar />
-      
-      <div className='flex justify-center  pb-10 text-2xl mt-40'>  <h1 className="title">Get Your Card</h1></div>
-      <Cards />
     </div>
 
   );

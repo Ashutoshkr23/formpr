@@ -1,9 +1,34 @@
 import First from "@/components/First";
-import { useSession, getSession } from "next-auth/react"
+import { useSession, signIn, getSession,signOut } from "next-auth/react"
+import axios from "axios";
+import { useEffect } from "react";
+import React from "react";
 
 
-export default function Home() {
+useEffect(() => {
+  async function getUserProfile(){
+    const { data: session } = useSession()
+    console.log(session)
+    const response = await axios.post('/api/userprofile', {email:session.user.email});
+  
+  console.log(response)
+  
+  }
+    getUserProfile()    
+     }, []);
+
+export default  function Home () {
+ 
+  // if (session) {
+  //   return (
+  //     <>
+  //       Signed in as {session.user.email} <br />
+  //       <button onClick={() => signOut()}>Sign out</button>
+  //     </>
+  //   )
+  // }
   return (
+
    <div>
     <First/>
    </div>
