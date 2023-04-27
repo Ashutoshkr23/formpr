@@ -1,13 +1,11 @@
 import React, { useState,useEffect } from 'react';
 import { signIn, useSession,getSession } from 'next-auth/react';
-import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios';
+
 
 function Login() {
   const [modalMessage, setModalMessage] = useState('');
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [email, setEmail] = useState('');
-  const { data: session } = useSession(); // get the user's session
 
   const closeModal = () => {
     setIsModalVisible(false);
@@ -38,30 +36,6 @@ function Login() {
       setIsModalVisible(true);
     }
   };
-
-//   const handleSaveUserToDatabase = async (session) => {
-//     try {
-//       if (session) {
-//         const uuid = uuidv4();
-//         const response = await axios.post('/api/userprofile', {
-//           email: session.user.email,
-//           uuid,
-//         });
-//         console.log(response.data);
-//       }
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-//   useEffect(() => {
-//     if (session) {
-//       handleSaveUserToDatabase(session);
-//     }
-//   }, [session]);
-  
-    
-
-
   return (
     <div className='flex justify-center'>
           <div className="flex flex-col w-full lg:w-[312px] items-center  h-screen bg-black">

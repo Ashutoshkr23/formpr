@@ -4,18 +4,29 @@ import axios from "axios";
 import { useEffect } from "react";
 import React from "react";
 
-export default function Home() {
+
+
+export default function Home () {
   const { data: session } = useSession()
 
-  useEffect(() => {
-    async function getUserProfile() {
-      const response = await axios.post('/api/userprofile', { email: session.user.email });
-      console.log(response)
+  
+
+  const getUserProfile = async() => { 
+    
+    let postdata = {
+      email : session.user.email
     }
-    if (session) {
-      getUserProfile()
-    }
-  }, [session]);
+
+    const response = await axios.post('api/userprofile', postdata);
+    console.log(response)
+
+  }
+
+  useEffect(()=> {
+     getUserProfile()
+  },[])
+
+
 
   // if (session) {
   //   return (
