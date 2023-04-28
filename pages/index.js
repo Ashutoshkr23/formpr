@@ -1,41 +1,28 @@
 import First from "@/components/First";
 import { useSession, signIn, getSession, signOut } from "next-auth/react"
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect , useState ,useRef} from "react";
 import React from "react";
-
-
 
 export default function Home () {
   const { data: session } = useSession()
+  const hasFetchedUserProfileRef = useRef(false);
 
-  
-
-  const getUserProfile = async() => { 
-    
+  const getUserProfile = async() => {  
     let postdata = {
       email : session.user.email
     }
-
     const response = await axios.post('api/userprofile', postdata);
     console.log(response)
-
   }
-
-  useEffect(()=> {
-     getUserProfile()
-  },[])
-
-
-
-  // if (session) {
-  //   return (
-  //     <>
-  //       Signed in as {session.user.email} <br />
-  //       <button onClick={() => signOut()}>Sign out</button>
-  //     </>
-  //   )
-  // }
+  useEffect(() => {
+    console.log('Session object:', session);
+    if (session && session.user && !hasFetchedUserProfileRef.current) {
+      getUserProfile();
+      hasFetchedUserProfileRef.current = true;
+      console.log("useEffect Runned");
+    }
+  }, [session]);
 
   return (
     <div>

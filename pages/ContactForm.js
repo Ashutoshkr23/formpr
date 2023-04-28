@@ -2,9 +2,17 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
+import { useSession } from 'next-auth/react';
+import { useState,useEffect } from 'react';
+
+
 
 
 const ContactForm = () => {
+
+  const [uuid, setUuid] = useState(null);
+  const { data: session } = useSession();
+
   const initialValues = {
     firstName: '',
     lastName: '',
@@ -24,17 +32,37 @@ const ContactForm = () => {
     companyLogo: Yup.string().required('Company logo is required'),
     deck: Yup.string().required('Deck is required'),
     });
+
+
+    const fetchUuid = async () => {
+      try {
+        const response = await axios.get(`/api/userprofile?email=${session.user.email}`);
+        console.log('email:', session.user.email);
+        console.log('uuid:', response.data.uuid);
+        setUuid(response.data.uuid);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    useEffect(() => {
+      fetchUuid();
+    }, [session]);
+
+
     const onSubmit = async (values, { resetForm }) => {
-        try {
-          const uuid = uuidv4(); // generate UUID
-    const data = { ...values, uuid };
-          const response = await axios.post('/api/contact', data);
-          console.log(response.data.message);
-          resetForm();
-        } catch (error) {
-          console.error(error);
-        }
-      };
+      try {
+        const data = { ...values, uuid };
+       
+        const response = await axios.post('/api/contact', data);
+        console.log(response.data.message);
+        resetForm();
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    
+
      
       return (
         <div className="flex justify-center">
