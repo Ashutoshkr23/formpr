@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     try {
       await connectToDatabase();
 
-      const { firstName, lastName, mobileNumber, companyNumber, email, companyLogo, deck } = req.body;
+      const { firstName, lastName, mobileNumber, companyNumber, email, companyLogo, deck ,uuid } = req.body;
 
       const contact = new Contact({
         firstName,
@@ -30,6 +30,7 @@ export default async function handler(req, res) {
         email,
         companyLogo,
         deck,
+        uuid ,
       });
 
       await contact.save();

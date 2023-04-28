@@ -53,7 +53,6 @@ const ContactForm = () => {
     const onSubmit = async (values, { resetForm }) => {
       try {
         const data = { ...values, uuid };
-       
         const response = await axios.post('/api/contact', data);
         console.log(response.data.message);
         resetForm();
@@ -61,6 +60,7 @@ const ContactForm = () => {
         console.error(error);
       }
     };
+    
     
 
      
