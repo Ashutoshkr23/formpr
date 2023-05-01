@@ -22,7 +22,7 @@ export default async function handler(req, res) {
       }
     } else if (req.method === 'GET') {
       const { email } = req.query;
-      console.log('emailsss:', email);
+      //console.log('emailsss:', email);
 
       const userprofile = await Userprofile.findOne({ email });
       if (userprofile) {
@@ -41,23 +41,5 @@ export default async function handler(req, res) {
           
 
 
-
-  // else if  
-  // (req.method === 'GET') {
-  //   try {
-  //     await connectToDatabase();
-
-  //     const { email } = req.query;
-  //     const userprofile = await Userprofile.findOne({ email });
-
-  //     if (!userprofile) {
-  //       return res.status(404).json({ message: 'User profile not found' });
-  //     }
-
-  //     return res.status(200).json({ userprofile });
-  //   } catch (error) {
-  //     return res.status(500).json({ message: 'Problem in retrieving user profile', error });
-  //   }
-  // } 
 
 
