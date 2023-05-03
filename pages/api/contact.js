@@ -41,6 +41,24 @@ export default async function handler(req, res) {
     }
   }
 
+  if (req.method === 'PUT') {
+    try {
+      await connectToDatabase();
+      const { uuid, field, value } = req.query;
+      const contact = await Contact.findOneAndUpdate(
+        { uuid },
+        { [field]: value },
+        { new: true }
+      );
+      if (contact) {
+        return res.status(200).json({ contact });
+      }
+      return res.status(404).json({ message: 'Contact not found' });
+    } catch (error) {
+      return res.status(500).json({ message: 'Unable to update contact', error });
+    }
+  }
+
   return res.status(405).json({ message: 'Method not allowed' });
 }
 
