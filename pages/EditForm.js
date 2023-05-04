@@ -59,10 +59,10 @@ const EditForm = () => {
         <div>
           <h1>Edit Contact</h1>
 
-          <div className='mt-10'>
+          <div className='mt-10 flex'>
             <label htmlFor='firstName'>First Name:</label>
             {editField === 'firstName' ? (
-              <div>
+              <div className='flex' >
                 <input
                   type='text'
                   id='firstName'
@@ -70,20 +70,24 @@ const EditForm = () => {
                   value={contact.firstName}
                   onChange={(e) => setContact({ ...contact, firstName: e.target.value })}
                 />
-                <button onClick={() => handleSave('firstName', contact.firstName)}>Save</button>
+                <p className='cursor-pointer' onClick={() => handleSave('firstName', contact.firstName)}><svg className='w-5' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"></path>
+</svg></p>
               </div>
             ) : (
-              <div>
+              <div className='flex'>
                 <span>{contact.firstName}</span>
-                <button onClick={() => handleEdit('firstName')}>Edit</button>
+                <p  className='cursor-pointer'  onClick={() => handleEdit('firstName')}>   <svg className='w-5 '  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path>
+</svg></p>
               </div>
             )}
           </div>
 
-          <div>
+          <div className='flex'> 
             <label htmlFor='lastName'>Last Name:</label>
             {editField === 'lastName' ? (
-              <div>
+              <div className='flex'>
                 <input
                   type='text'
                   id='lastName'
@@ -91,20 +95,24 @@ const EditForm = () => {
                   value={contact.lastName}
                   onChange={(e) => setContact({ ...contact, lastName: e.target.value })}
                 />
-                <button onClick={() => handleSave('lastName', contact.lastName)}>Save</button>
+                <p className='cursor-pointer' onClick={() => handleSave('lastName', contact.lastName)}><svg className='w-5' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"></path>
+</svg></p>
               </div>
             ) : (
-              <div>
+              <div className='flex'>
                 <span>{contact.lastName}</span>
-                <button onClick={() => handleEdit('lastName')}>Edit</button>
+                <p  className='cursor-pointer'  onClick={() => handleEdit('lastName')}>   <svg className='w-5 '  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path>
+</svg></p>
               </div>
             )}
           </div>
 
-          <div>
+          <div className='flex'>
             <label htmlFor='mobileNumber'>Mobile Number:</label>
             {editField === 'mobileNumber' ? (
-              <div>
+              <div className='flex'>
                 <input
                   type='text'
                   id='mobileNumber'
@@ -112,19 +120,24 @@ const EditForm = () => {
                   value={contact.mobileNumber}
                   onChange={(e) => setContact({ ...contact, mobileNumber: e.target.value })}
                 />
-                <button onClick={() => handleSave('mobileNumber', contact.mobileNumber)}>Save</button>
+             
+<p className='cursor-pointer' onClick={() => handleSave('mobileNumber', contact.mobileNumber)}><svg className='w-5' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"></path>
+</svg></p>
               </div>
             ) : (
-              <div>
+              <div className='flex'>
                 <span>{contact.mobileNumber}</span>
-<button onClick={() => handleEdit('mobileNumber')}>Edit</button>
+                <p className='cursor-pointer' onClick={() => handleEdit('mobileNumber')}>   <svg className='w-5 ' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path>
+</svg></p>
 </div>
 )}
 </div>
-<div>
+<div className='flex'>
         <label htmlFor='companyNumber'>Company Number:</label>
         {editField === 'companyNumber' ? (
-          <div>
+          <div className='flex'>
             <input
               type='text'
               id='companyNumber'
@@ -132,20 +145,26 @@ const EditForm = () => {
               value={contact.companyNumber}
               onChange={(e) => setContact({ ...contact, companyNumber: e.target.value })}
             />
-            <button onClick={() => handleSave('companyNumber', contact.companyNumber)}>Save</button>
+          
+
+<p className='cursor-pointer' onClick={() => handleSave('companyNumber', contact.companyNumber)}><svg className='w-5' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"></path>
+</svg></p>
           </div>
         ) : (
-          <div>
+          <div className='flex'>
             <span>{contact.companyNumber}</span>
-            <button onClick={() => handleEdit('companyNumber')}>Edit</button>
+            <p  className='cursor-pointer' onClick={() => handleEdit('companyNumber')}>   <svg className='w-5 ' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path>
+</svg></p>
           </div>
         )}
       </div>
 
-      <div>
+      <div className='flex'>
         <label htmlFor='email'>Email:</label>
         {editField === 'email' ? (
-          <div>
+          <div className='flex'>
             <input
               type='email'
               id='email'
@@ -153,20 +172,27 @@ const EditForm = () => {
               value={contact.email}
               onChange={(e) => setContact({ ...contact, email: e.target.value })}
             />
-            <button onClick={() => handleSave('email', contact.email)}>Save</button>
+         
+         
+<p className='cursor-pointer' onClick={() => handleSave('email', contact.email)}><svg className='w-5' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"></path>
+</svg></p>
+
           </div>
         ) : (
-          <div>
+          <div className='flex'>
             <span>{contact.email}</span>
-            <button onClick={() => handleEdit('email')}>Edit</button>
+            <p className='cursor-pointer'  onClick={() => handleEdit('email')}>   <svg className='w-5 ' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path>
+</svg></p>
           </div>
         )}
       </div>
 
-      <div>
+      <div className='flex'>
         <label htmlFor='companyLogo'>Company Logo:</label>
         {editField === 'companyLogo' ? (
-          <div>
+          <div className='flex'>
             <input
               type='text'
               id='companyLogo'
@@ -174,32 +200,45 @@ const EditForm = () => {
               value={contact.companyLogo}
               onChange={(e) => setContact({ ...contact, companyLogo: e.target.value })}
             />
-            <button onClick={() => handleSave('companyLogo', contact.companyLogo)}>Save</button>
+            
+
+<p className='cursor-pointer' onClick={() => handleSave('companyLogo', contact.companyLogo)}><svg className='w-5' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"></path>
+</svg></p>
           </div>
         ) : (
-          <div>
+          <div className='flex'>
             <span>{contact.companyLogo}</span>
-            <button onClick={() => handleEdit('companyLogo')}>Edit</button>
+            <p  className='cursor-pointer'  onClick={() => handleEdit('companyLogo')}>   <svg className='w-5 ' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path>
+</svg></p>
           </div>
         )}
       </div>
 
-      <div>
+      <div className='flex'>
         <label htmlFor='deck'>Deck:</label>
         {editField === 'deck' ? (
-          <div>
+          <div className='flex'>
             <input
               id='deck'
               name='deck'
               value={contact.deck}
               onChange={(e) => setContact({ ...contact, deck: e.target.value })}
             ></input>
-            <button onClick={() => handleSave('deck', contact.deck)}>Save</button>
+         
+
+
+<p className='cursor-pointer'  onClick={() => handleSave('deck', contact.deck)}><svg className='w-5' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"></path>
+</svg></p>
           </div>
         ) : (
-          <div>
+          <div className='flex'>
             <span>{contact.deck}</span>
-            <button onClick={() => handleEdit('deck')}>Edit</button>
+            <p  className='cursor-pointer'  onClick={() => handleEdit('deck')}>   <svg className='w-5 ' fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path>
+</svg></p>
           </div>
         )}
       </div>
