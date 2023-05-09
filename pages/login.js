@@ -1,5 +1,8 @@
 import React, { useState,useEffect } from 'react';
 import { signIn, useSession,getSession } from 'next-auth/react';
+import Link from 'next/link';
+import Card from '@/components/Card';
+
 
 
 function Login() {
@@ -37,8 +40,43 @@ function Login() {
     }
   };
   return (
-    <div className='flex justify-center'>
-          <div className="flex flex-col w-full lg:w-[312px] items-center  h-screen bg-black">
+    <div className=''>
+        <nav className='flex flex-row justify-around mt-5'>
+        <div>
+        
+        <Link href="/">
+          Get your cards
+        </Link>
+     
+      </div>
+
+
+      <div>
+        
+        <Link href="/">
+          Information
+        </Link>
+     
+      </div>
+      <div>
+        
+      
+                      <div className="input-button">
+                          <button onClick={handleGoogleSignin} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                             Sign in with Google
+                          </button>
+                      </div>
+                  
+     
+      </div>
+
+        </nav>
+<div className='my-48'>
+
+<Card/>
+
+</div>
+          {/* <div className="flex flex-col w-full lg:w-[312px] items-center  h-screen">
               {isModalVisible && (
                   <div className="fixed z-10 inset-0 overflow-y-auto">
                       <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
@@ -72,10 +110,10 @@ function Login() {
                   </div>
               )}
               <div className='mt-16 w-52 h-12'>
-              </div>
-              <h1 className='h1-400 font-michroma mt-8'>Explore</h1>
+              </div> */}
+              {/* <h1 className='h1-400 font-michroma mt-8'>Explore</h1> */}
 
-              <form className='flex flex-col  mt-8' onSubmit={handleSubmit} >
+              {/* <form className='flex flex-col  mt-8' onSubmit={handleSubmit} >
                   <div className={` w-[312px] h-8`}>
                       <input
                           type="email"
@@ -91,20 +129,14 @@ function Login() {
                           Sign In
                       </button>
                   </div>
-              </form>
-                  <p className='text-center h4 my-5'>Sign in With</p>
-                  <div className='flex justify-center gap-9'>
-                      <div className="input-button">
-                          <button onClick={handleGoogleSignin} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                             Sign in with Google
-                          </button>
-                      </div>
-                  </div>
+              </form> */}
+                  {/* <p className='text-center h4 my-5'>Sign in With</p> */}
+                 
 
                   
 
-          </div>
-    </div>
+          {/* </div> */}
+    </div> 
   )
 }
 
