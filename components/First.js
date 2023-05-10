@@ -1,13 +1,53 @@
 import Link from 'next/link';
-import { useSession , signOut } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
+
+
 
 const First = () => {
+
+  const [uuid, setUuid] = useState(null);
+  const [email, setEmail] = useState(null);
+
+  const { data: session } = useSession();
 
   function handleSignOut() {
     signOut()
 }
 
+const fetchUuid = async () => {
+  try {
+    const response = await axios.get(`/api/userprofile?email=${session.user.email}`);
+    console.log('email:', session.user.email);
+    console.log('uuid:', response.data.uuid);
+    setUuid(response.data.uuid);
+    setEmail(session.user.email)
 
+
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+useEffect(() => {
+  fetchUuid();
+}, [session]);
+
+const handleBuyClick = async () => {
+  const cardUuid = uuidv4();
+  alert("card purchased")
+  console.log(cardUuid)
+    try {
+      const data = { email, uuid,cardUuid };
+      const response = await axios.post('/api/purchase', data);
+      console.log(response.data.message);
+    } catch (error) {
+      console.error(error);
+    }
+  };
    
   return (
     <div>
@@ -54,10 +94,10 @@ const First = () => {
     </div>
 </div>
 <div className='flex justify-center mt-5'>
-<button className='px-2 rounded-sm text-lg bg-green-200'>Buy</button>
+<div onClick={handleBuyClick} className='px-2 rounded-sm text-lg bg-green-200 cursor-pointer'>Buy</div>
 </div>
 </div>
-<div>
+{/* <div>
 <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
   
     <div className="p-5">
@@ -84,9 +124,9 @@ const First = () => {
     </div>
 </div>
 <div className='flex justify-center mt-5'>
-<button className='px-2 rounded-sm text-lg bg-green-200'>Buy</button>
+<div className='px-2 rounded-sm text-lg bg-green-200'>Buy</div>
 </div>
-</div>
+</div> */}
 
 </div>
     </div>

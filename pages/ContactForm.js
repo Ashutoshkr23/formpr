@@ -11,6 +11,7 @@ import { useState,useEffect } from 'react';
 const ContactForm = () => {
 
   const [uuid, setUuid] = useState(null);
+  const [cardUuid,setCardUuid] = useState(null);
   const { data: session } = useSession();
 
   const initialValues = {
@@ -40,6 +41,14 @@ const ContactForm = () => {
         console.log('email:', session.user.email);
         console.log('uuid:', response.data.uuid);
         setUuid(response.data.uuid);
+      // const email=session.user.email;
+      //  setTimeout(function(){
+      //   console.log(uuid)
+
+      //   console.log(email)
+      //  },4000)
+       
+
       } catch (error) {
         console.error(error);
       }
@@ -49,6 +58,24 @@ const ContactForm = () => {
       fetchUuid();
     }, [session]);
 
+
+    const fetchCard = async () => {
+      try {
+        const response = await axios.get(`/api/purchase?email=${session.user.email}`);
+        console.log('email:', session.user.email);
+        console.log('cardUuid:', response.data.cardUuid);
+        setCardUuid(response.data.cardUuid);
+      
+       
+
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    useEffect(() => {
+      fetchCard();
+    }, [session]);
 
     const onSubmit = async (values, { resetForm }) => {
       try {
@@ -66,6 +93,7 @@ const ContactForm = () => {
      
       return (
         <div className="flex justify-center">
+        {cardUuid ?  (
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -180,7 +208,9 @@ const ContactForm = () => {
               </div>
             </Form>
           )}
-        </Formik>
+        </Formik>):(
+<p>Please Buy the Card</p>
+        )}
         </div>
       );
     };
