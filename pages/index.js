@@ -1,26 +1,26 @@
 import First from "@/components/First";
 import { useSession, signIn, getSession, signOut } from "next-auth/react"
 import axios from "axios";
-import { useEffect, useState, useRef } from "react";
+import { useEffect , useState ,useRef} from "react";
 import React from "react";
 
-export default function Home() {
+export default function Home () {
   const { data: session } = useSession()
   const hasFetchedUserProfileRef = useRef(false);
 
-  const getUserProfile = async () => {
+  const getUserProfile = async() => {  
     let postdata = {
-      email: session.user.email
+      email : session.user.email
     }
     const response = await axios.post('api/userprofile', postdata);
-    //console.log(response)
+    console.log(response)
   }
   useEffect(() => {
-    //console.log('Session object:', session);
+    console.log('Session object:', session);
     if (session && session.user && !hasFetchedUserProfileRef.current) {
       getUserProfile();
       hasFetchedUserProfileRef.current = true;
-      //console.log("useEffect Runned");
+      console.log("useEffect Runned");
     }
   }, [session]);
 
@@ -33,7 +33,7 @@ export default function Home() {
 
 export async function getServerSideProps({ req }) {
   const session = await getSession({ req });
-  //console.log(session, "session")
+  console.log(session, "session")
   if (!session) {
     return {
       redirect: {
