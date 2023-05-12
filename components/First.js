@@ -11,6 +11,8 @@ const First = () => {
 
   const [uuid, setUuid] = useState(null);
   const [email, setEmail] = useState(null);
+  const [orderId, setOrderId] = useState('');
+
 
   const { data: session } = useSession();
 
@@ -37,18 +39,61 @@ useEffect(() => {
 }, [session]);
 
 const handleBuyClick = async () => {
-  const cardUuid = uuidv4();
-  alert("card purchased")
-  console.log(cardUuid)
-    try {
-      const data = { email, uuid,cardUuid };
-      const response = await axios.post('/api/purchase', data);
-      console.log(response.data.message);
-    } catch (error) {
-      console.error(error);
+  console.log("here...");
+    const res = await initializeRazorpay();
+
+    if (!res) {
+      alert("Razorpay SDK Failed to load");
+      return;
     }
+
+    // Make API call to the serverless API
+    const data = await fetch("/api/razorpay", { method: "POST" }).then((t) =>
+      t.json()
+    );
+    console.log(data);
+    var options = {
+      key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
+      name: "Alphamit Labs",
+      currency: data.currency,
+      amount: data.amount,
+      order_id: data.id,
+      description: "Thankyou for your test donation",
+     // image: "https://manuarora.in/logo.png",
+      handler: function (response) {
+        // Validate payment at server - using webhooks is a better idea.
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature);
+        window.location.href = "/ContactForm";
+
+      },
+      prefill: {
+        name: "amit kumar",
+        email: email,
+       // contact: "4785962514",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
   };
-   
+  const initializeRazorpay = () => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
+      // document.body.appendChild(script);
+
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+
+      document.body.appendChild(script);
+    });
+  };
   return (
     <div>
       <nav className='flex flex-row justify-around mt-5'>
@@ -135,3 +180,13 @@ const handleBuyClick = async () => {
 };
 
 export default First;
+// const cardUuid = uuidv4();
+// alert("card purchased")
+// console.log(cardUuid)
+//   try {
+//     const data = { email, uuid,cardUuid };
+//     const response = await axios.post('/api/purchase', data);
+//     console.log(response.data.message);
+//   } catch (error) {
+//     console.error(error);
+//   }

@@ -93,7 +93,7 @@ const ContactForm = () => {
      
       return (
         <div className="flex justify-center">
-        {cardUuid ?  (
+        {/* {cardUuid ?  ( */}
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -208,9 +208,10 @@ const ContactForm = () => {
               </div>
             </Form>
           )}
-        </Formik>):(
-<p>Please Buy the Card</p>
-        )}
+        </Formik>
+        {/* ):( */}
+{/* <p>Please Buy the Card</p>
+        )} */}
         </div>
       );
     };
