@@ -3,11 +3,30 @@ import mongoose from 'mongoose';
 
 
 const PurchaseSchema = new mongoose.Schema({
-    email: { type: String, },
+    email: { 
+      type: String, 
+    },
 
-    uuid: { type: String,  },
+    uuid: { 
+      type: String,  
+    },
   
-   cardUuid:{type:String,}
+   cardUuid:{
+    type:String,
+  },
+
+  //  order_Id: {
+  //   type: String,
+  //   required: true,
+  // },
+  amount: {
+    type: Number,
+    required: true,
+  },
+  currency: {
+    type: String,
+    required: true,
+  },
    
   });
   

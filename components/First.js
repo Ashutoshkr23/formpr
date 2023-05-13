@@ -11,7 +11,7 @@ const First = () => {
 
   const [uuid, setUuid] = useState(null);
   const [email, setEmail] = useState(null);
-  const [orderId, setOrderId] = useState('');
+  //const [orderId, setOrderId] = useState('');
 
 
   const { data: session } = useSession();
@@ -38,46 +38,73 @@ useEffect(() => {
   fetchUuid();
 }, [session]);
 
+
+const saveDataToServer = async () => {
+  // Make API call to save the data to the server
+  console.log(amount)
+  console.log(order_id)
+  console.log(currency)
+  console.log(email)
+  console.log(uuid)
+
+  const data ={email,uuid,amount,currency}
+  const response = await axios.post("/api/saveData",data);
+
+  console.log("saveData post")
+  console.log(response);
+
+  
+};
+var amount;
+var currency;
+var order_id;
 const handleBuyClick = async () => {
   console.log("here...");
-    const res = await initializeRazorpay();
+  const res = await initializeRazorpay();
 
-    if (!res) {
-      alert("Razorpay SDK Failed to load");
-      return;
-    }
+  if (!res) {
+    alert("Razorpay SDK Failed to load");
+    return;
+  }
 
-    // Make API call to the serverless API
-    const data = await fetch("/api/razorpay", { method: "POST" }).then((t) =>
-      t.json()
-    );
-    console.log(data);
-    var options = {
-      key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
-      name: "Alphamit Labs",
-      currency: data.currency,
-      amount: data.amount,
-      order_id: data.id,
-      description: "Thankyou for your test donation",
-     // image: "https://manuarora.in/logo.png",
-      handler: function (response) {
-        // Validate payment at server - using webhooks is a better idea.
-        alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
-        alert(response.razorpay_signature);
-        window.location.href = "/ContactForm";
+  // Make API call to the serverless API
+  const { data } = await axios.post("/api/razorpay");
 
-      },
-      prefill: {
-        name: "amit kumar",
-        email: email,
-       // contact: "4785962514",
-      },
-    };
+  console.log(data);
+  amount=data.amount;
+  order_id=data.id;
+  currency=data.currency;
+  console.log(email)
+  console.log(uuid)
+  var options = {
+    key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
+    name: "Alphamit Labs",
+    currency: data.currency,
+    amount: data.amount,
+    order_id: data.id,
+    description: "Thank you for your test donation",
+    handler: function (response) {
+      // Validate payment at server - using webhooks is a better idea.
+      alert(response.razorpay_payment_id);
+      alert(response.razorpay_order_id);
+      alert(response.razorpay_signature);
+      // Save the data to the server if payment is successful
+      saveDataToServer();
+      window.location.href = '/ContactForm';
 
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
+    },
+    prefill: {
+      name: "amit kumar",
+      email: email,
+    },
   };
+
+  const paymentObject = new window.Razorpay(options);
+  paymentObject.open();
+  console.log(paymentObject);
+};
+
+
   const initializeRazorpay = () => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
