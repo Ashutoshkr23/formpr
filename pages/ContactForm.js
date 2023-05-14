@@ -41,12 +41,7 @@ const ContactForm = () => {
         console.log('email:', session.user.email);
         console.log('uuid:', response.data.uuid);
         setUuid(response.data.uuid);
-      // const email=session.user.email;
-      //  setTimeout(function(){
-      //   console.log(uuid)
-
-      //   console.log(email)
-      //  },4000)
+      
        
 
       } catch (error) {
