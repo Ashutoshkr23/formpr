@@ -1,7 +1,7 @@
 //import { useSession } from 'next-auth/react';
 import Link from 'next/link'
 import React, { useState } from 'react';
-import { BsInstagram, BsTwitter } from 'react-icons/Bs';
+import { BsInstagram,BsTwitter } from 'react-icons/bs';
 import axios from 'axios';
 
 const Profile = () => {
