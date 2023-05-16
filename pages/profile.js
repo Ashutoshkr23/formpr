@@ -1,0 +1,46 @@
+import { useSession } from 'next-auth/react';
+import Link from 'next/link'
+import React from 'react'
+import { BsInstagram,BsTwitter} from 'react-icons/Bs';
+import axios from 'axios';
+
+const profile = () => {
+  const {data:session}=useSession();
+ 
+
+  
+  return (
+    <div>
+        <div className='flex justify-center gap-4 mt-48'>
+            <div>
+            <Link href='/'>
+            <BsInstagram className="text-4xl w-12 h-12" />
+            </Link>
+            </div>
+            <div>
+            <Link href='/'>
+            <BsTwitter className="text-4xl w-12 h-12" />
+            </Link>
+            </div>
+           
+            
+        </div>
+        <div className='flex justify-center mt-10'>
+            <label >
+                Add wallet:
+            </label>
+            <input
+        type="text"
+        placeholder="wallet"
+        className="border border-gray-300"
+
+      />      
+      <button  className='bg-green-500 text-white ml-2'>ADD</button>
+
+      </div>
+      
+    </div>
+  )
+}
+
+export default profile

@@ -1,28 +1,19 @@
-import Link from 'next/link';
-import { signOut } from 'next-auth/react';
 import { useSession } from 'next-auth/react';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
-import Image from 'next/image';
-
-
+import Navbar from './Navbar';
 
 const First = () => {
 
   const [uuid, setUuid] = useState(null);
   const [email, setEmail] = useState(null);
-const [toggle,setToggle] = useState(false);
 
 
   const { data: session } = useSession();
 
-  function handleSignOut() {
-    signOut()
-}
-const handleToggle=()=>{
-  setToggle(!toggle)
-}
+  
+
+
 const fetchUuid = async () => {
   try {
     const response = await axios.get(`/api/userprofile?email=${session.user.email}`);
@@ -126,60 +117,7 @@ const handleBuyClick = async () => {
   };
   return (
     <div>
-      <nav className='flex flex-row justify-around mt-5'>
-    <div>
-        
-          <Link href="/">
-            Home
-          </Link>
-       
-        </div>
-        <div>
-        
-          <Link href="/ContactForm">
-           Create Card
-          </Link>
-       
-        </div>
-        <div>
-        
-        <Link href="/EditForm">
-         Edit Card
-        </Link>
-     
-      </div>
-        <div>
-        
-          <button onClick={handleToggle} className=''>
-            <Image className='rounded-full'
-            src={session.user.image}
-            alt="user image"
-            width={30}
-            height={30}
-
-
-            />
-          </button>
-          {toggle && (
-        <div className="dropdown-menu">
-          <div>
-          <Link  href="" >
-          Home
-          </Link>
-          </div>
-        <div>
-        <Link  href="" >
-          About
-          </Link>
-        </div>
-         
-          <button className='bg-black rounded-md text-white' onClick={handleSignOut}>Sign Out</button>
-        </div>
-      )}
-        
-        
-      </div>
-    </nav>
+    <Navbar/>
       
       <div className='flex justify-center  pb-10 text-2xl mt-40'>  <h1 className="title">Get Your Card</h1></div>
       <div className='flex flex-row justify-around'>
@@ -195,7 +133,7 @@ const handleBuyClick = async () => {
     </div>
 </div>
 <div className='flex justify-center mt-5'>
-<div onClick={handleBuyClick} className='px-2 rounded-sm text-lg bg-green-200 cursor-pointer'>Buy</div>
+<div onClick={handleBuyClick} className='px-2 rounded-sm text-lg bg-green-400 hover:bg-green-600 cursor-pointer'>Buy</div>
 </div>
 </div>
 {/* <div>
@@ -236,13 +174,3 @@ const handleBuyClick = async () => {
 };
 
 export default First;
-// const cardUuid = uuidv4();
-// alert("card purchased")
-// console.log(cardUuid)
-//   try {
-//     const data = { email, uuid,cardUuid };
-//     const response = await axios.post('/api/purchase', data);
-//     console.log(response.data.message);
-//   } catch (error) {
-//     console.error(error);
-//   }
