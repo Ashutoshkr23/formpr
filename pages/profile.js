@@ -5,7 +5,7 @@ import { BsInstagram,BsTwitter } from 'react-icons/bs';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 
-const profile = () => {
+const Profile = () => {
  const {data:session}=useSession();
  const [account,setAccount]=useState('');
  const handleClick = async () => {
@@ -68,4 +68,4 @@ const profile = () => {
   )
 }
 
-export default profile
+export default Profile
