@@ -1,12 +1,16 @@
-import { useSession } from 'next-auth/react';
+//import { useSession } from 'next-auth/react';
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { BsInstagram,BsTwitter} from 'react-icons/Bs';
 import axios from 'axios';
 
 const profile = () => {
-  const {data:session}=useSession();
- 
+//  const {data:session}=useSession();
+ const [account,setAccount]=useState('');
+ const handleClick=()=>{
+  console.log(account);
+  setAccount('');
+ }
 
   
   return (
@@ -32,10 +36,12 @@ const profile = () => {
             <input
         type="text"
         placeholder="wallet"
+        value={account}
         className="border border-gray-300"
+        onChange={(e)=>setAccount(e.target.value)}
 
       />      
-      <button  className='bg-green-500 text-white ml-2'>ADD</button>
+      <button onClick={handleClick}  className='bg-green-500 text-white ml-2'>ADD</button>
 
       </div>
       
