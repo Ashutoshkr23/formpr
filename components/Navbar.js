@@ -18,7 +18,7 @@ const Navbar = () => {
         signOut()
     }
     const handleClick=()=>{
-      router.push('/profile');
+      router.push('/Profile');
     }
    
   return (
