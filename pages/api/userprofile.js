@@ -20,7 +20,16 @@ export default async function handler(req, res) {
         await newUserprofile.save();
         return res.status(201).json({ message: 'User profile created successfully', userprofile: newUserprofile });
       }
-    } else if (req.method === 'GET') {
+    } 
+    else if (req.method === 'PUT') {
+      // Update the account value for an existing user profile
+      const { email, account } = req.body;
+
+      await Userprofile.findOneAndUpdate({ email }, { account });
+
+      return res.status(200).json({ message: 'Account updated successfully' });
+    } 
+    else if (req.method === 'GET') {
       const { email } = req.query;
       //console.log('emailsss:', email);
 

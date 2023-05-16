@@ -6,6 +6,9 @@ const UserprofileSchema = new mongoose.Schema({
     uuid: { type: String, default: uuidv4 },
   
     email: { type: String, },
+    account:{
+      type:String,
+    }
    
   });
   

@@ -3,14 +3,33 @@ import Link from 'next/link'
 import React, { useState } from 'react';
 import { BsInstagram,BsTwitter } from 'react-icons/bs';
 import axios from 'axios';
+import { useSession } from 'next-auth/react';
 
-const Profile = () => {
-//  const {data:session}=useSession();
+const profile = () => {
+ const {data:session}=useSession();
  const [account,setAccount]=useState('');
- const handleClick=()=>{
-  console.log(account);
-  setAccount('');
- }
+ const handleClick = async () => {
+  console.log(session.user.email)
+  console.log(account)
+
+  try {
+    // Make a PUT request to update the account
+    const response = await axios.put('/api/userprofile', { email: session.user.email, account });
+
+    // Handle the response
+    if (response.status === 200) {
+      // Account updated successfully
+      console.log('Account updated successfully');
+      setAccount('');
+    } else {
+      // Handle other status codes or error responses
+      console.error('Failed to update account:', response.data);
+    }
+  } catch (error) {
+    // Handle network errors or exceptions
+    console.error('Error updating account:', error);
+  }
+};
 
   
   return (
@@ -49,4 +68,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default profile
