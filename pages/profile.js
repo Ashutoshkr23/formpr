@@ -1,10 +1,10 @@
 //import { useSession } from 'next-auth/react';
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { BsInstagram,BsTwitter} from 'react-icons/Bs';
 import axios from 'axios';
 
-const profile = () => {
+const Profile = () => {
 //  const {data:session}=useSession();
  const [account,setAccount]=useState('');
  const handleClick=()=>{
@@ -49,4 +49,4 @@ const profile = () => {
   )
 }
 
-export default profile
+export default Profile
