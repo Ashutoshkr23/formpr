@@ -19,6 +19,7 @@ const downloadVCard = () => {
 FN:"Sukumaran Nair"
 TEL;TYPE=CELL:"+919819697361"
 EMAIL;:" siddharth@alphamintlabs.com"
+URL:rchiranandani.rotaryindia.org
 END:VCARD`;
 
   // Convert the vCard string to a Blob object
