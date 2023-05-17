@@ -31,11 +31,12 @@ export default async function handler(req, res) {
     } 
     else if (req.method === 'GET') {
       const { email } = req.query;
-      //console.log('emailsss:', email);
+      console.log('emailsss:', email);
 
       const userprofile = await Userprofile.findOne({ email });
       if (userprofile) {
         return res.status(200).json({ message: 'User profile found', uuid: userprofile.uuid  });
+        console.log(uuid)
       } else {
         return res.status(404).json({ message: 'User profile not found' });
       }
