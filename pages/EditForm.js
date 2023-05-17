@@ -12,6 +12,7 @@ const EditForm = () => {
     try {
       const response = await axios.get(`/api/userprofile?email=${session.user.email}`);
       setUuid(response.data.uuid);
+      console.log(response.data.uuid)
     } catch (error) {
       console.error(error);
     }

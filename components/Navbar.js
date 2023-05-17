@@ -28,7 +28,7 @@ const Navbar = () => {
     <div>
         
           <Link href="/">
-            Home
+           Home
           </Link>
        
         </div>

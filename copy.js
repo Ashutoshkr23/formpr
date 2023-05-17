@@ -52,7 +52,7 @@ END:VCARD`;
 
 
   
-      <div className='-top-16 inset-0 mx-auto absolute h-[100px] w-[100px] '>      <ProfileImg/></div>  
+      <div className='-top-16 inset-0 mx-auto absolute'>      <ProfileImg/></div>  
 
           <div className='flex justify-center pt-[52px] font-semibold text-[20px]'>{contact.firstName} {contact.lastName}</div>
           <div className='flex justify-center mt-[11px] font-semibold text-[16px]'>Design Lead</div>

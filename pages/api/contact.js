@@ -5,22 +5,38 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
       await connectToDatabase();
-      const { uuid } = req.query;
-      const contact = await Contact.findOne({ uuid });
-      if (contact) {
-        return res.status(200).json({ contact });
+      const { cardUuid, uuid } = req.query;
+      
+      if (cardUuid) {
+        const contact = await Contact.findOne({ cardUuid });
+        if (contact) {
+          return res.status(200).json({ contact });
+        }
+        return res.status(404).json({ message: 'Contact not found' });
+      } else if (uuid) {
+        const contact = await Contact.findOne({ uuid });
+        if (contact) {
+          return res.status(200).json({ contact });
+        }
+        return res.status(404).json({ message: 'Contact not found' });
+      } else {
+        return res.status(400).json({ message: 'Invalid query parameters' });
       }
-      return res.status(404).json({ message: 'Contact not found' });
     } catch (error) {
       return res.status(500).json({ message: 'Unable to retrieve contact', error });
     }
   }
+  
 
   if (req.method === 'POST') {
     try {
       await connectToDatabase();
 
-      const { firstName, lastName, mobileNumber, companyNumber, email, companyLogo, deck ,uuid } = req.body;
+      const { firstName, lastName, mobileNumber, companyNumber, email, companyLogo, deck , website,
+        whatsapp, linkedIn,
+        Instagram,
+        facebook,
+        bio,uuid, cardUuid } = req.body;
 
       const contact = new Contact({
         firstName,
@@ -30,7 +46,15 @@ export default async function handler(req, res) {
         email,
         companyLogo,
         deck,
+        website,
+        whatsapp,
+        linkedIn,
+        Instagram,
+        facebook,
+        bio,
+
         uuid ,
+        cardUuid,
       });
 
       await contact.save();

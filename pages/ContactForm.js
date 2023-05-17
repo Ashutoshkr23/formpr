@@ -22,6 +22,11 @@ const ContactForm = () => {
     email: '',
     companyLogo: '',
     deck: '',
+    whatsapp:'',
+    linkedlist:'',
+    Instagram:'',
+    facebook:'',
+    Bio:''
   };
 
   const validationSchema = Yup.object({
@@ -31,7 +36,14 @@ const ContactForm = () => {
     companyNumber: Yup.number().required('Company number is required'),
     email: Yup.string().email('Invalid email address').required('Email is required'),
     companyLogo: Yup.string().required('Company logo is required'),
-    deck: Yup.string().required('Deck is required'),
+    deck: Yup.string().required('deck is required'),
+    website:Yup.string().required(' website is required'),
+    whatsapp: Yup.string().required('whatsapp is required'),
+    linkedIn: Yup.string().required('linkedIn is required'),
+    Instagram: Yup.string().required(' Instagram is required'),
+    facebook: Yup.string().required('facebook is required'),
+    bio: Yup.string().required('bio is required'),
+
     });
 
 
@@ -74,7 +86,7 @@ const ContactForm = () => {
 
     const onSubmit = async (values, { resetForm }) => {
       try {
-        const data = { ...values, uuid };
+        const data = { ...values, uuid ,cardUuid};
         const response = await axios.post('/api/contact', data);
         console.log(response.data.message);
         resetForm();
@@ -194,6 +206,88 @@ const ContactForm = () => {
                 />
                 <ErrorMessage name="deck" component="div" className="error" />
               </div>
+
+              <div className="mb-4">
+                  <label htmlFor="website" className="block text-gray-700 font-bold mb-2">
+                  website:
+                  </label>
+                  <Field
+                    type="text"
+                    id="website"
+                    name="website"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <ErrorMessage name="website" component="div" className="text-red-500" />
+                </div>
+
+              <div className="mb-4">
+                  <label htmlFor="whatsapp" className="block text-gray-700 font-bold mb-2">
+                  whatsapp:
+                  </label>
+                  <Field
+                    type="text"
+                    id="whatsapp"
+                    name="whatsapp"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <ErrorMessage name="whatsapp" component="div" className="text-red-500" />
+                </div>
+
+
+                <div className="mb-4">
+                  <label htmlFor="linkedIn" className="block text-gray-700 font-bold mb-2">
+                  linkedIn:
+                  </label>
+                  <Field
+                    type="text"
+                    id="linkedIn"
+                    name="linkedIn"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <ErrorMessage name="linkedIn" component="div" className="text-red-500" />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="Instagram" className="block text-gray-700 font-bold mb-2">
+                  Instagram:
+                  </label>
+                  <Field
+                    type="text"
+                    id="Instagram"
+                    name="Instagram"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <ErrorMessage name="Instagram" component="div" className="text-red-500" />
+                </div>
+
+                
+                <div className="mb-4">
+                  <label htmlFor="facebook" className="block text-gray-700 font-bold mb-2">
+                  facebook:
+                  </label>
+                  <Field
+                    type="text"
+                    id="facebook"
+                    name="facebook"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <ErrorMessage name="facebook" component="div" className="text-red-500" />
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="bio" className="block text-gray-700 font-bold mb-2">
+                  bio:
+                  </label>
+                  <Field
+                    type="text"
+                    id="bio"
+                    name="bio"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <ErrorMessage name="bio" component="div" className="text-red-500" />
+                </div>
+
+
               <div className="mb-4">
 
               <button   className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
