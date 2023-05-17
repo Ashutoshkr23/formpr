@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image'
-const Socialro = () => {
+const Socialro = ({ handleDownloadPdf }) => {
   return (
     <div className='grid grid-cols-3 gap-y-11 mt-8 '>
 
@@ -40,11 +40,8 @@ const Socialro = () => {
             </Link>
             <p className='text-[12px]'>Facebook</p>
         </div>
-        <div>
-            <Link href={'/'}>
-            
+          <div onClick={handleDownloadPdf}>
             <Image src="/pdf.png" alt="WhatsApp Logo" width={50} height={50} />
-            </Link>
             <p className='text-[12px]'>Download PDF</p>
         </div>
     </div>
