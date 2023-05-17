@@ -34,28 +34,7 @@ END:VCARD`;
 };
 const rotary = () => {
   // function to convert page into pdf and download it 
-  const handleDownloadPdf = async () => {
-    const element = document.querySelector('.bg-gradient-to-b'); // Target the outermost container element
-
-    // Delay the PDF generation for 1 second to allow the content to fully render
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    const canvas = await html2canvas(element);
-    const data = canvas.toDataURL('image/svg');
-
-    const pdfWidth = canvas.width / 2.83; // Convert canvas width to PDF units (1 inch = 72 PDF units)
-    const pdfHeight = canvas.height / 2.83; // Convert canvas height to PDF units
-
-    const pdf = new jsPDF({
-      orientation: 'p', // Portrait orientation
-      unit: 'pt', // Use points as the unit of measurement
-      format: [pdfWidth, pdfHeight], // Set custom page size
-    });
-
-    pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save('rotary_page.pdf');
-  };
-
+ 
   return (
     <div className='bg-black'>
       <div className='bg-gradient-to-b min-h-screen h-auto  relative pt-[146px] mx-auto  from-[#00246C] to-[#009999] sm:w-[640px]'>
@@ -67,7 +46,7 @@ const rotary = () => {
           <div className='flex justify-center pt-[52px] font-semibold text-[20px]'>Sukumaran Nair</div>
           <div className='flex justify-center mt-[11px] font-semibold text-[16px]'>Club President</div>
           <div><Bioro /></div>
-          <div><Socialro handleDownloadPdf={handleDownloadPdf} /></div>
+          <div><Socialro  /></div>
           <div className=''><button className='  bg-black font-bold text-[20px] text-white h-[50px] w-[304px] rounded-[14px] mt-[31px]' onClick={downloadVCard}>SAVE CONTACT</button>  </div>
 
         </div>
