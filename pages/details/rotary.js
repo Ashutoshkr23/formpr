@@ -32,7 +32,7 @@ END:VCARD`;
 const rotary = () => {
   return (
     <div className='bg-black'>
-      <div className='bg-gradient-to-b relative pt-[146px] mx-auto  from-[#00246C] to-[#009999] sm:w-[640px]'>
+      <div className='bg-gradient-to-b min-h-screen h-auto  relative pt-[146px] mx-auto  from-[#00246C] to-[#009999] sm:w-[640px]'>
         <div className='top-[55px]  inset-0 mx-auto absolute h-[150px] w-[150px] '>      <RotaryLogo /></div>
         <div className='relative px-6 bg-gradient-to-b   from-[#FFFFFF] to-[#B0B0B0] mx-auto h-[612px] w-[351px] rounded-[20px]'>
           
@@ -46,7 +46,7 @@ const rotary = () => {
 
         </div>
 
-        <div className='text-[10px] flex justify-center mt-8 pb-[29px] text-white'>made with love by <Image className='ml-[3px]' src={'/loopro.png'} width={27} height={12}/></div>
+        <div className='text-[10px] flex justify-center mt-8 pb-[29px] text-white'>made with love by <Image className='ml-[3px]' src={'/loopro.svg'} width={27} height={12}/></div>
 
       </div>
 
