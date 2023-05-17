@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     try {
       await connectToDatabase();
 
-      const { firstName, lastName, mobileNumber, companyNumber, email, companyLogo, deck , website,
+      const { firstName, lastName, mobileNumber, companyNumber, email,designation, companyLogo, deck , website,
         whatsapp, linkedIn,
         Instagram,
         facebook,
@@ -44,6 +44,7 @@ export default async function handler(req, res) {
         mobileNumber,
         companyNumber,
         email,
+        designation,
         companyLogo,
         deck,
         website,

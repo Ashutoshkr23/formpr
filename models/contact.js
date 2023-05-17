@@ -11,6 +11,7 @@ const ContactSchema = new mongoose.Schema({
   mobileNumber: { type: Number, required: true },
   companyNumber: { type: Number, required: true },
   email: { type: String, required: true },
+  designation:{type:String},
   companyLogo: { type: String, required: true },
   deck: { type: String, required: true },
   website:{type:String},

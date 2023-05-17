@@ -11,16 +11,16 @@ const Bioro = () => {
         </div>
         <div className="mt-[26px] grid grid-cols-2 gap-y-5">
 <div className='flex'>
-    <Image src={'/rotaryclub.png'} alt='log' width={24} height={21} /><p className='text-[10px] ml-1.5 tracking-[-0.5px] '>Rotary Club of Hiranandani Estate</p>
+    <Image src={'/rotaryclub.png'} alt='rotaryclub' width={24} height={21} /><p className='text-[10px] ml-1.5 tracking-[-0.5px] '>Rotary Club of Hiranandani Estate</p>
 </div>
 <div className='flex ml-[50px]'>
-    <Image src={'/district.png'} alt='log' width={20} height={20} /><p className='text-[10px] ml-1.5 tracking-[-0.5px] '>District 3142</p>
+    <Image src={'/district.png'} alt='district' width={20} height={20} /><p className='text-[10px] ml-1.5 tracking-[-0.5px] '>District 3142</p>
 </div>
 <div className='flex '>
-    <Image src={'/website.png'} alt='log' width={20} height={20} /><p className='text-[10px] ml-1.5 tracking-[-0.5px]'>rchiranandani.rotaryindia.org</p>
+    <Image src={'/website.png'} alt='website' width={20} height={20} /><p className='text-[10px] ml-1.5 tracking-[-0.5px]'>rchiranandani.rotaryindia.org</p>
 </div>
 <div className='flex ml-[50px]'>
-    <Image src={'/phone.png'} alt='log' width={20} height={20} /><p className='text-[10px] ml-[1px] tracking-[-0.5px]'>+919819697361   </p>
+    <Image src={'/phone.png'} alt='phone' width={20} height={20} /><p className='text-[10px] ml-[1px] tracking-[-0.5px]'>+919819697361   </p>
 </div>
 
 

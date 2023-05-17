@@ -20,10 +20,12 @@ const ContactForm = () => {
     mobileNumber: '',
     companyNumber: '',
     email: '',
+    designation:'',
     companyLogo: '',
     deck: '',
+    website:'',
     whatsapp:'',
-    linkedlist:'',
+    linkedIn:'',
     Instagram:'',
     facebook:'',
     Bio:''
@@ -35,6 +37,7 @@ const ContactForm = () => {
     mobileNumber: Yup.number().required('Mobile number is required'),
     companyNumber: Yup.number().required('Company number is required'),
     email: Yup.string().email('Invalid email address').required('Email is required'),
+    designation: Yup.string().required('designation is required'),
     companyLogo: Yup.string().required('Company logo is required'),
     deck: Yup.string().required('deck is required'),
     website:Yup.string().required(' website is required'),
@@ -167,6 +170,18 @@ const ContactForm = () => {
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="email" component="div" className="text-red-500" />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="designation" className="block text-gray-700 font-bold mb-2">
+                  designation:
+                  </label>
+                  <Field
+                    type="designation"
+                    id="designation"
+                    name="designation"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <ErrorMessage name="designation" component="div" className="text-red-500" />
                 </div>
                 <div className="mb-4">
                   <label htmlFor="companyLogo" className="block text-gray-700 font-bold mb-2">

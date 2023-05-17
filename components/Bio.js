@@ -14,10 +14,10 @@ const Bio = ({phone}) => {
     <Image src={'/log.png'} alt='log' width={27} height={22} /><p className='text-[12px] ml-1.5 tracking-[-0.5px] '>Alphamint Labs</p>
 </div>
 <div className='flex ml-[50px]'>
-    <Image src={'/phone.png'} alt='log' width={22} height={22} /><p className='text-[12px] ml-[1px] tracking-[-0.5px]'>{phone}</p>
+    <Image src={'/phone.png'} alt='phone' width={22} height={22} /><p className='text-[12px] ml-[1px] tracking-[-0.5px]'>{phone}</p>
 </div>
 <div className='flex'>
-    <Image src={'/website.png'} alt='log' width={22} height={22} /><p className='text-[12px] ml-1.5 tracking-[-0.5px]'>www.alphamintlabs.com</p>
+    <Image src={'/website.png'} alt='website' width={22} height={22} /><p className='text-[12px] ml-1.5 tracking-[-0.5px]'>www.alphamintlabs.com</p>
 </div>
 
         </div>
