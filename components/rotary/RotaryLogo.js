@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 
 
-const Profilero = () => {
+const RotaryLogo= () => {
     return (
         <div>
             <div className=' '><Image className='rounded-[75px]'
@@ -15,4 +15,4 @@ const Profilero = () => {
     )
 }
 
-export default Profilero
+export default RotaryLogo

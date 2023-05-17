@@ -17,9 +17,9 @@ import RotaryLogo from '@/components/rotary/RotaryLogo';
 const downloadVCard = () => {
   // Create a vCard string from the contact data
   const vCard = `BEGIN:VCARD
-FN:"Sukumaran Nair"
-TEL;TYPE=CELL:"+919819697361"
-EMAIL;:" siddharth@alphamintlabs.com"
+FN:Sukumaran Nair
+TEL;TYPE=CELL:+919819697361
+EMAIL;: siddharth@alphamintlabs.com
 URL:rchiranandani.rotaryindia.org
 END:VCARD`;
 
