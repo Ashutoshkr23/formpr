@@ -5,23 +5,15 @@ import Image from 'next/image'
 const Profilero = () => {
   return (
     <div>
-
-        <div className=' '><Image className='rounded-[50px]'
-        src={"/roticon.png"}
-        width={150}
-        height={150}
-
-        /></div>
-        <div className='flex justify-center mt-[-80px] relative '>
-        
+      <div className='flex justify-center relative '>
         <Image className='rounded-[50px]'
-        src={"/proro.png"}
-        width={90}
-        height={85}
+          src={"/proro.png"}
+          width={100}
+          height={100}
 
         />
 
-</div>
+      </div>
     </div>
   )
 }
