@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { signIn, useSession,getSession } from 'next-auth/react';
 import Link from 'next/link';
 import Card from '@/components/Card';
+import LoginNav from '@/components/landing/LoginNav';
 
 
 
