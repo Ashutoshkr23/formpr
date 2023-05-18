@@ -362,12 +362,18 @@ const ContactForm = () => {
                       </label>
                       </div>
                   </div>
-                  <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                  <div className='flex justify-around'>
+                    <div><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                        onClick={() => setStep(1)}>
+                    Previous
+                  </button></div>
+                  <div><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                     type="submit" disabled={isSubmitting}>
                     Submit
-                  </button>
+                  </button></div>
+                  
+                  </div>
                 </div>
-
               )}
             </Form>
           )}
