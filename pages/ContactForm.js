@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { useSession } from 'next-auth/react';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Template from '@/components/Template';
 
 
@@ -11,9 +11,9 @@ import Template from '@/components/Template';
 
 const ContactForm = () => {
 
-  
+
   const [uuid, setUuid] = useState(null);
-  const [cardUuid,setCardUuid] = useState(null);
+  const [cardUuid, setCardUuid] = useState(null);
   const { data: session } = useSession();
 
   const initialValues = {
@@ -22,15 +22,16 @@ const ContactForm = () => {
     mobileNumber: '',
     companyNumber: '',
     email: '',
-    designation:'',
+    designation: '',
     companyLogo: '',
     deck: '',
-    website:'',
-    whatsapp:'',
-    linkedIn:'',
-    Instagram:'',
-    facebook:'',
-    bio:''
+    website: '',
+    whatsapp: '',
+    linkedIn: '',
+    Instagram: '',
+    facebook: '',
+    bio: '',
+    template: '1',
   };
 
   const validationSchema = Yup.object({
@@ -42,93 +43,98 @@ const ContactForm = () => {
     designation: Yup.string().required('designation is required'),
     companyLogo: Yup.string().required('Company logo is required'),
     deck: Yup.string().required('deck is required'),
-    website:Yup.string().required(' website is required'),
+    website: Yup.string().required(' website is required'),
     whatsapp: Yup.string().required('whatsapp is required'),
     linkedIn: Yup.string().required('linkedIn is required'),
     Instagram: Yup.string().required(' Instagram is required'),
     facebook: Yup.string().required('facebook is required'),
     bio: Yup.string().required('bio is required'),
 
-    });
+  });
 
 
-    const fetchUuid = async () => {
-      try {
-        const response = await axios.get(`/api/userprofile?email=${session.user.email}`);
-        console.log('email:', session.user.email);
-        console.log('uuid:', response.data.uuid);
-        setUuid(response.data.uuid);
-      
-       
-
-      } catch (error) {
-        console.error(error);
-      }
-    };
-  
-    useEffect(() => {
-      fetchUuid();
-    }, [session]);
+  const fetchUuid = async () => {
+    try {
+      const response = await axios.get(`/api/userprofile?email=${session.user.email}`);
+      console.log('email:', session.user.email);
+      console.log('uuid:', response.data.uuid);
+      setUuid(response.data.uuid);
 
 
-    const fetchCard = async () => {
-      try {
-        const response = await axios.get(`/api/purchase?email=${session.user.email}`);
-        console.log('email:', session.user.email);
-        console.log('cardUuid:', response.data.cardUuid);
-        setCardUuid(response.data.cardUuid);
-      
-       
 
-      } catch (error) {
-        console.error(error);
-      }
-    };
-  
-    useEffect(() => {
-      fetchCard();
-    }, [session]);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-    const onSubmit = async (values, { resetForm }) => {
-      try {
-        const data = { ...values, uuid ,cardUuid};
-        const response = await axios.post('/api/contact', data);
-        console.log(response.data.message);
+  useEffect(() => {
+    fetchUuid();
+  }, [session]);
 
-        resetForm();
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    
-   
-     
-      return (
-        <div className="flex justify-center">
-        {cardUuid ?  (
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-          
-            onSubmit={onSubmit}
-          >
-            {({ isSubmitting ,setFieldValue,values, handleChange}) => (
-              <Form className="w-full max-w-md">
+
+  const fetchCard = async () => {
+    try {
+      const response = await axios.get(`/api/purchase?email=${session.user.email}`);
+      console.log('email:', session.user.email);
+      console.log('cardUuid:', response.data.cardUuid);
+      setCardUuid(response.data.cardUuid);
+
+
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCard();
+  }, [session]);
+
+  const onSubmit = async (values, { resetForm }) => {
+    try {
+      const data = { ...values, uuid, cardUuid };
+      const response = await axios.post('/api/contact', data);
+      console.log(response.data.message);
+
+      resetForm();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const [step, setStep] = useState(1);
+
+
+
+  return (
+    <div className="flex ">
+      {cardUuid ? (
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+
+          onSubmit={onSubmit}
+        >
+          {({ isSubmitting, setFieldValue, values, handleChange }) => (
+            <Form className="w-full max-w-md">
+              {step === 1 && (
+              <div className='flex'>
+              <div>              
                 <div className="mb-4 mt-4">
-                  <label htmlFor="firstName" className="block text-gray-700 font-bold mb-2">
-                    First Name:
-                  </label>
-                  <Field
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    onChange={handleChange} 
-                    
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  /><p>First Name: {values.firstName}</p>
+                <label htmlFor="firstName" className="block text-gray-700 font-bold mb-2">
+                  First Name:
+                </label>
+                <Field
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  onChange={handleChange}
 
-                  <ErrorMessage name="firstName" component="div" className="text-red-500" />
-                </div>
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                /><p>First Name: {values.firstName}</p>
+
+                <ErrorMessage name="firstName" component="div" className="text-red-500" />
+              </div>
                 <div className="mb-4">
                   <label htmlFor="lastName" className="block text-gray-700 font-bold mb-2">
                     Last Name:
@@ -137,7 +143,7 @@ const ContactForm = () => {
                     type="text"
                     id="lastName"
                     name="lastName"
-                    onChange={handleChange} 
+                    onChange={handleChange}
 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
@@ -151,7 +157,7 @@ const ContactForm = () => {
                     type="text"
                     id="mobileNumber"
                     name="mobileNumber"
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="mobileNumber" component="div" className="text-red-500" />
@@ -182,13 +188,13 @@ const ContactForm = () => {
                 </div>
                 <div className="mb-4">
                   <label htmlFor="designation" className="block text-gray-700 font-bold mb-2">
-                  designation:
+                    designation:
                   </label>
                   <Field
                     type="designation"
                     id="designation"
                     name="designation"
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="designation" component="div" className="text-red-500" />
@@ -201,55 +207,55 @@ const ContactForm = () => {
                     type="text"
                     id="companyLogo"
                     name="companyLogo"
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="companyLogo" component="div" className="text-red-500" />
                 </div>
-                
+
                 <Field name="logo">
-            {({ }) => (
-              <div>
-                <input
-                  type="file"
-                  onChange={(event) => {
-                    setFieldValue('logo', event.currentTarget.files[0]);
-                  }}
-                />
-              </div>
-            )}
-          </Field>
-      
-              <div className="mb-4">
-                <label htmlFor="deck" className="block text-gray-700 font-bold mb-2">Deck:</label>
-                <Field 
-                type="text" 
-                id="deck" 
-                name="deck" 
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  {({ }) => (
+                    <div>
+                      <input
+                        type="file"
+                        onChange={(event) => {
+                          setFieldValue('logo', event.currentTarget.files[0]);
+                        }}
+                      />
+                    </div>
+                  )}
+                </Field>
 
-                
-                />
-                <ErrorMessage name="deck" component="div" className="error" />
-              </div>
+                <div className="mb-4">
+                  <label htmlFor="deck" className="block text-gray-700 font-bold mb-2">Deck:</label>
+                  <Field
+                    type="text"
+                    id="deck"
+                    name="deck"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 
-              <div className="mb-4">
+
+                  />
+                  <ErrorMessage name="deck" component="div" className="error" />
+                </div>
+
+                <div className="mb-4">
                   <label htmlFor="website" className="block text-gray-700 font-bold mb-2">
-                  website:
+                    website:
                   </label>
                   <Field
                     type="text"
                     id="website"
                     name="website"
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="website" component="div" className="text-red-500" />
                 </div>
 
-              <div className="mb-4">
+                <div className="mb-4">
                   <label htmlFor="whatsapp" className="block text-gray-700 font-bold mb-2">
-                  whatsapp:
+                    whatsapp:
                   </label>
                   <Field
                     type="text"
@@ -263,7 +269,7 @@ const ContactForm = () => {
 
                 <div className="mb-4">
                   <label htmlFor="linkedIn" className="block text-gray-700 font-bold mb-2">
-                  linkedIn:
+                    linkedIn:
                   </label>
                   <Field
                     type="text"
@@ -276,7 +282,7 @@ const ContactForm = () => {
 
                 <div className="mb-4">
                   <label htmlFor="Instagram" className="block text-gray-700 font-bold mb-2">
-                  Instagram:
+                    Instagram:
                   </label>
                   <Field
                     type="text"
@@ -287,10 +293,10 @@ const ContactForm = () => {
                   <ErrorMessage name="Instagram" component="div" className="text-red-500" />
                 </div>
 
-                
+
                 <div className="mb-4">
                   <label htmlFor="facebook" className="block text-gray-700 font-bold mb-2">
-                  facebook:
+                    facebook:
                   </label>
                   <Field
                     type="text"
@@ -303,37 +309,73 @@ const ContactForm = () => {
 
                 <div className="mb-4">
                   <label htmlFor="bio" className="block text-gray-700 font-bold mb-2">
-                  bio:
+                    bio:
                   </label>
                   <Field
                     type="text"
                     id="bio"
                     name="bio"
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="bio" component="div" className="text-red-500" />
                 </div>
 
 
-              <div className="mb-4">
+                <div className="mb-4">
 
-              <button   className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
- type="submit" disabled={isSubmitting}>
-                Submit
-              </button>
+                  <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                        onClick={() => setStep(2)}>
+                    Next
+                  </button>
+
+                </div></div>
+              <div><Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
 
               </div>
-              <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber}/>
+              
+              )}
+              {step === 2 && (
+                <div>
 
+                  <div id="template-select" role="group" className='flex flex-col'>
+                    <legend className='text-3xl'>Select a Template</legend>
+                    <div className='flex'>    
+                      <label>
+                      <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
+                      <Field type="radio" name="template" value="1" />
+                    </label>
+                      <label>
+                        <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
+                        <Field type="radio" name="template" value="2" />
+                      </label>
+                      </div>
+                    <div className='flex'>                   
+                       <label>
+                      <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
+                        <Field type="radio" name="template" value="3" />
+                    </label>
+                      <label>
+                        <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
+                        <Field type="radio" name="template" value="4" />
+                      </label>
+                      </div>
+                  </div>
+                  <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    type="submit" disabled={isSubmitting}>
+                    Submit
+                  </button>
+                </div>
+                
+              )}
             </Form>
           )}
         </Formik>
-        ):( 
-<p>Please Buy the Card</p>
-        )} 
-        </div>
-      );
-    };
+      ) : (
+        <p>Please Buy the Card</p>
+      )}
+    </div>
+  );
+};
 
-    export default ContactForm;     
+export default ContactForm;     
