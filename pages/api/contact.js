@@ -36,7 +36,7 @@ export default async function handler(req, res) {
         whatsapp, linkedIn,
         Instagram,
         facebook,
-        bio,uuid, cardUuid } = req.body;
+        bio,template,uuid, cardUuid } = req.body;
 
       const contact = new Contact({
         firstName,
@@ -53,7 +53,7 @@ export default async function handler(req, res) {
         Instagram,
         facebook,
         bio,
-
+        template,
         uuid ,
         cardUuid,
       });

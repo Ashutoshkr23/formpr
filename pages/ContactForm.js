@@ -114,7 +114,8 @@ const ContactForm = () => {
           validationSchema={validationSchema}
 
           onSubmit={onSubmit}
-        >
+        >  
+
           {({ isSubmitting, setFieldValue, values, handleChange }) => (
             <Form className="w-full max-w-md">
               {step === 1 && (
@@ -366,7 +367,7 @@ const ContactForm = () => {
                     Submit
                   </button>
                 </div>
-                
+
               )}
             </Form>
           )}

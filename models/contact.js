@@ -20,6 +20,7 @@ const ContactSchema = new mongoose.Schema({
   Instagram:{type:String},
   facebook:{type:String},
   bio:{type:String},
+  template:{type:String}
 
 });
 

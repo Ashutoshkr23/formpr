@@ -22,8 +22,8 @@ const Template = ({fname,lname,designation,bio,company,website,mobile}) => {
           <div className='flex justify-center pt-[52px] font-semibold text-[20px] '>
           <input className='text-center bg-gray-100'
           type="text" 
-          value={`${fname} ${lname}`}
-          placeholder="John Doe" 
+          value={fname || lname ? `${fname} ${lname}` : 'John Doe'}
+          placeholder={fname || lname ? undefined : 'John Doe'}
         //   value={inputValue}
         //   onChange={handleChange}
         />
