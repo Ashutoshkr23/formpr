@@ -4,12 +4,14 @@ import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { useSession } from 'next-auth/react';
 import { useState,useEffect } from 'react';
+import Template from '@/components/Template';
 
 
 
 
 const ContactForm = () => {
 
+  
   const [uuid, setUuid] = useState(null);
   const [cardUuid,setCardUuid] = useState(null);
   const { data: session } = useSession();
@@ -28,7 +30,7 @@ const ContactForm = () => {
     linkedIn:'',
     Instagram:'',
     facebook:'',
-    Bio:''
+    bio:''
   };
 
   const validationSchema = Yup.object({
@@ -92,14 +94,14 @@ const ContactForm = () => {
         const data = { ...values, uuid ,cardUuid};
         const response = await axios.post('/api/contact', data);
         console.log(response.data.message);
+
         resetForm();
       } catch (error) {
         console.error(error);
       }
     };
     
-    
-
+   
      
       return (
         <div className="flex justify-center">
@@ -110,7 +112,7 @@ const ContactForm = () => {
           
             onSubmit={onSubmit}
           >
-            {({ isSubmitting ,setFieldValue}) => (
+            {({ isSubmitting ,setFieldValue,values, handleChange}) => (
               <Form className="w-full max-w-md">
                 <div className="mb-4 mt-4">
                   <label htmlFor="firstName" className="block text-gray-700 font-bold mb-2">
@@ -120,8 +122,11 @@ const ContactForm = () => {
                     type="text"
                     id="firstName"
                     name="firstName"
+                    onChange={handleChange} 
+                    
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
+                  /><p>First Name: {values.firstName}</p>
+
                   <ErrorMessage name="firstName" component="div" className="text-red-500" />
                 </div>
                 <div className="mb-4">
@@ -132,6 +137,8 @@ const ContactForm = () => {
                     type="text"
                     id="lastName"
                     name="lastName"
+                    onChange={handleChange} 
+
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="lastName" component="div" className="text-red-500" />
@@ -144,6 +151,7 @@ const ContactForm = () => {
                     type="text"
                     id="mobileNumber"
                     name="mobileNumber"
+                    onChange={handleChange} 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="mobileNumber" component="div" className="text-red-500" />
@@ -180,6 +188,7 @@ const ContactForm = () => {
                     type="designation"
                     id="designation"
                     name="designation"
+                    onChange={handleChange} 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="designation" component="div" className="text-red-500" />
@@ -192,13 +201,14 @@ const ContactForm = () => {
                     type="text"
                     id="companyLogo"
                     name="companyLogo"
+                    onChange={handleChange} 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="companyLogo" component="div" className="text-red-500" />
                 </div>
                 
                 <Field name="logo">
-            {({ Field }) => (
+            {({ }) => (
               <div>
                 <input
                   type="file"
@@ -231,6 +241,7 @@ const ContactForm = () => {
                     type="text"
                     id="website"
                     name="website"
+                    onChange={handleChange} 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="website" component="div" className="text-red-500" />
@@ -298,6 +309,7 @@ const ContactForm = () => {
                     type="text"
                     id="bio"
                     name="bio"
+                    onChange={handleChange} 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
                   <ErrorMessage name="bio" component="div" className="text-red-500" />
@@ -310,7 +322,10 @@ const ContactForm = () => {
  type="submit" disabled={isSubmitting}>
                 Submit
               </button>
+
               </div>
+              <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber}/>
+
             </Form>
           )}
         </Formik>

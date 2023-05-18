@@ -1,12 +1,12 @@
 import React from 'react'
 import ProfileImg from './ProfileImg'
-import Bio from './Bio'
 import Social from './Social'
 import Image from 'next/image'
 import BioTemp from './BioTemp'
 
 
-const Template = () => {
+const Template = ({fname,lname,designation,bio,company,website,mobile}) => {
+    
   return (
   
 <div className='bg-black '>
@@ -22,6 +22,7 @@ const Template = () => {
           <div className='flex justify-center pt-[52px] font-semibold text-[20px] '>
           <input className='text-center bg-gray-100'
           type="text" 
+          value={`${fname} ${lname}`}
           placeholder="John Doe" 
         //   value={inputValue}
         //   onChange={handleChange}
@@ -31,11 +32,11 @@ const Template = () => {
           <input className='text-center bg-gray-100'
           type="text" 
           placeholder="Design Lead" 
-        //   value={inputValue}
+           value={designation}
         //   onChange={handleChange}
         />
           </div>
-      <div><BioTemp/></div> 
+      <div><BioTemp bio={bio} company={company} mobile={mobile} website={website}/></div> 
        <div><Social/></div> 
      <div className=''><button className='  bg-black font-bold text-[20px] text-white h-[50px] w-[304px] rounded-[14px] mt-[31px]' >SAVE CONTACT</button>  </div>  
 

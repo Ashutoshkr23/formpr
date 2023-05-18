@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-const BioTemp = () => {
+const BioTemp = ({bio,company,website,mobile}) => {
   return (
     <div>
          <div className='text-[12px]'>Bio</div>
@@ -9,7 +9,7 @@ const BioTemp = () => {
         <input className='bg-gray-200'
           type="text" 
           placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis eleifend arcu in fringilla. " 
-        //   value={inputValue}
+           value={bio}
         //   onChange={handleChange}
         />
         </div>
@@ -19,7 +19,7 @@ const BioTemp = () => {
     <input className='bg-gray-200'
           type="text" 
           placeholder="company Name" 
-        //   value={inputValue}
+           value={company}
         //   onChange={handleChange}
         /></p>
 </div>
@@ -28,7 +28,7 @@ const BioTemp = () => {
     <input className='bg-gray-200'
           type="text" 
           placeholder="+919833XXXXXX" 
-        //   value={inputValue}
+           value={mobile}
         //   onChange={handleChange}
         />
         </p>
@@ -38,7 +38,7 @@ const BioTemp = () => {
     <input className=' bg-gray-200'
           type="text" 
           placeholder=" www.alphamintlabs.com" 
-        //   value={inputValue}
+           value={website}
         //   onChange={handleChange}
         />
        </p>

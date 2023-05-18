@@ -60,14 +60,6 @@ END:VCARD`;
        <div><Social/></div> 
      <div className=''><button className='  bg-black font-bold text-[20px] text-white h-[50px] w-[304px] rounded-[14px] mt-[31px]' onClick={downloadVCard}>SAVE CONTACT</button>  </div>  
 
-          {/* <h1>Name: {contact.firstName} {contact.lastName}</h1>
-          <p>Mobile Number: {contact.mobileNumber}</p>
-          <p>Company Number: {contact.companyNumber}</p>
-          <p>Email: {contact.email}</p>
-          <p>Company Logo: {contact.companyLogo}</p>
-          <p>Deck: {contact.deck}</p>
-          <button className='bg-green-600 text-white' onClick={downloadVCard}>Add Contact</button>  */}
-
       
 </div>
 ) : (
