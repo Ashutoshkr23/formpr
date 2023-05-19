@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import Template from '@/components/Template';
 import themes from '@/components/Themes';
 import ProgressBar from '@/components/ProgressBar';
+import LoginNav from '@/components/landing/LoginNav';
 
 
 
@@ -17,7 +18,13 @@ const ContactForm = ({ values }) => {
   const [uuid, setUuid] = useState(null);
   const [cardUuid, setCardUuid] = useState(null);
   const { data: session } = useSession();
+  const [template, setSelectedTemplate] = useState(1);
 
+  const handleTemplateChange = (event) => {
+    const value = parseInt(event.target.value);
+    setSelectedTemplate(value);
+    console.log('Current template:', value);
+  };
   const initialValues = {
     firstName: '',
     lastName: '',
@@ -33,7 +40,6 @@ const ContactForm = ({ values }) => {
     Instagram: '',
     facebook: '',
     bio: '',
-    template: '1',
   };
 
   const validationSchema = Yup.object({
@@ -73,7 +79,6 @@ const ContactForm = ({ values }) => {
     fetchUuid();
   }, [session]);
 
-
   const fetchCard = async () => {
     try {
       const response = await axios.get(`/api/purchase?email=${session.user.email}`);
@@ -94,7 +99,7 @@ const ContactForm = ({ values }) => {
 
   const onSubmit = async (values, { resetForm }) => {
     try {
-      const data = { ...values, uuid, cardUuid };
+      const data = { ...values,template, uuid, cardUuid };
       const response = await axios.post('/api/contact', data);
       console.log(response.data.message);
 
@@ -106,10 +111,10 @@ const ContactForm = ({ values }) => {
 
   const [step, setStep] = useState(1);
 
-
-
+  
   return (
     <div className="flex ">
+
       {cardUuid ? (
         <Formik
           initialValues={initialValues}
@@ -120,7 +125,10 @@ const ContactForm = ({ values }) => {
 
           {({ isSubmitting, setFieldValue, values, handleChange }) => (
             <Form className="w-full ">
-              <ProgressBar/>
+                        <LoginNav/>
+
+              <ProgressBar step={step}/>
+
               {step === 1 && (
                 <div className='flex'>
                   <div>
@@ -348,12 +356,14 @@ const ContactForm = ({ values }) => {
 
               )}
               {step === 2 && (
+                                       
+
                 <div>
 
                   <div id="template-select" role="group" className='flex flex-col'>
                     <legend className='text-3xl'>Select a Template</legend>
                     <div className='flex'>
-                      {themes.map((theme) => (
+                      {themes.map((theme,index) => (
                         <div key={theme.id}>
                           <label>
                             <Template
@@ -372,8 +382,10 @@ const ContactForm = ({ values }) => {
                               website={values.website}
                               mobile={values.mobileNumber}
                             />
-                            <Field type="radio" name="template" value={theme.id} />
                           </label>
+                          <Field type="radio" name="template" value={index+1}  checked={template === index + 1}
+            onChange={handleTemplateChange} />
+
                         </div>
                       ))}
                     </div>
