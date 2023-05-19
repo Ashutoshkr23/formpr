@@ -5,11 +5,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { useSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
 import Template from '@/components/Template';
+import themes from '@/components/Themes';
 
 
 
 
-const ContactForm = () => {
+const ContactForm = ({values}) => {
 
 
   const [uuid, setUuid] = useState(null);
@@ -342,24 +343,23 @@ const ContactForm = () => {
                   <div id="template-select" role="group" className='flex flex-col'>
                     <legend className='text-3xl'>Select a Template</legend>
                     <div className='flex'>    
-                      <label>
-                      <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
-                      <Field type="radio" name="template" value="1" />
-                    </label>
-                      <label>
-                        <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
-                        <Field type="radio" name="template" value="2" />
-                      </label>
-                      </div>
-                    <div className='flex'>                   
-                       <label>
-                      <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
-                        <Field type="radio" name="template" value="3" />
-                    </label>
-                      <label>
-                        <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
-                        <Field type="radio" name="template" value="4" />
-                      </label>
+                      {themes.map((theme) => (
+                        <div key={theme.id}>
+                          <label>
+                            <Template
+                              theme={theme}
+                              fname={values.firstName}
+                              lname={values.lastName}
+                              bio={values.bio}
+                              designation={values.designation}
+                              company={values.companyLogo}
+                              website={values.website}
+                              mobile={values.mobileNumber}
+                            />
+                            <Field type="radio" name="template" value={theme.id} />
+                          </label>
+                        </div>
+                      ))}
                       </div>
                   </div>
                   <div className='flex justify-around'>
