@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
 import Template from '@/components/Template';
 import themes from '@/components/Themes';
+import ProgressBar from '@/components/ProgressBar';
 
 
 
@@ -118,7 +119,8 @@ const ContactForm = ({ values }) => {
         >
 
           {({ isSubmitting, setFieldValue, values, handleChange }) => (
-            <Form className="w-full max-w-md">
+            <Form className="w-full ">
+              <ProgressBar/>
               {step === 1 && (
                 <div className='flex'>
                   <div>
