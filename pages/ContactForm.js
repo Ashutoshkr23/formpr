@@ -123,24 +123,26 @@ const ContactForm = ({ values }) => {
               <ProgressBar/>
               {step === 1 && (
                 <div className='flex'>
-                  <div>
-                    <div className="mb-4 mt-4">
-                      <label htmlFor="firstName" className="block text-gray-700 font-bold mb-2">
-                        First Name:
-                      </label>
-                      <Field
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        onChange={handleChange}
+                  <div className='w-3/5 ml-2 sm:ml-8 md:ml-16 lg:ml-20'>
+                    <div className="mb-4 mt-4 ">
+                      <div className='flex'>
+                        <label htmlFor="firstName" className=" text-gray-700 font-bold mb-2 w-60">
+                          First Name:
+                        </label>
+                        <Field
+                          type="text"
+                          id="firstName"
+                          name="firstName"
+                          onChange={handleChange}
 
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      /><p>First Name: {values.firstName}</p>
-
+                          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        />
+                      </div>
                       <ErrorMessage name="firstName" component="div" className="text-red-500" />
                     </div>
                     <div className="mb-4">
-                      <label htmlFor="lastName" className="block text-gray-700 font-bold mb-2">
+                      <div className='flex'>
+                      <label htmlFor="lastName" className=" text-gray-700 font-bold w-60 mb-2 ">
                         Last Name:
                       </label>
                       <Field
@@ -151,10 +153,12 @@ const ContactForm = ({ values }) => {
 
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="lastName" component="div" className="text-red-500" />
                     </div>
                     <div className="mb-4">
-                      <label htmlFor="mobileNumber" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="mobileNumber" className="block text-gray-700 font-bold w-60 mb-2">
                         Mobile Number:
                       </label>
                       <Field
@@ -164,10 +168,12 @@ const ContactForm = ({ values }) => {
                         onChange={handleChange}
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="mobileNumber" component="div" className="text-red-500" />
                     </div>
                     <div className="mb-4">
-                      <label htmlFor="companyNumber" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="companyNumber" className="block text-gray-700 font-bold w-60 mb-2">
                         Company Number:
                       </label>
                       <Field
@@ -176,10 +182,12 @@ const ContactForm = ({ values }) => {
                         name="companyNumber"
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="companyNumber" component="div" className="text-red-500" />
                     </div>
                     <div className="mb-4">
-                      <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="email" className="block text-gray-700 font-bold w-60 mb-2">
                         Email:
                       </label>
                       <Field
@@ -188,10 +196,12 @@ const ContactForm = ({ values }) => {
                         name="email"
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="email" component="div" className="text-red-500" />
                     </div>
                     <div className="mb-4">
-                      <label htmlFor="designation" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="designation" className="block text-gray-700 font-bold w-60 mb-2">
                         designation:
                       </label>
                       <Field
@@ -201,10 +211,12 @@ const ContactForm = ({ values }) => {
                         onChange={handleChange}
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="designation" component="div" className="text-red-500" />
                     </div>
                     <div className="mb-4">
-                      <label htmlFor="companyLogo" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="companyLogo" className="block text-gray-700 font-bold w-60 mb-2">
                         Company Logo:
                       </label>
                       <Field
@@ -214,6 +226,7 @@ const ContactForm = ({ values }) => {
                         onChange={handleChange}
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="companyLogo" component="div" className="text-red-500" />
                     </div>
 
@@ -231,7 +244,8 @@ const ContactForm = ({ values }) => {
                     </Field>
 
                     <div className="mb-4">
-                      <label htmlFor="deck" className="block text-gray-700 font-bold mb-2">Deck:</label>
+                      <div className="flex">
+                      <label htmlFor="deck" className="block text-gray-700 font-bold w-60 mb-2">Deck:</label>
                       <Field
                         type="text"
                         id="deck"
@@ -240,11 +254,13 @@ const ContactForm = ({ values }) => {
 
 
                       />
+                      </div>
                       <ErrorMessage name="deck" component="div" className="error" />
                     </div>
 
                     <div className="mb-4">
-                      <label htmlFor="website" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="website" className="block text-gray-700 font-bold w-60 mb-2">
                         website:
                       </label>
                       <Field
@@ -254,11 +270,13 @@ const ContactForm = ({ values }) => {
                         onChange={handleChange}
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="website" component="div" className="text-red-500" />
                     </div>
 
                     <div className="mb-4">
-                      <label htmlFor="whatsapp" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="whatsapp" className="block text-gray-700 font-bold w-60 mb-2">
                         whatsapp:
                       </label>
                       <Field
@@ -267,12 +285,14 @@ const ContactForm = ({ values }) => {
                         name="whatsapp"
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="whatsapp" component="div" className="text-red-500" />
                     </div>
 
 
                     <div className="mb-4">
-                      <label htmlFor="linkedIn" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="linkedIn" className="block text-gray-700 font-bold w-60 mb-2">
                         linkedIn:
                       </label>
                       <Field
@@ -281,11 +301,13 @@ const ContactForm = ({ values }) => {
                         name="linkedIn"
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="linkedIn" component="div" className="text-red-500" />
                     </div>
 
                     <div className="mb-4">
-                      <label htmlFor="Instagram" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="Instagram" className="block text-gray-700 font-bold w-60 mb-2">
                         Instagram:
                       </label>
                       <Field
@@ -294,12 +316,14 @@ const ContactForm = ({ values }) => {
                         name="Instagram"
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="Instagram" component="div" className="text-red-500" />
                     </div>
 
 
                     <div className="mb-4">
-                      <label htmlFor="facebook" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="facebook" className="block text-gray-700 font-bold w-60 mb-2">
                         facebook:
                       </label>
                       <Field
@@ -308,11 +332,13 @@ const ContactForm = ({ values }) => {
                         name="facebook"
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="facebook" component="div" className="text-red-500" />
                     </div>
 
                     <div className="mb-4">
-                      <label htmlFor="bio" className="block text-gray-700 font-bold mb-2">
+                      <div className="flex">
+                      <label htmlFor="bio" className="block text-gray-700 font-bold w-60 mb-2">
                         bio:
                       </label>
                       <Field
@@ -322,6 +348,7 @@ const ContactForm = ({ values }) => {
                         onChange={handleChange}
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
+                      </div>
                       <ErrorMessage name="bio" component="div" className="text-red-500" />
                     </div>
 
@@ -334,7 +361,8 @@ const ContactForm = ({ values }) => {
                       </button>
 
                     </div></div>
-                  <div><Template 
+                  <div className='min-w-[375px] w-2/5'>
+                  <Template 
                    gradient1={themes[0].gradient1}
                    gradient2={themes[0].gradient2}
                    text1={themes[0].text1}
