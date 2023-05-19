@@ -347,7 +347,12 @@ const ContactForm = ({values}) => {
                         <div key={theme.id}>
                           <label>
                             <Template
-                              theme={theme}
+                              gradient1={theme.gradient1}
+                              gradient2={theme.gradient2}
+                              text1={theme.text1}
+                              text2={theme.text2}
+                              text3={theme.text3}
+
                               fname={values.firstName}
                               lname={values.lastName}
                               bio={values.bio}
