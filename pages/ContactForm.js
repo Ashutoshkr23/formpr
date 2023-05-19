@@ -334,7 +334,15 @@ const ContactForm = ({ values }) => {
                       </button>
 
                     </div></div>
-                  <div><Template gradOne={'#D2FFEC'} fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
+                  <div><Template 
+                   gradient1={themes[0].gradient1}
+                   gradient2={themes[0].gradient2}
+                   text1={themes[0].text1}
+                   text2={themes[0].text2}
+                   text3={themes[0].text3}
+                   btn={themes[0].btn}
+                  loop={themes[0].loop}
+                   fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
 
                 </div>
 
@@ -354,7 +362,8 @@ const ContactForm = ({ values }) => {
                               text1={theme.text1}
                               text2={theme.text2}
                               text3={theme.text3}
-
+                              btn={theme.btn}
+                              loop={theme.loop}
                               fname={values.firstName}
                               lname={values.lastName}
                               bio={values.bio}

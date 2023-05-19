@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 
-const BioTemp = ({bio,company,website,mobile}) => {
+const BioTemp = ({bio,company,website,mobile,text1,text2}) => {
   return (
     <div>
-         <div className='text-[12px]'>Bio</div>
+         <div className={`text-[12px] ${text2}`}>Bio</div>
         <div className='mt-3 text-[12px]'>
-        <textarea className='bg-transparent w-full resize-none'
+        <textarea className={`bg-transparent w-full resize-none ${text1}`}
           placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis eleifend arcu in fringilla. " 
            value={bio}
         //   onChange={handleChange}
@@ -15,7 +15,7 @@ const BioTemp = ({bio,company,website,mobile}) => {
         <div className="mt-[26px] grid grid-cols-2 gap-y-5">
 <div className='flex'>
     <Image src={'/log.png'} alt='log' width={27} height={22} /><p className='text-[10px] ml-1.5 tracking-[-0.5px] '> 
-    <input className='bg-transparent'
+    <input className={`bg-transparent ${text2}`}
           type="text" 
           placeholder="company Name" 
            value={company}
