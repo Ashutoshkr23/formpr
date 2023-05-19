@@ -6,6 +6,8 @@ const themes = [
         text1: 'text-black',
         text2: 'text-[#53727D]',
         text3: 'text-white',
+        btn:'bg-[#0F0F0F]',
+        loop:'/loop.png',
     },
     {
         id: 1,
@@ -14,6 +16,9 @@ const themes = [
         text1: 'text-black',
         text2: 'text-[#53727D]',
         text3: 'text-white',
+        btn:'bg-[#0F0F0F]',
+        loop:'/loopwh.svg',
+
     },
     {
         id: 2,
@@ -22,6 +27,9 @@ const themes = [
         text1: 'text-white',
         text2: 'text-[#97B2BC]',
         text3: 'text-black',
+        btn:'bg-white',
+        loop:'/loop.png',
+
     },
     {
         id: 3,
@@ -30,6 +38,9 @@ const themes = [
         text1: 'text-white',
         text2: 'text-[#97B2BC]',
         text3: 'text-black',
+        btn:'bg-white',
+        loop:'/loop.png',
+
     },
    
 ];
