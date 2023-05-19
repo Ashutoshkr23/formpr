@@ -6,6 +6,8 @@ import { useSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
 import Template from '@/components/Template';
 import themes from '@/components/Themes';
+import ProgressBar from '@/components/ProgressBar';
+
 
 
 
@@ -118,7 +120,9 @@ const ContactForm = ({values}) => {
         >  
 
           {({ isSubmitting, setFieldValue, values, handleChange }) => (
-            <Form className="w-full max-w-md">
+            <Form className="w-full ">
+             
+              <ProgressBar step={step} />
               {step === 1 && (
               <div className='flex'>
               <div>              
@@ -332,19 +336,23 @@ const ContactForm = ({values}) => {
                   </button>
 
                 </div></div>
-              <div><Template gradOne={'#D2FFEC'} fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
+                  <div><Template gradient1={themes[0].gradient1}
+                    gradient2={themes[0].gradient2}
+                    text1={themes[0].text1}
+                    text2={themes[0].text2}
+                    text3={themes[0].text3} fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
 
               </div>
               
               )}
               {step === 2 && (
-                <div>
+                <div className='bg-black'>
 
                   <div id="template-select" role="group" className='flex flex-col'>
                     <legend className='text-3xl'>Select a Template</legend>
-                    <div className='flex'>    
+                    <div className='flex flex-wrap justify-center '>    
                       {themes.map((theme) => (
-                        <div key={theme.id}>
+                        <div key={theme.id} className=' w-96 '>
                           <label>
                             <Template
                               gradient1={theme.gradient1}
@@ -361,7 +369,14 @@ const ContactForm = ({values}) => {
                               website={values.website}
                               mobile={values.mobileNumber}
                             />
-                            <Field type="radio" name="template" value={theme.id} />
+                            <Field
+                              type="radio"
+                              name="template"
+                              value={theme.id}
+                              checked={selectedTemplate === theme.id}
+                              onChange={(e) => setSelectedTemplate(e.target.value)}
+                            />
+
                           </label>
                         </div>
                       ))}
