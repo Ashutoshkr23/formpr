@@ -5,11 +5,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { useSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
 import Template from '@/components/Template';
+import themes from '@/components/Themes';
 
 
 
 
-const ContactForm = () => {
+const ContactForm = ({values}) => {
 
 
   const [uuid, setUuid] = useState(null);
@@ -333,7 +334,12 @@ const ContactForm = () => {
                     </div></div>
                   <div><Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
 
+<<<<<<< HEAD
                 </div>
+=======
+                </div></div>
+              <div><Template gradOne={'#D2FFEC'} fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
+>>>>>>> 05c644205ac64bb6b6cdf91a69067e4e18ac07be
 
               )}
               {step === 2 && (
@@ -341,6 +347,7 @@ const ContactForm = () => {
 
                   <div id="template-select" role="group" className='flex flex-col'>
                     <legend className='text-3xl'>Select a Template</legend>
+<<<<<<< HEAD
                     <div className='flex'>
                       <label>
                         <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
@@ -361,6 +368,32 @@ const ContactForm = () => {
                         <Field type="radio" name="template" value="4" />
                       </label>
                     </div>
+=======
+                    <div className='flex'>    
+                      {themes.map((theme) => (
+                        <div key={theme.id}>
+                          <label>
+                            <Template
+                              gradient1={theme.gradient1}
+                              gradient2={theme.gradient2}
+                              text1={theme.text1}
+                              text2={theme.text2}
+                              text3={theme.text3}
+
+                              fname={values.firstName}
+                              lname={values.lastName}
+                              bio={values.bio}
+                              designation={values.designation}
+                              company={values.companyLogo}
+                              website={values.website}
+                              mobile={values.mobileNumber}
+                            />
+                            <Field type="radio" name="template" value={theme.id} />
+                          </label>
+                        </div>
+                      ))}
+                      </div>
+>>>>>>> 05c644205ac64bb6b6cdf91a69067e4e18ac07be
                   </div>
                   <div className='flex justify-around'>
                     <div><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
