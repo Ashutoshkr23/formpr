@@ -114,264 +114,264 @@ const ContactForm = () => {
           validationSchema={validationSchema}
 
           onSubmit={onSubmit}
-        >  
+        >
 
           {({ isSubmitting, setFieldValue, values, handleChange }) => (
             <Form className="w-full max-w-md">
               {step === 1 && (
-              <div className='flex'>
-              <div>              
-                <div className="mb-4 mt-4">
-                <label htmlFor="firstName" className="block text-gray-700 font-bold mb-2">
-                  First Name:
-                </label>
-                <Field
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  onChange={handleChange}
+                <div className='flex'>
+                  <div>
+                    <div className="mb-4 mt-4">
+                      <label htmlFor="firstName" className="block text-gray-700 font-bold mb-2">
+                        First Name:
+                      </label>
+                      <Field
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        onChange={handleChange}
 
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                /><p>First Name: {values.firstName}</p>
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      /><p>First Name: {values.firstName}</p>
 
-                <ErrorMessage name="firstName" component="div" className="text-red-500" />
-              </div>
-                <div className="mb-4">
-                  <label htmlFor="lastName" className="block text-gray-700 font-bold mb-2">
-                    Last Name:
-                  </label>
-                  <Field
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    onChange={handleChange}
-
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="lastName" component="div" className="text-red-500" />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="mobileNumber" className="block text-gray-700 font-bold mb-2">
-                    Mobile Number:
-                  </label>
-                  <Field
-                    type="text"
-                    id="mobileNumber"
-                    name="mobileNumber"
-                    onChange={handleChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="mobileNumber" component="div" className="text-red-500" />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="companyNumber" className="block text-gray-700 font-bold mb-2">
-                    Company Number:
-                  </label>
-                  <Field
-                    type="text"
-                    id="companyNumber"
-                    name="companyNumber"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="companyNumber" component="div" className="text-red-500" />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
-                    Email:
-                  </label>
-                  <Field
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="email" component="div" className="text-red-500" />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="designation" className="block text-gray-700 font-bold mb-2">
-                    designation:
-                  </label>
-                  <Field
-                    type="designation"
-                    id="designation"
-                    name="designation"
-                    onChange={handleChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="designation" component="div" className="text-red-500" />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="companyLogo" className="block text-gray-700 font-bold mb-2">
-                    Company Logo:
-                  </label>
-                  <Field
-                    type="text"
-                    id="companyLogo"
-                    name="companyLogo"
-                    onChange={handleChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="companyLogo" component="div" className="text-red-500" />
-                </div>
-
-                <Field name="logo">
-                  {({ }) => (
-                    <div>
-                      <input
-                        type="file"
-                        onChange={(event) => {
-                          setFieldValue('logo', event.currentTarget.files[0]);
-                        }}
-                      />
+                      <ErrorMessage name="firstName" component="div" className="text-red-500" />
                     </div>
-                  )}
-                </Field>
+                    <div className="mb-4">
+                      <label htmlFor="lastName" className="block text-gray-700 font-bold mb-2">
+                        Last Name:
+                      </label>
+                      <Field
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        onChange={handleChange}
 
-                <div className="mb-4">
-                  <label htmlFor="deck" className="block text-gray-700 font-bold mb-2">Deck:</label>
-                  <Field
-                    type="text"
-                    id="deck"
-                    name="deck"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="lastName" component="div" className="text-red-500" />
+                    </div>
+                    <div className="mb-4">
+                      <label htmlFor="mobileNumber" className="block text-gray-700 font-bold mb-2">
+                        Mobile Number:
+                      </label>
+                      <Field
+                        type="text"
+                        id="mobileNumber"
+                        name="mobileNumber"
+                        onChange={handleChange}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="mobileNumber" component="div" className="text-red-500" />
+                    </div>
+                    <div className="mb-4">
+                      <label htmlFor="companyNumber" className="block text-gray-700 font-bold mb-2">
+                        Company Number:
+                      </label>
+                      <Field
+                        type="text"
+                        id="companyNumber"
+                        name="companyNumber"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="companyNumber" component="div" className="text-red-500" />
+                    </div>
+                    <div className="mb-4">
+                      <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+                        Email:
+                      </label>
+                      <Field
+                        type="email"
+                        id="email"
+                        name="email"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="email" component="div" className="text-red-500" />
+                    </div>
+                    <div className="mb-4">
+                      <label htmlFor="designation" className="block text-gray-700 font-bold mb-2">
+                        designation:
+                      </label>
+                      <Field
+                        type="designation"
+                        id="designation"
+                        name="designation"
+                        onChange={handleChange}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="designation" component="div" className="text-red-500" />
+                    </div>
+                    <div className="mb-4">
+                      <label htmlFor="companyLogo" className="block text-gray-700 font-bold mb-2">
+                        Company Logo:
+                      </label>
+                      <Field
+                        type="text"
+                        id="companyLogo"
+                        name="companyLogo"
+                        onChange={handleChange}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="companyLogo" component="div" className="text-red-500" />
+                    </div>
+
+                    <Field name="logo">
+                      {({ }) => (
+                        <div>
+                          <input
+                            type="file"
+                            onChange={(event) => {
+                              setFieldValue('logo', event.currentTarget.files[0]);
+                            }}
+                          />
+                        </div>
+                      )}
+                    </Field>
+
+                    <div className="mb-4">
+                      <label htmlFor="deck" className="block text-gray-700 font-bold mb-2">Deck:</label>
+                      <Field
+                        type="text"
+                        id="deck"
+                        name="deck"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 
 
-                  />
-                  <ErrorMessage name="deck" component="div" className="error" />
-                </div>
+                      />
+                      <ErrorMessage name="deck" component="div" className="error" />
+                    </div>
 
-                <div className="mb-4">
-                  <label htmlFor="website" className="block text-gray-700 font-bold mb-2">
-                    website:
-                  </label>
-                  <Field
-                    type="text"
-                    id="website"
-                    name="website"
-                    onChange={handleChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="website" component="div" className="text-red-500" />
-                </div>
+                    <div className="mb-4">
+                      <label htmlFor="website" className="block text-gray-700 font-bold mb-2">
+                        website:
+                      </label>
+                      <Field
+                        type="text"
+                        id="website"
+                        name="website"
+                        onChange={handleChange}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="website" component="div" className="text-red-500" />
+                    </div>
 
-                <div className="mb-4">
-                  <label htmlFor="whatsapp" className="block text-gray-700 font-bold mb-2">
-                    whatsapp:
-                  </label>
-                  <Field
-                    type="text"
-                    id="whatsapp"
-                    name="whatsapp"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="whatsapp" component="div" className="text-red-500" />
-                </div>
-
-
-                <div className="mb-4">
-                  <label htmlFor="linkedIn" className="block text-gray-700 font-bold mb-2">
-                    linkedIn:
-                  </label>
-                  <Field
-                    type="text"
-                    id="linkedIn"
-                    name="linkedIn"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="linkedIn" component="div" className="text-red-500" />
-                </div>
-
-                <div className="mb-4">
-                  <label htmlFor="Instagram" className="block text-gray-700 font-bold mb-2">
-                    Instagram:
-                  </label>
-                  <Field
-                    type="text"
-                    id="Instagram"
-                    name="Instagram"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="Instagram" component="div" className="text-red-500" />
-                </div>
+                    <div className="mb-4">
+                      <label htmlFor="whatsapp" className="block text-gray-700 font-bold mb-2">
+                        whatsapp:
+                      </label>
+                      <Field
+                        type="text"
+                        id="whatsapp"
+                        name="whatsapp"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="whatsapp" component="div" className="text-red-500" />
+                    </div>
 
 
-                <div className="mb-4">
-                  <label htmlFor="facebook" className="block text-gray-700 font-bold mb-2">
-                    facebook:
-                  </label>
-                  <Field
-                    type="text"
-                    id="facebook"
-                    name="facebook"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="facebook" component="div" className="text-red-500" />
-                </div>
+                    <div className="mb-4">
+                      <label htmlFor="linkedIn" className="block text-gray-700 font-bold mb-2">
+                        linkedIn:
+                      </label>
+                      <Field
+                        type="text"
+                        id="linkedIn"
+                        name="linkedIn"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="linkedIn" component="div" className="text-red-500" />
+                    </div>
 
-                <div className="mb-4">
-                  <label htmlFor="bio" className="block text-gray-700 font-bold mb-2">
-                    bio:
-                  </label>
-                  <Field
-                    type="text"
-                    id="bio"
-                    name="bio"
-                    onChange={handleChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <ErrorMessage name="bio" component="div" className="text-red-500" />
-                </div>
+                    <div className="mb-4">
+                      <label htmlFor="Instagram" className="block text-gray-700 font-bold mb-2">
+                        Instagram:
+                      </label>
+                      <Field
+                        type="text"
+                        id="Instagram"
+                        name="Instagram"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="Instagram" component="div" className="text-red-500" />
+                    </div>
 
 
-                <div className="mb-4">
+                    <div className="mb-4">
+                      <label htmlFor="facebook" className="block text-gray-700 font-bold mb-2">
+                        facebook:
+                      </label>
+                      <Field
+                        type="text"
+                        id="facebook"
+                        name="facebook"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="facebook" component="div" className="text-red-500" />
+                    </div>
 
-                  <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    <div className="mb-4">
+                      <label htmlFor="bio" className="block text-gray-700 font-bold mb-2">
+                        bio:
+                      </label>
+                      <Field
+                        type="text"
+                        id="bio"
+                        name="bio"
+                        onChange={handleChange}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      <ErrorMessage name="bio" component="div" className="text-red-500" />
+                    </div>
+
+
+                    <div className="mb-4">
+
+                      <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                         onClick={() => setStep(2)}>
-                    Next
-                  </button>
+                        Next
+                      </button>
 
-                </div></div>
-              <div><Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
+                    </div></div>
+                  <div><Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
 
-              </div>
-              
+                </div>
+
               )}
               {step === 2 && (
                 <div>
 
                   <div id="template-select" role="group" className='flex flex-col'>
                     <legend className='text-3xl'>Select a Template</legend>
-                    <div className='flex'>    
+                    <div className='flex'>
                       <label>
-                      <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
-                      <Field type="radio" name="template" value="1" />
-                    </label>
+                        <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
+                        <Field type="radio" name="template" value="1" />
+                      </label>
                       <label>
                         <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
                         <Field type="radio" name="template" value="2" />
                       </label>
-                      </div>
-                    <div className='flex'>                   
-                       <label>
-                      <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
+                    </div>
+                    <div className='flex'>
+                      <label>
+                        <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
                         <Field type="radio" name="template" value="3" />
-                    </label>
+                      </label>
                       <label>
                         <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
                         <Field type="radio" name="template" value="4" />
                       </label>
-                      </div>
+                    </div>
                   </div>
                   <div className='flex justify-around'>
                     <div><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                        onClick={() => setStep(1)}>
-                    Previous
-                  </button></div>
-                  <div><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                    type="submit" disabled={isSubmitting}>
-                    Submit
-                  </button></div>
-                  
+                      onClick={() => setStep(1)}>
+                      Previous
+                    </button></div>
+                    <div><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                      type="submit" disabled={isSubmitting}>
+                      Submit
+                    </button></div>
+
                   </div>
                 </div>
               )}
