@@ -10,7 +10,7 @@ import themes from '@/components/Themes';
 
 
 
-const ContactForm = ({values}) => {
+const ContactForm = ({ values }) => {
 
 
   const [uuid, setUuid] = useState(null);
@@ -332,14 +332,9 @@ const ContactForm = ({values}) => {
                       </button>
 
                     </div></div>
-                  <div><Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
+                  <div><Template gradOne={'#D2FFEC'} fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
 
-<<<<<<< HEAD
                 </div>
-=======
-                </div></div>
-              <div><Template gradOne={'#D2FFEC'} fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
->>>>>>> 05c644205ac64bb6b6cdf91a69067e4e18ac07be
 
               )}
               {step === 2 && (
@@ -347,29 +342,7 @@ const ContactForm = ({values}) => {
 
                   <div id="template-select" role="group" className='flex flex-col'>
                     <legend className='text-3xl'>Select a Template</legend>
-<<<<<<< HEAD
                     <div className='flex'>
-                      <label>
-                        <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
-                        <Field type="radio" name="template" value="1" />
-                      </label>
-                      <label>
-                        <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
-                        <Field type="radio" name="template" value="2" />
-                      </label>
-                    </div>
-                    <div className='flex'>
-                      <label>
-                        <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
-                        <Field type="radio" name="template" value="3" />
-                      </label>
-                      <label>
-                        <Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} />
-                        <Field type="radio" name="template" value="4" />
-                      </label>
-                    </div>
-=======
-                    <div className='flex'>    
                       {themes.map((theme) => (
                         <div key={theme.id}>
                           <label>
@@ -392,8 +365,7 @@ const ContactForm = ({values}) => {
                           </label>
                         </div>
                       ))}
-                      </div>
->>>>>>> 05c644205ac64bb6b6cdf91a69067e4e18ac07be
+                    </div>
                   </div>
                   <div className='flex justify-around'>
                     <div><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
