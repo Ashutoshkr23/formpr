@@ -410,7 +410,8 @@ const ContactForm = ({ values }) => {
                             />
                           </label>
                           <Field type="radio" name="template" value={index+1}  checked={template === index + 1}
-            onChange={handleTemplateChange} />
+            onChange={handleTemplateChange}   className="mr-2 border-gray-300 checked:bg-indigo-500 w-6 h-6"
+            />
 
                         </div>
                       ))}
