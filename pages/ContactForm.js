@@ -331,7 +331,7 @@ const ContactForm = () => {
                   </button>
 
                 </div></div>
-              <div><Template gradOne={['#D2FFEC']} fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
+              <div><Template gradOne={'#D2FFEC'} fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
 
               </div>
               

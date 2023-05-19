@@ -17,10 +17,10 @@ const Template = ({fname,lname,designation,bio,company,website,mobile,gradOne}) 
 
 
   
-      <div className='-top-16 inset-0 mx-auto absolute h-[100px] w-[100px] '>      <ProfileImg/></div>  
+      <div className='-top-16 inset-0 mx-auto absolute h-[100px] w-[100px] '><ProfileImg/></div>  
 
           <div className='flex justify-center pt-[52px] font-semibold text-[20px] '>
-          <input className='text-center bg-transparent'
+          <input className='text-center bg-transparent '
           type="text" 
           value={fname || lname ? `${fname} ${lname}` : 'John Doe'}
           placeholder={fname || lname ? undefined : 'John Doe'}

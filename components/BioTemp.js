@@ -6,8 +6,7 @@ const BioTemp = ({bio,company,website,mobile}) => {
     <div>
          <div className='text-[12px]'>Bio</div>
         <div className='mt-3 text-[12px]'>
-        <input className='bg-transparent'
-          type="text" 
+        <textarea className='bg-transparent w-full resize-none'
           placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis eleifend arcu in fringilla. " 
            value={bio}
         //   onChange={handleChange}
@@ -24,7 +23,7 @@ const BioTemp = ({bio,company,website,mobile}) => {
         /></p>
 </div>
 <div className='flex ml-[40px]'>
-    <Image src={'/phone.png'} alt='phone' width={22} height={22} /><p className='text-[9px] ml-[1px] tracking-[-0.5px]'>
+    <Image src={'/phone.png'} alt='phone' width={22} height={22} /><p className='text-[10px] ml-[1px] tracking-[-0.5px]'>
     <input className='bg-transparent'
           type="text" 
           placeholder="+919833XXXXXX" 
