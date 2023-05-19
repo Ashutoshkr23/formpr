@@ -6,13 +6,11 @@ import { useSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
 import Template from '@/components/Template';
 import themes from '@/components/Themes';
-import ProgressBar from '@/components/ProgressBar';
 
 
 
 
-
-const ContactForm = ({values}) => {
+const ContactForm = ({ values }) => {
 
 
   const [uuid, setUuid] = useState(null);
@@ -120,9 +118,7 @@ const ContactForm = ({values}) => {
         >
 
           {({ isSubmitting, setFieldValue, values, handleChange }) => (
-            <Form className="w-full ">
-             
-              <ProgressBar step={step} />
+            <Form className="w-full max-w-md">
               {step === 1 && (
                 <div className='flex'>
                   <div>
@@ -336,29 +332,19 @@ const ContactForm = ({values}) => {
                       </button>
 
                     </div></div>
-                  <div><Template fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
+                  <div><Template gradOne={'#D2FFEC'} fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
 
-<<<<<<< HEAD
                 </div>
-=======
-                </div></div>
-                  <div><Template gradient1={themes[0].gradient1}
-                    gradient2={themes[0].gradient2}
-                    text1={themes[0].text1}
-                    text2={themes[0].text2}
-                    text3={themes[0].text3} fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
 
-              </div>
-              
               )}
               {step === 2 && (
-                <div className='bg-black'>
+                <div>
 
                   <div id="template-select" role="group" className='flex flex-col'>
                     <legend className='text-3xl'>Select a Template</legend>
-                    <div className='flex flex-wrap justify-center '>    
+                    <div className='flex'>
                       {themes.map((theme) => (
-                        <div key={theme.id} className=' w-96 '>
+                        <div key={theme.id}>
                           <label>
                             <Template
                               gradient1={theme.gradient1}
@@ -375,19 +361,11 @@ const ContactForm = ({values}) => {
                               website={values.website}
                               mobile={values.mobileNumber}
                             />
-                            <Field
-                              type="radio"
-                              name="template"
-                              value={theme.id}
-                              checked={selectedTemplate === theme.id}
-                              onChange={(e) => setSelectedTemplate(e.target.value)}
-                            />
-
+                            <Field type="radio" name="template" value={theme.id} />
                           </label>
                         </div>
                       ))}
-                      </div>
->>>>>>> 05c644205ac64bb6b6cdf91a69067e4e18ac07be
+                    </div>
                   </div>
                   <div className='flex justify-around'>
                     <div><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
