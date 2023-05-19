@@ -125,8 +125,6 @@ const ContactForm = ({ values }) => {
 
           {({ isSubmitting, setFieldValue, values, handleChange }) => (
             <Form className="w-full ">
-                        <LoginNav/>
-
               <ProgressBar step={step}/>
 
               {step === 1 && (
