@@ -103,7 +103,7 @@ const ContactForm = ({ values }) => {
     }
   };
 
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(2);
 
 
 
