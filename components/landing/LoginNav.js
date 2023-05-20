@@ -21,19 +21,31 @@ const LoginNav = () => {
           />
         </div>
         <div className='flex '>
-          <div className='flex gap-2 items-center'>
-            <div className='text-[14px]'>
-              <Link href={'#'}>Story</Link>
+
+          <div className='flex gap-7 text-[14px] items-center'>
+
+          <div className=''>
+              <Link href={'#'}>Benefits</Link>
             </div>
-            <div className='text-[14px] ml-9'>
+
+            <div className=''>
+              <Link href={'#'}>Products</Link>
+            </div>
+
+            <div className=''>
+              <Link href={'#'}>Our Story</Link>
+            </div>
+
+            <div className=''>
               <Link href={'#'}>Testimonials</Link>
 
-
             </div>
-            <div className='text-[14px] ml-8'>
+            <div className=''>
               <Link href={'#'}> FAQ</Link>
-            </div></div>
-          <div>        <button onClick={handleGoogleSignin} className=' w-[165px] h-[41px] bg-black text-white text-[16px] font-bold rounded-[10px] ml-[70px] text-center'>LOG IN</button></div>
+            </div>
+            </div>
+          <div>
+            <button onClick={handleGoogleSignin} className=' w-[165px] h-[41px] bg-black text-white text-[16px] font-bold rounded-[10px] ml-[70px] text-center'>LOG IN</button></div>
         </div>
       </div>
 
@@ -42,3 +54,93 @@ const LoginNav = () => {
 }
 
 export default LoginNav
+
+
+
+
+// import React from 'react'
+// import Image from 'next/image'
+// import Link from 'next/link'
+// import { signIn, useSession, getSession } from 'next-auth/react';
+// import { useState } from 'react';
+
+// const LoginNav = () => {
+//   const handleGoogleSignin = () => {
+//     signIn('google', { callbackUrl: '/' });
+//   };
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   const handleToggleMenu = () => {
+//     setIsMenuOpen(!isMenuOpen);
+//   }
+//   return (
+//     <div className='flex h-[95px] lg:px-[114px]'>
+//       <div className='flex justify-between items-center w-full'>
+//         <div>
+//           <Image src={"/assets/images/loop.svg"} alt='loop' width={74} height={32} />
+//         </div>
+//         <div className='flex items-center space-x-4'>
+//           <div className={`hidden md:flex gap-7 items-center ${isMenuOpen ? 'hidden' : ''}`}>
+//             <div className='text-[14px]'>
+//               <Link href={'#'}>Benefits</Link>
+//             </div>
+//             <div className='text-[14px]'>
+//               <Link href={'#'}>Products</Link>
+//             </div>
+//             <div className='text-[14px]'>
+//               <Link href={'#'}>Our Story</Link>
+//             </div>
+//             <div className='text-[14px] '>
+//               <Link href={'#'}>Testimonials</Link>
+//             </div>
+//             <div className='text-[14px] '>
+//               <Link href={'#'}>FAQ</Link>
+//             </div>
+//           </div>
+//           <div className={`flex items-center space-x-2`}>
+//             <button
+//               onClick={handleGoogleSignin}
+//               className='hidden sm:inline-block w-[165px] h-[41px] bg-black text-white text-[16px] font-bold rounded-[10px] text-center'
+//             >
+//               LOG IN
+//             </button>
+//             <button
+//               onClick={handleToggleMenu}
+//               className='w-[40px] h-[40px] bg-black text-white rounded-full flex items-center justify-center sm:hidden'
+//             >
+//               {/* Here you can use an icon or any other suitable element for the collapse button */}
+//               {isMenuOpen ? 'X' : '☰'}
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//       <div className={`lg:hidden ${isMenuOpen ? '' : 'hidden'}`}>
+//         <div className='flex flex-col items-center space-y-4'>
+//           <div className='text-[14px]'>
+//             <Link href={'#'}>Benefits</Link>
+//           </div>
+//           <div className='text-[14px]'>
+//             <Link href={'#'}>Products</Link>
+//           </div>
+//           <div className='text-[14px]'>
+//             <Link href={'#'}>Our Story</Link>
+//           </div>
+//           <div className='text-[14px]'>
+//             <Link href={'#'}>Testimonials</Link>
+//           </div>
+//           <div className='text-[14px]'>
+//             <Link href={'#'}>FAQ</Link>
+//           </div>
+//           <button
+//             onClick={handleGoogleSignin}
+//             className='w-[165px] h-[41px] bg-black text-white text-[16px] font-bold rounded-[10px] text-center'
+//           >
+//             LOG IN
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default LoginNav;
