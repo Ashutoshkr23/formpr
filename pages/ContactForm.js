@@ -387,8 +387,8 @@ const ContactForm = ({ values }) => {
                 <div>
 
                   <div id="template-select" role="group" className='flex flex-col'>
-                    <legend className='text-3xl'>Select a Template</legend>
-                    <div className='flex'>
+                    <legend className='text-3xl flex justify-center'>Select a Template</legend>
+                    <div className='grid gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
                       {themes.map((theme,index) => (
                         <div key={theme.id}>
                           <label>
@@ -409,15 +409,16 @@ const ContactForm = ({ values }) => {
                               mobile={values.mobileNumber}
                             />
                           </label>
-                          <Field type="radio" name="template" value={index+1}  checked={template === index + 1}
-            onChange={handleTemplateChange}   className="mr-2 border-gray-300 checked:bg-indigo-500 w-6 h-6"
+                          <div className="flex justify-center pt-2">
+                          <Field  type="radio" name="template" value={index+1}  checked={template === index + 1}
+            onChange={handleTemplateChange}   className=" mr-2 border-gray-300 checked:bg-indigo-500 w-6 h-6"
             />
-
+</div>
                         </div>
                       ))}
                     </div>
                   </div>
-                  <div className='flex justify-around'>
+                  <div className='flex justify-around py-3'>
                     <div><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                       onClick={() => setStep(1)}>
                       Previous
