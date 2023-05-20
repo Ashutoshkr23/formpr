@@ -3,10 +3,11 @@ import React from 'react'
 
 const Herof = () => {
   return (
-        <div className='flex  lg:flex-row justify-between flex-col-reverse  '>
+    
+        <div className='flex  lg:flex-row  flex-col-reverse '>
 
-    <div className="flex flex-col mt-[205px] mx-auto ">
-        <div className='text-[70px] font-bold  '>
+    <div className="flex flex-col mt-[205px]  mx-auto">
+        <div className='md:text-[70px] text-[40px] font-bold  '>
      <span>Enter The </span> <span className="text-transparent bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] bg-clip-text">
      Loop.
         </span>
@@ -14,7 +15,7 @@ const Herof = () => {
         <div className='text-[16px] text-[#1D76A9]'>Visiting Cards Reimagined on Web3.0   </div>
     </div>
 
-    <div className='flex m-auto mt-9'>
+    <div className='mx-auto   mt-9  '>
     <div className='relative '>
     <Image src={'/assets/images/phone1.svg'} 
     width={243}
@@ -47,6 +48,7 @@ const Herof = () => {
 </div>
 
     </div>
+ 
   )
 }
 
