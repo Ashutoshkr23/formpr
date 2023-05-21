@@ -4,19 +4,25 @@ import React from 'react'
 const Herof = () => {
   return (
     
-        <div className='flex  lg:flex-row  flex-col-reverse '>
+        <div className='flex  lg:flex-row justify-between  flex-col-reverse '>
 
-    <div className="flex flex-col mt-[205px]  mx-auto">
-        <div className='md:text-[70px] text-[40px] font-bold  '>
+    <div className="flex flex-col mt-[18px] lg:mt-[201px] mx-4 md:mx-auto lg:mx-0 lg:pl-[114px]  ">
+        <div className='sm:text-[60px] text-[40px] font-bold  '>
      <span>Enter The </span> <span className="text-transparent bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] bg-clip-text">
      Loop.
         </span>
         </div>
-        <div className='text-[16px] text-[#1D76A9]'>Visiting Cards Reimagined on Web3.0   </div>
+        <div className='sm:text-[14px] text-[16px] text-[#1D76A9]'>Visiting Cards Reimagined on Web3.0   </div>
     </div>
 
-    <div className='mx-auto   mt-9  '>
-    <div className='relative '>
+    <div className=' mt-6 mx-auto lg:mx-0 lg:pr-[67px] '>
+          <div className=' '>
+    <Image src={'/assets/images/phonelg.svg'} 
+    width={559}
+    height={697}
+    />
+    </div>
+    {/* <div className='relative  '>
     <Image src={'/assets/images/phone1.svg'} 
     width={243}
     height={552}
@@ -28,9 +34,9 @@ const Herof = () => {
     />
 </div>
     
-<div className='absolute top-[119px]  -left-[175px] '>
+<div className='absolute top-[119px]  -left-[175px]  '>
     <Image src={'/assets/images/cardbl.svg'} 
-    width={244}
+    width={244}    
     height={177}
     />
 </div>
@@ -41,8 +47,9 @@ const Herof = () => {
     height={154}
     />
 </div>
+
 </div>
-   
+    */}
 
 
 </div>

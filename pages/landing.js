@@ -4,7 +4,7 @@ import React from 'react'
 
 const landing = () => {
   return (
-    <div>
+    <div className=''>
       <LoginNav/>
       <Herof/>
     </div>
