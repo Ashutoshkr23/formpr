@@ -383,12 +383,12 @@ const ContactForm = ({ values }) => {
               )}
               {step === 2 && (
                                        
-
+                                      //  flex justify-center lg:justify-start lg:space-x-3 flex-wrap lg:flex-nowrap  lg:flex-shrink-0 
                 <div>
 
                   <div id="template-select" role="group" className='flex flex-col'>
                     <legend className='text-3xl flex justify-center'>Select a Template</legend>
-                    <div className='flex justify-center lg:justify-start lg:space-x-3 flex-wrap lg:flex-nowrap  lg:flex-shrink-0  '>
+                    <div className='flex flex-wrap justify-center space-x-2 xl:space-x-5'>          
                       {themes.map((theme,index) => (
                         <div key={theme.id}>
                           <label>
