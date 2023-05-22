@@ -16,6 +16,7 @@
     "eslint-config-next": "13.3.0",
     "file-saver": "^2.0.5",
     "formik": "^2.2.9",
+    "framer-motion": "^10.12.12",
     "html2canvas": "^1.4.1",
     "isomorphic-unfetch": "^4.0.2",
     "jspdf": "^2.5.1",
