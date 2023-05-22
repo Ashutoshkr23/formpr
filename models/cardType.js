@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const UserprofileSchema = new mongoose.Schema({
+const CardTypeSchema = new mongoose.Schema({
     // unique uuid
     cardTypeUuid: { type: String, default: uuidv4, unique: true },
     amount: { type: Number, required: true },
@@ -10,4 +10,4 @@ const UserprofileSchema = new mongoose.Schema({
 
 });
 
-export default mongoose.models.Userprofile || mongoose.model('Userprofile', UserprofileSchema);
+export default mongoose.models.CardType || mongoose.model('CardType', CardTypeSchema);

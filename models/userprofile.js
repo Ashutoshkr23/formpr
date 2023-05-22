@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const UserprofileSchema = new mongoose.Schema({
+const UserProfileSchema = new mongoose.Schema({
   puuid: { type: String, default: uuidv4, unique: true }, //puuid is person uuid
   // email, name nand avatar will be coming from google signin
   email: { type: String, },
@@ -13,4 +13,4 @@ const UserprofileSchema = new mongoose.Schema({
 
 });
 
-export default mongoose.models.Userprofile || mongoose.model('Userprofile', UserprofileSchema);
+export default mongoose.models.UserProfile || mongoose.model('UserProfile', UserProfileSchema);

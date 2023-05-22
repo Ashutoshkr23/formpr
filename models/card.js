@@ -30,4 +30,4 @@ const CardSchema = new mongoose.Schema({
 
 });
 
-export default mongoose.models.card || mongoose.model('Card', CardSchema);
+export default mongoose.models.Card || mongoose.model('Card', CardSchema);
