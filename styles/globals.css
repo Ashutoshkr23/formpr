@@ -12,9 +12,6 @@
     font-family: Mulish;
 }
 
-html {
-    font-size: 55.5%;
-}
 
 :root {
     --main-color: #333;
@@ -36,11 +33,6 @@ i {
     cursor: pointer;
 }
 
-body {
-    width: 80%;
-    height: 100vh;
-    margin: auto;
-}
 
 header {
     width: 100%;
@@ -325,11 +317,6 @@ header {
 
 /* responsive media queries  */
 
-@media (max-width: 968px) {
-    html {
-        font-size: 50%;
-    }
-}
 
 @media (max-width: 768px) {
     .continue-shopping h3 {
