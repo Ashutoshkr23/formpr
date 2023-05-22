@@ -128,7 +128,7 @@ const ContactForm = ({ values }) => {
               <ProgressBar step={step}/>
 
               {step === 1 && (
-                <div className='flex'>
+                <div className='flex flex-col md:flex-row'>
                   <div className='w-3/5 ml-2 sm:ml-8 md:ml-16 lg:ml-20'>
                     <div className="mb-4 mt-4 ">
                       <div className='flex'>
@@ -383,12 +383,12 @@ const ContactForm = ({ values }) => {
               )}
               {step === 2 && (
                                        
-
+                                      //  flex justify-center lg:justify-start lg:space-x-3 flex-wrap lg:flex-nowrap  lg:flex-shrink-0 
                 <div>
 
                   <div id="template-select" role="group" className='flex flex-col'>
                     <legend className='text-3xl flex justify-center'>Select a Template</legend>
-                    <div className='grid gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+                    <div className='flex flex-wrap justify-center space-x-2 xl:space-x-5'>          
                       {themes.map((theme,index) => (
                         <div key={theme.id}>
                           <label>
