@@ -128,7 +128,7 @@ const ContactForm = ({ values }) => {
               <ProgressBar step={step}/>
 
               {step === 1 && (
-                <div className='flex'>
+                <div className='flex flex-col md:flex-row'>
                   <div className='w-3/5 ml-2 sm:ml-8 md:ml-16 lg:ml-20'>
                     <div className="mb-4 mt-4 ">
                       <div className='flex'>
