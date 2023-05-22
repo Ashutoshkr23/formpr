@@ -388,7 +388,7 @@ const ContactForm = ({ values }) => {
 
                   <div id="template-select" role="group" className='flex flex-col'>
                     <legend className='text-3xl flex justify-center'>Select a Template</legend>
-                    <div className='grid gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+                    <div className='flex justify-center lg:justify-start lg:space-x-3 flex-wrap lg:flex-nowrap  lg:flex-shrink-0  '>
                       {themes.map((theme,index) => (
                         <div key={theme.id}>
                           <label>
