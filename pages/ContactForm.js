@@ -109,7 +109,7 @@ const ContactForm = ({ values }) => {
     }
   };
 
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(2);
 
   
   return (
@@ -128,6 +128,7 @@ const ContactForm = ({ values }) => {
               <ProgressBar step={step}/>
 
               {step === 1 && (
+                <div className='flex flex-col'>
                 <div className='flex flex-col md:flex-row'>
                   <div className='w-full px-2 md:w-3/5  sm:px-8 md:ml-16 lg:ml-20'>
                     <div className="mb-4 mt-4 ">
@@ -359,15 +360,8 @@ const ContactForm = ({ values }) => {
                     </div>
 
 
-                    <div className="mb-4">
-
-                      <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                        onClick={() => setStep(2)}>
-                        Next
-                      </button>
-
-                    </div></div>
-                  <div className='min-w-[375px] w-2/5'>
+                    </div>
+                  <div className='min-w-[375px]  flex ml-4'>
                   <Template 
                    gradient1={themes[0].gradient1}
                    gradient2={themes[0].gradient2}
@@ -380,6 +374,16 @@ const ContactForm = ({ values }) => {
 
                 </div>
 
+
+                <div className="mb-4 mt-2 ml-2">
+
+<button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+  onClick={() => setStep(2)}>
+  Next
+</button>
+
+</div>
+                </div>
               )}
               {step === 2 && (
                                        
