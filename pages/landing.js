@@ -5,6 +5,7 @@ import Testimonial from '@/components/landing/Testimonial'
 import Products from '@/components/landing/Products'
 import React from 'react'
 import Story from '@/components/landing/Story'
+import Android from '@/components/landing/Android'
 
 const landing = () => {
   return (
@@ -15,6 +16,7 @@ const landing = () => {
       <Products/>
       <Story/>
       <Testimonial/>
+      <Android/>
 
       
     </div>
