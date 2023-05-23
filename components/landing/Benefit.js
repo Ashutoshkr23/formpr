@@ -20,7 +20,7 @@ const Benefit = () => {
            
            <div className='flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16  '>
                
-                 <div className=' relative pl-[33px] pt-[17px] md:pl-[47px]  md:pt-[33px] w-[345px] h-[230px] md:w-[500px] md:h-[336px] border-2 rounded-[20px] '>
+                 <div className=' relative pl-[33px] pt-[17px] md:pl-[47px]  md:pt-[33px] w-[345px] h-[230px] md:w-[500px] md:h-[336px] drop-shadow-white rounded-[20px] '>
 <div className='md:text-[40px] text-[24px]  font-bold md:pr-[86px] pr-[118px]  '>Cutting Edge Designs. </div>
 <div className='md:pt-[29px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 font-bold '>
          Elevate Your Networking with Cutting-Edge Impressions.
@@ -33,7 +33,7 @@ const Benefit = () => {
          
         
 
-         <div className='relative w-[345px] md:pl-[60px]  md:pt-[45px] pl-[40px] pr-[31px] pt-[31px] h-[230px] md:w-[500px] md:h-[336px] border-2 rounded-[20px] bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] '>
+         <div className='relative w-[345px] md:pl-[60px]  md:pt-[45px] pl-[40px] pr-[31px] pt-[31px] h-[230px] md:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] '>
 <div className='text-[36px] md:text-[45px] md:pr-[42px] font-bold   '>Limitless Flexibility. </div>
 <div className='pt-4 text-[16px] md:text-[24px] font-bold md:pr-28 '>Edit and Adapt Your Digital Card Limitlessly. </div>
 
@@ -44,7 +44,7 @@ const Benefit = () => {
           </div>
 
 
-          <div className='relative hidden lg:block h-[337px] w-[1070px] bg-black  rounded-[20px]'>
+          <div className='relative hidden lg:block h-[337px] w-[1070px] bg-black  rounded-[20px] drop-shadow-white'>
           <div className='absolute bottom-4 right-8 '>  <IoMdAddCircle size={32} color="white" /></div>
 
              <div className='pt-[40px]  text-[45px] font-bold  '>
@@ -73,7 +73,7 @@ const Benefit = () => {
         
 {/* for mobile  */}
 
-<div className='relative lg:hidden w-[345px] h-[230px] md:w-[500px] md:h-[336px] bg-black  rounded-[20px]'>
+<div className='relative lg:hidden w-[345px] h-[230px] md:w-[500px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white'>
 <div className='absolute bottom-4 right-8 '>  <IoMdAddCircle size={32} color="white" /></div>
 
             <div className='pt-[19px] md:pt-[40px] md:pl-[50px]  text-[36px] font-bold  '>
@@ -96,7 +96,7 @@ const Benefit = () => {
 
 <div className=' flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16  '>
                
-               <div className='relative pl-6 md:pr-[61px] md:pl-14 md:pt-[61px] w-[337px] h-[230px] md:w-[500px] md:h-[336px] border-2 rounded-[20px] bg-gradient-to-br from-[#FDFF96] to-[#F16869] '>
+               <div className='relative pl-6 md:pr-[61px] md:pl-14 md:pt-[61px] w-[337px] h-[230px] md:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-br from-[#FDFF96] to-[#F16869] '>
 <div className='text-[36px] md:text-[45px] pr-[14px] font-bold  '>Seamless User Experience. </div>
 <div className='mt-7 text-[16px] md:text-[24px] pr-[65px] font-bold '>
 Effortless Networking Made  Beautifully Simple.   </div>
@@ -105,7 +105,7 @@ Effortless Networking Made  Beautifully Simple.   </div>
        </div>
 
        
-       <div className=' relative  w-[345px] h-[230px] md:w-[500px] md:h-[336px] border-2 rounded-[20px] '>
+       <div className=' relative  w-[345px] h-[230px] md:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] '>
 <div className='md:text-[40px] md:pl-[43px] pl-[30px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-11'>Seamless  Sharing.  </div>
 <div className='md:pt-[70px] pt-[47px] md:pl-[43px] pl-[30px] md:pr-[250px] pr-[100px] text-[14px] font-bold'>Embrace the App-Free  Advantage of Loop Connections.  </div>
 
@@ -120,7 +120,7 @@ Effortless Networking Made  Beautifully Simple.   </div>
         </div>
 
 
-        <div className='relative hidden lg:block h-[337px] w-[1070px] bg-black  rounded-[20px]'>
+        <div className='relative hidden lg:block h-[337px] w-[1070px] bg-black drop-shadow-white  rounded-[20px]'>
             <div className='flex '>
         <div className=''>
         <Image src={'/assets/images/Mask group (6).png'} alt='mask group' width={331} height={336}/>
@@ -143,7 +143,7 @@ Effortless Networking Made  Beautifully Simple.   </div>
        
 
          
-         <div className=' relative  pl-7 lg:hidden h-[230px] w-[345px]  md:h-[337px] md:w-[500px] bg-black  rounded-[20px]'>
+         <div className=' relative  pl-7 lg:hidden h-[230px] w-[345px] drop-shadow-white  md:h-[337px] md:w-[500px] bg-black  rounded-[20px]'>
          <div className='absolute bottom-4 right-8 '>  <IoMdAddCircle size={32} color="white" /></div>
 
             <div flex flex-col>
