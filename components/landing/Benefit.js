@@ -22,8 +22,8 @@ const Benefit = () => {
 <div className='md:pt-[29px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 font-bold '>
          Elevate Your Networking with Cutting-Edge Impressions.
          </div>
-         <div className='hidden md:block absolute top-[85px] right-[0px] '><Image src={'/assets/images/benefitcardbl.png'} width={375} height={208}/></div>
-         <div className=' md:hidden absolute top-[58px] right-[0px] '><Image src={'/assets/images/benefitcardbl.png'} width={250} height={147}/></div>
+         <div className='hidden md:block absolute top-[85px] right-[0px] '><Image src={'/assets/images/benefitcardbl.png'} alt='benefit' width={375} height={208}/></div>
+         <div className=' md:hidden absolute top-[58px] right-[0px] '><Image src={'/assets/images/benefitcardbl.png'} alt='benefit' width={250} height={147}/></div>
 
          </div>
 
@@ -53,10 +53,10 @@ const Benefit = () => {
     Cross-Platform Compatibility for Seamless Connections.
     </div>
     <div className='mt-[-125px] ml-[656px] '>
-        <Image src={'/assets/images/image 13.png'} width={174} height={235}/>
+        <Image src={'/assets/images/image 13.png'} alt='img 13' width={174} height={235}/>
     </div>
     <div className='mt-[-332px] ml-[849px]'>
-        <Image src={'/assets/images/image 15.png'} width={172} height={236}/>
+        <Image src={'/assets/images/image 15.png'} alt='img 15' width={172} height={236}/>
     </div>
 </div>
         </div>
@@ -99,9 +99,9 @@ Effortless Networking Made  Beautifully Simple.   </div>
 <div className='md:text-[40px] md:pl-[43px] pl-[30px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-11'>Seamless  Sharing.  </div>
 <div className='md:pt-[70px] pt-[47px] md:pl-[43px] pl-[30px] md:pr-[250px] pr-[100px] text-[14px] font-bold'>Embrace the App-Free  Advantage of Loop Connections.  </div>
 
-<div className='hidden md:block absolute top-0 right-0'> <Image src={'/assets/images/woman-holding-iphone-xs-mockup-perspective-transparent-blog 1.png'} width={331} height={336}/>
+<div className='hidden md:block absolute top-0 right-0'> <Image src={'/assets/images/woman-holding-iphone-xs-mockup-perspective-transparent-blog 1.png'} alt='iphone' width={331} height={336}/>
 </div>
-<div className=' md:hidden absolute top-0 right-0'> <Image src={'/assets/images/woman-holding-iphone-xs-mockup-perspective-transparent-blog 1.png'} width={228} height={232}/>
+<div className=' md:hidden absolute top-0 right-0'> <Image src={'/assets/images/woman-holding-iphone-xs-mockup-perspective-transparent-blog 1.png'} alt='iphone 1' width={228} height={232}/>
 </div>
        </div>
        
@@ -111,14 +111,14 @@ Effortless Networking Made  Beautifully Simple.   </div>
         <div className='hidden lg:block h-[337px] w-[1070px] bg-black  rounded-[20px]'>
             <div className='flex '>
         <div className=''>
-        <Image src={'/assets/images/Mask group (5).png'} width={349} height={337}/>
+        <Image src={'/assets/images/Mask group (5).png'} alt='mask group' width={349} height={337}/>
     </div>
 <div className='flex flex-col pt-[98px]  pr-[107px]'> 
 <div className='text-[45px] pl-[98px] font-bold'>
 <span className='text-white'> Footprint in </span><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0.</span>
 </div>
 <div className='text-[24px] ml-[-30px] font-bold pt-7 '>
-<span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3's Limitless Possibilities.</span><br/>
+<span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3&apos;s Limitless Possibilities.</span><br/>
 
 </div>
 </div>
@@ -133,7 +133,7 @@ Effortless Networking Made  Beautifully Simple.   </div>
                 <span className='text-white'>Footprint in </span><br /><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0.</span>
         </div>
         <div className='text-[14px] md:text-[24px] pt-8 font-bold'>
-        <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3's Limitless </span><br/>
+        <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3&apos;s Limitless </span><br/>
         <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Possibilities. </span>
         </div>
             </div>
