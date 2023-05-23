@@ -13,6 +13,72 @@
 }
 
 
+.anim-typewriterlg {
+    position: relative;
+    /* width: 24em; */
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 2s steps(15) 1s 1 normal both,
+        blinkTextCursor 500ms steps(15) infinite normal;
+    line-height: 1.5;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0em;
+    }
+
+    to {
+        width: 9em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+.anim-typewriter {
+    position: relative;
+    /* width: 24em; */
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 2s steps(15) 1s 1 normal both,
+        blinkTextCursor 500ms steps(15) infinite normal;
+    line-height: 1.5;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0em;
+    }
+
+    to {
+        width: 7em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
 :root {
     --main-color: #333;
     --primary-color: #acacac;
