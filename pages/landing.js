@@ -1,6 +1,7 @@
 import Benefit from '@/components/landing/Benefit'
 import Herof from '@/components/landing/Herof'
 import LoginNav from '@/components/landing/LoginNav'
+import Testimonial from '@/components/landing/Testimonial'
 import React from 'react'
 
 const landing = () => {
@@ -9,6 +10,7 @@ const landing = () => {
       <LoginNav/>
       <Herof/>
       <Benefit/>
+      <Testimonial/>
     </div>
   )
 }
