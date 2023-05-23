@@ -51,7 +51,7 @@ function Navbar() {
       {/*Laptop */}
       <div className='hidden bg-dark lg:block'>
         <div className='navbar z-50 fixed inset-x-0 opacity-95'>
-          <div className=' mx-auto max-w-[1440px] px-28  my-auto h-20 flex content-center justify-between items-center' >
+          <div className=' mx-auto max-w-[1440px] lg:px-20 xl:px-28  my-auto h-20 flex content-center justify-between items-center' >
             <Image src={"/assets/images/loop.svg"} alt='loop' width={74} height={32} />
             <div className='flex content-center'>
               <ul className="flex content-center gap-8 my-auto ">

@@ -11,10 +11,10 @@ import "swiper/css/pagination";
 const Testimonial = () => {
 
     return (
-        <div className="relative overflow-hidden w-full ">
-            <div className='hidden lg:block text-center'>
-                <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={50} slidesPerView={3} navigation pagination={{ clickable: true }} >
-                    <SwiperSlide >
+        <div className="relative overflow-hidden w-full">
+            <div className='hidden lg:block text-center '>
+                <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={30} slidesPerView={3} navigation pagination={{ clickable: true }} >
+                    <SwiperSlide className='w-1/4 max-w-[364px]' >
                         <TestimonialComp
                             img={"/Vineet.png"}
                             feedback={"We have been very impressed with their creativity, responsiveness and capabilities in the remodelling of our company logo, creatives for our website and social media. "}

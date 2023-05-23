@@ -6,7 +6,7 @@ import React from 'react'
 
 const landing = () => {
   return (
-    <div className='bg-["#333333"] max-w-[1440px]  mx-auto px-4 sm:px-8 lg:px-28' >
+    <div className='bg-["#333333"] max-w-[1440px]  mx-auto px-4 sm:px-8 lg:px-20 xl:px-28' >
       <LoginNav/>
       <Herof/>
       <Benefit/>

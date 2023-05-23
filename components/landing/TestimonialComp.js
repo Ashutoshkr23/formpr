@@ -4,11 +4,11 @@ function TestimonialComp({ feedback, img, name, designation }) {
     return (
         <div>
             {/*Laptop */}
-            <div className='hidden lg:block'>
-                <div className='relative drop-shadow-white inline-block h-[437px] w-[364px] mt-16 bg-white rounded-md'>
+            <div className='hidden  lg:block'>
+                <div className='relative drop-shadow-white inline-block px-7 w-full h-[437px]  mt-16 bg-white rounded-md'>
                     <img src={img} alt="" className='absolute inset-x-0 mx-auto bottom-[115px] z-10' />
-                    <div className='w-[308px] pt-7 px-7'>
-                        <p className='text-sm font-bold w-[308px] leading-[1.4rem]'>{feedback}</p>
+                    <div className=' pt-7 '>
+                        <p className='text-sm  text-left font-bold leading-[1.4rem]'>{feedback}</p>
                     </div>
                     <div className='bg-black rounded-md h-[186px] absolute bottom-0 inset-x-0'>
                         <h1 className='mt-24 text-white text-center text-lg font-bold'>{name}</h1>
