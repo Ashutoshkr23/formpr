@@ -17,21 +17,22 @@ const Benefit = () => {
            
            <div className='flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16  '>
                
-                 <div className=' relative w-[500px] h-[336px] border-2 rounded-[20px] '>
-<div className='text-[40px] font-bold pl-12 pt-8'>Cutting Edge<br/>Designs. </div>
-<div className='mt-7 text-14 font-bold pl-12'>
-         Elevate Your Networking with Cutting-Edge<br/>Impressions.
+                 <div className=' relative pl-[33px] pt-[17px] md:pl-[47px]  md:pt-[33px] w-[345px] h-[230px] md:w-[500px] md:h-[336px] border-2 rounded-[20px] '>
+<div className='md:text-[40px] text-[24px]  font-bold md:pr-[86px] pr-[118px]  '>Cutting Edge Designs. </div>
+<div className='md:pt-[29px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 font-bold '>
+         Elevate Your Networking with Cutting-Edge Impressions.
          </div>
-         <div className='absolute top-[88px] -right-[0px] '><Image src={'/assets/images/benefitcardbl.png'} width={365} height={208}/></div>
+         <div className='hidden md:block absolute top-[85px] right-[0px] '><Image src={'/assets/images/benefitcardbl.png'} width={375} height={208}/></div>
+         <div className=' md:hidden absolute top-[58px] right-[0px] '><Image src={'/assets/images/benefitcardbl.png'} width={250} height={147}/></div>
 
          </div>
 
          
         
 
-         <div className='w-[500px] h-[336px] border-2 rounded-[20px] bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] '>
-<div className='text-[40px] font-bold pl-[60px] pt-11'>Limitless <br/>Flexibility. </div>
-<div className='mt-6 text-[24px] font-bold pl-[60px]'>Edit and Adapt Your Digital Card Limitlessly. </div>
+         <div className='w-[337px] md:pl-[60px]  md:pt-[45px] pl-[40px] pr-[31px] pt-[31px] h-[230px] md:w-[500px] md:h-[336px] border-2 rounded-[20px] bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] '>
+<div className='text-[36px] md:text-[45px] md:pr-[42px] font-bold   '>Limitless Flexibility. </div>
+<div className='pt-4 text-[16px] md:text-[24px] font-bold md:pr-28 '>Edit and Adapt Your Digital Card Limitlessly. </div>
          </div>
          
           </div>
@@ -39,22 +40,22 @@ const Benefit = () => {
 
           <div className='hidden lg:block h-[337px] w-[1070px] bg-black  rounded-[20px]'>
             
-             <div className='pt-[40px] pl-[59px]  text-[45px] font-bold  '>
+             <div className='pt-[40px]  text-[45px] font-bold  '>
                 <div className='flex flex-col'>
-                <div>
-     <span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">
-     Android and iOS  
-        </span><br /><span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">Compatible.</span>
+                <div className=' pl-[59px] pr-[478px] '>
+     <span className=" text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">
+     Android and iOS Compatible.</span>
+        {/* <span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text"></span> */}
         </div>
 
-<div className='flex mb-10'>
-    <div className='font-bold text-[20px] text-white pt-5'>
+<div className='  '>
+    <div className='font-bold pl-[59px] pr-[343px] text-[20px] text-white pt-5'>
     Cross-Platform Compatibility for Seamless Connections.
     </div>
-    <div className='mt-[-75px] ml-5'>
+    <div className='mt-[-125px] ml-[656px] '>
         <Image src={'/assets/images/image 13.png'} width={174} height={235}/>
     </div>
-    <div className='mt-[-172px] ml-5'>
+    <div className='mt-[-332px] ml-[849px]'>
         <Image src={'/assets/images/image 15.png'} width={172} height={236}/>
     </div>
 </div>
@@ -64,18 +65,18 @@ const Benefit = () => {
         
 {/* for mobile  */}
 
-<div className='lg:hidden h-[336px] w-[500px] bg-black  rounded-[20px]'>
+<div className='lg:hidden w-[337px] h-[230px] md:w-[500px] md:h-[336px] bg-black  rounded-[20px]'>
             
-            <div className='pt-[40px] pl-[59px]  text-[36px] font-bold  '>
+            <div className='pt-[19px] md:pt-[40px] md:pl-[50px]  text-[36px] font-bold  '>
                <div className='flex flex-col item-center'>
-               <div>
+               <div className='pl-[26px] pr-[16px] '>
     <span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">
     Android and iOS  
-       </span><br /><span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">Compatible.</span>
+       </span> <span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">Compatible.</span>
        </div>
 
-   <div className='font-bold text-[16px] text-white mt-10'>
-   Cross-Platform Compatibility <br/>for Seamless Connections.
+   <div className='font-bold text-[16px] md:text-[24px] pl-[26px] pr-[90px] text-white pt-[10px] md:pt-[20px]'>
+   Cross-Platform Compatibility for Seamless Connections.
    </div>   
 
        </div>
@@ -86,19 +87,21 @@ const Benefit = () => {
 
 <div className='flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16  '>
                
-               <div className=' w-[500px] h-[336px] border-2 rounded-[20px] bg-gradient-to-br from-[#FDFF96] to-[#F16869] '>
-<div className='text-[45px] font-bold pl-14 pt-8'>Seamless User<br/>Experience. </div>
-<div className='mt-7 text-[24px] font-bold pl-12'>
-Effortless Networking Made <br /> Beautifully Simple.       </div>
+               <div className='pl-6 md:pr-[61px] md:pl-14 md:pt-[61px] w-[337px] h-[230px] md:w-[500px] md:h-[336px] border-2 rounded-[20px] bg-gradient-to-br from-[#FDFF96] to-[#F16869] '>
+<div className='text-[36px] md:text-[45px] pr-[14px] font-bold  '>Seamless User Experience. </div>
+<div className='mt-7 text-[16px] md:text-[24px] pr-[65px] font-bold '>
+Effortless Networking Made  Beautifully Simple.   </div>
 
        </div>
 
        
-       <div className=' relative w-[500px] h-[336px] border-2 rounded-[20px] bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] '>
-<div className='text-[40px] font-bold pl-[60px] pt-11'>Seamless <br /> Sharing.  </div>
-<div className='mt-6 text-[14px] font-bold pl-[60px]'>Embrace the App-Free <br /> Advantage of Loop Connections.  </div>
+       <div className=' relative  w-[337px] h-[230px] md:w-[500px] md:h-[336px] border-2 rounded-[20px] '>
+<div className='md:text-[40px] md:pl-[43px] pl-[30px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-11'>Seamless  Sharing.  </div>
+<div className='md:pt-[70px] pt-[47px] md:pl-[43px] pl-[30px] md:pr-[250px] pr-[100px] text-[14px] font-bold'>Embrace the App-Free  Advantage of Loop Connections.  </div>
 
-<div className='absolute top-0 right-0'>        <Image src={'/assets/images/woman-holding-iphone-xs-mockup-perspective-transparent-blog 1.png'} width={331} height={336}/>
+<div className='hidden md:block absolute top-0 right-0'> <Image src={'/assets/images/woman-holding-iphone-xs-mockup-perspective-transparent-blog 1.png'} width={331} height={336}/>
+</div>
+<div className=' md:hidden absolute top-0 right-0'> <Image src={'/assets/images/woman-holding-iphone-xs-mockup-perspective-transparent-blog 1.png'} width={228} height={232}/>
 </div>
        </div>
        
@@ -110,11 +113,11 @@ Effortless Networking Made <br /> Beautifully Simple.       </div>
         <div className=''>
         <Image src={'/assets/images/Mask group (5).png'} width={349} height={337}/>
     </div>
-<div className='flex flex-col pt-[98px] pl-[98px]'> 
-<div className='text-[45px] font-bold'>
+<div className='flex flex-col pt-[98px]  pr-[107px]'> 
+<div className='text-[45px] pl-[98px] font-bold'>
 <span className='text-white'> Footprint in </span><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0.</span>
 </div>
-<div className='text-[24px] font-bold pt-7 ml-[-125px]'>
+<div className='text-[24px] ml-[-30px] font-bold pt-7 '>
 <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3's Limitless Possibilities.</span><br/>
 
 </div>
@@ -124,12 +127,12 @@ Effortless Networking Made <br /> Beautifully Simple.       </div>
          </div>
        
 
-         <div className=' pt-11  pl-7 lg:hidden h-[337px] w-[500px] bg-black  rounded-[20px]'>
+         <div className='   pl-7 lg:hidden h-[230px] w-[345px]  md:h-[337px] md:w-[500px] bg-black  rounded-[20px]'>
             <div flex flex-col>
-            <div className=' text-[36px] font-bold'>
+            <div className='pt-8 text-[36px] md:text-[45px] font-bold'>
                 <span className='text-white'>Footprint in </span><br /><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0.</span>
         </div>
-        <div className='text-[16px] pt-8 font-bold'>
+        <div className='text-[14px] md:text-[24px] pt-8 font-bold'>
         <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3's Limitless </span><br/>
         <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Possibilities. </span>
         </div>
