@@ -14,10 +14,10 @@ const Story = () => {
     <h1 className='text-[48px] font-bold'>Our Story </h1>
 </div>
 <div className='pt-8 pl-[424px] pr-[225px] text-[20px]'>
-<h2 className=' font-bold'><span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text'>At Loop, we're passionate about making networking effortless </span><span className='text-transparent bg-gradient-to-tr from-[#FDFF96] to-[#F16869] bg-clip-text'>and eco-friendly.  </span></h2>
+<h2 className=' font-bold'><span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text'>At Loop, we&apos;re passionate about making networking effortless </span><span className='text-transparent bg-gradient-to-tr from-[#FDFF96] to-[#F16869] bg-clip-text'>and eco-friendly.  </span></h2>
 </div>
 
-<div className='pt-[33px] text-white pl-[405px] pr-[134px]'><p className='text-14'></p>Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that's why we've created a product that's both classy and luxurious. </div>
+<div className='pt-[33px] text-white pl-[405px] pr-[134px]'><p className='text-14'></p>Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that&apos;s why we&apos;ve created a product that&apos;s both classy and luxurious. </div>
 
 
 <div className=' absolute left-[51px] top-[-87px]'>
@@ -47,11 +47,11 @@ height={252} />
 <h2 className='text-[30px]'>Our Story  </h2>
 </div>
 
-<div className='text-white pr-8 pt-7 '><p className='text-[14px] font-bold'><span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text'>At Loop, we're passionate about making </span>
+<div className='text-white pr-8 pt-7 '><p className='text-[14px] font-bold'><span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text'>At Loop, we&apos;re passionate about making </span>
 <span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text'>networking effortless and eco-friendly. </span> </p></div> 
 
 <div className='pt-7 pr-8 pb-[31px] text-white text-[12px]'>
-<p>Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that's why we've created a product that's both classy and luxurious. </p>
+<p>Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that&apos;s why we&apos;ve created a product that&apos;s both classy and luxurious. </p>
 
 </div>
 </div>
