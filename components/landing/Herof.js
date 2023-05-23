@@ -7,7 +7,7 @@ const Herof = () => {
 
         <div className='flex  lg:flex-row justify-between   flex-col-reverse pt-24'>
 
-            <div className="flex flex-col mt-48 ">
+            <div className="flex flex-col mt-12 lg:mt-48 ">
                 <h1 className='sm:text-[60px] mr-auto text-left anim-typewriter  text-[40px] font-bold '>
                     Enter The <span className="text-transparent bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] bg-clip-text">
                         Loop.
