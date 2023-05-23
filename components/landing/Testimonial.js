@@ -12,23 +12,25 @@ const Testimonial = () => {
 
     return (
         <div className="relative overflow-hidden w-full">
-            <div className='hidden lg:block text-center '>
-                <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={30} slidesPerView={3} navigation pagination={{ clickable: true }} >
-                    <SwiperSlide className='w-1/4 max-w-[364px]' >
+            <div className='hidden lg:block text-center mt-24 lg:mt-64 '>
+                <h5 className='text-xs md:text-base font-medium text-[#596573] '>Voices from the Loop</h5>
+                <h1 className='text-3xl md:text-5xl mt-2 font-bold'>Our Testimonials</h1>
+                <Swiper  modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={30} slidesPerView={3} navigation pagination={{ clickable: true }} >
+                    <SwiperSlide className='w-1/4 max-w-[340px] ml-6' >
                         <TestimonialComp
                             img={"/Vineet.png"}
                             feedback={"We have been very impressed with their creativity, responsiveness and capabilities in the remodelling of our company logo, creatives for our website and social media. "}
                             name={"Vineet Singhal"}
                             designation={" Chief Operating Officer, SGN Nanopharma Inc."} />
                     </SwiperSlide>
-                    <SwiperSlide >
+                    <SwiperSlide className='w-1/4 max-w-[340px]'>
                         <TestimonialComp
                             img={"/Sachit.png"}
                             feedback={"The Bravas team is dynamic and is not only supportive but also understands the pulse of our business & industry very well. The followers on our page have increased to over 500+ in less than 5 months."}
                             name={"Sachit Dedhia"}
                             designation={"Managing Director, Velocity Global Logistics Pvt. Ltd (India-China-Spain)"} />
                     </SwiperSlide>
-                    <SwiperSlide >
+                    <SwiperSlide className='w-1/4 max-w-[340px] mb-16'>
                         <TestimonialComp
                             img={"/Rikshit.png"}
                             feedback={"As a start-up, it's great to have someone like the Bravas Digital Team to rely on our marketing efforts. They have a wonderful team of experts taking care of all the different aspects of marketing."}

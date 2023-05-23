@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import { IoIosAddCircle } from 'react-icons/io';
+import { IoIosAddCircle, RxCrossCircled, IoMdAddCircle, } from 'react-icons/io';
 
-import { IoMdAddCircle } from 'react-icons/io';
 
 const Benefit = () => {
   return (
