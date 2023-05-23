@@ -13,43 +13,12 @@
 }
 
 
-.anim-typewriterlg {
-    position: relative;
-    /* width: 24em; */
-    margin: 0 auto;
-    border-right: 2px solid rgba(255, 255, 255, .75);
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typewriter 2s steps(15) 1s 1 normal both,
-        blinkTextCursor 500ms steps(15) infinite normal;
-    line-height: 1.5;
-}
 
-@keyframes typewriter {
-    from {
-        width: 0em;
-    }
-
-    to {
-        width: 9em;
-    }
-}
-
-@keyframes blinkTextCursor {
-    from {
-        border-right-color: rgba(255, 255, 255, .75);
-    }
-
-    to {
-        border-right-color: transparent;
-    }
-}
 
 .anim-typewriter {
     position: relative;
     /* width: 24em; */
-    margin: 0 auto;
+    margin: 0 auto 0 0;
     border-right: 2px solid rgba(255, 255, 255, .75);
     text-align: left;
     white-space: nowrap;
@@ -65,7 +34,7 @@
     }
 
     to {
-        width: 7em;
+        width: 7.1em;
     }
 }
 
