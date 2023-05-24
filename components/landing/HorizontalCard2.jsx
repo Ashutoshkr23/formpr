@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { IoIosAddCircle, RxCrossCircled, IoMdAddCircle, } from 'react-icons/io';
+import { IoIosAddCircle,  IoMdAddCircle, } from 'react-icons/io';
+import { RxCrossCircled } from 'react-icons/rx';
+
 
 function HorizontalCard2() {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -51,7 +53,7 @@ function HorizontalCard2() {
                                 </div>
 
                                 <div className='absolute bottom-4 right-8'>
-                                    <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
+                                    <RxCrossCircled onClick={handleFlip} size={32} color='white' />
                                 </div>
                             </div>
                         </div>
