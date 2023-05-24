@@ -55,7 +55,7 @@ const Benefit = () => {
 
 
                             <div className='font-bold pl-[59px] pr-[343px] text-[20px] text-white pt-5'>
-                                Cross-Platform Compatibility for Seamless Connections.
+                               <p>Cross-Platform Compatibility for Seamless Connections.</p> 
                             </div>
                             <div className='mt-[-125px] ml-[656px] '>
                                 <Image src={'/assets/images/image 13.png'} alt='img 13' width={174} height={235} />
@@ -83,7 +83,7 @@ const Benefit = () => {
                             </div>
 
                             <div className='font-bold text-[16px] md:text-[24px] pl-[26px] pr-[90px] text-white pt-[10px] md:pt-[20px]'>
-                                Cross-Platform Compatibility for Seamless Connections.
+                               <p> Cross-Platform Compatibility for Seamless Connections.</p>
                             </div>
 
                         </div>
