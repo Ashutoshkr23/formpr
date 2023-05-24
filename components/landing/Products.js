@@ -27,11 +27,11 @@ const Products = () => {
                             img={"/assets/images/LiteCard.png"}
                         />
                         <ProductComp
-                            text={"Loop Lite"}
+                            text={"Loop Elevate "}
                             img={"/assets/images/ElevateCard.png"}
                         />
                         <ProductComp
-                            text={"Loop Lite"}
+                            text={"Loop Supreme"}
                             img={"/assets/images/SupremeCard.png"}
                         />
                     </div>
