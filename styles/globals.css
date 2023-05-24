@@ -406,3 +406,78 @@ header {
         margin-bottom: 3rem;
     }
 }
+
+
+.card {
+
+    perspective: 1000px;
+    position: relative;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+   
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    transform: rotateY(-180deg);
+}
+
+
+
+.horizontal-card {
+    perspective: 1000px;
+    position: relative;
+}
+
+.horizontal-card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.horizontal-card.flipped .horizontal-card-inner {
+    transform: rotateX(180deg);
+}
+
+.horizontal-card-front,
+.horizontal-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.horizontal-card-front {
+    background-color: #e9e9e9;
+    transform: rotateX(0deg);
+}
+
+.horizontal-card-back {
+    background-color: #c4c4c4;
+    transform: rotateX(-180deg);
+}
+
+.flip-button {
+    margin-top: 16px;
+}
