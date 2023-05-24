@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 const Products = () => {
     return (
-        <div className='pt-[194px]'>
+        <div className='pt-[194px] '>
             <div className='flex flex-col'>
                 <div className='flex flex-col justify-center items-center '>
                     <div>

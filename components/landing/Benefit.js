@@ -7,11 +7,11 @@ const Benefit = () => {
   return (
     <div className='mt-[91px] '>
         <div className='flex flex-col justify-center items-center'>
-            <div className='text-[16px] font-poppins'>
-            Benefits
+            <div className='font-poppins'>
+           <h4>Benefits</h4> 
             </div>
-            <div className='text-[50px] font-poppins font-bold text'>
-            Join the Loop 
+            <div className='font-poppins font-bold text'>
+            <h1 className='text-[30px] md:text-[50px]'> Join the Loop </h1>
             </div>
         
           </div>
@@ -20,9 +20,9 @@ const Benefit = () => {
            <div className='flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16  '>
                
                  <div className=' relative pl-[33px] pt-[17px] md:pl-[47px]  md:pt-[33px] w-[345px] h-[230px] md:w-[500px] md:h-[336px] drop-shadow-white rounded-[20px] '>
-<div className='md:text-[40px] text-[24px]  font-bold md:pr-[86px] pr-[118px]  '>Cutting Edge Designs. </div>
+<div className='md:text-[40px] text-[24px]  font-bold md:pr-[86px] pr-[118px]  '><h2>Cutting Edge Designs.</h2> </div>
 <div className='md:pt-[29px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 font-bold '>
-         Elevate Your Networking with Cutting-Edge Impressions.
+        <p>Elevate Your Networking with Cutting-Edge Impressions.</p> 
          </div>
          <div className='hidden md:block absolute top-[85px] right-[0px] '><Image src={'/assets/images/benefitcardbl.png'} alt='benefit' width={375} height={208}/></div>
          <div className=' md:hidden absolute top-[58px] right-[0px] '><Image src={'/assets/images/benefitcardbl.png'} alt='benefit' width={250} height={147}/></div>
@@ -33,8 +33,8 @@ const Benefit = () => {
 
 
          <div className='relative w-[345px] md:pl-[60px]  md:pt-[45px] pl-[40px] pr-[31px] pt-[31px] h-[230px] md:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] '>
-<div className='text-[36px] md:text-[45px] md:pr-[42px] font-bold   '>Limitless Flexibility. </div>
-<div className='pt-4 text-[16px] md:text-[24px] font-bold md:pr-28 '>Edit and Adapt Your Digital Card Limitlessly. </div>
+<div className='text-[36px] md:text-[45px] md:pr-[42px] font-bold   '><h2>Limitless Flexibility. </h2></div>
+<div className='pt-4 text-[16px] md:text-[24px] font-bold md:pr-28 '><p>Edit and Adapt Your Digital Card Limitlessly. </p></div>
 
                         <div className='absolute bottom-4 right-4'><IoIosAddCircle size={32} /></div>
 
@@ -56,7 +56,7 @@ const Benefit = () => {
 
 
                             <div className='font-bold pl-[59px] pr-[343px] text-[20px] text-white pt-5'>
-                                Cross-Platform Compatibility for Seamless Connections.
+                               <p>Cross-Platform Compatibility for Seamless Connections.</p> 
                             </div>
                             <div className='mt-[-125px] ml-[656px] '>
                                 <Image src={'/assets/images/image 13.png'} alt='img 13' width={174} height={235} />
@@ -84,7 +84,7 @@ const Benefit = () => {
                             </div>
 
                             <div className='font-bold text-[16px] md:text-[24px] pl-[26px] pr-[90px] text-white pt-[10px] md:pt-[20px]'>
-                                Cross-Platform Compatibility for Seamless Connections.
+                               <p> Cross-Platform Compatibility for Seamless Connections.</p>
                             </div>
 
                         </div>
@@ -96,17 +96,17 @@ const Benefit = () => {
 <div className=' flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16  '>
                
                <div className='relative pl-6 md:pr-[61px] md:pl-14 md:pt-[61px] w-[337px] h-[230px] md:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-br from-[#FDFF96] to-[#F16869] '>
-<div className='text-[36px] md:text-[45px] pr-[14px] font-bold  '>Seamless User Experience. </div>
+<div className='text-[36px] md:text-[45px] pr-[14px] font-bold  '><h1>Seamless User Experience.</h1> </div>
 <div className='mt-7 text-[16px] md:text-[24px] pr-[65px] font-bold '>
-Effortless Networking Made  Beautifully Simple.   </div>
+<p>Effortless Networking Made  Beautifully Simple.</p>   </div>
 <div className='absolute bottom-4 right-4'><IoIosAddCircle size={32}/></div>
 
                     </div>
 
        
        <div className=' relative  w-[345px] h-[230px] md:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] '>
-<div className='md:text-[40px] md:pl-[43px] pl-[30px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-11'>Seamless  Sharing.  </div>
-<div className='md:pt-[70px] pt-[47px] md:pl-[43px] pl-[30px] md:pr-[250px] pr-[100px] text-[14px] font-bold'>Embrace the App-Free  Advantage of Loop Connections.  </div>
+<div className='md:text-[40px] md:pl-[43px] pl-[30px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-11'><h2>Seamless  Sharing.</h2>  </div>
+<div className='md:pt-[70px] pt-[47px] md:pl-[43px] pl-[30px] md:pr-[250px] pr-[100px] text-[14px] font-bold'><p>Embrace the App-Free  Advantage of Loop Connections.  </p></div>
 
                         <div className='hidden md:block absolute top-0 right-0'> <Image src={'/assets/images/woman-holding-iphone-xs-mockup-perspective-transparent-blog 1.png'} alt='iphone' width={331} height={336} />
                         </div>
