@@ -1,10 +1,19 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { IoIosAddCircle, RxCrossCircled, IoMdAddCircle, } from 'react-icons/io';
 import Card from './Card';
+import HorizontalCard1 from './HorizontalCard1';
+import HorizontalCard2 from './HorizontalCard2';
 
 
 const Benefit = () => {
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    const handleFlip = () => {
+        setIsFlipped(!isFlipped);
+    };
+    
+
     return (
         <div className='mt-[91px] '>
             <div className='flex flex-col justify-center items-center'>
@@ -41,56 +50,10 @@ const Benefit = () => {
                     />
                 </div>
 
-
-                <div className='relative hidden lg:block h-[337px] w-[1070px] bg-black  rounded-[20px] drop-shadow-white'>
-                    <div className='absolute bottom-4 right-8 '>  <IoMdAddCircle size={32} color="white" /></div>
-
-                    <div className='pt-[40px]  text-[45px] font-bold  '>
-                        <div className='flex flex-col'>
-                            <div className=' pl-[59px] pr-[478px] '>
-                                <span className=" text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">
-                                    Android and iOS Compatible.</span>
-                                {/* <span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text"></span> */}
-                            </div>
+                <HorizontalCard1/>
 
 
-                            <div className='font-bold pl-[59px] pr-[343px] text-[20px] text-white pt-5'>
-                               <p>Cross-Platform Compatibility for Seamless Connections.</p> 
-                            </div>
-                            <div className='mt-[-125px] ml-[656px] '>
-                                <Image src={'/assets/images/image 13.png'} alt='img 13' width={174} height={235} />
-                            </div>
-                            <div className='mt-[-332px] ml-[849px]'>
-                                <Image src={'/assets/images/image 15.png'} alt='img 15' width={172} height={236} />
-                            </div>
 
-                        </div>
-                    </div>
-
-                </div>
-
-                {/* for mobile  */}
-
-                <div className='relative lg:hidden w-[345px] h-[230px] md:w-[500px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white'>
-                    <div className='absolute bottom-4 right-8 '>  <IoMdAddCircle size={32} color="white" /></div>
-
-                    <div className='pt-[19px] md:pt-[40px] md:pl-[50px]  text-[36px] font-bold  '>
-                        <div className='flex flex-col item-center'>
-                            <div className='pl-[26px] pr-[16px] '>
-                                <span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">
-                                    Android and iOS
-                                </span> <span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">Compatible.</span>
-                            </div>
-
-                            <div className='font-bold text-[16px] md:text-[24px] pl-[26px] pr-[90px] text-white pt-[10px] md:pt-[20px]'>
-                               <p> Cross-Platform Compatibility for Seamless Connections.</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                {/* for web */}
 
                 <div className=' flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16  '>
 
@@ -115,44 +78,7 @@ const Benefit = () => {
                         img={"/assets/images/landing/PhoneinHand.png"}
                     />
                 </div>
-
-
-                <div className='relative hidden lg:block h-[337px] w-[1070px] bg-black drop-shadow-white  rounded-[20px]'>
-                    <div className='flex '>
-                        <div className=''>
-                            <Image src={'/assets/images/Mask group (6).png'} alt='mask group' width={331} height={336} />
-                        </div>
-                        <div className='flex flex-col pt-[98px]  pr-[107px]'>
-                            <div className='text-[45px] pl-[150px] font-bold'>
-                                <span className='text-white'> Footprint in </span><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0.</span>
-                            </div>
-                            <div className='text-[24px] ml-0 font-bold pt-7 '>
-                                <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3&apos;s Limitless Possibilities.</span><br />
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className='absolute bottom-4 right-8 '>  <IoMdAddCircle size={32} color="white" /></div>
-
-
-                </div>
-
-
-
-                <div className=' relative  pl-7 lg:hidden h-[230px] w-[345px] drop-shadow-white  md:h-[337px] md:w-[500px] bg-black  rounded-[20px]'>
-                    <div className='absolute bottom-4 right-8 '>  <IoMdAddCircle size={32} color="white" /></div>
-
-                    <div flex flex-col>
-                        <div className='pt-8 text-[36px] md:text-[45px] font-bold'>
-                            <span className='text-white'>Footprint in </span><br /><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0.</span>
-                        </div>
-                        <div className='text-[14px] md:text-[24px] pt-8 font-bold'>
-                            <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3&apos;s Limitless </span><br />
-                            <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Possibilities. </span>
-                        </div>
-                    </div>
-                </div>
+                <HorizontalCard2/>
             </div>
         </div>
     )
