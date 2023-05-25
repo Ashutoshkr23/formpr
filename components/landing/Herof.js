@@ -25,7 +25,7 @@ const Herof = () => {
             </div>
             <div className=' hidden md:block  mx-auto lg:ml-auto lg:mx-0 lg:pr-20'>
                 <div className=' relative '>
-                    <Image src={'/assets/images/landing/Mobile.png'}
+                    <Image src={'/assets/images/landing/mob.png'}
                         width={258}
                         height={644}
                     />
@@ -49,7 +49,7 @@ const Herof = () => {
             </div>
             <div className='md:hidden mx-auto '>
                 <div className=' relative '>
-                    <Image src={'/assets/images/landing/Mobile.png'}
+                    <Image src={'/assets/images/landing/mob.png'}
                         width={168}
                         height={425}
                     />
