@@ -1,3 +1,4 @@
+import ContactForm from '@/components/ContactForm/ContactForm';
 import { useRouter } from 'next/router';
 
 export default function Page() {

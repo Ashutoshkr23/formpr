@@ -6,7 +6,7 @@ export default function Item(props) {
     const { cartItems, plusCartFunc, minusCartFunc, handleItemCount } = useContext(CartContext);
     return (
         <>
-            <div className="items-info">
+            <div className="items-info" key={data._id}>
                 {/* <div className="product-img">
                     <img src={img} alt="tp" />
                 </div> */}

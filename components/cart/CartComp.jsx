@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Item from "./Item";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { useContext, useEffect, useState } from "react";
