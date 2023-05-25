@@ -148,7 +148,7 @@ export default function CartComp(props) {
                                 {totalQuantity > 0 ? <Scrollbars className="cart-items-container">
                                     {cartItems.map((item) => {
                                         if (item.quantity > 0) {
-                                            return <Item data={item} />;
+                                            return <div key={item._id}><Item data={item} /></div>;
 
                                         }
                                         return
