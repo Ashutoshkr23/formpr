@@ -1,52 +1,26 @@
-import First from "@/components/First";
-import { useSession, signIn, getSession, signOut } from "next-auth/react"
-import axios from "axios";
-import { useEffect , useState ,useRef} from "react";
-import React from "react";
+import Benefit from '@/components/landing/Benefit'
+import Herof from '@/components/landing/Herof'
+import LoginNav from '@/components/landing/LoginNav'
+import Testimonial from '@/components/landing/Testimonial'
+import Products from '@/components/landing/Products'
+import React from 'react'
+import Story from '@/components/landing/Story'
+import Android from '@/components/landing/Android'
+import FAQ from '@/components/landing/FAQ'
 
-export default function Home () {
-  const { data: session } = useSession()
-  const hasFetchedUserProfileRef = useRef(false);
-
-  const getUserProfile = async() => {  
-    let postdata = {
-      email : session.user.email
-    }
-    const response = await axios.post('api/userprofile', postdata);
-    console.log(response)
-  }
-  useEffect(() => {
-    console.log('Session object:', session);
-    if (session && session.user && !hasFetchedUserProfileRef.current) {
-      getUserProfile();
-      hasFetchedUserProfileRef.current = true;
-      console.log("useEffect Runned");
-    }
-  }, [session]);
-
+const landing = () => {
   return (
-    <div>
-      <First />
+    <div className='bg-["#333333"] max-w-[1440px]  mx-auto px-4 sm:px-8 md:px-16 xl:px-28' >
+      <LoginNav />
+      <Herof />
+      <Benefit />
+      <Products />
+      <Story />
+      <Testimonial />
+      <Android />
+      <FAQ />
     </div>
   )
 }
 
-export async function getServerSideProps({ req }) {
-  const session = await getSession({ req });
-  console.log(session, "session")
-  if (!session) {
-    return {
-      redirect: {
-        destination: '/login',
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {
-      session,
-
-    },
-  };
-}
+export default landing

@@ -37,7 +37,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleGoogleSignin = () => {
-    signIn('google', { callbackUrl: '/' });
+    signIn('google', { callbackUrl: '/dashboard' });
   };
 
   const toggleMenu = () => {
