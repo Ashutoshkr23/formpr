@@ -68,12 +68,12 @@ function HorizontalCard2() {
                         <div className='horizontal-card-inner '>
                             <div className={`horizontal-card-front  w-[345px] h-[230px] md:w-[500px] md:h-[336px] rounded-[20px] `}>
                                 <div className={`relative  w-[345px] h-[230px] md:w-[500px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
-                                    <div className='pt-[19px] md:pt-[40px] md:pl-[50px]  text-[36px] font-bold  '>
+                                    <div className='pt-[40px] md:pl-[50px]  text-[36px] font-bold  '>
                                         <div flex flex-col>
-                                            <div className='pt-8 text-[36px] md:text-[45px] font-bold'>
+                                            <div className='text-[36px] md:text-[45px] pl-[30px] leading-[44px] font-bold'>
                                                 <span className='text-white'>Footprint in </span><br /><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0.</span>
                                             </div>
-                                            <div className='text-[14px] md:text-[24px] pt-8 font-bold'>
+                                            <div className='text-[14px] md:text-[24px] pt-7 leading-[21px] pl-[30px] font-bold'>
                                                 <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3&apos;s Limitless </span><br />
                                                 <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Possibilities. </span>
                                             </div>

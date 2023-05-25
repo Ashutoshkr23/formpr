@@ -16,11 +16,11 @@ const Benefit = () => {
 
     return (
         <div className='mt-[91px] '>
-            <div className='flex flex-col justify-center items-center'>
+            <div className='flex flex-col justify-center items-center '>
                 <div className='text-[16px] font-poppins'>
                     Benefits
                 </div>
-                <div className='text-[50px] font-poppins font-bold text'>
+                <div className='text-[50px]  font-poppins font-bold '>
                     Join the Loop
                 </div>
 
@@ -59,11 +59,11 @@ const Benefit = () => {
 
 
                     <Card
-                        cardStyle={"relative pl-6 md:pr-[61px] md:pl-14 md:pt-12 w-[337px] h-[230px] md:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-br   from-[#FDFF96] to-[#F16869]"}
+                        cardStyle={"relative pt-[40px] pl-6 md:pr-[61px] md:pl-14 md:pt-12 w-[337px] h-[230px] md:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-br   from-[#FDFF96] to-[#F16869]"}
                         heading={"Seamless User Experience. "}
                         headingStyle={"text-[36px] leading-[120%]  md:text-[45px] pr-[14px] font-bold"}
                         text={"Effortless Networking Made  Beautifully Simple."}
-                        textStyle={"mt-7 text-[16px] md:text-[24px] pr-[65px] font-bold"}
+                        textStyle={"mt-7 leading-[21px] text-[16px] md:text-[24px] pr-[65px] font-bold"}
                         img={""}
                         btncolor={"black"}
 

@@ -12,11 +12,7 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+     
       dropShadow: {
         'white': '0 10px 15px rgba(0, 25, 38, 0.25)',
       },
