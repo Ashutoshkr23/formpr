@@ -4,12 +4,15 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { signIn, useSession, getSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+
 
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const [date, setDate] = useState();
+  const router = useRouter();
 
   function getYear() {
     setDate(new Date().getFullYear());
@@ -36,9 +39,13 @@ function Navbar() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleGoogleSignin = () => {
-    signIn('google', { callbackUrl: '/dashboard' });
-  };
+  // const handleGoogleSignin = () => {
+  //   signIn('google', { callbackUrl: '/dashboard' });
+  // };
+  const handlelogin =()=>{
+    router.push('/login');
+
+  }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -62,7 +69,7 @@ function Navbar() {
                 <li className=" text-sm px-1.5 font-extralight hover:font-bold  "><a href="#">Contact</a></li>
               </ul>
               <button
-                onClick={handleGoogleSignin}
+                onClick={handlelogin}
                 className='w-[165px] h-[41px] bg-black text-white text-[16px] font-bold rounded-[10px] ml-[70px] text-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]'
               >
                 LOG IN
@@ -82,7 +89,7 @@ function Navbar() {
             </a>
             <div className="flex ">
               <button
-                onClick={handleGoogleSignin}
+                onClick={handlelogin}
                 className='w-28 h-10 bg-black text-white text-sm mr-4 my-auto font-bold rounded-[10px] text-center'
               >
                 LOG IN
