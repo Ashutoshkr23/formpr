@@ -5,7 +5,7 @@ import React from 'react'
 const Herof = () => {
     return (
 
-        <div className='flex  lg:flex-row justify-between   flex-col-reverse pt-24 overflow-hidden md:overflow-visible '>
+        <div className='flex  lg:flex-row justify-between   flex-col-reverse pt-24   '>
 
             <div className="flex flex-col mt-12 lg:mt-48 ">
                 <h1 className='sm:text-[60px] mr-auto text-left anim-typewriter  text-[40px] font-bold '>
@@ -48,8 +48,8 @@ const Herof = () => {
                     </motion.div>
                 </div>
             </div>
-            <div className='md:hidden mx-auto '>
-                <div className=' relative '>
+            <div className='md:hidden mx-auto min-w-[375px] overflow-hidden '>
+                <div className=' relative mx-auto w-[200px] pl-8 '>
                     <Image src={'/assets/images/landing/mob.png'}
                         width={168}
                         height={425}
@@ -58,7 +58,7 @@ const Herof = () => {
                         initial={{ x: -1000 }}
                         animate={{ x: 0 }}
                         transition={{ duration: 2 }}
-                        className='absolute top-[47px] -left-[115px] '
+                        className='absolute top-[47px] -left-[96px] '
                     >
                         <Image src={'/assets/images/cardbl.svg'} width={162} height={117} />
                     </motion.div>
