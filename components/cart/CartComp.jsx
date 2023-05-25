@@ -116,7 +116,7 @@ export default function CartComp(props) {
         <div>
             <div className="cart-body ">
                 <header>
-                    <Link href={"/"}>
+                    <Link href={"/dashboard"}>
                         <div className="continue-shopping">
                             <img src="/assets/images/cart-images/arrow.png" className="arrow-icon" alt="arrow" />
                             {/* <Image src="/assets/images/cart-images/arrow.png" alt="arrow" className="arrow-icon" width={50} height={50} /> */}

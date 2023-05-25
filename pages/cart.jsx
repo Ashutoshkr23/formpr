@@ -1,11 +1,9 @@
 import React from 'react'
 import CartComp from "@/components/cart/CartComp";
 import Navbar from '@/components/Navbar';
+import { useSession, signIn, getSession, signOut } from "next-auth/react"
 
-
-
-
-const Cart = () => {
+export default function Cart() {
 
     return (
         <>
@@ -17,4 +15,22 @@ const Cart = () => {
     )
 }
 
-export default Cart
+export async function getServerSideProps({ req }) {
+    const session = await getSession({ req });
+    console.log(session, "session")
+    if (!session) {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: {
+            session,
+
+        },
+    };
+}
