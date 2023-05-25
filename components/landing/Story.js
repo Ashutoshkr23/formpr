@@ -14,10 +14,10 @@ const Story = () => {
           <h1 className='text-[48px] font-bold'>Our Story </h1>
         </div>
         <div className='pt-8 pl-[424px] pr-[120px] xl:pr-[225px] text-[20px]'>
-          <h2 className=' font-bold'><span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text'>At Loop, we&apos;re passionate about making networking effortless </span><span className='text-transparent bg-gradient-to-tr from-[#FDFF96] to-[#F16869] bg-clip-text'>and eco-friendly.  </span></h2>
+          <h2 className=' font-bold'><span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text xl:leading-[186%]'>At Loop, we&apos;re passionate about making networking effortless </span><span className='text-transparent bg-gradient-to-tr from-[#FDFF96] to-[#F16869] bg-clip-text'>and eco-friendly.  </span></h2>
         </div>
 
-        <div className='xl:pt-[33px] pt-6 text-white pl-[405px] pr-[90px] xl:pr-[134px]'><p className='text-14 '></p>Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that&apos;s why we&apos;ve created a product that&apos;s both classy and luxurious. </div>
+        <div className='xl:pt-[33px] pt-6 text-white pl-[405px] pr-[90px] xl:pr-[134px] xl:leading-[186%]'><p className='text-14 '></p>Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that&apos;s why we&apos;ve created a product that&apos;s both classy and luxurious. </div>
 
 
         <div className=' absolute left-[51px] bottom-0'>
@@ -30,10 +30,10 @@ const Story = () => {
       </div>
 
       {/* mobile */}
-      <div className='lg:hidden  flex justify-center items-center mx-auto'>
-        <div className='relative  max-w-[345px] h-[536px] bg-black  rounded-[15px]'>
+      <div className='lg:hidden  flex justify-center items-center mx-auto '>
+        <div className='relative  max-w-[345px] h-[536px] bg-black pl-5 rounded-[15px]'>
 
-          <div className='absolute -top-[81px] '>
+          <div className='absolute left-0 -top-[81px] '>
             <Image src={'/assets/images/storyph2.png'}
               alt='storyPhone'
               width={345}
@@ -50,8 +50,8 @@ const Story = () => {
             <div className='text-white pr-8 pt-7 '><p className='text-[14px] font-bold'><span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text'>At Loop, we&apos;re passionate about making </span>
               <span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text'>networking effortless and eco-friendly. </span> </p></div>
 
-            <div className='pt-7 pr-8 pb-[31px] text-white text-[14px] tracking-wide'>
-              <p>Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that&apos;s why we&apos;ve created a product that&apos;s both classy and luxurious. </p>
+            <div className='pt-7 pr-6 pb-[31px] text-white text-[12px] leading-[186%]'>
+              <p className=''> Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that&apos;s why we&apos;ve created a product that&apos;s both classy and luxurious. </p>
 
             </div>
           </div>

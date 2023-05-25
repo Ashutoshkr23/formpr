@@ -3,14 +3,14 @@ import QA from './QA';
 
 
 function FAQ() {
-    const [arrowRotation, setArrowRotation] = useState(0);
-    const [showAnswer, setShowAnswer] = useState(false);
+    // const [arrowRotation, setArrowRotation] = useState(0);
+    // const [showAnswer, setShowAnswer] = useState(false);
 
 
-    const handleArrowClick = () => {
-        setArrowRotation(arrowRotation + 180);
-        setShowAnswer(!showAnswer);
-    };
+    // const handleArrowClick = () => {
+    //     setArrowRotation(arrowRotation + 180);
+    //     setShowAnswer(!showAnswer);
+    // };
 
   return (
     <div className='mt-20 lg:mt-52 mb-40'>
