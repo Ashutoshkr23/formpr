@@ -115,7 +115,7 @@ const ContactForm = ({ values }) => {
   return (
     <div className="flex ">
 
-      {cardUuid ? (
+      {/* {cardUuid ? ( */}
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -438,9 +438,9 @@ const ContactForm = ({ values }) => {
             </Form>
           )}
         </Formik>
-      ) : (
+       {/* ) : (
         <p>Please Buy the Card</p>
-      )}
+       )} */}
     </div>
   );
 };
