@@ -1,4 +1,6 @@
 import React , {useState} from 'react'
+import { BsFillTriangleFill } from 'react-icons/bs';
+
 
 function QA({ques , ans}) {
     const [arrowRotation, setArrowRotation] = useState(0);
@@ -15,6 +17,7 @@ function QA({ques , ans}) {
               <div className='question mt-4 p-4'>
                   <button className='flex justify-between items-center w-full' onClick={handleArrowClick}>
                       <div className=' font-bold text-xl md:text-2xl inline text-start'>{ques}</div>
+                      <div className='ml-auto'><BsFillTriangleFill className='h-4 w-6' style={{ transform: `rotate(${arrowRotation}deg)` }} /></div>
                       <div className='ml-4'>
 
                       </div>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Image from 'next/image';
-import { IoIosAddCircle, RxCrossCircled, IoMdAddCircle, } from 'react-icons/io';
+import { IoIosAddCircle,  IoMdAddCircle, } from 'react-icons/io';
+import { RxCrossCircled } from 'react-icons/rx';
+
 
 function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontContent, backContent , btncolor }) {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -46,7 +48,7 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
                             </div>
                            
                             <div className='absolute bottom-4 right-8'>
-                                <IoMdAddCircle onClick={handleFlip} size={32} color='black' />
+                                <RxCrossCircled onClick={handleFlip} size={32} color='black' />
                             </div>
                         </div>
                     </div>
