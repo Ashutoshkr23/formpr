@@ -9,11 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Mulish;
 }
-
-
-
 
 .anim-typewriter {
     position: relative;
@@ -34,7 +30,7 @@
     }
 
     to {
-        width: 7.1em;
+        width: 7.6em;
     }
 }
 

@@ -5,7 +5,7 @@ import React from 'react'
 const Herof = () => {
     return (
 
-        <div className='flex  lg:flex-row justify-between   flex-col-reverse pt-24 overflow-hidden '>
+        <div className='flex  lg:flex-row justify-between   flex-col-reverse pt-24 overflow-hidden md:overflow-visible '>
 
             <div className="flex flex-col mt-12 lg:mt-48 ">
                 <h1 className='sm:text-[60px] mr-auto text-left anim-typewriter  text-[40px] font-bold '>
@@ -25,9 +25,10 @@ const Herof = () => {
             </div>
             <div className=' hidden md:block  mx-auto lg:ml-auto lg:mx-0 lg:pr-20'>
                 <div className=' relative '>
-                    <Image src={'/assets/images/landing/Mobile.png'}
+                    <img src={'/assets/images/landing/Mobile.png'}
                         width={258}
                         height={644}
+                        quality={100}
                     />
                     <motion.div
                         initial={{ x: -1000 }}
