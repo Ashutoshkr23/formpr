@@ -8,6 +8,7 @@ import Template from '@/components/Template';
 import themes from '@/components/Themes';
 import ProgressBar from '@/components/ProgressBar';
 import LoginNav from '@/components/landing/LoginNav';
+import Image from 'next/image';
 
 
 
@@ -19,6 +20,14 @@ const ContactForm = ({ values }) => {
   const [cardUuid, setCardUuid] = useState(null);
   const { data: session } = useSession();
   const [template, setSelectedTemplate] = useState(1);
+  const [watsp, setWatsp] = useState(false);
+  const [insta, setInsta] = useState(false);
+  const [email, setEmail] = useState(false);
+  const [facebook, setFacebook] = useState(false);
+  const [linked, setLinked] = useState(false);
+
+
+
 
   const handleTemplateChange = (event) => {
     const value = parseInt(event.target.value);
@@ -109,7 +118,7 @@ const ContactForm = ({ values }) => {
     }
   };
 
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
 
   
   return (
@@ -192,20 +201,7 @@ const ContactForm = ({ values }) => {
                       </div>
                       <ErrorMessage name="companyNumber" component="div" className="text-red-500" />
                     </div>
-                    <div className="mb-4">
-                      <div className="flex">
-                      <label htmlFor="email" className="block text-gray-700 font-bold w-60 mb-2">
-                        Email:
-                      </label>
-                      <Field
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      />
-                      </div>
-                      <ErrorMessage name="email" component="div" className="text-red-500" />
-                    </div>
+                   
                     <div className="mb-4">
                       <div className="flex">
                       <label htmlFor="designation" className="block text-gray-700 font-bold w-60 mb-2">
@@ -280,8 +276,63 @@ const ContactForm = ({ values }) => {
                       </div>
                       <ErrorMessage name="website" component="div" className="text-red-500" />
                     </div>
+                         <div className='mb-4'><h1>Add social Links</h1></div>
+                         <div className='flex space-x-4 justify-center'>
+                        
+                         <div className='mb-4' onClick={()=> {
+                        setEmail(!email)
+                      }}>
+                        <Image src={'/assets/images/social/folder1/email.png'} alt='email' width={50} height={50}  />
+                      </div>
 
-                    <div className="mb-4">
+                      <div className='mb-4' onClick={()=> {
+                        setWatsp(!watsp)
+                      }}>
+                     <Image src={'/assets/images/social/folder1/watsp.png'} alt='email' width={50} height={50}  />
+                      </div>
+
+                      <div className='mb-4' onClick={()=> {
+                        setLinked(!linked)
+                      }}>
+                     <Image src={'/assets/images/social/folder1/linked.png'} alt='email' width={50} height={50}  />
+                      </div>
+                      <div className='mb-4' onClick={()=> {
+                        setInsta(!insta)
+                      }}>
+                     <Image src={'/assets/images/social/folder1/insta.png'} alt='email' width={50} height={50}  />
+                      </div>
+                      <div className='mb-4' onClick={()=> {
+                        setFacebook(!facebook)
+                      }}>
+                     <Image src={'/assets/images/social/folder1/facebook.png'} alt='email' width={50} height={50}  />
+                      </div>
+
+
+
+                         </div>
+
+
+
+                    
+                      {email && (  <div className="mb-4">
+                     
+                   
+                     <div className="flex">
+                      <label htmlFor="email" className="block text-gray-700 font-bold w-60 mb-2">
+                        Email:
+                      </label>
+                      <Field
+                        type="email"
+                        id="email"
+                        name="email"
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                      </div>
+                      <ErrorMessage name="email" component="div" className="text-red-500" />
+                    </div>
+                     )}
+                    
+                      {watsp &&   ( <div className="mb-4">
                       <div className="flex">
                       <label htmlFor="whatsapp" className="block text-gray-700 font-bold w-60 mb-2">
                         whatsapp:
@@ -295,9 +346,9 @@ const ContactForm = ({ values }) => {
                       </div>
                       <ErrorMessage name="whatsapp" component="div" className="text-red-500" />
                     </div>
-
-
-                    <div className="mb-4">
+                  )}
+ 
+               {linked && (     <div className="mb-4">
                       <div className="flex">
                       <label htmlFor="linkedIn" className="block text-gray-700 font-bold w-60 mb-2">
                         linkedIn:
@@ -311,8 +362,9 @@ const ContactForm = ({ values }) => {
                       </div>
                       <ErrorMessage name="linkedIn" component="div" className="text-red-500" />
                     </div>
-
-                    <div className="mb-4">
+               )}
+               
+              {insta&&(     <div className="mb-4">
                       <div className="flex">
                       <label htmlFor="Instagram" className="block text-gray-700 font-bold w-60 mb-2">
                         Instagram:
@@ -327,8 +379,9 @@ const ContactForm = ({ values }) => {
                       <ErrorMessage name="Instagram" component="div" className="text-red-500" />
                     </div>
 
-
-                    <div className="mb-4">
+              )}
+              
+               {facebook&& (     <div className="mb-4">
                       <div className="flex">
                       <label htmlFor="facebook" className="block text-gray-700 font-bold w-60 mb-2">
                         facebook:
@@ -342,7 +395,7 @@ const ContactForm = ({ values }) => {
                       </div>
                       <ErrorMessage name="facebook" component="div" className="text-red-500" />
                     </div>
-
+               )}
                     <div className="mb-4">
                       <div className="flex">
                       <label htmlFor="bio" className="block text-gray-700 font-bold w-60 mb-2">
