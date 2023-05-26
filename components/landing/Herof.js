@@ -31,7 +31,7 @@ const Herof = () => {
                         quality={100}
                     />
                     <motion.div
-                        initial={{ x: -1000 }}
+                        initial={{ x: -250 }}
                         animate={{ x: 0 }} 
                         transition={{ duration: 2 }}
                         className='absolute top-[72px] -left-[175px]'
@@ -55,7 +55,7 @@ const Herof = () => {
                         height={425}
                     />
                     <motion.div
-                        initial={{ x: -1000 }}
+                        initial={{ x: -400 }}
                         animate={{ x: 0 }}
                         transition={{ duration: 2 }}
                         className='absolute top-[47px] -left-[96px] '
