@@ -12,8 +12,8 @@ const ManageCardComps = () => {
             {userProfile?.totalCards > 0 ?
                 <ul role="list" className="divide-y divide-gray-100">
                     {allCards.map((card) => (
-                        <Link href={`/createCard/${card.cuuid}`}>
-                            <li key={card.cuuid} className="flex justify-between gap-x-6 py-5">
+                        <Link href={`/createCard/${card.cuuid}`} key={card.cuuid}>
+                            <li className="flex justify-between gap-x-6 py-5">
                                 <div className="flex gap-x-4">
                                     {/* <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={card.imageUrl} alt="" /> */}
                                     <div className="min-w-0 flex-auto">
