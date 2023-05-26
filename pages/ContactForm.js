@@ -370,6 +370,10 @@ const ContactForm = ({ values }) => {
                    text3={themes[0].text3}
                    btn={themes[0].btn}
                   loop={themes[0].loop}
+                  btntext={themes[0].btntext}
+                  border={themes[0].border}
+                  profileimg={themes[0].profileimg}
+                  type={themes[0].type}
                    fname={values.firstName} lname={values.lastName} bio={values.bio} designation={values.designation} company={values.companyLogo} website={values.website} mobile={values.mobileNumber} /></div>
 
                 </div>
@@ -404,6 +408,10 @@ const ContactForm = ({ values }) => {
                               text3={theme.text3}
                               btn={theme.btn}
                               loop={theme.loop}
+                              border={theme.border}
+                              profileimg={theme.profileimg}
+                              type={theme.type}
+                              btntext={theme.btntext}
                               fname={values.firstName}
                               lname={values.lastName}
                               bio={values.bio}
@@ -411,6 +419,7 @@ const ContactForm = ({ values }) => {
                               company={values.companyLogo}
                               website={values.website}
                               mobile={values.mobileNumber}
+                              
                             />
                           </label>
                           <div className="flex justify-center pt-2">
