@@ -17,7 +17,7 @@ const ContactForm = ({ cuuid }) => {
 
   const { data: session } = useSession();
   const [template, setSelectedTemplate] = useState(1);
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
 
 
   const handleTemplateChange = (event) => {
