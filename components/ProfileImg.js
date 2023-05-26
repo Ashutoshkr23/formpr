@@ -9,7 +9,7 @@ const ProfileImg = ({ profileimg }) => {
           src={profileimg}
           width={100}
           height={100}
-
+          alt="Profile Image"
         />
 
       </div>

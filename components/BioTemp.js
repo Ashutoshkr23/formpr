@@ -9,6 +9,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
         <textarea className={`bg-transparent w-full resize-none ${text1}`}
           placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis eleifend arcu in fringilla. "
           value={bio}
+          readOnly={true}
         //   onChange={handleChange}
         />
       </div>
@@ -19,6 +20,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
               type="text"
               placeholder="company Name"
               value={company}
+              readOnly={true}
             //   onChange={handleChange}
             /></p>
         </div>
@@ -28,6 +30,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
               type="text"
               placeholder="+919833XXXXXX"
               value={mobile}
+              readOnly={true}
             //   onChange={handleChange}
             />
           </p>
@@ -38,6 +41,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
               type="text"
               placeholder=" www.alphamintlabs.com"
               value={website}
+              readOnly={true}
             //   onChange={handleChange}
             />
           </p>
