@@ -9,7 +9,8 @@ const CardSchema = new mongoose.Schema({
     // theme id will be coming from theme.js uuid
     themeId: { type: String },
     // card type will be id which will be coming from cardType.js object id
-    cardType: { type: mongoose.Schema.Types.ObjectId },
+    cardType: { type: mongoose.Schema.Types.ObjectId, required: true },
+    cardAmount: { type: Number },
     firstName: { type: String },
     lastName: { type: String },
     bio: { type: String },

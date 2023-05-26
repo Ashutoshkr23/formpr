@@ -1,20 +1,36 @@
-import React, { useState } from 'react'
+import React from 'react'
 import CartComp from "@/components/cart/CartComp";
-import { products } from "@/components/cart/product";
+import Navbar from '@/components/Navbar';
+import { useSession, signIn, getSession, signOut } from "next-auth/react"
 
-
-
-const Cart = () => {
-    const [items, setItems] = useState(products)
-    const [totalAmount, setTotalAmount] = useState(499);
-    const [totalItems, setTotalItems] = useState(2);
-    const [quantity, setQuantity] = useState(1);
+export default function Cart() {
 
     return (
         <>
-            <CartComp items={items} totalAmount={totalAmount} totalItems={totalItems} quantity={quantity} />
+            <div className='w-full  min-h-screen py-5'>
+                <Navbar />
+                <CartComp />
+            </div>
         </>
     )
 }
 
-export default Cart
+export async function getServerSideProps({ req }) {
+    const session = await getSession({ req });
+    console.log(session, "session")
+    if (!session) {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: {
+            session,
+
+        },
+    };
+}
