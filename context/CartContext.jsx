@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
                     setAllCards(response.data.result)
                 }
             }
-            console.log(response, "userCards")
+            // console.log(response, "userCards")
         }
 
         const fetchUserProfile = async () => {
@@ -54,7 +54,7 @@ export const CartProvider = ({ children }) => {
                     }
                 }
             }
-            console.log(response, "resp ")
+            // console.log(response, "resp ")
         }
 
 

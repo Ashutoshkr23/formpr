@@ -20,6 +20,37 @@ export default async function handler(req, res) {
             const allCards = await card.find({ puuid: puuid })
 
             return res.status(200).json({ error: false, message: 'Cards fetch successfully', result: allCards });
+        } else if (req.method == "GET") {
+
+            try {
+
+                const { cuuid, puuid } = req.query;
+                console.log(cuuid, puuid, "c p")
+                if (!cuuid && puuid) {
+                    return res.status(422).json({ error: "Missing required fields." });
+
+                }
+
+                const checkCard = await card.find({ puuid: puuid, cuuid: cuuid });
+                console.log(checkCard, "Check")
+                if (checkCard && checkCard.length) {
+                    return res.status(200).json({
+                        error: false,
+                        message: "Card is Valid",
+                        valid: true,
+                    })
+                } else {
+                    return res.status(200).json({
+                        error: false,
+                        message: "Card is InValid",
+                        valid: false,
+                    })
+                }
+
+            } catch (error) {
+                return res.status(500).json({ message: 'Something went wrong', error });
+            }
+
         }
         // else if (req.method === 'GET') {
         //     //console.log('emailsss:', email);

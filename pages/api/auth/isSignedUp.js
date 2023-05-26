@@ -7,6 +7,7 @@ export default async function handler(req, res) {
     try {
         await connectToDatabase();
     } catch (error) {
+        // console.log(error, "Err")
         return res.json({ error: "Connection Failed...!" });
     }
     if (req.method === "GET") {
