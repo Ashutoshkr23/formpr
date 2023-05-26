@@ -14,7 +14,7 @@ const ManageCardComps = () => {
                             {/* <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={card.imageUrl} alt="" /> */}
                             <div className="min-w-0 flex-auto">
                                 <p className="text-sm font-semibold leading-6 text-gray-900">{card.cardAmount == 499 ? "Loop Lite" : card.cardAmount == 799 ? "Loop Elevate" : "Loop Supreme"}</p>
-                                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{card.puuid}</p>
+                                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{card.cuuid}</p>
                             </div>
                         </div>
                         <div className="hidden sm:flex sm:flex-col sm:items-end">
