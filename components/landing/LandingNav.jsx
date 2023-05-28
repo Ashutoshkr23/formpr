@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 
 
 
-function Navbar() {
+function LandingNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const [date, setDate] = useState();
@@ -143,6 +143,6 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default LandingNavbar
 
 

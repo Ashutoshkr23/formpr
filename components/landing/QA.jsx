@@ -12,7 +12,6 @@ function QA({ques , ans}) {
         setShowAnswer(!showAnswer);
     };
   return (
-    <div>
           <div>
               <div className='question mt-4 p-4'>
                   <button className='flex justify-between items-center w-full' onClick={handleArrowClick}>
@@ -30,7 +29,6 @@ function QA({ques , ans}) {
               }
               <div className='w-full h-[1px] bg-[#596573]'></div>
           </div>
-    </div>
   )
 }
 

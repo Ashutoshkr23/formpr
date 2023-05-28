@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image';
-import { IoIosAddCircle,  IoMdAddCircle, } from 'react-icons/io';
+import {  IoMdAddCircle, } from 'react-icons/io';
 import { RxCrossCircled } from 'react-icons/rx';
 
 
@@ -12,7 +12,7 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
     };
 
     return (
-        <div>
+        <>
             <div className={`card ${isFlipped ? 'flipped' : ''} `}>
                 <div className={` relative w-[345px]  h-[230px] md:w-[500px] md:h-[336px] `}>
                     <div className='card-inner '>
@@ -36,14 +36,10 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
                                 <IoMdAddCircle onClick={handleFlip} size={32} color={btncolor} />
                             </div>
                         </div>
-                        <div className={`card-back  w-[345px]  h-[230px] md:w-[500px] md:h-[336px] rounded-[20px]   `}>
-                            <div className={` ${cardStyle}`}>
+                        <div className={`card-back  w-[345px]  h-[230px] md:w-[500px] md:h-[336px] rounded-[20px]`}>
+                            <div className={`${cardStyle}`}>
                                 <h1>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                                    anim id est laborum.
+                                    {backContent}
                                 </h1>
                             </div>
                            
@@ -55,7 +51,7 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
                 </div>
 
             </div>
-        </div>
+        </>
     );
 }
 

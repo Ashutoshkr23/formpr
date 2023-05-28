@@ -1,33 +1,22 @@
-import Image from 'next/image'
-import React, { useState } from 'react'
-import { IoIosAddCircle, RxCrossCircled, IoMdAddCircle, } from 'react-icons/io';
-import Card from './Card';
-import HorizontalCard1 from './HorizontalCard1';
-import HorizontalCard2 from './HorizontalCard2';
+import {Card, HorizontalCard1, HorizontalCard2} from '@/components';
 
 
-const Benefit = () => {
-    const [isFlipped, setIsFlipped] = useState(false);
-
-    const handleFlip = () => {
-        setIsFlipped(!isFlipped);
-    };
-    
+const Benefits = () => {
 
     return (
-        <div className='mt-[91px] '>
-            <div className='flex flex-col justify-center items-center '>
+        <div className='mt-[91px]'>
+            <div className='flex flex-col justify-center items-center'>
                 <div className='text-[16px] font-poppins'>
                     Benefits
                 </div>
-                <div className='text-[50px]  font-poppins font-bold '>
+                <div className='text-[50px] font-poppins font-bold'>
                     Join the Loop
                 </div>
 
             </div>
             <div className='mt-[91px] flex flex-col items-center space-y-9 '>
 
-                <div className='flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16  '>
+                <div className='flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16'>
 
 
                     <Card
@@ -38,6 +27,7 @@ const Benefit = () => {
                         textStyle={"md:pt-[29px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 font-bold"}
                         img={"/assets/images/landing/CardnShadow.png"}
                         btncolor={"white"}
+                        backContent={" From sleek minimalism to captivating artwork, our customizable designs ensure your digital card stands out in the Loop."}
                     />
 
                     <Card
@@ -55,7 +45,7 @@ const Benefit = () => {
 
 
 
-                <div className=' flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16  '>
+                <div className='flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16'>
 
 
                     <Card
@@ -79,9 +69,10 @@ const Benefit = () => {
                     />
                 </div>
                 <HorizontalCard2/>
+
             </div>
         </div>
     )
 }
 
-export default Benefit
+export default Benefits

@@ -2,10 +2,10 @@ import Image from 'next/image'
 import { motion } from 'framer-motion';
 import React from 'react'
 
-const Herof = () => {
+const Hero = () => {
     return (
 
-        <div className='flex  lg:flex-row justify-between   flex-col-reverse pt-24   '>
+        <div className='flex lg:flex-row justify-between flex-col-reverse pt-24'>
 
             <div className="flex flex-col mt-12 lg:mt-48 ">
                 <h1 className='sm:text-[60px] mr-auto text-left anim-typewriter  text-[40px] font-bold '>
@@ -77,4 +77,5 @@ const Herof = () => {
     )
 }
 
-export default Herof
+export default Hero
+

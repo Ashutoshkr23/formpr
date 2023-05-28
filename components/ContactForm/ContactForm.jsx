@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import Template from '@/components/Template';
 import themes from '@/components/Themes';
 import ProgressBar from '@/components/ProgressBar';
-import LoginNav from '@/components/landing/LoginNav';
+import LoginNav from '@/components/landing/LandingNav';
 
 
 
