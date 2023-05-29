@@ -47,14 +47,11 @@ function HorizontalCard1() {
                               </div>
                           </div>
                           <div className={`horizontal-card-back  h-[337px] w-[1070px] rounded-[20px]   `}>
-                              <div className={`relative  h-[337px] w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
-                                  <h1 className='text-white'>
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                                      anim id est laborum.
-                                  </h1>
+                              <div className={`relative p-8 text-[24px]  h-[337px] w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
+                              <p className='text-white'>
+                                  Whether it's Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device. 
+
+                                  </p>
                               </div>
 
                               <div className='absolute bottom-4 right-8'>
@@ -94,14 +91,11 @@ function HorizontalCard1() {
                               </div>
                           </div>
                           <div className={`horizontal-card-back  w-[345px] h-[230px] md:w-[500px] md:h-[336px] rounded-[20px]   `}>
-                              <div className={`relative  w-[345px] h-[230px] md:w-[500px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
-                                  <h1 className='text-white'>
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                                      anim id est laborum.
-                                  </h1>
+                              <div className={`relative text-[16px] sm:text-[20px] sm:p-8 p-6 w-[345px] h-[230px] md:w-[500px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
+                                  <p className='text-white'>
+                                  Whether it's Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device. 
+
+                                  </p>
                               </div>
 
                               <div className='absolute bottom-4 right-8'>
