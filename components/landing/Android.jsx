@@ -9,7 +9,7 @@ const Android = () => {
        <div className='flex lg:justify-center md:justify-center   '> 
             <div className='flex flex-col  '>
 <div className='text-[30px] md:text-[42px] lg:pt-[136px] lg:text-[48px] mx-auto font-bold  text-transparent bg-gradient-to-r from-[#66D3E1] to-[#96FFAD] bg-clip-text '>
-    <h1>Android and iOS compatible </h1>
+    <h2>Android and iOS compatible </h2>
 </div>
 <div className='flex flex-col items-center space-y-7 lg:space-y-0  lg:flex-row lg:justify-end lg:space-x-4 lg:pt-[51px] pt-[58px] '>
     <div className=''>
