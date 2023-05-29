@@ -34,24 +34,24 @@ END:VCARD`;
 };
 const rotary = () => {
   // function to convert page into pdf and download it 
- 
+
   return (
     <div className='bg-black'>
       <div className='bg-gradient-to-b min-h-screen h-auto  relative pt-[146px] mx-auto  from-[#00246C] to-[#009999] sm:w-[640px]'>
         <div className='top-[55px]  inset-0 mx-auto absolute h-[150px] w-[150px] '>      <RotaryLogo /></div>
         <div className='relative px-6 bg-gradient-to-b   from-[#FFFFFF] to-[#B0B0B0] mx-auto h-[612px] w-[351px] rounded-[20px]'>
-          
-          <div className='-top-16 inset-0 mx-auto absolute h-[100px] w-[100px] '>      <Profilero/></div>
+
+          <div className='-top-16 inset-0 mx-auto absolute h-[100px] w-[100px] '>      <Profilero /></div>
 
           <div className='flex justify-center pt-[52px] font-semibold text-[20px]'>Sukumaran Nair</div>
           <div className='flex justify-center mt-[11px] font-semibold text-[16px]'>Club President</div>
           <div><Bioro /></div>
-          <div><Socialro  /></div>
+          <div><Socialro /></div>
           <div className=''><button className='  bg-black font-bold text-[20px] text-white h-[50px] w-[304px] rounded-[14px] mt-[31px]' onClick={downloadVCard}>SAVE CONTACT</button>  </div>
 
         </div>
 
-        <div className='text-[10px] flex justify-center mt-8 pb-[29px] text-white'>made with love by <Image className='ml-[3px]' src={'/loopro.svg'} width={27} height={12}/></div>
+        <div className='text-[10px] flex justify-center mt-8 pb-[29px] text-white'>made with love by <Image className='ml-[3px]' src={'/loopro.svg'} width={27} height={12} /></div>
 
       </div>
 

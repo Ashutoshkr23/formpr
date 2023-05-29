@@ -28,9 +28,10 @@ const ContactForm = ({ cuuid }) => {
 
 
   const initialValues = {
-    firstName: '',
-    lastName: '',
+    fullName: '',
+    cardName: '',
     mobileNumber: '',
+    companyName: '',
     companyNumber: '',
     email: '',
     designation: '',
@@ -46,20 +47,21 @@ const ContactForm = ({ cuuid }) => {
 
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required('First name is required'),
-    lastName: Yup.string().required('Last name is required'),
-    mobileNumber: Yup.number().required('Mobile number is required'),
-    companyNumber: Yup.number().required('Company number is required'),
-    email: Yup.string().email('Invalid email address').required('Email is required'),
-    designation: Yup.string().required('designation is required'),
-    companyLogo: Yup.string().required('Company logo is required'),
-    deck: Yup.string().required('deck is required'),
-    website: Yup.string().required(' website is required'),
-    whatsapp: Yup.string().required('whatsapp is required'),
-    linkedIn: Yup.string().required('linkedIn is required'),
-    Instagram: Yup.string().required(' Instagram is required'),
-    facebook: Yup.string().required('facebook is required'),
-    bio: Yup.string().required('bio is required'),
+    fullName: Yup.string().required('Full name is required'),
+    // cardName: Yup.string().required('Card name is required'),
+    // mobileNumber: Yup.number().required('Mobile number is required'),
+    // companyName: Yup.string().required('Company name is required'),
+    // companyNumber: Yup.number().required('Company number is required'),
+    // email: Yup.string().email('Invalid email address').required('Email is required'),
+    // designation: Yup.string().required('designation is required'),
+    // companyLogo: Yup.string().required('Company logo is required'),
+    // deck: Yup.string().required('deck is required'),
+    // website: Yup.string().required(' website is required'),
+    // whatsapp: Yup.string().required('whatsapp is required'),
+    // linkedIn: Yup.string().required('linkedIn is required'),
+    // Instagram: Yup.string().required(' Instagram is required'),
+    // facebook: Yup.string().required('facebook is required'),
+    // bio: Yup.string().required('bio is required'),
 
   });
 
@@ -81,20 +83,45 @@ const ContactForm = ({ cuuid }) => {
   // useEffect(() => {
   //   fetchCard();
   // }, [session]);
+  // old submit func
+  // const onSubmit = async (values, { resetForm }) => {
+  //   try {
+  //     const data = { ...values, template, cuuid };
+  //     const response = await axios.post('/api/contact', data);
+  //     console.log(response.data.message);
+
+  //     resetForm();
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // new submit func
 
   const onSubmit = async (values, { resetForm }) => {
     try {
-      const data = { ...values, template, cuuid };
-      const response = await axios.post('/api/contact', data);
-      console.log(response.data.message);
+      const data = { ...values };
+      console.log(data, "Data")
+      let formData = new FormData()
+      // formData.append("userId", "hey")
 
-      resetForm();
+      for (let x in data) {
+        formData.append(x, data[x])
+      }
+      // console.log(formData, "formdata")
+      // for (var key of formData.entries()) {
+      //   console.log(key[0] + ', ' + key[1], "key");
+      // }
+      // formData.append("userId", state.userProfile._id)
+      // formData.append("description", input)
+      const response = await axios.post('/api/handleFormData', formData);
+      console.log(response.data.message, "Response");
+
+      // resetForm();
     } catch (error) {
       console.error(error);
     }
   };
-
-
 
   return (
     <div className="flex ">
@@ -117,35 +144,35 @@ const ContactForm = ({ cuuid }) => {
                     <div className='w-full px-2 md:w-3/5  sm:px-8 md:ml-16 lg:ml-20'>
                       <div className="mb-4 mt-4 ">
                         <div className='flex'>
-                          <label htmlFor="firstName" className=" text-gray-700 font-bold mb-2 w-60">
-                            First Name:
+                          <label htmlFor="fullName" className=" text-gray-700 font-bold mb-2 w-60">
+                            Full Name:
                           </label>
                           <Field
                             type="text"
-                            id="firstName"
-                            name="firstName"
+                            id="fullName"
+                            name="fullName"
                             onChange={handleChange}
 
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                           />
                         </div>
-                        <ErrorMessage name="firstName" component="div" className="text-red-500" />
+                        <ErrorMessage name="fullName" component="div" className="text-red-500" />
                       </div>
                       <div className="mb-4">
                         <div className='flex'>
-                          <label htmlFor="lastName" className=" text-gray-700 font-bold w-60 mb-2 ">
-                            Last Name:
+                          <label htmlFor="cardName" className=" text-gray-700 font-bold w-60 mb-2 ">
+                            Card Name:
                           </label>
                           <Field
                             type="text"
-                            id="lastName"
-                            name="lastName"
+                            id="cardName"
+                            name="cardName"
                             onChange={handleChange}
 
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                           />
                         </div>
-                        <ErrorMessage name="lastName" component="div" className="text-red-500" />
+                        <ErrorMessage name="cardName" component="div" className="text-red-500" />
                       </div>
                       <div className="mb-4">
                         <div className="flex">
@@ -228,6 +255,18 @@ const ContactForm = ({ cuuid }) => {
                               type="file"
                               onChange={(event) => {
                                 setFieldValue('logo', event.currentTarget.files[0]);
+                              }}
+                            />
+                          </div>
+                        )}
+                      </Field>
+                      <Field name="profilePicture">
+                        {({ }) => (
+                          <div>
+                            <input
+                              type="file"
+                              onChange={(event) => {
+                                setFieldValue('profilePicture', event.currentTarget.files[0]);
                               }}
                             />
                           </div>
@@ -365,7 +404,10 @@ const ContactForm = ({ cuuid }) => {
                       onClick={() => setStep(2)}>
                       Next
                     </button>
-
+                    <button className="bg-green-500 mx-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                      type="submit" >
+                      Submit
+                    </button>
                   </div>
                 </div>
               )}
@@ -411,10 +453,12 @@ const ContactForm = ({ cuuid }) => {
                       onClick={() => setStep(1)}>
                       Previous
                     </button></div>
-                    <div><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                    <div>
+                      {/* <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                       type="submit" disabled={isSubmitting}>
                       Submit
-                    </button></div>
+                    </button> */}
+                    </div>
 
                   </div>
                 </div>

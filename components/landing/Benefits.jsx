@@ -4,7 +4,7 @@ import {Card, HorizontalCard1, HorizontalCard2} from '@/components';
 const Benefits = () => {
 
     return (
-        <div className='mt-[91px]'>
+        <div className='mt-[235px]'>
             <div className='flex flex-col justify-center items-center'>
                 <div className='text-[16px] font-poppins'>
                     Benefits

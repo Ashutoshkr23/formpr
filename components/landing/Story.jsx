@@ -11,7 +11,7 @@ const Story = () => {
           <h2>The Loop Journey</h2>
         </div>
         <div className='text-white pl-[405px] pr-[28px]'>
-          <h1 className='text-[48px] font-bold'>Our Story </h1>
+          <h2 className='text-[48px] font-bold'>Our Story </h2>
         </div>
         <div className='pt-8 pl-[424px] pr-[120px] xl:pr-[225px] text-[20px]'>
           <h2 className=' font-bold'><span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text xl:leading-[186%]'>At Loop, we&apos;re passionate about making networking effortless </span><span className='text-transparent bg-gradient-to-tr from-[#FDFF96] to-[#F16869] bg-clip-text'>and eco-friendly.  </span></h2>
