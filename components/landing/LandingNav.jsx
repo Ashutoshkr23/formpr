@@ -62,11 +62,11 @@ function LandingNavbar() {
             <Image src={"/assets/images/loop.svg"} alt='loop' width={74} height={32} />
             <div className='flex content-center'>
               <ul className="flex content-center gap-8 my-auto ">
-                <li className=" text-sm px-1.5 font-extralight hover:font-bold "><a href={`#`}>Products</a></li>
-                <li className=" text-sm px-1.5 font-extralight hover:font-bold "><a href="#">Our Story</a></li>
-                <li className=" text-sm px-1.5 font-extralight hover:font-bold "><a href="#">Testimonials</a></li>
-                <li className=" text-sm px-1.5 font-extralight hover:font-bold "><a href="#">FAQ</a></li>
-                <li className=" text-sm px-1.5 font-extralight hover:font-bold  "><a href="#">Contact</a></li>
+                <li className=" text-sm w-[61px] font-extralight text-center hover:font-bold "><a href={`#`}>Products</a></li>
+                <li className=" text-sm w-[65px] font-extralight text-center hover:font-bold "><a href="#">Our Story</a></li>
+                <li className=" text-sm  w-[85px] font-extralight text-center hover:font-bold "><a href="#">Testimonials</a></li>
+                <li className=" text-sm w-[30px] font-extralight text-center hover:font-bold "><a href="#">FAQ</a></li>
+                <li className=" text-sm  w-[53px] font-extralight text-center hover:font-bold  "><a href="#">Contact</a></li>
               </ul>
               <button
                 onClick={handlelogin}
