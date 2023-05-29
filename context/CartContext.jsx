@@ -17,7 +17,7 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchCartType = async () => {
-            const requestData = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/cardType`)
+            const requestData = await fetch(`/api/cardType`)
             const data = await requestData.json()
             const cardType = !data.error ? data.result : []
 
@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
             // console.log(cardType, "cardTypeee")
         }
         const fetchUserCards = async (puuid) => {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/manageCards`, {
+            const response = await axios.post(`/api/manageCards`, {
                 puuid: puuid
             })
             if (response.data) {
@@ -40,7 +40,7 @@ export const CartProvider = ({ children }) => {
         }
 
         const fetchUserProfile = async () => {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/isSignedUp`, {
+            const response = await axios.post(`/api/auth/isSignedUp`, {
                 email: session.user.email,
                 name: session.user.name,
                 avatar: session.user.image

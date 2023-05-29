@@ -5,6 +5,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap");
 
+html {
+    scroll-behavior: smooth;
+}
+
 .cart-body {
     margin: 0;
     padding: 0;
@@ -44,6 +48,28 @@
     }
 }
 
+
+.swiper-button-next {
+    color: transparent !important;
+    background-image: url("/assets/images/landing/RightArrow.svg");
+    background-size: 100% 100%;
+}
+
+.swiper-button-prev {
+    color: transparent !important;
+    background-image: url("/assets/images/landing/LeftArrow.svg");
+    background-size: 100% 100%;
+}
+
+.swiper-pagination-bullet {
+    background-color: white !important;
+    box-shadow: 1px 1px #f46c74;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: white !important;
+    box-shadow: 1px 1px #f46c74;
+}
 .cart-body {
     --main-color: #333;
     --primary-color: #acacac;

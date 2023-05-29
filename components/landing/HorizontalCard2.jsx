@@ -20,8 +20,8 @@ function HorizontalCard2() {
                         <div className='horizontal-card-inner '>
                             <div className={`horizontal-card-front  h-[337px] w-[1070px] rounded-[20px] `}>
                                 <div className={`relative  h-[337px] w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
-                                    <div className='flex '>
-                                        <div className=''>
+                                    <div className='flex'>
+                                        <div>
                                             <Image src={'/assets/images/Mask group (6).png'} alt='mask group' width={331} height={336} />
                                         </div>
                                         <div className='flex flex-col pt-[98px]  pr-[107px]'>
@@ -41,7 +41,7 @@ function HorizontalCard2() {
                                     <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
                                 </div>
                             </div>
-                            <div className={`horizontal-card-back  h-[337px] w-[1070px] rounded-[20px]   `}>
+                            <div className={`horizontal-card-back  h-[337px] w-[1070px] rounded-[20px] `}>
                                 <div className={`relative  h-[337px] w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
                                     <h1 className='text-white'>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -69,7 +69,7 @@ function HorizontalCard2() {
                             <div className={`horizontal-card-front  w-[345px] h-[230px] md:w-[500px] md:h-[336px] rounded-[20px] `}>
                                 <div className={`relative  w-[345px] h-[230px] md:w-[500px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
                                     <div className='pt-[40px] md:pl-[50px]  text-[36px] font-bold  '>
-                                        <div flex flex-col>
+                                        <div className="flex flex-col">
                                             <div className='text-[36px] md:text-[45px] pl-[30px] leading-[44px] font-bold'>
                                                 <span className='text-white'>Footprint in </span><br /><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0.</span>
                                             </div>

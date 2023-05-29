@@ -15,7 +15,10 @@ const CardSchema = new mongoose.Schema({
     lastName: { type: String },
     bio: { type: String },
     companyName: { type: String },
-    phone: { type: String },
+    companyNumber: { type: String },
+    companyLogo: { type: String },
+    mobileNumber: { type: String },
+    websiteUrl: { type: String },
     // aws url will be stored in pfp
     profilePicture: { type: String },
     email: { type: String },

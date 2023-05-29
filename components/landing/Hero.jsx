@@ -2,10 +2,10 @@ import Image from 'next/image'
 import { motion } from 'framer-motion';
 import React from 'react'
 
-const Herof = () => {
+const Hero = () => {
     return (
 
-        <div className='flex  lg:flex-row justify-between   flex-col-reverse pt-24   '>
+        <div className='flex lg:flex-row justify-between flex-col-reverse pt-24'>
 
             <div className="flex flex-col mt-12 lg:mt-48 ">
                 <h1 className='sm:text-[60px] mr-auto text-left anim-typewriter  text-[40px] font-bold '>
@@ -31,7 +31,7 @@ const Herof = () => {
                         quality={100}
                     />
                     <motion.div
-                        initial={{ x: -1000 }}
+                        initial={{ x: -250 }}
                         animate={{ x: 0 }} 
                         transition={{ duration: 2 }}
                         className='absolute top-[72px] -left-[175px]'
@@ -55,7 +55,7 @@ const Herof = () => {
                         height={425}
                     />
                     <motion.div
-                        initial={{ x: -1000 }}
+                        initial={{ x: -400 }}
                         animate={{ x: 0 }}
                         transition={{ duration: 2 }}
                         className='absolute top-[47px] -left-[96px] '
@@ -77,4 +77,5 @@ const Herof = () => {
     )
 }
 
-export default Herof
+export default Hero
+
