@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import ProductComp from './ProductComp'
+import ProductComp from './ProductComp';
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
