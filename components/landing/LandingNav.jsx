@@ -54,7 +54,7 @@ function LandingNavbar() {
 
 
   return (
-    <div>
+    <div className='sm:px-8 md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
       {/*Laptop */}
       <div className='hidden bg-dark lg:block'>
         <div className='navbar  '>
