@@ -510,11 +510,11 @@ h1 {
     font-size: 70px; 
   }
   
-  @media screen and (max-width: 640px) {
+   /* @media screen and (max-width: 640px) {
     h1 {
-      font-size: 60px; /* Size for viewport widths up to 600px */
+      font-size: 60px; 
     }
-  }
+  }  */
   
 /* h2{
     font-size: 50px;
