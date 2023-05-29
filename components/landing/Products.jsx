@@ -14,11 +14,9 @@ const Products = () => {
             <div className='flex flex-col'>
                 <div className='flex flex-col justify-center items-center '>
                     <div>
-                        <h4 >Products</h4>
+                        <h6>Products</h6>
                     </div>
-                    <div className=' text-[50px] font-bold'>
-                        <h1 >Step into the Loop</h1>
-                    </div>
+                        <h2 >Step into the Loop</h2>
                 </div>
                 <div className='hidden xl:block'>
                     <div className='flex  justify-center pt-[92px]'>

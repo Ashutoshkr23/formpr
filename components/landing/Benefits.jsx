@@ -6,12 +6,12 @@ const Benefits = () => {
     return (
         <div className='mt-[235px] sm:px- md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
             <div className='flex flex-col justify-center items-center'>
-                <div className='text-[16px] font-poppins'>
+                <h6 >
                     Benefits
-                </div>
-                <div className='text-[50px] font-poppins font-bold'>
+                </h6>
+                <h2 >
                     Join the Loop
-                </div>
+                </h2>
 
             </div>
             <div className='mt-[91px] flex flex-col items-center space-y-9 '>

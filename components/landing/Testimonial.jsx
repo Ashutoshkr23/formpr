@@ -13,9 +13,11 @@ const Testimonial = () => {
     return (
         <div className=' max-w-[1208px] mx-auto'>
             <div className="relative overflow-hidden w-full">
+                <div className='text-center mt-20'>
+                    <h6>Voices from the Loop</h6>
+                    <h2 className=' mt-2 '>Our Testimonials</h2>
+                </div>
                 <div className='hidden xl:block text-center mt-24 lg:mt-64 '>
-                    <h5 className='text-xs md:text-base font-medium text-[#596573] '>Voices from the Loop</h5>
-                    <h1 className='text-3xl md:text-5xl mt-2 font-bold'>Our Testimonials</h1>
                     <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={0} slidesPerView={3} navigation pagination={{ clickable: true }} >
                         <SwiperSlide className='w-1/4 max-w-[340px] ml-6' >
                             <TestimonialComp
