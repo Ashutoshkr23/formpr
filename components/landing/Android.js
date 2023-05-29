@@ -2,15 +2,16 @@ import Image from 'next/image'
 
 const Android = () => {
   return (
-    <div className='hidden lg:block pt-[170px] '>
+    <div>
+    <div className='lg:pt-[170px] pt-[93px] '>
     
     {/* <div className=' flex justify-between '> */}
-       <div className='flex justify-between items-center '> 
-            <div className='flex flex-col '>
-<div className='lg:text-[32px] xl:text-[48px] mx-auto font-bold  text-transparent bg-gradient-to-r from-[#66D3E1] to-[#96FFAD] bg-clip-text '>
+       <div className='flex lg:justify-center md:justify-center   '> 
+            <div className='flex flex-col  '>
+<div className='text-[30px] md:text-[42px] lg:pt-[136px] lg:text-[48px] mx-auto font-bold  text-transparent bg-gradient-to-r from-[#66D3E1] to-[#96FFAD] bg-clip-text '>
     <h1>Android and iOS compatible </h1>
 </div>
-<div className='flex flex-row justify-end space-x-4 pt-[51px] '>
+<div className='flex flex-col items-center space-y-7 lg:space-y-0  lg:flex-row lg:justify-end lg:space-x-4 lg:pt-[51px] pt-[58px] '>
     <div className=''>
     <Image src={'/assets/images/iosbtns.png'}
         alt='ios'
@@ -28,7 +29,7 @@ const Android = () => {
 
 </div>
           </div> 
-            <div className=' '>
+            <div className=' hidden lg:block'>
                 <Image src={'/assets/images/android.png'}
                 alt='android'
                 width={491}
@@ -40,6 +41,14 @@ const Android = () => {
         
     {/* </div> */}
     <div /> 
+    </div>
+{/* mobile  */}
+{/* <div className='lg:hidden pt-[93px]'>
+    hello
+
+</div> */}
+
+
     </div>
   )
 }
