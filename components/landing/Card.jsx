@@ -37,10 +37,10 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
                             </div>
                         </div>
                         <div className={`card-back  w-[345px]  h-[230px] md:w-[500px] md:h-[336px] rounded-[20px]`}>
-                            <div className={`${cardStyle}`}>
-                                <h1>
+                            <div className={`${cardStyle} p-8 text-[16px] sm:text-[20px] md:text-[20px] `}>
+                                <p>
                                     {backContent}
-                                </h1>
+                                </p>
                             </div>
                            
                             <div className='absolute bottom-4 right-8'>
