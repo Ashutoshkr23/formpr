@@ -13,7 +13,7 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
 
     return (
         <>
-            <div className={`card ${isFlipped ? 'flipped' : ''} `}>
+            <div className={`card ${isFlipped ? 'flipped' : ''} `}onClick={handleFlip}>
                 <div className={` relative w-[345px]  h-[230px] md:w-[500px] md:h-[336px] `}>
                     <div className='card-inner '>
                         <div className={`card-front  w-[345px]  h-[230px] md:w-[500px] md:h-[336px] rounded-[20px] `}>

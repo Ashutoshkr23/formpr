@@ -13,7 +13,7 @@ function HorizontalCard1() {
 
   return (
     <div>
-          <div className='hidden lg:block'>
+          <div className='hidden lg:block 'onClick={handleFlip}>
               <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
                   <div className={` relative h-[337px] w-[1070px] `}>
                       <div className='horizontal-card-inner '>
@@ -32,7 +32,7 @@ function HorizontalCard1() {
                                               <p>Cross-Platform Compatibility for Seamless Connections.</p>
                                           </div>
                                           <div className='mt-[-125px] ml-[656px] '>
-                                              <Image src={'/assets/images/image 13.png'} alt='img 13' width={174} height={235} />
+                                              <Image src={'/assets/images/landing/image 13.png'} alt='img 13' width={174} height={235} />
                                           </div>
                                           <div className='mt-[-332px] ml-[849px]'>
                                               <Image src={'/assets/images/image 15.png'} alt='img 15' width={172} height={236} />
@@ -49,7 +49,7 @@ function HorizontalCard1() {
                           <div className={`horizontal-card-back  h-[337px] w-[1070px] rounded-[20px]   `}>
                               <div className={`relative p-8 text-[24px]  h-[337px] w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
                               <p className='text-white'>
-                                  Whether it's Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device. 
+                                  Whether it&apos;s Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device. 
 
                                   </p>
                               </div>
@@ -64,7 +64,7 @@ function HorizontalCard1() {
         </div>
 
 
-          <div className='lg:hidden'> 
+          <div className='lg:hidden'onClick={handleFlip}> 
               <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
                   <div className={` relative w-[345px] h-[230px] md:w-[500px] md:h-[336px] `}>
                       <div className='horizontal-card-inner '>
@@ -93,7 +93,7 @@ function HorizontalCard1() {
                           <div className={`horizontal-card-back  w-[345px] h-[230px] md:w-[500px] md:h-[336px] rounded-[20px]   `}>
                               <div className={`relative text-[16px] sm:text-[20px] sm:p-8 p-6 w-[345px] h-[230px] md:w-[500px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
                                   <p className='text-white'>
-                                  Whether it's Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device. 
+                                  Whether it&apos;s Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device. 
 
                                   </p>
                               </div>

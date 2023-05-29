@@ -441,7 +441,7 @@ i {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.5s;
+    transition: transform 1.5s;
 }
 
 .card.flipped .card-inner {
@@ -476,7 +476,7 @@ i {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.5s;
+    transition: transform 1.5s;
 }
 
 .horizontal-card.flipped .horizontal-card-inner {

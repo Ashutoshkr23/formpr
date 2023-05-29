@@ -13,7 +13,7 @@ function HorizontalCard2() {
 
     return (
         <div>
-            <div className='hidden lg:block'>
+            <div className='hidden lg:block'onClick={handleFlip}>
 
                 <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
                     <div className={` relative h-[337px] w-[1070px] `}>
@@ -58,7 +58,7 @@ function HorizontalCard2() {
             </div>
 
 
-            <div className='lg:hidden'>
+            <div className='lg:hidden'onClick={handleFlip}>
                 <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
                     <div className={` relative w-[345px] h-[230px] md:w-[500px] md:h-[336px] `}>
                         <div className='horizontal-card-inner '>
