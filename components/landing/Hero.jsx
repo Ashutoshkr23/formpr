@@ -29,6 +29,8 @@ const Hero = () => {
                 >
                     Join the loop today to unlock a world of seamless information exchange, amplified digital presence, and unparalleled networking possibilities. 
                 </motion.h6>
+
+                
                 
 
             </div>
