@@ -5,21 +5,21 @@ import Image from 'next/image'
 
 const Socialpg = ({text1,type}) => {
   return (
-    <div className='grid grid-cols-3 gap-y-11 gap-x-14 mt-8 '>
+    <div className='grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] '>
 
         <div className=''>
             <Link href={'#'}>
             
             <Image src={`/assets/images/social/${type}/watsp.png`}  alt="WhatsApp Logo" width={50} height={50} />
             </Link>
-            <p className={`text-[12px] ${text1}`}>Whatsapp</p>
+            <p className={`text-[12px] ${text1}  `}>Whatsapp</p>
         </div>
         <div>
             <Link href={'#'}>
             
             <Image src={`/assets/images/social/${type}/email.png`} alt="gmail Logo" width={50} height={50} />
             </Link>
-            <p className={`text-[12px] ${text1} pl-1`}>Gmail</p>
+            <p className={`text-[12px] ${text1} pl-3`}>Mail</p>
         </div>
         <div>
             <Link href={'#'}>

@@ -56,15 +56,15 @@ const ContactForm = ({ values }) => {
     lastName: Yup.string().required('Last name is required'),
     mobileNumber: Yup.number().required('Mobile number is required'),
     companyNumber: Yup.number().required('Company number is required'),
-    email: Yup.string().email('Invalid email address').required('Email is required'),
     designation: Yup.string().required('designation is required'),
     companyLogo: Yup.string().required('Company logo is required'),
     deck: Yup.string().required('deck is required'),
     website: Yup.string().required(' website is required'),
-    whatsapp: Yup.string().required('whatsapp is required'),
-    linkedIn: Yup.string().required('linkedIn is required'),
-    Instagram: Yup.string().required(' Instagram is required'),
-    facebook: Yup.string().required('facebook is required'),
+    email: Yup.string().email('Invalid email address'),
+    whatsapp: Yup.string(),
+    linkedIn: Yup.string(),
+    Instagram: Yup.string(),
+    facebook: Yup.string(),
     bio: Yup.string().required('bio is required'),
 
   });
@@ -328,7 +328,7 @@ const ContactForm = ({ values }) => {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
                       </div>
-                      <ErrorMessage name="email" component="div" className="text-red-500" />
+                      {/* <ErrorMessage name="email" component="div" className="text-red-500" /> */}
                     </div>
                      )}
                     
@@ -344,7 +344,6 @@ const ContactForm = ({ values }) => {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
                       </div>
-                      <ErrorMessage name="whatsapp" component="div" className="text-red-500" />
                     </div>
                   )}
  
@@ -360,7 +359,6 @@ const ContactForm = ({ values }) => {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
                       </div>
-                      <ErrorMessage name="linkedIn" component="div" className="text-red-500" />
                     </div>
                )}
                
@@ -376,7 +374,6 @@ const ContactForm = ({ values }) => {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
                       </div>
-                      <ErrorMessage name="Instagram" component="div" className="text-red-500" />
                     </div>
 
               )}
@@ -393,7 +390,6 @@ const ContactForm = ({ values }) => {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
                       </div>
-                      <ErrorMessage name="facebook" component="div" className="text-red-500" />
                     </div>
                )}
                     <div className="mb-4">
