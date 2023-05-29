@@ -7,7 +7,7 @@ const Hero = () => {
 
         <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col-reverse pt-24 lg:px-4  xl:px-0'>
 
-            <div className="flex flex-col mt-20 md:mt-48 lg:mt-0  px-4 md:px-0 mx-auto lg:mx-0 max-w-[456px] xl:max-w-[600px] ">
+            <div className="flex flex-col mt-20 md:mt-48 lg:mt-0 items-center  px-4 md:px-0 mx-auto lg:mx-0 max-w-[456px] xl:max-w-[600px] ">
                 <h1 className=' mr-auto text-left anim-typewriter  font-bold '>
                     Enter The <span className="text-transparent bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] bg-clip-text">
                         Loop.
@@ -31,7 +31,7 @@ const Hero = () => {
                 </motion.h6>
 
                 <button
-                    className='w-[165px] h-10 mt-12 bg-black text-white text-[16px] font-bold rounded-[10px] ml-[70px] text-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]'
+                    className='w-[140px] md:w-[165px] h-9 md:h-10 mt-12 bg-black text-white text-xs md:text-base  font-bold rounded-[10px]  text-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]'
                 >
                     GET NOW
                 </button>
