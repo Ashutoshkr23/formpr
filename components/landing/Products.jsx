@@ -20,7 +20,7 @@ const Products = () => {
                         <h1 >Step into the Loop</h1>
                     </div>
                 </div>
-                <div className='hidden lg:block'>
+                <div className='hidden xl:block'>
                     <div className='flex  justify-center pt-[92px]'>
                         <ProductComp
                             text={"Loop Lite"}
@@ -36,8 +36,8 @@ const Products = () => {
                         />
                     </div>
                 </div>
-                <div className='hidden md:block lg:hidden'>
-                    <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={30} slidesPerView={2} navigation pagination={{ clickable: true }} >
+                <div className='hidden md:block xl:hidden max-w-[800px] px-4 mx-auto'>
+                    <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={0} slidesPerView={2} navigation pagination={{ clickable: true }} >
                         <SwiperSlide className='w-1/4 max-w-[364px]' >
                             <ProductComp
                                 text={"Loop Lite"}
@@ -59,7 +59,7 @@ const Products = () => {
                     </Swiper>
                 </div>
                 <div className=' md:hidden'>
-                    <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={30} slidesPerView={1} navigation pagination={{ clickable: true }} >
+                    <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={50} slidesPerView={1} centeredSlides={true} navigation pagination={{ clickable: true }} >
                         <SwiperSlide className='w-1/4 max-w-[364px]' >
                             <ProductComp
                                 text={"Loop Lite"}
