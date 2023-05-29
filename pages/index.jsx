@@ -6,7 +6,12 @@ const Landing = () => {
     <div className='bg-["#333333"] max-w-[1440px]  mx-auto  ' >
       <LandingNav />
       <Hero />
-
+      <Benefits />
+      <Products />
+      <Story />
+      <Testimonial />
+      <Android />
+      <FAQ />
     </div>
   )
 }
