@@ -22,7 +22,7 @@ function HorizontalCard2() {
                                 <div className={`relative  h-[337px] w-[950px] xl:w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
                                     <div className='flex'>
                                         <div>
-                                            <Image src={'/assets/images/Mask group (6).png'} alt='mask group' width={331} height={336} />
+                                            <Image src={'/assets/images/landing/web.png'} alt='mask group' width={331} height={336} />
                                         </div>
                                         <div className='flex flex-col pt-[98px]  '>
                                             <div className='text-[45px] pl-[150px] font-bold'>

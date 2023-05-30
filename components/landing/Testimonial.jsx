@@ -21,21 +21,21 @@ const Testimonial = () => {
                     <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={0} slidesPerView={3} navigation pagination={{ clickable: true }} >
                         <SwiperSlide className='w-1/4 max-w-[340px] ml-6' >
                             <TestimonialComp
-                                img={"/Vineet.png"}
+                                img={"/assets/images/landing/Vineet.png"}
                                 feedback={"We have been very impressed with their creativity, responsiveness and capabilities in the remodelling of our company logo, creatives for our website and social media. "}
                                 name={"Vineet Singhal"}
                                 designation={" Chief Operating Officer, SGN Nanopharma Inc."} />
                         </SwiperSlide>
                         <SwiperSlide className='w-1/4 max-w-[340px]'>
                             <TestimonialComp
-                                img={"/Sachit.png"}
+                                img={"/assets/images/landing/Sachit.png"}
                                 feedback={"The Bravas team is dynamic and is not only supportive but also understands the pulse of our business & industry very well. The followers on our page have increased to over 500+ in less than 5 months."}
                                 name={"Sachit Dedhia"}
                                 designation={"Managing Director, Velocity Global Logistics Pvt. Ltd (India-China-Spain)"} />
                         </SwiperSlide>
                         <SwiperSlide className='w-1/4 max-w-[340px] mb-16'>
                             <TestimonialComp
-                                img={"/Rikshit.png"}
+                                img={"/assets/images/landing/Rikshit.png"}
                                 feedback={"As a start-up, it's great to have someone like the Bravas Digital Team to rely on our marketing efforts. They have a wonderful team of experts taking care of all the different aspects of marketing."}
                                 name={"Rikshit Kotian"}
                                 designation={"Director - Business Development, Verraton Health Private Limited"} />
@@ -49,21 +49,21 @@ const Testimonial = () => {
                     <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={20} slidesPerView={2} navigation pagination={{ clickable: true }} >
                         <SwiperSlide >
                             <TestimonialComp
-                                img={"/Vineet.png"}
+                                img={"/assets/images/landing/Vineet.png"}
                                 feedback={"We have been very impressed with their creativity, responsiveness and capabilities in the remodelling of our company logo, creatives for our website and social media. "}
                                 name={"Vineet Singhal"}
                                 designation={" Chief Operating Officer, SGN Nanopharma Inc."} />
                         </SwiperSlide>
                         <SwiperSlide >
                             <TestimonialComp
-                                img={"/Sachit.png"}
+                                img={"/assets/images/landing/Sachit.png"}
                                 feedback={"The Bravas team is dynamic and is not only supportive but also understands the pulse of our business & industry very well. The followers on our page have increased to over 500+ in less than 5 months."}
                                 name={"Sachit Dedhia"}
                                 designation={"Managing Director, Velocity Global Logistics Pvt. Ltd (India-China-Spain)"} />
                         </SwiperSlide>
                         <SwiperSlide >
                             <TestimonialComp
-                                img={"/Rikshit.png"}
+                                img={"/assets/images/landing/Rikshit.png"}
                                 feedback={"As a start-up, it's great to have someone like the Bravas Digital Team to rely on our marketing efforts. They have a wonderful team of experts taking care of all the different aspects of marketing."}
                                 name={"Rikshit Kotian"}
                                 designation={"Director - Business Development, Verraton Health Private Limited"} />
@@ -76,21 +76,21 @@ const Testimonial = () => {
                     <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={50} slidesPerView={1} centeredSlides={true} navigation pagination={{ clickable: true }} >
                         <SwiperSlide >
                             <TestimonialComp
-                                img={"/Vineet.png"}
+                                img={"/assets/images/landing/Vineet.png"}
                                 feedback={"We have been very impressed with their creativity, responsiveness and capabilities in the remodelling of our company logo, creatives for our website and social media. "}
                                 name={"Vineet Singhal"}
                                 designation={" Chief Operating Officer, SGN Nanopharma Inc."} />
                         </SwiperSlide>
                         <SwiperSlide >
                             <TestimonialComp
-                                img={"/Sachit.png"}
+                                img={"/assets/images/landing/Sachit.png"}
                                 feedback={"The Bravas team is dynamic and is not only supportive but also understands the pulse of our business & industry very well. The followers on our page have increased to over 500+ in less than 5 months."}
                                 name={"Sachit Dedhia"}
                                 designation={"Managing Director, Velocity Global Logistics Pvt. Ltd (India-China-Spain)"} />
                         </SwiperSlide>
                         <SwiperSlide >
                             <TestimonialComp
-                                img={"/Rikshit.png"}
+                                img={"/assets/images/landing/Rikshit.png"}
                                 feedback={"As a start-up, it's great to have someone like the Bravas Digital Team to rely on our marketing efforts. They have a wonderful team of experts taking care of all the different aspects of marketing."}
                                 name={"Rikshit Kotian"}
                                 designation={"Director - Business Development, Verraton Health Private Limited"} />

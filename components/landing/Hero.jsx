@@ -67,13 +67,13 @@ const Hero = () => {
                      
                         className='absolute top-[72px] -left-[175px]'
                     >
-                        <Image src={'/assets/images/cardbl.svg'} width={244} height={177} alt='card bl' />
+                        <Image src={'/assets/images/landing/cardbl.svg'} width={244} height={177} alt='card bl' />
                     </div>
                     <div
                         
                         className='absolute -z-10 top-[180px]  -right-[127px]' 
                     >
-                        <Image src={'/assets/images/cardpi.svg'} width={221} height={174} alt='card pi' /> 
+                        <Image src={'/assets/images/landing/cardpi.svg'} width={221} height={174} alt='card pi' /> 
                     </div>
 
                     
@@ -96,13 +96,13 @@ const Hero = () => {
                    
                         className='absolute top-[47px] -left-[96px] '
                     >
-                        <Image src={'/assets/images/cardbl.svg'} width={162} height={117} alt='card bl' />
+                        <Image src={'/assets/images/landing/cardbl.svg'} width={162} height={117} alt='card bl' />
                     </div>
                     <div
                         
                         className='absolute top-[118px]  -right-[87px] -z-10 '
                     >
-                        <Image src={'/assets/images/cardpi.svg'} width={146} height={116} alt='card pi' />
+                        <Image src={'/assets/images/landing/cardpi.svg'} width={146} height={116} alt='card pi' />
                     </div>
                     <motion.div
                         initial={{ y: 100 }}
