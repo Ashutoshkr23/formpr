@@ -46,7 +46,7 @@ const Template = ({ fname, type, border, lname, btntext, profileimg, designation
 
           <div className=''><button className={`${btn} border-2 font-thin text-[20px] ${btntext} h-[50px] w-[304px] rounded-[14px] mt-7`} >SAVE CONTACT</button>  </div>
 
-          <div className={`text-[10px] flex justify-center mt-7 pb-[29px] ${text1}`}>made with love by <Image className='ml-1 mt-[2px]' src={loop} width={27} height={12} /></div>
+          <div className={`text-[10px] flex justify-center mt-7 pb-[29px] ${text1}`}>made with love by <Image className='ml-1 mt-[2px]' alt='loop' src={loop} width={27} height={12} /></div>
           <div className='flex mx-auto mt-[-12px] rounded-[31px]  h-[3px] w-[133px] bg-[#A8A8A8]'></div>
 
         </div>

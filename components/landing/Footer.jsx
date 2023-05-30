@@ -8,11 +8,11 @@ const Footer = () => {
         <div className='hidden md:block'>
         <div className=' h-[262px] min-w-full bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] flex justify-around items-center'>
             <div className='hidden lg:block'>
-                <Image src={"/assets/images/landing/footerloop.svg"} height={81} width={186} />
+                <Image src={"/assets/images/landing/footerloop.svg"} height={81} width={186} alt='loop' />
 
             </div>
             <div className='lg:hidden '>
-                <Image src={"/assets/images/landing/footerloop.svg"} height={81} width={156} />
+                <Image src={"/assets/images/landing/footerloop.svg"} height={81} width={156} alt='loop' />
 
             </div>
 
@@ -61,7 +61,7 @@ const Footer = () => {
         <div className='md:hidden min-w-full bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] h-[365px]'>
             <div className='flex flex-col justify-center items-center'>
                 <div className='pt-9'>
-                <Image src={"/assets/images/landing/footerloop.svg"} height={46} width={106} />
+                <Image src={"/assets/images/landing/footerloop.svg"} height={46} width={106} alt="loop" />
 
                 </div>
                 <div className=' pt-10 font-bold'>
