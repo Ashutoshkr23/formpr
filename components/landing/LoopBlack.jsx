@@ -26,7 +26,7 @@ const LoopBlack = () => {
 
                 </div>
                 <div className='pt-[76px] pl-3 text-[#596573] text-[12px]'>
-                        <p>This card exudes exclusivity and leaves a lasting impression that's both refined and memorable.</p>
+                        <p>This card exudes exclusivity and leaves a lasting impression that&apos;s both refined and memorable.</p>
                     </div>
                 </div>
 
