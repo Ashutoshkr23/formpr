@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='md:mt-[530px] mt-[145px]'>
+    <div className='md:mt-[304px] mt-[100px]'>
         <div className='hidden md:block'>
         <div className=' h-[262px] min-w-full bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] flex justify-around items-center'>
             <div className='hidden lg:block'>
