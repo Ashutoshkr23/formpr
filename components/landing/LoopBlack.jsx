@@ -30,8 +30,16 @@ const LoopBlack = () => {
                     </div>
                 </div>
 
-                <div className=' pr-5 pt-7'>
+                <div className=' pr-5 pt-7 flex flex-col items-center'>
+                    <div>
                     <Image src={'/assets/images/landing/loopcard.png'} height={450} width={494} alt='loopcard'/>
+                    </div>
+                     
+                     <div>
+                     <button className="rounded-[10px] h-[41px] w-[165px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black">
+                                
+                            BUY NOW</button>
+                     </div>
                 </div>
             </div>
 
