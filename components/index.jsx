@@ -3,7 +3,7 @@ export { default as Card } from "../components/landing/Card";
 export { default as HorizontalCard1} from "../components/landing/HorizontalCard1"
 export { default as HorizontalCard2} from "../components/landing/HorizontalCard2"
 export { default as QA} from "../components/landing/QA"
-export { default as Hero} from "../components/landing/Hero"
+export { default as Hero} from "../public/assets/images/landing/Hero"
 export { default as FAQ} from "../components/landing/FAQ"
 export { default as Benefits} from "../components/landing/Benefits"
 export { default as LandingNav} from "../components/landing/LandingNav"
