@@ -4,8 +4,9 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='mt-[230px]'>
-        <div className='h-[262px] min-w-full bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] flex justify-around items-center'>
+    <div className='md:mt-[530px] mt-[145px]'>
+        <div className='hidden md:block'>
+        <div className=' h-[262px] min-w-full bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] flex justify-around items-center'>
             <div className='hidden lg:block'>
                 <Image src={"/assets/images/landing/footerloop.svg"} height={81} width={186} />
 
@@ -55,7 +56,42 @@ const Footer = () => {
 
         </div>
 
+        </div>
 
+        <div className='md:hidden min-w-full bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] h-[365px]'>
+            <div className='flex flex-col justify-center items-center'>
+                <div className='pt-9'>
+                <Image src={"/assets/images/landing/footerloop.svg"} height={46} width={106} />
+
+                </div>
+                <div className=' pt-10 font-bold'>
+                <p>privacy policy</p>
+                </div>
+                <div className=' pt-[30px] font-bold'>
+                 <p>terms and conditions</p>
+                </div>
+                <div className=' pt-[30px] font-bold'>
+                 <p>contact us </p>
+                </div>
+                <div className=' pt-2'>
+                 <p> gm@alphamintlabs.com </p>
+                </div>
+
+               <div className='flex  pt-8 space-x-7'>
+                <div>
+                <Image src={'/assets/images/landing/footerinsta.png'} height={32} width={32} alt='instagram'/>
+
+                </div>
+                <div>
+                <Image src={'/assets/images/landing/footerlink.png'} height={32} width={32} alt='instagram'/>
+
+                </div>
+
+               </div>
+
+            </div>
+
+        </div>
     </div>
   )
 }
