@@ -6,7 +6,7 @@ function TestimonialComp({ feedback, img, name, designation }) {
             {/*Laptop */}
             <div className='hidden  xl:block'>
                 <div className='relative drop-shadow-white inline-block px-7 w-full h-[437px]  mt-16 bg-white rounded-[20px]'>
-                    <img src={img} alt="" className='absolute inset-x-0 mx-auto bottom-[115px] z-10' />
+                    <img src={img} alt="testimonials" className='absolute inset-x-0 mx-auto bottom-[115px] z-10' />
                     <div className=' pt-7 '>
                         <p className='text-sm  text-left font-bold leading-[1.4rem]'>{feedback}</p>
                     </div>
@@ -20,7 +20,7 @@ function TestimonialComp({ feedback, img, name, designation }) {
             <div className='xl:hidden'>
                 <div className='w-full md:w-1/2 bg-slate '>
                     <div className='relative drop-shadow-white block h-[437px] w-[300px] md:w-[330px] mt-16 mx-auto md:ml-8 bg-white rounded-2xl'>
-                        <img src={img} alt="" className='absolute inset-x-0 mx-auto bottom-[115px] z-10' />
+                        <img src={img} alt="testimonials" className='absolute inset-x-0 mx-auto bottom-[115px] z-10' />
                         <div className='w-full pt-7 px-auto'>
                             <p className='text-sm font-bold w-11/12 md:w-3/4 mx-auto leading-[1.4rem]'>{feedback}</p>
                         </div>

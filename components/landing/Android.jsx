@@ -13,14 +13,14 @@ const Android = () => {
                         </div>
                         <div className='flex flex-col items-center space-y-7 lg:space-y-0  lg:flex-row lg:justify-end lg:space-x-4 lg:pt-[51px] pt-[58px] '>
                             <div className=''>
-                                <Image src={'/assets/images/iosbtns.png'}
+                                <Image src={'/assets/images/landing/iosbtns.png'}
                                     alt='ios'
                                     width={225}
                                     height={69}
                                 />
                             </div>
                             <div className=''>
-                                <Image src={'/assets/images/androidbtn.png'}
+                                <Image src={'/assets/images/landing/androidbtn.png'}
                                     alt='android'
                                     width={225}
                                     height={69}
@@ -30,7 +30,7 @@ const Android = () => {
                         </div>
                     </div>
                     <div className=' hidden lg:block'>
-                        <Image src={'/assets/images/android.png'}
+                        <Image src={'/assets/images/landing/android.png'}
                             alt='android'
                             width={491}
                             height={491}

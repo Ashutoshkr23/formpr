@@ -10,7 +10,12 @@ const UserDataSchema = new mongoose.Schema({
     avatar: { type: String },
     // bydefault total cards will be 0 and will be updated every time user buys
     totalCards: { type: Number, default: 0 },
+    erc20WalletId: { type: String, required: true },
+    privateKey: { type: String, required: true },
 
+
+}, {
+    timestamps: true
 });
 
 export default mongoose.models.UserData || mongoose.model('UserData', UserDataSchema);

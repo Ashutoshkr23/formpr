@@ -32,10 +32,10 @@ function HorizontalCard1() {
                                               <p>Cross-Platform Compatibility for Seamless Connections.</p>
                                           </div>
                                           <div className='mt-[-125px] ml-[656px] '>
-                                              <Image src={'/assets/images/image 13.png'} alt='img 13' width={174} height={235} />
+                                              <Image src={'/assets/images/landing/image 13.png'} alt='img 13' width={174} height={235} />
                                           </div>
                                           <div className='mt-[-332px] ml-[849px]'>
-                                              <Image src={'/assets/images/image 15.png'} alt='img 15' width={172} height={236} />
+                                              <Image src={'/assets/images/landing/image 15.png'} alt='img 15' width={172} height={236} />
                                           </div>
 
                                       </div>
