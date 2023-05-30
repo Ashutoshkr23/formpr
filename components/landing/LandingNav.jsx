@@ -54,7 +54,7 @@ function LandingNavbar() {
 
 
   return (
-    <div>
+    <div className='sm:px-8 md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
       {/*Laptop */}
       <div className='hidden bg-dark lg:block'>
         <div className='navbar  '>
@@ -81,7 +81,7 @@ function LandingNavbar() {
       </div>
       {/*Mobiles*/}
       <div className='lg:hidden '>
-        <nav className="bg-dark px-2  sm:px-4 py-2.5  fixed w-full z-50 top-0 left-0">
+        <nav className="bg-dark px-2  sm:px-4 py-2.5  w-full z-50 top-0 left-0">
           <div className="container flex flex-wrap items-center justify-between mx-auto">
             <a href="#" className="flex items-center">
               <Image src={"/assets/images/loop.svg"} alt='loop' width={50} height={22} />

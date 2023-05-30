@@ -506,16 +506,74 @@ i {
 }
 
 /* headings */
-h1 {
-    font-size: 70px; 
-  }
-  
-   @media screen and (max-width: 640px) {
+
+
+@media screen and (max-width: 640px) {
     h1 {
-      font-size: 60px; 
+        font-size: 40px;
     }
-  } 
-  
+}
+
+@media screen and (min-width: 640px) and (max-width: 1200px) {
+    h1 {
+        font-size: 60px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    h1 {
+        font-size: 70px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1200px) {
+    h2 {
+        font-size: 44px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    h2 {
+        font-size: 48px;
+    }
+}
+
+h2{
+    font-weight: bold;
+}
+
+
+
+
+@media screen and (max-width: 640px) {
+    h6 {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1200px) {
+    h6 {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    h6 {
+        font-size: 16px;
+    }
+}
+
+h6 {
+    font-weight: medium;
+    color: #596573;
+}
+
 /* h2{
     font-size: 50px;
 

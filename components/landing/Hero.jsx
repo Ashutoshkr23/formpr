@@ -5,25 +5,40 @@ import React from 'react'
 const Hero = () => {
     return (
 
-        <div className='flex lg:flex-row justify-between flex-col-reverse pt-24'>
+        <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col-reverse pt-24 lg:px-4  xl:px-0'>
 
-            <div className="flex flex-col mt-12 lg:mt-48 ">
-                <h1 className=' mr-auto text-left anim-typewriter   font-bold '>
+            <div className="flex flex-col mt-20 md:mt-48 lg:mt-0 items-center  px-4 md:px-0 mx-auto lg:mx-0 max-w-[456px] xl:max-w-[600px] ">
+                <h1 className=' mr-auto text-left anim-typewriter  font-bold '>
                     Enter The <span className="text-transparent bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] bg-clip-text">
                         Loop.
                     </span>
                 </h1>
                 <motion.h6
-                    className="sm:text-sm text-base text-[#1D76A9] opacity-0"
+                    className="sm:text-sm text-base mt-8 text-gray opacity-0"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 3 }}
                 >
-                    Visiting Cards Reimagined on Web3.0
+                    Welcome to The Loop, a community of high-networking individuals connected through the next generation of NFC-enabled digital visiting cards. 
+                </motion.h6>
+                <motion.h6
+                    className="sm:text-sm text-base mt-8 text-gray opacity-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 3 }}
+                >
+                    Join the loop today to unlock a world of seamless information exchange, amplified digital presence, and unparalleled networking possibilities. 
                 </motion.h6>
 
+                <button
+                    className='w-[140px] md:w-[165px] h-9 md:h-10 mt-12 bg-black text-white text-xs md:text-base  font-bold rounded-[10px]  text-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]'
+                >
+                    GET NOW
+                </button>
+                
+
             </div>
-            <div className=' hidden md:block  mx-auto lg:ml-auto lg:mx-0 lg:pr-20'>
+            <div className=' hidden md:block  mx-auto lg:ml-auto lg:mx-0 lg:pr-32'>
                 <div className=' relative '>
                 <motion.div
                         initial={{ y: -250 }}
@@ -64,7 +79,7 @@ const Hero = () => {
                     
                 </div>
             </div>
-            <div className='md:hidden mx-auto min-w-[375px] overflow-hidden '>
+            <div className='md:hidden mx-auto w-full overflow-hidden '>
                 <div className=' relative mx-auto w-[200px] pl-8 '>
                 <motion.div
                         initial={{ y: -250 }}
