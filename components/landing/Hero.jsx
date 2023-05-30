@@ -56,7 +56,7 @@ const Hero = () => {
                     initial={{ y: 200}}
                     animate={{ y: 0 }} 
                     transition={{ duration: 2 }}
-                    className='absolute top-[484px]'>
+                    className='absolute top-[490px]'>
                     <Image src={'/assets/images/landing/phone2.png'}
                         width={233}
                         height={154}

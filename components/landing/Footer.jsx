@@ -46,7 +46,7 @@ const Footer = () => {
                     <div className='text-[14px] font-bold'>
                         <p>contact us </p>
                     </div>
-                    <div className=' text-[12px] leading-[154%]'>
+                    <div className=' text-[16px] leading-[154%]'>
                         <p> gm@alphamintlabs.com</p>
                     </div>
 
