@@ -18,7 +18,7 @@ const Testimonial = () => {
                     <h2 className=' mt-2 '>Our Testimonials</h2>
                 </div>
                 <div className='hidden xl:block text-center mt-24 lg:mt-64 '>
-                    <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={0} slidesPerView={3} navigation pagination={{ clickable: true }} >
+                    <Swiper modules={[Navigation, Pagination, Scrollbar, A11y]} spaceBetween={30} slidesPerView={3} centeredSlides={true} navigation pagination={{ clickable: true }} >
                         <SwiperSlide className='w-1/4 max-w-[340px] ml-6' >
                             <TestimonialComp
                                 img={"/assets/images/landing/Vineet.png"}
