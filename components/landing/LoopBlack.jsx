@@ -76,7 +76,7 @@ const LoopBlack = () => {
                                 BUY NOW</button>
                 </div>
                 <div className='pt-6 text-[10px] text-[#596573] leading-[140%] max-w-[245px]'>
-                <p>This card exudes exclusivity and leaves a lasting impression that's both refined and memorable.</p>
+                <p>This card exudes exclusivity and leaves a lasting impression that&apos;s both refined and memorable.</p>
                 </div>
 </div>
    </div>
