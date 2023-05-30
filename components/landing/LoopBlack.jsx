@@ -36,7 +36,7 @@ const LoopBlack = () => {
                     </div>
                      
                      <div>
-                     <button className="rounded-[10px] h-[41px] w-[165px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black">
+                     <button className="rounded-[10px] h-[41px] w-[165px] bg-gradient-to-br from-[#68D5DF] to-[#95FEAF] text-black">
                                 
                             BUY NOW</button>
                      </div>
