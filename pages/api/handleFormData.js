@@ -44,21 +44,22 @@ export default async function handle(req, res) {
                     const Time = Date.now()
                     // Getting File Extension
                     const ext = LogoImg.originalFilename.split('.').pop();
-
+                    console.log(ext, "extension")
                     // Generating New File Name
                     const newFilename = userId + "_" + Time + '.' + ext;
-
+                    console.log("aws started")
                     // Sending Image To S3
-                    await client.send(new PutObjectCommand({
+                    const upload = await client.send(new PutObjectCommand({
                         Bucket: bucketName,
                         Key: newFilename,
                         Body: fs.readFileSync(LogoImg.path),
                         // ACL: 'public-read',
                         ContentType: mime.lookup(LogoImg.path),
                     }))
-
+                    console.log(upload, "upload")
                     // Getting Link For Image/Images And Storing Inside An Array
                     const link = `https://${bucketName}.s3.amazonaws.com/${newFilename}`
+                    console.log(link, "link")
                     return res.status(200).json({ error: false, message: "sucess", link: link })
 
 
