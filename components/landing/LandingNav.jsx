@@ -59,7 +59,7 @@ function LandingNavbar() {
       <div className='hidden bg-dark lg:block'>
         <div className='navbar  '>
           <div className=' mx-auto   my-auto h-20 flex content-center justify-between items-center' >
-            <Image src={"/assets/images/loop.svg"} alt='loop' width={74} height={32} />
+            <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={74} height={32} />
             <div className='flex content-center'>
               <ul className="flex content-center gap-8 my-auto ">
                 <li className=" text-sm w-[61px] font-extralight text-center hover:font-bold "><a href={`#`}>Products</a></li>
@@ -84,7 +84,7 @@ function LandingNavbar() {
         <nav className="bg-dark px-2  sm:px-4 py-2.5  w-full z-50 top-0 left-0">
           <div className="container flex flex-wrap items-center justify-between mx-auto">
             <a href="#" className="flex items-center">
-              <Image src={"/assets/images/loop.svg"} alt='loop' width={50} height={22} />
+              <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={50} height={22} />
 
             </a>
             <div className="flex ">
