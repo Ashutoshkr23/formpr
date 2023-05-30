@@ -30,11 +30,14 @@ const Hero = () => {
                     Join the loop today to unlock a world of seamless information exchange, amplified digital presence, and unparalleled networking possibilities. 
                 </motion.h6>
 
-                <button
+                <motion.button
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 4 }}
                     className='w-[140px] md:w-[165px] h-9 md:h-10 mt-12 bg-black text-white text-xs md:text-base  font-bold rounded-[10px]  text-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]'
                 >
                     GET NOW
-                </button>
+                </motion.button>
                 
 
             </div>
