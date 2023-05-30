@@ -3,18 +3,18 @@ import React from 'react'
 
 const LoopBlack = () => {
   return (
-    <div className='mt-[222px]'>
-        <div className='hidden lg:block bg-[#090909] h-[648px] max-w-[1212px] mx-auto rounded-[20px]' >
-            <div className=' pt-11 pl-9 flex '>
+    <div className='mt-[222px] '>
+        <div className='hidden lg:block bg-[#090909] h-[648px] max-w-[1212px] mx-3 xl:mx-auto rounded-[20px] ' >
+            <div className=' pt-11 lg:pl-4 xl:pl-9 flex '>
                 <div>
                 <div className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>
-                    <h1 >Loop Black </h1>
+                    <h2 >Loop Black </h2>
                 </div>
-                <div className='text-[40px] pt-9 text-white leading-[140%] pr-[16px] max-w-[652px]'>
+                <div className='text-[30px] xl:text-[40px] pt-9 text-white leading-[140%] pr-[16px] max-w-[652px]'>
                     <h3>Unveil the Power of <span className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>Darkness,</span> Unleash Limitless Connections.</h3>
 
                 </div>
-                <div className='pl-[13px] max-w-[604px]  pt-[76px] text-white text-[14px] leading-[164%]'>
+                <div className='pl-[13px] lg:max-w-[550px] xl:max-w-[604px]  pt-[76px] text-white lg:text-[10px] xl:text-[14px] leading-[164%]'>
                     <div className=' '>
                         <p>Make a bold statement with Loop Black, our signature card designed to captivate with its sleek and matte black finish. </p>
                     </div>
@@ -31,8 +31,11 @@ const LoopBlack = () => {
                 </div>
 
                 <div className=' pr-5 pt-7 flex flex-col items-center'>
-                    <div>
+                    <div className='hidden xl:block'>
                     <Image src={'/assets/images/landing/loopcard.png'} height={450} width={494} alt='loopcard'/>
+                    </div>
+                    <div className='xl:hidden'>
+                    <Image src={'/assets/images/landing/loopcard.png'} height={400} width={400} alt='loopcard'/>
                     </div>
                      
                      <div>
