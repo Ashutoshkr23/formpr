@@ -1,5 +1,5 @@
 import React from 'react'
-import { LandingNav, Testimonial, Products, Story, Android, Hero, FAQ, Benefits, Footer } from '@/components'
+import { LandingNav, Testimonial, Products, Story, Android, Hero, FAQ, Benefits,  } from '@/components'
 
 const Landing = () => {
   return (
@@ -13,7 +13,7 @@ const Landing = () => {
       <Testimonial />
       <Android />
       <FAQ />
-      <Footer/>
+      
     </div>
   )
 }
