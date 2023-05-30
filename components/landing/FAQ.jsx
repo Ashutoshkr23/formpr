@@ -13,7 +13,7 @@ function FAQ() {
               ques={"Q: How does Loop work?"}
               ans={"A: Loop uses NFC-powered technology to transfer your information seamlessly. All you have to do is tap your Loop card on a smartphone, and your information will be instantly transferred."}/>
           <QA
-              ques={"Q: Q: Do I need an app to use Loop?"}
+              ques={"Q: Do I need an app to use Loop?"}
               ans={"A: No, you don't need an app to use Loop. All you need is a smartphone with NFC capabilities."} />
           <QA
               ques={"Q: Is my information safe with Loop? "}
