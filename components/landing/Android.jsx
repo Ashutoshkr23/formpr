@@ -6,9 +6,9 @@ const Android = () => {
             <div className='lg:pt-[170px] pt-[93px] '>
 
                 {/* <div className=' flex justify-between '> */}
-                <div className='flex lg:justify-center md:justify-center   '>
-                    <div className='flex flex-col  '>
-                        <div className=' lg:pt-[136px]  mx-auto text-transparent bg-gradient-to-r from-[#66D3E1] to-[#96FFAD] bg-clip-text '>
+                <div className='flex lg:justify-center items-center md:justify-center   '>
+                    <div className='flex flex-col mr-6 '>
+                        <div className=' md:min-w-[610px] xl:min-w-[700px]  mx-auto text-transparent md:text-right bg-gradient-to-r from-[#66D3E1] to-[#96FFAD] bg-clip-text '>
                             <h2>Android and iOS compatible </h2>
                         </div>
                         <div className='flex flex-col items-center space-y-7 lg:space-y-0  lg:flex-row lg:justify-end lg:space-x-4 lg:pt-[51px] pt-[58px] '>
@@ -30,7 +30,7 @@ const Android = () => {
                         </div>
                     </div>
                     <div className=' hidden lg:block'>
-                        <Image src={'/assets/images/landing/android.png'}
+                        <Image src={'/assets/images/landing/BlankMob.png'}
                             alt='android'
                             width={491}
                             height={491}

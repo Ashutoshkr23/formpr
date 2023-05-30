@@ -50,6 +50,7 @@ const Hero = () => {
                         height={494}
                         quality={100}
                         alt='mobile'
+                        priority
                     />
                     </motion.div>
                     <motion.div 

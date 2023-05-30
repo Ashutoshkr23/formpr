@@ -9,6 +9,7 @@ const RotaryLogo= () => {
                 src={"/roticon.png"}
                 width={150}
                 height={150}
+                alt='rotary-logo'
 
             /></div>
         </div>

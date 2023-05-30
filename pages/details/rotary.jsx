@@ -51,7 +51,7 @@ const rotary = () => {
 
         </div>
 
-        <div className='text-[10px] flex justify-center mt-8 pb-[29px] text-white'>made with love by <Image className='ml-[3px]' src={'/loopro.svg'} width={27} height={12} /></div>
+        <div className='text-[10px] flex justify-center mt-8 pb-[29px] text-white'>made with love by <Image className='ml-[3px]' alt='loop' src={'/loopro.svg'} width={27} height={12} /></div>
 
       </div>
 
