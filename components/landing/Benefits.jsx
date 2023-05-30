@@ -1,6 +1,4 @@
 import {Card, HorizontalCard1, HorizontalCard2} from '@/components';
-
-
 const Benefits = () => {
 
     return (
@@ -14,13 +12,13 @@ const Benefits = () => {
                 </h2>
 
             </div>
-            <div className='mt-[91px] flex flex-col items-center space-y-9 '>
+            <div className='mt-[91px] flex flex-col items-center space-y-9 overflow-hidden '>
 
                 <div className='flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16'>
 
 
                     <Card
-                        cardStyle={" relative rounded-[20px] bg-white w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] drop-shadow-white  pl-[33px] pt-[17px] md:pl-[40px]  md:pt-[30px]"}
+                        cardStyle={" relative rounded-[20px] bg-white w-[300px] mx-auto mobile:w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] drop-shadow-white pl-[24px] mobile:pl-[33px] pt-[17px] md:pl-[40px]  md:pt-[30px]"}
                         heading={"Cutting Edge Designs."}
                         headingStyle={"md:text-[40px] text-[24px] leading-[120%]  font-bold md:pr-[86px] pr-[118px]"}
                         text={"Elevate Your Networking with Cutting-Edge Impressions."}
@@ -31,7 +29,7 @@ const Benefits = () => {
                     />
 
                     <Card
-                        cardStyle={"relative w-[345px] md:pl-[60px]  md:pt-[45px] pl-[40px] pr-[31px] pt-[31px] h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96]"}
+                        cardStyle={"relative w-[300px] mx-auto mobile:w-[345px] md:pl-[60px]  md:pt-[45px] pl-[24px] mobile:pl-[40px] pr-[31px] pt-[31px] h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96]"}
                         heading={"Limitless Flexibility."}
                         headingStyle={"text-[36px] leading-[120%]  md:text-[45px] md:pr-[42px] font-bold "}
                         text={"Edit and Adapt Your Digital Card Limitlessly."}
@@ -51,7 +49,7 @@ const Benefits = () => {
 
 
                     <Card
-                        cardStyle={"relative pt-[40px] pl-6   md:pt-12 w-[337px] h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-br   from-[#FDFF96] to-[#F16869]"}
+                        cardStyle={"relative pt-[40px] pl-6   md:pt-12 w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-br   from-[#FDFF96] to-[#F16869]"}
                         heading={"Seamless User Experience. "}
                         headingStyle={"text-[36px] leading-[120%]  md:text-[45px]  font-bold"}
                         text={"Effortless Networking Made  Beautifully Simple."}
@@ -62,7 +60,7 @@ const Benefits = () => {
                     />
 
                     <Card
-                        cardStyle={"relative  w-[345px] h-[230px] md:w-[450px]         xl:w-[500px] md:h-[336px] drop-shadow-white bg-white  rounded-[20px]"}
+                        cardStyle={"relative  w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px]         xl:w-[500px] md:h-[336px] drop-shadow-white bg-white  rounded-[20px]"}
                         heading={"Seamless  Sharing.  "}
                         headingStyle={"md:text-[40px] leading-[120%]  md:pl-[32px] pl-[30px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-11"}
                         text={"Embrace the App-Free Advantage of Loop Connections."}

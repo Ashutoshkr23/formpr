@@ -20,6 +20,10 @@ module.exports = {
       colors: {
         'gray': '#596573',
       },
+      screens: {
+        'mobile': '360px',
+      },
+
       
     },
    

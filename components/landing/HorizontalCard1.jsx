@@ -66,16 +66,15 @@ function HorizontalCard1() {
 
           <div className='lg:hidden'onClick={handleFlip}> 
               <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
-                  <div className={` relative w-[345px] h-[230px] md:w-[450px] md:h-[336px] `}>
+                  <div className={` relative w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] `}>
                       <div className='horizontal-card-inner '>
-                          <div className={`horizontal-card-front  w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px] `}>
-                              <div className={`relative  w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
+                          <div className={`horizontal-card-front  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px] `}>
+                              <div className={`relative  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
                                   <div className='pt-[19px] md:pt-[40px]   text-[36px] font-bold  '>
-                                      <div className='flex flex-col item-center px-4 md:px-12'>
+                                      <div className='flex flex-col item-center px-2 mobile:px-4 md:px-12'>
                                           <div className=' '>
                                               <span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">
-                                                  Android and iOS
-                                              </span> <span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">Compatible.</span>
+                                                  Android and iOS Compatible.</span>
                                           </div>
 
                                           <div className='font-bold text-[16px] md:text-[24px] text-white pt-[10px] md:pt-[20px]'>
@@ -90,7 +89,7 @@ function HorizontalCard1() {
                                   <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
                               </div>
                           </div>
-                          <div className={`horizontal-card-back  w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px]   `}>
+                          <div className={`horizontal-card-back  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px]   `}>
                               <div className={`relative text-[16px] sm:text-[20px] sm:p-8 p-6 w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
                                   <p className='text-white'>
                                   Whether it&apos;s Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device. 
