@@ -21,7 +21,7 @@ const Story = () => {
 
 
         <div className=' absolute left-[51px] bottom-0'>
-          <Image src={'/assets/images/storyphone.png'}
+          <Image src={'/assets/images/landing/storyphone.png'}
             alt='storyPhone'
             width={270}
             height={516} />
@@ -34,7 +34,7 @@ const Story = () => {
         <div className='relative  max-w-[345px] h-[536px] bg-black pl-5 rounded-[15px]'>
 
           <div className='absolute left-0 -top-[81px] '>
-            <Image src={'/assets/images/storyph2.png'}
+            <Image src={'/assets/images/landing/storyph2.png'}
               alt='storyPhone'
               width={345}
               height={252} />

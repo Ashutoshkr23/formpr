@@ -22,15 +22,15 @@ const Products = () => {
                     <div className='flex  justify-center pt-[92px]'>
                         <ProductComp
                             text={"Loop Lite"}
-                            img={"/assets/images/LiteCard.png"}
+                            img={"/assets/images/landing/LiteCard.png"}
                         />
                         <ProductComp
                             text={"Loop Elevate "}
-                            img={"/assets/images/ElevateCard.png"}
+                            img={"/assets/images/landing/ElevateCard.png"}
                         />
                         <ProductComp
                             text={"Loop Supreme"}
-                            img={"/assets/images/SupremeCard.png"}
+                            img={"/assets/images/landing/SupremeCard.png"}
                         />
                     </div>
                 </div>
@@ -39,19 +39,19 @@ const Products = () => {
                         <SwiperSlide className='w-1/4 max-w-[364px]' >
                             <ProductComp
                                 text={"Loop Lite"}
-                                img={"/assets/images/LiteCard.png"}
+                                img={"/assets/images/landing/LiteCard.png"}
                             />
                         </SwiperSlide>
                         <SwiperSlide >
                             <ProductComp
                                 text={"Loop Lite"}
-                                img={"/assets/images/ElevateCard.png"}
+                                img={"/assets/images/landing/ElevateCard.png"}
                             />
                         </SwiperSlide>
                         <SwiperSlide >
                             <ProductComp
                                 text={"Loop Lite"}
-                                img={"/assets/images/SupremeCard.png"}
+                                img={"/assets/images/landing/SupremeCard.png"}
                             />
                         </SwiperSlide>
                     </Swiper>
@@ -61,19 +61,19 @@ const Products = () => {
                         <SwiperSlide className='w-1/4 max-w-[364px]' >
                             <ProductComp
                                 text={"Loop Lite"}
-                                img={"/assets/images/LiteCard.png"}
+                                img={"/assets/images/landing/LiteCard.png"}
                             />
                         </SwiperSlide>
                         <SwiperSlide >
                             <ProductComp
                                 text={"Loop Lite"}
-                                img={"/assets/images/ElevateCard.png"}
+                                img={"/assets/images/landing/ElevateCard.png"}
                             />
                         </SwiperSlide>
                         <SwiperSlide >
                             <ProductComp
                                 text={"Loop Lite"}
-                                img={"/assets/images/SupremeCard.png"}
+                                img={"/assets/images/landing/SupremeCard.png"}
                             />
                         </SwiperSlide>
                     </Swiper>
