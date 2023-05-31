@@ -77,7 +77,7 @@ function HorizontalCard2() {
 {/* /mobile and tab */}
             <div className='lg:hidden'onClick={handleFlip}>
                 <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
-                    <div className={` relative drop-shadow-white bg-white w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] `}>
+                    <div className={` relative drop-shadow-white  w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] `}>
                         <div className='horizontal-card-inner '>
                             <div className={`horizontal-card-front ${ isCardVisible ? 'animate-card' : ''}  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px] `}>
                                 <div className={`relative  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
