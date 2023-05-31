@@ -7,8 +7,13 @@ const Landing = () => {
     <div className='bg-["#333333"] max-w-[1440px]  mx-auto' >  
       <LandingNav />
       <Hero />
-      <Swiper/>
-      
+      <Benefits />
+      <Products />
+      <LoopBlack/>
+      <Story />
+      <Testimonial />
+      <Android />
+      <FAQ />
       
     </div>
   )
