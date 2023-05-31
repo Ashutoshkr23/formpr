@@ -18,7 +18,7 @@ function TestimonialComp({ feedback, img, name, designation }) {
             </div>
             {/*Mobiles*/}
             <div className='xl:hidden'>
-                <div className='w-[280px] sm:w-[320px] bg-slate '>
+                <div className='w-[280px] sm:w-[320px]  '>
                     <div className='relative drop-shadow-white block h-[437px] w-[280px] md:w-[320px]  mx-auto  bg-white rounded-2xl'>
                         <img src={img} alt="testimonials" className='absolute inset-x-0 mx-auto bottom-[115px] z-10' />
                         <div className='w-full pt-7 px-auto'>
