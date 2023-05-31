@@ -574,6 +574,42 @@ h6 {
     color: #596573;
 }
 
+.animate-card {
+    animation-name: slideIn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(60%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+   
+  .animate-text {
+    animation-name: slideInText;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes slideInText {
+    0% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
 /* h2{
     font-size: 50px;
 
