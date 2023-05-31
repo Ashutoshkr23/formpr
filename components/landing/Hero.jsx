@@ -5,7 +5,7 @@ import React from 'react'
 const Hero = () => {
     return (
 
-        <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col-reverse mt-16 lg:mt-20 lg:px-4  xl:px-0'>
+        <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col-reverse mt-16 lg:mt-16 lg:px-4  xl:px-0'>
 
             <div className="flex flex-col mt-20 md:mt-48 lg:mt-0 items-center px-2  mobile:px-4 md:px-0 mx-auto lg:mx-0 max-w-[456px] xl:max-w-[600px] ">
                 <h1 className=' mr-auto text-left anim-typewriter  font-bold '>
@@ -51,21 +51,20 @@ const Hero = () => {
                         transition={{ duration: 2 }}
                     >
                     <Image src={'/assets/images/landing/landingProfileTop.png'}
-                        width={240}
-                        height={530}
+                        width={260}
+                        height={580}
                         quality={100}
                         alt='mobile'
-                        priority
-                        
+                        priority                        
                     />
                     </motion.div>
                     <motion.div 
                         initial={{ y: 200}}
                         animate={{ y: 0 }} 
                         transition={{ duration: 2 }}
-                        className='absolute top-[510px] z-[-1]'>
+                        className='absolute top-[550px] z-[-1]'>
                     <Image src={'/assets/images/landing/phone2.png'}
-                        width={240}
+                        width={260}
                         height={154}
                         alt='mobile'
                         quality={100}
@@ -86,9 +85,9 @@ const Hero = () => {
                         animate={{ x: 0 }} 
                         transition={{ duration: 2 }}
                         
-                        className='absolute -z-10 top-[200px]  -right-[170px]' 
+                        className='absolute -z-10 top-[200px] -right-[150px]' 
                     >
-                        <Image src={'/assets/images/landing/LoopCard1.png'} width={275} height={200} alt='sample nfc visting card' quality={100}/> 
+                        <Image src={'/assets/images/landing/LoopCard1.png'} width={220} height={177} alt='sample nfc visting card' quality={100}/> 
                     </motion.div>
 
                     

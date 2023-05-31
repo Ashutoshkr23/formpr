@@ -5,7 +5,7 @@ const LoopBlack = () => {
   return (
     <div className='lg:mt-[222px] mt-[131px] '>
         <div className='hidden lg:block bg-[#090909] h-[648px] max-w-[1212px] mx-3 xl:mx-auto rounded-[20px] ' >
-            <div className=' pt-11 lg:pl-4 xl:pl-9 flex '>
+            <div className='  pt-16 lg:pl-4 xl:pl-9 flex '>
                 <div>
                 <div className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>
                     <h2 >Loop Black </h2>
@@ -30,7 +30,7 @@ const LoopBlack = () => {
                     </div>
                 </div>
 
-                <div className=' pr-5 pt-7 flex flex-col items-center'>
+                <div className=' pr-5  flex flex-col items-center'>
                     <div className='hidden xl:block'>
                     <Image src={'/assets/images/landing/loopcard.png'} height={450} width={494} alt='loopcard'/>
                     </div>
@@ -38,7 +38,7 @@ const LoopBlack = () => {
                     <Image src={'/assets/images/landing/loopcard.png'} height={400} width={400} alt='loopcard'/>
                     </div>
                      
-                     <div>
+                     <div className='pt-4'>
                      <button className="rounded-[10px] h-[41px] w-[165px] bg-gradient-to-br from-[#68D5DF] to-[#95FEAF] text-black">
                                 
                             BUY NOW</button>
