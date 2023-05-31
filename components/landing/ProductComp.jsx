@@ -9,7 +9,7 @@ function ProductComp({ text, img ,content }) {
     };
     return (
         <div className='flex flex-col  items-center'>
-            <div className={`h-[482px] xl:h-[511px] mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]' : ''
+            <div className={`h-[482px] xl:h-[511px] p-1 mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]' : ''
                 }`} onMouseEnter={handleHover}
                 onMouseLeave={handleHover}>
                 <div className='h-[474px] xl:h-[503px] w-[272px] mobile:w-[312px]  xl:w-[377px] rounded-2xl  bg-white'>

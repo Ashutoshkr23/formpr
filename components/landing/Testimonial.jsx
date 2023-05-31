@@ -38,7 +38,12 @@ function Testimonial() {
 
     return (
         <div className='mt-20'>
-            <div className='w-80 mobile:w-full max-w-[380px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center'>
+            <div className="relative overflow-hidden w-full">
+                <div className='text-center mt-28'>
+                    <h6>Voices from the Loop</h6>
+                    <h2 className=' mt-2 '>Our Testimonials</h2>
+                </div>
+            <div className='w-80 mt-12 md:mt-20 mobile:w-full max-w-[380px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center'>
                 <Image src={'assets/images/landing/Left-Arrow.svg'} height={20} width={20} onClick={handlePrev} />
                 <div className='w-[280px] mobile:w-80 md:w-[700px] lg:w-full lg:max-w-[1020] xl:max-w-[1230px] xl:w-full h-full overflow-hidden '>
                     <div
@@ -72,6 +77,7 @@ function Testimonial() {
                     </div>
                 </div>
                 <Image src={'assets/images/landing/Right-Arrow.svg'} height={20} width={20} onClick={handleNext} />
+            </div>
             </div>
         </div>
     );
