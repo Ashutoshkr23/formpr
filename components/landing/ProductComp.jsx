@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 
-function ProductComp({ text, img }) {
+function ProductComp({ text, img ,content }) {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleHover = () => {
         setIsHovered(!isHovered);
     };
     return (
-        <div >
+        <div className='flex flex-col  items-center'>
             <div className={`h-[482px] xl:h-[511px] mx-auto  w-[320px] xl:w-[385px] rounded-2xl p-1 ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]' : ''
                 }`} onMouseEnter={handleHover}
                 onMouseLeave={handleHover}>
@@ -24,6 +24,7 @@ function ProductComp({ text, img }) {
                                 height={301}
                                 width={315}
                             />
+                            
                         </div>
                         <div className='pt-16 xl:hidden'>
                             <Image src={img}
@@ -40,6 +41,9 @@ function ProductComp({ text, img }) {
                     </div>
                 </div>
             </div>
+            <div className='text-[14px] pt-9 text-[#596573] max-w-[260px] text-center'>
+                   <p>{content}</p>
+             </div>
         </div>
     )
 }

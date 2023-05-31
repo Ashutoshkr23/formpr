@@ -23,14 +23,19 @@ const Products = () => {
                         <ProductComp
                             text={"Loop Lite"}
                             img={"/assets/images/landing/LiteCard.png"}
+                            content={"Your brand's front-row showcase, in an affordable package."}
                         />
                         <ProductComp
                             text={"Loop Elevate "}
                             img={"/assets/images/landing/ElevateCard.png"}
+                            content={"Where your brand captivates, in seamless sophistication."}
+
                         />
                         <ProductComp
                             text={"Loop Supreme"}
                             img={"/assets/images/landing/SupremeCard.png"}
+                            content={"Where your brand commands attention, with unrivalled prestige."}
+
                         />
                     </div>
                 </div>
@@ -44,13 +49,13 @@ const Products = () => {
                         </SwiperSlide>
                         <SwiperSlide >
                             <ProductComp
-                                text={"Loop Lite"}
+                                text={"Loop Elevate"}
                                 img={"/assets/images/landing/ElevateCard.png"}
                             />
                         </SwiperSlide>
                         <SwiperSlide >
                             <ProductComp
-                                text={"Loop Lite"}
+                                text={"Loop Supreme"}
                                 img={"/assets/images/landing/SupremeCard.png"}
                             />
                         </SwiperSlide>
@@ -66,13 +71,13 @@ const Products = () => {
                         </SwiperSlide>
                         <SwiperSlide >
                             <ProductComp
-                                text={"Loop Lite"}
+                                text={"Loop Elevate"}
                                 img={"/assets/images/landing/ElevateCard.png"}
                             />
                         </SwiperSlide>
                         <SwiperSlide >
                             <ProductComp
-                                text={"Loop Lite"}
+                                text={"Loop Supreme"}
                                 img={"/assets/images/landing/SupremeCard.png"}
                             />
                         </SwiperSlide>

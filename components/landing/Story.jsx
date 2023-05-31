@@ -3,7 +3,7 @@ import React from 'react'
 
 const Story = () => {
   return (
-    <div className='mt-[296px] sm:px-8 md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
+    <div className=' mt-[180px] lg:mt-[339px] sm:px-8 md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
 
       <div className='relative hidden lg:block mx-auto max-w-[1212px] h-[428px] bg-[#090909] rounded-[20px] '>
 
