@@ -4,8 +4,8 @@ function TestimonialComp({ feedback, img, name, designation }) {
     return (
         <div>
             {/*Laptop */}
-            <div className='hidden  lg:block'>
-                <div className='relative drop-shadow-white inline-block px-7 w-full h-[437px]  mt-16 bg-white rounded-[20px]'>
+            <div className='hidden  xl:block'>
+                <div className='relative drop-shadow-white inline-block px-7 w-[350px] h-[437px]  bg-white rounded-[20px]'>
                     <img src={img} alt="testimonials" className='absolute inset-x-0 mx-auto bottom-[115px] z-10' />
                     <div className=' pt-7 '>
                         <p className='text-sm  text-left font-bold leading-[1.4rem]'>{feedback}</p>
@@ -17,9 +17,9 @@ function TestimonialComp({ feedback, img, name, designation }) {
                 </div>
             </div>
             {/*Mobiles*/}
-            <div className='lg:hidden'>
-                <div className='w-full md:w-1/2 bg-slate '>
-                    <div className='relative drop-shadow-white block h-[437px] w-[300px] md:w-[330px] mt-16 mx-auto md:ml-8 bg-white rounded-2xl'>
+            <div className='xl:hidden'>
+                <div className='w-[280px] sm:w-[320px] bg-slate '>
+                    <div className='relative drop-shadow-white block h-[437px] w-[280px] md:w-[320px]  mx-auto  bg-white rounded-2xl'>
                         <img src={img} alt="testimonials" className='absolute inset-x-0 mx-auto bottom-[115px] z-10' />
                         <div className='w-full pt-7 px-auto'>
                             <p className='text-sm font-bold w-11/12 md:w-3/4 mx-auto leading-[1.4rem]'>{feedback}</p>

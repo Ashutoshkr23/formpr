@@ -1,5 +1,5 @@
 import React from 'react'
-import { LandingNav, Testimonial, Products, Story, Android, Hero, FAQ, Benefits, LoopBlack,  } from '@/components'
+import { LandingNav, Testimonial, Products, Story, Android, Hero, FAQ, Benefits, LoopBlack, Swiper  } from '@/components'
 
 const Landing = () => {
   return (

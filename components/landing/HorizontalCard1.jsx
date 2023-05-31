@@ -33,7 +33,7 @@ function HorizontalCard1() {
     <div>
           <div className='hidden lg:block 'onClick={handleFlip}>
               <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
-                  <div className={` relative h-[337px] w-[950px] xl:w-[1070px] `}>
+                  <div className={` relative drop-shadow-white h-[337px] w-[950px] xl:w-[1070px] `}>
                       <div className='horizontal-card-inner '>
                           <div className={`horizontal-card-front  h-[337px] w-[950px] xl:w-[1070px] rounded-[20px] ${
                 isCardVisible ? 'animate-card' : ''} `}>
@@ -85,7 +85,7 @@ function HorizontalCard1() {
 
           <div className='lg:hidden'onClick={handleFlip}> 
               <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
-                  <div className={` relative w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] `}>
+                  <div className={` relative w-[300px] drop-shadow-white mx-auto mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] `}>
                       <div className='horizontal-card-inner '>
                           <div className={`horizontal-card-front  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px] ${
                 isCardVisible ? 'animate-card' : ''} `}>
