@@ -1,5 +1,5 @@
 import React from 'react'
-import { LandingNav, Testimonial, Products, Story, Android, Hero, FAQ, Benefits, LoopBlack,  } from '@/components'
+import { LandingNav, Testimonial, Products, Story, Android, Hero, FAQ, Benefits, LoopBlack, Swiper  } from '@/components'
 
 const Landing = () => {
   return (
@@ -7,13 +7,8 @@ const Landing = () => {
     <div className='bg-["#333333"] max-w-[1440px]  mx-auto' >  
       <LandingNav />
       <Hero />
-      <Benefits />
-      <Products />
-      <LoopBlack/>
-      <Story />
-      <Testimonial />
-      <Android />
-      <FAQ />
+      <Swiper/>
+      
       
     </div>
   )
