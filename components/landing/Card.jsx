@@ -14,9 +14,9 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
     return (
         <>
             <div className={`card ${isFlipped ? 'flipped' : ''} `}onClick={handleFlip}>
-                <div className={` relative w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] `}>
+                <div className={` relative w-[300px] mobile:w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] `}>
                     <div className='card-inner '>
-                        <div className={`card-front  w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] rounded-[20px] `}>
+                        <div className={`card-front  w-[300px] mobile:w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] rounded-[20px] `}>
                             <div className={` ${cardStyle}`}>
                                 <h1 className={headingStyle}>{heading}</h1>
                                 <h3 className={textStyle}>{text}</h3>
@@ -36,7 +36,7 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
                                 <IoMdAddCircle onClick={handleFlip} size={32} color={btncolor} />
                             </div>
                         </div>
-                        <div className={`card-back  w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] rounded-[20px]`}>
+                        <div className={`card-back  w-[300px] mobile:w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] rounded-[20px]`}>
                             <div className={`${cardStyle} p-8 text-[16px] sm:text-[20px] md:text-[20px] `}>
                                 <p>
                                     {backContent}

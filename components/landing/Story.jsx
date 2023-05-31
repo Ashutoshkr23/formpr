@@ -39,7 +39,7 @@ const Story = () => {
               width={345}
               height={252} />
           </div>
-          <div className='flex flex-col pl-5 pt-[210px]'>
+          <div className='flex flex-col mobile:pl-5 pt-[210px]'>
             <div className='text-[#596573] '>
               <p className='text-[12px]'>The Loop Journey</p>
             </div>

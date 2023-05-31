@@ -60,10 +60,10 @@ function HorizontalCard2() {
 
             <div className='lg:hidden'onClick={handleFlip}>
                 <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
-                    <div className={` relative w-[345px] h-[230px] md:w-[450px] md:h-[336px] `}>
+                    <div className={` relative w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] `}>
                         <div className='horizontal-card-inner '>
-                            <div className={`horizontal-card-front  w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px] `}>
-                                <div className={`relative  w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
+                            <div className={`horizontal-card-front  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px] `}>
+                                <div className={`relative  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
                                     <div className='pt-[40px]   text-[36px] font-bold  '>
                                         <div className="flex flex-col px-6 md:px-12">
                                             <div className='text-[36px] md:text-[45px]  leading-[120%] md:leading font-bold'>
@@ -81,8 +81,8 @@ function HorizontalCard2() {
                                     <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
                                 </div>
                             </div>
-                            <div className={`horizontal-card-back  w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px]   `}>
-                                <div className={`relative text-[16px] sm:text-[20px] sm:p-8 p-6 w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
+                            <div className={`horizontal-card-back  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px]   `}>
+                                <div className={`relative text-[16px] sm:text-[20px] sm:p-8 p-6 w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
                                 <p className='text-white'>
                                     Unlock the door to the future with LoopChain. Each card creates a wallet, opening a world of NFTs and blockchain utilities, expanding the horizons of your digital presence.
                                     </p>
