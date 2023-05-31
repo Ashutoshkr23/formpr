@@ -12,7 +12,7 @@ const Benefits = () => {
                 </h2>
 
             </div>
-            <div className='mt-[91px] flex flex-col items-center space-y-9 overflow-hidden '>
+            <div className='mt-[55px] pt-9 lg:mt-[91px] lg:pt-0 flex flex-col items-center space-y-9 overflow-hidden '>
 
                 <div className='flex flex-col items-center space-y-9 lg:space-y-0 lg:flex-row justify-center lg:space-x-16'>
 
