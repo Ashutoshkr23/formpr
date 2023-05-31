@@ -2,40 +2,59 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { IoIosAddCircle,  IoMdAddCircle, } from 'react-icons/io';
 import { RxCrossCircled } from 'react-icons/rx';
+import ScrollTrigger from 'react-scroll-trigger';
+
 
 
 function HorizontalCard1() {
     const [isFlipped, setIsFlipped] = useState(false);
+    const [isCardVisible, setIsCardVisible] = useState(false);
+  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [isHeadingVisible, setIsHeadingVisible] = useState(false);
 
     const handleFlip = () => {
         setIsFlipped(!isFlipped);
     };
 
+    const onCardEnterViewport = () => {
+        setIsCardVisible(true);
+        setTimeout(() => {
+          setIsTextVisible(true);
+        }, 1500); // Delay the text visibility by 1 second
+        setTimeout(() => {
+          setIsHeadingVisible(true);
+        }, 1000); 
+      };
+
+
   return (
+    <ScrollTrigger onEnter={onCardEnterViewport}>
+
     <div>
           <div className='hidden lg:block 'onClick={handleFlip}>
               <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
                   <div className={` relative drop-shadow-white h-[337px] w-[950px] xl:w-[1070px] `}>
                       <div className='horizontal-card-inner '>
-                          <div className={`horizontal-card-front  h-[337px] w-[950px] xl:w-[1070px] rounded-[20px] `}>
+                          <div className={`horizontal-card-front  h-[337px] w-[950px] xl:w-[1070px] rounded-[20px] ${
+                isCardVisible ? 'animate-card' : ''} `}>
                               <div className={`relative  h-[337px] w-[950px] xl:w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
                                   <div className='pt-[40px]  text-[45px] font-bold  '>
                                       <div className='flex flex-col'>
-                                          <div className=' pl-[59px] pr-[478px] '>
-                                              <span className=" text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">
+                                      {isHeadingVisible &&  <div className='animate-text pl-[59px] pr-[478px] '>
+                                           <span className=" text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text ">
                                                   Android and iOS Compatible.</span>
 
-                                          </div>
+                                          </div>}
 
 
                                           <div className='font-bold pl-[59px] pr-[343px] text-[20px] text-white pt-5'>
-                                              <p>Cross-Platform Compatibility for Seamless Connections.</p>
+                                          {isTextVisible &&  <p className='animate-text'>Cross-Platform Compatibility for Seamless Connections.</p>}
                                           </div>
                                           <div className='mt-[-125px] ml-[656px] '>
-                                              <Image src={'/assets/images/landing/image 13.png'} alt='img 13' width={174} height={235} />
+                                          {isTextVisible &&    <Image src={'/assets/images/landing/image 13.png'} alt='img 13' width={174} height={235} />}
                                           </div>
                                           <div className='mt-[-332px] ml-[849px]'>
-                                              <Image src={'/assets/images/landing/image 15.png'} alt='img 15' width={172} height={236} />
+                                          {isTextVisible &&    <Image src={'/assets/images/landing/image 15.png'} alt='img 15' width={172} height={236} />}
                                           </div>
 
                                       </div>
@@ -48,7 +67,7 @@ function HorizontalCard1() {
                           </div>
                           <div className={`horizontal-card-back  h-[337px] w-[950px] xl:w-[1070px] rounded-[20px]   `}>
                               <div className={`relative p-8 text-[24px]  h-[337px] w-[950px] xl:w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
-                              <p className='text-white'>
+                               <p className='text-white'>
                                   Whether it&apos;s Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device. 
 
                                   </p>
@@ -68,17 +87,18 @@ function HorizontalCard1() {
               <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
                   <div className={` relative w-[300px] drop-shadow-white mx-auto mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] `}>
                       <div className='horizontal-card-inner '>
-                          <div className={`horizontal-card-front  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px] `}>
+                          <div className={`horizontal-card-front  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px] ${
+                isCardVisible ? 'animate-card' : ''} `}>
                               <div className={`relative  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
                                   <div className='pt-[19px] md:pt-[40px]   text-[36px] font-bold  '>
                                       <div className='flex flex-col item-center px-2 mobile:px-4 md:px-12'>
-                                          <div className=' '>
-                                              <span className="text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">
+                                      {isHeadingVisible &&  <div className='animate-text '>
+                                             <span className=" text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">
                                                   Android and iOS Compatible.</span>
-                                          </div>
+                                          </div>}
 
                                           <div className='font-bold text-[16px] md:text-[24px] text-white pt-[10px] md:pt-[20px]'>
-                                              <p> Cross-Platform Compatibility for Seamless Connections.</p>
+                                          {isTextVisible &&    <p className='animate-text'> Cross-Platform Compatibility for Seamless Connections.</p>}
                                           </div>
 
                                       </div>
@@ -91,7 +111,7 @@ function HorizontalCard1() {
                           </div>
                           <div className={`horizontal-card-back  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px]   `}>
                               <div className={`relative text-[16px] sm:text-[20px] sm:p-8 p-6 w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
-                                  <p className='text-white'>
+                             <p className='text-white'>
                                   Whether it&apos;s Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device. 
 
                                   </p>
@@ -106,6 +126,7 @@ function HorizontalCard1() {
               </div>   
         </div>
     </div>
+    </ScrollTrigger>
   )
 }
 
