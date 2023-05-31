@@ -30,7 +30,7 @@ function HorizontalCard2() {
         <ScrollTrigger onEnter={onCardEnterViewport}>
 
         <div>
-            <div className='hidden pb-20 lg:block'onClick={handleFlip}>
+            <div className='hidden lg:block pb-20 'onClick={handleFlip}>
 
                 <div className={`horizontal-card ${isFlipped ? 'flipped' : ''} `}>
                     <div className={` relative drop-shadow-white h-[337px] w-[950px] xl:w-[1070px] `}>
@@ -54,7 +54,7 @@ function HorizontalCard2() {
                                     </div>
                                 </div>
 
-                                <div className='absolute bottom-4 right-8'>
+                                <div className='absolute bottom-4 right-8 hover:opacity-50 hover:cursor-pointer'>
                                     <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
                                 </div>
                             </div>
@@ -94,7 +94,7 @@ function HorizontalCard2() {
                                     </div>
                                 </div>
 
-                                <div className='absolute bottom-4 right-8'>
+                                <div className='absolute bottom-4 right-8 hover:opacity-50 hover:cursor-pointer'>
                                     <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
                                 </div>
                             </div>
@@ -106,7 +106,7 @@ function HorizontalCard2() {
                                 </div>
 
                                 <div className='absolute bottom-4 right-8'>
-                                    <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
+                                    <RxCrossCircled onClick={handleFlip} size={32} color='white' />
                                 </div>
                             </div>
                         </div>

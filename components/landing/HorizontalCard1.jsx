@@ -61,7 +61,7 @@ function HorizontalCard1() {
                                   </div>
                               </div>
 
-                              <div className='absolute bottom-4 right-8'>
+                              <div className='absolute bottom-4 right-8 hover:opacity-50 hover:cursor-pointer'>
                                   <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
                               </div>
                           </div>
@@ -105,7 +105,7 @@ function HorizontalCard1() {
                                   </div>
                               </div>
 
-                              <div className='absolute bottom-4 right-8'>
+                              <div className='absolute bottom-4 right-8 hover:opacity-50 hover:cursor-pointer'>
                                   <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
                               </div>
                           </div>
