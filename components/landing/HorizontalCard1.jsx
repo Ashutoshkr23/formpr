@@ -36,7 +36,7 @@ function HorizontalCard1() {
                   <div className={` relative drop-shadow-white h-[337px] w-[950px] xl:w-[1070px] `}>
                       <div className='horizontal-card-inner '>
                           <div className={`horizontal-card-front  h-[337px] w-[950px] xl:w-[1070px] rounded-[20px] ${
-                isCardVisible ? 'animate-card' : ''} `}>
+                isCardVisible ? '' : ''} `}>
                               <div className={`relative  h-[337px] w-[950px] xl:w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
                                   <div className='pt-[40px]  text-[45px] font-bold  '>
                                       <div className='flex flex-col'>
@@ -88,7 +88,7 @@ function HorizontalCard1() {
                   <div className={` relative w-[300px] drop-shadow-white mx-auto mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] `}>
                       <div className='horizontal-card-inner '>
                           <div className={`horizontal-card-front  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px] ${
-                isCardVisible ? 'animate-card' : ''} `}>
+                isCardVisible ? '' : ''} `}>
                               <div className={`relative  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
                                   <div className='pt-[19px] md:pt-[40px]   text-[36px] font-bold  '>
                                       <div className='flex flex-col item-center px-2 mobile:px-4 md:px-12'>
