@@ -12,6 +12,8 @@ const CardSchema = new mongoose.Schema({
     fullName: { type: String },
     cardName: { type: String },
     mobileNumber: { type: String },
+    // aws url will be stored in pfp
+    profilePicture: { type: String },
     companyName: { type: String },
     companyNumber: { type: String },
     companyLogo: { type: String },
@@ -19,15 +21,12 @@ const CardSchema = new mongoose.Schema({
     designation: { type: String },
     bio: { type: String },
     websiteUrl: { type: String },
-    // aws url will be stored in pfp
-    profilePicture: { type: String },
     instagramUrl: { type: String },
     whatsappUrl: { type: String },
     linkedinUrl: { type: String },
     facebookUrl: { type: String },
-    contactUrl: { type: String },
+    contactUrl: { type: String, required: true },
     deckUrl: { type: String },
-    avatar: { type: String },
     themeId: { type: String },  // theme id will be coming from theme.js uuid
 
 

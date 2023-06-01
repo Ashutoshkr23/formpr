@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import card from '@/models/card';
 import purchase from '@/models/purchase';
 import UserData from '@/models/UserData';
+import shipping from '@/models/shipping';
 
 export default async function handler(req, res) {
     try {
@@ -24,11 +25,13 @@ export default async function handler(req, res) {
             let temp = []
             cartItems.map((item) => {
                 for (let i = 0; i < item.quantity; i++) {
+                    let cuuid = uuidv4()
                     temp.push({
-                        cuuid: uuidv4(),
+                        cuuid: cuuid,
                         puuid: puuid,
                         cardType: item._id,
                         cardAmount: item.amount,
+                        contactUrl: `https://loopcard.club/details/${cuuid}`
                     })
                 }
             })
@@ -51,17 +54,44 @@ export default async function handler(req, res) {
                     orderTrackingNumber: "1234",
                     cardType: item.cardType,
                     contactUrl: `/${item.cuuid}`,
-                    shippingAddress: {
-                        recipientName: "John",
-                        lane1: "abcd",
-                        postalCode: "400072",
-                        state: "Maharashtra",
+                    // shippingAddress: {
+                    //     recipientName: "John",
+                    //     lane1: "abcd",
+                    //     postalCode: "400072",
+                    //     state: "Maharashtra",
 
-                    }
+                    // }
                 }
                 tempPurchaseArr.push(tempObj)
             })
             const purchaseData = await purchase.insertMany(tempPurchaseArr)
+            const shippinData = {
+                puuid: puuid,
+                totalAmount: totalAmount,
+                numberOfCards: totalQuantity,
+                currency: "INR",
+                razorpay_payment_id: razorpay_payment_id,
+                razorpay_order_id: razorpay_order_id,
+                razorpay_signature: razorpay_signature,
+                orderId: orderId,
+                orderTrackingNumber: "1234",
+                shippingAddress: {
+                    recipientName: "John",
+                    lane1: "abcd",
+                    postalCode: "400072",
+                    state: "Maharashtra",
+
+                },
+                orderStatus: 0,
+                statusHistory: {
+                    status: 0
+                }
+            }
+            const updateShipping = new shipping(shippinData)
+            // Save the instance to the database
+            const savedShipping = await updateShipping.save();
+            console.log('Shipping data saved successfully:', savedShipping);
+
             const updateUserProfile = await UserData.updateOne({ puuid: puuid }, { $inc: { totalCards: totalQuantity } })
             console.log(purchaseData, "purchase", updateUserProfile)
 

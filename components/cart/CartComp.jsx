@@ -10,7 +10,7 @@ import { useSession } from "next-auth/react";
 
 export default function CartComp(props) {
     // const { items, totalAmount, totalItems, quantity } = props
-    const { cartItems, userProfile } = useContext(CartContext);
+    const { cartItems, userProfile, clearCart } = useContext(CartContext);
     console.log(userProfile, "usp")
     const [totalAmount, setTotalAmount] = useState(0)
     const [totalQuantity, setTotalQuantity] = useState(0)
@@ -141,7 +141,7 @@ export default function CartComp(props) {
 
                     <div className="cart-items">
 
-                        <div className="cart-items-container">
+                        {/* <div className="cart-items-container">
                             {!cartItems?.length ? <>
                                 Loading...
                             </> : <>
@@ -159,6 +159,22 @@ export default function CartComp(props) {
                                 </div>}
                             </>}
 
+                        </div> */}
+                        <div className="cart-items-container">
+                            {!cartItems?.length ? <>
+                                Loading...
+                            </> : <>
+                                <Scrollbars className="cart-items-container">
+                                    {cartItems.map((item) => {
+
+                                        return <div key={item._id}><Item data={item} /></div>;
+
+
+
+                                    })}
+                                </Scrollbars>
+                            </>}
+
                         </div>
                     </div>
 
@@ -167,7 +183,7 @@ export default function CartComp(props) {
                             Cart Total : <span>₹{totalAmount}</span>
                         </h3>
                         <button onClick={() => submitFunc()}>checkout</button>
-                        <button className="clear-cart" >
+                        <button className="clear-cart" onClick={() => clearCart()} >
                             Clear Cart
                         </button>
                     </div>

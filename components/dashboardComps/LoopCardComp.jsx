@@ -1,15 +1,23 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
+import { CartContext } from '@/context/CartContext';
+import { useRouter } from 'next/router';
 
-function LoopCardComp({ text, img }) {
+function LoopCardComp({ text, img, index }) {
     const [isHovered, setIsHovered] = useState(false);
+    const { cartItems, plusCartFunc } = useContext(CartContext);
+    const router = useRouter()
 
     const handleHover = () => {
         setIsHovered(!isHovered);
     };
     return (
-        <Link href={"/cart"}>
+        <div onClick={() => {
+            let id = cartItems[index - 1]._id
+            plusCartFunc(id)
+            router.push("/cart")
+        }}>
             <div className={`h-[457px] lg:h-[511px]  w-[344px] lg:w-[385px] rounded-2xl p-1 ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]' : ''
                 }`} onMouseEnter={handleHover}
                 onMouseLeave={handleHover}>
@@ -41,7 +49,7 @@ function LoopCardComp({ text, img }) {
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
 

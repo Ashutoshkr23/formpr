@@ -23,14 +23,18 @@ const LoopCards = () => {
                         <LoopCardComp
                             text={"Loop Lite"}
                             img={"/assets/images/LiteCard.png"}
+                            index={1}
                         />
                         <LoopCardComp
                             text={"Loop Elevate "}
                             img={"/assets/images/ElevateCard.png"}
+                            index={2}
+
                         />
                         <LoopCardComp
                             text={"Loop Supreme"}
                             img={"/assets/images/SupremeCard.png"}
+                            index={3}
                         />
                     </div>
                 </div>
@@ -40,18 +44,21 @@ const LoopCards = () => {
                             <LoopCardComp
                                 text={"Loop Lite"}
                                 img={"/assets/images/LiteCard.png"}
+                                index={1}
                             />
                         </SwiperSlide>
                         <SwiperSlide >
                             <LoopCardComp
                                 text={"Loop Lite"}
                                 img={"/assets/images/ElevateCard.png"}
+                                index={2}
                             />
                         </SwiperSlide>
                         <SwiperSlide >
                             <LoopCardComp
                                 text={"Loop Lite"}
                                 img={"/assets/images/SupremeCard.png"}
+                                index={3}
                             />
                         </SwiperSlide>
                     </Swiper>
@@ -62,18 +69,21 @@ const LoopCards = () => {
                             <LoopCardComp
                                 text={"Loop Lite"}
                                 img={"/assets/images/LiteCard.png"}
+                                index={1}
                             />
                         </SwiperSlide>
                         <SwiperSlide >
                             <LoopCardComp
                                 text={"Loop Lite"}
                                 img={"/assets/images/ElevateCard.png"}
+                                index={2}
                             />
                         </SwiperSlide>
                         <SwiperSlide >
                             <LoopCardComp
                                 text={"Loop Lite"}
                                 img={"/assets/images/SupremeCard.png"}
+                                index={3}
                             />
                         </SwiperSlide>
                     </Swiper>

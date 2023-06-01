@@ -14,6 +14,7 @@ export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
     const [userProfile, setUserProfile] = useState([])
     const [allCards, setAllCards] = useState([])
+    const [defaultCart, setDefaultCart] = useState([])
 
     useEffect(() => {
         const fetchCartType = async () => {
@@ -22,9 +23,12 @@ export const CartProvider = ({ children }) => {
             const cardType = !data.error ? data.result : []
 
             const newArray = cardType.map((obj) => {
-                return { ...obj, quantity: 0 };
+                let newObj = { ...obj, quantity: 0 }
+                newObj.totalAmount = newObj.amount * newObj.quantity
+                return newObj
             });
             setCartItems(newArray)
+            setDefaultCart(newArray)
             // console.log(cardType, "cardTypeee")
         }
         const fetchUserCards = async (puuid) => {
@@ -76,6 +80,7 @@ export const CartProvider = ({ children }) => {
         const newCartItems = cartItems.map((item) => {
             if (item._id == id) {
                 let newItem = { ...item, quantity: parseInt(item.quantity) + 1 }
+                newItem.totalAmount = parseInt(newItem.quantity) * parseInt(newItem.amount)
                 return newItem
             }
             return item
@@ -87,6 +92,7 @@ export const CartProvider = ({ children }) => {
         const newCartItems = cartItems.map((item) => {
             if (item._id == id && item.quantity > 0) {
                 let newItem = { ...item, quantity: parseInt(item.quantity) - 1 }
+                newItem.totalAmount = parseInt(newItem.quantity) * parseInt(newItem.amount)
                 return newItem
             }
             return item
@@ -98,12 +104,25 @@ export const CartProvider = ({ children }) => {
         const newCartItems = cartItems.map((item) => {
             if (item._id == id && count >= 0) {
                 let newItem = { ...item, quantity: parseInt(count) }
+                newItem.totalAmount = parseInt(newItem.quantity) * parseInt(newItem.amount)
                 return newItem
             }
             return item
         })
         setCartItems(newCartItems)
 
+    }
+
+    // for clearing single type of card 
+    const handleClearCard = (id) => {
+        const newCartItems = cartItems.map((item) => {
+            if (item._id == id) {
+                let newItem = { ...item, quantity: 0, totalAmount: 0 }
+                return newItem
+            }
+            return item
+        })
+        setCartItems(newCartItems)
     }
 
 
@@ -114,7 +133,7 @@ export const CartProvider = ({ children }) => {
 
     // Function to clear the cart
     const clearCart = () => {
-        setCartItems([]);
+        setCartItems(defaultCart)
     };
 
     // Create the cart context value
@@ -125,7 +144,8 @@ export const CartProvider = ({ children }) => {
         clearCart,
         plusCartFunc,
         minusCartFunc,
-        handleItemCount
+        handleItemCount,
+        handleClearCard
     };
 
     // Provide the cart context to its children components
