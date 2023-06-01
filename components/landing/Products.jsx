@@ -47,7 +47,8 @@ function Products() {
                 </div>
 
             <div className='w-80 mt-12 md:mt-24  mobile:w-full max-w-[380px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center'>
-                <Image src={'assets/images/landing/Left-Arrow.svg'} height={20} width={20} onClick={handlePrev} />
+                    <Image src={'assets/images/landing/Left-Arrow.svg'} height={20} width={20} onClick={handlePrev} className='hidden md:block' />
+                    <Image src={'assets/images/landing/Left-Arrow.svg'} height={12} width={12} onClick={handlePrev} className='md:hidden' />
                 <div className='w-[280px] mobile:w-80 md:w-[700px] lg:w-full lg:max-w-[1020] xl:max-w-[1230px] xl:w-full h-full overflow-hidden '>
                     <div
                         className='w-[840px] mobile:w-[960px] md:w-[1050px]  lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] xl:w-full h-full flex'
@@ -81,7 +82,8 @@ function Products() {
                         </div>
                     </div>
                 </div>
-                <Image src={'assets/images/landing/Right-Arrow.svg'} height={20} width={20} onClick={handleNext} />
+                    <Image src={'assets/images/landing/Right-Arrow.svg'} height={20} width={20} onClick={handlePrev} className='hidden md:block' />
+                    <Image src={'assets/images/landing/Right-Arrow.svg'} height={12} width={12} onClick={handlePrev} className='md:hidden' />
             </div>
             </div>
         </div>
