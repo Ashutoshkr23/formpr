@@ -20,7 +20,7 @@ const Benefits = () => {
                     <Card
                         cardStyle={" relative rounded-[20px] bg-white w-[300px] mx-auto mobile:w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] drop-shadow-white pl-[24px] mobile:pl-[33px] pt-[17px] md:pl-[40px]  md:pt-[30px]"}
                         heading={"Cutting Edge Designs."}
-                        headingStyle={"md:text-[40px] text-[24px] leading-[120%]  font-bold md:pr-[86px] pr-[118px]"}
+                        headingStyle={"md:text-[40px] text-[24px] leading-[120%]  font-bold md:pr-[86px] pr-[40px]"}
                         text={"Elevate Your Networking with Cutting-Edge Impressions."}
                         textStyle={"md:pt-[22px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 font-bold"}
                         img={"/assets/images/landing/CardnShadow.png"}
@@ -62,9 +62,9 @@ const Benefits = () => {
                     <Card
                         cardStyle={"relative  w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px]         xl:w-[500px] md:h-[336px] drop-shadow-white bg-white  rounded-[20px]"}
                         heading={"Seamless  Sharing.  "}
-                        headingStyle={"md:text-[40px] leading-[120%]  md:pl-[32px] pl-[30px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-11"}
+                        headingStyle={"md:text-[40px] leading-[120%]  md:pl-[32px] pl-[24px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-12"}
                         text={"Embrace the App-Free Advantage of Loop Connections."}
-                        textStyle={"md:pt-[70px] w-[220px] md:w-[255px] pt-[47px] md:pl-[32px] pl-[30px] text-xs md:text-sm font-bold"}
+                        textStyle={"md:pt-[70px] w-[220px] md:w-[255px] pt-[47px] md:pl-[32px] pl-[24px] text-xs md:text-sm font-bold"}
                         img={"/assets/images/landing/PhoneinHand.png"}
                         backContent={'No downloads, no hassle. With Loop, your contacts open effortlessly in a WebView, making connections smooth and frictionless.' }
 
