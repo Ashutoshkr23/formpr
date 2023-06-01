@@ -88,12 +88,7 @@ function LandingNavbar() {
 
             </a>
             <div className="flex ">
-              <button
-                onClick={handlelogin}
-                className='w-28 h-10 bg-black text-white text-sm mr-4 my-auto font-bold rounded-[10px] text-center'
-              >
-                LOG IN
-              </button>
+             
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button" className="inline-flex relative z-[100] items-center ">
@@ -133,7 +128,7 @@ function LandingNavbar() {
                         <div>
                       <button
                 onClick={handlelogin}
-                className='w-28 h-10 bg-black text-white text-sm mr-4 my-auto font-bold rounded-[10px] text-center'
+                className='w-[140px] h-10 bg-black text-white text-sm mr-4 my-auto font-bold rounded-[10px] text-center'
               >
                 LOG IN
               </button>
