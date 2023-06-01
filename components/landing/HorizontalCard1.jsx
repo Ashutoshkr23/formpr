@@ -90,7 +90,7 @@ function HorizontalCard1() {
                           <div className={`horizontal-card-front  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px] ${
                 isCardVisible ? 'animate-card' : ''} `}>
                               <div className={`relative  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
-                                  <div className='pt-[19px] md:pt-[40px]   text-[36px] font-bold  '>
+                                  <div className='pt-[19px] md:pt-[40px]   text-[32px] mobile:text-[36px] font-bold  '>
                                       <div className='flex flex-col item-center px-2 mobile:px-4 md:px-12'>
                                       {isHeadingVisible &&  <div className='animate-text '>
                                              <span className=" text-transparent bg-gradient-to-br from-[#FDFF96] via-[#96FFAD] to-[#66D3E1] bg-clip-text">
