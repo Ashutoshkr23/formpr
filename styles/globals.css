@@ -558,24 +558,24 @@ h2{
 
 
 @media screen and (max-width: 640px) {
-    h6 {
+    h3 {
         font-size: 12px;
     }
 }
 
 @media screen and (min-width: 640px) and (max-width: 1200px) {
-    h6 {
+    h3 {
         font-size: 14px;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    h6 {
+    h3 {
         font-size: 16px;
     }
 }
 
-h6 {
+h3 {
     font-weight: medium;
     color: #596573;
 }

@@ -40,7 +40,7 @@ function Testimonial() {
         <div className='mt-20'>
             <div className="relative overflow-hidden w-full">
                 <div className='text-center mt-28'>
-                    <h6>Voices from the Loop</h6>
+                    <h3>Voices from the Loop</h3>
                     <h2 className=' mt-2 '>Our Testimonials</h2>
                 </div>
             <div className='w-80 mt-12 md:mt-20 mobile:w-full max-w-[380px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center'>

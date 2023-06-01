@@ -41,7 +41,7 @@ function Products() {
             <div className='flex flex-col'>
                 <div className='flex flex-col justify-center items-center '>
                     <div>
-                        <h6>Products</h6>
+                        <h3>Products</h3>
                     </div>
                     <h2 >Step into the Loop</h2>
                 </div>

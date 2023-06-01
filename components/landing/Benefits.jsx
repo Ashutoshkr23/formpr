@@ -4,9 +4,9 @@ const Benefits = () => {
     return (
         <div className='mt-[235px]  sm:px- md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
             <div className='flex flex-col justify-center items-center'>
-                <h6 >
+                <h3 >
                     Benefits
-                </h6>
+                </h3>
                 <h2 >
                     Join the Loop
                 </h2>
