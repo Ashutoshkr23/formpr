@@ -8,7 +8,7 @@ const Footer = () => {
     <div className='md:mt-[304px] mt-[100px]'>
         <div className='hidden md:block'>
         <div className=' h-[262px] min-w-full bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] flex justify-around items-center'>
-            <div className='hidden lg:block'>
+            <div className='hidden lg:block '>
                 <Image src={"/assets/images/landing/footerloop.svg"} height={81} width={186} alt='loop' />
 
             </div>
