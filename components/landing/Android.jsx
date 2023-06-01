@@ -20,7 +20,7 @@ const Android = () => {
                                 />
                             </div>
                             <div className=''>
-                                <Image src={'/assets/images/landing/androidbtn.png'}
+                                <Image src={'/assets/images/landing/androidbt.png'}
                                     alt='android'
                                     width={225}
                                     height={69}

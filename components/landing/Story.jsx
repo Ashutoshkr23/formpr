@@ -20,10 +20,10 @@ const Story = () => {
         <div className='xl:pt-[33px] pt-6 text-white pl-[405px] pr-[90px] xl:pr-[134px] xl:leading-[186%]'><p className='text-14 '></p>Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that&apos;s why we&apos;ve created a product that&apos;s both classy and luxurious. </div>
 
 
-        <div className=' absolute left-[51px] bottom-0'>
-          <Image src={'/assets/images/landing/storyphone.png'}
+        <div className=' absolute left-[43px] bottom-0'>
+          <Image src={'/assets/images/landing/storyPhone.png'}
             alt='storyPhone'
-            width={270}
+            width={287}
             height={516} />
 
         </div>
