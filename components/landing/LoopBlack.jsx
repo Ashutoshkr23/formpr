@@ -11,7 +11,7 @@ const LoopBlack = () => {
                     <h2 >Loop Black </h2>
                 </div>
                 <div className='text-[30px] xl:text-[40px] pt-9 text-white leading-[140%] pr-[16px] max-w-[652px]'>
-                    <h3>Unveil the Power of <span className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>Darkness,</span> Unleash Limitless Connections.</h3>
+                    <h4>Unveil the Power of <span className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>Darkness,</span> Unleash Limitless Connections.</h4>
 
                 </div>
                 <div className='pl-[13px] lg:max-w-[550px] xl:max-w-[604px]  pt-[76px] text-white lg:text-[10px] xl:text-[14px] leading-[164%]'>
