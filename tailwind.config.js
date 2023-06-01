@@ -10,7 +10,7 @@ module.exports = {
   
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['var(--poppins-font)', 'sans-serif'],
       },
      
       dropShadow: {
