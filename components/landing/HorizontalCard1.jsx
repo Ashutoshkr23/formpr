@@ -61,7 +61,7 @@ function HorizontalCard1() {
                                   </div>
                               </div>
 
-                              <div className='absolute bottom-4 right-8'>
+                              <div className='absolute bottom-4 right-8 hover:opacity-50 hover:cursor-pointer'>
                                   <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
                               </div>
                           </div>
@@ -105,12 +105,12 @@ function HorizontalCard1() {
                                   </div>
                               </div>
 
-                              <div className='absolute bottom-4 right-8'>
+                              <div className='absolute bottom-4 right-8 hover:opacity-50 hover:cursor-pointer'>
                                   <IoMdAddCircle onClick={handleFlip} size={32} color='white' />
                               </div>
                           </div>
                           <div className={`horizontal-card-back  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px]   `}>
-                              <div className={`relative text-[16px] sm:text-[20px] sm:p-8 p-6 w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
+                              <div className={`relative text-[16px]  sm:text-[20px] sm:p-8 p-6 w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
                              <p className='text-white'>
                                   Whether it&apos;s Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device. 
 

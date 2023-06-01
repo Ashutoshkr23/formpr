@@ -104,7 +104,7 @@ const Hero = () => {
                         transition={{ duration: 2 }}
                     >
                     <Image src={'/assets/images/landing/landingProfileTop.png'}
-                        width={195}
+                        width={190}
                         height={400}
                         alt='mobile'
                         priority
@@ -117,7 +117,7 @@ const Hero = () => {
                    
                         className='absolute top-[100px] -left-[85px] '
                     >
-                    <Image src={'/assets/images/landing/LoopCard2.png'} width={140} height={117} alt='sample nfc visting card' quality={100} />
+                    <Image src={'/assets/images/landing/LoopCard2.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
                     </motion.div>
                     
                     <motion.div
@@ -127,7 +127,7 @@ const Hero = () => {
                         
                         className='absolute top-[175px] -right-[65px] -z-10 '
                     >
-                    <Image src={'/assets/images/landing/LoopCard1.png'} width={140} height={117} alt='sample nfc visting card' quality={100}/>
+                    <Image src={'/assets/images/landing/LoopCard1.png'} width={135} height={117} alt='sample nfc visting card' quality={100}/>
                     </motion.div>
                    
                     <motion.div
@@ -138,7 +138,7 @@ const Hero = () => {
 
                     >
                     <Image src={'/assets/images/landing/phone2.png'}
-                        width={195}
+                        width={190}
                         height={425}
                         alt='mobile'
                         quality={100}

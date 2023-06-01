@@ -36,7 +36,7 @@ const Android = () => {
                             height={491}
                         />
                         <div className='absolute hidden xl:block top-[112px] left-[40px]'>
-                        <Image src={'/assets/images/landing/phoneinterior.png'}
+                        <Image src={'/assets/images/landing/liteInterior.png'}
                             alt='android'
                             width={200}
                             height={266}
@@ -44,7 +44,7 @@ const Android = () => {
 
                         </div>
                         <div className='absolute xl:hidden top-[112px] left-[40px]'>
-                        <Image src={'/assets/images/landing/phoneinterior.png'}
+                        <Image src={'/assets/images/landing/liteInterior.png'}
                             alt='android'
                             width={180}
                             height={240}
