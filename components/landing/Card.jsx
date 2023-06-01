@@ -18,10 +18,10 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
     setIsCardVisible(true);
     setTimeout(() => {
       setIsTextVisible(true);
-    }, 1000); // Delay the text visibility by 1 second
+    }, 700); // Delay the text visibility by 1 second
     setTimeout(() => {
       setIsHeadingVisible(true);
-    }, 800); 
+    }, 500); 
   };
 
   return (

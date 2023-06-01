@@ -20,10 +20,10 @@ function HorizontalCard1() {
         setIsCardVisible(true);
         setTimeout(() => {
           setIsTextVisible(true);
-        }, 1500); // Delay the text visibility by 1 second
+        }, 700); // Delay the text visibility by 1 second
         setTimeout(() => {
           setIsHeadingVisible(true);
-        }, 1000); 
+        }, 500); 
       };
 
 
