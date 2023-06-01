@@ -130,7 +130,16 @@ function LandingNavbar() {
                         <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container  border-b-2 border-white py-4   ">
                           <a href="#" className="nav-link ">Contact</a>
                         </div>
+                        <div>
+                      <button
+                onClick={handlelogin}
+                className='w-28 h-10 bg-black text-white text-sm mr-4 my-auto font-bold rounded-[10px] text-center'
+              >
+                LOG IN
+              </button>
                       </div>
+                      </div>
+                     
                     </div>
                     </div>
                   </motion.div>
