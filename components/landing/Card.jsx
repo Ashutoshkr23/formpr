@@ -28,7 +28,7 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
     <ScrollTrigger onEnter={onCardEnterViewport}>
       <div className={`card ${isFlipped ? 'flipped' : ''} ${isCardVisible ? 'card-visible' : ''}`} onClick={handleFlip}>
         <div className={`${
-                isCardVisible ? 'animate-card' : ''
+                isCardVisible ? '' : ''
               } relative w-[300px] mobile:w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] `}>
           <div className='card-inner'>
             <div
