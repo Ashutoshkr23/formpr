@@ -7,7 +7,6 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 
 
-
 export default function CartComp(props) {
     // const { items, totalAmount, totalItems, quantity } = props
     const { cartItems, userProfile, clearCart } = useContext(CartContext);

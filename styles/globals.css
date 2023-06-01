@@ -3,10 +3,16 @@
 @tailwind utilities;
 
 
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300&display=swap');
+
 
 html {
     scroll-behavior: smooth;
+    
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
 }
 
 .cart-body {
@@ -553,27 +559,63 @@ h2 {
 
 
 @media screen and (max-width: 640px) {
-    h6 {
+    h3 {
         font-size: 12px;
     }
 }
 
 @media screen and (min-width: 640px) and (max-width: 1200px) {
-    h6 {
+    h3 {
         font-size: 14px;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    h6 {
+    h3 {
         font-size: 16px;
     }
 }
 
-h6 {
+h3 {
     font-weight: medium;
     color: #596573;
 }
+
+.animate-card {
+    animation-name: slideIn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(60%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+   
+  .animate-text {
+    animation-name: slideInText;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes slideInText {
+    0% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
 /* h2{
     font-size: 50px;

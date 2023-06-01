@@ -73,7 +73,7 @@ END:VCARD`;
 ) : (
   <p>Loading...</p>
 )} 
-     <div className='text-[10px] flex justify-center mt-8 pb-[29px]'>made with love by <Image className='ml-3' src={'/loop.png'} width={27} height={12}/></div>
+     <div className='text-[10px] flex justify-center mt-8 pb-[29px]'>made with love by <Image className='ml-3' alt='loop' src={'/loop.png'} width={27} height={12}/></div>
     </div>
     </div>
   );

@@ -62,11 +62,11 @@ function LandingNavbar() {
             <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={74} height={32} />
             <div className='flex content-center'>
               <ul className="flex content-center gap-8 my-auto ">
-                <li className=" text-sm w-[61px] font-extralight text-center hover:font-bold "><a href={`#`}>Products</a></li>
-                <li className=" text-sm w-[65px] font-extralight text-center hover:font-bold "><a href="#">Our Story</a></li>
-                <li className=" text-sm  w-[85px] font-extralight text-center hover:font-bold "><a href="#">Testimonials</a></li>
-                <li className=" text-sm w-[30px] font-extralight text-center hover:font-bold "><a href="#">FAQ</a></li>
-                <li className=" text-sm  w-[53px] font-extralight text-center hover:font-bold  "><a href="#">Contact</a></li>
+                <li className=" text-sm w-[61px]  text-center hover:font-bold "><a href={`#`}>Products</a></li>
+                <li className=" text-sm w-[65px]  text-center hover:font-bold "><a href="#">Our Story</a></li>
+                <li className=" text-sm  w-[85px]  text-center hover:font-bold "><a href="#">Testimonials</a></li>
+                <li className=" text-sm w-[30px]  text-center hover:font-bold "><a href="#">FAQ</a></li>
+                <li className=" text-sm  w-[53px]  text-center hover:font-bold  "><a href="#">Contact</a></li>
               </ul>
               <button
                 onClick={handlelogin}
@@ -88,12 +88,7 @@ function LandingNavbar() {
 
             </a>
             <div className="flex ">
-              <button
-                onClick={handlelogin}
-                className='w-28 h-10 bg-black text-white text-sm mr-4 my-auto font-bold rounded-[10px] text-center'
-              >
-                LOG IN
-              </button>
+             
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button" className="inline-flex relative z-[100] items-center ">
@@ -111,7 +106,8 @@ function LandingNavbar() {
               </button>
               {isOpen && (
                 <AnimatePresence>
-                  <motion.div variants={fadeIn} initial="initial" whileInView="animate" exit="exit" viewport={{ once: false }} className="absolute ease-in duration-800  w-full h-screen top-0 right-0 border-black border-8 bg-dark shadow-lg bg-white text-black z-50">
+                  <motion.div variants={fadeIn} initial="initial" whileInView="animate" exit="exit" viewport={{ once: false }} className="fixed ease-in duration-800  w-full h-screen top-0 right-0 bg-gradient-to-br from-[#96FFAD] to-[#96FFAD] py-1 px-1 shadow-lg bg-white text-black z-50" >
+                    <div className=' w-full h-full bg-white'>
                     <div className='flex flex-col h-full  content-between'>
                       <div className="flex flex-col mx-auto mt-20 text-center font-oswald tracking-light w-10/12 z-20">
                         <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container  py-2  border-b-2 border-white ">
@@ -129,9 +125,31 @@ function LandingNavbar() {
                         <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container  border-b-2 border-white py-4   ">
                           <a href="#" className="nav-link ">Contact</a>
                         </div>
+                        <div>
+                      <button
+                onClick={handlelogin}
+                className='w-[140px] h-10 bg-black text-white text-sm mr-4 my-auto font-bold rounded-[10px] text-center'
+              >
+                LOG IN
+              </button>
                       </div>
-                    </div>
+                      <div className='flex justify-center pt-8 space-x-7'>
+                      <div>
+                <a href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ==">
+    <Image src="/assets/images/landing/footerinsta.png" height={32} width={32} alt="instagram" />
+  </a>
+                </div>
+                <div>
+                <a href="#">
+                <Image src={'/assets/images/landing/footerlink.png'} height={32} width={32} alt='instagram'/>
+              </a>
+                </div>
 
+                      </div>
+                      </div>
+                     
+                    </div>
+                    </div>
                   </motion.div>
                 </AnimatePresence>
               )}

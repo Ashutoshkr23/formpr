@@ -6,7 +6,7 @@ function FAQ() {
 
   return (
     <div className='mt-20 lg:mt-52 mb-40 px-4 sm:px-8 md:px-16 lg:px-16 xl:px-0 max-w-[1208px] mx-auto'>
-          <h6>FAQ</h6>
+          <h3>FAQ</h3>
           <h2 className=' mt-2 '>Looping In: Answers to frequently asked questions</h2>
           
           <QA

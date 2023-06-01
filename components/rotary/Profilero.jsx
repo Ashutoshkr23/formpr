@@ -10,7 +10,7 @@ const Profilero = () => {
           src={"/proro.png"}
           width={100}
           height={100}
-
+          alt='rotary'
         />
 
       </div>

@@ -3,7 +3,7 @@ import React from 'react'
 
 const Story = () => {
   return (
-    <div className='mt-[296px] sm:px-8 md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
+    <div className=' mt-[180px] lg:mt-[339px] sm:px-8 md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
 
       <div className='relative hidden lg:block mx-auto max-w-[1212px] h-[428px] bg-[#090909] rounded-[20px] '>
 
@@ -39,7 +39,7 @@ const Story = () => {
               width={345}
               height={252} />
           </div>
-          <div className='flex flex-col pl-5 pt-[210px]'>
+          <div className='flex flex-col mobile:pl-5 pt-[210px]'>
             <div className='text-[#596573] '>
               <p className='text-[12px]'>The Loop Journey</p>
             </div>
@@ -50,7 +50,7 @@ const Story = () => {
             <div className='text-white pr-8 pt-7 '><p className='text-[14px] font-bold'><span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text'>At Loop, we&apos;re passionate about making </span>
               <span className='text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text'>networking effortless and eco-friendly. </span> </p></div>
 
-            <div className='pt-7 pr-6 pb-[31px] text-white text-[12px] leading-[186%]'>
+            <div className='pt-4 mobile:pt-7 pr-6 pb-[31px] text-white text-[12px] leading-[186%]'>
               <p className=''> Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that&apos;s why we&apos;ve created a product that&apos;s both classy and luxurious. </p>
 
             </div>

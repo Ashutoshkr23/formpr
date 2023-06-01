@@ -10,7 +10,7 @@ module.exports = {
   
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['var(--poppins-font)', 'sans-serif'],
       },
      
       dropShadow: {
@@ -20,6 +20,10 @@ module.exports = {
       colors: {
         'gray': '#596573',
       },
+      screens: {
+        'mobile': '360px',
+      },
+
       
     },
    
