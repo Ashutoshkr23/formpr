@@ -21,7 +21,7 @@ const Story = () => {
 
 
         <div className=' absolute left-[43px] bottom-0'>
-          <Image src={'/assets/images/landing/storyPhone.png'}
+          <Image src={'/assets/images/landing/StoryPhone.png'}
             alt='storyPhone'
             width={287}
             height={516} />
