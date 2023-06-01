@@ -21,10 +21,12 @@ const Story = () => {
 
 
         <div className=' absolute left-[43px] bottom-0'>
-          <Image src={'/assets/images/landing/StoryPhone.png'}
-            alt='storyPhone'
+          <Image src={'/assets/images/landing/mystory.png'}
+            alt='mystoryphone'
             width={287}
-            height={516} />
+            height={516} 
+            quality={100}
+            />
 
         </div>
       </div>
