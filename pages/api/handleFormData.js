@@ -21,6 +21,18 @@ console.log(process.env.ACCESS_KEY_AWS)
 // Bucket Name
 const bucketName = process.env.BUCKET_NAME_AWS;
 
+function transformFormData(data) {
+    const result = {};
+
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            result[key] = data[key][0].trim();
+        }
+    }
+
+    return result;
+}
+
 export default async function handle(req, res) {
     try {
         await connectToDatabase();
@@ -37,59 +49,56 @@ export default async function handle(req, res) {
                     console.log(err, fields, files, "files")
                     if (err) reject(err)
                     resolve(fields, files);
-                    const LogoImg = files.logo[0]
-                    console.log(LogoImg.originalFilename, "filename")
-                    let userId = "durg"
-                    // Aws code for uploading a Image 
-                    const Time = Date.now()
-                    // Getting File Extension
-                    const ext = LogoImg.originalFilename.split('.').pop();
-                    console.log(ext, "extension")
-                    // Generating New File Name
-                    const newFilename = userId + "_" + Time + '.' + ext;
-                    console.log("aws started")
-                    // Sending Image To S3
-                    const upload = await client.send(new PutObjectCommand({
-                        Bucket: bucketName,
-                        Key: newFilename,
-                        Body: fs.readFileSync(LogoImg.path),
-                        // ACL: 'public-read',
-                        ContentType: mime.lookup(LogoImg.path),
-                    }))
-                    console.log(upload, "upload")
-                    // Getting Link For Image/Images And Storing Inside An Array
-                    const link = `https://${bucketName}.s3.amazonaws.com/${newFilename}`
-                    console.log(link, "link")
-                    return res.status(200).json({ error: false, message: "sucess", link: link })
+                    let requestObj = await transformFormData(fields)
+                    console.log(requestObj)
+                    requestObj.profilePicture = ""
+                    requestObj.companyLogo = ""
+                    requestObj.contactUrl = `https://loopcard.club/details/${requestObj.cuuid}`
+                    for (let i = 0; i < 2; i++) {
+                        console.log(i, "i")
+                        // if i is 0 profile picture is uploded to aws else company logo
+                        const ImgData = i == 0 ? files.profilePicture[0] : files.companyLogo[0]
+                        let userId = requestObj.puuid
+                        // Aws code for uploading a Image 
+                        const Time = Date.now()
+                        // Getting File Extension
+                        const ext = ImgData.originalFilename.split('.').pop();
+                        console.log(ext, "extension")
+                        // Generating New File Name
+                        const newFilename = userId + "_" + Time + '.' + ext;
+                        console.log("aws started")
+                        // Sending Image To S3
+                        const upload = await client.send(new PutObjectCommand({
+                            Bucket: bucketName,
+                            Key: newFilename,
+                            Body: fs.readFileSync(ImgData.path),
+                            // ACL: 'public-read',
+                            ContentType: mime.lookup(ImgData.path),
+                        }))
+                        console.log(upload, "uploaded successfully")
+                        // Getting Link For Image/Images And Storing Inside An Array
+                        const link = `https://${bucketName}.s3.amazonaws.com/${newFilename}`
+                        if (i == 0) {
+                            requestObj.profilePicture = link
+
+                        } else {
+                            requestObj.companyLogo = link
+                        }
+                    }
+
+                    const filter = {
+                        cuuid: requestObj.cuuid,
+                        puuid: requestObj.puuid
+                    }
+                    const updateOperation = { $set: { ...requestObj } };
+                    const updateCard = await card.updateOne(filter, updateOperation)
+
+                    return res.status(200).json({ error: false, message: "successfully updated", result: updateCard })
 
 
-                    // const links = [];
-                    // for (const file of files.file) {
-                    //     console.log(file.path, "path")
-                    //     // Getting File Extension
-                    //     const ext = file.originalFilename.split('.').pop();
 
-                    //     // Generating New File Name
-                    //     const newFilename = Date.now() + '.' + ext;
-
-                    //     // Sending Image To S3
-                    //     await client.send(new PutObjectCommand({
-                    //         Bucket: bucketName,
-                    //         Key: newFilename,
-                    //         Body: fs.readFileSync(file.path),
-                    //         ACL: 'public-read',
-                    //         ContentType: mime.lookup(file.path),
-                    //     }))
-
-                    //     // Getting Link For Image/Images And Storing Inside An Array
-                    //     const link = `https://${bucketName}.s3.amazonaws.com/${newFilename}`
-                    //     links.push(link);
-                    // }
-
-                    // return res.json({ links });
                 })
             })
-            //   const {cuuid,puuid,themeId,firstName,lastName,bio,companyName,profilePicture,email,designation}
 
         } catch (error) {
             console.log(error, "error")

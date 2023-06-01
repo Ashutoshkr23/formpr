@@ -25,14 +25,14 @@ export default async function handler(req, res) {
             try {
 
                 const { cuuid, puuid } = req.query;
-                console.log(cuuid, puuid, "c p")
+                // console.log(cuuid, puuid, "c p")
                 if (!cuuid && puuid) {
                     return res.status(422).json({ error: "Missing required fields." });
 
                 }
 
                 const checkCard = await card.find({ puuid: puuid, cuuid: cuuid });
-                console.log(checkCard, "Check")
+                // console.log(checkCard, "Check")
                 if (checkCard && checkCard.length) {
                     return res.status(200).json({
                         error: false,
