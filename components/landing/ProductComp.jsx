@@ -23,6 +23,7 @@ function ProductComp({ text, img ,content }) {
                                 alt='card1'
                                 height={301}
                                 width={315}
+                                quality={100}
                             />
                             
                         </div>
