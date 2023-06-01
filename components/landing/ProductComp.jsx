@@ -24,14 +24,14 @@ function ProductComp({ text, img ,content }) {
                                 height={301}
                                 width={315}
                                 quality={100}
-                            />
-                            
+                            />    
                         </div>
                         <div className='pt-16 xl:hidden'>
                             <Image src={img}
                                 alt='card1'
                                 height={353}
                                 width={280}
+                                quality={100}
                             />
                         </div>
                         <div className='w-[138px] xl:w-[165px] h-9 xl:h-10 text-xs xl:text-base  pt-5'>
