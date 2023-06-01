@@ -41,16 +41,51 @@ function Login() {
       setIsModalVisible(true);
     }
   };
-  return (
-    <div className='  '>
 
-      <div className='max-w-[766px] bg-white h-[793px]'>
-        <div className='pt-8  lg:pl-[114px] '>
+
+  //counter start
+
+  const [counter, setCounter] = useState({ days: 0, hours: 0, minutes: 0 });
+
+  useEffect(() => {
+    // Calculate remaining time here
+    const targetDate = new Date('2023-06-5');
+    const currentDate = new Date();
+    const remainingTime = targetDate - currentDate;
+
+    // Update counter values
+    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+
+    setCounter({ days, hours, minutes });
+
+    // Update counter every minute
+    const interval = setInterval(() => {
+      const newCurrentDate = new Date();
+      const newRemainingTime = targetDate - newCurrentDate;
+
+      const newDays = Math.floor(newRemainingTime / (1000 * 60 * 60 * 24));
+      const newHours = Math.floor((newRemainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const newMinutes = Math.floor((newRemainingTime % (1000 * 60 * 60)) / (1000 * 60));
+
+      setCounter({ days: newDays, hours: newHours, minutes: newMinutes });
+    }, 60000); // 1 minute
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+  return (
+    <div className='flex justify-center   '>
+
+      <div className='lg:max-w-[766px] xl:w-[766px]  h-[793px]   '>
+        <div className='pt-8  xl:pl-[114px] '>
         <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={74} height={32} />
 
         </div>
         <div className='flex flex-col items-center pt-16'>
-        <div className='max-w-[435px] text-center'>
+        <div className='lg:max-w-[435px] text-center'>
           <h2>Welcome to the Loop.</h2>
         </div>
         <div className='pt-12 text-[14px]'>
@@ -63,7 +98,7 @@ function Login() {
                           type="email"
                           name='email'
                           placeholder='Email '
-                          className='w-full h-full text-black rounded-[10px] border border-pink-cm outline-none px-4'
+                          className='w-full h-full text-black rounded-[10px] border outline-none px-4'
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                       />
@@ -91,50 +126,64 @@ function Login() {
               />
             </div>
               </div>
+              <div className='mt-[60px] relative items-center flex  space-x-4 rounded-[10px] h-[101px] lg:w-[450px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
+<div className='xl:pl-[100px] lg:pl-[50px]'>
+<h4 className='xl:text-[36px] text-[24px] font-bold'>100+</h4>
+</div>
+<div className=''>
+  <p className='xl:text-[14px] lg:text-[12px] leading-[186%]'>Total preorders received!</p>
+</div>
+<div className='hidden lg:block absolute right-10 bottom-5'>
+  <Image src={'/assets/images/landing/logincard.png'}
+  height={100}
+  width={140}
+  alt='card'
+  quality={100}/>
+</div>
+              </div>
         </div>
         </div>
       </div>
-       
-           {/* <div className="flex flex-col ">
-          
-              
-              <h1 className='h1-400 font-michroma mt-8'>Explore</h1>
+          <div className='hidden lg:block'>
+           <div className='relative  bg-[#090909] lg:w-[563px] xl-w-[674px] h-[793px] flex  justify-center  '>
+            <div className=' absolute bottom-0 '>
+              <Image src={'/assets/images/landing/logphone.png'}
+              alt='phone'
+              width={563}
+              height={638}
+              quality={100}/>
 
-               <form className='flex flex-col  mt-8' onSubmit={handleSubmit} >
-                  <div className={` w-[312px] h-8`}>
-                      <input
-                          type="email"
-                          name='email'
-                          placeholder='Email or Username'
-                          className='w-full h-full text-black rounded-md border border-pink-cm outline-none px-4'
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                      />
-                  </div>
-                  <div className="input-button mt-7 flex  ">
-                      <button type='submit' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                          Sign In
-                      </button>
-                  </div>
-              </form> 
-                  <p className=' h4 my-5'>Sign in With</p>
-                 
+            </div>
+            <div className='pt-[150px] z-10 text-transparent bg-gradient-to-br from-[#FDFF96] to-[#96FFAD] bg-clip-text'>
+              <h4 className='xl:text-[36px]  lg:text-[28px] font-bold leading-[186%]'>Taking orders in 
+             </h4>
+            </div>
 
-                  <div className="input-button">
-                          <button onClick={handleGoogleSignin} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                             Sign in with Google
-                          </button>
-                      </div>
+            <div className='absolute top-[280px]  flex  space-x-8  text-white'> 
+            <div className='flex flex-col  '>
+              <h1>{counter.days} </h1>
+              <p className='text-[16px]'>Days</p>
+            </div>
+            <div><h1>|</h1></div>
+            <div className='flex flex-col  '>
+              <h1>{counter.hours} </h1>
+              <p className='text-[16px]'>Hours</p>
 
-           </div> */}
-    </div> 
-  )
-}
+            </div>
+            <div><h1>|</h1></div>
 
-export default Login
+            <div className='flex flex-col  '>
+              <h1>{counter.minutes} </h1>
+              <p className='text-[16px]'>Minutes</p>
 
+            </div>
 
-  {/*  {isModalVisible && (
+            </div>
+
+           </div>
+           </div>
+           {/* modal open when email is sent */}
+    {isModalVisible && (
                   <div className="fixed z-10 inset-0 overflow-y-auto">
                       <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
                           <div
@@ -165,4 +214,10 @@ export default Login
                           </div>
                       </div>
                   </div>
-              )} */}
+              )} 
+    </div> 
+  )
+}
+
+export default Login
+
