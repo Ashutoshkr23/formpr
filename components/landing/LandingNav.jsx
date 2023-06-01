@@ -133,6 +133,19 @@ function LandingNavbar() {
                 LOG IN
               </button>
                       </div>
+                      <div className='flex justify-center pt-8 space-x-7'>
+                      <div>
+                <a href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ==">
+    <Image src="/assets/images/landing/footerinsta.png" height={32} width={32} alt="instagram" />
+  </a>
+                </div>
+                <div>
+                <a href="#">
+                <Image src={'/assets/images/landing/footerlink.png'} height={32} width={32} alt='instagram'/>
+              </a>
+                </div>
+
+                      </div>
                       </div>
                      
                     </div>
