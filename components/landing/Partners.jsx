@@ -24,7 +24,7 @@ const Partners = () => {
                         <Image src={'/assets/images/landing/partnerLogos/RotaryLogoBW.png'} height={98} width={98} className="mx-8" alt="Rotary Logo"/>
                         <Image src={'/assets/images/landing/partnerLogos/AntalLogoBW.png'} height={98} width={99} className="mx-8" alt="Antal Thane Logo"/>
                         <Image src={'/assets/images/landing/partnerLogos/BlackCabBW.png'} height={98} width={107} className="mx-8" alt="Black Cab Logo"/>
-                        <Image src={'/assets/images/landing/partnerLogos/IABW.png'} height={61} width={200} className="mx-8" alt="Ingenious Advisors Logo"/>
+                        {/* <Image src={'/assets/images/landing/partnerLogos/IABW.png'} height={61} width={200} className="mx-8" alt="Ingenious Advisors Logo"/> */}
 
                     </Marquee>
                     </div>
@@ -41,7 +41,7 @@ const Partners = () => {
                         <Image src={'/assets/images/landing/partnerLogos/RotaryLogoBW.png'} height={49} width={49} className="mx-4" alt="Rotary Logo"/>
                         <Image src={'/assets/images/landing/partnerLogos/AntalLogoBW.png'} height={49} width={49} className="mx-4" alt="Antal Thane Logo"/>
                         <Image src={'/assets/images/landing/partnerLogos/BlackCabBW.png'} height={49} width={53} className="mx-4" alt="Black Cab Logo"/>
-                        <Image src={'/assets/images/landing/partnerLogos/IABW.png'} height={31} width={100} className="mx-4" alt="Ingenious Advisors Logo"/>
+                        {/* <Image src={'/assets/images/landing/partnerLogos/IABW.png'} height={31} width={100} className="mx-4" alt="Ingenious Advisors Logo"/> */}
 
                     </Marquee>
                     </div>
