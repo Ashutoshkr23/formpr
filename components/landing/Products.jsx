@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import ProductComp from './ProductComp';
 
@@ -6,6 +6,8 @@ function Products() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const numDivs = 3;
     const [numStep, setNumStep] = useState(3);
+    const touchStartX = useRef(null);
+    const touchEndX = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -36,6 +38,26 @@ function Products() {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + numStep) % numStep);
     };
 
+    const handleTouchStart = (event) => {
+        touchStartX.current = event.touches[0].clientX;
+    };
+
+    const handleTouchMove = (event) => {
+        touchEndX.current = event.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStartX.current && touchEndX.current) {
+            const touchDiff = touchStartX.current - touchEndX.current;
+            if (touchDiff > 0) {
+                handleNext();
+            } else if (touchDiff < 0) {
+                handlePrev();
+            }
+        }
+        touchStartX.current = null;
+        touchEndX.current = null;
+    };
     return (
         <div className='mt-20 ' id='product'>
             <div className='flex flex-col'>
@@ -46,7 +68,9 @@ function Products() {
                     <h2 >Step into the Loop</h2>
                 </div>
 
-            <div className='w-80 mt-12 md:mt-24  mobile:w-full max-w-[380px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center'>
+                <div className='w-80 mt-12 md:mt-24  mobile:w-full max-w-[380px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center' onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}>
                     <Image src={'assets/images/landing/Left-Arrow.svg'} height={20} width={20} onClick={handlePrev} className='hidden md:block lg:hidden' />
                     <Image src={'assets/images/landing/Left-Arrow.svg'} height={12} width={12} onClick={handlePrev} className='md:hidden lg:hidden' />
                 <div className='w-[280px] mobile:w-80 md:w-[700px] lg:w-full lg:max-w-[1020] xl:max-w-[1230px] xl:w-full h-full overflow-hidden '>
