@@ -62,9 +62,9 @@ const Benefits = () => {
                     <Card
                         cardStyle={"relative  w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px]  xl:w-[500px] md:h-[336px] drop-shadow-white bg-white  rounded-[20px]"}
                         heading={"Seamless  Sharing.  "}
-                        headingStyle={"md:text-[40px] leading-[120%]  md:pl-[32px] pl-[24px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-12"}
+                        headingStyle={"md:text-[40px] leading-[120%]  md:pl-[32px] pl-[24px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-10 lg:pt-12"}
                         text={"Embrace the App-Free Advantage of Loop Connections."}
-                        textStyle={"md:pt-[70px] leading-[186%] w-[220px] text-black md:w-[275px] pt-[47px] md:pl-[32px] pl-[24px] text-xs md:text-[14px] font-bold"}
+                        textStyle={"md:pt-[60px] leading-[186%] w-[230px] text-black md:w-[275px] pt-[47px] md:pl-[32px] pl-[24px] text-xs md:text-[14px] font-bold"}
                         img={"/assets/images/landing/PhoneinHand.png"}
                         backContent={'No downloads, no hassle. With Loop, your contacts open effortlessly in a WebView, making connections smooth and frictionless.' }
 
