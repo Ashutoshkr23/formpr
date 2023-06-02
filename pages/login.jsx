@@ -86,7 +86,7 @@ function Login() {
   }, []);
   
   return (
-    <div className='flex flex-col items-center lg:flex-row lg:justify-between xl:justify-center '>
+    <div className='flex flex-col items-center lg:flex-row lg:justify-between xl:justify-center pb-[300px] md:pb-[90px] '>
 
       <div className='lg:w-[766px] xl:w-[766px]  h-[793px] '>
         <div className=' hidden md:block pt-8 lg:pl-[30px] xl:pl-[114px] '>
