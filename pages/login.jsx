@@ -153,7 +153,7 @@ function Login() {
   alt='card'
   quality={100}/>
 </div>
-<div className='hidden mobile:block absolute right-5 bottom-7'>
+<div className='hidden mobile:block xl:hidden absolute right-5 bottom-7'>
   <Image src={'/assets/images/landing/logincard.png'}
   height={90}
   width={120}
