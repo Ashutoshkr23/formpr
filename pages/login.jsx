@@ -86,10 +86,10 @@ function Login() {
   }, []);
   
   return (
-    <div className='flex flex-col items-center lg:flex-row lg:justify-between xl:justify-center pb-[300px] md:pb-[90px] '>
+    <div className='flex flex-col items-center lg:flex-row  pb-[100px] md:pb-[150px] '>
 
-      <div className='lg:w-[766px] xl:w-[766px]  h-[793px] '>
-        <div className=' hidden md:block pt-8 lg:pl-[30px] xl:pl-[114px] '>
+      <div className='lg:w-3/5 w-full pt-8 lg:h-screen '>
+        <div className=' hidden md:block xl:pl-[114px] lg:pl-[50px] sm:pl-[100px] '>
         <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={74} height={32} />
 
         </div>
@@ -140,8 +140,8 @@ function Login() {
               />
             </div>
               </div>
-              <div className='mt-[60px] relative items-center flex  space-x-4 rounded-[10px] h-[101px] mobile:w-[350px] sm:w-[582px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
-<div className='xl:pl-[100px] mobile:pl-[30px] sm:pl-[100px] md:pl-[150px] lg:pl-[50px]'>
+              <div className='mt-[60px] mb-0 relative items-center flex  space-x-4 rounded-[10px] h-[101px] mobile:w-[350px] sm:w-[450px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
+<div className='xl:pl-[100px] mobile:pl-[30px] sm:pl-[90px]  lg:pl-[50px]'>
 <h4 className='xl:text-[36px] sm:text-[24px] mobile:text-[18px] font-bold'>100+</h4>
 </div>
 <div className=''>
@@ -165,30 +165,30 @@ function Login() {
         </div>
         </div>
       </div>
-          <div className='hidden sm:block'>
-           <div className='  bg-[#090909] w-[563px] xl-w-[674px]   h-[793px] flex flex-col items-center    '>
+          <div className='lg:w-2/5 w-full mt-11 lg:mt-0  bg-[#090909]  '>
+           <div className='sm:pt-[140px] pt-11  flex flex-col  items-center h-[307px] sm:h-[500px] h- lg:h-screen'>
             
-            <div className=' pt-[140px] text-transparent bg-gradient-to-br from-[#FDFF96] to-[#96FFAD] bg-clip-text'>
-              <h4 className='xl:text-[36px] text-[28px] md:text-[32px] lg:text-[28px] font-bold leading-[186%]'>Taking orders in 
+            <div className=' text-transparent bg-gradient-to-br from-[#FDFF96] to-[#96FFAD] bg-clip-text'>
+              <h4 className='text-[20px] sm:text-[32px] md:text-[36px] font-bold leading-[186%]'>Taking orders in 
              </h4>
             </div>
 
-            <div className=' pt-14  max-w-[286px]  flex justify-center space-x-4 text-white'> 
+            <div className=' pt-14  max-w-[286px]  flex justify-center space-x-5 sm:space-x-8 text-white'> 
             <div className='flex flex-col  '>
               <h1>{counter.days} </h1>
-              <p className='text-[16px] pl-4'>Days</p>
+              <p className='sm:text-[16px] text-sm pl-4'>Days</p>
             </div>
             <div><h1>|</h1></div>
             <div className='flex flex-col  '>
               <h1>{counter.hours} </h1>
-              <p className='text-[16px] pl-2'>Hours</p>
+              <p className='sm:text-[16px] text-sm pl-2'>Hours</p>
 
             </div>
             <div><h1>|</h1></div>
 
             <div className='flex flex-col  '>
               <h1>{counter.minutes} </h1>
-              <p className='text-[16px] pl-2'>Minutes</p>
+              <p className='sm:text-[16px] text-sm pl-2'>Minutes</p>
 
             </div>
 
