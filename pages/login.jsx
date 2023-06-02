@@ -77,10 +77,10 @@ function Login() {
     };
   }, []);
   return (
-    <div className='flex justify-center   '>
+    <div className='flex flex-col items-center lg:flex-row lg:justify-between xl:justify-center '>
 
       <div className='lg:max-w-[766px] xl:w-[766px]  h-[793px]   '>
-        <div className='pt-8  xl:pl-[114px] '>
+        <div className='pt-8 lg:pl-[30px] xl:pl-[114px] '>
         <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={74} height={32} />
 
         </div>
@@ -126,17 +126,24 @@ function Login() {
               />
             </div>
               </div>
-              <div className='mt-[60px] relative items-center flex  space-x-4 rounded-[10px] h-[101px] lg:w-[450px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
-<div className='xl:pl-[100px] lg:pl-[50px]'>
+              <div className='mt-[60px] relative items-center flex  space-x-4 rounded-[10px] h-[101px] w-[582px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
+<div className='xl:pl-[100px] md:pl-[50px]'>
 <h4 className='xl:text-[36px] text-[24px] font-bold'>100+</h4>
 </div>
 <div className=''>
   <p className='xl:text-[14px] lg:text-[12px] leading-[186%]'>Total preorders received!</p>
 </div>
-<div className='hidden lg:block absolute right-10 bottom-5'>
+<div className='hidden xl:block absolute right-10 bottom-5'>
   <Image src={'/assets/images/landing/logincard.png'}
-  height={100}
-  width={140}
+  height={106}
+  width={147}
+  alt='card'
+  quality={100}/>
+</div>
+<div className='xl:hidden absolute right-5 bottom-7'>
+  <Image src={'/assets/images/landing/logincard.png'}
+  height={90}
+  width={120}
   alt='card'
   quality={100}/>
 </div>
@@ -144,8 +151,8 @@ function Login() {
         </div>
         </div>
       </div>
-          <div className='hidden lg:block'>
-           <div className='relative  bg-[#090909] lg:w-[563px] xl-w-[674px] h-[793px] flex  justify-center  '>
+          <div className='hidden md:block'>
+           <div className='relative  bg-[#090909] md:w-[563px] xl-w-[674px] h-[793px] flex  justify-center  '>
             <div className=' absolute bottom-0 '>
               <Image src={'/assets/images/landing/logphone.png'}
               alt='phone'
@@ -155,7 +162,7 @@ function Login() {
 
             </div>
             <div className='pt-[150px] z-10 text-transparent bg-gradient-to-br from-[#FDFF96] to-[#96FFAD] bg-clip-text'>
-              <h4 className='xl:text-[36px]  lg:text-[28px] font-bold leading-[186%]'>Taking orders in 
+              <h4 className='xl:text-[36px] md:text-[32px] lg:text-[28px] font-bold leading-[186%]'>Taking orders in 
              </h4>
             </div>
 
