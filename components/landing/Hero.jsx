@@ -32,11 +32,11 @@ const Hero = () => {
                         <p className='text-xs text-white mt-4 font-bold'>Unparalleled Networking Possibilities</p>
                     </div>
                     <div className="flex-col w-1/3">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/info.png"} alt=''/>
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/Info.png"} alt=''/>
                         <p className='text-xs text-white mt-4 font-bold'>Seamless Information Exchange</p>
                     </div>
                     <div className="flex-col w-1/3 pl-3">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/digital.png"} alt=''/>
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/Digital.png"} alt=''/>
                         <p className='text-xs text-white mt-4 font-bold'>Amplified Digital Presence</p>
                     </div>
                    
