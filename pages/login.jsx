@@ -45,41 +45,50 @@ function Login() {
 
   //counter start
 
-  const [counter, setCounter] = useState({ days: 0, hours: 0, minutes: 0 });
+  const [counter, setCounter] = useState({ days: '00', hours: '00', minutes: '00' });
 
   useEffect(() => {
     // Calculate remaining time here
     const targetDate = new Date('2023-06-5');
     const currentDate = new Date();
     const remainingTime = targetDate - currentDate;
-
+  
     // Update counter values
     const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
     const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-
-    setCounter({ days, hours, minutes });
-
+  
+    setCounter({ 
+      days: days.toString().padStart(2, '0'), 
+      hours: hours.toString().padStart(2, '0'), 
+      minutes: minutes.toString().padStart(2, '0')
+    });
+  
     // Update counter every minute
     const interval = setInterval(() => {
       const newCurrentDate = new Date();
       const newRemainingTime = targetDate - newCurrentDate;
-
+  
       const newDays = Math.floor(newRemainingTime / (1000 * 60 * 60 * 24));
       const newHours = Math.floor((newRemainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const newMinutes = Math.floor((newRemainingTime % (1000 * 60 * 60)) / (1000 * 60));
-
-      setCounter({ days: newDays, hours: newHours, minutes: newMinutes });
+  
+      setCounter({ 
+        days: newDays.toString().padStart(2, '0'), 
+        hours: newHours.toString().padStart(2, '0'), 
+        minutes: newMinutes.toString().padStart(2, '0')
+      });
     }, 60000); // 1 minute
-
+  
     return () => {
       clearInterval(interval);
     };
   }, []);
+  
   return (
     <div className='flex flex-col items-center lg:flex-row lg:justify-between xl:justify-center '>
 
-      <div className='lg:max-w-[766px] xl:w-[766px]  h-[793px]   '>
+      <div className='lg:w-[766px] xl:w-[766px]  h-[793px] '>
         <div className=' hidden md:block pt-8 lg:pl-[30px] xl:pl-[114px] '>
         <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={74} height={32} />
 
@@ -157,7 +166,7 @@ function Login() {
         </div>
       </div>
           <div className='hidden sm:block'>
-           <div className='relative  bg-[#090909] w-[563px] xl-w-[674px] h-[793px] flex  justify-center  '>
+           <div className='relative  bg-[#090909] w-[563px] xl-w-[674px]   h-[793px] flex  justify-center  '>
             <div className=' absolute bottom-0 '>
               <Image src={'/assets/images/landing/logphone.png'}
               alt='phone'
@@ -171,22 +180,22 @@ function Login() {
              </h4>
             </div>
 
-            <div className='absolute top-[280px]  flex  space-x-8  text-white'> 
+            <div className='absolute top-[280px]  flex  space-x-7  text-white'> 
             <div className='flex flex-col  '>
               <h1>{counter.days} </h1>
-              <p className='text-[16px]'>Days</p>
+              <p className='text-[16px] pl-4'>Days</p>
             </div>
             <div><h1>|</h1></div>
             <div className='flex flex-col  '>
               <h1>{counter.hours} </h1>
-              <p className='text-[16px]'>Hours</p>
+              <p className='text-[16px] pl-4'>Hours</p>
 
             </div>
             <div><h1>|</h1></div>
 
             <div className='flex flex-col  '>
               <h1>{counter.minutes} </h1>
-              <p className='text-[16px]'>Minutes</p>
+              <p className='text-[16px] pl-4'>Minutes</p>
 
             </div>
 
