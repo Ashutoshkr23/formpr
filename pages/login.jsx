@@ -127,7 +127,7 @@ function Login() {
             </div>
               </div>
               <div className='mt-[60px] relative items-center flex  space-x-4 rounded-[10px] h-[101px] w-[582px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
-<div className='xl:pl-[100px] md:pl-[50px]'>
+<div className='xl:pl-[100px] sm:pl-[100px] md-[50px]'>
 <h4 className='xl:text-[36px] text-[24px] font-bold'>100+</h4>
 </div>
 <div className=''>
@@ -151,8 +151,8 @@ function Login() {
         </div>
         </div>
       </div>
-          <div className='hidden md:block'>
-           <div className='relative  bg-[#090909] md:w-[563px] xl-w-[674px] h-[793px] flex  justify-center  '>
+          <div className='hidden sm:block'>
+           <div className='relative  bg-[#090909] w-[563px] xl-w-[674px] h-[793px] flex  justify-center  '>
             <div className=' absolute bottom-0 '>
               <Image src={'/assets/images/landing/logphone.png'}
               alt='phone'
@@ -162,7 +162,7 @@ function Login() {
 
             </div>
             <div className='pt-[150px] z-10 text-transparent bg-gradient-to-br from-[#FDFF96] to-[#96FFAD] bg-clip-text'>
-              <h4 className='xl:text-[36px] md:text-[32px] lg:text-[28px] font-bold leading-[186%]'>Taking orders in 
+              <h4 className='xl:text-[36px] text-[28px] md:text-[32px] lg:text-[28px] font-bold leading-[186%]'>Taking orders in 
              </h4>
             </div>
 
