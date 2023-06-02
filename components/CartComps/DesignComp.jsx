@@ -4,8 +4,8 @@ import React from 'react'
 const DesignComp = () => {
     return (
         <div className='w-full mt-10'>
-            <div class="flex">
-                <div class="w-3/5 pl-28">
+            <div className="flex">
+                <div className="w-3/5 pl-28">
                     <div style={{ width: 400, height: 250 }}>
                         <div className="bg-red-400 rounded-2xl relative w-full" style={{ width: 400, height: 250, }} >
                             <Image src={'/assets/images/nfcIcon.png'} className='absolute top-2 right-3' alt="nfc" height={25} width={25} />
@@ -38,7 +38,7 @@ const DesignComp = () => {
                     </div>
 
                 </div>
-                <div class="w-2/5">
+                <div className="w-2/5">
                     <div className='flex flex-col space-y-2'>
                         <div className="w-56 h-14">
                             <div className="flex items-center justify-center h-full  bg-gradient-to-r from-green-300 to-green-200 rounded-lg">

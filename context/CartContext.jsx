@@ -17,20 +17,7 @@ export const CartProvider = ({ children }) => {
     const [defaultCart, setDefaultCart] = useState([])
 
     useEffect(() => {
-        const fetchCartType = async () => {
-            const requestData = await fetch(`/api/cardType`)
-            const data = await requestData.json()
-            const cardType = !data.error ? data.result : []
 
-            const newArray = cardType.map((obj) => {
-                let newObj = { ...obj, quantity: 0 }
-                newObj.totalAmount = newObj.amount * newObj.quantity
-                return newObj
-            });
-            setCartItems(newArray)
-            setDefaultCart(newArray)
-            // console.log(cardType, "cardTypeee")
-        }
         const fetchUserCards = async (puuid) => {
             const response = await axios.post(`/api/manageCards`, {
                 puuid: puuid
@@ -60,18 +47,39 @@ export const CartProvider = ({ children }) => {
             }
             // console.log(response, "resp ")
         }
+        const fetchCartType = async () => {
+            const requestData = await fetch(`/api/cardType`)
+            const data = await requestData.json()
+            const cardType = !data.error ? data.result : []
 
-
-        if (!cartItems.length) {
-            fetchCartType()
-
+            const newArray = cardType.map((obj) => {
+                let newObj = { ...obj, quantity: 0 }
+                newObj.totalAmount = newObj.amount * newObj.quantity
+                return newObj
+            });
+            setCartItems(newArray)
+            setDefaultCart(newArray)
+            localStorage.setItem('cartData', JSON.stringify(newArray));
+            // console.log(cardType, "cardTypeee")
         }
+
+        const storedData = localStorage.getItem('cartData');
+        console.log(storedData, "ls dta")
+        if (storedData) {
+            setCartItems(JSON.parse(storedData))
+        }
+        if (!cartItems.length && !storedData) {
+            fetchCartType()
+        }
+
+
         if (!userProfile.length && session?.user != null) {
             fetchUserProfile()
         }
 
 
     }, [session])
+
 
     // Function to add an item to the cart
 
@@ -86,6 +94,7 @@ export const CartProvider = ({ children }) => {
             return item
         })
         setCartItems(newCartItems)
+        localStorage.setItem('cartData', JSON.stringify(newCartItems));
 
     }
     const minusCartFunc = (id) => {
@@ -98,6 +107,8 @@ export const CartProvider = ({ children }) => {
             return item
         })
         setCartItems(newCartItems)
+        localStorage.setItem('cartData', JSON.stringify(newCartItems));
+
 
     }
     const handleItemCount = (id, count) => {
@@ -110,6 +121,8 @@ export const CartProvider = ({ children }) => {
             return item
         })
         setCartItems(newCartItems)
+        localStorage.setItem('cartData', JSON.stringify(newCartItems));
+
 
     }
 
@@ -123,6 +136,8 @@ export const CartProvider = ({ children }) => {
             return item
         })
         setCartItems(newCartItems)
+        localStorage.setItem('cartData', JSON.stringify(newCartItems));
+
     }
 
 
@@ -134,6 +149,8 @@ export const CartProvider = ({ children }) => {
     // Function to clear the cart
     const clearCart = () => {
         setCartItems(defaultCart)
+        localStorage.setItem('cartData', JSON.stringify(defaultCart));
+
     };
 
     // Create the cart context value

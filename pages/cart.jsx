@@ -11,8 +11,8 @@ export default function Cart() {
             <div className='w-full min-h-screen py-5'>
                 <Navbar />
 
-                {/* <CartComp /> */}
-                <CartComponent />
+                <CartComp />
+                {/* <CartComponent /> */}
             </div>
         </>
     )
