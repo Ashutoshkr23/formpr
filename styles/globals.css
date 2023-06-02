@@ -40,7 +40,7 @@ body {
     }
 
     to {
-        width: 7.6em;
+        width: 7.7em;
     }
 }
 
@@ -523,7 +523,7 @@ i {
 
 @media screen and (min-width: 640px) and (max-width: 1200px) {
     h1 {
-        font-size: 60px;
+        font-size: 52px;
     }
 }
 
@@ -532,6 +532,9 @@ i {
         font-size: 70px;
     }
 }
+
+
+
 
 @media screen and (max-width: 640px) {
     h2 {

@@ -7,7 +7,7 @@ const Hero = () => {
 
         <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col-reverse mt-16 lg:mt-16 lg:px-4  xl:px-0'>
 
-            <div className="flex flex-col mt-20 md:mt-48 lg:mt-0 items-center px-2  mobile:px-4 md:px-0 mx-auto lg:mx-0 max-w-[456px] xl:max-w-[600px] ">
+            <div className="flex flex-col items-center lg:items-start mt-20 md:mt-48 lg:mt-0  px-2  mobile:px-4 md:px-0 mx-auto lg:mx-0 max-w-[456px] xl:max-w-[600px] ">
                 <h1 className=' mr-auto text-left anim-typewriter  font-bold '>
                     Enter The <span className="text-transparent bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] bg-clip-text">
                         Loop.
@@ -21,14 +21,26 @@ const Hero = () => {
                 >
                     Welcome to The Loop, a community of high-networking individuals connected through the next generation of NFC-enabled digital visiting cards. 
                 </motion.h6>
-                <motion.h6
-                    className="sm:text-sm text-base mt-8 text-gray opacity-0"
+                <motion.div
+                    className="bg-black rounded-2xl flex mt-8  md:mt-12 px-4 lg:min-w-[450px] w-full py-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 3 }}
                 >
-                    Join the loop today to unlock a world of seamless information exchange, amplified digital presence, and unparalleled networking possibilities. 
-                </motion.h6>
+                    <div className="flex-col w-1/3 ">
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/Network.png"} alt=''/>
+                        <p className='text-xs text-white mt-4 font-bold'>Unparalleled Networking Possibilities</p>
+                    </div>
+                    <div className="flex-col w-1/3">
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/info.png"} alt=''/>
+                        <p className='text-xs text-white mt-4 font-bold'>Seamless Information Exchange</p>
+                    </div>
+                    <div className="flex-col w-1/3 pl-3">
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/digital.png"} alt=''/>
+                        <p className='text-xs text-white mt-4 font-bold'>Amplified Digital Presence</p>
+                    </div>
+                   
+                </motion.div>
 
                 <motion.button
                     initial={{ opacity: 0 }}
