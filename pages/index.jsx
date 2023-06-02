@@ -1,5 +1,5 @@
 import React from 'react'
-import { LandingNav, Testimonial, Products, Story, Android, Hero, FAQ, Benefits, LoopBlack, Swiper  } from '@/components'
+import { LandingNav, Products, Story, Android, Hero, FAQ, Benefits, LoopBlack, Swiper, Partners  } from '@/components'
 
 const Landing = () => {
   return (
@@ -11,7 +11,7 @@ const Landing = () => {
       <Products />
       <LoopBlack/>
       <Story />
-      <Testimonial />
+      <Partners/>
       <Android />
       <FAQ />
       

@@ -23,7 +23,7 @@ const Benefits = () => {
                         headingStyle={"md:text-[40px] text-[24px] leading-[120%]  font-bold md:pr-[86px] pr-[40px]"}
                         text={"Elevate Your Networking with Cutting-Edge Impressions."}
                         textStyle={"md:pt-[22px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 font-bold"}
-                        img={"/assets/images/landing/CardnShadow.png"}
+                        img={"/assets/images/landing/blackCardSh.png"}
                         btncolor={"white"}
                         backContent={"From sleek minimalism to captivating artwork, our customizable designs ensure your digital card stands out in the Loop. "}
                     />

@@ -1,8 +1,20 @@
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion';
+import ScrollTrigger from 'react-scroll-trigger';
+import { useState } from 'react';
+
 
 const Story = () => {
+  const [isCardVisible, setIsCardVisible] = useState(false);
+
+
+  const onCardEnterViewport = () => {
+    setIsCardVisible(true)
+  };
   return (
+    <ScrollTrigger onEnter={onCardEnterViewport}>
+
     <div className=' mt-[180px] lg:mt-[339px] sm:px-8 md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto' id='story'>
 
       <div className='relative hidden lg:block mx-auto max-w-[1212px] h-[428px] bg-[#090909] rounded-[20px] '>
@@ -19,28 +31,39 @@ const Story = () => {
 
         <div className='xl:pt-[33px] pt-6 text-white pl-[405px] pr-[90px] xl:pr-[134px] xl:leading-[186%]'><p className='text-14 '></p>Our team of experts has worked tirelessly to design the perfect solution that saves you time and resources while giving you an edge in your networking game. We believe that first impressions matter, and that&apos;s why we&apos;ve created a product that&apos;s both classy and luxurious. </div>
 
-
-        <div className=' absolute left-[43px] bottom-0'>
+           {isCardVisible &&   <motion.div
+               initial={{ y: 250 }}
+               animate={{ y: 0 }} 
+               transition={{ duration: 2 }}
+               className=' absolute left-[43px] bottom-0'
+               >
+                                        
+        
           <Image src={'/assets/images/landing/mystory.png'}
             alt='mystoryphone'
             width={287}
             height={516} 
             quality={100}
             />
+        </motion.div>} 
 
-        </div>
       </div>
 
       {/* mobile */}
       <div className='lg:hidden  flex justify-center items-center mx-auto '>
         <div className='relative  max-w-[345px] h-[580px] bg-black pl-5 rounded-[15px]'>
 
-          <div className='absolute left-0 -top-[81px] '>
+        {isCardVisible &&   
+        <motion.div
+               initial={{ y: 250 }}
+               animate={{ y: 0 }} 
+               transition={{ duration: 2 }}
+               className='absolute left-0 -top-[81px] '>
             <Image src={'/assets/images/landing/storyph2.png'}
               alt='storyPhone'
               width={345}
               height={252} />
-          </div>
+          </motion.div>}
           <div className='flex flex-col mobile:pl-5 pt-[210px]'>
             <div className='text-[#596573] '>
               <p className='text-[12px]'>The Loop Journey</p>
@@ -63,6 +86,7 @@ const Story = () => {
       </div>
 
     </div>
+    </ScrollTrigger>
   )
 }
 

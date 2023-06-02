@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { IoIosAddCircle,  IoMdAddCircle, } from 'react-icons/io';
 import { RxCrossCircled } from 'react-icons/rx';
 import ScrollTrigger from 'react-scroll-trigger';
+import { motion } from 'framer-motion';
+
 
 
 
@@ -50,12 +52,27 @@ function HorizontalCard1() {
                                           <div className='font-bold pl-[59px] pr-[343px] text-[20px] text-white pt-5'>
                                           {isTextVisible &&  <p className='animate-text'>Cross-Platform Compatibility for Seamless Connections.</p>}
                                           </div>
-                                          <div className='mt-[-125px] ml-[656px] '>
-                                          {isTextVisible &&    <Image src={'/assets/images/landing/androidphone1.png'} alt='phone1' width={174} height={235} />}
-                                          </div>
-                                          <div className='mt-[-332px] ml-[849px]'>
-                                          {isTextVisible &&    <Image src={'/assets/images/landing/androidphone2.png'} alt='phone2' width={172} height={236} />}
-                                          </div>
+                                          {isTextVisible &&   <motion.div
+                                          initial={{ y: 250 }}
+                                          animate={{ y: 0 }} 
+                                          transition={{ duration: 2 }}
+                                          className='mt-[-125px] ml-[656px]'
+                                          >
+                                           
+                                            <Image src={'/assets/images/landing/androidphone1.png'} alt='phone1' width={174} height={235} />
+                                          
+                                          </motion.div>}
+                                          {isTextVisible && <motion.div
+                                          initial={{ y: -250 }}
+                                          animate={{ y: 0 }} 
+                                          transition={{ duration: 2 }}
+                                          className='mt-[-332px] ml-[849px]'
+                                          >
+                                        
+                                             <Image src={'/assets/images/landing/androidphone2.png'} alt='phone2' width={172} height={236} />
+                                          
+                                          </motion.div>}
+
 
                                       </div>
                                   </div>
