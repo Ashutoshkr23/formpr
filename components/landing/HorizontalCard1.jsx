@@ -51,10 +51,10 @@ function HorizontalCard1() {
                                           {isTextVisible &&  <p className='animate-text'>Cross-Platform Compatibility for Seamless Connections.</p>}
                                           </div>
                                           <div className='mt-[-125px] ml-[656px] '>
-                                          {isTextVisible &&    <Image src={'/assets/images/landing/image 13.png'} alt='img 13' width={174} height={235} />}
+                                          {isTextVisible &&    <Image src={'/assets/images/landing/androidphone1.png'} alt='phone1' width={174} height={235} />}
                                           </div>
                                           <div className='mt-[-332px] ml-[849px]'>
-                                          {isTextVisible &&    <Image src={'/assets/images/landing/image 15.png'} alt='img 15' width={172} height={236} />}
+                                          {isTextVisible &&    <Image src={'/assets/images/landing/androidphone2.png'} alt='phone2' width={172} height={236} />}
                                           </div>
 
                                       </div>
