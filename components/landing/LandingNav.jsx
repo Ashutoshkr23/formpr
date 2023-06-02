@@ -54,7 +54,7 @@ function LandingNavbar() {
 
 
   return (
-    <div className='sm:px-8 md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
+    <div className='sm:px-8 md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
       {/*Laptop */}
       <div className='hidden bg-dark lg:block'>
         <div className='navbar  '>
@@ -62,11 +62,11 @@ function LandingNavbar() {
             <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={74} height={32} />
             <div className='flex content-center'>
               <ul className="flex content-center gap-8 my-auto ">
-                <li className=" text-sm w-[61px]  text-center hover:font-bold "><a href={`#`}>Products</a></li>
-                <li className=" text-sm w-[65px]  text-center hover:font-bold "><a href="#">Our Story</a></li>
-                <li className=" text-sm  w-[85px]  text-center hover:font-bold "><a href="#">Testimonials</a></li>
-                <li className=" text-sm w-[30px]  text-center hover:font-bold "><a href="#">FAQ</a></li>
-                <li className=" text-sm  w-[53px]  text-center hover:font-bold  "><a href="#">Contact</a></li>
+                <li className=" text-sm w-[61px]  text-center hover:font-bold "><a href={`#product`}>Products</a></li>
+                <li className=" text-sm w-[70px]  text-center hover:font-bold "><a href="#story">Our Story</a></li>
+                <li className=" text-sm  w-[85px]  text-center hover:font-bold "><a href="#testimonial">Testimonials</a></li>
+                <li className=" text-sm w-[30px]  text-center hover:font-bold "><a href="#faq">FAQ</a></li>
+                <li className=" text-sm  w-[53px]  text-center hover:font-bold  "><a href="#contact">Contact</a></li>
               </ul>
               <button
                 onClick={handlelogin}
@@ -111,19 +111,19 @@ function LandingNavbar() {
                     <div className='flex flex-col h-full  content-between'>
                       <div className="flex flex-col mx-auto mt-20 text-center font-oswald tracking-light w-10/12 z-20">
                         <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container  py-2  border-b-2 border-white ">
-                          <a href="#" className="nav-link ">Products</a>
+                          <a href="#product" className="nav-link ">Products</a>
                         </div>
                         <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white">
-                          <a href="#" className="nav-link ">Our Story</a>
+                          <a href="#story" className="nav-link ">Our Story</a>
                         </div>
                         <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white ">
-                          <a href="#" className="nav-link ">Testimonials</a>
+                          <a href="#testimonial" className="nav-link ">Testimonials</a>
                         </div>
                         <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white ">
-                          <a href="#" className="nav-link ">FAQ</a>
+                          <a href="#faq" className="nav-link ">FAQ</a>
                         </div>
                         <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container  border-b-2 border-white py-4   ">
-                          <a href="#" className="nav-link ">Contact</a>
+                          <a href="#contact" className="nav-link ">Contact</a>
                         </div>
                         <div>
                       <button

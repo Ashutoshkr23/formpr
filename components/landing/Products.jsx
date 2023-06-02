@@ -37,7 +37,7 @@ function Products() {
     };
 
     return (
-        <div className='mt-20'>
+        <div className='mt-20 ' id='product'>
             <div className='flex flex-col'>
                 <div className='flex flex-col justify-center items-center '>
                     <div>

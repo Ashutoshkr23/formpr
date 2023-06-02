@@ -37,7 +37,7 @@ function Testimonial() {
     };
 
     return (
-        <div className='mt-20'>
+        <div className='mt-20' id='testimonial'>
             <div className="relative overflow-hidden w-full">
                 <div className='text-center mt-28'>
                     <h3>Voices from the Loop</h3>
