@@ -99,7 +99,7 @@ function Products() {
                                     content={"Elevate your style with Loop Elevate cards. Featuring a selection of solid colors and gradient options, our cards are designed with a Loop logo that seamlessly blends in, exuding sophistication."}
                                     cardtype={"Pro"}
                                     text2={"Whisper your brand, we blend in.  "}
-                                    offering1={"Gradient Colours Added"}
+                                    offering1={"Solid + Gradient Colours"}
                                     offering2={"Blending Logo"}
                             />
                         </div>
