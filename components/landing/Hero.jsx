@@ -22,22 +22,22 @@ const Hero = () => {
                     Welcome to The Loop, a community of high-networking individuals connected through the next generation of NFC-enabled digital visiting cards. 
                 </motion.h6>
                 <motion.div
-                    className="rounded-3xl drop-shadow-white bg-white flex mt-8  md:mt-12 px-4 lg:min-w-[450px] w-full py-4"
+                    className="rounded-3xl drop-shadow-white bg-white  flex flex-col md:flex-row mt-8  md:mt-12 px-4 lg:min-w-[450px] w-full py-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 3 }}
                 >
-                    <div className="flex-col w-1/3 ">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/Network.png"} alt=''/>
-                        <p className='text-xs  mt-4 font-bold'>Unparalleled Networking Possibilities</p>
+                    <div className="flex items-center md:items-start md:flex-col mt-7 md:w-1/3 ">
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/NetworkImg.png"} alt=''/>
+                        <p className='text-xs ml-4 md:ml-0  md:mt-4 font-bold'>Unparalleled Networking Possibilities</p>
                     </div>
-                    <div className="flex-col w-1/3">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/Info.png"} alt=''/>
-                        <p className='text-xs  mt-4 font-bold'>Seamless Information Exchange</p>
+                    <div className="flex items-center md:items-start md:flex-col mt-7 md:w-1/3">
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/InfoImg.png"} alt=''/>
+                        <p className='text-xs ml-4 md:ml-0  md:mt-4 font-bold'>Seamless Information Exchange</p>
                     </div>
-                    <div className="flex-col w-1/3 pl-3">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/Digital.png"} alt=''/>
-                        <p className='text-xs  mt-4 font-bold'>Amplified Digital Presence</p>
+                    <div className="flex items-center md:items-start md:flex-col mt-7 md:w-1/3 md:pl-3">
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/DigitalImg.png"} alt=''/>
+                        <p className='text-xs ml-4 md:ml-0 md:mt-4 font-bold'>Amplified Digital Presence</p>
                     </div>
                    
                 </motion.div>
