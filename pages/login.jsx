@@ -166,21 +166,14 @@ function Login() {
         </div>
       </div>
           <div className='hidden sm:block'>
-           <div className='relative  bg-[#090909] w-[563px] xl-w-[674px]   h-[793px] flex  justify-center  '>
-            <div className=' absolute bottom-0 '>
-              <Image src={'/assets/images/landing/logphone.png'}
-              alt='phone'
-              width={563}
-              height={638}
-              quality={100}/>
-
-            </div>
-            <div className='pt-[150px] z-10 text-transparent bg-gradient-to-br from-[#FDFF96] to-[#96FFAD] bg-clip-text'>
+           <div className='  bg-[#090909] w-[563px] xl-w-[674px]   h-[793px] flex flex-col items-center    '>
+            
+            <div className=' pt-[140px] text-transparent bg-gradient-to-br from-[#FDFF96] to-[#96FFAD] bg-clip-text'>
               <h4 className='xl:text-[36px] text-[28px] md:text-[32px] lg:text-[28px] font-bold leading-[186%]'>Taking orders in 
              </h4>
             </div>
 
-            <div className='absolute top-[280px] left-[151px] max-w-[286px]  flex   space-x-4  text-white'> 
+            <div className=' pt-14  max-w-[286px]  flex justify-center text-white'> 
             <div className='flex flex-col  '>
               <h1>{counter.days} </h1>
               <p className='text-[16px] pl-4'>Days</p>
