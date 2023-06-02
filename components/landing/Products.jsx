@@ -60,23 +60,34 @@ function Products() {
                         <div className='w-[100%] h-full  flex justify-center'>
                             <ProductComp
                                 text={"Loop Lite"}
-                                img={"/assets/images/landing/LiteCard.png"}
-                                content={"Your brand's front-row showcase, in an affordable package."}
+                                img={"/assets/images/landing/Lite.png"}
+                                    content={"Sleek and vibrant, our Loop Lite cards offer a range of solid colour options with contrasting Loop logo that adds a bold touch of distinction"}
+                                cardtype={"Basic"}
+                                text2={"Whisper your brand, shoutout ours. "}
+                                offering1={"Solid Colours"}
+                                offering2={"Contrasting Logo"}
                             />
                         </div>
                         <div className='w-[100%] h-full  flex justify-center'>
                             <ProductComp
                                 text={"Loop Elevate "}
-                                img={"/assets/images/landing/ElevateCard.png"}
-                                content={"Where your brand captivates, in seamless sophistication."}
-
+                                img={"/assets/images/landing/ElevateCards.png"}
+                                    content={"Elevate your style with Loop Elevate cards. Featuring a selection of solid colors and gradient options, our cards are designed with a Loop logo that seamlessly blends in, exuding sophistication."}
+                                    cardtype={"Pro"}
+                                    text2={"Whisper your brand, we blend in.  "}
+                                    offering1={"Gradient Colours Added"}
+                                    offering2={"Blending Logo"}
                             />
                         </div>
                         <div className='w-[100%] h-full  flex justify-center'>
                             <ProductComp
                                 text={"Loop Supreme"}
                                 img={"/assets/images/landing/SupremeCard.png"}
-                                content={"Where your brand commands attention, with unrivalled prestige."}
+                                    content={"Unleash your creativity with Loop Supreme cards. Offering unlimited color options, these cards boast a bold and eye-catching version of your logo on the back, making a statement that's impossible to ignore."}
+                                    cardtype={"Elite"}
+                                    text2={"Shoutout your brand, whisper ours. "}
+                                    offering1={"Unlimited Colours"}
+                                    offering2={"Standout Logo"}
 
                             />
                         </div>
