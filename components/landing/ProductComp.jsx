@@ -31,8 +31,10 @@ function ProductComp({ text, img, content, cardtype, text2 , offering1, offering
                                     quality={100}
                                 />
                                 {isHovered && (
-                                    <div className="absolute top-0 inset-0 flex backdrop-filter backdrop-blur px-4 text-center">
-                                        <p className="my-auto">{content}</p>
+                                    <div className="absolute  top-0 inset-0 flex backdrop-filter backdrop-blur  text-center">
+                                        <div className='h-full flex items-center w-full px-4 bg-white bg-opacity-30 text-opacity-100'>
+                                        <p className="my-auto ">{content}</p>
+                                        </div>
                                     </div>
                                 )}
 
@@ -47,7 +49,7 @@ function ProductComp({ text, img, content, cardtype, text2 , offering1, offering
                             </div>
                             <p className='font-medium text-xs text-[#686A6C]'>{text2} </p>
                             <div className='w-[138px] xl:w-[165px] h-9 xl:h-10 text-xs xl:text-base  pt-5'>
-                                <button className={`text-center w-full py-[5px] rounded-[10px] ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-white' : 'bg-black text-white'
+                                <button className={`text-center w-full py-[5px] rounded-[10px] ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black' : 'bg-black text-white'
                                     }`}
                                 >BUY NOW</button>
                             </div>

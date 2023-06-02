@@ -1,10 +1,9 @@
-import React, { useState,useEffect } from 'react';
-import { signIn, useSession,getSession } from 'next-auth/react';
+import React, { useState, useEffect } from 'react';
+import { signIn, useSession, getSession } from 'next-auth/react';
 import Link from 'next/link';
 import Card from '@/components/Card';
 import LoginNav from '@/components/landing/LandingNav';
 import Image from 'next/image';
-
 
 
 function Login() {
@@ -16,11 +15,11 @@ function Login() {
     setIsModalVisible(false);
   };
 
-  const handleGoogleSignin =  () => {
+  const handleGoogleSignin = () => {
     signIn('google', { callbackUrl: '/dashboard' });
 
-  
-  
+
+
   };
 
   const handleSubmit = async (e) => {
@@ -52,39 +51,39 @@ function Login() {
     const targetDate = new Date('2023-06-09T19:00:00');
     const currentDate = new Date();
     const remainingTime = targetDate - currentDate;
-  
+
     // Update counter values
     const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
     const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-  
-    setCounter({ 
-      days: days.toString().padStart(2, '0'), 
-      hours: hours.toString().padStart(2, '0'), 
+
+    setCounter({
+      days: days.toString().padStart(2, '0'),
+      hours: hours.toString().padStart(2, '0'),
       minutes: minutes.toString().padStart(2, '0')
     });
-  
+
     // Update counter every minute
     const interval = setInterval(() => {
       const newCurrentDate = new Date();
       const newRemainingTime = targetDate - newCurrentDate;
-  
+
       const newDays = Math.floor(newRemainingTime / (1000 * 60 * 60 * 24));
       const newHours = Math.floor((newRemainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const newMinutes = Math.floor((newRemainingTime % (1000 * 60 * 60)) / (1000 * 60));
-  
-      setCounter({ 
-        days: newDays.toString().padStart(2, '0'), 
-        hours: newHours.toString().padStart(2, '0'), 
+
+      setCounter({
+        days: newDays.toString().padStart(2, '0'),
+        hours: newHours.toString().padStart(2, '0'),
         minutes: newMinutes.toString().padStart(2, '0')
       });
     }, 60000); // 1 minute
-  
+
     return () => {
       clearInterval(interval);
     };
   }, []);
-  
+
   return (
     <div className='flex flex-col items-center lg:flex-row  pb-[100px] md:pb-[150px] '>
 
@@ -94,10 +93,10 @@ function Login() {
 
         </div>
         <div className='  md:hidden pt-8 pl-[20px] '>
-        <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={50} height={22} />
+          <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={50} height={22} />
 
         </div>
-        
+
         <div className='flex flex-col items-center pt-16'>
         <div className='lg:max-w-[435px] mobile:w-[250px] sm:w-[400px] text-center'>
           <h2>Welcome to the Loop.</h2>
@@ -192,44 +191,44 @@ function Login() {
 
             </div>
 
-            </div>
+          </div>
 
-           </div>
-           </div>
-           {/* modal open when email is sent */}
-    {isModalVisible && (
-                  <div className="fixed z-10 inset-0 overflow-y-auto">
-                      <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-                          <div
-                              className="fixed inset-0 transition-opacity"
-                              aria-hidden="true"
-                              onClick={closeModal}
-                          >
-                              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
-                          </div>
-                          <div
-                              className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"
-                              role="dialog"
-                              aria-modal="true"
-                              aria-labelledby="modal-headline"
-                          >
-                              <div>
-                                  <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
-                                      {modalMessage}
-                                  </h3>
-                                  <button
-                                      type="button"
-                                      className="bg-black text-white px-4 py-2 rounded-md"
-                                      onClick={closeModal}
-                                  >
-                                      Close
-                                  </button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              )} 
-    </div> 
+        </div>
+      </div>
+      {/* modal open when email is sent */}
+      {isModalVisible && (
+        <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div
+              className="fixed inset-0 transition-opacity"
+              aria-hidden="true"
+              onClick={closeModal}
+            >
+              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <div
+              className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-headline"
+            >
+              <div>
+                <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
+                  {modalMessage}
+                </h3>
+                <button
+                  type="button"
+                  className="bg-black text-white px-4 py-2 rounded-md"
+                  onClick={closeModal}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   )
 }
 
