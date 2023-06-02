@@ -22,7 +22,7 @@ const Hero = () => {
                     Welcome to The Loop, a community of high-networking individuals connected through the next generation of NFC-enabled digital visiting cards. 
                 </motion.h6>
                 <motion.div
-                    className="rounded-3xl drop-shadow-white bg-white  flex flex-col md:flex-row mt-8  md:mt-12 px-4 lg:min-w-[450px] w-full py-4"
+                    className="rounded-3xl   flex flex-col md:flex-row mt-8  md:mt-12 px-4 lg:min-w-[450px] w-full py-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 3 }}
