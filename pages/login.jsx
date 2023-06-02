@@ -48,7 +48,7 @@ function Login() {
 
   useEffect(() => {
     // Calculate remaining time here
-    const targetDate = new Date('2023-06-5');
+    const targetDate = new Date('2023-06-09T19:00:00');
     const currentDate = new Date();
     const remainingTime = targetDate - currentDate;
 
@@ -172,7 +172,7 @@ function Login() {
             </h4>
           </div>
 
-          <div className=' pt-14  max-w-[286px]  flex justify-center text-white'>
+            <div className=' pt-14  max-w-[286px]  flex justify-center space-x-4 text-white'> 
             <div className='flex flex-col  '>
               <h1>{counter.days} </h1>
               <p className='text-[16px] pl-4'>Days</p>
