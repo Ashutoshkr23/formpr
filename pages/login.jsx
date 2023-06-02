@@ -80,12 +80,17 @@ function Login() {
     <div className='flex flex-col items-center lg:flex-row lg:justify-between xl:justify-center '>
 
       <div className='lg:max-w-[766px] xl:w-[766px]  h-[793px]   '>
-        <div className='pt-8 lg:pl-[30px] xl:pl-[114px] '>
+        <div className=' hidden md:block pt-8 lg:pl-[30px] xl:pl-[114px] '>
         <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={74} height={32} />
 
         </div>
+        <div className='  md:hidden pt-8 pl-[20px] '>
+        <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={50} height={22} />
+
+        </div>
+        
         <div className='flex flex-col items-center pt-16'>
-        <div className='lg:max-w-[435px] text-center'>
+        <div className='lg:max-w-[435px] mobile:w-[250px] sm:w-[400px] text-center'>
           <h2>Welcome to the Loop.</h2>
         </div>
         <div className='pt-12 text-[14px]'>
@@ -93,7 +98,7 @@ function Login() {
         </div>
         <div className='flex flex-col items-center'>
         <form className=' flex flex-col items-center mt-8' onSubmit={handleSubmit} >
-                  <div className={`flex flex-col w-[389px] h-8 `}>
+                  <div className={`flex flex-col mobile:w-[250px] sm:w-[389px]  h-8 `}>
                       <input
                           type="email"
                           name='email'
@@ -105,7 +110,7 @@ function Login() {
                       
                   </div>
                   <div className=" mt-7 text-[16px]  ">
-                      <button type='submit' className="bg-black w-[165px] h-10  text-white font-bold rounded-[10px] ">
+                      <button type='submit' className="bg-black mobile:w-[120px] sm:w-[165px] h-10  text-white font-bold rounded-[10px] ">
                           Sign In
                       </button>
                   </div>
@@ -126,12 +131,12 @@ function Login() {
               />
             </div>
               </div>
-              <div className='mt-[60px] relative items-center flex  space-x-4 rounded-[10px] h-[101px] w-[582px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
-<div className='xl:pl-[100px] sm:pl-[100px] md-[50px]'>
-<h4 className='xl:text-[36px] text-[24px] font-bold'>100+</h4>
+              <div className='mt-[60px] relative items-center flex  space-x-4 rounded-[10px] h-[101px] mobile:w-[350px] sm:w-[582px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
+<div className='xl:pl-[100px] mobile:pl-[30px] sm:pl-[100px] md:pl-[150px] lg:pl-[50px]'>
+<h4 className='xl:text-[36px] sm:text-[24px] mobile:text-[18px] font-bold'>100+</h4>
 </div>
 <div className=''>
-  <p className='xl:text-[14px] lg:text-[12px] leading-[186%]'>Total preorders received!</p>
+  <p className='xl:text-[14px] md:text-[12px] mobile:text-[10px] leading-[186%]'>Total preorders received!</p>
 </div>
 <div className='hidden xl:block absolute right-10 bottom-5'>
   <Image src={'/assets/images/landing/logincard.png'}
