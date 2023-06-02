@@ -180,7 +180,7 @@ function Login() {
              </h4>
             </div>
 
-            <div className='absolute top-[280px]  flex  space-x-7  text-white'> 
+            <div className='absolute top-[280px] left-[151px] max-w-[286px]  flex   space-x-4  text-white'> 
             <div className='flex flex-col  '>
               <h1>{counter.days} </h1>
               <p className='text-[16px] pl-4'>Days</p>
@@ -188,14 +188,14 @@ function Login() {
             <div><h1>|</h1></div>
             <div className='flex flex-col  '>
               <h1>{counter.hours} </h1>
-              <p className='text-[16px] pl-4'>Hours</p>
+              <p className='text-[16px] pl-2'>Hours</p>
 
             </div>
             <div><h1>|</h1></div>
 
             <div className='flex flex-col  '>
               <h1>{counter.minutes} </h1>
-              <p className='text-[16px] pl-4'>Minutes</p>
+              <p className='text-[16px] pl-2'>Minutes</p>
 
             </div>
 
