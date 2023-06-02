@@ -85,15 +85,15 @@ function Login() {
   }, []);
 
   return (
-    <div className='flex flex-col items-center lg:flex-row  pb-[100px] md:pb-[150px] '>
+    <div className='flex flex-col  lg:flex-row  pb-[100px] md:pb-[150px] '>
 
       <div className='lg:w-3/5 w-full pt-8 lg:h-full '>
         <div className=' hidden md:block xl:pl-[114px] lg:pl-[50px] sm:pl-[100px] '>
-        <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={74} height={32} />
+        <Image src={"/assets/images/landing/loops.png"} alt='loop' width={74} height={32} />
 
         </div>
         <div className='  md:hidden pt-8 pl-[20px] '>
-          <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={50} height={22} />
+          <Image src={"/assets/images/landing/loops.png"} alt='loop' width={50} height={22} />
 
         </div>
 
