@@ -53,12 +53,17 @@ const Story = () => {
       <div className='lg:hidden  flex justify-center items-center mx-auto '>
         <div className='relative  max-w-[345px] h-[580px] bg-black pl-5 rounded-[15px]'>
 
-          <div className='absolute left-0 -top-[81px] '>
+        {isCardVisible &&   
+        <motion.div
+               initial={{ y: 250 }}
+               animate={{ y: 0 }} 
+               transition={{ duration: 2 }}
+               className='absolute left-0 -top-[81px] '>
             <Image src={'/assets/images/landing/storyph2.png'}
               alt='storyPhone'
               width={345}
               height={252} />
-          </div>
+          </motion.div>}
           <div className='flex flex-col mobile:pl-5 pt-[210px]'>
             <div className='text-[#596573] '>
               <p className='text-[12px]'>The Loop Journey</p>
