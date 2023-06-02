@@ -19,6 +19,8 @@ module.exports = {
 
       colors: {
         'gray': '#596573',
+        'whitebg': '#F9F9F9',
+
       },
       screens: {
         'mobile': '360px',

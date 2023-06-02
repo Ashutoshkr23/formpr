@@ -33,7 +33,7 @@ const Story = () => {
 
       {/* mobile */}
       <div className='lg:hidden  flex justify-center items-center mx-auto '>
-        <div className='relative  max-w-[345px] h-[536px] bg-black pl-5 rounded-[15px]'>
+        <div className='relative  max-w-[345px] h-[580px] bg-black pl-5 rounded-[15px]'>
 
           <div className='absolute left-0 -top-[81px] '>
             <Image src={'/assets/images/landing/storyph2.png'}

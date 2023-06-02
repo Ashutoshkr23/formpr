@@ -53,7 +53,7 @@ const Benefits = () => {
                         heading={"Fluid User Experience. "}
                         headingStyle={"text-[36px] leading-[120%]  md:text-[45px]  font-bold"}
                         text={"Effortless Networking Made  Beautifully Simple."}
-                        textStyle={"mt-7 leading-[21px] leading-[130%] text-[16px] md:text-[24px] pr-[65px] font-bold"}
+                        textStyle={"mt-7 leading-[120%] leading-[130%] text-[16px] md:text-[24px] pr-[65px] font-bold"}
                         img={""}
                         btncolor={"black"}
                         backContent={' Purchase, personalize, and present your card with ease, creating an unforgettable experience for both you and the people you loop in.'}

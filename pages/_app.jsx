@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <SessionProvider session={pageProps.session}>
       <CartProvider>
-        <main className={`${poppins.variable} font-sans `}>
+        <main className={`${poppins.variable} font-sans bg-whitebg `}>
           <Component {...pageProps} />
         </main>
         <Footer/>
