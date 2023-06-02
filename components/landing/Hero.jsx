@@ -56,13 +56,22 @@ const Hero = () => {
             {/*Desktop and tab view */ }
 
             <div className=' hidden md:block  mx-auto lg:ml-auto lg:mx-0 lg:pr-32'>
-                <div className=' relative '>
+                <div className=' relative h-[580px] w-[260px]  '>
+                    < motion.div
+                        initial={{ x: 150 }}
+                        animate={{ x: 0 }}
+                        transition={{ duration: 2 }}
+
+                        className='absolute  top-[200px] -right-[142px]'
+                    >
+                        <Image src={'/assets/images/landing/CardPink.png'} width={220} height={177} alt='sample nfc visting card' quality={100} />
+                    </motion.div>
                    <motion.div
                         initial={{ y: -250 }}
                         animate={{ y: 0 }} 
                         transition={{ duration: 2 }}
                     >
-                    <Image src={'/assets/images/landing/landingProfileTop.png'}
+                    <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
                         width={260}
                         height={580}
                         quality={100}
@@ -74,7 +83,7 @@ const Hero = () => {
                         initial={{ y: 200}}
                         animate={{ y: 0 }} 
                         transition={{ duration: 2 }}
-                        className='absolute top-[550px] z-[-1]'>
+                        className='absolute top-[550px] '>
                     <Image src={'/assets/images/landing/phone2.png'}
                         width={260}
                         height={154}
@@ -82,40 +91,38 @@ const Hero = () => {
                         quality={100}
                     /></motion.div>
                     <motion.div
-                     
-                        className='absolute top-[90px] -left-[185px]'
-                        initial={{ x: -150 }}
-                        animate={{ x: 0 }} 
-                        transition={{ duration: 2 }}
-                    >
-                       
-                    <Image src={'/assets/images/landing/LoopCard2.png'} width={244} height={177} alt='sample nfc visting card' quality={100}/>
-                    
-                    </motion.div>
-                    < motion.div 
-                        initial={{ x: 150 }}
-                        animate={{ x: 0 }} 
-                        transition={{ duration: 2 }}
-                        
-                        className='absolute -z-10 top-[200px] -right-[150px]' 
-                    >
-                        <Image src={'/assets/images/landing/LoopCard1.png'} width={220} height={177} alt='sample nfc visting card' quality={100}/> 
-                    </motion.div>
 
-                    
+                        className='absolute top-[90px] -left-[185px] shadow-white  mr-4'
+                        initial={{ x: -150 }}
+                        animate={{ x: 0 }}
+                        transition={{ duration: 2 }}
+                    >
+
+                        <Image src={'/assets/images/landing/CardBlack.png'} width={244} height={177} alt='sample nfc visting card' quality={100} />
+
+                    </motion.div>                    
                 </div>
             </div>
 
             {/*mobile view */}
 
             <div className='md:hidden'>
-                <div className=' relative'>
-                <motion.div
+                <div className=' relative w-[190px] h-[400px]'>
+                    <motion.div
+                        initial={{ x: 20 }}
+                        animate={{ x: 0 }}
+                        transition={{ duration: 2 }}
+
+                        className='absolute top-[175px] -right-[65px]  '
+                    >
+                        <Image src={'/assets/images/landing/CardPink.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
+                    </motion.div>
+                    <motion.div
                         initial={{ y: -70 }}
                         animate={{ y: 0 }} 
                         transition={{ duration: 2 }}
                     >
-                    <Image src={'/assets/images/landing/landingProfileTop.png'}
+                    <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
                         width={190}
                         height={400}
                         alt='mobile'
@@ -129,34 +136,25 @@ const Hero = () => {
                    
                         className='absolute top-[100px] -left-[85px] '
                     >
-                    <Image src={'/assets/images/landing/LoopCard2.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
+                    <Image src={'/assets/images/landing/CardBlack.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
                     </motion.div>
                     
-                    <motion.div
-                        initial={{ x: 20 }}
-                        animate={{ x: 0 }} 
-                        transition={{ duration: 2 }}
-                        
-                        className='absolute top-[175px] -right-[65px] -z-10 '
-                    >
-                    <Image src={'/assets/images/landing/LoopCard1.png'} width={135} height={117} alt='sample nfc visting card' quality={100}/>
-                    </motion.div>
-                   
-                    <motion.div
-                        initial={{ y: 70 }}
-                        animate={{ y: 0 }} 
-                        transition={{ duration: 2 }}
-                        className=' z-40 mt-[-5px]'
+                    
+                </div>
+                <motion.div
+                    initial={{ y: 70 }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 2 }}
+                    className=' z-40 mt-[-5px]'
 
-                    >
+                >
                     <Image src={'/assets/images/landing/phone2.png'}
                         width={190}
                         height={425}
                         alt='mobile'
                         quality={100}
                     />
-                    </motion.div>
-                </div>
+                </motion.div>
             </div>
         </div>
 
