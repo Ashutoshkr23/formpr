@@ -50,7 +50,7 @@ const Benefits = () => {
 
                     <Card
                         cardStyle={"relative pt-[40px] pl-6   md:pt-12 w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] drop-shadow-white  rounded-[20px] bg-gradient-to-br   from-[#FDFF96] to-[#F16869]"}
-                        heading={"Seamless User Experience. "}
+                        heading={"Fluid User Experience. "}
                         headingStyle={"text-[36px] leading-[120%]  md:text-[45px]  font-bold"}
                         text={"Effortless Networking Made  Beautifully Simple."}
                         textStyle={"mt-7 leading-[21px] leading-[130%] text-[16px] md:text-[24px] pr-[65px] font-bold"}
