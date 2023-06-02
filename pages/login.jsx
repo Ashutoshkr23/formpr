@@ -85,15 +85,15 @@ function Login() {
   }, []);
 
   return (
-    <div className='flex flex-col items-center lg:flex-row  pb-[100px] md:pb-[150px] '>
+    <div className='flex flex-col  lg:flex-row  pb-[100px] md:pb-[150px] '>
 
       <div className='lg:w-3/5 w-full pt-8 lg:h-full '>
         <div className=' hidden md:block xl:pl-[114px] lg:pl-[50px] sm:pl-[100px] '>
-        <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={74} height={32} />
+        <Image src={"/assets/images/landing/loops.png"} alt='loop' width={74} height={32} />
 
         </div>
         <div className='  md:hidden pt-8 pl-[20px] '>
-          <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={50} height={22} />
+          <Image src={"/assets/images/landing/loops.png"} alt='loop' width={50} height={22} />
 
         </div>
 
@@ -139,12 +139,12 @@ function Login() {
               />
             </div>
               </div>
-              <div className='mt-[60px] mb-0 relative items-center flex  space-x-4 rounded-[10px] h-[72px] xl:h-[101px]  mobile:w-[350px] sm:w-[450px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
-<div className='xl:pl-[100px] mobile:pl-[30px] sm:pl-[90px]  lg:pl-[50px]'>
-<h4 className='xl:text-[36px] sm:text-[24px] mobile:text-[18px] font-bold'>100+</h4>
+              <div className='mt-[60px] mb-0 relative items-center flex  space-x-4 rounded-[10px] h-[72px] xl:h-[101px] w-[310px] mobile:w-[350px] sm:w-[450px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
+<div className='xl:pl-[100px] pl-[30px] sm:pl-[90px]  lg:pl-[50px]'>
+<h4 className='xl:text-[36px] sm:text-[24px] mobile:text-[18px] text-[14px] font-bold'>100+</h4>
 </div>
 <div className=''>
-  <p className='xl:text-[14px] md:text-[12px] mobile:text-[10px] leading-[186%]'>Total preorders received!</p>
+  <p className='xl:text-[14px] md:text-[12px] text-[10px]  leading-[186%]'>Total preorders received!</p>
 </div>
 <div className='hidden xl:block absolute right-10 bottom-5'>
   <Image src={'/assets/images/landing/logincard.png'}
@@ -153,10 +153,17 @@ function Login() {
   alt='card'
   quality={100}/>
 </div>
-<div className='xl:hidden absolute right-5 bottom-7'>
+<div className='hidden mobile:block xl:hidden absolute right-5 bottom-7'>
   <Image src={'/assets/images/landing/logincard.png'}
   height={90}
   width={120}
+  alt='card'
+  quality={100}/>
+</div>
+<div className='mobile:hidden absolute right-5 bottom-7'>
+  <Image src={'/assets/images/landing/logincard.png'}
+  height={60}
+  width={90}
   alt='card'
   quality={100}/>
 </div>
