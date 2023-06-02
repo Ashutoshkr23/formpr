@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
                 <div className='flex space-x-5  items-center justify-center'>
                     <div>
-                    <a href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ==">
+                    <a href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
                         <Image src={'/assets/images/landing/footerinsta.png'} height={32} width={32} alt='instagram'/>
                    </a>
                     </div>
@@ -83,7 +83,7 @@ const Footer = () => {
 
                <div className='flex  pt-8 space-x-7'>
                 <div>
-                <a href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ==">
+                <a href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
     <Image src="/assets/images/landing/footerinsta.png" height={32} width={32} alt="instagram" />
   </a>
                 </div>
