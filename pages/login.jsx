@@ -83,11 +83,12 @@ function Login() {
       clearInterval(interval);
     };
   }, []);
+  const Counter = parseInt(counter.days) > 0 || parseInt(counter.hours) > 0 || parseInt(counter.minutes) > 0;
 
   return (
     <div className='flex flex-col  lg:flex-row  pb-[100px] md:pb-[150px] '>
 
-      <div className='lg:w-3/5 w-full pt-8 lg:h-full '>
+      <div className='lg:w-3/5 w-full pt-8 lg:h-full  '>
         <div className=' hidden md:block xl:pl-[114px] lg:pl-[50px] sm:pl-[100px] '>
         <Image src={"/assets/images/landing/loops.png"} alt='loop' width={74} height={32} />
 
@@ -179,7 +180,7 @@ function Login() {
              </h4>
             </div>
 
-            <div className=' pt-14  max-w-[286px]  flex justify-center space-x-5 sm:space-x-8 text-white'> 
+      {Counter && (     <div className=' pt-14  max-w-[286px]  flex justify-center space-x-5 sm:space-x-8 text-white'> 
             <div className='flex flex-col  '>
               <h1>{counter.days} </h1>
               <p className='sm:text-[16px] text-sm pl-4'>Days</p>
@@ -198,7 +199,7 @@ function Login() {
 
             </div>
 
-          </div>
+          </div>)} 
 
         </div>
       </div>
