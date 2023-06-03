@@ -58,7 +58,7 @@ function HorizontalCard1() {
                                             <div className='flex'>
                                                 {isTextVisible && 
                                                 <div className='mt-[102px] mr-5'>
-                                                    <Image src={'/assets/images/landing/androidphone1.png'} alt='phone1' width={174} height={235} />
+                                                    <Image src={'/assets/images/landing/androidphone1.png'} alt='cross platform phones' width={174} height={235} />
 
                                                 </div>}
                                                 {isTextVisible && 
