@@ -88,7 +88,7 @@ function Login() {
   return (
     <div className='flex flex-col  lg:flex-row  pb-[100px] md:pb-[150px] '>
 
-      <div className='lg:w-3/5 w-full bg-yellow-100 pt-8 lg:h-full  '>
+      <div className='lg:w-3/5 w-full  pt-8 lg:h-full  '>
         <div className=' hidden sm:block xl:pl-[114px] lg:pl-[50px] sm:pl-[100px] '>
         <Image src={"/assets/images/landing/loops.png"} alt='loop' width={74} height={32} />
 
