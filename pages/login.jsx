@@ -88,17 +88,17 @@ function Login() {
   return (
     <div className='flex flex-col  lg:flex-row  pb-[100px] md:pb-[150px] '>
 
-      <div className='lg:w-3/5 w-full pt-8 lg:h-full  '>
-        <div className=' hidden md:block xl:pl-[114px] lg:pl-[50px] sm:pl-[100px] '>
+      <div className='lg:w-3/5 w-full bg-yellow-100 pt-8 lg:h-full  '>
+        <div className=' hidden sm:block xl:pl-[114px] lg:pl-[50px] sm:pl-[100px] '>
         <Image src={"/assets/images/landing/loops.png"} alt='loop' width={74} height={32} />
 
         </div>
-        <div className='  md:hidden pt-8 pl-[20px] '>
+        {/* <div className='  sm:hidden pt-8 pl-[50px] '>
           <Image src={"/assets/images/landing/loops.png"} alt='loop' width={50} height={22} />
 
-        </div>
+        </div> */}
 
-        <div className='flex flex-col items-center pt-16'>
+        <div className='flex flex-col items-center pt-[90px] sm:pt-16'>
         <div className='lg:max-w-[435px] mobile:w-[250px] sm:w-[400px] text-center'>
           <h2>Welcome to the Loop.</h2>
         </div>
@@ -140,7 +140,7 @@ function Login() {
               />
             </div>
               </div>
-              <div className='mt-[60px] mb-0 relative items-center flex  space-x-4 rounded-[10px] h-[72px] xl:h-[101px] w-[310px] mobile:w-[350px] sm:w-[450px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
+              <div className='mt-[60px] mb-0 relative items-center flex  space-x-4 rounded-[10px] h-[72px] xl:h-[101px] w-[310px] mobile:w-[342px] sm:w-[450px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
 <div className='xl:pl-[100px] pl-[30px] sm:pl-[90px]  lg:pl-[50px]'>
 <h4 className='xl:text-[36px] sm:text-[24px] mobile:text-[18px] text-[14px] font-bold'>100+</h4>
 </div>
@@ -154,7 +154,7 @@ function Login() {
   alt='card'
   quality={100}/>
 </div>
-<div className='hidden mobile:block xl:hidden absolute right-5 bottom-7'>
+<div className='hidden mobile:block xl:hidden absolute right-2 bottom-5'>
   <Image src={'/assets/images/landing/logincard.png'}
   height={90}
   width={120}
