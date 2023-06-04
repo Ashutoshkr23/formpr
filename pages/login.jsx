@@ -86,7 +86,7 @@ function Login() {
   const Counter = parseInt(counter.days) > 0 || parseInt(counter.hours) > 0 || parseInt(counter.minutes) > 0;
 
   return (
-    <div className='flex flex-col  lg:flex-row  pb-[100px] md:pb-[150px] '>
+    <div className='flex flex-col  lg:flex-row  '>
 
       <div className='lg:w-3/5 w-full  pt-8 lg:h-full  '>
         <div className=' hidden sm:block xl:pl-[114px] lg:pl-[50px] sm:pl-[100px] '>
@@ -206,7 +206,7 @@ function Login() {
       {/* modal open when email is sent */}
       {isModalVisible && (
         <div className="fixed z-10 inset-0 overflow-y-auto">
-          <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+          <div className="flex items-end justify-center min-h-screen px-4 pt-4  text-center sm:block sm:p-0">
             <div
               className="fixed inset-0 transition-opacity"
               aria-hidden="true"

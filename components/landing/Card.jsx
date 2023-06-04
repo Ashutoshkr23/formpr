@@ -54,11 +54,11 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
               </div>
             </div>
             <div
-              className={`card-back  w-[300px] mobile:w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] rounded-[20px] 
+              className={`card-back w-[300px] mobile:w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] rounded-[20px] 
              `}
             >
-              <div className={`${cardStyle} p-8 text-[16px] sm:text-[20px] md:text-[20px] `}>
-                <p>{backContent}</p>
+              <div className={`${cardStyle} p-8 text-[14px] sm:text-[14px] md:text-[14px] m-auto ` }>
+                <p className='items-center justify-center'>{backContent}</p>
               </div>
 
               <div className='absolute bottom-4 right-8'>
