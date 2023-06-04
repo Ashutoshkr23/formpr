@@ -8,8 +8,9 @@ const Landing = () => {
     // max-w-[1440px]  mx-auto px-4 sm:px-8 md:px-16 xl:px-20
     <div className=' max-w-[1440px]  mx-auto' >  
       <Head>
-        <title>Loop: Visting Cards Reimagined on Web3</title>
-        <meta property="og:title" content="NFC Visting Cards Reimagined on Web3" key="title" />
+      <title>Loop: Visting Cards Reimagined on Web3</title>
+      <meta property="og:title" content="NFC Visting Cards Reimagined on Web3" key="title" 
+              description= "NFC Web3 visting cards for a seamless networking expereince"/>
       </Head>
       <LandingNav />
       <Hero />
