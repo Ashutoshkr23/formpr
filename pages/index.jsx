@@ -9,7 +9,7 @@ const Landing = () => {
     <div className=' max-w-[1440px]  mx-auto' >  
       <Head>
         <title>Loop: Visting Cards Reimagined on Web3</title>
-        <meta property="og:title" content="Visting Cards Reimagined on Web3" key="title" />
+        <meta property="og:title" content="NFC Visting Cards Reimagined on Web3" key="title" />
       </Head>
       <LandingNav />
       <Hero />

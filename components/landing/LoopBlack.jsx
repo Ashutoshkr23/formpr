@@ -26,7 +26,7 @@ const LoopBlack = () => {
 
 
                         </div>
-                        <div className='pt-[76px] pl-3 text-[#596573] text-[12px]'>
+                        <div className='pt-[76px] pl-3 text-[#A7A7A7] text-[12px]'>
                             <p>This card exudes exclusivity and leaves a lasting impression that&apos;s both refined and memorable.</p>
                         </div>
                     </div>
@@ -77,7 +77,7 @@ const LoopBlack = () => {
 
                                 BUY NOW</button>
                         </div>
-                        <div className='pt-6 text-[10px] text-[#596573] leading-[140%] max-w-[245px]'>
+                        <div className='pt-6 text-[10px] text-[#A7A7A7] leading-[140%] max-w-[245px]'>
                             <p>This card exudes exclusivity and leaves a lasting impression that&apos;s both refined and memorable.</p>
                         </div>
                     </div>

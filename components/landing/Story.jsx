@@ -14,7 +14,7 @@ const Story = () => {
 
       <div className='relative hidden lg:block mx-auto max-w-[1212px] h-[428px] bg-[#090909] rounded-[20px] '>
 
-        <div className='text-[#596573] pl-[405px] pt-[46px] pr-[28px]'>
+        <div className='text-[#A7A7A7] pl-[405px] pt-[46px] pr-[28px]'>
           <p>The Loop Journey</p>
         </div>
         <div className='text-white pl-[405px] pr-[28px]'>
@@ -55,7 +55,7 @@ const Story = () => {
               height={252} />
           </div>
           <div className='flex flex-col mobile:pl-5 pt-[210px]'>
-            <div className='text-[#596573] '>
+            <div className='text-[#A7A7A7] '>
               <p className='text-[12px]'>The Loop Journey</p>
             </div>
             <div className='text-white font-bold '>
