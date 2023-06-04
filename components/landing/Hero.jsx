@@ -28,15 +28,15 @@ const Hero = () => {
                     transition={{ delay: 3 }}
                 >
                     <div className="flex items-center md:items-start md:flex-col mt-7 md:w-1/3 ">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/NetworkImg.png"} alt=''/>
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/NetworkImg.png"} alt='networking'/>
                         <p className='text-xs ml-4 md:ml-0  md:mt-4 font-bold'>Unparalleled Networking Possibilities</p>
                     </div>
                     <div className="flex items-center md:items-start md:flex-col mt-7 md:w-1/3">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/InfoImg.png"} alt=''/>
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/InfoImg.png"} alt='information exchange visting card'/>
                         <p className='text-xs ml-4 md:ml-0  md:mt-4 font-bold'>Seamless Information Exchange</p>
                     </div>
                     <div className="flex items-center md:items-start md:flex-col mt-7 md:w-1/3 md:pl-3">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/DigitalImg.png"} alt=''/>
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/DigitalImg.png"} alt='visting card digital presence'/>
                         <p className='text-xs ml-4 md:ml-0 md:mt-4 font-bold'>Amplified Digital Presence</p>
                     </div>
                    
@@ -75,7 +75,7 @@ const Hero = () => {
                         width={260}
                         height={580}
                         quality={100}
-                        alt='mobile'
+                        alt='sample visiting card profile'
                         priority                        
                     />
                     </motion.div>
@@ -87,7 +87,7 @@ const Hero = () => {
                     <Image src={'/assets/images/landing/phone2.png'}
                         width={260}
                         height={154}
-                        alt='mobile'
+                        alt='sample visting card profile reflection'
                         quality={100}
                     /></motion.div>
                     <motion.div
@@ -125,7 +125,7 @@ const Hero = () => {
                     <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
                         width={190}
                         height={400}
-                        alt='mobile'
+                        alt='smaple visting card profile'
                         priority
                     />
                     </motion.div>
@@ -151,7 +151,7 @@ const Hero = () => {
                     <Image src={'/assets/images/landing/phone2.png'}
                         width={190}
                         height={425}
-                        alt='mobile'
+                        alt='sample visting card profile reflection'
                         quality={100}
                     />
                 </motion.div>

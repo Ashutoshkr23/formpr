@@ -90,7 +90,7 @@ function Login() {
 
       <div className='lg:w-3/5 w-full  pt-8 lg:h-full  '>
         <div className=' hidden sm:block xl:pl-[114px] lg:pl-[50px] sm:pl-[100px] '>
-        <Image src={"/assets/images/landing/loops.png"} alt='loop' width={74} height={32} />
+        <Image src={"/assets/images/landing/loops.png"} alt='loop logo' width={74} height={32} />
 
         </div>
         {/* <div className='  sm:hidden pt-8 pl-[50px] '>
@@ -119,7 +119,7 @@ function Login() {
                       
                   </div>
                   <div className=" mt-7 text-[16px]  ">
-                      <button type='submit' className="bg-black w-[120px] sm:w-[165px] h-10  text-white font-bold rounded-[10px] ">
+                      <button type='submit' className="signIn bg-black w-[120px] sm:w-[165px] h-10  text-white font-bold rounded-[10px] ">
                           Sign In
                       </button>
                   </div>
@@ -134,7 +134,7 @@ function Login() {
                 </div>
             <div>
               <Image src={'/assets/images/landing/googlesign.png'}
-              alt='google'
+              alt='google sign in'
               height={40}
               width={39}
               />
@@ -151,21 +151,21 @@ function Login() {
   <Image src={'/assets/images/landing/logincard.png'}
   height={106}
   width={147}
-  alt='card'
+  alt='preorder cards'
   quality={100}/>
 </div>
 <div className='hidden mobile:block xl:hidden absolute right-2 bottom-5'>
   <Image src={'/assets/images/landing/logincard.png'}
   height={90}
   width={120}
-  alt='card'
+  alt='preorder cards'
   quality={100}/>
 </div>
 <div className='mobile:hidden absolute right-5 bottom-7'>
   <Image src={'/assets/images/landing/logincard.png'}
   height={60}
   width={90}
-  alt='card'
+  alt='preorder cards'
   quality={100}/>
 </div>
               </div>
@@ -226,7 +226,7 @@ function Login() {
                 </h3>
                 <button
                   type="button"
-                  className="bg-black text-white px-4 py-2 rounded-md"
+                  className="emailVerification bg-black text-white px-4 py-2 rounded-md"
                   onClick={closeModal}
                 >
                   Close

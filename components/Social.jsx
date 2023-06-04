@@ -45,7 +45,7 @@ const Social = () => {
         <div>
             <Link href={'#'}>
             
-            <Image src="/deck.png" alt="deckLogo" width={50} height={50} />
+            <Image src="/deck.png" alt="deck Logo" width={50} height={50} />
             </Link>
             <p className='text-[12px]'>Our Deck</p>
         </div>

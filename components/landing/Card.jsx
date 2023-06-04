@@ -39,12 +39,12 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
                 {isTextVisible && <h3 className={`${textStyle} animate-text`}>{text}</h3>}
                 {img && (
                   <div className='hidden md:block absolute bottom-0 right-0'>
-                    <Image src={img} alt='benefit' width={331} height={336} />
+                    <Image src={img} alt='loop benefits' width={331} height={336} />
                   </div>
                 )}
                 {img && (
                   <div className='md:hidden absolute bottom-0 right-0'>
-                    <Image src={img} alt='benefit' width={228} height={232} />
+                    <Image src={img} alt='loop benefits' width={228} height={232} />
                   </div>
                 )}
               </div>

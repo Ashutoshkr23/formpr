@@ -14,14 +14,14 @@ const Android = () => {
                         <div className='flex flex-col items-center space-y-7 lg:space-y-0  lg:flex-row lg:justify-end lg:space-x-4 lg:pt-[51px] pt-[58px] '>
                             <div className=''>
                                 <Image src={'/assets/images/landing/iosbtns.png'}
-                                    alt='ios'
+                                    alt='download ios app'
                                     width={225}
                                     height={69}
                                 />
                             </div>
                             <div className=''>
                                 <Image src={'/assets/images/landing/androidbt.png'}
-                                    alt='android'
+                                    alt='download android app'
                                     width={225}
                                     height={69}
                                 />
@@ -31,13 +31,13 @@ const Android = () => {
                     </div>
                     <div className='relative hidden lg:block'>
                         <Image src={'/assets/images/landing/BlankMob.png'}
-                            alt='android'
+                            alt='app screenshot'
                             width={276}
                             height={491}
                         />
                         <div className='absolute hidden xl:block top-[112px] left-[40px]'>
                         <Image src={'/assets/images/landing/interior.png'}
-                            alt='android'
+                            alt='app card screenshot'
                             width={200}
                             height={266}
                         />
@@ -45,7 +45,7 @@ const Android = () => {
                         </div>
                         <div className='absolute xl:hidden top-[112px] left-[40px]'>
                         <Image src={'/assets/images/landing/liteInterior.png'}
-                            alt='android'
+                            alt='download '
                             width={180}
                             height={240}
                         />
@@ -55,16 +55,8 @@ const Android = () => {
 
                 </div>
 
-                {/* </div> */}
                 <div />
             </div>
-            {/* mobile  */}
-            {/* <div className='lg:hidden pt-[93px]'>
-    hello
-
-</div> */}
-
-
         </div>
     )
 }

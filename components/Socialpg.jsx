@@ -45,7 +45,7 @@ const Socialpg = ({text1,type}) => {
         <div>
             <Link href={'#'}>
             
-            <Image src={`/assets/images/social/${type}/pdf.png`}  alt="deckLogo" width={50} height={50} />
+            <Image src={`/assets/images/social/${type}/pdf.png`}  alt="deck Logo" width={50} height={50} />
             </Link>
             <p className={`text-[10px] ${text1}`}>Download PDF</p>
         </div>

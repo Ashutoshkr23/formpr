@@ -22,7 +22,7 @@ const Benefits = () => {
                         heading={"Cutting Edge Designs."}
                         headingStyle={"md:text-[40px] text-[24px] leading-[120%]  font-bold md:pr-[86px] pr-[40px]"}
                         text={"Elevate Your Networking with Cutting-Edge Impressions."}
-                        textStyle={"md:pt-[22px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 font-bold"}
+                        textStyle={"md:pt-[22px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 text-black font-bold"}
                         img={"/assets/images/landing/blackCardSh.png"}
                         btncolor={"white"}
                         backContent={"From sleek minimalism to captivating artwork, our customizable designs ensure your digital card stands out in the Loop. "}
@@ -33,7 +33,7 @@ const Benefits = () => {
                         heading={"Limitless Flexibility."}
                         headingStyle={"text-[36px] leading-[120%]  md:text-[45px] md:pr-[42px] font-bold "}
                         text={"Edit and Adapt Your Digital Card Limitlessly."}
-                        textStyle={"pt-4 text-[16px] md:text-[24px] font-bold md:pr-28"}
+                        textStyle={"pt-4 text-[16px] md:text-[24px] text-black font-bold md:pr-28"}
                         btncolor={"black"}
                         backContent={" Stay in the Loop without missing a beat. Update your details endlessly, ensuring your card always reflects your latest achievements and information. "}
 
@@ -53,7 +53,7 @@ const Benefits = () => {
                         heading={"Fluid User Experience. "}
                         headingStyle={"text-[36px] leading-[120%]  md:text-[45px]  font-bold"}
                         text={"Effortless Networking Made  Beautifully Simple."}
-                        textStyle={"mt-7 leading-[120%] leading-[130%] text-[16px] md:text-[24px] pr-[65px] font-bold"}
+                        textStyle={"mt-7 leading-[120%] leading-[130%] text-[16px] md:text-[24px] pr-[65px] text-black font-bold"}
                         img={""}
                         btncolor={"black"}
                         backContent={' Purchase, personalize, and present your card with ease, creating an unforgettable experience for both you and the people you loop in.'}

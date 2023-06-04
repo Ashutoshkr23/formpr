@@ -43,7 +43,7 @@ function HorizontalCard2() {
                                             </div>
                                             <div className='flex flex-col pt-[98px]  '>
                                                 {isHeadingVisible && <h4 className='text-[45px] text-right font-bold animate-text'>
-                                                    <span className='text-white'> Footprint in </span><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0.</span>
+                                                    <span className='text-white'> Footprint in </span><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0</span>
                                                 </h4>}
                                                 {isTextVisible && <h4 className='text-[24px] text-right ml-0 font-bold pt-7 animate-text'>
                                                     <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3&apos;s Limitless Possibilities.</span><br />
@@ -84,7 +84,7 @@ function HorizontalCard2() {
                                         <div className='pt-[40px]   text-[36px] font-bold  '>
                                             <div className="flex flex-col px-6 md:px-12">
                                                 {isHeadingVisible && <div className=' animate-text text-[36px] md:text-[45px]  leading-[120%] md:leading font-bold'>
-                                                    <span className='text-white'>Footprint in </span><br /><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0.</span>
+                                                    <span className='text-white'>Footprint in </span><br /><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0</span>
                                                 </div>}
                                                 {isTextVisible && <div className=' animate-text text-[14px] md:text-[24px] pt-7 leading-[140%]  font-bold'>
                                                     <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3&apos;s Limitless </span>
