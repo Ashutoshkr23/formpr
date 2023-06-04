@@ -13,14 +13,14 @@ const Hero = () => {
                         Loop.
                     </span>
                 </h1>
-                <motion.h6
+                <motion.h3
                     className="sm:text-sm text-base mt-8 text-gray opacity-0"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 3 }}
                 >
                     Welcome to The Loop, a community of high-networking individuals connected through the next generation of NFC-enabled digital visiting cards. 
-                </motion.h6>
+                </motion.h3>
                 <motion.div
                     className="rounded-3xl   flex flex-col md:flex-row mt-8  md:mt-12 px-4 lg:min-w-[450px] w-full py-4"
                     initial={{ opacity: 0 }}
@@ -73,7 +73,7 @@ const Hero = () => {
                     >
                     <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
                         width={260}
-                        height={580}
+                        height={560}
                         quality={100}
                         alt='sample visiting card profile'
                         priority                        

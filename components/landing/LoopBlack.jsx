@@ -60,8 +60,8 @@ const LoopBlack = () => {
                             <h2 >Loop Black </h2>
                         </div>
                         <div className='text-[16px]  pt-2 max-w-[263px] text-white leading-[140%]'>
-                            <h3>Unveil the Power of <span className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>Darkness,</span></h3>
-                            <h3> Unleash Limitless Connections.</h3>
+                            <h3 className='text-white'>Unveil the Power of <span className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>Darkness,</span></h3>
+                            <h3 className='text-white'> Unleash Limitless Connections.</h3>
 
                         </div>
                         <div className='pt-9 text-[12px] max-w-[275px] text-white'>

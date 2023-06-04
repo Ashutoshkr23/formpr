@@ -117,8 +117,8 @@ function Products() {
                         </div>
                     </div>
                 </div>
-                    <Image src={'assets/images/landing/Right-Arrow.svg'} height={20} width={20} onClick={handlePrev} className='hidden md:block lg:hidden' />
-                    <Image src={'assets/images/landing/Right-Arrow.svg'} height={12} width={12} onClick={handlePrev} className='md:hidden lg:hidden' />
+                    <Image src={'assets/images/landing/Right-Arrow.svg'} alt="next product" height={20} width={20} onClick={handlePrev} className='hidden md:block lg:hidden' />
+                    <Image src={'assets/images/landing/Right-Arrow.svg'} alt="next product" height={12} width={12} onClick={handlePrev} className='md:hidden lg:hidden' />
             </div>
             </div>
         </div>
