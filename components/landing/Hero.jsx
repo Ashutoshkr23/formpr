@@ -64,7 +64,7 @@ const Hero = () => {
 
                         className='absolute  top-[200px] -right-[142px]'
                     >
-                        <Image src={'/assets/images/landing/LoopCard1.png'} width={220} height={177} alt='sample nfc visting card' quality={100} />
+                        <Image src={'/assets/images/landing/LoopCard1.png'} width={220} height={169} alt='sample nfc visting card' quality={100} />
                     </motion.div>
                    <motion.div
                         initial={{ y: -250 }}

@@ -20,7 +20,6 @@ function Products() {
             }
         };
 
-        console.log(numStep)
 
         window.addEventListener('resize', handleResize);
         handleResize();
