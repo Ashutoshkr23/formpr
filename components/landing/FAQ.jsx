@@ -1,5 +1,4 @@
 import {QA} from '@/components'
-import React from 'react'
 
 function FAQ() {
 

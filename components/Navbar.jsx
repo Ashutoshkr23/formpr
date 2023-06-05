@@ -51,7 +51,7 @@ const Navbar = () => {
           <button onClick={handleClick} className=''>
             <Image className='rounded-full'
               src={session.user.image}
-              alt="user image"
+              alt="user profile picture"
               width={30}
               height={30}
 

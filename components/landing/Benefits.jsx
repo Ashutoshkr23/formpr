@@ -2,7 +2,7 @@ import {Card, HorizontalCard1, HorizontalCard2} from '@/components';
 const Benefits = () => {
 
     return (
-        <div className='mt-[235px]  sm:px- md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
+        <div className=' mt-24 lg:mt-64  md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
             <div className='flex flex-col justify-center items-center'>
                 <h3 >
                     Benefits
@@ -22,8 +22,8 @@ const Benefits = () => {
                         heading={"Cutting Edge Designs."}
                         headingStyle={"md:text-[40px] text-[24px] leading-[120%]  font-bold md:pr-[86px] pr-[40px]"}
                         text={"Elevate Your Networking with Cutting-Edge Impressions."}
-                        textStyle={"md:pt-[22px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 font-bold"}
-                        img={"/assets/images/landing/CardnShadow.png"}
+                        textStyle={"md:pt-[22px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 text-black font-bold"}
+                        img={"/assets/images/landing/blackCardSh.png"}
                         btncolor={"white"}
                         backContent={"From sleek minimalism to captivating artwork, our customizable designs ensure your digital card stands out in the Loop. "}
                     />
@@ -33,7 +33,7 @@ const Benefits = () => {
                         heading={"Limitless Flexibility."}
                         headingStyle={"text-[36px] leading-[120%]  md:text-[45px] md:pr-[42px] font-bold "}
                         text={"Edit and Adapt Your Digital Card Limitlessly."}
-                        textStyle={"pt-4 text-[16px] md:text-[24px] font-bold md:pr-28"}
+                        textStyle={"pt-4 text-[16px] md:text-[24px] text-black font-bold md:pr-28"}
                         btncolor={"black"}
                         backContent={" Stay in the Loop without missing a beat. Update your details endlessly, ensuring your card always reflects your latest achievements and information. "}
 
@@ -53,7 +53,7 @@ const Benefits = () => {
                         heading={"Fluid User Experience. "}
                         headingStyle={"text-[36px] leading-[120%]  md:text-[45px]  font-bold"}
                         text={"Effortless Networking Made  Beautifully Simple."}
-                        textStyle={"mt-7 leading-[120%] leading-[130%] text-[16px] md:text-[24px] pr-[65px] font-bold"}
+                        textStyle={"mt-7 leading-[120%] leading-[130%] text-[16px] md:text-[24px] pr-[65px] text-black font-bold"}
                         img={""}
                         btncolor={"black"}
                         backContent={' Purchase, personalize, and present your card with ease, creating an unforgettable experience for both you and the people you loop in.'}
@@ -62,9 +62,9 @@ const Benefits = () => {
                     <Card
                         cardStyle={"relative  w-[300px] mx-auto mobile:w-[345px] h-[230px] md:w-[450px]         xl:w-[500px] md:h-[336px] drop-shadow-white bg-white  rounded-[20px]"}
                         heading={"Seamless  Sharing.  "}
-                        headingStyle={"md:text-[40px] leading-[120%]  md:pl-[32px] pl-[24px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-12"}
+                        headingStyle={"md:text-[40px] leading-[120%]  md:pl-[32px] pl-[24px] text-[24px] md:pr-[214px] pr-[130px] font-bold pt-10 lg:pt-12"}
                         text={"Embrace the App-Free Advantage of Loop Connections."}
-                        textStyle={"md:pt-[70px] w-[220px] md:w-[255px] pt-[47px] md:pl-[32px] pl-[24px] text-xs md:text-sm font-bold"}
+                        textStyle={"md:pt-[60px] leading-[186%] w-[230px] text-black md:w-[275px] pt-[47px] md:pl-[32px] pl-[24px] text-xs md:text-[14px] font-bold"}
                         img={"/assets/images/landing/PhoneinHand.png"}
                         backContent={'No downloads, no hassle. With Loop, your contacts open effortlessly in a WebView, making connections smooth and frictionless.' }
 

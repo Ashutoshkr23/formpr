@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion';
-import React from 'react'
 
 const Hero = () => {
     return (
@@ -13,31 +12,31 @@ const Hero = () => {
                         Loop.
                     </span>
                 </h1>
-                <motion.h6
+                <motion.h3
                     className="sm:text-sm text-base mt-8 text-gray opacity-0"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 3 }}
                 >
                     Welcome to The Loop, a community of high-networking individuals connected through the next generation of NFC-enabled digital visiting cards. 
-                </motion.h6>
+                </motion.h3>
                 <motion.div
-                    className="rounded-3xl drop-shadow-white bg-white flex mt-8  md:mt-12 px-4 lg:min-w-[450px] w-full py-4"
+                    className="rounded-3xl   flex flex-col md:flex-row mt-8  md:mt-12 px-4 lg:min-w-[450px] w-full py-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 3 }}
                 >
-                    <div className="flex-col w-1/3 ">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/Network.png"} alt=''/>
-                        <p className='text-xs  mt-4 font-bold'>Unparalleled Networking Possibilities</p>
+                    <div className="flex items-center md:items-start md:flex-col mt-7 md:w-1/3 ">
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/NetworkImg.png"} alt='networking'/>
+                        <p className='text-xs ml-4 md:ml-0  md:mt-4 font-bold'>Unparalleled Networking Possibilities</p>
                     </div>
-                    <div className="flex-col w-1/3">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/Info.png"} alt=''/>
-                        <p className='text-xs  mt-4 font-bold'>Seamless Information Exchange</p>
+                    <div className="flex items-center md:items-start md:flex-col mt-7 md:w-1/3">
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/InfoImg.png"} alt='information exchange visting card'/>
+                        <p className='text-xs ml-4 md:ml-0  md:mt-4 font-bold'>Seamless Information Exchange</p>
                     </div>
-                    <div className="flex-col w-1/3 pl-3">
-                        <Image height={"50"} width={"50"} src={"/assets/images/landing/Digital.png"} alt=''/>
-                        <p className='text-xs  mt-4 font-bold'>Amplified Digital Presence</p>
+                    <div className="flex items-center md:items-start md:flex-col mt-7 md:w-1/3 md:pl-3">
+                        <Image height={"50"} width={"50"} src={"/assets/images/landing/DigitalImg.png"} alt='visting card digital presence'/>
+                        <p className='text-xs ml-4 md:ml-0 md:mt-4 font-bold'>Amplified Digital Presence</p>
                     </div>
                    
                 </motion.div>
@@ -64,7 +63,7 @@ const Hero = () => {
 
                         className='absolute  top-[200px] -right-[142px]'
                     >
-                        <Image src={'/assets/images/landing/CardPink.png'} width={220} height={177} alt='sample nfc visting card' quality={100} />
+                        <Image src={'/assets/images/landing/LoopCard1.png'} width={220} height={169} alt='sample nfc visting card' quality={100} />
                     </motion.div>
                    <motion.div
                         initial={{ y: -250 }}
@@ -73,9 +72,9 @@ const Hero = () => {
                     >
                     <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
                         width={260}
-                        height={580}
+                        height={560}
                         quality={100}
-                        alt='mobile'
+                        alt='sample visiting card profile'
                         priority                        
                     />
                     </motion.div>
@@ -87,7 +86,7 @@ const Hero = () => {
                     <Image src={'/assets/images/landing/phone2.png'}
                         width={260}
                         height={154}
-                        alt='mobile'
+                        alt='sample visting card profile reflection'
                         quality={100}
                     /></motion.div>
                     <motion.div
@@ -98,7 +97,7 @@ const Hero = () => {
                         transition={{ duration: 2 }}
                     >
 
-                        <Image src={'/assets/images/landing/CardBlack.png'} width={244} height={177} alt='sample nfc visting card' quality={100} />
+                        <Image src={'/assets/images/landing/CardDark.png'} width={244} height={177} alt='sample nfc visting card' quality={100} />
 
                     </motion.div>                    
                 </div>
@@ -115,7 +114,7 @@ const Hero = () => {
 
                         className='absolute top-[175px] -right-[65px]  '
                     >
-                        <Image src={'/assets/images/landing/CardPink.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
+                        <Image src={'/assets/images/landing/LoopCard1.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
                     </motion.div>
                     <motion.div
                         initial={{ y: -70 }}
@@ -125,7 +124,7 @@ const Hero = () => {
                     <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
                         width={190}
                         height={400}
-                        alt='mobile'
+                        alt='smaple visting card profile'
                         priority
                     />
                     </motion.div>
@@ -136,7 +135,7 @@ const Hero = () => {
                    
                         className='absolute top-[100px] -left-[85px] '
                     >
-                    <Image src={'/assets/images/landing/CardBlack.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
+                    <Image src={'/assets/images/landing/CardDark.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
                     </motion.div>
                     
                     
@@ -151,7 +150,7 @@ const Hero = () => {
                     <Image src={'/assets/images/landing/phone2.png'}
                         width={190}
                         height={425}
-                        alt='mobile'
+                        alt='sample visting card profile reflection'
                         quality={100}
                     />
                 </motion.div>

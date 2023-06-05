@@ -1,9 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { signIn, useSession, getSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 
@@ -39,16 +37,19 @@ function LandingNavbar() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // const handleGoogleSignin = () => {
-  //   signIn('google', { callbackUrl: '/dashboard' });
-  // };
-  const handlelogin =()=>{
-    router.push('/login');
-
-  }
-
+ 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const { data: session, status } = useSession(); // Retrieve the session
+
+  const handlelogin = () => {
+    if (session) {
+      router.push('/dashboard');
+    } else {
+      router.push('/login');
+    }
   };
 
 
@@ -64,7 +65,7 @@ function LandingNavbar() {
               <ul className="flex content-center gap-8 my-auto ">
                 <li className=" text-sm w-[61px]  text-center hover:font-bold "><a href={`#product`}>Products</a></li>
                 <li className=" text-sm w-[70px]  text-center hover:font-bold "><a href="#story">Our Story</a></li>
-                <li className=" text-sm  w-[85px]  text-center hover:font-bold "><a href="#testimonial">Testimonials</a></li>
+                <li className=" text-sm  w-[85px]  text-center hover:font-bold "><a href="#partners">Partners</a></li>
                 <li className=" text-sm w-[30px]  text-center hover:font-bold "><a href="#faq">FAQ</a></li>
                 <li className=" text-sm  w-[53px]  text-center hover:font-bold  "><a href="#contact">Contact</a></li>
               </ul>
@@ -79,19 +80,20 @@ function LandingNavbar() {
 
         </div>
       </div>
-      {/*Mobiles*/}
+      
+      {/*Mobile and Tablet */}
       <div className='lg:hidden '>
         <nav className="bg-dark pl-2 pr-6 sm:px-4 py-2.5  w-full z-50 top-0 left-0">
           <div className="container flex flex-wrap items-center justify-between mx-auto">
             <a href="#" className="flex items-center">
-              <Image src={"/assets/images/landing/loop.svg"} alt='loop' width={50} height={22} />
+              <Image src={"/assets/images/landing/loops.png"} alt='loop' width={50} height={22} />
 
             </a>
             <div className="flex ">
              
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                type="button" className="inline-flex relative z-[100] items-center ">
+                type="button" className="mobileNavbar inline-flex relative z-[100] items-center ">
                 <div className='fixed  h-3.5 w-5'>
                   <div
                     className={` h-0.5 bg-black w-5 origin-top-left ease-in duration-200 rounded-md ${isOpen ? 'rotate-45 translate-x-px' : 'rotate-0'}`}
@@ -117,7 +119,7 @@ function LandingNavbar() {
                           <a href="#story" className="nav-link ">Our Story</a>
                         </div>
                         <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white ">
-                          <a href="#testimonial" className="nav-link ">Testimonials</a>
+                          <a href="#partners" className="nav-link ">Partners</a>
                         </div>
                         <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white ">
                           <a href="#faq" className="nav-link ">FAQ</a>

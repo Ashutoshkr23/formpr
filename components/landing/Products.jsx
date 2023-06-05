@@ -20,7 +20,6 @@ function Products() {
             }
         };
 
-        console.log(numStep)
 
         window.addEventListener('resize', handleResize);
         handleResize();
@@ -71,8 +70,8 @@ function Products() {
                 <div className='w-80 mt-12 md:mt-24  mobile:w-full max-w-[360px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center' onTouchStart={handleTouchStart}
                     onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}>
-                    <Image src={'assets/images/landing/Left-Arrow.svg'} height={20} width={20} onClick={handlePrev} className='hidden md:block lg:hidden' />
-                    <Image src={'assets/images/landing/Left-Arrow.svg'} height={12} width={12} onClick={handlePrev} className='md:hidden lg:hidden' />
+                    <Image src={'assets/images/landing/Left-Arrow.svg'} alt="previous product" height={20} width={20} onClick={handlePrev} className='hidden md:block lg:hidden' />
+                    <Image src={'assets/images/landing/Left-Arrow.svg'} alt= "next product" height={12} width={12} onClick={handlePrev} className='md:hidden lg:hidden' />
                 <div className='w-[280px] mobile:w-80 md:w-[700px] lg:w-full lg:max-w-[1020] xl:max-w-[1230px] xl:w-full h-full overflow-hidden '>
                     <div
                         className='w-[840px] mobile:w-[960px] md:w-[1050px]  lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] xl:w-full h-full flex'
@@ -99,7 +98,7 @@ function Products() {
                                     content={"Elevate your style with Loop Elevate cards. Featuring a selection of solid colors and gradient options, our cards are designed with a Loop logo that seamlessly blends in, exuding sophistication."}
                                     cardtype={"Pro"}
                                     text2={"Whisper your brand, we blend in.  "}
-                                    offering1={"Gradient Colours Added"}
+                                    offering1={"Solid + Gradient Colours"}
                                     offering2={"Blending Logo"}
                             />
                         </div>
@@ -117,8 +116,8 @@ function Products() {
                         </div>
                     </div>
                 </div>
-                    <Image src={'assets/images/landing/Right-Arrow.svg'} height={20} width={20} onClick={handlePrev} className='hidden md:block lg:hidden' />
-                    <Image src={'assets/images/landing/Right-Arrow.svg'} height={12} width={12} onClick={handlePrev} className='md:hidden lg:hidden' />
+                    <Image src={'assets/images/landing/Right-Arrow.svg'} alt="next product" height={20} width={20} onClick={handlePrev} className='hidden md:block lg:hidden' />
+                    <Image src={'assets/images/landing/Right-Arrow.svg'} alt="next product" height={12} width={12} onClick={handlePrev} className='md:hidden lg:hidden' />
             </div>
             </div>
         </div>

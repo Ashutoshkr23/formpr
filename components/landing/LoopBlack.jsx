@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 
 const LoopBlack = () => {
     return (
@@ -11,7 +10,8 @@ const LoopBlack = () => {
                             <h2 >Loop Black </h2>
                         </div>
                         <div className='text-[30px] xl:text-[40px] pt-9 text-white leading-[140%] pr-[16px] max-w-[652px]'>
-                            <h4>Unveil the Power of <span className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>Darkness,</span> Unleash Limitless Connections.</h4>
+                            <h4>Unveil the Power of <span className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>Darkness,</span></h4> 
+                            <h4>Unleash Limitless Connections.</h4>
 
                         </div>
                         <div className='pl-[13px] lg:max-w-[550px] xl:max-w-[604px]  pt-[76px] text-white lg:text-[10px] xl:text-[14px] leading-[164%]'>
@@ -25,7 +25,7 @@ const LoopBlack = () => {
 
 
                         </div>
-                        <div className='pt-[76px] pl-3 text-[#596573] text-[12px]'>
+                        <div className='pt-[76px] pl-3 text-[#A7A7A7] text-[12px]'>
                             <p>This card exudes exclusivity and leaves a lasting impression that&apos;s both refined and memorable.</p>
                         </div>
                     </div>
@@ -59,7 +59,8 @@ const LoopBlack = () => {
                             <h2 >Loop Black </h2>
                         </div>
                         <div className='text-[16px]  pt-2 max-w-[263px] text-white leading-[140%]'>
-                            <h3>Unveil the Power of <span className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>Darkness,</span> Unleash Limitless Connections.</h3>
+                            <h3 className='text-white'>Unveil the Power of <span className='text-transparent bg-gradient-to-r from-[#8EF8B7] to-[#090909] bg-clip-text'>Darkness,</span></h3>
+                            <h3 className='text-white'> Unleash Limitless Connections.</h3>
 
                         </div>
                         <div className='pt-9 text-[12px] max-w-[275px] text-white'>
@@ -75,7 +76,7 @@ const LoopBlack = () => {
 
                                 BUY NOW</button>
                         </div>
-                        <div className='pt-6 text-[10px] text-[#596573] leading-[140%] max-w-[245px]'>
+                        <div className='pt-6 text-[10px] text-[#A7A7A7] leading-[140%] max-w-[245px]'>
                             <p>This card exudes exclusivity and leaves a lasting impression that&apos;s both refined and memorable.</p>
                         </div>
                     </div>

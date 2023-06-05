@@ -39,7 +39,7 @@ function Swiper() {
   return (
     <div className='mt-20'>
       <div className='w-80 mobile:w-full max-w-[380px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center'>
-        <Image src={'assets/images/landing/Left-Arrow.svg'} height={20} width={20} onClick={handlePrev} />
+        <Image src={'assets/images/landing/Left-Arrow.svg'} alt="previous arrow" height={20} width={20} onClick={handlePrev} />
         <div className='w-[280px] mobile:w-80 md:w-[700px] lg:min-w-full lg:max-w-[1020] xl:max-w-[1230px] xl:w-full h-60 overflow-hidden '>
           <div
             className='w-[840px] mobile:w-[960px] md:w-[1050px]  lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] xl:w-full h-full flex'
@@ -73,7 +73,7 @@ function Swiper() {
             </div>
           </div>
         </div>
-        <Image src={'assets/images/landing/Right-Arrow.svg'} height={20} width={20} onClick={handleNext} />
+        <Image src={'assets/images/landing/Right-Arrow.svg'} alt="next arrow" height={20} width={20} onClick={handleNext} />
       </div>
     </div>
   );

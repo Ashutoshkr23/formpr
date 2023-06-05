@@ -23,9 +23,9 @@ body {
 
 .anim-typewriter {
     position: relative;
-    /* width: 24em; */
+    width: 24em;
     margin: 0 auto 0 0;
-    border-right: 2px solid rgba(255, 255, 255, .75);
+    /* border-right: 2px solid rgba(255, 255, 255, .75); */
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
