@@ -36,7 +36,7 @@ const Android = () => {
           </div>
           <div className="relative hidden lg:block">
             <Image
-              src={"/assets/images/landing/PhoneImage.png"}
+              src={"/assets/images/landing/androidPhoneImage.png"}
               alt="app screenshot"
               width={276}
               height={491}
