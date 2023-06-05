@@ -10,27 +10,29 @@ const Android = () => {
             <div className=" md:min-w-[610px] xl:min-w-[700px]  mx-auto text-transparent md:text-right bg-gradient-to-r from-[#66D3E1] to-[#96FFAD] bg-clip-text ">
               <h2>Android and iOS compatible </h2>
             </div>
-            <div className="flex flex-col items-end">
-              <div className=" flex flex-col items-center space-y-7 lg:space-y-0  lg:flex-row lg:justify-end lg:space-x-10 lg:pt-[51px] pt-[58px] ">
-                <div className="">
-                  <Image
-                    src={"/assets/images/landing/iosButton.png"}
-                    alt="download ios app"
-                    width={170}
-                    height={51}
-                  />
+            <div className="flex flex-col  lg:items-end items-center bg-red-200">
+              <div>
+                <div className=" flex flex-col items-center space-y-7 lg:space-y-0  lg:flex-row lg:justify-end lg:space-x-10 lg:pt-[51px] pt-[58px] ">
+                  <div className="">
+                    <Image
+                      src={"/assets/images/landing/iosButton.png"}
+                      alt="download ios app"
+                      width={170}
+                      height={51}
+                    />
+                  </div>
+                  <div className="">
+                    <Image
+                      src={"/assets/images/landing/androidButton.png"}
+                      alt="download android app"
+                      width={170}
+                      height={51}
+                    />
+                  </div>
                 </div>
-                <div className="">
-                  <Image
-                    src={"/assets/images/landing/androidButton.png"}
-                    alt="download android app"
-                    width={170}
-                    height={51}
-                  />
+                <div className=" lg:block pt-7 ">
+                  <h2>Coming soon</h2>
                 </div>
-              </div>
-              <div className="hidden lg:block pt-7 pr-14">
-                <h2>Coming soon</h2>
               </div>
             </div>
           </div>
