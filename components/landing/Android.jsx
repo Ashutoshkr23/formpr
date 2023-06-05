@@ -10,7 +10,7 @@ const Android = () => {
             <div className=" md:min-w-[610px] xl:min-w-[700px]  mx-auto text-transparent md:text-right bg-gradient-to-r from-[#66D3E1] to-[#96FFAD] bg-clip-text ">
               <h2>Android and iOS compatible </h2>
             </div>
-            <div className="flex flex-col  lg:items-end items-center bg-red-200">
+            <div className="flex flex-col  lg:items-end items-center ">
               <div>
                 <div className=" flex flex-col items-center space-y-7 lg:space-y-0  lg:flex-row lg:justify-end lg:space-x-10 lg:pt-[51px] pt-[58px] ">
                   <div className="">
