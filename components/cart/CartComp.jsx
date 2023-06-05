@@ -14,6 +14,18 @@ export default function CartComp(props) {
     const [totalAmount, setTotalAmount] = useState(0)
     const [totalQuantity, setTotalQuantity] = useState(0)
     const { data: session } = useSession()
+
+    const [isAnimate, setIsAnimate] = useState(false);
+
+    const handleClick = () => {
+        if (!isAnimate) {
+            setIsAnimate(true);
+            setTimeout(() => {
+                setIsAnimate(false);
+            }, 10000);
+        }
+    };
+
     useEffect(() => {
         if (cartItems.length > 0) {
             let totalQuantity = 0;
@@ -182,6 +194,25 @@ export default function CartComp(props) {
                             Cart Total : <span>₹{totalAmount}</span>
                         </h3>
                         <button onClick={() => submitFunc()}>checkout</button>
+                        <button className={`order ${isAnimate ? 'animate' : ''}`} onClick={handleClick}>
+                            <span className="default">Complete Order</span>
+                            <span className="success">
+                                Order Placed
+                                <svg viewBox="0 0 12 10">
+                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                </svg>
+                            </span>
+                            <div className="box"></div>
+                            <div className="truck">
+                                <div className="back"></div>
+                                <div className="front">
+                                    <div className="window"></div>
+                                </div>
+                                <div className="light top"></div>
+                                <div className="light bottom"></div>
+                            </div>
+                            <div className="lines"></div>
+                        </button>
                         <button className="clear-cart" onClick={() => clearCart()} >
                             Clear Cart
                         </button>

@@ -64,7 +64,7 @@ export const CartProvider = ({ children }) => {
         }
 
         const storedData = localStorage.getItem('cartData');
-        console.log(storedData, "ls dta")
+        // console.log(storedData, "ls dta")
         if (storedData) {
             setCartItems(JSON.parse(storedData))
         }
@@ -80,7 +80,7 @@ export const CartProvider = ({ children }) => {
 
     }, [session])
 
-
+    console.log(cartItems, "cartItems")
     // Function to add an item to the cart
 
 
