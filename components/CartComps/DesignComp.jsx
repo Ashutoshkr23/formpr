@@ -1,7 +1,14 @@
+import { CartContext } from '@/context/CartContext';
 import Image from 'next/image'
-import React from 'react'
+import React, { useContext, useState } from 'react'
 
-const DesignComp = () => {
+const DesignComp = ({ cardTypeSelected, handleCardSelection, totalAmount, totalQuantity, selectedTypeIndex }) => {
+    const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
+    // console.log(cardTypeSelected, "Cards")
+
+
+
+
     return (
         <div className='w-full mt-10'>
             <div className="flex">
@@ -25,45 +32,47 @@ const DesignComp = () => {
                             </div>
                             <div>
                                 <div className='w-[5.5rem] h-6 bg-white rounded-xl flex justify-between'>
-                                    <span className='bg-[#cfcfcf] rounded-full h-6 w-6 text-center cursor-pointer'>-</span>
-                                    <span className='text-md'>1</span>
-                                    <span className='bg-[#cfcfcf] rounded-full h-6 w-6 text-center cursor-pointer'>+</span>
-
+                                    <span className='bg-[#cfcfcf] rounded-full h-6 w-6 text-center cursor-pointer' onClick={() => minusCartFunc(cardTypeSelected?._id)}>-</span>
+                                    <span className='text-md'>{cardTypeSelected?.quantity}</span>
+                                    <span className='bg-[#cfcfcf] rounded-full h-6 w-6 text-center cursor-pointer' onClick={() => plusCartFunc(cardTypeSelected?._id)} >+</span>
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
 
                 </div>
                 <div className="w-2/5">
                     <div className='flex flex-col space-y-2'>
                         <div className="w-56 h-14">
-                            <div className="flex items-center justify-center h-full  bg-gradient-to-r from-green-300 to-green-200 rounded-lg">
-                                <p className="text-base font-bold leading-7 text-center">Loop Lite</p>
+                            <div className={`flex relative cursor-pointer items-center justify-center h-full ${selectedTypeIndex == 0 ? " bg-gradient-to-r from-green-300 to-green-200 " : "bg-black"} rounded-lg`} onClick={() => { handleCardSelection(0) }} >
+                                <p className={`text-base font-bold leading-7 text-center ${selectedTypeIndex == 0 ? "text-black" : "text-white"}`}>Loop Lite</p>
+                                {cartItems[0].quantity > 0 && <span className='text-md font-semibold h-8 w-8 top-[-10px] right-[-10px] text-center pt-1 z-50  bg-slate-100  drop-shadow-2xl shadow-2xl rounded-full absolute'>{cartItems[0].quantity}</span>}
+
+                            </div>
+
+                        </div>
+                        <div className="w-56 h-14">
+                            <div className={`flex relative cursor-pointer items-center justify-center h-full ${selectedTypeIndex == 1 ? " bg-gradient-to-r from-green-300 to-green-200 " : "bg-black"} rounded-lg`} onClick={() => { handleCardSelection(1) }}>
+                                <p className={`text-base font-bold leading-7 text-center ${selectedTypeIndex == 1 ? "text-black" : "text-white"}`}>Loop Elevate</p>
+                                {cartItems[1].quantity > 0 && <span className='text-md font-semibold h-8 w-8 top-[-10px] right-[-10px] text-center pt-1 z-50  bg-slate-100 drop-shadow-2xl shadow-2xl rounded-full absolute'>{cartItems[1].quantity}</span>}
                             </div>
                         </div>
                         <div className="w-56 h-14">
-                            <div className="flex items-center justify-center  h-full  bg-black rounded-lg">
-                                <p className=" text-base font-bold leading-7 text-center text-white">Loop Elevate</p>
+                            <div className={`flex relativecursor-pointer items-center justify-center h-full ${selectedTypeIndex == 2 ? " bg-gradient-to-r from-green-300 to-green-200 " : "bg-black"} rounded-lg`} onClick={() => { handleCardSelection(2) }}>
+                                <p className={`text-base font-bold leading-7 text-center ${selectedTypeIndex == 2 ? "text-black" : "text-white"}`}>Loop Supreme</p>
+                                {cartItems[2].quantity > 0 && <span className='text-md font-semibold h-8 w-8 top-[-10px] right-[-10px] text-center pt-1 z-50  bg-slate-100 drop-shadow-2xl shadow-2xl rounded-full absolute'>{cartItems[2].quantity}</span>}
                             </div>
                         </div>
                         <div className="w-56 h-14">
-                            <div className="flex items-center justify-center  h-full  bg-black rounded-lg">
-                                <p className="text-base font-bold leading-7 text-center text-white">Loop Supreme</p>
+                            <div className={`flex relative cursor-pointer items-center justify-center h-full ${selectedTypeIndex == 3 ? " bg-gradient-to-r from-green-300 to-green-200 " : "bg-black"} rounded-lg`} onClick={() => { handleCardSelection(3) }}>
+                                <p className={`text-base font-bold leading-7 text-center ${selectedTypeIndex == 3 ? "text-black" : "text-white"}`}>Loop Black</p>
+                                {cartItems[3].quantity > 0 && <span className='text-md font-semibold h-8 w-8 top-[-10px] right-[-10px] text-center pt-1 z-50  bg-slate-100  shadow-2xl rounded-full absolute'>{cartItems[3].quantity}</span>}
                             </div>
                         </div>
                         <div className="w-56 h-14">
-                            <div className="flex items-center justify-center  h-full  bg-black rounded-lg">
-                                <p className=" text-base font-bold leading-7 text-center text-white">Loop Black</p>
-                            </div>
-                        </div>
-                        <div className="w-56 h-14">
-                            <div className="flex flex-col items-center justify-center  h-full border border-black  rounded-lg">
+                            <div className="flex cursor-pointer flex-col items-center justify-center  h-full border border-black  rounded-lg">
                                 <p className="text-sm  font-semibold ">Total Quantity :</p>
-                                <p className='text-sm font-semibold'>3</p>
+                                <p className='text-sm font-semibold'>{totalQuantity}</p>
                             </div>
                         </div>
 
