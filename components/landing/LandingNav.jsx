@@ -39,16 +39,19 @@ function LandingNavbar() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // const handleGoogleSignin = () => {
-  //   signIn('google', { callbackUrl: '/dashboard' });
-  // };
-  const handlelogin =()=>{
-    router.push('/login');
-
-  }
-
+ 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const { data: session, status } = useSession(); // Retrieve the session
+
+  const handlelogin = () => {
+    if (session) {
+      router.push('/dashboard');
+    } else {
+      router.push('/login');
+    }
   };
 
 
