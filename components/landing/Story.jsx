@@ -89,7 +89,7 @@ const Story = () => {
             </div>
             <div className="pt-10">
               <Image
-                src={"/assets/images/landing/ourStoryphone2.png"}
+                src={"/assets/images/landing/storyPhoneImages.png"}
                 alt="phone 2"
                 height={252}
                 width={345}
