@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { IoIosAddCircle, IoMdAddCircle, } from 'react-icons/io';
+import {  IoMdAddCircle, } from 'react-icons/io';
 import { RxCrossCircled } from 'react-icons/rx';
 import ScrollTrigger from 'react-scroll-trigger';
-import { motion } from 'framer-motion';
 
 
 
