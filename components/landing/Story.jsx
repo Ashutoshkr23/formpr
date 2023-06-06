@@ -68,10 +68,10 @@ const Story = () => {
 
               <div className="text-black  pt-7 min-w-[282px] ">
                 <p className="text-[12px] md:text-[16px] font-bold">
-                  <span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text">
+                  <span className="text-transparent bg-gradient-to-br from-[#F16869] to-[#FDFF96] bg-clip-text">
                     At Loop, we&apos;re passionate about making{" "}
                   </span>
-                  <span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#F16869] bg-clip-text">
+                  <span className="text-transparent bg-gradient-to-br from-[#F16869] to-[#FDFF96] bg-clip-text">
                     networking effortless and eco-friendly.{" "}
                   </span>{" "}
                 </p>

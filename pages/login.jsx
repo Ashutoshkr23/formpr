@@ -35,7 +35,6 @@ function Login() {
     if (response.error) {
       console.error('Error sending link:', response.error);
     } else {
-      console.log('Magic link sent');
       setModalMessage('Link sent in your email.');
       setIsModalVisible(true);
     }
@@ -90,7 +89,7 @@ function Login() {
 
       <div className='lg:w-3/5 w-full  pt-8 lg:h-full  '>
         <div className=' hidden sm:block xl:pl-[114px] lg:pl-[50px] sm:pl-[100px] '>
-        <Image src={"/assets/images/landing/loops.png"} alt='loop logo' width={74} height={32} />
+          <Image src={"/assets/images/landing/loops.png"} alt='loop logo' width={74} height={32} />
 
         </div>
         {/* <div className='  sm:hidden pt-8 pl-[50px] '>
@@ -99,88 +98,88 @@ function Login() {
         </div> */}
 
         <div className='flex flex-col items-center pt-[90px] sm:pt-16'>
-        <div className='lg:max-w-[435px] mobile:w-[250px] sm:w-[400px] text-center'>
-          <h2>Welcome to the Loop.</h2>
-        </div>
-        <div className='pt-12 text-[14px]'>
-  <p>Enter your email</p>
-        </div>
-        <div className='flex flex-col items-center'>
-        <form className=' flex flex-col items-center mt-8' onSubmit={handleSubmit} >
-                  <div className={`flex flex-col mobile:w-[250px] sm:w-[389px]  h-8 `}>
-                      <input
-                          type="email"
-                          name='email'
-                          placeholder='Email '
-                          className='w-full h-full text-black rounded-[10px] border outline-none px-4'
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                      />
-                      
-                  </div>
-                  <div className=" mt-7 text-[16px]  ">
-                      <button type='submit' className="signIn bg-black w-[120px] sm:w-[165px] h-10  text-white font-bold rounded-[10px] ">
-                          Sign In
-                      </button>
-                  </div>
-                  
-              </form>
-              <div className='text-[12px] pt-7'>
-                <p>Or</p>
+          <div className='lg:max-w-[435px] mobile:w-[250px] sm:w-[400px] text-center'>
+            <h2>Welcome to the Loop.</h2>
+          </div>
+          <div className='pt-12 text-[14px]'>
+            <p>Enter your email</p>
+          </div>
+          <div className='flex flex-col items-center'>
+            <form className=' flex flex-col items-center mt-8' onSubmit={handleSubmit} >
+              <div className={`flex flex-col mobile:w-[250px] sm:w-[389px]  h-8 `}>
+                <input
+                  type="email"
+                  name='email'
+                  placeholder='Email '
+                  className='w-full h-full text-black rounded-[10px] border outline-none px-4'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+
               </div>
-              <div onClick={handleGoogleSignin} className='flex items-center pt-7 space-x-4 cursor-pointer'>
-                <div>
-             <p className='text-[14px] leading-[186%]'>Sign in with</p>
-                </div>
-            <div>
-              <Image src={'/assets/images/landing/googlesign.png'}
-              alt='google sign in'
-              height={40}
-              width={39}
-              />
+              <div className=" mt-7 text-[16px]  ">
+                <button type='submit' className="signIn bg-black w-[120px] sm:w-[165px] h-10  text-white font-bold rounded-[10px] ">
+                  Sign In
+                </button>
+              </div>
+
+            </form>
+            <div className='text-[12px] pt-7'>
+              <p>Or</p>
             </div>
+            <div onClick={handleGoogleSignin} className='flex items-center pt-7 space-x-4 cursor-pointer'>
+              <div>
+                <p className='text-[14px] leading-[186%]'>Sign in with</p>
               </div>
-              <div className='mt-[60px] mb-0 relative items-center flex  space-x-4 rounded-[10px] h-[72px] xl:h-[101px] w-[310px] mobile:w-[342px] sm:w-[450px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
-<div className='xl:pl-[100px] pl-[30px] sm:pl-[90px]  lg:pl-[50px]'>
-<h4 className='xl:text-[36px] sm:text-[24px] mobile:text-[18px] text-[14px] font-bold'>100+</h4>
-</div>
-<div className=''>
-  <p className='xl:text-[14px] md:text-[12px] text-[10px]  leading-[186%]'>Total preorders received!</p>
-</div>
-<div className='hidden xl:block absolute right-10 bottom-5'>
-  <Image src={'/assets/images/landing/logincard.png'}
-  height={106}
-  width={147}
-  alt='preorder cards'
-  quality={100}/>
-</div>
-<div className='hidden mobile:block xl:hidden absolute right-2 bottom-5'>
-  <Image src={'/assets/images/landing/logincard.png'}
-  height={90}
-  width={120}
-  alt='preorder cards'
-  quality={100}/>
-</div>
-<div className='mobile:hidden absolute right-5 bottom-7'>
-  <Image src={'/assets/images/landing/logincard.png'}
-  height={60}
-  width={90}
-  alt='preorder cards'
-  quality={100}/>
-</div>
+              <div>
+                <Image src={'/assets/images/landing/googlesign.png'}
+                  alt='google sign in'
+                  height={40}
+                  width={39}
+                />
               </div>
-        </div>
+            </div>
+            <div className='mt-[60px] mb-0 relative items-center flex  space-x-4 rounded-[10px] h-[72px] xl:h-[101px] w-[310px] mobile:w-[342px] sm:w-[450px] lg:w-[400px] xl:w-[582px] bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] '>
+              <div className='xl:pl-[100px] pl-[30px] sm:pl-[90px]  lg:pl-[50px]'>
+                <h4 className='xl:text-[36px] sm:text-[24px] mobile:text-[18px] text-[14px] font-bold'>100+</h4>
+              </div>
+              <div className=''>
+                <p className='xl:text-[14px] md:text-[12px] text-[10px]  leading-[186%]'>Total preorders received!</p>
+              </div>
+              <div className='hidden xl:block absolute right-10 bottom-5'>
+                <Image src={'/assets/images/landing/logincard.png'}
+                  height={106}
+                  width={147}
+                  alt='preorder cards'
+                  quality={100} />
+              </div>
+              <div className='hidden mobile:block xl:hidden absolute right-2 bottom-5'>
+                <Image src={'/assets/images/landing/logincard.png'}
+                  height={90}
+                  width={120}
+                  alt='preorder cards'
+                  quality={100} />
+              </div>
+              <div className='mobile:hidden absolute right-5 bottom-7'>
+                <Image src={'/assets/images/landing/logincard.png'}
+                  height={60}
+                  width={90}
+                  alt='preorder cards'
+                  quality={100} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-          <div className='lg:w-2/5 w-full mt-11 lg:mt-0  bg-[#090909]  '>
-           <div className='sm:pt-[140px] pt-11  flex flex-col  items-center h-[307px] sm:h-[500px] h- lg:h-screen'>
-            
-            <div className=' text-transparent bg-gradient-to-br from-[#FDFF96] to-[#96FFAD] bg-clip-text'>
-              <h4 className='text-[20px] sm:text-[32px] md:text-[36px] font-bold leading-[186%]'>Taking orders in 
-             </h4>
-            </div>
+      <div className='lg:w-2/5 w-full mt-11 lg:mt-0  bg-[#090909]  '>
+        <div className='sm:pt-[140px] pt-11  flex flex-col  items-center h-[307px] sm:h-[500px] h- lg:h-screen'>
 
-      {Counter && (     <div className=' pt-14  max-w-[286px]  flex justify-center space-x-5 sm:space-x-8 text-white'> 
+          <div className=' text-transparent bg-gradient-to-br from-[#FDFF96] to-[#96FFAD] bg-clip-text'>
+            <h4 className='text-[20px] sm:text-[32px] md:text-[36px] font-bold leading-[186%]'>Taking orders in
+            </h4>
+          </div>
+
+          {Counter && (<div className=' pt-14  max-w-[286px]  flex justify-center space-x-5 sm:space-x-8 text-white'>
             <div className='flex flex-col  '>
               <h1>{counter.days} </h1>
               <p className='sm:text-[16px] text-sm pl-4'>Days</p>
@@ -199,7 +198,7 @@ function Login() {
 
             </div>
 
-          </div>)} 
+          </div>)}
 
         </div>
       </div>

@@ -9,7 +9,6 @@ import LoopCards from './dashboardComps/LoopCards';
 
 const HomeComp = () => {
     const { cartItems, plusCartFunc, minusCartFunc, handleItemCount } = useContext(CartContext);
-    console.log(cartItems, "a")
     return (
 
         <div className='w-full  min-h-screen py-5'>

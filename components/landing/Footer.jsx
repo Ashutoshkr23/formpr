@@ -62,7 +62,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex flex-col ">
+            <div className="flex flex-col pt-6 ">
               <div className="flex flex-col gap-y-4 ">
                 <div className="text-[14px] font-bold">
                   <p>contact us </p>
@@ -72,7 +72,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="flex items-center  space-x-1 pt-7 ">
+              <div className="flex items-center  space-x-4 pt-6  ">
                 <div className="text-xs">
                   <p>Made with love by</p>
                 </div>

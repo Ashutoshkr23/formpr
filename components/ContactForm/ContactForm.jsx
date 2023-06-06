@@ -25,7 +25,6 @@ const ContactForm = ({ cuuid }) => {
   const handleTemplateChange = (event) => {
     const value = parseInt(event.target.value);
     setSelectedTemplate(value);
-    console.log('Current template:', value);
   };
 
 
@@ -87,7 +86,6 @@ const ContactForm = ({ cuuid }) => {
   //   try {
   //     const data = { ...values, template, cuuid };
   //     const response = await axios.post('/api/contact', data);
-  //     console.log(response.data.message);
 
   //     resetForm();
   //   } catch (error) {
@@ -109,7 +107,6 @@ const ContactForm = ({ cuuid }) => {
       // for now this is demo themeid it should be coming from form
       formData.append("themeId", "7384c851-741b-489f-b384-e9f7ee36470a")
       const response = await axios.post('/api/handleFormData', formData);
-      console.log(response.data.message, "Response");
 
       // resetForm();
     } catch (error) {

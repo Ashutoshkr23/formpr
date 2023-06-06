@@ -14,14 +14,12 @@ export default function ContactDetails() {
 
   useEffect(() => {
     const { slug } = router.query;
-// console.log(slug)
     async function fetchContact() {
       const res = await fetch(`/api/contact?cardUuid=${slug}`);
       const data = await res.json();
       if (data.contact) {
         setContact(data.contact);
       }
-      console.log(contact)
     }
 
     fetchContact();
@@ -41,26 +39,25 @@ END:VCARD`;
     // Save the Blob as a file using the file-saver library
     saveAs(blob, `${contact.firstName} ${contact.lastName}.vcf`);
   };
-// const name=contact.firstName +" "+ contact.lastName;
-// console.log(name)
+  // const name=contact.firstName +" "+ contact.lastName;
   return (
     <div className='bg-black '>
 
-<div className=" bg-gradient-to-b from-[#D2FFEC] via-[#F16869] to-[#FF932F] w-full mx-auto sm:w-[640px] pt-[146px]">
-{contact ? (
-<div className='relative px-6 bg-gradient-to-b from-[#FFFFFF] to-[#B0B0B0] mx-auto h-[612px] w-[351px] rounded-[20px]'>
+      <div className=" bg-gradient-to-b from-[#D2FFEC] via-[#F16869] to-[#FF932F] w-full mx-auto sm:w-[640px] pt-[146px]">
+        {contact ? (
+          <div className='relative px-6 bg-gradient-to-b from-[#FFFFFF] to-[#B0B0B0] mx-auto h-[612px] w-[351px] rounded-[20px]'>
 
 
-  
-      <div className='-top-16 inset-0 mx-auto absolute'>      <ProfileImg/></div>  
 
-          <div className='flex justify-center pt-[52px] font-semibold text-[20px]'>{contact.firstName} {contact.lastName}</div>
-          <div className='flex justify-center mt-[11px] font-semibold text-[16px]'>Design Lead</div>
-      <div><Bio phone={contact.mobileNumber}/></div> 
-       <div><Social/></div> 
-     <div className=''><button className='  bg-black font-bold text-[20px] text-white h-[50px] w-[304px] rounded-[14px] mt-[31px]' onClick={downloadVCard}>SAVE CONTACT</button>  </div>  
+            <div className='-top-16 inset-0 mx-auto absolute'>      <ProfileImg /></div>
 
-          {/* <h1>Name: {contact.firstName} {contact.lastName}</h1>
+            <div className='flex justify-center pt-[52px] font-semibold text-[20px]'>{contact.firstName} {contact.lastName}</div>
+            <div className='flex justify-center mt-[11px] font-semibold text-[16px]'>Design Lead</div>
+            <div><Bio phone={contact.mobileNumber} /></div>
+            <div><Social /></div>
+            <div className=''><button className='  bg-black font-bold text-[20px] text-white h-[50px] w-[304px] rounded-[14px] mt-[31px]' onClick={downloadVCard}>SAVE CONTACT</button>  </div>
+
+            {/* <h1>Name: {contact.firstName} {contact.lastName}</h1>
           <p>Mobile Number: {contact.mobileNumber}</p>
           <p>Company Number: {contact.companyNumber}</p>
           <p>Email: {contact.email}</p>
@@ -68,13 +65,13 @@ END:VCARD`;
           <p>Deck: {contact.deck}</p>
           <button className='bg-green-600 text-white' onClick={downloadVCard}>Add Contact</button>  */}
 
-      
-</div>
-) : (
-  <p>Loading...</p>
-)} 
-     <div className='text-[10px] flex justify-center mt-8 pb-[29px]'>made with love by <Image className='ml-3' alt='loop' src={'/loop.png'} width={27} height={12}/></div>
-    </div>
+
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+        <div className='text-[10px] flex justify-center mt-8 pb-[29px]'>made with love by <Image className='ml-3' alt='loop' src={'/loop.png'} width={27} height={12} /></div>
+      </div>
     </div>
   );
 }

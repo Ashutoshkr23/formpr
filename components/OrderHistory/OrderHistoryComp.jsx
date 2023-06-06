@@ -1,7 +1,6 @@
 import React from 'react'
 
 const OrderHistoryComp = ({ orderHistory }) => {
-    console.log(orderHistory, "orderHistory")
     let data = orderHistory
     for (let i = 0; i < data.length; i++) {
         // Access the object at the current index

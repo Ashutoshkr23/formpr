@@ -6,6 +6,7 @@ import ProfileImg from '@/components/ProfileImg';
 import Bio from '@/components/Bio';
 import Social from '@/components/Social';
 import Image from 'next/image';
+import axios from 'axios';
 //import Navbar from '@/components/Navbar';
 
 export default function ContactDetails() {
@@ -14,14 +15,21 @@ export default function ContactDetails() {
 
   useEffect(() => {
     const { slug } = router.query;
-// console.log(slug)
     async function fetchContact() {
       const res = await fetch(`/api/contact?cardUuid=${slug}`);
       const data = await res.json();
       if (data.contact) {
         setContact(data.contact);
+
+        console.clear();
+
+        const cardUuid = data.contact.cardUuid;
+        const userEmail = data.contact.email;
+
+        const sendDataToAPI = { cardUuid, userEmail }
+
+        const settingRemainder = await axios.post('http://localhost:3000/api/setRemainder', sendDataToAPI)
       }
-      console.log(contact)
     }
 
     fetchContact();
@@ -41,32 +49,31 @@ END:VCARD`;
     // Save the Blob as a file using the file-saver library
     saveAs(blob, `${contact.firstName} ${contact.lastName}.vcf`);
   };
-// const name=contact.firstName +" "+ contact.lastName;
-// console.log(name)
+  // const name=contact.firstName +" "+ contact.lastName;
   return (
     <div className='bg-black '>
 
-<div className=" bg-gradient-to-b from-[#D2FFEC] via-[#F16869] to-[#FF932F] w-full mx-auto sm:w-[640px] pt-[146px]">
-{contact ? (
-<div className='relative px-6 bg-gradient-to-b from-[#FFFFFF] to-[#B0B0B0] mx-auto h-[612px] w-[351px] rounded-[20px]'>
+      <div className=" bg-gradient-to-b from-[#D2FFEC] via-[#F16869] to-[#FF932F] w-full mx-auto sm:w-[640px] pt-[146px]">
+        {contact ? (
+          <div className='relative px-6 bg-gradient-to-b from-[#FFFFFF] to-[#B0B0B0] mx-auto h-[612px] w-[351px] rounded-[20px]'>
 
 
-  
-      <div className='-top-16 inset-0 mx-auto absolute h-[100px] w-[100px] '>      <ProfileImg/></div>  
 
-          <div className='flex justify-center pt-[52px] font-semibold text-[20px]'>{contact.firstName} {contact.lastName}</div>
-          <div className='flex justify-center mt-[11px] font-semibold text-[16px]'>Design Lead</div>
-      <div><Bio phone={contact.mobileNumber}/></div> 
-       <div><Social/></div> 
-     <div className=''><button className='  bg-black font-bold text-[20px] text-white h-[50px] w-[304px] rounded-[14px] mt-[31px]' onClick={downloadVCard}>SAVE CONTACT</button>  </div>  
+            <div className='-top-16 inset-0 mx-auto absolute h-[100px] w-[100px] '>      <ProfileImg /></div>
 
-      
-</div>
-) : (
-  <p>Loading...</p>
-)} 
-     <div className='text-[10px] flex justify-center mt-8 pb-[29px]'>made with love by <Image className='ml-3' alt='loop' src={'/loop.png'} width={27} height={12}/></div>
-    </div>
+            <div className='flex justify-center pt-[52px] font-semibold text-[20px]'>{contact.firstName} {contact.lastName}</div>
+            <div className='flex justify-center mt-[11px] font-semibold text-[16px]'>Design Lead</div>
+            <div><Bio phone={contact.mobileNumber} /></div>
+            <div><Social /></div>
+            <div className=''><button className='  bg-black font-bold text-[20px] text-white h-[50px] w-[304px] rounded-[14px] mt-[31px]' onClick={downloadVCard}>SAVE CONTACT</button>  </div>
+
+
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+        <div className='text-[10px] flex justify-center mt-8 pb-[29px]'>made with love by <Image className='ml-3' alt='loop' src={'/loop.png'} width={27} height={12} /></div>
+      </div>
     </div>
   );
 }

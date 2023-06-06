@@ -27,7 +27,6 @@ export const CartProvider = ({ children }) => {
                     setAllCards(response.data.result)
                 }
             }
-            // console.log(response, "userCards")
         }
 
         const fetchUserProfile = async () => {
@@ -45,7 +44,6 @@ export const CartProvider = ({ children }) => {
                     }
                 }
             }
-            // console.log(response, "resp ")
         }
         const fetchCartType = async () => {
             const requestData = await fetch(`/api/cardType`)
@@ -60,11 +58,9 @@ export const CartProvider = ({ children }) => {
             setCartItems(newArray)
             setDefaultCart(newArray)
             localStorage.setItem('cartData', JSON.stringify(newArray));
-            // console.log(cardType, "cardTypeee")
         }
 
         const storedData = localStorage.getItem('cartData');
-        // console.log(storedData, "ls dta")
         if (storedData) {
             setCartItems(JSON.parse(storedData))
         }
@@ -80,7 +76,6 @@ export const CartProvider = ({ children }) => {
 
     }, [session])
 
-    console.log(cartItems, "cartItems")
     // Function to add an item to the cart
 
 
