@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
     return (
 
-        <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col mt-20 lg:mt-28 lg:px-4 lg:pb-36  xl:px-0'>
+        <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col mt-20 lg:mt-28 lg:px-4 lg:pb-  xl:px-0'>
 
             <div className="flex flex-col items-center lg:items-start mt-12  lg:mt-0  px-2  mobile:px-4 md:px-0 mx-auto lg:mx-0 max-w-[456px] xl:max-w-[680px] ">
                 <h1 className=' mr-auto text-left anim-typewriter  font-bold '>
@@ -115,12 +115,17 @@ const Hero = () => {
             </div>
             {/*Desktop and tab view */ }
 
-            <div className=' hidden md:block  mx-auto lg:ml-auto lg:mx-0 lg:pr-32'>
+            <motion.div className=' hidden md:block mx-auto lg:ml-auto lg:mx-0 lg:pr-32'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 , delay:5  }}
+                
+            >
                 <div className=' relative h-[580px] w-[260px]  '>
                     < motion.div
                         initial={{ x: 150 }}
                         animate={{ x: 0 }}
-                        transition={{ duration: 2 }}
+                        transition={{ duration: 2, delay: 5 }}
 
                         className='absolute  top-[200px] -right-[142px]'
                     >
@@ -129,7 +134,7 @@ const Hero = () => {
                    <motion.div
                         initial={{ y: -250 }}
                         animate={{ y: 0 }} 
-                        transition={{ duration: 2 }}
+                        transition={{ duration: 2, delay: 5 }}
                     >
                     <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
                         width={260}
@@ -142,7 +147,7 @@ const Hero = () => {
                     <motion.div 
                         initial={{ y: 200}}
                         animate={{ y: 0 }} 
-                        transition={{ duration: 2 }}
+                        transition={{ duration: 2, delay: 5 }}
                         className='absolute top-[550px] '>
                     <Image src={'/assets/images/landing/phone2.png'}
                         width={260}
@@ -155,14 +160,14 @@ const Hero = () => {
                         className='absolute top-[90px] -left-[185px] shadow-white  mr-4'
                         initial={{ x: -150 }}
                         animate={{ x: 0 }}
-                        transition={{ duration: 2 }}
+                        transition={{ duration: 2, delay: 5 }}
                     >
 
                         <Image src={'/assets/images/landing/CardDark.png'} width={244} height={177} alt='sample nfc visting card' quality={100} />
 
                     </motion.div>                    
                 </div>
-            </div>
+            </motion.div>
 
             {/*mobile view */}
 
