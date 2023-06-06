@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="" id="contact">
       <div className="hidden md:block">
         <div className="bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96]">
-          <div className="flex justify-between items-center h-[262px] max-w-[1208px] mx-auto ">
+          <div className="flex justify-between items-center h-[200px] max-w-[1208px] mx-auto ">
             <div className="hidden lg:block ">
               <Image
                 src={"/assets/images/landing/footerloop.svg"}
@@ -46,7 +46,7 @@ const Footer = () => {
                     </a>
                   </div>
                   <div>
-                    <a href="#">
+                    <a href="https://www.linkedin.com/company/loop-card/" target="_blank">
                       <Image
                         src={"/assets/images/landing/footerlink.png"}
                         height={32}
@@ -128,7 +128,7 @@ const Footer = () => {
               </a>
             </div>
             <div>
-              <a href="#">
+              <a href="https://www.linkedin.com/company/loop-card/" target="_blank">
                 <Image
                   src={"/assets/images/landing/footerlink.png"}
                   height={32}

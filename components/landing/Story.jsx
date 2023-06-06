@@ -15,7 +15,7 @@ const Story = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 2 }}>
+              transition={{duration:1 , delay: 2 }}>
             <Image
               src={"/assets/images/landing/ourStory.png"}
               alt="mystoryphone"
@@ -104,7 +104,7 @@ const Story = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 2 }}>
+              transition={{ duration: 1 , delay: 2 }}>
               <Image
                 src={"/assets/images/landing/storyPhoneImages.png"}
                 alt="phone 2"
