@@ -4,7 +4,7 @@ import { IoMdAddCircle } from 'react-icons/io';
 import { RxCrossCircled } from 'react-icons/rx';
 import ScrollTrigger from 'react-scroll-trigger';
 
-function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontContent, backContent, btncolor }) {
+function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontContent, backContent, btncolor , pstyle }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isCardVisible, setIsCardVisible] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(false);
@@ -57,9 +57,19 @@ function Card({ cardStyle, heading, headingStyle, text, textStyle, img, frontCon
               className={`card-back w-[300px] mobile:w-[345px]  h-[230px] md:w-[450px] xl:w-[500px] md:h-[336px] rounded-[20px] 
              `}
             >
-              <div className={`${cardStyle} p-8 text-[14px] sm:text-[14px] md:text-[14px] m-auto ` }>
-                <p className='items-center justify-center'>{backContent}</p>
+              <div className={`${cardStyle} m-auto ` }>
+                <p className={`${pstyle}`}>{backContent}</p>
               </div>
+              {img && (
+                <div className='hidden md:block absolute bottom-0 right-0'>
+                  <Image src={img} alt='loop benefits' width={331} height={336} />
+                </div>
+              )}
+              {img && (
+                <div className='md:hidden absolute bottom-0 right-0'>
+                  <Image src={img} alt='loop benefits' width={228} height={232} />
+                </div>
+              )}
 
               <div className='absolute bottom-4 right-8'>
                 <RxCrossCircled onClick={handleFlip} size={32} color='black' />

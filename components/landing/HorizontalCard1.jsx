@@ -82,11 +82,33 @@ function HorizontalCard1() {
                                     </div>
                                 </div>
                                 <div className={`horizontal-card-back  h-[337px] w-[950px] xl:w-[1070px] rounded-[20px]   `}>
-                                    <div className={`relative p-8 text-[24px]  h-[337px] w-[950px] xl:w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
-                                        <p className='text-white'>
-                                            Whether it&apos;s Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device.
+                                    <div className={`relative  text-[24px]  h-[337px] w-[950px] xl:w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
+                                        <div className='flex'>
+                                            <div className='w-7/12'>
+                                                <div className='flex flex-col'>
+                                                    {isHeadingVisible && <div className='animate-text pt-[79px] text-white  text-2xl leading-[186%] font-bold pl-[62px] '>
+                                                        Whether it's Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device.     
+                                                    </div>}
+                                                </div>
+                                            </div>
 
-                                        </p>
+                                            <div className='flex'>
+                                                {isTextVisible &&
+                                                    <div className='mt-[102px] mr-5'>
+                                                        <Image src={'/assets/images/landing/androidphone1.png'} alt='cross platform phones' width={174} height={235} />
+
+                                                    </div>}
+                                                {isTextVisible &&
+                                                    <div className=''>
+                                                        <Image src={'/assets/images/landing/androidphone2.png'} alt='phone2' width={172} height={236} />
+
+                                                    </div>}
+
+
+
+                                            </div>
+                                        </div>
+                                        
                                     </div>
 
                                     <div className='absolute bottom-4 right-8'>
@@ -126,7 +148,7 @@ function HorizontalCard1() {
                                 </div>
                                 <div className={`horizontal-card-back  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px]   `}>
                                     <div className={`relative text-[16px]  sm:text-[20px] sm:p-8 p-6 w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
-                                        <p className='text-white'>
+                                        <p className='text-white font-bold leading-[186%] mt-6'>
                                             Whether it&apos;s Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device.
 
                                         </p>
