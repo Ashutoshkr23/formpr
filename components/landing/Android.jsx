@@ -3,7 +3,7 @@ import Image from "next/image";
 const Android = () => {
   return (
     <div className="lg:mx-2 ">
-      <div className="hidden lg:block relative  mt-36 lg:mt-44 px-4 sm:px-8 md:px-16   xl:pl-[76px]  lg:max-w-[1212px] h-[286px] bg-black mx-2 lg:mx-auto rounded-[20px]">
+      <div className="hidden lg:block shadow-bl  relative  mt-36 lg:mt-44 px-4 sm:px-8 md:px-16   xl:pl-[76px]  lg:max-w-[1212px] h-[286px] bg-black mx-2 lg:mx-auto rounded-[20px]">
         <div className=" ">
           {/* <div className=' flex justify-between '> */}
           <div className="flex  xl:space-x-8 items-center   ">
@@ -53,7 +53,7 @@ const Android = () => {
       </div>
 
       {/* mobile */}
-      <div className="lg:hidden mt-[103px] max-w-[345px] sm:max-w-[450px] h-[601px] flex flex-col items-center mx-auto bg-black rounded-[20px]">
+      <div className="lg:hidden shadow-bl mt-[103px] max-w-[345px] sm:max-w-[450px] h-[601px] flex flex-col items-center mx-auto bg-black rounded-[20px]">
         <div className="flex flex-col justify-center items-center">
           <div className="flex flex-col pt-11 items-center justify-center">
             <div className="text-[30px] text-center font-bold text-transparent  bg-gradient-to-r from-[#66D3E1] to-[#96FFAD] bg-clip-text ">
