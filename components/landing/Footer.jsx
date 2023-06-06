@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="" id="contact">
       <div className="hidden md:block">
         <div className="bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96]">
-          <div className="flex justify-around items-center h-[262px] min-w-full ">
+          <div className="flex justify-between items-center h-[262px] max-w-[1208px] mx-auto ">
             <div className="hidden lg:block ">
               <Image
                 src={"/assets/images/landing/footerloop.svg"}
@@ -31,7 +31,7 @@ const Footer = () => {
                 <div>
                   <p className="text-[14px] font-bold">PRIVACY POLICY</p>
                 </div>
-                <div className="flex space-x-5  items-center justify-center">
+                <div className="flex space-x-5  items-center ">
                   <div>
                     <a
                       href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ=="
@@ -138,7 +138,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="flex items-center justify-center pb-2 pt-5 space-x-1 ">
+          <div className="flex items-center justify-center pb-2 pt-5  space-x-1 ">
             <div className="text-xs">
               <p>Made with love by</p>
             </div>
