@@ -62,7 +62,7 @@ function HorizontalCard1() {
                                                 </div>}
                                                 {isTextVisible && 
                                                 <div className=''>
-                                                    <Image src={'/assets/images/landing/androidphone2.png'} alt='phone2' width={172} height={236} />
+                                                    <Image src={'/assets/images/landing/Phone3.png'} alt='phone2' width={172} height={236} />
 
                                                 </div>}
 
@@ -100,7 +100,7 @@ function HorizontalCard1() {
                                                     </div>}
                                                 {isTextVisible &&
                                                     <div className=''>
-                                                        <Image src={'/assets/images/landing/androidphone2.png'} alt='phone2' width={172} height={236} />
+                                                        <Image src={'/assets/images/landing/Phone3.png'} alt='phone2' width={172} height={236} />
 
                                                     </div>}
 
