@@ -160,7 +160,7 @@ const Hero = () => {
                         className='absolute top-[90px] -left-[185px] shadow-white  mr-4'
                         initial={{ x: -150 }}
                         animate={{ x: 0 }}
-                        transition={{ duration: 2, delay: 5 }}
+                        transition={{ duration: 2 , delay:5 }}
                     >
 
                         <Image src={'/assets/images/landing/CardDark.png'} width={244} height={177} alt='sample nfc visting card' quality={100} />
@@ -173,57 +173,29 @@ const Hero = () => {
 
             <div className='md:hidden'>
                 <div className=' relative w-[190px] h-[400px]'>
-                    <motion.div
-                        initial={{ x: 20 }}
-                        whileInView={{ x: 0 }}
-                        viewport={{once:true}}
-                        transition={{ duration: 2 }}
-
-                        className='absolute top-[175px] -right-[65px]  '
-                    >
+                    <div className='absolute top-[175px] -right-[65px]  '>
                         <Image src={'/assets/images/landing/LoopCard1.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
-                    </motion.div>
-                    <motion.div
-                        initial={{ y: -70 }}
-                        whileInView={{ y: 0 }}
-                        viewport={{once:true}} 
-                        transition={{ duration: 2 }}
-                    >
+                    </div>
+                    <div>
                     <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
                         width={190}
                         height={400}
                         alt='smaple visting card profile'
                         priority
                     />
-                    </motion.div>
-                    <motion.div 
-                        initial={{ x: -50 }}
-                        whileInView={{ x: 0 }}
-                        viewport={{once:true}} 
-                        transition={{ duration: 2 }}
-                   
-                        className='absolute top-[100px] -left-[85px] '
-                    >
+                    </div>
+                    <div className='absolute top-[100px] -left-[85px] ' >
                     <Image src={'/assets/images/landing/CardDark.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
-                    </motion.div>
-                    
-                    
+                    </div>  
                 </div>
-                <motion.div
-                    initial={{ y: 70 }}
-                    whileInView={{ y: 0 }}
-                    viewport={{once:true}}
-                    transition={{ duration: 2 }}
-                    className=' z-40 mt-[-5px]'
-
-                >
+                <div className=' z-40 mt-[-5px]'>
                     <Image src={'/assets/images/landing/phone2.png'}
                         width={190}
                         height={425}
                         alt='sample visting card profile reflection'
                         quality={100}
                     />
-                </motion.div>
+                </div>
             </div>
             <div>
             <motion.button
