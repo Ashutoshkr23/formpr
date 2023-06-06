@@ -15,7 +15,7 @@ function QA({ques , ans}) {
           <div>
               <div className='question mt-4 p-4'>
                   <button className='flex justify-between items-center w-full' onClick={handleArrowClick}>
-                      <div className=' font-bold text-xl md:text-2xl inline text-start'>{ques}</div>
+                      <div className=' font-bold text-lg md:text-xl inline text-start'>{ques}</div>
                       <div className='ml-auto'><BsFillTriangleFill className='h-4 w-6' style={{ transform: `rotate(${arrowRotation}deg)` }} /></div>
                       <div className='ml-4'>
 
