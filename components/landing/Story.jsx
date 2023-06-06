@@ -12,6 +12,7 @@ const Story = () => {
         className="relative hidden lg:block pl-[405px] mx-auto max-w-[1280px] h-[438px]  rounded-[20px]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
         transition={{ delay: 2 }}
       >
         {/* <div className="relative hidden lg:block pl-[405px] mx-auto max-w-[1280px] h-[438px]  rounded-[20px] "> */}
@@ -59,6 +60,7 @@ const Story = () => {
           className="relative  max-w-[345px]   pl-5 rounded-[15px]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ delay: 2 }}
         >
           {/* <div className="relative  max-w-[345px]   pl-5 rounded-[15px]"> */}

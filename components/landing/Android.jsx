@@ -23,6 +23,7 @@ const Android = () => {
                         alt="download ios app"
                         width={170}
                         height={51}
+                        quality={100}
                       />
                     </div>
                     <div className="">
@@ -31,6 +32,7 @@ const Android = () => {
                         alt="download android app"
                         width={170}
                         height={51}
+                        quality={100}
                       />
                     </div>
                   </div>
@@ -45,6 +47,7 @@ const Android = () => {
             alt="phone"
             height={336}
             width={244}
+            quality={100}
           />
         </div>
       </div>
@@ -65,6 +68,7 @@ const Android = () => {
                 alt="download ios app"
                 width={153}
                 height={45}
+                quality={100}
               />
             </div>
             <div className="pt-5">
@@ -73,6 +77,7 @@ const Android = () => {
                 alt="download android app"
                 width={153}
                 height={45}
+                quality={100}
               />
             </div>
             <div className="mt-[50px] sm:hidden">
@@ -81,14 +86,16 @@ const Android = () => {
                 alt="phone"
                 height={243}
                 width={149}
+                quality={100}
               />
             </div>
             <div className="mt-[50px] hidden sm:block">
               <Image
-                src={"/assets/images/landing/androidIosCompataible.png"}
+                src={"/assets/images/landing/androidPhoneNew.png"}
                 alt="phone"
                 height={280}
                 width={190}
+                quality={100}
               />
             </div>
           </div>
