@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
 
 
 
@@ -37,7 +38,7 @@ function LandingNavbar() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
- 
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -80,7 +81,7 @@ function LandingNavbar() {
 
         </div>
       </div>
-      
+
       {/*Mobile and Tablet */}
       <div className='lg:hidden '>
         <nav className="bg-dark pl-2 pr-6 sm:px-4 py-2.5  w-full z-50 top-0 left-0">
@@ -90,7 +91,7 @@ function LandingNavbar() {
 
             </a>
             <div className="flex ">
-             
+
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button" className="mobileNavbar inline-flex relative z-[100] items-center ">
@@ -110,47 +111,47 @@ function LandingNavbar() {
                 <AnimatePresence>
                   <motion.div variants={fadeIn} initial="initial" whileInView="animate" exit="exit" viewport={{ once: false }} className="fixed ease-in duration-800  w-full h-screen top-0 right-0 bg-gradient-to-br from-[#96FFAD] to-[#96FFAD] py-1 px-1 shadow-lg bg-white text-black z-50" >
                     <div className=' w-full h-full bg-white'>
-                    <div className='flex flex-col h-full  content-between'>
-                      <div className="flex flex-col mx-auto mt-20 text-center font-oswald tracking-light w-10/12 z-20">
-                        <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container  py-2  border-b-2 border-white ">
-                          <a href="#product" className="nav-link ">Products</a>
+                      <div className='flex flex-col h-full  content-between'>
+                        <div className="flex flex-col mx-auto mt-20 text-center font-oswald tracking-light w-10/12 z-20">
+                          <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container  py-2  border-b-2 border-white ">
+                            <a href="#product" className="nav-link ">Products</a>
+                          </div>
+                          <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white">
+                            <a href="#story" className="nav-link ">Our Story</a>
+                          </div>
+                          <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white ">
+                            <a href="#partners" className="nav-link ">Partners</a>
+                          </div>
+                          <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white ">
+                            <a href="#faq" className="nav-link ">FAQ</a>
+                          </div>
+                          <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container  border-b-2 border-white py-4   ">
+                            <a href="#contact" className="nav-link ">Contact</a>
+                          </div>
+                          <div>
+                            <button
+                              onClick={handlelogin}
+                              className='w-[140px] h-10 bg-black text-white text-sm mr-4 my-auto font-bold rounded-[10px] text-center'
+                            >
+                              LOG IN
+                            </button>
+                          </div>
+                          <div className='flex justify-center pt-8 space-x-7'>
+                            <div>
+                              <a href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ==">
+                                <Image src="/assets/images/landing/footerinsta.png" height={32} width={32} alt="instagram" />
+                              </a>
+                            </div>
+                            <div>
+                              <a href="#">
+                                <Image src={'/assets/images/landing/footerlink.png'} height={32} width={32} alt='instagram' />
+                              </a>
+                            </div>
+
+                          </div>
                         </div>
-                        <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white">
-                          <a href="#story" className="nav-link ">Our Story</a>
-                        </div>
-                        <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white ">
-                          <a href="#partners" className="nav-link ">Partners</a>
-                        </div>
-                        <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container py-4  border-b-2 border-white ">
-                          <a href="#faq" className="nav-link ">FAQ</a>
-                        </div>
-                        <div onClick={() => setIsOpen(!isOpen)} className="nav-link-container  border-b-2 border-white py-4   ">
-                          <a href="#contact" className="nav-link ">Contact</a>
-                        </div>
-                        <div>
-                      <button
-                onClick={handlelogin}
-                className='w-[140px] h-10 bg-black text-white text-sm mr-4 my-auto font-bold rounded-[10px] text-center'
-              >
-                LOG IN
-              </button>
-                      </div>
-                      <div className='flex justify-center pt-8 space-x-7'>
-                      <div>
-                <a href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ==">
-    <Image src="/assets/images/landing/footerinsta.png" height={32} width={32} alt="instagram" />
-  </a>
-                </div>
-                <div>
-                <a href="#">
-                <Image src={'/assets/images/landing/footerlink.png'} height={32} width={32} alt='instagram'/>
-              </a>
-                </div>
 
                       </div>
-                      </div>
-                     
-                    </div>
                     </div>
                   </motion.div>
                 </AnimatePresence>
