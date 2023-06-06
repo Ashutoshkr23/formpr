@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Story = () => {
   return (
@@ -7,7 +8,14 @@ const Story = () => {
       className=" mt-[180px] lg:mt-[339px] sm:px-8 md:px-16 lg:px-4 xl:px-0 max-w-[1280px] mx-auto"
       id="story"
     >
-      <div className="relative hidden lg:block pl-[405px] mx-auto max-w-[1280px] h-[438px]  rounded-[20px] ">
+      <motion.div
+        className="relative hidden lg:block pl-[405px] mx-auto max-w-[1280px] h-[438px]  rounded-[20px]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 2 }}
+      >
+        {/* <div className="relative hidden lg:block pl-[405px] mx-auto max-w-[1280px] h-[438px]  rounded-[20px] "> */}
         <div className="text-[#A7A7A7]  pt-[46px] pr-[28px]">
           <p>The Loop Journey</p>
         </div>
@@ -44,11 +52,18 @@ const Story = () => {
             quality={100}
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* mobile */}
       <div className="lg:hidden  flex justify-center items-center mx-auto ">
-        <div className="relative  max-w-[345px]   pl-5 rounded-[15px]">
+        <motion.div
+          className="relative  max-w-[345px]   pl-5 rounded-[15px]"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 2 }}
+        >
+          {/* <div className="relative  max-w-[345px]   pl-5 rounded-[15px]"> */}
           {/* <div className="absolute left-0 -top-[81px] ">
             <Image
               src={"/assets/images/landing/storyph2.png"}
@@ -96,7 +111,7 @@ const Story = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
