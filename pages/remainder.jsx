@@ -2,10 +2,13 @@ import axios from 'axios'
 import moment from 'moment/moment'
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import { useSession } from 'next-auth/react';
 
 const Remainder = () => {
 
     const router = useRouter()
+
+    const { data: session } = useSession();
 
     const [userAllRemainder, setuserAllRemainder] = useState([])
 
@@ -19,6 +22,7 @@ const Remainder = () => {
         setgetUserRemaindersCalled(true);
 
         const gettingUserRemainder = await axios.post('http://localhost:3000/api/getRemainder');
+
         return setuserAllRemainder(gettingUserRemainder?.data?.userRemainderList);
     }
 
@@ -28,15 +32,18 @@ const Remainder = () => {
 
 
     const deleteARemainder = async (idOfTheItem) => {
-        console.log(idOfTheItem);
-
         const itemId = idOfTheItem;
+        const data = { itemId };
 
-        const data = { itemId }
+        try {
+            // Call your delete API endpoint here
+            await axios.post('http://localhost:3000/api/deleteARemainder', data);
 
-        const gettingUserRemainder = await axios.post('http://localhost:3000/api/deleteARemainder', data);
-
-        router.reload(window.location.pathname)
+            // Remove the deleted item from the userAllRemainder state
+            setuserAllRemainder(prevRemainders => prevRemainders.filter(item => item._id !== itemId));
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
 
     return (
