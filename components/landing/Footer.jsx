@@ -5,7 +5,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="mt-20 lg:mt-28" id="contact">
+    <div className="" id="contact">
       <div className="hidden md:block">
         <div className="bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96]">
           <div className="flex justify-between items-center h-[262px] max-w-[1208px] mx-auto ">
