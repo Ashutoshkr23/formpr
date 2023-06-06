@@ -23,7 +23,7 @@ const Hero = () => {
                 <motion.button
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 4 }}
+                    transition={{ delay: 3 }}
                     className='hidden lg:block w-[140px] md:w-[165px] h-9 md:h-10 mt-12 bg-black text-white text-xs md:text-base  font-bold rounded-[10px]  text-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]'
                 >
                     GET NOW
@@ -34,7 +34,7 @@ const Hero = () => {
                         className="flex flex-wrap items-center  mt-8 gap-4  md:mt-12 lg:min-w-[450px] w-full py-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 3 }}
+                        transition={{ delay: 4 }}
                     >
                         <div className='bg-white w-[215px] items-center flex rounded-2xl h-[74px] drop-shadow-white'>
                             <Image src="/assets/images/landing/Eco-Friendly.png" alt="" height={50} width={50} className=' mx-6' />
