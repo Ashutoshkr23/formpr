@@ -24,7 +24,7 @@ const Landing = () => {
           property="og:title"
           content="NFC Visting Cards Reimagined on Web3"
           key="title"
-          description="NFC Web3 visting cards for a seamless networking expereince"
+          description="Discover Loop, the effortless, eco-friendly networking solution designed to elevate your networking game. With cutting-edge designs and a seamless user experience, Loop offers classy and luxurious products that leave a lasting impression. Experience the app-free advantage of Loop Connections, edit and adapt your digital card with limitless flexibility, and enjoy seamless connections across Android and iOS platforms. Join the Web3.0 revolution and unlock the limitless possibilities with Loop. Make networking beautifully simple today."
         />
       </Head>
       <LandingNav />

@@ -49,7 +49,7 @@ function ProductComp({ text, img, content, cardtype, text2 , offering1, offering
                             </div>
                             <p className='font-medium text-xs text-[#686A6C]'>{text2} </p>
                             <div className='w-[138px] xl:w-[165px] h-9 xl:h-10 text-xs xl:text-base  pt-5'>
-                                <button className={`buynow text-center w-full py-[5px] rounded-[10px] ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black' : 'bg-black text-white'
+                                <button className={`buynow text-center w-full py-[5px] font-bold rounded-[10px] ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black' : 'bg-black text-white'
                                     }`}
                                 >BUY NOW</button>
                             </div>
