@@ -87,7 +87,7 @@ function HorizontalCard1() {
                                             <div className='w-7/12'>
                                                 <div className='flex flex-col'>
                                                     {isHeadingVisible && <div className='animate-text pt-[79px] text-white  text-2xl leading-[186%] font-bold pl-[62px] '>
-                                                        Whether it's Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device.     
+                                                        Whether it&apos;s Android or iOS, Loop bridges the divide, connecting you with anyone, anywhere, on any device.     
                                                     </div>}
                                                 </div>
                                             </div>
