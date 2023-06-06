@@ -8,7 +8,7 @@ function ProductComp({ text, img, content, cardtype, text2 , offering1, offering
         setIsHovered(!isHovered);
     };
     return (
-        <div className='flex flex-col  '>
+        <div className='flex flex-col hover:scale-105 '>
             <div className=' relative z-20 ml-3 -mb-5  w-[116px] h-9 rounded-lg bg-black pt-2'>
                 <p className='text-center  font-semibold text-xs text-white'>{cardtype}</p>
             </div>

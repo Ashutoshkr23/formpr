@@ -80,7 +80,7 @@ function Products() {
                             transition: 'transform 0.3s ease-in-out',
                         }}
                     >
-                        <div className='w-[100%] h-full  flex justify-center'>
+                        <div className='w-[100%] h-full py-8 flex justify-center'>
                             <ProductComp
                                 text={"Loop Lite"}
                                 img={"/assets/images/landing/Lite.png"}
@@ -91,7 +91,7 @@ function Products() {
                                 offering2={"Contrasting Logo"}
                             />
                         </div>
-                        <div className='w-[100%] h-full  flex justify-center'>
+                        <div className='w-[100%] h-full py-8  flex justify-center'>
                             <ProductComp
                                 text={"Loop Elevate "}
                                 img={"/assets/images/landing/ElevateCards.png"}
@@ -102,7 +102,7 @@ function Products() {
                                     offering2={"Blending Logo"}
                             />
                         </div>
-                        <div className='w-[100%] h-full  flex justify-center'>
+                        <div className='w-[100%] h-full py-8  flex justify-center'>
                             <ProductComp
                                 text={"Loop Supreme"}
                                 img={"/assets/images/landing/SupremeCard.png"}
