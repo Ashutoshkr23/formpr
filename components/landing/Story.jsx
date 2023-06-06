@@ -8,7 +8,7 @@ const Story = () => {
       className=" mt-20 lg:mt-24 sm:px-8 md:px-16 lg:px-4 xl:px-0 max-w-[1280px] mx-auto"
       id="story"
     >
-      <div>
+      <div className="hidden lg:block">
         <div className="flex items-center lg:pl-2 xl:pl-10 min-w-[300px]">
           <div>
             <motion.div
