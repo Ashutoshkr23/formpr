@@ -3,7 +3,7 @@ import Image from "next/image";
 const Android = () => {
   return (
     <div className="lg:mx-2 ">
-      <div className="hidden lg:block relative lg:mt-[170px] mt-[93px] px-4 sm:px-8 md:px-16   xl:pl-[76px]  lg:max-w-[1212px] h-[286px] bg-black mx-2 lg:mx-auto rounded-[20px]">
+      <div className="hidden lg:block relative  mt-36 lg:mt-44 px-4 sm:px-8 md:px-16   xl:pl-[76px]  lg:max-w-[1212px] h-[286px] bg-black mx-2 lg:mx-auto rounded-[20px]">
         <div className=" ">
           {/* <div className=' flex justify-between '> */}
           <div className="flex  xl:space-x-8 items-center   ">

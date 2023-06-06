@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const LoopBlack = () => {
     return (
-        <div className='lg:mt-[222px] mt-[131px] '>
+        <div className='mt-20 lg:mt-28  '>
             <div className='hidden lg:block bg-[#090909] h-[648px] max-w-[1212px] mx-3 xl:mx-auto rounded-[20px] ' >
                 <div className='  pt-16 lg:pl-4 xl:pl-9 flex '>
                     <div>

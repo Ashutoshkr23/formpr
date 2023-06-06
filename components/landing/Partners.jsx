@@ -4,9 +4,9 @@ import Image from 'next/image';
 const Partners = () => {
   return (
     <>
-      <div className='mt-20' id='partners'>
+      <div className='mt-20 lg:mt-28' id='partners'>
             <div className="relative overflow-hidden w-full">
-                <div className='text-center mt-28'>
+                <div className='text-center '>
                     <h3>Dwellers of the loop</h3>
                     <h2 className='mt-2'>Our Partners</h2>
                 </div>
