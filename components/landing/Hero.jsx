@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
     return (
 
-        <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col-reverse mt-16 lg:mt-16 lg:px-4  xl:px-0'>
+        <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col mt-16 lg:mt-16 lg:px-4  xl:px-0'>
 
             <div className="flex flex-col items-center lg:items-start mt-20 md:mt-48 lg:mt-0  px-2  mobile:px-4 md:px-0 mx-auto lg:mx-0 max-w-[456px] xl:max-w-[680px] ">
                 <h1 className=' mr-auto text-left anim-typewriter  font-bold '>
