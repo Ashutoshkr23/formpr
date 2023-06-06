@@ -170,7 +170,8 @@ const Hero = () => {
                 <div className=' relative w-[190px] h-[400px]'>
                     <motion.div
                         initial={{ x: 20 }}
-                        animate={{ x: 0 }}
+                        whileInView={{ x: 0 }}
+                        viewport={{once:true}}
                         transition={{ duration: 2 }}
 
                         className='absolute top-[175px] -right-[65px]  '
@@ -179,7 +180,8 @@ const Hero = () => {
                     </motion.div>
                     <motion.div
                         initial={{ y: -70 }}
-                        animate={{ y: 0 }} 
+                        whileInView={{ y: 0 }}
+                        viewport={{once:true}} 
                         transition={{ duration: 2 }}
                     >
                     <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
@@ -191,7 +193,8 @@ const Hero = () => {
                     </motion.div>
                     <motion.div 
                         initial={{ x: -50 }}
-                        animate={{ x: 0 }} 
+                        whileInView={{ x: 0 }}
+                        viewport={{once:true}} 
                         transition={{ duration: 2 }}
                    
                         className='absolute top-[100px] -left-[85px] '
@@ -203,7 +206,8 @@ const Hero = () => {
                 </div>
                 <motion.div
                     initial={{ y: 70 }}
-                    animate={{ y: 0 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{once:true}}
                     transition={{ duration: 2 }}
                     className=' z-40 mt-[-5px]'
 
