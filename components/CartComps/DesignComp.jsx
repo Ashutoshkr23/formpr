@@ -4,7 +4,6 @@ import React, { useContext, useState } from 'react'
 
 const DesignComp = ({ cardTypeSelected, handleCardSelection, totalAmount, totalQuantity, selectedTypeIndex }) => {
     const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
-    // console.log(cardTypeSelected, "Cards")
 
 
 

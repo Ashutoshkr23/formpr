@@ -20,7 +20,6 @@ export default function Cart() {
 
 export async function getServerSideProps({ req }) {
     const session = await getSession({ req });
-    console.log(session, "session")
     if (!session) {
         return {
             redirect: {

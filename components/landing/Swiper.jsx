@@ -18,7 +18,6 @@ function Swiper() {
       }
     };
 
-    console.log(numStep)
 
     window.addEventListener('resize', handleResize);
     handleResize();

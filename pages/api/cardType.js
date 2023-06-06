@@ -9,7 +9,6 @@ export default async function handler(req, res) {
         if (req.method === 'POST') {
             const { amount, currency } = req.body;
 
-            //  console.log(cardUuid)
             //const cardUuid=uuidv4
 
             const cardTypes = new cardType({
@@ -21,7 +20,6 @@ export default async function handler(req, res) {
             return res.status(201).json({ message: 'cardType created successfully' });
         }
         else if (req.method === 'GET') {
-            //console.log('emailsss:', email);
 
             const cardTypes = await cardType.find()
             if (cardTypes) {

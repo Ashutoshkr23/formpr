@@ -23,9 +23,10 @@ const Benefits = () => {
                         headingStyle={"md:text-[40px] text-[24px] leading-[120%]  font-bold md:pr-[86px] pr-[40px]"}
                         text={"Elevate Your Networking with Cutting-Edge Impressions."}
                         textStyle={"md:pt-[22px] text-[12px] pt-5 md:text-[16px] pr-[37px] md:pr-[131px]  md:text-14 text-black font-bold"}
-                        img={"/assets/images/landing/blackCardSh.png"}
+                        img={"/assets/images/landing/Loopdark.png"}
                         btncolor={"white"}
                         backContent={"From sleek minimalism to captivating artwork, our customizable designs ensure your digital card stands out in the Loop. "}
+                        pstyle={"font-bold text-xs md:text-sm mr-12 mt-4 ml-4 leading-[180%] "}
                     />
 
                     <Card
@@ -36,6 +37,7 @@ const Benefits = () => {
                         textStyle={"pt-4 text-[16px] md:text-[24px] text-black font-bold md:pr-28"}
                         btncolor={"black"}
                         backContent={" Stay in the Loop without missing a beat. Update your details endlessly, ensuring your card always reflects your latest achievements and information. "}
+                        pstyle={"text-base md:text-2xl font-bold leading-[180%] mr-2 md:mr-12 "}
 
                     />
                 </div>
@@ -57,6 +59,7 @@ const Benefits = () => {
                         img={""}
                         btncolor={"black"}
                         backContent={' Purchase, personalize, and present your card with ease, creating an unforgettable experience for both you and the people you loop in.'}
+                        pstyle={"text-base md:text-2xl font-bold md:ml-8 md:mt-4 leading-[180%] mr-2 mobile:mr-8 md:mr-12 "}
                     />
 
                     <Card
@@ -67,6 +70,7 @@ const Benefits = () => {
                         textStyle={"md:pt-[60px] leading-[186%] w-[230px] text-black md:w-[275px] pt-[47px] md:pl-[32px] pl-[24px] text-xs md:text-[14px] font-bold"}
                         img={"/assets/images/landing/PhoneinHand.png"}
                         backContent={'No downloads, no hassle. With Loop, your contacts open effortlessly in a WebView, making connections smooth and frictionless.' }
+                        pstyle={"font-bold text-xs md:text-sm mr-12 w-[140px] mobile:w-[180px] md:w-[200px] ml-4 md:ml-10 pt-10 md:pt-16 leading-[180%] "}
 
                     />
                 </div>

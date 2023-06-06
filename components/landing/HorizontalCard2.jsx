@@ -59,10 +59,21 @@ function HorizontalCard2() {
                                     </div>
                                 </div>
                                 <div className={`horizontal-card-back   h-[337px] w-[950px] xl:w-[1070px] rounded-[20px] `}>
-                                    <div className={`relative p-8 text-[24px] h-[337px] w-[950px] xl:w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
-                                        <p className='text-white'>
-                                            Unlock the door to the future with LoopChain. Each card creates a wallet, opening a world of NFTs and blockchain utilities, expanding the horizons of your digital presence.
-                                        </p>
+                                    <div className={`relative  text-[24px] h-[337px] w-[950px] xl:w-[1070px] bg-black  rounded-[20px] drop-shadow-white`}>
+                                        <div className='flex'>
+                                            <div className='min-w-[332px]'>
+                                                <Image src={'/assets/images/landing/web.png'} alt='mask group' width={331} height={336} />
+                                            </div>
+                                            <div className=''>
+                                                {isTextVisible && <h4 className='text-[24px] text-right leading-[180%] mr-16 mt-24 font-bold  animate-text text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text'>
+                                                    Unlock the door to the future with LoopChain. Each card creates a wallet, opening a world of NFTs and blockchain utilities, expanding the horizons of your digital presence.
+
+
+                                                </h4>}
+                                            </div>
+
+                                        </div>
+
                                     </div>
 
                                     <div className='absolute bottom-4 right-8'>
@@ -100,7 +111,7 @@ function HorizontalCard2() {
                                 </div>
                                 <div className={`horizontal-card-back  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px]   `}>
                                     <div className={`relative text-[16px] sm:text-[20px] sm:p-8 p-6 w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
-                                        <p className='text-white'>
+                                        <p className='text-white font-bold text-base leading-[160%] mobile:leading-[186%] mobile:mt-2'>
                                             Unlock the door to the future with LoopChain. Each card creates a wallet, opening a world of NFTs and blockchain utilities, expanding the horizons of your digital presence.
                                         </p>
                                     </div>

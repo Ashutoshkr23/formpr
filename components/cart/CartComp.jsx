@@ -10,7 +10,6 @@ import { useSession } from "next-auth/react";
 export default function CartComp(props) {
     // const { items, totalAmount, totalItems, quantity } = props
     const { cartItems, userProfile, clearCart } = useContext(CartContext);
-    console.log(userProfile, "usp")
     const [totalAmount, setTotalAmount] = useState(0)
     const [totalQuantity, setTotalQuantity] = useState(0)
     const { data: session } = useSession()
@@ -42,7 +41,6 @@ export default function CartComp(props) {
         }
     }, [cartItems])
 
-    console.log(totalQuantity, totalAmount)
 
     const saveDataToServer = async (razorData) => {
         // Make API call to save the data to the server
@@ -56,25 +54,18 @@ export default function CartComp(props) {
         }
         const response = await axios.post("/api/savePurchaseOrder", postData);
 
-        console.log("saveData post")
-        console.log(response);
 
 
     };
 
     const submitFunc = async () => {
-        console.log("here...");
         const res = await initializeRazorpay();
-        console.log(res, "Res")
         if (!res) {
             alert("Razorpay SDK Failed to load");
             return;
         }
         // Make API call to the serverless API
         const { data } = await axios.post("/api/razorpay", { cartItems: cartItems });
-        console.log(data, "data");
-
-        // console.log(email)
         var options = {
             key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
             name: "Alphamit Labs",
@@ -83,7 +74,6 @@ export default function CartComp(props) {
             order_id: data.id,
             description: "Thank you for your test donation",
             handler: function (response) {
-                console.log(response)
                 // Validate payment at server - using webhooks is a better idea.
                 // alert(response.razorpay_payment_id);
                 // alert(response.razorpay_order_id);
@@ -102,7 +92,6 @@ export default function CartComp(props) {
 
         const paymentObject = new window.Razorpay(options);
         paymentObject.open();
-        console.log(paymentObject);
     }
 
 
@@ -122,7 +111,6 @@ export default function CartComp(props) {
             document.body.appendChild(script);
         });
     };
-    console.log(cartItems, "cart")
     return (
         <div>
             <div className="cart-body ">

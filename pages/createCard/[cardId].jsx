@@ -17,7 +17,6 @@ export default function Page() {
     useEffect(() => {
         const checkCardValid = async () => {
             const check = await axios.get(`/api/manageCards?cuuid=${cuuid}&puuid=${puuid}`)
-            // console.log(check, "checkss")
             if (!check.data.error) {
                 setLoading(false)
                 if (check.data.valid === false) {
@@ -34,7 +33,6 @@ export default function Page() {
             checkCardValid()
         }
     }, [cuuid, userProfile])
-    // console.log(cardValid, "cardValid")
     if (loading) {
         return <h5>Loading...</h5>
     }
