@@ -3,7 +3,7 @@ import { QA } from "@/components";
 function FAQ() {
   return (
     <div
-      className="my-20 lg:my-28  px-4 sm:px-8 md:px-16 lg:px-16 xl:px-0 max-w-[1208px] mx-auto "
+      className="py-20 lg:py-28  px-4 sm:px-8 md:px-16 lg:px-16 xl:px-0 max-w-[1208px] mx-auto "
       id="faq"
     >
       <h3>FAQ</h3>
