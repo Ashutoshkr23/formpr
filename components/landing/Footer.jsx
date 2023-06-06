@@ -31,7 +31,7 @@ const Footer = () => {
                 <div>
                   <p className="text-[14px] font-bold">PRIVACY POLICY</p>
                 </div>
-                <div className="flex space-x-5  items-center justify-center">
+                <div className="flex space-x-5  items-center">
                   <div>
                     <a
                       href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ=="
