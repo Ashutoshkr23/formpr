@@ -14,14 +14,11 @@ export default function Home() {
     //         email: session.user.email
     //     }
     //     const response = await axios.post('api/userprofile', postdata);
-    //     console.log(response)
     // }
     // useEffect(() => {
-    //     console.log('Session object:', session);
     //     if (session && session.user && !hasFetchedUserProfileRef.current) {
     //         getUserProfile();
     //         hasFetchedUserProfileRef.current = true;
-    //         console.log("useEffect Runned");
     //     }
     // }, [session]);
 
@@ -34,7 +31,6 @@ export default function Home() {
 
 export async function getServerSideProps({ req }) {
     const session = await getSession({ req });
-    console.log(session, "session")
     if (!session) {
         return {
             redirect: {

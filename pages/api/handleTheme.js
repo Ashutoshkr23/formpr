@@ -8,7 +8,6 @@ export default async function handler(req, res) {
         if (req.method === 'POST') {
             const { mainBackground, innerBackground, contactButtonColor, contactButtonFontColor, primaryFontColor, secondaryFontColor } = req.body;
 
-            //  console.log(cardUuid)
             //const cardUuid=uuidv4
             const themeId = uuidv4()
             const themeData = new theme({
@@ -19,7 +18,6 @@ export default async function handler(req, res) {
             return res.status(201).json({ message: 'Theme created successfully' });
         }
         else if (req.method === 'GET') {
-            //console.log('emailsss:', email);
 
             const themeData = await theme.find()
             if (themeData) {

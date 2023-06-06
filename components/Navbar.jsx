@@ -19,7 +19,6 @@ const Navbar = () => {
   }
   const handleClick = () => {
     router.push('/profile');
-    console.log(router)
   }
 
   return (

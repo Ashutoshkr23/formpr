@@ -14,8 +14,6 @@ export default async function handler(req, res) {
             }
 
 
-            //  console.log(cardUuid)
-            //const cardUuid=uuidv4
 
             const allCards = await card.find({ puuid: puuid })
 
@@ -25,14 +23,12 @@ export default async function handler(req, res) {
             try {
 
                 const { cuuid, puuid } = req.query;
-                // console.log(cuuid, puuid, "c p")
                 if (!cuuid && puuid) {
                     return res.status(422).json({ error: "Missing required fields." });
 
                 }
 
                 const checkCard = await card.find({ puuid: puuid, cuuid: cuuid });
-                // console.log(checkCard, "Check")
                 if (checkCard && checkCard.length) {
                     return res.status(200).json({
                         error: false,
@@ -53,7 +49,6 @@ export default async function handler(req, res) {
 
         }
         // else if (req.method === 'GET') {
-        //     //console.log('emailsss:', email);
 
         //     const cardTypes = await cardType.find()
         //     if (cardTypes) {

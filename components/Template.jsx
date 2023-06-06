@@ -8,7 +8,6 @@ import Socialpg from './Socialpg'
 
 const Template = ({ fname, type, border, lname, btntext, profileimg, designation, bio, company, website, mobile, gradient1, gradient2, text1, text2, text3, btn, loop }) => {
 
-  console.log(type)
   return (
 
     <div className=' '>

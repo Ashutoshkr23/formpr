@@ -5,8 +5,6 @@ import Link from 'next/link';
 
 const ManageCardComps = () => {
     const { cartItems, userProfile, allCards } = useContext(CartContext);
-    // console.log(allCards, "allCards")
-    console.log(userProfile, "userProfile")
     return (
         <div className='w-full h-full px-4 py-4'>
             {userProfile?.totalCards > 0 ?

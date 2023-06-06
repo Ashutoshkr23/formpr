@@ -8,7 +8,6 @@ export default async function handler(req, res) {
 
         if (req.method === 'GET') {
             const { puuid } = req.query;
-            console.log(puuid, "puid");
 
             const orderHistory = await shipping.find({ puuid: puuid });
             if (orderHistory && orderHistory.length > 0) {

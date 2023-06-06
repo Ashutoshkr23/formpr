@@ -4,24 +4,16 @@ import axios from 'axios';
 import Navbar from './Navbar';
 
 const First = ({ cardType }) => {
-  console.log(cardType, "cardType")
   const [uuid, setUuid] = useState(null);
   const [email, setEmail] = useState(null);
 
-
   const { data: session } = useSession();
-
-
-
 
   const fetchUuid = async () => {
     try {
       const response = await axios.get(`/api/userprofile?email=${session.user.email}`);
-      console.log('email:', session.user.email);
-      console.log('uuid:', response.data.uuid);
       setUuid(response.data.uuid);
       setEmail(session.user.email)
-
 
     } catch (error) {
       console.error(error);
@@ -35,25 +27,15 @@ const First = ({ cardType }) => {
 
   const saveDataToServer = async () => {
     // Make API call to save the data to the server
-    console.log(amount)
-    console.log(order_id)
-    console.log(currency)
-    console.log(email)
-    console.log(uuid)
 
     const data = { email, uuid, amount, currency }
     const response = await axios.post("/api/saveData", data);
-
-    console.log("saveData post")
-    console.log(response);
-
 
   };
   var amount;
   var currency;
   var order_id;
   const handleBuyClick = async () => {
-    console.log("here...");
     const res = await initializeRazorpay();
 
     if (!res) {
@@ -64,12 +46,9 @@ const First = ({ cardType }) => {
     // Make API call to the serverless API
     const { data } = await axios.post("/api/razorpay");
 
-    console.log(data);
     amount = data.amount;
     order_id = data.id;
     currency = data.currency;
-    console.log(email)
-    console.log(uuid)
     var options = {
       key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
       name: "Alphamit Labs",
@@ -78,7 +57,6 @@ const First = ({ cardType }) => {
       order_id: data.id,
       description: "Thank you for your test donation",
       handler: function (response) {
-        console.log(response)
         // Validate payment at server - using webhooks is a better idea.
         alert(response.razorpay_payment_id);
         alert(response.razorpay_order_id);
@@ -96,7 +74,6 @@ const First = ({ cardType }) => {
 
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
-    console.log(paymentObject);
   };
 
 

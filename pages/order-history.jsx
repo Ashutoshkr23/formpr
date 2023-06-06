@@ -18,7 +18,6 @@ export default function OrderHistory() {
                 setOrderHistory(response.data.result)
             } else {
                 setLoading(false)
-                console.log("Something went wrong", response)
             }
         }
         if (userProfile?.puuid) {
@@ -26,7 +25,6 @@ export default function OrderHistory() {
 
         }
     }, [userProfile])
-    // console.log(userProfile, "usp")
 
     return (
         <>
@@ -42,7 +40,6 @@ export default function OrderHistory() {
 
 export async function getServerSideProps({ req }) {
     const session = await getSession({ req });
-    console.log(session, "session")
     if (!session) {
         return {
             redirect: {
