@@ -41,7 +41,7 @@ const Android = () => {
         </div>
         <div className=" absolute bottom-0 lg:right-[40px] xl:right-[76px]">
           <Image
-            src={"/assets/images/landing/androidIosCompataible.png"}
+            src={"/assets/images/landing/androidPhoneNew.png"}
             alt="phone"
             height={336}
             width={244}
@@ -77,7 +77,7 @@ const Android = () => {
             </div>
             <div className="mt-[50px] sm:hidden">
               <Image
-                src={"/assets/images/landing/androidIosCompataible.png"}
+                src={"/assets/images/landing/androidPhoneNew.png"}
                 alt="phone"
                 height={243}
                 width={149}

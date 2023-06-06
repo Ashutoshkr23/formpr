@@ -29,7 +29,7 @@ const Footer = () => {
             <div className="flex gap-x-8">
               <div className="flex flex-col gap-y-7 ">
                 <div>
-                  <p className="text-[14px] font-bold">privacy policy</p>
+                  <p className="text-[14px] font-bold">PRIVACY POLICY</p>
                 </div>
                 <div className="flex space-x-5  items-center justify-center">
                   <div>
@@ -58,14 +58,14 @@ const Footer = () => {
                 </div>
               </div>
               <div>
-                <p className="text-[14px] font-bold">terms and conditions</p>
+                <p className="text-[14px] font-bold">TERMS AND CONDITIONS</p>
               </div>
             </div>
 
             <div className="flex flex-col pt-6 ">
               <div className="flex flex-col gap-y-4 ">
                 <div className="text-[14px] font-bold">
-                  <p>contact us </p>
+                  <p>CONTACT US </p>
                 </div>
                 <div className=" text-[16px] leading-[154%]">
                   <p> gm@alphamintlabs.com</p>
@@ -101,13 +101,13 @@ const Footer = () => {
             />
           </div>
           <div className=" pt-10 font-bold">
-            <p>privacy policy</p>
+            <p>PRIVACY POLICY</p>
           </div>
           <div className=" pt-[30px] font-bold">
-            <p>terms and conditions</p>
+            <p>TERMS AND CONDITIONS</p>
           </div>
           <div className=" pt-[30px] font-bold">
-            <p>contact us </p>
+            <p>CONTACT US </p>
           </div>
           <div className=" pt-2">
             <p> gm@alphamintlabs.com </p>
