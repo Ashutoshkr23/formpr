@@ -77,7 +77,7 @@ const CartComponent = () => {
             </div>
           </div>
           <div className="hidden lg:block pl-2">
-            <button className="lg:w-[250px] xl:w-[385px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
+            <button className="lg:w-[300px] xl:w-[385px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
               NEXT
             </button>
           </div>
@@ -85,7 +85,7 @@ const CartComponent = () => {
       </div>
       <div className="w-full pt-10">
         {/* step 1 */}
-        {/* {stepState == 1 ? (
+        {stepState == 1 ? (
           <DesignComp
             cardTypeSelected={cardTypeSelected}
             handleCardSelection={handleCardSelection}
@@ -97,7 +97,7 @@ const CartComponent = () => {
           <DetailsComp />
         ) : (
           <CheckoutComp />
-        )} */}
+        )}
       </div>
     </div>
   );
