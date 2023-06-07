@@ -43,35 +43,41 @@ const CartComponent = () => {
     <div className=" ">
       {/* <h3 className='text-5xl font-bold leading-10 text-[#000]'>Customise</h3> */}
       <div className="mt-10">
-        <div className="max-w-[1208px] mx-auto flex justify-between items-center">
-          <div className="bg-white rounded-xl max-w-[803px] gap-16 h-[55px] flex justify-start px-8 cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
+        <div className="max-w-[1208px] mx-auto flex justify-between items-center px-4 xl:px-0">
+          <div className="bg-white rounded-xl max-w-[803px] lg:gap-12 xl:gap-16 h-[55px] flex  lg:justify-between px-2 md:px-4 lg:px-8 cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
             <div
               className={`px-4 rounded-lg ${
                 stepState == 1 && "border-2 border-slate-700"
-              } flex justify-center items-center font-semibold`}
+              } flex justify-center items-center font-bold`}
               onClick={() => setStepState(1)}
             >
-              <p className="text-center text-base">Step 1 : card type & qty.</p>
+              <p className="text-center text-[12px] md:text-base">
+                Step 1 : card type & qty.
+              </p>
             </div>
             <div
               className={`px-4 rounded-lg ${
                 stepState == 2 && "border-2 border-slate-700"
-              } flex justify-center items-center font-semibold`}
+              } flex justify-center items-center font-bold`}
               onClick={() => setStepState(2)}
             >
-              <p className="text-center text-base">Step 2 : details</p>
+              <p className="text-center text-[12px] md:text-base">
+                Step 2 : details
+              </p>
             </div>
             <div
               className={`px-4 rounded-lg ${
                 stepState == 3 && "border-2 border-slate-700"
-              } flex justify-center items-center font-semibold`}
+              } flex justify-center items-center font-bold`}
               onClick={() => setStepState(3)}
             >
-              <p className="text-center text-base">Step 3 : Checkout</p>
+              <p className="text-center text-[12px] md:text-base">
+                Step 3 : Checkout
+              </p>
             </div>
           </div>
-          <div className="flex">
-            <button className="lg:w-[385px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
+          <div className="hidden lg:block pl-2">
+            <button className="lg:w-[250px] xl:w-[385px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
               NEXT
             </button>
           </div>
