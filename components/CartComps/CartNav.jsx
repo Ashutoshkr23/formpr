@@ -35,7 +35,7 @@ const CartNav = () => {
     signOut();
   }
   return (
-    <div className="md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto ">
+    <div className="px-4 md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto ">
       <div className="hidden lg:block">
         <div className=" mx-auto   my-auto h-20 flex  justify-between items-center">
           <div>
@@ -72,6 +72,9 @@ const CartNav = () => {
           </div>
         </div>
       </div>
+
+      {/* mobile */}
+
       <div className="lg:hidden ">
         <nav className="bg-dark pl-2 pr-6 sm:px-4 py-2.5  w-full z-50 top-0 left-0">
           <div className="container flex flex-wrap items-center justify-between mx-auto">

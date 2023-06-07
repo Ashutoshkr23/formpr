@@ -43,7 +43,7 @@ const CartComponent = () => {
     <div className=" ">
       {/* <h3 className='text-5xl font-bold leading-10 text-[#000]'>Customise</h3> */}
       <div className="mt-10">
-        <div className="max-w-[1208px] mx-auto flex justify-between items-center px-4 xl:px-0">
+        <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center items-center px-4 xl:px-0">
           <div className="bg-white rounded-xl max-w-[803px] lg:gap-12 xl:gap-16 h-[55px] flex  lg:justify-between px-2 md:px-4 lg:px-8 cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
             <div
               className={`px-4 rounded-lg ${
@@ -85,7 +85,7 @@ const CartComponent = () => {
       </div>
       <div className="w-full pt-10">
         {/* step 1 */}
-        {stepState == 1 ? (
+        {/* {stepState == 1 ? (
           <DesignComp
             cardTypeSelected={cardTypeSelected}
             handleCardSelection={handleCardSelection}
@@ -97,7 +97,7 @@ const CartComponent = () => {
           <DetailsComp />
         ) : (
           <CheckoutComp />
-        )}
+        )} */}
       </div>
     </div>
   );
