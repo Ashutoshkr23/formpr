@@ -18,19 +18,14 @@ const DesignComp = ({
         <div className="flex xl:w-3/5 justify-between ">
           <div className="">
             <div className="flex flex-col space-y-4">
-              <div className=" ">
-                <div
-                  className={`flex items-center  space-x-10  cursor-pointer  h-full  ${
-                    selectedTypeIndex == 0 ? " " : ""
-                  } rounded-lg`}
+              <div className=" pr-1">
+                <div className={`flex items-center justify-between  cursor-pointer  h-full  ${selectedTypeIndex == 0 ? " " : ""} `}
                   onClick={() => {
                     handleCardSelection(0);
-                  }}
-                >
+                  }}>
                   <p
-                    className={`text-base font-bold leading-7 text-center ${
-                      selectedTypeIndex == 0 ? "" : ""
-                    }`}
+                    className={`text-base font-bold leading-7 text-center ${selectedTypeIndex == 0 ? "" : ""
+                      }`}
                   >
                     Loop Lite
                   </p>
@@ -44,19 +39,17 @@ const DesignComp = ({
                 <hr className="w-[156px]" />
               </div>
 
-              <div className="">
+              <div className="pr-1">
                 <div
-                  className={`flex items-center space-x-4  cursor-pointer  h-full ${
-                    selectedTypeIndex == 1 ? "  " : ""
-                  } rounded-lg`}
+                  className={`flex items-center justify-between space-x-4  cursor-pointer  h-full ${selectedTypeIndex == 1 ? "  " : ""
+                    } `}
                   onClick={() => {
                     handleCardSelection(1);
                   }}
                 >
                   <p
-                    className={`text-base leading-7 text-center ${
-                      selectedTypeIndex == 1 ? "" : ""
-                    }`}
+                    className={`text-base leading-7 text-center ${selectedTypeIndex == 1 ? "" : ""
+                      }`}
                   >
                     Loop Elevate
                   </p>
@@ -68,19 +61,17 @@ const DesignComp = ({
                 </div>
                 <hr className="w-[156px]" />
               </div>
-              <div className="">
+              <div className="pr-1">
                 <div
-                  className={`flex cursor-pointer pb-4  h-full ${
-                    selectedTypeIndex == 2 ? "  " : ""
-                  } rounded-lg`}
+                  className={`flex cursor-pointer justify-between  h-full ${selectedTypeIndex == 2 ? "  " : ""
+                    } `}
                   onClick={() => {
                     handleCardSelection(2);
                   }}
                 >
                   <p
-                    className={`text-base  leading-7 text-center ${
-                      selectedTypeIndex == 2 ? "" : ""
-                    }`}
+                    className={`text-base  leading-7 text-center ${selectedTypeIndex == 2 ? "" : ""
+                      }`}
                   >
                     Loop Supreme
                   </p>
@@ -94,13 +85,13 @@ const DesignComp = ({
               </div>
 
               <div className="">
-                <div className="flex cursor-pointer flex-col   pb-4 ">
+                <div className="flex cursor-pointer justify-between pb-4 pr-4 ">
                   <p className="text-sm  font-bold ">
-                    Total Quantity :
-                    <span className="text-sm font-bold pl-5">
+                    Total Quantity :</p>
+                  <span className="text-sm font-bold ">
                       {totalQuantity}
-                    </span>
-                  </p>
+                  </span>
+                  
                 </div>
                 <hr className="w-[156px]" />
               </div>
@@ -213,17 +204,15 @@ const DesignComp = ({
 
             <div className="flex pt-12 space-x-3 ">
               <div
-                className={`${
-                  State == 1 && "border-b-2 border-black font-bold"
-                } cursor-pointer`}
+                className={`${State == 1 && "border-b-2 border-black font-bold"
+                  } cursor-pointer`}
                 onClick={() => setState(1)}
               >
                 <p className="text-xs leading-[186%]">SPECIFICATIONS</p>
               </div>
               <div
-                className={`${
-                  State == 2 && "border-b-2 border-black font-bold"
-                } cursor-pointer`}
+                className={`${State == 2 && "border-b-2 border-black font-bold"
+                  } cursor-pointer`}
                 onClick={() => setState(2)}
               >
                 <p className="text-xs leading-[186%]">Compatibility</p>
