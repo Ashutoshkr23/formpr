@@ -23,7 +23,7 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
                 <p className='text-center  font-semibold text-xs text-white'>{cardtype}</p>
             </div>
             <div className='flex flex-col items-center'>
-                <div className={`h-[685px] border relative p-1 mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] border-0' : 'border'
+                <div className={`h-[600px] lg:h-[685px] border relative p-1 mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] border-0' : 'border'
                     }`} onMouseEnter={handleHover}
                     onMouseLeave={handleHover}>
 
