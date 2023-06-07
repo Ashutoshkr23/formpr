@@ -30,7 +30,7 @@ const Landing = () => {
       <Hero />
       <Benefits />
       <Products />
-      <LoopBlack />
+      <LoopBlack text={"BUY NOW"} />
       <Story />
       <Partners />
       <Android />
