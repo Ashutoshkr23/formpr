@@ -57,7 +57,8 @@ const EditReminder = () => {
         }
 
         const data = { userName, userContactNumber, itemID };
-        await axios.post('http://localhost:3000/api/reminder/updateReminder', data);
+        const response = await axios.post('http://localhost:3000/api/reminder/updateReminder', data);
+
         router.reload();
     };
 
