@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <div className="" id="contact">
       <div className="hidden md:block">
-        <div className="bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96]">
-          <div className="flex justify-around items-center h-[262px] min-w-full ">
+        <div className="md:px-8 lg:px-4 xl:px-0 bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96]">
+          <div className="flex justify-between  items-center h-[200px] max-w-[1208px] mx-auto ">
             <div className="hidden lg:block ">
               <Image
                 src={"/assets/images/landing/footerloop.svg"}
@@ -29,9 +29,9 @@ const Footer = () => {
             <div className="flex gap-x-8">
               <div className="flex flex-col gap-y-7 ">
                 <div>
-                  <p className="text-[14px] font-bold">privacy policy</p>
+                  <p className="text-[14px] font-bold">PRIVACY POLICY</p>
                 </div>
-                <div className="flex space-x-5  items-center justify-center">
+                <div className="flex space-x-5  items-center ">
                   <div>
                     <a
                       href="https://instagram.com/loop.card?igshid=NTc4MTIwNjQ2YQ=="
@@ -46,7 +46,10 @@ const Footer = () => {
                     </a>
                   </div>
                   <div>
-                    <a href="#">
+                    <a
+                      href="https://www.linkedin.com/company/loop-card/"
+                      target="_blank"
+                    >
                       <Image
                         src={"/assets/images/landing/footerlink.png"}
                         height={32}
@@ -58,14 +61,14 @@ const Footer = () => {
                 </div>
               </div>
               <div>
-                <p className="text-[14px] font-bold">terms and conditions</p>
+                <p className="text-[14px] font-bold">TERMS AND CONDITIONS</p>
               </div>
             </div>
 
             <div className="flex flex-col pt-6 ">
               <div className="flex flex-col gap-y-4 ">
                 <div className="text-[14px] font-bold">
-                  <p>contact us </p>
+                  <p>CONTACT US </p>
                 </div>
                 <div className=" text-[16px] leading-[154%]">
                   <p> gm@alphamintlabs.com</p>
@@ -90,7 +93,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="md:hidden min-w-full bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] h-full">
+      <div className="md:hidden max-w-[780px] bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] h-full">
         <div className="flex flex-col justify-center items-center">
           <div className="pt-9">
             <Image
@@ -101,13 +104,13 @@ const Footer = () => {
             />
           </div>
           <div className=" pt-10 font-bold">
-            <p>privacy policy</p>
+            <p>PRIVACY POLICY</p>
           </div>
           <div className=" pt-[30px] font-bold">
-            <p>terms and conditions</p>
+            <p>TERMS AND CONDITIONS</p>
           </div>
           <div className=" pt-[30px] font-bold">
-            <p>contact us </p>
+            <p>CONTACT US </p>
           </div>
           <div className=" pt-2">
             <p> gm@alphamintlabs.com </p>
@@ -128,7 +131,10 @@ const Footer = () => {
               </a>
             </div>
             <div>
-              <a href="#">
+              <a
+                href="https://www.linkedin.com/company/loop-card/"
+                target="_blank"
+              >
                 <Image
                   src={"/assets/images/landing/footerlink.png"}
                   height={32}
@@ -138,7 +144,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="flex items-center justify-center pb-2 pt-5 space-x-1 ">
+          <div className="flex items-center justify-center pb-2 pt-5  space-x-1 ">
             <div className="text-xs">
               <p>Made with love by</p>
             </div>

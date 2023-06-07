@@ -2,7 +2,7 @@ import {Card, HorizontalCard1, HorizontalCard2} from '@/components';
 const Benefits = () => {
 
     return (
-        <div className=' mt-24 lg:mt-64  md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
+        <div className=' mt-20 lg:mt-28  md:px-16 lg:px-4 xl:px-0 max-w-[1208px] mx-auto'>
             <div className='flex flex-col justify-center items-center'>
                 <h3 >
                     Benefits

@@ -2,8 +2,14 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+<<<<<<< HEAD
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
+=======
+import { useSession, } from 'next-auth/react';
+import { useRouter } from 'next/router';
+
+>>>>>>> 390f5af7f81dedec66bf5bcec787ff05c1505c2f
 
 
 
@@ -47,7 +53,7 @@ function LandingNavbar() {
 
   const handlelogin = () => {
     if (session) {
-      router.push('/dashboard');
+      router.push('/store');
     } else {
       router.push('/login');
     }

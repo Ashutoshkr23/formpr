@@ -9,7 +9,6 @@ import {
   FAQ,
   Benefits,
   LoopBlack,
-  Swiper,
   Partners,
 } from "@/components";
 

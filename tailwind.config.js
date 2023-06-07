@@ -16,6 +16,9 @@ module.exports = {
       dropShadow: {
         'white': '0 10px 15px rgba(0, 25, 38, 0.25)',
       },
+      boxShadow: {
+        'bl': '0 15px 15px 0px rgba(0, 25, 38, 0.25)',
+      },
 
       colors: {
         'gray': '#596573',

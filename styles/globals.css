@@ -29,7 +29,7 @@ body {
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
-    animation: typewriter 2s steps(15) 1s 1 normal both,
+    animation: typewriter 1s steps(15) 1s 1 normal both,
         blinkTextCursor 500ms steps(15) infinite normal;
     line-height: 1.5;
 }

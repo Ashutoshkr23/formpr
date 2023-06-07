@@ -42,8 +42,8 @@ function HorizontalCard2() {
                                                 <Image src={'/assets/images/landing/web.png'} alt='mask group' width={331} height={336} />
                                             </div>
                                             <div className='flex flex-col pt-[98px]  '>
-                                                {isHeadingVisible && <h4 className='text-[45px] text-right font-bold animate-text'>
-                                                    <span className='text-white'> Footprint in </span><span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0</span>
+                                                {isHeadingVisible && <h4 className='text-[45px] pl-[132px] xl:pl-[185px]  font-bold text-white animate-text'>
+                                                    Footprint in <span className="text-transparent bg-gradient-to-br from-[#FDFF96] to-[#66D3E1] bg-clip-text">Web3.0</span>
                                                 </h4>}
                                                 {isTextVisible && <h4 className='text-[24px] text-right ml-0 font-bold pt-7 animate-text'>
                                                     <span className="text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text">Empowering You with Web3&apos;s Limitless Possibilities.</span><br />
@@ -66,7 +66,7 @@ function HorizontalCard2() {
                                             </div>
                                             <div className=''>
                                                 {isTextVisible && <h4 className='text-[24px] text-right leading-[180%] mr-16 mt-24 font-bold  animate-text text-transparent bg-gradient-to-br from-[#96FFAD] to-[#66D3E1] bg-clip-text'>
-                                                    Unlock the door to the future with LoopChain. Each card creates a wallet, opening a world of NFTs and blockchain utilities, expanding the horizons of your digital presence.
+                                                    Unlock the door to the future with Loop. Each card creates a wallet, opening a world of NFTs and blockchain utilities, expanding the horizons of your digital presence.
 
 
                                                 </h4>}
@@ -112,7 +112,7 @@ function HorizontalCard2() {
                                 <div className={`horizontal-card-back  w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] rounded-[20px]   `}>
                                     <div className={`relative text-[16px] sm:text-[20px] sm:p-8 p-6 w-[300px] mobile:w-[345px] h-[230px] md:w-[450px] md:h-[336px] bg-black  rounded-[20px] drop-shadow-white`}>
                                         <p className='text-white font-bold text-base leading-[160%] mobile:leading-[186%] mobile:mt-2'>
-                                            Unlock the door to the future with LoopChain. Each card creates a wallet, opening a world of NFTs and blockchain utilities, expanding the horizons of your digital presence.
+                                            Unlock the door to the future with Loop. Each card creates a wallet, opening a world of NFTs and blockchain utilities, expanding the horizons of your digital presence.
                                         </p>
                                     </div>
 

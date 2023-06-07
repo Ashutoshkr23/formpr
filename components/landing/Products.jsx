@@ -58,7 +58,7 @@ function Products() {
         touchEndX.current = null;
     };
     return (
-        <div className='mt-20 ' id='product'>
+        <div className='mt-20 lg:mt-28' id='product'>
             <div className='flex flex-col'>
                 <div className='flex flex-col justify-center items-center '>
                     <div>

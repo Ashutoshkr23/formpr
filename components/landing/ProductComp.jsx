@@ -24,12 +24,14 @@ function ProductComp({ text, img, content, cardtype, text2 , offering1, offering
                             </div>
 
                             <div className='mt-[40px] pt-3 relative hidden xl:block'>
+                                <div className='h-80 w-[315px]'>
                                 <Image src={img}
                                     alt='card1'
                                     height={301}
                                     width={315}
                                     quality={100}
                                 />
+                                </div>
                                 {isHovered && (
                                     <div className="absolute  top-0 inset-0 flex backdrop-filter backdrop-blur  text-center">
                                         <div className='h-full flex items-center w-full px-4 bg-white bg-opacity-30 text-opacity-100'>
