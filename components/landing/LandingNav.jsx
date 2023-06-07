@@ -108,7 +108,7 @@ function LandingNavbar() {
                 type="button"
                 className="mobileNavbar inline-flex relative z-[100] items-center "
               >
-                <div className="fixed  h-3.5 w-5">
+                <div className={`{} h-3.5 w-5 ${isOpen ? "fixed" : ""}`}>
                   <div
                     className={` h-0.5 bg-black w-5 origin-top-left ease-in duration-200 rounded-md ${
                       isOpen ? "rotate-45 translate-x-px" : "rotate-0"
