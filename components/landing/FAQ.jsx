@@ -8,7 +8,7 @@ function FAQ() {
     >
       <h3>FAQ</h3>
       <h2 className=" mt-2 ">
-        Looping In: Answers to frequently asked questions
+        Looping In
       </h2>
 
       <QA
