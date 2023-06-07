@@ -15,7 +15,7 @@ const DesignComp = ({
   return (
     <div className="lg:mx-4 max-w-[1208px] xl:mx-auto mt-10">
       <div className="flex justify-between ">
-        <div className="flex xl:w-3/5 justify-between ">
+        <div className="flex gap-10  xl:gap-20 justify-between ">
           <div className="">
             <div className="flex flex-col space-y-4">
               <div className=" pr-1">
