@@ -48,7 +48,7 @@ function LandingNavbar() {
 
   const handlelogin = () => {
     if (session) {
-      router.push('/dashboard');
+      router.push('/store');
     } else {
       router.push('/login');
     }
