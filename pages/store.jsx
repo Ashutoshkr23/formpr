@@ -23,6 +23,9 @@ export default function Home() {
                         text2={"Whisper your brand, shoutout ours. "}
                         offering1={"Solid Colours"}
                         offering2={"Contrasting Logo"}
+                        price={"₹ 899"}
+                        color={"text-[#4FD86D]"}
+                        index={1}
                     />
                     <ProductComp
                         text={"Loop Elevate "}
@@ -32,6 +35,9 @@ export default function Home() {
                         text2={"Whisper your brand, we blend in.  "}
                         offering1={"Solid + Gradient Colours"}
                         offering2={"Blending Logo"}
+                        price={"₹ 999"}
+                        color={"text-[#3BCBDD]"}
+                        index={2}
                     />
                     <ProductComp
                         text={"Loop Supreme"}
@@ -41,7 +47,9 @@ export default function Home() {
                         text2={"Shoutout your brand, whisper ours. "}
                         offering1={"Unlimited Colours"}
                         offering2={"Standout Logo"}
-
+                        price={"₹ 1499"}
+                        color={"text-[#F16869]"}
+                        index={3}
                     />
                 </div>
                 <LoopBlack />

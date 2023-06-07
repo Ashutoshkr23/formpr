@@ -1,19 +1,29 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
+import { CartContext } from '@/context/CartContext';
+import { useRouter } from 'next/router';
 
-function ProductComp({ text, img, content, cardtype, text2 , offering1, offering2}) {
+
+function ProductComp({ text, img, content, cardtype, text2, offering1, offering2, price, color, index }) {
     const [isHovered, setIsHovered] = useState(false);
+    const { cartItems, plusCartFunc } = useContext(CartContext);
+    const router = useRouter()
 
     const handleHover = () => {
         setIsHovered(!isHovered);
     };
     return (
-        <div className='flex flex-col hover:scale-105 '>
+        <div onClick={() => {
+            let id = cartItems[index - 1]._id
+            plusCartFunc(id)
+            router.push("/cart")
+        }} className='flex flex-col hover:scale-105 '>
             <div className=' relative z-20 ml-3 -mb-5  w-[116px] h-9 rounded-lg bg-black pt-2'>
                 <p className='text-center  font-semibold text-xs text-white'>{cardtype}</p>
             </div>
             <div className='flex flex-col items-center'>
-                <div className={`h-[600px] border relative p-1 mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] border-0' : 'border'
+                <div className={`h-[685px] border relative p-1 mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] border-0' : 'border'
                     }`} onMouseEnter={handleHover}
                     onMouseLeave={handleHover}>
 
@@ -49,6 +59,7 @@ function ProductComp({ text, img, content, cardtype, text2 , offering1, offering
                                     quality={100}
                                 />
                             </div>
+                            <p className={`font-bold text-xl my-4 text-black ${color} `}>{price}</p>
                             <p className='font-medium text-xs text-[#686A6C]'>{text2} </p>
                             <div className='w-[138px] xl:w-[165px] h-9 xl:h-10 text-xs xl:text-base  pt-5'>
                                 <button className={`buynow text-center w-full py-[5px] font-bold rounded-[10px] ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black' : 'bg-black text-white'
