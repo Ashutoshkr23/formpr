@@ -28,8 +28,6 @@ export default async function handler(req, res) {
                 });
             }
 
-            console.log("22");
-            console.log(getUserRemainder);
             return res.json({
                 success: true,
                 message: 'Reminder found',
