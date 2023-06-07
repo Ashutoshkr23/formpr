@@ -2,9 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { useSession, } from 'next-auth/react';
-import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 
 
