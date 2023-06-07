@@ -1,38 +1,37 @@
-import React from 'react'
+import React from "react";
 import CartComp from "@/components/cart/CartComp";
-import Navbar from '@/components/Navbar';
-import { useSession, signIn, getSession, signOut } from "next-auth/react"
-import CartComponent from '@/components/CartComps/CartComponent';
+import Navbar from "@/components/Navbar";
+import { useSession, signIn, getSession, signOut } from "next-auth/react";
+import CartComponent from "@/components/CartComps/CartComponent";
+import CartNav from "@/components/CartComps/CartNav";
 
 export default function Cart() {
+  return (
+    <>
+      <div className="w-full min-h-screen py-5">
+        <CartNav />
 
-    return (
-        <>
-            <div className='w-full min-h-screen py-5'>
-                <Navbar />
-
-                {/* <CartComp /> */}
-                <CartComponent />
-            </div>
-        </>
-    )
+        {/* <CartComp /> */}
+        <CartComponent />
+      </div>
+    </>
+  );
 }
 
 export async function getServerSideProps({ req }) {
-    const session = await getSession({ req });
-    if (!session) {
-        return {
-            redirect: {
-                destination: '/',
-                permanent: false,
-            },
-        };
-    }
-
+  const session = await getSession({ req });
+  if (!session) {
     return {
-        props: {
-            session,
-
-        },
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
     };
+  }
+
+  return {
+    props: {
+      session,
+    },
+  };
 }
