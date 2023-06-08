@@ -95,7 +95,7 @@ function Products() {
                             <ProductComp
                                 text={"Loop Elevate "}
                                 img={"/assets/images/landing/ElevateCards.png"}
-                                    content={"Elevate your style with Loop Elevate cards. Featuring a selection of solid colors and gradient options, our cards are designed with a Loop logo that seamlessly blends in, exuding sophistication."}
+                                    content={"Elevate your style with Loop Elevate cards. Featuring a selection of solid colors and gradient options, our cards are designed with a Loop logo that seamlessly blends in, exuding sophistication"}
                                     cardtype={"Pro"}
                                     text2={"Whisper your brand, we blend in.  "}
                                     offering1={"Solid + Gradient Colours"}
@@ -106,7 +106,7 @@ function Products() {
                             <ProductComp
                                 text={"Loop Supreme"}
                                 img={"/assets/images/landing/SupremeCard.png"}
-                                    content={"Unleash your creativity with Loop Supreme cards. Offering unlimited color options, these cards boast a bold and eye-catching version of your logo on the back, making a statement that's impossible to ignore."}
+                                    content={"Unleash your creativity with Loop Supreme cards. Offering unlimited color options, these cards boast a bold and eye-catching version of your logo on the back, making a statement that's impossible to ignore"}
                                     cardtype={"Elite"}
                                     text2={"Shoutout your brand, whisper ours. "}
                                     offering1={"Unlimited Colours"}

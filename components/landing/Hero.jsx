@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
     return (
 
-        <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col mt-20 lg:mt-28 lg:px-4 lg:pb-  xl:px-0'>
+        <div className='flex lg:flex-row justify-between items-center max-w-[1208px] mx-auto flex-col  lg:mt-16 lg:px-4 lg:pb-  xl:px-0'>
 
             <div className="flex flex-col items-center lg:items-start mt-12  lg:mt-0  px-2  mobile:px-4 md:px-0 mx-auto lg:mx-0 max-w-[456px] xl:max-w-[680px] ">
                 <h1 className=' mr-auto text-left anim-typewriter  font-bold '>
@@ -71,7 +71,7 @@ const Hero = () => {
                 <div className='md:hidden'>
 
                     <motion.div
-                        className="flex flex-wrap items-center justify-center  mt-8 gap-2  md:mt-12 lg:min-w-[450px] w-full py-4"
+                        className="flex flex-wrap items-center justify-center  mt-8 gap-2 mb-12 lg:mb-0 md:mt-12 lg:min-w-[450px] w-full py-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 2.5 }}
@@ -108,10 +108,6 @@ const Hero = () => {
                         </div>
                     </motion.div>
                 </div>
-             
-
-                
-
             </div>
             {/*Desktop and tab view */ }
 
@@ -135,6 +131,7 @@ const Hero = () => {
                         initial={{ y: -250 }}
                         animate={{ y: 0 }} 
                         transition={{ duration: 2, delay:3.5 }}
+                        
                     >
                     <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
                         width={260}
@@ -213,4 +210,3 @@ const Hero = () => {
 }
 
 export default Hero
-
