@@ -13,3 +13,4 @@ export { default as Footer } from "../components/landing/Footer";
 export { default as LoopBlack } from "../components/landing/LoopBlack";
 export { default as Swiper } from "../components/landing/Swiper";
 export { default as Partners } from "../components/landing/Partners";
+export { default as LoopMaven } from "../components/landing/LoopMaven";
