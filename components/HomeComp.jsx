@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Navbar from "./Navbar";
 import { CartContext } from "@/context/CartContext";
 import Link from "next/link";
 import LoopCards from "./dashboardComps/LoopCards";
