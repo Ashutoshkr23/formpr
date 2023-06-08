@@ -12,6 +12,12 @@ const DesignComp = ({
 }) => {
   const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
   const [State, setState] = useState(1);
+  const [value, setValue] = useState("Front");
+  const [type, setType] = useState("Lite");
+
+  const handleClick = () => {
+    setValue(value === "Front" ? "Back" : "Front");
+  };
 
   return (
     <div className="lg:mx-4 max-w-[1208px] xl:mx-auto ">
@@ -28,6 +34,7 @@ const DesignComp = ({
                       } `}
                       onClick={() => {
                         handleCardSelection(0);
+                        setType("Lite");
                       }}
                     >
                       <p
@@ -54,6 +61,7 @@ const DesignComp = ({
                       } `}
                       onClick={() => {
                         handleCardSelection(1);
+                        setType("Elevate");
                       }}
                     >
                       <p
@@ -121,29 +129,16 @@ const DesignComp = ({
             </div>
             <div className="hidden md:block">
               <div className="flex space-x-5">
-                <div style={{ width: 400, height: 250 }}>
-                  <div
-                    className="bg-[#66D3E1] rounded-2xl relative w-full"
-                    style={{ width: 400, height: 250 }}
-                  >
-                    <Image
-                      src={"/assets/images/nfcIcon.png"}
-                      className="absolute top-2 right-3"
-                      alt="nfc"
-                      height={25}
-                      width={25}
-                    />
-
-                    <Image
-                      src={"/assets/images/loopIcon.svg"}
-                      className="absolute top-12 left-14"
-                      alt="loop"
-                      height={300}
-                      width={370}
-                    />
-                  </div>
+                <div>
+                  <Image
+                    src={`/assets/images/storeImages/${type}/${value}/Blue.png`}
+                    className=""
+                    alt="flip"
+                    height={258}
+                    width={400}
+                  />
                 </div>
-                <div className="">
+                <div className="cursor-pointer" onClick={handleClick}>
                   <Image
                     src={"/assets/images/cart-images/flipImage.png"}
                     className=""
