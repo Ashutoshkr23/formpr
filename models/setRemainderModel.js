@@ -16,6 +16,10 @@ const SetRemainderSchema = new mongoose.Schema({
     userEmail: {
         type: String,
         default: ''
+    },
+    customMessage: {
+        type: String,
+        default: ''
     }
 }, {
     timestamps: true

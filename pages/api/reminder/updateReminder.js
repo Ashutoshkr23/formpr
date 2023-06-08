@@ -9,9 +9,9 @@ export default async function handler(req, res) {
         // Connecting To MongoDB
         await connectToDatabase();
 
-        const { userName, userContactNumber, itemID } = req.body;
+        const { userName, userContactNumber, itemID, userCustomMessage } = req.body;
 
-        const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber }, { new: true });
+        const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber, customMessage: userCustomMessage }, { new: true });
 
         const message = {
             to: updatedReminder.userEmail,
@@ -21,12 +21,12 @@ export default async function handler(req, res) {
             html: `You have a meeting with ${userName}. Their phone number is ${userContactNumber}.`
         };
 
-        try {
-            await sgMail.send(message);
-            console.log('Notification email sent successfully');
-        } catch (error) {
-            console.error('Error sending notification email:', error);
-        }
+        // try {
+        //     await sgMail.send(message);
+        //     console.log('Notification email sent successfully');
+        // } catch (error) {
+        //     console.error('Error sending notification email:', error);
+        // }
 
         res.json({
             success: true,
