@@ -149,12 +149,17 @@ const Footer = () => {
               <p>Made with love by</p>
             </div>
             <div>
-              <Image
-                src={"/assets/images/landing/amlLogo.png"}
-                alt="aml Logo"
-                height={25}
-                width={60}
-              />
+                <a
+                    href="https://alphamintlabs.com"
+                    target="_blank"
+                    >
+                  <Image
+                    src={"/assets/images/landing/amlLogo.png"}
+                    alt="aml Logo"
+                    height={23}
+                    width={63}
+                  />
+                  </a>
             </div>
           </div>
         </div>

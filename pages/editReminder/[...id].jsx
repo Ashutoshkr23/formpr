@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import moment from 'moment';
 import Link from 'next/link';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const EditReminder = () => {
     const router = useRouter();
@@ -11,19 +13,32 @@ const EditReminder = () => {
     const [data, setData] = useState(null);
 
     const [userRemainder, setuserRemainder] = useState([]);
-    const [userName, setuserName] = useState('');
-    const [userContactNumber, setuserContactNumber] = useState('');
 
+    const [userName, setuserName] = useState('');
     const handleuserNameChange = (event) => {
         setuserName(event.target.value);
     };
 
+    const [userContactNumber, setuserContactNumber] = useState('');
     const handleuserContactNumberChange = (event) => {
         const inputValue = event.target.value;
         if (/^\d*$/.test(inputValue)) {
             setuserContactNumber(inputValue);
         }
     };
+
+    const [userCustomMessage, setuserCustomMessage] = useState('');
+    const handleuserCustomMessageChange = (event) => {
+        setuserCustomMessage(event.target.value);
+    };
+
+    const [selectedDate, setSelectedDate] = useState(null);
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+    };
+
+    const [yourDate, setyourDate] = useState('Please Select A Date')
+
 
     useEffect(() => {
         const verifyReminderID = async () => {
@@ -38,6 +53,8 @@ const EditReminder = () => {
                     setuserRemainder(userRemainderArray);
                     setuserName(userRemainderArray[2]);
                     setuserContactNumber(userRemainderArray[3]);
+                    setuserCustomMessage(userRemainderArray[5]);;
+                    setyourDate(userRemainderArray[6]);
                 }
             } catch (error) {
                 console.error('Error:', error);
@@ -56,9 +73,9 @@ const EditReminder = () => {
             return; // Don't perform update if inputs are empty or contact number has non-numeric characters
         }
 
-        const data = { userName, userContactNumber, itemID };
+        const data = { userName, userContactNumber, itemID, userCustomMessage, selectedDate };
         const response = await axios.post('http://localhost:3000/api/reminder/updateReminder', data);
-
+        console.log(response);
         router.reload();
     };
 
@@ -76,6 +93,14 @@ const EditReminder = () => {
                 <div onClick={updateReminder} disabled={isSaveDisabled} className={isSaveDisabled ? 'disabled' : ''}>
                     Save
                 </div>
+            </div>
+            <div className="flex items-center border-2 border-black p-2">
+                <input type="text" value={userCustomMessage} onChange={handleuserCustomMessageChange} className="flex-grow outline-none" placeholder="Custom Message" />
+            </div>
+            <div>
+                Select Date
+                <div>{yourDate}</div>
+                <DatePicker selected={selectedDate} onChange={handleDateChange} showTimeSelect dateFormat="MMMM d, yyyy h:mm aa" />
             </div>
         </div>
     );

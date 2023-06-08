@@ -26,7 +26,7 @@ const Benefits = () => {
                         img={"/assets/images/landing/Loopdark.png"}
                         btncolor={"white"}
                         backContent={"From sleek minimalism to captivating artwork, our customizable designs ensure your digital card stands out in the Loop. "}
-                        pstyle={"font-bold text-xs md:text-sm mr-12 mt-4 ml-4 leading-[180%] "}
+                        pstyle={"font-bold text-sm md:text-base mr-12 mt-4 ml-4 leading-[180%] "}
                     />
 
                     <Card
@@ -70,7 +70,7 @@ const Benefits = () => {
                         textStyle={"md:pt-[60px] leading-[186%] w-[230px] text-black md:w-[275px] pt-[47px] md:pl-[32px] pl-[24px] text-xs md:text-[14px] font-bold"}
                         img={"/assets/images/landing/PhoneinHand.png"}
                         backContent={'No downloads, no hassle. With Loop, your contacts open effortlessly in a WebView, making connections smooth and frictionless.' }
-                        pstyle={"font-bold text-xs md:text-sm mr-12 w-[140px] mobile:w-[180px] md:w-[200px] ml-4 md:ml-10 pt-10 md:pt-16 leading-[180%] "}
+                        pstyle={"font-bold text-sm md:text-base mr-12 w-[140px] mobile:w-[180px] md:w-[200px] ml-4 md:ml-10 pt-10 md:pt-16 leading-[180%] "}
 
                     />
                 </div>
