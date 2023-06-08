@@ -20,6 +20,10 @@ const SetRemainderSchema = new mongoose.Schema({
     customMessage: {
         type: String,
         default: ''
+    },
+    customDate: {
+        type: String,
+        default: ''
     }
 }, {
     timestamps: true
