@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 import { CartContext } from '@/context/CartContext';
@@ -9,14 +9,33 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
     const [isHovered, setIsHovered] = useState(false);
     const { cartItems, plusCartFunc } = useContext(CartContext);
     const router = useRouter()
+    const [totalQuantity, setTotalQuantity] = useState(0);
+
+    useEffect(() => {
+        if (cartItems.length > 0) {
+
+            let totalQuantity = 0;
+
+            // Loop over the array and add up the quantity field of each object
+            for (var i = 0; i < cartItems.length; i++) {
+                totalQuantity += cartItems[i].quantity;
+            }
+
+            setTotalQuantity(parseInt(totalQuantity));
+
+        }
+    }, [cartItems]);
 
     const handleHover = () => {
         setIsHovered(!isHovered);
     };
     return (
         <div onClick={() => {
-            let id = cartItems[index - 1]._id
-            plusCartFunc(id)
+            if (totalQuantity == 0) {
+                let id = cartItems[index - 1]._id
+                plusCartFunc(id)
+            }
+
             router.push("/cart")
         }} className='flex flex-col hover:scale-105 '>
             <div className=' relative z-20 ml-3 -mb-5  w-[116px] h-9 rounded-lg bg-black pt-2'>
@@ -35,17 +54,17 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
 
                             <div className='mt-[40px] pt-3 relative hidden xl:block'>
                                 <div className='h-80 w-[315px]'>
-                                <Image src={img}
-                                    alt='card1'
-                                    height={301}
-                                    width={315}
-                                    quality={100}
-                                />
+                                    <Image src={img}
+                                        alt='card1'
+                                        height={301}
+                                        width={315}
+                                        quality={100}
+                                    />
                                 </div>
                                 {isHovered && (
                                     <div className="absolute  top-0 inset-0 flex backdrop-filter backdrop-blur  text-center">
                                         <div className='h-full flex items-center w-full px-4 bg-white bg-opacity-30 text-opacity-100'>
-                                        <p className="my-auto ">{content}</p>
+                                            <p className="my-auto ">{content}</p>
                                         </div>
                                     </div>
                                 )}

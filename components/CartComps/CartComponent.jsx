@@ -12,17 +12,32 @@ const CartComponent = () => {
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
 
+  // console.log(cartItems, "cart")
   // type 0 :Lite ,1 :Elevate ,2:Supreme ,3 :black
   const handleCardSelection = (type) => {
     setCardTypeSelected(cartItems[type]);
     setSelectedTypeIndex(type);
   };
 
+
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      cartItems.map((item, index) => {
+        if (item.quantity == 1) {
+          setCardTypeSelected(cartItems[index]);
+          setSelectedTypeIndex(index);
+          return
+        }
+      })
+    }
+  }, []);
+
   useEffect(() => {
     if (cartItems.length > 0) {
       if (!cardTypeSelected) {
         setCardTypeSelected(cartItems[0]);
       }
+
       let totalQuantity = 0;
       let totalAmount = 0;
       // Loop over the array and add up the quantity field of each object
@@ -33,6 +48,7 @@ const CartComponent = () => {
       setTotalAmount(totalAmount);
       setTotalQuantity(parseInt(totalQuantity));
       setCardTypeSelected(cartItems[selectedTypeIndex]);
+
     }
   }, [cartItems]);
 
@@ -46,9 +62,8 @@ const CartComponent = () => {
         <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center items-center px-4 xl:px-0">
           <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
             <div
-              className={`rounded-lg w-1/3 ${
-                stepState == 1 && "border-2 border-slate-700 font-bold"
-              } flex justify-center items-center `}
+              className={`rounded-lg w-1/3 ${stepState == 1 && "border-2 border-slate-700 font-bold"
+                } flex justify-center items-center `}
               onClick={() => setStepState(1)}
             >
               <p className="text-center text-[12px] md:text-base">
@@ -56,9 +71,8 @@ const CartComponent = () => {
               </p>
             </div>
             <div
-              className={`rounded-lg w-1/3 ${
-                stepState == 2 && "border-2 border-slate-700 font-bold"
-              } flex justify-center items-center `}
+              className={`rounded-lg w-1/3 ${stepState == 2 && "border-2 border-slate-700 font-bold"
+                } flex justify-center items-center `}
               onClick={() => setStepState(2)}
             >
               <p className="text-center text-[12px] md:text-base">
@@ -66,9 +80,8 @@ const CartComponent = () => {
               </p>
             </div>
             <div
-              className={` rounded-lg w-1/3 ${
-                stepState == 3 && "border-2 border-slate-700 font-bold"
-              } flex justify-center items-center `}
+              className={` rounded-lg w-1/3 ${stepState == 3 && "border-2 border-slate-700 font-bold"
+                } flex justify-center items-center `}
               onClick={() => setStepState(3)}
             >
               <p className="text-center text-[12px] md:text-base">
@@ -77,7 +90,7 @@ const CartComponent = () => {
             </div>
           </div>
           <div className="hidden lg:block pl-5">
-            <button className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px]">
+            <button disabled={totalQuantity == 0 ? true : false} className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px] disabled:cursor-not-allowed " onClick={() => setStepState(stepState + 1)} >
               NEXT
             </button>
           </div>
