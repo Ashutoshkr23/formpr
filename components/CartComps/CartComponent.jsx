@@ -47,32 +47,32 @@ const CartComponent = () => {
           <div className="bg-white rounded-xl lg:w-3/5 h-[55px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
             <div
               className={`rounded-lg w-1/3 ${
-                stepState == 1 && "border-2 border-slate-700"
-              } flex justify-center items-center font-bold`}
+                stepState == 1 && "border-2 border-slate-700 font-bold"
+              } flex justify-center items-center `}
               onClick={() => setStepState(1)}
             >
               <p className="text-center text-[12px] md:text-base">
-                Step 1 : card type & qty.
+                STEP1 : CARD TYPE & QTY.
               </p>
             </div>
             <div
               className={`rounded-lg w-1/3 ${
-                stepState == 2 && "border-2 border-slate-700"
-              } flex justify-center items-center font-bold`}
+                stepState == 2 && "border-2 border-slate-700 font-bold"
+              } flex justify-center items-center `}
               onClick={() => setStepState(2)}
             >
               <p className="text-center text-[12px] md:text-base">
-                Step 2 : details
+                STEP2 : DETAILS
               </p>
             </div>
             <div
               className={` rounded-lg w-1/3 ${
-                stepState == 3 && "border-2 border-slate-700"
-              } flex justify-center items-center font-bold`}
+                stepState == 3 && "border-2 border-slate-700 font-bold"
+              } flex justify-center items-center `}
               onClick={() => setStepState(3)}
             >
               <p className="text-center text-[12px] md:text-base">
-                Step 3 : Checkout
+                STEP3: CHECKOUT
               </p>
             </div>
           </div>
