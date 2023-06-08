@@ -115,6 +115,25 @@ const CardDescription = ({ cardTypeSelected, heading, price, desc }) => {
                   </div>
                 </div>
               )}
+              {State == 2 && (
+                <div className="max-w-[330px]">
+                  <div className="pt-5">
+                    <p className="text-xs leading-[150%]">
+                      With Loop Cards, you can easily tap and connect with all
+                      iPhones and most Android devices. For Android receivers,
+                      simply ensure that NFC is enabled in their device
+                      settings.
+                    </p>
+                  </div>
+                  <div className="pt-7">
+                    <p className="text-xs leading-[150%]">
+                      The best part is, you can effortlessly share your profile
+                      with others without the need for them to have a specific
+                      app. Sharing your information has never been simpler.
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
