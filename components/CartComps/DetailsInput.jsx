@@ -42,10 +42,11 @@ function DetailsInput() {
 
 
     return (
-        <div className='sm:px-8 relative md:px-8 h-[373px] lg:px-4 xl:px-0 max-w-[1208px] mx-auto bg-white rounded-xl drop-shadow-white flex items-center justify-around'>
-            <div className='absolute left-0 -top-3 rounded-md flex justify-center items-center bg-black text-[10px] font-bold text-white h-6 w-20'>REMOVE <span className='text-base font-medium pl-2'>X</span></div>
+        <div className='sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] mx-auto '>
+            <div className=' h-[373px] bg-white rounded-xl drop-shadow-white flex items-center justify-between'>
+            <div className='absolute left-0 -top-3 rounded-md flex justify-center  items-center bg-black text-[10px] font-bold text-white h-6 w-20'>REMOVE <span className='text-base font-medium pl-2'>X</span></div>
 
-            <div className="flex flex-col space-x-5 w-3/5">
+            <div className="flex flex-col items-center flex-grow ">
                 <div className='flex'>
                     <div style={{ width: 400, height: 250 }}>
                         <div
@@ -79,7 +80,7 @@ function DetailsInput() {
                         />
                     </div>
                 </div>
-                <div className='flex mt-6 pl-20 gap-4'>
+                <div className='flex mt-6  gap-4'>
                     <p className='text-xs'>colors</p>
                     <div id="container" className="flex space-x-2">
                         <div
@@ -115,10 +116,10 @@ function DetailsInput() {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='w-[350px] xl:w-[390px]'>
                 <h2>Loop Lite</h2>
                 <div className='flex mt-8'>
-                    <input className='border w-[219px] h-10 rounded-xl pl-4'
+                    <input className='border w-[180px] xl:w-[220px] h-10 rounded-xl pl-4'
                         type="text"
                         value={companyName}
                         onChange={handleCompanyNameChange}
@@ -132,14 +133,14 @@ function DetailsInput() {
                             type="file"
                             value={logo}
                             onChange={handleLogoChange}
-                            className="border w-[219px] h-10 rounded-xl "
+                            className="border w-[180px] xl:w-[220px] h-10 rounded-xl "
                             placeholder="Upload Logo"
                         />
                         <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4'>APPLY TO ALL</button>
                     </div>
                 </div>
                 <div>
-                    <input className='border w-[219px] h-10 rounded-xl pl-4 mt-4'
+                    <input className='border w-[180px] xl:w-[220px] h-10 rounded-xl pl-4 mt-4'
                         type="text"
                         value={fullName}
                         onChange={handleFullNameChange}
@@ -150,6 +151,7 @@ function DetailsInput() {
 
 
 
+            </div>
             </div>
         </div>
     )
