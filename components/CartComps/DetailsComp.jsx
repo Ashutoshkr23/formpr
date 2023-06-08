@@ -1,8 +1,11 @@
 import React from 'react'
+import DetailsInput from './DetailsInput'
 
 const DetailsComp = () => {
     return (
-        <div>DetailsComp</div>
+        <div>
+            <DetailsInput/>
+        </div>
     )
 }
 
