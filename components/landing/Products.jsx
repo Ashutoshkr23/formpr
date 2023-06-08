@@ -84,10 +84,10 @@ function Products() {
                             <ProductComp
                                 text={"Loop Lite"}
                                 img={"/assets/images/landing/Lite.png"}
-                                    content={"Sleek and vibrant, our Loop Lite cards offer a range of solid colour options with contrasting Loop logo that adds a bold touch of distinction"}
+                                    content={"Sleek and vibrant, our Loop Lite cards offer a range of solid color options with contrasting Loop logo that adds a bold touch of distinction"}
                                 cardtype={"Basic"}
                                 text2={"Whisper your brand, shoutout ours. "}
-                                offering1={"Solid Colours"}
+                                offering1={"Solid Colors"}
                                 offering2={"Contrasting Logo"}
                             />
                         </div>
@@ -98,7 +98,7 @@ function Products() {
                                     content={"Elevate your style with Loop Elevate cards. Featuring a selection of solid colors and gradient options, our cards are designed with a Loop logo that seamlessly blends in, exuding sophistication"}
                                     cardtype={"Pro"}
                                     text2={"Whisper your brand, we blend in.  "}
-                                    offering1={"Solid + Gradient Colours"}
+                                    offering1={"Solid + Gradient Colors"}
                                     offering2={"Blending Logo"}
                             />
                         </div>
@@ -109,7 +109,7 @@ function Products() {
                                     content={"Unleash your creativity with Loop Supreme cards. Offering unlimited color options, these cards boast a bold and eye-catching version of your logo on the back, making a statement that's impossible to ignore"}
                                     cardtype={"Elite"}
                                     text2={"Shoutout your brand, whisper ours. "}
-                                    offering1={"Unlimited Colours"}
+                                    offering1={"Unlimited Colors"}
                                     offering2={"Standout Logo"}
 
                             />

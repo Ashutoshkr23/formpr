@@ -39,7 +39,7 @@ const Hero = () => {
                         <div className='bg-white w-[215px] items-center flex rounded-2xl h-[74px] drop-shadow-white'>
                             <Image src="/assets/images/landing/Eco-Friendly.png" alt="" height={50} width={50} className=' mx-6' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>
-                                Eco-friendly
+                                Eco-conscious
                             </p>
                         </div>
                         <div className='bg-white w-[215px] items-center flex rounded-2xl h-[74px] drop-shadow-white'>
@@ -79,7 +79,7 @@ const Hero = () => {
                         <div className='bg-white w-[150px] items-center flex rounded-2xl h-[60px] drop-shadow-white'>
                             <Image src="/assets/images/landing/Eco-Friendly.png" alt="" height={32} width={32} className=' mx-2' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>
-                                Eco-friendly
+                                Eco-conscious
                             </p>
                         </div>
                         <div className='bg-white w-[150px] items-center flex rounded-2xl h-[60px] drop-shadow-white'>

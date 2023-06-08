@@ -2,12 +2,7 @@ import { CartContext } from "@/context/CartContext";
 import Image from "next/image";
 import React, { useContext, useState, useEffect } from "react";
 
-const CardDescription = ({
-  cardTypeSelected,
-  heading,
-  price,
-  desc,
-}) => {
+const CardDescription = ({ cardTypeSelected, heading, price, desc }) => {
   const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
   const [State, setState] = useState(1);
   return (

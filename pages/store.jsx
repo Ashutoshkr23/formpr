@@ -18,11 +18,11 @@ export default function Home() {
             text={"Loop Lite"}
             img={"/assets/images/landing/Lite.png"}
             content={
-              "Sleek and vibrant, our Loop Lite cards offer a range of solid colour options with contrasting Loop logo that adds a bold touch of distinction"
+              "Sleek and vibrant, our Loop Lite cards offer a range of solid color options with contrasting Loop logo that adds a bold touch of distinction"
             }
             cardtype={"Basic"}
             text2={"Whisper your brand, shoutout ours. "}
-            offering1={"Solid Colours"}
+            offering1={"Solid Colors"}
             offering2={"Contrasting Logo"}
             price={"₹ 899"}
             color={"text-[#4FD86D]"}
@@ -36,7 +36,7 @@ export default function Home() {
             }
             cardtype={"Pro"}
             text2={"Whisper your brand, we blend in.  "}
-            offering1={"Solid + Gradient Colours"}
+            offering1={"Solid + Gradient Colors"}
             offering2={"Blending Logo"}
             price={"₹ 999"}
             color={"text-[#3BCBDD]"}
@@ -50,7 +50,7 @@ export default function Home() {
             }
             cardtype={"Elite"}
             text2={"Shoutout your brand, whisper ours. "}
-            offering1={"Unlimited Colours"}
+            offering1={"Unlimited Colors"}
             offering2={"Standout Logo"}
             price={"₹ 1499"}
             color={"text-[#F16869]"}

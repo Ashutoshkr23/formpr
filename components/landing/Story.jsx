@@ -37,7 +37,7 @@ const Story = () => {
                   At Loop, we&apos;re passionate about making networking effortless{" "}
                 </span>
                 <span className="text-transparent bg-gradient-to-tr from-[#F16869] to-[#FDFF96] bg-clip-text">
-                  and eco-friendly.{" "}
+                  and eco-conscious.{" "}
                 </span>
               </p>
             </div>
