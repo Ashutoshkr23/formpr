@@ -44,7 +44,7 @@ const CartComponent = () => {
       {/* <h3 className='text-5xl font-bold leading-10 text-[#000]'>Customise</h3> */}
       <div className="mt-10">
         <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center items-center px-4 xl:px-0">
-          <div className="bg-white rounded-xl lg:w-3/5 h-[55px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
+          <div className="bg-white rounded-xl lg:w-3/5 h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
             <div
               className={`rounded-lg w-1/3 ${
                 stepState == 1 && "border-2 border-slate-700"
@@ -77,7 +77,7 @@ const CartComponent = () => {
             </div>
           </div>
           <div className="hidden lg:block pl-2">
-            <button className="lg:w-[300px] xl:w-[385px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
+            <button className="lg:w-[300px] xl:w-[385px] shadow-xl h-[40px] bg-black text-white rounded-[10px]">
               NEXT
             </button>
           </div>
