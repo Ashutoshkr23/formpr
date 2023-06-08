@@ -31,8 +31,8 @@ const DesignComp = ({
                       }}
                     >
                       <p
-                        className={`text-base font-bold leading-7 text-center ${
-                          selectedTypeIndex == 0 ? "" : ""
+                        className={`text-base  leading-7 text-center ${
+                          selectedTypeIndex == 0 ? "font-bold" : ""
                         }`}
                       >
                         Loop Lite
@@ -58,7 +58,7 @@ const DesignComp = ({
                     >
                       <p
                         className={`text-base leading-7 text-center ${
-                          selectedTypeIndex == 1 ? "" : ""
+                          selectedTypeIndex == 1 ? "font-bold" : ""
                         }`}
                       >
                         Loop Elevate
@@ -74,7 +74,7 @@ const DesignComp = ({
                   <div className="pr-1">
                     <div
                       className={`flex cursor-pointer justify-between pb-2   h-full ${
-                        selectedTypeIndex == 2 ? "  " : ""
+                        selectedTypeIndex == 2 ? "font-bold" : ""
                       } `}
                       onClick={() => {
                         handleCardSelection(2);
