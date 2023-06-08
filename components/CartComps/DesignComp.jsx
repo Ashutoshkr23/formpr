@@ -196,7 +196,7 @@ const DesignComp = ({
             heading={"Loop Lite"}
             price={"899"}
             desc={
-              "Sleek and vibrant, our Loop Lite cards offer a range of solid colour options with contrasting Loop logo that adds a bold touch of distinction."
+              "Sleek and vibrant, our Loop Lite cards offer a range of solid color options with contrasting Loop logo that adds a bold touch of distinction."
             }
           />
         )}
