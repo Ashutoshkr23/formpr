@@ -192,6 +192,7 @@ const DesignComp = ({
         {/* pricing section */}
         {selectedTypeIndex == 0 && (
           <CardDescription
+            cardTypeSelected={cardTypeSelected}
             heading={"Loop Lite"}
             price={"899"}
             desc={
@@ -201,6 +202,7 @@ const DesignComp = ({
         )}
         {selectedTypeIndex == 1 && (
           <CardDescription
+            cardTypeSelected={cardTypeSelected}
             heading={"Loop Elevate"}
             price={"999"}
             desc={
@@ -210,6 +212,7 @@ const DesignComp = ({
         )}
         {selectedTypeIndex == 2 && (
           <CardDescription
+            cardTypeSelected={cardTypeSelected}
             heading={"Loop Supreme"}
             price={"1499"}
             desc={
