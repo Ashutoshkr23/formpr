@@ -99,6 +99,11 @@ const CartComponent = () => {
           <CheckoutComp />
         )}
       </div>
+      <div className="flex justify-center pt-10 lg:hidden pl-2">
+        <button className="w-[350px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
+          NEXT
+        </button>
+      </div>
     </div>
   );
 };
