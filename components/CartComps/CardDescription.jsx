@@ -4,10 +4,6 @@ import React, { useContext, useState, useEffect } from "react";
 
 const CardDescription = ({
   cardTypeSelected,
-  handleCardSelection,
-  totalAmount,
-  totalQuantity,
-  selectedTypeIndex,
   heading,
   price,
   desc,
