@@ -152,32 +152,22 @@ const DesignComp = ({
             {/* foe mobile */}
             <div className="md:hidden">
               <div className="flex space-x-5">
-                <div className="w-[300px] h-[172px]">
-                  <div className="bg-[#66D3E1] rounded-2xl relative w-[300px] h-[172px]">
-                    <Image
-                      src={"/assets/images/nfcIcon.png"}
-                      className="absolute top-2 right-3"
-                      alt="nfc"
-                      height={25}
-                      width={18}
-                    />
-
-                    <Image
-                      src={"/assets/images/loopIcon.svg"}
-                      className="absolute top-12 left-16"
-                      alt="loop"
-                      height={132}
-                      width={200}
-                    />
-                  </div>
-                </div>
                 <div className="">
+                  <Image
+                    src={`/assets/images/storeImages/${type}/${value}/Blue.png`}
+                    className=""
+                    alt="flip"
+                    height={172}
+                    width={300}
+                  />
+                </div>
+                <div className="cursor-pointer" onClick={handleClick}>
                   <Image
                     src={"/assets/images/cart-images/flipImage.png"}
                     className=""
                     alt="flip"
-                    height={36}
-                    width={36}
+                    height={25}
+                    width={25}
                   />
                 </div>
               </div>
