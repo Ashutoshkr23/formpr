@@ -13,3 +13,11 @@ export { default as Footer } from "../components/landing/Footer";
 export { default as LoopBlack } from "../components/landing/LoopBlack";
 export { default as Partners } from "../components/landing/Partners";
 export { default as LoopMaven } from "../components/landing/LoopMaven";
+export { default as CardDescription } from "../components/CartComps/CardDescription";
+export { default as CartComponent } from "../components/CartComps/CartComponent";
+export { default as CartNav } from "../components/CartComps/CartNav";
+export { default as DesignComp } from "../components/CartComps/DesignComp";
+export { default as DetailsComp } from "../components/CartComps/DetailsComp";
+export { default as DetailsInput } from "../components/CartComps/DetailsInput";
+export {default as CartComp} from "../components/cart/CartComp"
+export { default as Item } from "../components/cart/Item"

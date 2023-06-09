@@ -1,8 +1,6 @@
 import React from "react";
-import CartComp from "@/components/cart/CartComp";
 import { useSession, signIn, getSession, signOut } from "next-auth/react";
-import CartComponent from "@/components/CartComps/CartComponent";
-import CartNav from "@/components/CartComps/CartNav";
+import { CartNav , CartComponent } from "@/components";
 
 export default function Cart() {
   return (
