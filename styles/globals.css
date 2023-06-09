@@ -49,27 +49,7 @@ body {
 }
 
 
-.swiper-button-next {
-    color: transparent !important;
-    background-image: url("/assets/images/landing/RightArrow.svg");
-    background-size: 100% 100%;
-}
 
-.swiper-button-prev {
-    color: transparent !important;
-    background-image: url("/assets/images/landing/LeftArrow.svg");
-    background-size: 100% 100%;
-}
-
-.swiper-pagination-bullet {
-    background-color: white !important;
-    box-shadow: 1px 1px #f46c74;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: white !important;
-    box-shadow: 1px 1px #f46c74;
-}
 
 
 .card {
