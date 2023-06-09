@@ -14,6 +14,7 @@ const DesignComp = ({
   const [State, setState] = useState(1);
   const [value, setValue] = useState("Front");
   const [type, setType] = useState("Lite");
+  const [color, setColor] = useState("Blue");
 
   const handleClick = () => {
     setValue(value === "Front" ? "Back" : "Front");
@@ -131,7 +132,7 @@ const DesignComp = ({
               <div className="flex space-x-5">
                 <div>
                   <Image
-                    src={`/assets/images/storeImages/${type}/${value}/Blue.png`}
+                    src={`/assets/images/storeImages/${type}/${value}/${color}.png`}
                     className=""
                     alt="flip"
                     height={258}
@@ -154,7 +155,7 @@ const DesignComp = ({
               <div className="flex space-x-5">
                 <div className="">
                   <Image
-                    src={`/assets/images/storeImages/${type}/${value}/Blue.png`}
+                    src={`/assets/images/storeImages/${type}/${value}/${color}.png`}
                     className=""
                     alt="flip"
                     height={172}
@@ -177,6 +178,8 @@ const DesignComp = ({
         {/* pricing section */}
         {selectedTypeIndex == 0 && (
           <CardDescription
+            color={color}
+            setColor={setColor}
             cardTypeSelected={cardTypeSelected}
             heading={"Loop Lite"}
             price={"899"}
@@ -187,6 +190,8 @@ const DesignComp = ({
         )}
         {selectedTypeIndex == 1 && (
           <CardDescription
+            color={color}
+            setColor={setColor}
             cardTypeSelected={cardTypeSelected}
             heading={"Loop Elevate"}
             price={"999"}

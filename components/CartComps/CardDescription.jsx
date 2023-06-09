@@ -2,7 +2,14 @@ import { CartContext } from "@/context/CartContext";
 import Image from "next/image";
 import React, { useContext, useState, useEffect } from "react";
 
-const CardDescription = ({ cardTypeSelected, heading, price, desc }) => {
+const CardDescription = ({
+  cardTypeSelected,
+  heading,
+  price,
+  desc,
+  color,
+  setColor,
+}) => {
   const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
   const [State, setState] = useState(1);
   return (
@@ -28,12 +35,31 @@ const CardDescription = ({ cardTypeSelected, heading, price, desc }) => {
                 </div>
                 <div>
                   <div className="flex space-x-2 justify-center items-center ">
-                    <div className="w-4 h-4 bg-[#FFF490] shadow-inner  rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-[#96FFAD] shadow-inner  rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-blue-300 shadow-inner  rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-red-400 shadow-inner border border-spacing-4 rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-[#ECECEC] shadow-inner  rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-black shadow-inner  rounded-full border-gray-500 cursor-pointer" />
+                    <div
+                      className="w-4 h-4 bg-[#FFF490] shadow-inner  rounded-full cursor-pointer"
+                      onClick={() => setColor("Yellow")}
+                    />
+                    <div
+                      className="w-4 h-4 bg-[#96FFAD] shadow-inner  rounded-full cursor-pointer"
+                      onClick={() => setColor("Green")}
+                    />
+                    <div
+                      className="w-4 h-4 bg-blue-300 shadow-inner  rounded-full cursor-pointer"
+                      onClick={() => setColor("Blue")}
+                    />
+                    <div
+                      className="w-4 h-4 bg-red-400 shadow-inner border border-spacing-4 rounded-full cursor-pointer"
+                      onClick={() => setColor("Red")}
+                    />
+
+                    <div
+                      className="w-4 h-4 bg-[#ECECEC] shadow-inner  rounded-full cursor-pointer"
+                      onClick={() => setColor("Grey")}
+                    />
+                    <div
+                      className="w-4 h-4 bg-black shadow-inner  rounded-full border-gray-500 cursor-pointer"
+                      onClick={() => setColor("Black")}
+                    />
                   </div>
                 </div>
               </div>
