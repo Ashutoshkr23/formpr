@@ -178,6 +178,7 @@ const DesignComp = ({
         {/* pricing section */}
         {selectedTypeIndex == 0 && (
           <CardDescription
+            index={selectedTypeIndex}
             color={color}
             setColor={setColor}
             cardTypeSelected={cardTypeSelected}
@@ -190,6 +191,7 @@ const DesignComp = ({
         )}
         {selectedTypeIndex == 1 && (
           <CardDescription
+            index={selectedTypeIndex}
             color={color}
             setColor={setColor}
             cardTypeSelected={cardTypeSelected}
@@ -202,6 +204,7 @@ const DesignComp = ({
         )}
         {selectedTypeIndex == 2 && (
           <CardDescription
+            index={selectedTypeIndex}
             cardTypeSelected={cardTypeSelected}
             heading={"Loop Supreme"}
             price={"1499"}
