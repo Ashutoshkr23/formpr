@@ -22,7 +22,7 @@ const LoopMaven = () => {
                     <div className='bg-white w-[526px] h-[191px] rounded-[20px] drop-shadow-white'>
                         <div className='font-bold text-2xl absolute top-4 left-8'>My Contacts</div>
                         <div className='ml-4'>
-                            <div className='absolute top-[35%]'><Image width={238} height={80.66} src="/assets/images/landing/myContact1.png" alt="" /></div>
+                            <div className='absolute top-[35%]'><Image width={238} height={80} src="/assets/images/landing/myContact1.png" alt="" /></div>
                             <div className='absolute top-[35%] left-1/2'><Image width={238} height={81} src="/assets/images/landing/myContact2.png" alt="" /></div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ const LoopMaven = () => {
                     <div className='bg-white sm:w-[526px] w-[345px] sm:h-[191px] h-[161px] rounded-[20px] drop-shadow-white m-auto sm:hidden block'>
                         <div className='font-bold text-2xl absolute top-4 sm:left-8 left-5'>My Contacts</div>
                         <div className='sm:ml-4 ml-2'>
-                            <div className='absolute top-[35%]'><Image width={170} height={70.66} src="/assets/images/landing/myContact1.png" alt="" /></div>
+                            <div className='absolute top-[35%]'><Image width={170} height={70} src="/assets/images/landing/myContact1.png" alt="" /></div>
                             <div className='absolute top-[35%] left-1/2'><Image width={170} height={70} src="/assets/images/landing/myContact2.png" alt="" /></div>
                         </div>
                     </div>
