@@ -52,7 +52,7 @@ const LoopMaven = () => {
                 {/* Mobile */}
                 <div>
                     <div className='bg-white sm:w-[526px] w-[345px] sm:h-[191px] h-[161px] rounded-[20px] drop-shadow-white m-auto sm:hidden block'>
-                        <div className='font-bold text-2xl absolute top-4 sm:left-8 left-5'>My Contacts 2</div>
+                        <div className='font-bold text-2xl absolute top-4 sm:left-8 left-5'>My Contacts</div>
                         <div className='sm:ml-4 ml-2'>
                             <div className='absolute top-[35%]'><Image width={170} height={70.66} src="/assets/images/landing/myContact1.png" alt="" /></div>
                             <div className='absolute top-[35%] left-1/2'><Image width={170} height={70} src="/assets/images/landing/myContact2.png" alt="" /></div>
@@ -63,7 +63,7 @@ const LoopMaven = () => {
                             <div className='min-w-[46px]'><Image width={46} height={46} src="/assets/images/landing/mailIcon.png" alt="" /></div>
                         </div>
                         <div className="right-side">
-                            <div className='sm:text-xl text-sm'>Loop 2</div>
+                            <div className='sm:text-xl text-sm'>Loop</div>
                             <div className='my-1 text-xs'>Follow up with your recent contact</div>
                             <div className='font-normal text-xs'>You have a meeting with Priya Sharma on 19th June, 2023 at 4:15 pm.</div>
                         </div>
@@ -74,7 +74,7 @@ const LoopMaven = () => {
                         <div className='min-w-[46px]'><Image width={46} height={46} src="/assets/images/landing/whatsappIcon.png" alt="" /></div>
                     </div>
                     <div className="right-side">
-                        <div className='sm:text-xl text-base'>Loop 2</div>
+                        <div className='sm:text-xl text-base'>Loop</div>
                         <div className='font-normal mt-1 text-xs'>You have scheduled a call with Mr. Vinod Patel on 2nd July, 2023.</div>
                     </div>
                 </div>
