@@ -51,13 +51,14 @@ const LoopMaven = () => {
 
                 {/* Mobile */}
                 <div>
-                    <div className='bg-white sm:w-[526px] w-[345px] sm:h-[191px] h-[161px] rounded-[20px] drop-shadow-2xl m-auto sm:hidden block'>
+                    <div className='xl:hidden block'><Image width={345} height={98} src="/assets/images/landing/mobileMyContact1.png" alt="" /></div>
+                    {/* <div className='bg-white sm:w-[526px] w-[345px] sm:h-[191px] h-[161px] rounded-[20px] drop-shadow-white m-auto sm:hidden block'>
                         <div className='font-bold text-2xl absolute top-4 sm:left-8 left-5'>My Contacts</div>
                         <div className='sm:ml-4 ml-2'>
                             <div className='absolute top-[35%]'><Image width={170} height={70} src="/assets/images/landing/myContact1.png" alt="" /></div>
                             <div className='absolute top-[35%] left-1/2'><Image width={170} height={70} src="/assets/images/landing/myContact2.png" alt="" /></div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className='bg-white sm:w-[515px] w-[345px] sm:h-[138px] h-[98px] rounded-[20px] drop-shadow-white font-bold sm:hidden flex items-center px-4 gap-4 xl:ml-4 !ml-0 xl:mt-0 !mt-9 m-auto'>
                         <div className="left-side">
                             <div className='min-w-[46px]'><Image width={46} height={46} src="/assets/images/landing/mailIcon.png" alt="" /></div>
