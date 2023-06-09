@@ -81,15 +81,15 @@ const CardDescription = ({
                           onClick={() => setColor("Yellow")}
                         />
                         <div
-                          className="w-4 h-4  bg-gradient-to-br from-[#91CA6B] to-[#ECECEC] shadow-inner  rounded-full cursor-pointer"
+                          className="w-4 h-4  bg-gradient-radial from-[#91CA6B] to-[#ECECEC] shadow-inner  rounded-full cursor-pointer"
                           onClick={() => setColor("Green")}
                         />
                         <div
-                          className="w-4 h-4 bg-gradient-to-br from-[#66D3E1]  to-[#ECECEC]shadow-inner  rounded-full cursor-pointer"
+                          className="w-4 h-4 bg-gradient-radial from-[#66D3E1]  to-[#ECECEC] shadow-inner  rounded-full cursor-pointer"
                           onClick={() => setColor("Blue")}
                         />
                         <div
-                          className="w-4 h-4 bg-gradient-to-r from-[#F66F6F]  to-[#ECECEC]shadow-inner border border-spacing-4 rounded-full cursor-pointer"
+                          className="w-4 h-4 bg-gradient-radial from-[#F66F6F]  to-[#ECECEC] shadow-inner border border-spacing-4 rounded-full cursor-pointer"
                           onClick={() => setColor("Red")}
                         />
 
