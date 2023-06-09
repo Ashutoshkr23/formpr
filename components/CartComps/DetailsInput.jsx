@@ -1,8 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import Image from 'next/image'
+import { CartContext } from '@/context/CartContext';
+import axios from 'axios';
 
-function DetailsInput({ cardTypeName }) {
+function DetailsInput({ card, index }) {
+
     const [selectedDiv, setSelectedDiv] = useState(null);
+    const [errorMessage, setErrorMessage] = useState('');
+    const fileInputRef = useRef(null);
+    const { userProfile, handleApplyToAll, handleName, handleRemoveCardArr } = useContext(CartContext)
 
     const divStyle = {
         border: '1px solid transparent',
@@ -20,22 +26,54 @@ function DetailsInput({ cardTypeName }) {
         setSelectedDiv(index === selectedDiv ? null : index);
     };
 
-    const [companyName, setCompanyName] = useState('');
+    // const [companyName, setCompanyName] = useState('');
 
     const handleCompanyNameChange = (event) => {
-        setCompanyName(event.target.value);
+        handleName(event.target.name, card.key, event.target.value)
     };
 
-    const [fullName, setFullName] = useState('');
 
     const handleFullNameChange = (event) => {
-        setFullName(event.target.value);
+        handleName(event.target.name, card.key, event.target.value)
     };
 
-    const [logo, setLogo] = useState('');
+    // const [logo, setLogo] = useState('');
 
     const handleLogoChange = (event) => {
-        setLogo(event.target.value);
+        console.log(event.target)
+        handleName(event.target.name, card.key, event.target.value);
+    };
+
+    const handleLabelClick = () => {
+        fileInputRef.current.click();
+    };
+
+    const handleAwsUpload = async (image) => {
+        const formData = new FormData();
+        formData.append('companyLogo', image);
+        formData.append("puuid", userProfile.puuid)
+
+
+        const uploadImage = await axios.post('/api/uploadImageAws', formData)
+        console.log(uploadImage)
+        if (uploadImage.status == 200 && !uploadImage.data.error) {
+            const awsLink = uploadImage.data.result
+            handleName("companyLogo", card.key, awsLink);
+        }
+    }
+
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        const fileSizeInMB = file.size / (1024 * 1024);
+
+        if (fileSizeInMB > 5) {
+            setErrorMessage('File size exceeds the limit of 5MB.');
+        } else {
+            setErrorMessage('');
+            handleAwsUpload(file);
+            // handleName(event.target.name, card.key, file);
+        }
     };
 
 
@@ -44,7 +82,7 @@ function DetailsInput({ cardTypeName }) {
     return (
         <div className='sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] mx-auto my-6'>
             <div className=' h-[373px] bg-white rounded-xl drop-shadow-white flex items-center justify-between'>
-                <div className='absolute left-0 -top-3 rounded-md flex justify-center  items-center bg-black text-[10px] font-bold text-white h-6 w-20'>REMOVE <span className='text-base font-medium pl-2'>X</span></div>
+                <div className='absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center  items-center bg-black text-[10px] font-bold text-white h-6 w-20' onClick={() => handleRemoveCardArr(card.key)} >REMOVE <span className='text-base font-medium pl-2'>X</span></div>
 
                 <div className="flex flex-col items-center flex-grow ">
                     <div className='flex'>
@@ -117,32 +155,48 @@ function DetailsInput({ cardTypeName }) {
                     </div>
                 </div>
                 <div className='w-[350px] xl:w-[390px]'>
-                    <h2>{cardTypeName}</h2>
+                    <h2>{card.cardTypeName}</h2>
                     <div className='flex mt-8'>
                         <input className='border w-[180px] xl:w-[220px] h-10 rounded-xl pl-4'
                             type="text"
-                            value={companyName}
+                            name="companyName"
+                            value={card.companyName}
                             onChange={handleCompanyNameChange}
                             placeholder="Company Name"
                         />
-                        <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4'>APPLY TO ALL</button>
+                        {index == 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4' onClick={() => handleApplyToAll(0, card.companyName)} >APPLY TO ALL</button>}
                     </div>
                     <div>
                         <div className="flex mt-4">
-                            <input
+                            {/* <input
                                 type="file"
-                                value={logo}
-                                onChange={handleLogoChange}
+                                name="companyLogo"
+                                accept=".png, .jpeg, .jpg"
+                                onChange={handleFileChange}
                                 className="border w-[180px] xl:w-[220px] h-10 rounded-xl "
                                 placeholder="Upload Logo"
+                            /> */}
+                            <label htmlFor="fileInput" className="cursor-pointer py-2 flex justify-between  border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 " onClick={handleLabelClick}>
+                                Upload Logo
+                                <Image src={"/assets/images/uploadLogo.png"} height={40} width={40} alt='icon' style={{ objectFit: "contain" }} />
+                            </label>
+                            <input
+                                id="companyLogo"
+                                type="file"
+                                accept=".png, .jpeg, .jpg"
+                                onChange={handleFileChange}
+                                ref={fileInputRef}
+                                name="companyLogo"
+                                style={{ display: 'none' }}
                             />
-                            <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4'>APPLY TO ALL</button>
+                            {index == 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4' onClick={() => handleApplyToAll(1, card.companyLogo)}>APPLY TO ALL</button>}
                         </div>
                     </div>
                     <div>
                         <input className='border w-[180px] xl:w-[220px] h-10 rounded-xl pl-4 mt-4'
                             type="text"
-                            value={fullName}
+                            value={card.fullName}
+                            name="fullName"
                             onChange={handleFullNameChange}
                             placeholder="Full Name"
                         />

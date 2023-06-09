@@ -16,6 +16,9 @@ export const CartProvider = ({ children }) => {
     const [allCards, setAllCards] = useState([])
     const [defaultCart, setDefaultCart] = useState([])
 
+    const [finalData, setFinalData] = useState({})
+    const [cardsArray, setCardsArray] = useState(null)
+
     useEffect(() => {
 
         const fetchUserCards = async (puuid) => {
@@ -76,8 +79,57 @@ export const CartProvider = ({ children }) => {
 
     }, [session])
 
+
+    useEffect(() => {
+        if (cartItems.length > 0) {
+            let totalQuantity = 0;
+            let cards = []
+            // Loop over the array and add up the quantity field of each object
+            for (var i = 0; i < cartItems.length; i++) {
+                totalQuantity += cartItems[i].quantity;
+            }
+
+            cartItems.map((item, index) => {
+                if (item.quantity > 0) {
+                    for (var j = 0; j < item.quantity; j++) {
+                        const min = 100000; // Minimum value (inclusive)
+                        const max = 999999; // Maximum value (inclusive)
+
+                        let temp = {
+                            amount: item.amount,
+                            cardTypeName: item.cardName,
+                            cardTypeUuid: item.cardTypeUuid,
+                            key: Math.floor(Math.random() * (max - min + 1)) + min,
+                            fullName: "",
+                            companyName: "",
+                            companyLogo: "",
+
+                        }
+                        cards.push(temp)
+
+                    }
+                }
+            })
+
+            setCardsArray(cards)
+
+
+
+        }
+    }, [cartItems])
+
+
+
+
+
     // Function to add an item to the cart
 
+    const setFinalDataFunc = (data) => {
+        setFinalData({
+            ...finalData,
+            cardDataArr: data
+        })
+    }
 
     const plusCartFunc = (id) => {
         const newCartItems = cartItems.map((item) => {
@@ -148,16 +200,81 @@ export const CartProvider = ({ children }) => {
 
     };
 
+    // new
+    // type 0 : company name and type 1 : company logo
+    const handleApplyToAll = (type, value) => {
+        if (type == 0) {
+            let tempArr = []
+            for (let i = 0; i < cardsArray.length; i++) {
+                let temp = {
+                    ...cardsArray[i],
+                    companyName: value
+                }
+                tempArr.push(temp)
+            }
+            setCardsArray(tempArr)
+        } else {
+            let tempArr = []
+            for (let i = 0; i < cardsArray.length; i++) {
+                let temp = {
+                    ...cardsArray[i],
+                    companyLogo: value
+                }
+                tempArr.push(temp)
+            }
+            setCardsArray(tempArr)
+        }
+    }
+
+    // type 0 : companyName,1:full name 
+    const handleName = (name, key, value) => {
+        console.log(name, key, value, "type, key, value")
+
+        const newCardArr = cardsArray.map((item) => {
+            if (item.key == key) {
+                let newItem = { ...item }
+                newItem[name] = value
+
+                return newItem
+            }
+            return item
+        })
+        setCardsArray(newCardArr)
+
+
+    }
+    const handleRemoveCardArr = (key) => {
+        let array = [...cardsArray]
+        let ctuuid = ""
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].key == key) {
+                ctuuid = array[i].cardTypeUuid
+                array.splice(i, 1); // Remove the object at index i
+                break; // Exit the loop since the object has been removed
+            }
+        }
+        let cartType = cartItems.filter(item => item.cardTypeUuid == ctuuid)
+
+        minusCartFunc(cartType[0]._id)
+        setCardsArray(array)
+    }
+
     // Create the cart context value
     const cartContextValue = {
         cartItems,
         userProfile,
         allCards,
+        finalData,
+        cardsArray,
         clearCart,
         plusCartFunc,
         minusCartFunc,
         handleItemCount,
-        handleClearCard
+        handleClearCard,
+        setFinalDataFunc,
+        handleApplyToAll,
+        handleName,
+        handleRemoveCardArr
     };
 
     // Provide the cart context to its children components

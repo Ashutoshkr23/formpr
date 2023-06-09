@@ -13,9 +13,9 @@ const PurchaseSchema = new mongoose.Schema({
   razorpay_order_id: { type: String, required: true },
   razorpay_signature: { type: String, required: true },
   // order id will be created here
-  orderId: { type: String, required: true, unique: true, default: uuidv4 },
+  orderId: { type: String, required: true, default: uuidv4 },
   orderTrackingNumber: { type: String, default: "" },
-  cardType: { type: mongoose.Schema.Types.ObjectId },
+  cardType: { type: String },
   // conact url wii be path of card which will be /cardId
   contactUrl: { type: String },
   createdAt: {

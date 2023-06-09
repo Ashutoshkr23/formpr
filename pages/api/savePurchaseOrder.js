@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     try {
         await connectToDatabase();
         if (req.method === 'POST') {
-            const { cartItems, puuid, razorpay_payment_id, razorpay_order_id, razorpay_signature } = req.body;
+            const { cardsArray, cartItems, puuid, razorpay_payment_id, razorpay_order_id, razorpay_signature } = req.body;
             if (!puuid) {
                 return res.status(422).json({ error: "Missing required fields." });
 
@@ -22,22 +22,24 @@ export default async function handler(req, res) {
                 totalAmount += cartItems[i].amount * cartItems[i].quantity;
             }
             let temp = []
-            cartItems.map((item) => {
-                for (let i = 0; i < item.quantity; i++) {
-                    let cuuid = uuidv4()
-                    temp.push({
-                        cuuid: cuuid,
-                        puuid: puuid,
-                        cardType: item._id,
-                        cardAmount: item.amount,
-                        contactUrl: `https://loopcard.club/details/${cuuid}`
-                    })
-                }
+            cardsArray.map((item) => {
+                let cuuid = uuidv4()
+                temp.push({
+                    cuuid: cuuid,
+                    puuid: puuid,
+                    cardType: item.cardTypeUuid,
+                    cardAmount: item.amount,
+                    cardName: item.fullName,
+                    companyName: item.companyName,
+                    companyLogo: item.companyLogo,
+                    contactUrl: `https://loopcard.club/details/${cuuid}`
+                })
             })
             const data = await card.insertMany(temp)
+            console.log(data, "Data")
+
             let tempPurchaseArr = []
             let orderId = uuidv4()
-
             data.map((item) => {
                 let tempObj = {
                     puuid: puuid,
@@ -51,17 +53,11 @@ export default async function handler(req, res) {
                     orderTrackingNumber: "1234",
                     cardType: item.cardType,
                     contactUrl: `/${item.cuuid}`,
-                    // shippingAddress: {
-                    //     recipientName: "John",
-                    //     lane1: "abcd",
-                    //     postalCode: "400072",
-                    //     state: "Maharashtra",
-
-                    // }
                 }
                 tempPurchaseArr.push(tempObj)
             })
             const purchaseData = await purchase.insertMany(tempPurchaseArr)
+            console.log(purchaseData, "purchaseData")
             const shippinData = {
                 puuid: puuid,
                 totalAmount: totalAmount,
@@ -87,18 +83,20 @@ export default async function handler(req, res) {
             const updateShipping = new shipping(shippinData)
             // Save the instance to the database
             const savedShipping = await updateShipping.save();
+            console.log(savedShipping, "savedShipping")
 
             const updateUserProfile = await UserData.updateOne({ puuid: puuid }, { $inc: { totalCards: totalQuantity } })
-
+            console.log(updateUserProfile, "updateUserProfile")
             res.status(200).json({
                 error: false,
                 message: "Success",
-                result: cartItems
+                result: cardsArray
             })
         } else {
             return res.status(405).json({ message: 'Method not allowed' });
         }
     } catch (error) {
+        console.log(error, "errr")
         return res.status(500).json({ message: 'Unable to create purchase', error });
     }
 } 

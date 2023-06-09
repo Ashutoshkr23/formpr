@@ -6,17 +6,20 @@ const CardSchema = new mongoose.Schema({
     // c uuid is card Id
     cuuid: { type: String, default: uuidv4, unique: true },
     puuid: { type: String, required: true },
-    cardType: { type: mongoose.Schema.Types.ObjectId, required: true }, // card type will be id which will be coming from cardType.js object id
+    cardType: { type: String, required: true }, // card type will be id which will be coming from cardType.js object id
     cardAmount: { type: Number },
+    // cardName is name displayed on card
+    cardName: { type: String },
+    companyLogo: { type: String },
+    companyName: { type: String },
+
+    // above fields get filled while creating card and below fields will be updated later
 
     fullName: { type: String },
-    cardName: { type: String },
     mobileNumber: { type: String },
     // aws url will be stored in pfp
     profilePicture: { type: String },
-    companyName: { type: String },
     companyNumber: { type: String },
-    companyLogo: { type: String },
     email: { type: String },
     designation: { type: String },
     bio: { type: String },

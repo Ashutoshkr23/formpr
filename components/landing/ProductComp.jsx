@@ -26,17 +26,21 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
         }
     }, [cartItems]);
 
+    const handleDivClick = () => {
+        if (totalQuantity == 0 && index > 0) {
+            let id = cartItems[index - 1]._id
+            plusCartFunc(id)
+        }
+
+        router.push("/cart")
+    }
+
     const handleHover = () => {
         setIsHovered(!isHovered);
     };
     return (
         <div onClick={() => {
-            if (totalQuantity == 0) {
-                let id = cartItems[index - 1]._id
-                plusCartFunc(id)
-            }
-
-            router.push("/cart")
+            handleDivClick()
         }} className='flex flex-col hover:scale-105 '>
             <div className=' relative z-20 ml-3 -mb-5  w-[116px] h-9 rounded-lg bg-black pt-2'>
                 <p className='text-center  font-semibold text-xs text-white'>{cardtype}</p>

@@ -30,18 +30,16 @@ const DesignComp = ({
                 <div>
                   <div className=" pr-1">
                     <div
-                      className={`flex items-center justify-between pb-2   cursor-pointer  h-full  ${
-                        selectedTypeIndex == 0 ? " " : ""
-                      } `}
+                      className={`flex items-center justify-between pb-2   cursor-pointer  h-full  ${selectedTypeIndex == 0 ? " " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(0);
                         setType("Lite");
                       }}
                     >
                       <p
-                        className={`text-base  leading-7 text-center ${
-                          selectedTypeIndex == 0 ? "font-bold" : ""
-                        }`}
+                        className={`text-base  leading-7 text-center ${selectedTypeIndex == 0 ? "font-bold" : ""
+                          }`}
                       >
                         Loop Lite
                       </p>
@@ -57,18 +55,16 @@ const DesignComp = ({
 
                   <div className="pr-1">
                     <div
-                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${
-                        selectedTypeIndex == 1 ? "  " : ""
-                      } `}
+                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${selectedTypeIndex == 1 ? "  " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(1);
                         setType("Elevate");
                       }}
                     >
                       <p
-                        className={`text-base leading-7 text-center ${
-                          selectedTypeIndex == 1 ? "font-bold" : ""
-                        }`}
+                        className={`text-base leading-7 text-center ${selectedTypeIndex == 1 ? "font-bold" : ""
+                          }`}
                       >
                         Loop Elevate
                       </p>
@@ -82,17 +78,15 @@ const DesignComp = ({
                   </div>
                   <div className="pr-1">
                     <div
-                      className={`flex cursor-pointer justify-between pb-2   h-full ${
-                        selectedTypeIndex == 2 ? "font-bold" : ""
-                      } `}
+                      className={`flex cursor-pointer justify-between pb-2   h-full ${selectedTypeIndex == 2 ? "font-bold" : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(2);
                       }}
                     >
                       <p
-                        className={`text-base  leading-7 text-center ${
-                          selectedTypeIndex == 2 ? "" : ""
-                        }`}
+                        className={`text-base  leading-7 text-center ${selectedTypeIndex == 2 ? "" : ""
+                          }`}
                       >
                         Loop Supreme
                       </p>
@@ -184,6 +178,7 @@ const DesignComp = ({
             cardTypeSelected={cardTypeSelected}
             heading={"Loop Lite"}
             price={"899"}
+            quantity={cartItems[0].quantity}
             desc={
               "Sleek and vibrant, our Loop Lite cards offer a range of solid color options with contrasting Loop logo that adds a bold touch of distinction."
             }
@@ -197,6 +192,7 @@ const DesignComp = ({
             cardTypeSelected={cardTypeSelected}
             heading={"Loop Elevate"}
             price={"999"}
+            quantity={cartItems[1].quantity}
             desc={
               "Elevate your style with Loop Elevate cards. Featuring a selection of solid colors and gradient options, our cards are designed with a Loop logo that seamlessly blends in, exuding sophistication."
             }
@@ -208,6 +204,7 @@ const DesignComp = ({
             cardTypeSelected={cardTypeSelected}
             heading={"Loop Supreme"}
             price={"1499"}
+            quantity={cartItems[2].quantity}
             desc={
               "Unleash your creativity with Loop Supreme cards. Offering unlimited color options, these cards boast a bold and eye-catching version of your logo on the back, making a statement that's impossible to ignore."
             }

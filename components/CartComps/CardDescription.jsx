@@ -10,6 +10,7 @@ const CardDescription = ({
   color,
   setColor,
   index,
+  quantity
 }) => {
   const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
   const [State, setState] = useState(1);
@@ -120,7 +121,7 @@ const CardDescription = ({
                         -
                       </span>
                       <span className="text-md">
-                        {cardTypeSelected?.quantity}
+                        {quantity}
                       </span>
                       <span
                         className="bg-[#cfcfcf] rounded-full h-6 w-6 text-center cursor-pointer"
@@ -136,17 +137,15 @@ const CardDescription = ({
             <div className="hidden lg:block">
               <div className="flex pt-8 space-x-3 ">
                 <div
-                  className={`${
-                    State == 1 && "border-b-2 border-black font-bold"
-                  } cursor-pointer`}
+                  className={`${State == 1 && "border-b-2 border-black font-bold"
+                    } cursor-pointer`}
                   onClick={() => setState(1)}
                 >
                   <p className="text-xs leading-[186%]">SPECIFICATIONS</p>
                 </div>
                 <div
-                  className={`${
-                    State == 2 && "border-b-2 border-black font-bold"
-                  } cursor-pointer`}
+                  className={`${State == 2 && "border-b-2 border-black font-bold"
+                    } cursor-pointer`}
                   onClick={() => setState(2)}
                 >
                   <p className="text-xs leading-[186%]">Compatibility</p>
