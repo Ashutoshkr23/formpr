@@ -156,7 +156,7 @@ const CartComponent = () => {
               onClick={() => setStepState(1)}
             >
               <p className="text-center text-[12px] md:text-base">
-                STEP1 : CARD TYPE & QTY.
+                STEP 1 : CARD TYPE & QTY.
               </p>
             </div>
             <div
@@ -165,7 +165,7 @@ const CartComponent = () => {
               onClick={() => setStepState(2)}
             >
               <p className="text-center text-[12px] md:text-base">
-                STEP2 : DETAILS
+                STEP 2 : DETAILS
               </p>
             </div>
             <div
@@ -174,7 +174,7 @@ const CartComponent = () => {
               onClick={() => setStepState(3)}
             >
               <p className="text-center text-[12px] md:text-base">
-                STEP3: CHECKOUT
+                STEP 3: CHECKOUT
               </p>
             </div>
           </div>
