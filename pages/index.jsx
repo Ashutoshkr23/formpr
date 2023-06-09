@@ -10,6 +10,7 @@ import {
   Benefits,
   LoopBlack,
   Partners,
+  LoopMaven
 } from "@/components";
 
 const Landing = () => {
@@ -29,6 +30,7 @@ const Landing = () => {
       <LandingNav />
       <Hero />
       <Benefits />
+      <LoopMaven />
       <Products />
       <LoopBlack text={"BUY NOW"} />
       <Story />

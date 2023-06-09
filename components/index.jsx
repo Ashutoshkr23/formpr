@@ -12,4 +12,4 @@ export { default as Products } from "../components/landing/Products";
 export { default as Footer } from "../components/landing/Footer";
 export { default as LoopBlack } from "../components/landing/LoopBlack";
 export { default as Partners } from "../components/landing/Partners";
-
+export { default as LoopMaven } from "../components/landing/LoopMaven";

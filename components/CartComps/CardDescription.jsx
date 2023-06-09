@@ -2,13 +2,20 @@ import { CartContext } from "@/context/CartContext";
 import Image from "next/image";
 import React, { useContext, useState, useEffect } from "react";
 
-const CardDescription = ({ cardTypeSelected, heading, price, desc }) => {
+const CardDescription = ({
+  cardTypeSelected,
+  heading,
+  price,
+  desc,
+  color,
+  setColor,
+}) => {
   const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
   const [State, setState] = useState(1);
   return (
     <div>
       <div className="flex justify-center lg:px-0 lg:py-0 pt-5 lg:pt-0 ">
-        <div className="max-w-[353px] lg:max-w-[300px] xl:max-w-[380px] flex pl-4 pb-4 lg:pb-0  pt-7 lg:pl-3 xl:pl-7 bg-white h-full  lg:h-[680px] drop-shadow-white rounded-[10px]">
+        <div className="max-w-[353px] lg:max-w-[300px] xl:max-w-[380px] flex px-4 pb-4 lg:pb-0  pt-7 lg:pl-3 xl:pl-7 bg-white h-full  lg:h-[556px] drop-shadow-white rounded-[10px]">
           <div className=" ">
             <div>
               <h4 className="text-xl md:text-3xl font-bold leading-[186%]">
@@ -21,24 +28,42 @@ const CardDescription = ({ cardTypeSelected, heading, price, desc }) => {
             <div className="pt-3 text-xs md:text-sm leading-[186%]">
               <p>{desc}</p>
             </div>
-            <div className="pt-10">
+            <div className="pt-6">
               <div className="flex items-center space-x-5">
                 <div>
                   <p className="text-xs leading-[186%]">Available in </p>
                 </div>
                 <div>
                   <div className="flex space-x-2 justify-center items-center ">
-                    <div className="w-4 h-4 bg-yellow-200 shadow-inner  rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-green-200 shadow-inner  rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-blue-300 shadow-inner  rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-red-400 shadow-inner border border-spacing-4 rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-gray-200 shadow-inner  rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-slate-300 shadow-inner  rounded-full cursor-pointer" />
-                    <div className="w-4 h-4 bg-black shadow-inner  rounded-full border-gray-500 cursor-pointer" />
+                    <div
+                      className="w-4 h-4 bg-[#FFF490] shadow-inner  rounded-full cursor-pointer"
+                      onClick={() => setColor("Yellow")}
+                    />
+                    <div
+                      className="w-4 h-4 bg-[#96FFAD] shadow-inner  rounded-full cursor-pointer"
+                      onClick={() => setColor("Green")}
+                    />
+                    <div
+                      className="w-4 h-4 bg-blue-300 shadow-inner  rounded-full cursor-pointer"
+                      onClick={() => setColor("Blue")}
+                    />
+                    <div
+                      className="w-4 h-4 bg-red-400 shadow-inner border border-spacing-4 rounded-full cursor-pointer"
+                      onClick={() => setColor("Red")}
+                    />
+
+                    <div
+                      className="w-4 h-4 bg-[#ECECEC] shadow-inner  rounded-full cursor-pointer"
+                      onClick={() => setColor("Grey")}
+                    />
+                    <div
+                      className="w-4 h-4 bg-black shadow-inner  rounded-full border-gray-500 cursor-pointer"
+                      onClick={() => setColor("Black")}
+                    />
                   </div>
                 </div>
               </div>
-              <div className="flex pt-8 space-x-10">
+              <div className="flex pt-5 space-x-10">
                 <div>
                   <p className="text-xs leading-[186%] ">Quantity </p>
                 </div>
@@ -66,7 +91,7 @@ const CardDescription = ({ cardTypeSelected, heading, price, desc }) => {
               </div>
             </div>
             <div className="hidden lg:block">
-              <div className="flex pt-12 space-x-3 ">
+              <div className="flex pt-8 space-x-3 ">
                 <div
                   className={`${
                     State == 1 && "border-b-2 border-black font-bold"
