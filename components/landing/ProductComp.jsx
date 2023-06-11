@@ -26,22 +26,18 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
         }
     }, [cartItems]);
 
-    const handleDivClick = () => {
-        if (totalQuantity == 0 && index > 0) {
-            let id = cartItems[index - 1]._id
-            plusCartFunc(id)
-        }
-
-        router.push("/cart")
-    }
-
     const handleHover = () => {
         setIsHovered(!isHovered);
     };
     return (
         <div onClick={() => {
-            handleDivClick()
-        }} className='flex flex-col lg:hover:scale-105 cursor-pointer '>
+            if (totalQuantity == 0) {
+                let id = cartItems[index - 1]._id
+                plusCartFunc(id)
+            }
+
+            router.push("/cart")
+        }} className='flex flex-col lg:hover:scale-105 '>
             <div className=' relative z-20 ml-3 -mb-5  w-[116px] h-9 rounded-lg bg-black pt-2'>
                 <p className='text-center  font-semibold text-xs text-white'>{cardtype}</p>
             </div>
@@ -82,7 +78,7 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
                                     quality={100}
                                 />
                             </div>
-                            <p className={`font-bold text-xl my-4 text-black ${color} `}>{price}</p>
+                            <p className={`font-bold text-xl my-4 ${color} `}>{price}</p>
                             <p className='font-medium text-xs text-[#686A6C]'>{text2} </p>
                             <div className='w-[138px] xl:w-[165px] h-9 xl:h-10 text-xs xl:text-base  pt-5'>
                                 <button className={`buynow text-center w-full py-[5px] font-bold rounded-[10px] ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black' : 'bg-black text-white'
