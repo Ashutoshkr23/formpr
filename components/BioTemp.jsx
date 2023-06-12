@@ -62,7 +62,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
           <Link href={`${website}`}>
             <p className="text-[10px] ml-1.5 tracking-[-0.5px]">
               <input
-                className={`bg-transparent ${text2} text-[#7D9695] `}
+                className={`bg-transparent ${text2} text-[#7D9695] cursor-pointer `}
                 type="text"
                 placeholder=" www.alphamintlabs.com"
                 value={website}
