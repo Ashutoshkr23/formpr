@@ -82,7 +82,7 @@ function DetailsInput({ card, index }) {
     return (
         <div className='sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] mx-auto my-6'>
             <div className=' h-[373px] bg-white rounded-xl drop-shadow-white flex items-center justify-between'>
-                <div className='absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center  items-center bg-black text-[10px] font-bold text-white h-6 w-20' onClick={() => handleRemoveCardArr(card.key)} >REMOVE <span className='text-base font-medium pl-2'>X</span></div>
+                <div className='absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] hover:text-black  items-center bg-black text-[10px] font-bold text-white h-6 w-20' onClick={() => handleRemoveCardArr(card.key)} >REMOVE <span className='text-base font-medium pl-2'>X</span></div>
 
                 <div className="flex flex-col items-center flex-grow ">
                     <div className='flex'>
