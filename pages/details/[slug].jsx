@@ -84,7 +84,7 @@ END:VCARD`;
         <div className="max-w-[375px]  ">
           <Template
             gradient1={themes[3].gradient1}
-            gradient2={themes[2].gradient2}
+            gradient2={themes[3].gradient2}
             text1={themes[2].text1}
             text2={themes[2].text2}
             text3={themes[2].text3}
@@ -111,7 +111,7 @@ END:VCARD`;
         <div className="min-w-[375px]  ">
           <Template
             gradient1={themes[3].gradient1}
-            gradient2={themes[2].gradient2}
+            gradient2={themes[3].gradient2}
             text1={themes[2].text1}
             text2={themes[2].text2}
             text3={themes[2].text3}
@@ -138,7 +138,7 @@ END:VCARD`;
         <div className="min-w-[375px] ">
           <Template
             gradient1={themes[3].gradient1}
-            gradient2={themes[2].gradient2}
+            gradient2={themes[3].gradient2}
             text1={themes[2].text1}
             text2={themes[2].text2}
             text3={themes[2].text3}
@@ -164,7 +164,7 @@ END:VCARD`;
         <div className="min-w-[375px]  ">
           <Template
             gradient1={themes[3].gradient1}
-            gradient2={themes[2].gradient2}
+            gradient2={themes[3].gradient2}
             text1={themes[2].text1}
             text2={themes[2].text2}
             text3={themes[2].text3}
@@ -190,7 +190,7 @@ END:VCARD`;
         <div className="min-w-[375px]  ">
           <Template
             gradient1={themes[3].gradient1}
-            gradient2={themes[2].gradient2}
+            gradient2={themes[3].gradient2}
             text1={themes[2].text1}
             text2={themes[2].text2}
             text3={themes[2].text3}
@@ -216,7 +216,7 @@ END:VCARD`;
         <div className="min-w-[375px]  ">
           <Template
             gradient1={themes[3].gradient1}
-            gradient2={themes[2].gradient2}
+            gradient2={themes[3].gradient2}
             text1={themes[2].text1}
             text2={themes[2].text2}
             text3={themes[2].text3}
@@ -242,7 +242,7 @@ END:VCARD`;
         <div className="min-w-[375px] ">
           <Template
             gradient1={themes[3].gradient1}
-            gradient2={themes[2].gradient2}
+            gradient2={themes[3].gradient2}
             text1={themes[2].text1}
             text2={themes[2].text2}
             text3={themes[2].text3}
@@ -268,7 +268,7 @@ END:VCARD`;
         <div className="min-w-[375px]  ">
           <Template
             gradient1={themes[3].gradient1}
-            gradient2={themes[2].gradient2}
+            gradient2={themes[3].gradient2}
             text1={themes[2].text1}
             text2={themes[2].text2}
             text3={themes[2].text3}
@@ -294,7 +294,7 @@ END:VCARD`;
         <div className="min-w-[375px]  ">
           <Template
             gradient1={themes[3].gradient1}
-            gradient2={themes[2].gradient2}
+            gradient2={themes[3].gradient2}
             text1={themes[2].text1}
             text2={themes[2].text2}
             text3={themes[2].text3}
@@ -320,7 +320,7 @@ END:VCARD`;
         <div className="min-w-[375px] ">
           <Template
             gradient1={themes[3].gradient1}
-            gradient2={themes[2].gradient2}
+            gradient2={themes[3].gradient2}
             text1={themes[2].text1}
             text2={themes[2].text2}
             text3={themes[2].text3}

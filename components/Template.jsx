@@ -101,7 +101,7 @@ END:VCARD`;
 
           <div className="">
             <button
-              className={`${btn} border-2 font-thin text-[20px] ${btntext} text-black bg-white  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
+              className={`${btn} border-2  text-[20px] ${btntext} text-black bg-white  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
               onClick={downloadVCard}
             >
               SAVE CONTACT
