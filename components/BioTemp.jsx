@@ -16,7 +16,12 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
       </div>
       <div className="pt-[30px] grid grid-cols-2 gap-y-4">
         <div className="flex">
-          <Image src={"/log.png"} alt="log" width={27} height={22} />
+          <Image
+            src={"/assets/images/display/log.png"}
+            alt="log"
+            width={27}
+            height={22}
+          />
           <p className="text-[10px] ml-1.5 tracking-[-0.5px] ">
             <input
               className={`bg-transparent ${text2} text-[#7D9695] `}
@@ -29,7 +34,12 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
           </p>
         </div>
         <div className="flex ml-[40px] ">
-          <Image src={"/phone.png"} alt="phone" width={22} height={22} />
+          <Image
+            src={"/assets/images/display/phone.png"}
+            alt="phone"
+            width={22}
+            height={22}
+          />
           <p className="text-[10px] ml-[1px] tracking-[-0.5px]">
             <input
               className={`bg-transparent ${text2} text-[#7D9695] `}
@@ -42,7 +52,12 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
           </p>
         </div>
         <div className="flex">
-          <Image src={"/website.png"} alt="website" width={22} height={22} />
+          <Image
+            src={"/assets/images/display/website.png"}
+            alt="website"
+            width={22}
+            height={22}
+          />
           <p className="text-[10px] ml-1.5 tracking-[-0.5px]">
             <input
               className={`bg-transparent ${text2} text-[#7D9695] `}
