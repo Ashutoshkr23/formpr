@@ -101,6 +101,7 @@ END:VCARD`;
             instaLink={`https://www.instagram.com/aayushbansal26/`}
             watspLink={`https://api.whatsapp.com/send?phone=919820447476`}
             linkedLink={`https://www.linkedin.com/in/aayush-bansal-110385a7/`}
+            profile={`/assets/images/profilePic/Aayush Bansal.jpeg`}
           />
         </div>
       )}
@@ -127,6 +128,7 @@ END:VCARD`;
             instaLink={"https://www.instagram.com/siddharthasingh05/"}
             watspLink={`https://api.whatsapp.com/send?phone=919004922756`}
             linkedLink={`https://www.linkedin.com/in/siddhartha-singh-7552b5107/`}
+            profile={`/assets/images/profilePic/Siddhartha Singh.jpeg`}
           />
         </div>
       )}
@@ -153,6 +155,7 @@ END:VCARD`;
             instaLink={`https://www.instagram.com/aayushmansinha/`}
             watspLink={`https://api.whatsapp.com/send?phone=919833556650`}
             linkedLink={`https://www.linkedin.com/in/aayushmansinha/`}
+            profile={`/assets/images/profilePic/Aayushman Sinha.jpg`}
           />
         </div>
       )}
@@ -178,6 +181,7 @@ END:VCARD`;
             instaLink={`https://www.instagram.com/rishi_235/`}
             watspLink={`https://api.whatsapp.com/send?phone=919920223594`}
             linkedLink={`https://www.linkedin.com/in/rishikeshbhanushali/`}
+            profile={`/assets/images/profilePic/Rishikesh Bhanushali.jpeg`}
           />
         </div>
       )}
@@ -203,6 +207,7 @@ END:VCARD`;
             instaLink={`https://www.instagram.com/allaboutthatpalate/`}
             watspLink={`https://api.whatsapp.com/send?phone=919930981280`}
             linkedLink={`https://www.linkedin.com/in/nishant-joshi-54632b26a`}
+            profile={`/assets/images/profilePic/Alok Verma.jpg`}
           />
         </div>
       )}
@@ -228,6 +233,7 @@ END:VCARD`;
             instLink={`https://www.instagram.com/joshinishant91/`}
             watspLink={`https://api.whatsapp.com/send?phone=919819566568`}
             linkedLink={`https://www.linkedin.com/in/nishant-joshi-54632b26a`}
+            profile={`/assets/images/profilePic/Nishant Joshi.jpg`}
           />
         </div>
       )}
@@ -253,6 +259,7 @@ END:VCARD`;
             instaLink={"https://www.instagram.com/ujjwalsharmma/"}
             watspLink={`https://api.whatsapp.com/send?phone=919999234245`}
             linkedLink={`https://www.linkedin.com/in/ujjwalsh/`}
+            profile={`/assets/images/profilePic/Ujjwal Sharma High res.jpg`}
           />
         </div>
       )}
@@ -278,6 +285,7 @@ END:VCARD`;
             instaLink={`https://www.instagram.com/theperpetualdaydreamer/`}
             watspLink={`https://api.whatsapp.com/send?phone=918693882326`}
             linkedLink={`https://www.linkedin.com/in/sandesh-jha-4913261b6/`}
+            profile={`/assets/images/profilePic/Sandesh Jha.jpeg`}
           />
         </div>
       )}
@@ -303,6 +311,7 @@ END:VCARD`;
             instaLink={`https://www.instagram.com/theperpetualdaydreamer/`}
             watspLink={`https://api.whatsapp.com/send?phone=918700118994`}
             linkedLink={`https://www.linkedin.com/in/sidhantha-jain-a1300b113/`}
+            profile={`/assets/images/profilePic/Sidhantha Jain.jpeg`}
           />
         </div>
       )}
@@ -328,6 +337,7 @@ END:VCARD`;
             instaLink={`https://www.instagram.com/khushigadhiaa/`}
             watspLink={`https://api.whatsapp.com/send?phone=919167837466`}
             linkedLink={`https://www.linkedin.com/in/khushigadhia/`}
+            profile={`/assets/images/profilePic/Khushi Gadhia.jpeg`}
           />
         </div>
       )}

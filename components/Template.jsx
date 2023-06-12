@@ -28,6 +28,7 @@ const Template = ({
   instaLink,
   watspLink,
   linkedLink,
+  profile,
 }) => {
   const downloadVCard = () => {
     // Create a vCard string from the contact data
@@ -54,7 +55,7 @@ END:VCARD`;
           className={`${gradient2} relative px-6  mx-auto h-[651px] w-[375px]  rounded-[20px] `}
         >
           <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
-            <ProfileImg profileimg={"/assets/images/templateimg/andrew.png"} />
+            <ProfileImg profileimg={profile} />
           </div>
 
           <div className="flex justify-center pt-[40px] font-semibold text-[20px] tracking-[-0.5px] ">
