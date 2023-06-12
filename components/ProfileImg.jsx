@@ -4,7 +4,7 @@ import React from "react";
 const ProfileImg = ({ profileimg }) => {
   return (
     <div className="">
-      <div className="flex justify-center ">
+      <div className="flex justify-center h-[100px] w-[100px] ">
         <Image
           className="rounded-[50px]"
           src={profileimg}

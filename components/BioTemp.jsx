@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
   return (
@@ -58,16 +59,18 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
             width={22}
             height={22}
           />
-          <p className="text-[10px] ml-1.5 tracking-[-0.5px]">
-            <input
-              className={`bg-transparent ${text2} text-[#7D9695] `}
-              type="text"
-              placeholder=" www.alphamintlabs.com"
-              value={website}
-              readOnly={true}
-              //   onChange={handleChange}
-            />
-          </p>
+          <Link href={`${website}`}>
+            <p className="text-[10px] ml-1.5 tracking-[-0.5px]">
+              <input
+                className={`bg-transparent ${text2} text-[#7D9695] `}
+                type="text"
+                placeholder=" www.alphamintlabs.com"
+                value={website}
+                readOnly={true}
+                //   onChange={handleChange}
+              />
+            </p>
+          </Link>
         </div>
       </div>
     </div>
