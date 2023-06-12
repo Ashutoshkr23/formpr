@@ -6,8 +6,8 @@ import { CartContext } from "@/context/CartContext";
 import axios from "axios";
 
 const CartComponent = () => {
-  const [stepState, setStepState] = useState(1);
-  const { userProfile, cartItems, setFinalDataFunc, cardsArray } = useContext(CartContext);
+
+  const { userProfile, cartItems, setFinalDataFunc, cardsArray, stepState, setStepState } = useContext(CartContext);
   const [cardTypeSelected, setCardTypeSelected] = useState(cartItems[0]);
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
@@ -35,7 +35,7 @@ const CartComponent = () => {
     }
   }, []);
 
-  console.log(cardTypeSelected, "Card type selected")
+  // console.log(cardTypeSelected, "Card type selected")
 
   useEffect(() => {
     if (cartItems.length > 0) {
@@ -143,7 +143,7 @@ const CartComponent = () => {
     return <>Loading...</>;
   }
 
-  console.log(cardsArray, "cardsArray")
+  // console.log(cardsArray, "cardsArray")
   return (
     <div className=" ">
       {/* <h3 className='text-5xl font-bold leading-10 text-[#000]'>Customise</h3> */}
