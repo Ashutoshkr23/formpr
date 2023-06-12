@@ -49,59 +49,71 @@ const CardDescription = ({
                     {index == 0 && (
                       <div className="flex space-x-2 justify-center items-center ">
                         <div
-                          className="w-4 h-4 bg-[#FFF490] shadow-inner  rounded-full cursor-pointer"
+                          className={`w-4 h-4 shadow-inner  rounded-full cursor-pointer ${color === 'Yellow' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Yellow")}
-                        />
+                        ><div className="w-full h-full rounded-full bg-[#FFF490]"></div></div>
                         <div
-                          className="w-4 h-4 bg-[#96FFAD] shadow-inner  rounded-full cursor-pointer"
+                          className={`w-4 h-4 shadow-inner  rounded-full cursor-pointer ${color === 'Green' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Green")}
-                        />
+                        ><div className="w-full h-full rounded-full bg-[#96FFAD]"></div></div>
                         <div
-                          className="w-4 h-4 bg-blue-300 shadow-inner  rounded-full cursor-pointer"
+                          className={`w-4 h-4  shadow-inner  rounded-full cursor-pointer ${color === 'Blue' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Blue")}
-                        />
+                        ><div className="w-full h-full rounded-full bg-blue-300"></div></div>
                         <div
-                          className="w-4 h-4 bg-red-400 shadow-inner border border-spacing-4 rounded-full cursor-pointer"
+                          className={`w-4 h-4  shadow-inner rounded-full cursor-pointer ${color === 'Red' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Red")}
-                        />
-
+                        ><div className="w-full h-full rounded-full bg-red-400"></div></div>
                         <div
-                          className="w-4 h-4 bg-[#ECECEC] shadow-inner  rounded-full cursor-pointer"
+                          className={`w-4 h-4 shadow-inner  rounded-full cursor-pointer ${color === 'Grey' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Grey")}
-                        />
+                        ><div className="w-full h-full rounded-full bg-[#ECECEC]"></div></div>
                         <div
-                          className="w-4 h-4 bg-black shadow-inner  rounded-full border-gray-500 cursor-pointer"
+                          className={`w-4 h-4 shadow-inner  rounded-full border-gray-500 cursor-pointer ${color === 'Black' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Black")}
-                        />
+                        ><div className="w-full h-full rounded-full bg-black"></div>
+                        </div>
                       </div>
                     )}
                     {index == 1 && (
                       <div className="flex space-x-2 justify-center items-center">
                         <div
-                          className="w-4 h-4 bg-gradient-to-br from-[#FFEC43] via-[#F66F6F] to-[#66D3E1] shadow-inner  rounded-full cursor-pointer"
+                          className={`w-4 h-4 shadow-inner  rounded-full cursor-pointer ${color === 'Yellow' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Yellow")}
-                        />
+                        ><div className="w-full h-full rounded-full bg-gradient-to-br from-[#FFEC43] via-[#F66F6F] to-[#66D3E1]"></div></div>
                         <div
-                          className="w-4 h-4  bg-gradient-radial from-[#91CA6B] to-[#ECECEC] shadow-inner  rounded-full cursor-pointer"
+                          className={`w-4 h-4 shadow-inner  rounded-full cursor-pointer ${color === 'Green' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Green")}
-                        />
+                        ><div className="w-full h-full rounded-full  bg-gradient-radial from-[#91CA6B] to-[#ECECEC]"></div></div>
                         <div
-                          className="w-4 h-4 bg-gradient-radial from-[#66D3E1]  to-[#ECECEC] shadow-inner  rounded-full cursor-pointer"
+                          className={`w-4 h-4  shadow-inner  rounded-full cursor-pointer ${color === 'Blue' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Blue")}
-                        />
+                        ><div className="w-full h-full rounded-full bg-gradient-radial from-[#66D3E1]  to-[#ECECEC]"></div></div>
                         <div
-                          className="w-4 h-4 bg-gradient-radial from-[#F66F6F]  to-[#ECECEC] shadow-inner border border-spacing-4 rounded-full cursor-pointer"
+                          className={`w-4 h-4  shadow-inner rounded-full cursor-pointer ${color === 'Red' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Red")}
-                        />
-
+                        ><div className="w-full h-full rounded-full bg-gradient-radial from-[#F66F6F]  to-[#ECECEC]"></div></div>
                         <div
-                          className="w-4 h-4 bg-gradient-to-br from-[#ECECEC] via-[#ECECEC] to-[#7B6BB0] shadow-inner  rounded-full cursor-pointer"
+                          className={`w-4 h-4 shadow-inner  rounded-full cursor-pointer ${color === 'Grey' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Grey")}
-                        />
+                        ><div className="w-full h-full rounded-full bg-gradient-to-br from-[#ECECEC] via-[#ECECEC]"></div></div>
                         <div
-                          className="w-4 h-4 bg-gradient-to-br from-[#000000] via-[#F37232] to-[#FFC83F] shadow-inner  rounded-full border-gray-500 cursor-pointer"
+                          className={`w-4 h-4 shadow-inner  rounded-full border-gray-500 cursor-pointer ${color === 'Black' ? 'scale-125 border border-black p-px' : ''
+                            } `}
                           onClick={() => setColor("Black")}
-                        />
+                        ><div className="w-full h-full rounded-full bg-gradient-to-br from-[#000000] via-[#F37232]"></div>
+                        </div>
                       </div>
                     )}
                   </div>
