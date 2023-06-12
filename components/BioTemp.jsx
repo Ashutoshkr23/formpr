@@ -45,7 +45,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
           />
           <p className="text-[10px] ml-[1px] tracking-[-0.5px]">
             <input
-              className={`bg-transparent ${text2} text-[#7D9695] `}
+              className={`bg-transparent w-20 ${text2} text-[#7D9695] `}
               type="text"
               placeholder="+919833XXXXXX"
               value={mobile}
