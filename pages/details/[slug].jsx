@@ -81,7 +81,7 @@ END:VCARD`;
     <div className="flex justify-center ">
       {/* ayush bansal */}
       {id == "d5d7d6f3-2583-4c9b-af23-6a712e3b4d4d" && (
-        <div className="min-w-[375px]  flex ml-4">
+        <div className="max-w-[375px]  ">
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[2].gradient2}

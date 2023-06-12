@@ -46,9 +46,9 @@ END:VCARD`;
   };
   console.log(instaLink);
   return (
-    <div className=" ">
+    <div className="">
       <div
-        className={`${gradient1} w-[375px] h-[812px] rounded-[30px] pt-[161px] mx-auto `}
+        className={`${gradient1} w-[375px] h-[812px] rounded-[30px] pt-[161px]  `}
       >
         <div
           className={`${gradient2} relative px-6  mx-auto h-[651px] w-[375px]  rounded-[20px] `}
