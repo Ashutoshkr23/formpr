@@ -30,24 +30,22 @@ const DesignComp = ({
                 <div>
                   <div className=" pr-1">
                     <div
-                      className={`flex items-center justify-between pb-2   cursor-pointer  h-full  ${
-                        selectedTypeIndex == 0 ? " " : ""
-                      } `}
+                      className={`flex items-center justify-between pb-2   cursor-pointer  h-full  ${selectedTypeIndex == 0 ? " " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(0);
                         setType("Lite");
                       }}
                     >
                       <p
-                        className={`text-base  leading-7 text-center ${
-                          selectedTypeIndex == 0 ? "font-bold" : ""
-                        }`}
+                        className={` leading-7 pt-2 text-[#686A6C] text-center ${selectedTypeIndex == 0 ? "text-base font-bold text-black " : "text-sm"
+                          }`}
                       >
                         Loop Lite
                       </p>
 
                       {cartItems[0].quantity > 0 && (
-                        <span className="text-md font-semibold h-8 w-8 text-center pt-1   bg-[#F6F6F6] rounded-full ">
+                        <span className="text-md font-semibold h-8 w-8 text-center pt-1    bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db]  rounded-full ">
                           {cartItems[0].quantity}
                         </span>
                       )}
@@ -57,23 +55,21 @@ const DesignComp = ({
 
                   <div className="pr-1">
                     <div
-                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${
-                        selectedTypeIndex == 1 ? "  " : ""
-                      } `}
+                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${selectedTypeIndex == 1 ? "  " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(1);
                         setType("Elevate");
                       }}
                     >
                       <p
-                        className={`text-base leading-7 text-center ${
-                          selectedTypeIndex == 1 ? "font-bold" : ""
-                        }`}
+                        className={` leading-7 pt-3 text-[#686A6C] text-center ${selectedTypeIndex == 1 ? "text-base font-bold text-black " : "text-sm"
+                          }`}
                       >
                         Loop Elevate
                       </p>
                       {cartItems[1].quantity > 0 && (
-                        <span className="text-md font-semibold h-8 w-8  text-center pt-1   bg-[#F6F6F6] drop-shadow-2xl  rounded-full ">
+                        <span className="text-md font-semibold h-8 w-8  text-center pt-1 mt-1 bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
                           {cartItems[1].quantity}
                         </span>
                       )}
@@ -82,22 +78,20 @@ const DesignComp = ({
                   </div>
                   <div className="pr-1">
                     <div
-                      className={`flex cursor-pointer justify-between pb-2   h-full ${
-                        selectedTypeIndex == 2 ? "font-bold" : ""
-                      } `}
+                      className={`flex cursor-pointer justify-between pb-2   h-full ${selectedTypeIndex == 2 ? " " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(2);
                       }}
                     >
                       <p
-                        className={`text-base  leading-7 text-center ${
-                          selectedTypeIndex == 2 ? "" : ""
-                        }`}
+                        className={`text-[#686A6C]  pt-3 leading-7 text-center ${selectedTypeIndex == 2 ? "text-base font-bold text-black" : "text-sm"
+                          }`}
                       >
                         Loop Supreme
                       </p>
                       {cartItems[2].quantity > 0 && (
-                        <span className="text-md font-semibold h-8 w-8  text-center pt-1  bg-[#F6F6F6] drop-shadow-2xl  rounded-full ">
+                        <span className=" text-md font-semibold h-8 w-8  text-center pt-1 mt-2   bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
                           {cartItems[2].quantity}
                         </span>
                       )}

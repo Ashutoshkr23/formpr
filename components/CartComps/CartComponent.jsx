@@ -155,7 +155,7 @@ const CartComponent = () => {
                 } flex justify-center items-center `}
               onClick={() => setStepState(1)}
             >
-              <p className="text-center text-[12px] md:text-base">
+              <p className="text-center text-[12px] md:text-sm">
                 STEP 1 : CARD TYPE & QTY.
               </p>
             </div>
@@ -164,7 +164,7 @@ const CartComponent = () => {
                 } flex justify-center items-center `}
               onClick={() => setStepState(2)}
             >
-              <p className="text-center text-[12px] md:text-base">
+              <p className="text-center text-[12px] md:text-sm">
                 STEP 2 : DETAILS
               </p>
             </div>
@@ -173,7 +173,7 @@ const CartComponent = () => {
                 } flex justify-center items-center `}
               onClick={() => setStepState(3)}
             >
-              <p className="text-center text-[12px] md:text-base">
+              <p className="text-center text-[12px] md:text-sm">
                 STEP 3: CHECKOUT
               </p>
             </div>
