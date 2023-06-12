@@ -8,6 +8,7 @@ function DetailsInput({ card, index }) {
     const [selectedDiv, setSelectedDiv] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
     const fileInputRef = useRef(null);
+    const [fileName, setFileName] = useState(''); // State to store the file name
     const { userProfile, handleApplyToAll, handleName, handleRemoveCardArr } = useContext(CartContext)
 
     const divStyle = {
@@ -66,6 +67,7 @@ function DetailsInput({ card, index }) {
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         const fileSizeInMB = file.size / (1024 * 1024);
+        setFileName(file.name);
 
         if (fileSizeInMB > 5) {
             setErrorMessage('File size exceeds the limit of 5MB.');
@@ -168,18 +170,14 @@ function DetailsInput({ card, index }) {
                     </div>
                     <div>
                         <div className="flex mt-4">
-                            {/* <input
-                                type="file"
-                                name="companyLogo"
-                                accept=".png, .jpeg, .jpg"
-                                onChange={handleFileChange}
-                                className="border w-[180px] xl:w-[220px] h-10 rounded-xl "
-                                placeholder="Upload Logo"
-                            /> */}
-                            <label htmlFor="fileInput" className="cursor-pointer py-2 flex justify-between  border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 " onClick={handleLabelClick}>
-                                Upload Logo
-                                <Image src={"/assets/images/uploadLogo.png"} height={40} width={40} alt='icon' style={{ objectFit: "contain" }} />
-                            </label>
+                            {fileName ? ( // Display the file name if it exists
+                                <p className='py-2 flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4'>{fileName}</p>
+                            ) : (
+                                <label htmlFor="fileInput" className="cursor-pointer py-2 flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4" onClick={handleLabelClick}>
+                                    Upload Logo
+                                    <Image src={"/assets/images/uploadLogo.png"} height={40} width={40} alt='icon' style={{ objectFit: "contain" }} />
+                                </label>
+                            )}
                             <input
                                 id="companyLogo"
                                 type="file"
@@ -189,7 +187,7 @@ function DetailsInput({ card, index }) {
                                 name="companyLogo"
                                 style={{ display: 'none' }}
                             />
-                            {index == 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4' onClick={() => handleApplyToAll(1, card.companyLogo)}>APPLY TO ALL</button>}
+                            {index === 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4' onClick={() => handleApplyToAll(1, card.companyLogo)}>APPLY TO ALL</button>}
                         </div>
                     </div>
                     <div>
