@@ -109,13 +109,13 @@ END:VCARD`;
       {id == "6b18db9c-0c96-45c5-ba77-04dc3293dc7c" && (
         <div className="min-w-[375px]  flex ml-4">
           <Template
-            gradient1={themes[0].gradient1}
-            gradient2={themes[0].gradient2}
-            text1={themes[0].text1}
-            text2={themes[0].text2}
-            text3={themes[0].text3}
-            btn={themes[0].btn}
-            loop={themes[0].loop}
+            gradient1={themes[3].gradient1}
+            gradient2={themes[2].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
             fname={"Siddhartha"}
             lname={"Singh"}
             bio={"A proud part of the Black Cab Agency Network "}
@@ -135,13 +135,13 @@ END:VCARD`;
       {id == "a82d7d0e-7e32-4fe5-a4b2-cfe79f0c4c4f" && (
         <div className="min-w-[375px]  flex ml-4">
           <Template
-            gradient1={themes[0].gradient1}
-            gradient2={themes[0].gradient2}
-            text1={themes[0].text1}
-            text2={themes[0].text2}
-            text3={themes[0].text3}
-            btn={themes[0].btn}
-            loop={themes[0].loop}
+            gradient1={themes[3].gradient1}
+            gradient2={themes[2].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
             fname={"Aayushman"}
             lname={"Sinha"}
             bio={"A proud part of the Black Cab Agency Network "}
@@ -160,13 +160,13 @@ END:VCARD`;
       {id == "7a932f36-70b4-4ad5-bd6a-91139b898874" && (
         <div className="min-w-[375px]  flex ml-4">
           <Template
-            gradient1={themes[0].gradient1}
-            gradient2={themes[0].gradient2}
-            text1={themes[0].text1}
-            text2={themes[0].text2}
-            text3={themes[0].text3}
-            btn={themes[0].btn}
-            loop={themes[0].loop}
+            gradient1={themes[3].gradient1}
+            gradient2={themes[2].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
             fname={"Rishikesh"}
             lname={"Bhanushali"}
             bio={"A proud part of the Black Cab Agency Network"}
@@ -185,13 +185,13 @@ END:VCARD`;
       {id == "0a7f5a3d-6b2d-4740-bd34-2285792344b6" && (
         <div className="min-w-[375px]  flex ml-4">
           <Template
-            gradient1={themes[0].gradient1}
-            gradient2={themes[0].gradient2}
-            text1={themes[0].text1}
-            text2={themes[0].text2}
-            text3={themes[0].text3}
-            btn={themes[0].btn}
-            loop={themes[0].loop}
+            gradient1={themes[3].gradient1}
+            gradient2={themes[2].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
             fname={"Alok"}
             lname={"Verma"}
             bio={"A proud part of the Black Cab Agency Network  "}
@@ -210,13 +210,13 @@ END:VCARD`;
       {id == "f50f7844-7b2e-4459-82c3-2f82e32d1026" && (
         <div className="min-w-[375px]  flex ml-4">
           <Template
-            gradient1={themes[0].gradient1}
-            gradient2={themes[0].gradient2}
-            text1={themes[0].text1}
-            text2={themes[0].text2}
-            text3={themes[0].text3}
-            btn={themes[0].btn}
-            loop={themes[0].loop}
+            gradient1={themes[3].gradient1}
+            gradient2={themes[2].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
             fname={"Nishant"}
             lname={"Joshi"}
             bio={"A proud part of the Black Cab Agency Network"}
@@ -235,13 +235,13 @@ END:VCARD`;
       {id == "9b05175e-eeb3-4d71-8a36-1e2b11fe5d75" && (
         <div className="min-w-[375px]  flex ml-4">
           <Template
-            gradient1={themes[0].gradient1}
-            gradient2={themes[0].gradient2}
-            text1={themes[0].text1}
-            text2={themes[0].text2}
-            text3={themes[0].text3}
-            btn={themes[0].btn}
-            loop={themes[0].loop}
+            gradient1={themes[3].gradient1}
+            gradient2={themes[2].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
             fname={"Ujjwal"}
             lname={"Sharma"}
             bio={"A proud part of the Black Cab Agency Network  "}
@@ -260,13 +260,13 @@ END:VCARD`;
       {id == "c45748fe-20e5-4cfe-a8c9-4ed0f1061f5a" && (
         <div className="min-w-[375px]  flex ml-4">
           <Template
-            gradient1={themes[0].gradient1}
-            gradient2={themes[0].gradient2}
-            text1={themes[0].text1}
-            text2={themes[0].text2}
-            text3={themes[0].text3}
-            btn={themes[0].btn}
-            loop={themes[0].loop}
+            gradient1={themes[3].gradient1}
+            gradient2={themes[2].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
             fname={"Sandesh"}
             lname={"Jha"}
             bio={"A proud part of the Black Cab Agency Network  "}
@@ -285,13 +285,13 @@ END:VCARD`;
       {id == "3beaf24d-7c8f-47a5-8796-9f8d47706712" && (
         <div className="min-w-[375px]  flex ml-4">
           <Template
-            gradient1={themes[0].gradient1}
-            gradient2={themes[0].gradient2}
-            text1={themes[0].text1}
-            text2={themes[0].text2}
-            text3={themes[0].text3}
-            btn={themes[0].btn}
-            loop={themes[0].loop}
+            gradient1={themes[3].gradient1}
+            gradient2={themes[2].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
             fname={"Sidhantha"}
             lname={"Jain"}
             bio={"A proud part of the Black Cab Agency Network "}
@@ -310,13 +310,13 @@ END:VCARD`;
       {id == "64350fc2-7f97-4b54-82e1-82b3f2cfc7ff" && (
         <div className="min-w-[375px]  flex ml-4">
           <Template
-            gradient1={themes[0].gradient1}
-            gradient2={themes[0].gradient2}
-            text1={themes[0].text1}
-            text2={themes[0].text2}
-            text3={themes[0].text3}
-            btn={themes[0].btn}
-            loop={themes[0].loop}
+            gradient1={themes[3].gradient1}
+            gradient2={themes[2].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
             fname={"Khushi"}
             lname={"Gadhia"}
             bio={"A proud part of the Black Cab Agency Network  "}
