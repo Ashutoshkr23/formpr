@@ -17,7 +17,8 @@ export const CartProvider = ({ children }) => {
     const [defaultCart, setDefaultCart] = useState([])
 
     const [finalData, setFinalData] = useState({})
-    const [cardsArray, setCardsArray] = useState(null)
+    const [cardsArray, setCardsArray] = useState([])
+    const [stepState, setStepState] = useState(1);
 
     useEffect(() => {
 
@@ -81,7 +82,15 @@ export const CartProvider = ({ children }) => {
 
 
     useEffect(() => {
-        if (cartItems.length > 0) {
+
+        // const localCardData = localStorage.getItem('cardsArray');
+        // console.log(localCardData, "local", JSON.parse(localCardData))
+        // if (localCardData && localCardData?.length && !cardsArray.length) {
+        //     console.log("runned 1")
+        //     setCardsArray(JSON.parse(localCardData))
+        // }
+
+        if (cartItems.length > 0 && stepState == 1) {
             let totalQuantity = 0;
             let cards = []
             // Loop over the array and add up the quantity field of each object
@@ -105,13 +114,15 @@ export const CartProvider = ({ children }) => {
                             companyLogo: "",
 
                         }
+                        console.log(temp, "temp")
                         cards.push(temp)
 
                     }
                 }
             })
-
+            console.log("runned 2", cards)
             setCardsArray(cards)
+            // localStorage.setItem('cardsArray', JSON.stringify(cards));
 
 
 
@@ -119,7 +130,7 @@ export const CartProvider = ({ children }) => {
     }, [cartItems])
 
 
-
+    // console.log(cardsArray, "Cards Array", cartItems)
 
 
     // Function to add an item to the cart
@@ -213,6 +224,7 @@ export const CartProvider = ({ children }) => {
                 tempArr.push(temp)
             }
             setCardsArray(tempArr)
+            // localStorage.setItem('cardsArray', JSON.stringify(tempArr));
         } else {
             let tempArr = []
             for (let i = 0; i < cardsArray.length; i++) {
@@ -223,6 +235,7 @@ export const CartProvider = ({ children }) => {
                 tempArr.push(temp)
             }
             setCardsArray(tempArr)
+            // localStorage.setItem('cardsArray', JSON.stringify(tempArr));
         }
     }
 
@@ -240,6 +253,7 @@ export const CartProvider = ({ children }) => {
             return item
         })
         setCardsArray(newCardArr)
+        // localStorage.setItem('cardsArray', JSON.stringify(newCardArr));
 
 
     }
@@ -257,6 +271,8 @@ export const CartProvider = ({ children }) => {
 
         minusCartFunc(cartType[0]._id)
         setCardsArray(array)
+        // localStorage.setItem('cardsArray', JSON.stringify(array));
+
     }
 
     // Create the cart context value
@@ -266,6 +282,7 @@ export const CartProvider = ({ children }) => {
         allCards,
         finalData,
         cardsArray,
+        stepState,
         clearCart,
         plusCartFunc,
         minusCartFunc,
@@ -274,7 +291,8 @@ export const CartProvider = ({ children }) => {
         setFinalDataFunc,
         handleApplyToAll,
         handleName,
-        handleRemoveCardArr
+        handleRemoveCardArr,
+        setStepState
     };
 
     // Provide the cart context to its children components

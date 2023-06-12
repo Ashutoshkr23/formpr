@@ -112,12 +112,10 @@ END:VCARD`;
             className={`text-[10px] flex justify-center mt-7 pb-[29px] ${text1}`}
           >
             made with love by
-            <Image
-              className="ml-1 mt-[2px]"
-              alt="loop"
-              src="/assets/images/display/loopro.png"
-              width={27}
-              height={12}
+            <img
+              className="h-[27px] w-[27px] pl-1"
+              src="/assets/images/display/loops.png"
+              alt="logo"
             />
           </div>
           <div className="flex mx-auto mt-[-12px] rounded-[31px]  h-[3px] w-[133px] bg-[#A8A8A8]"></div>

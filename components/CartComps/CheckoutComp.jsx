@@ -34,8 +34,10 @@ const CheckoutComp = ({ cardsArray, handleSubmitFunction }) => {
                                     </div>
                                     <div>
                                         <p className="text-xs font-medium leading-tight">Company Logo </p>
-                                        <div className="w-36 h-20 bg-slate-200 rounded-md mt-1" >
-                                        </div>
+                                        {data.companyLogo && data.companyLogo.length ? <div>
+                                            <Image src={data.companyLogo} height={75} width={140} alt="Logo" className='rounded-md' style={{ objectFit: "contain" }} />
+                                        </div> : <div className="w-36 h-20 bg-slate-200 rounded-md mt-1" >
+                                        </div>}
                                     </div>
                                 </div>
                             )
