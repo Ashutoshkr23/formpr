@@ -83,16 +83,16 @@ END:VCARD`;
       {id == "d5d7d6f3-2583-4c9b-af23-6a712e3b4d4d" && (
         <div className="min-w-[375px]  flex ml-4">
           <Template
-            gradient1={themes[0].gradient1}
-            gradient2={themes[0].gradient2}
-            text1={themes[0].text1}
-            text2={themes[0].text2}
-            text3={themes[0].text3}
-            btn={themes[0].btn}
-            loop={themes[0].loop}
+            gradient1={themes[3].gradient1}
+            gradient2={themes[2].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
             fname={"Aayush"}
             lname={"Bansal"}
-            bio={"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "}
+            bio={"A proud part of the Black Cab Agency Network "}
             designation={"Co-Founder"}
             company={"Black Cab"}
             website={"https://blackcab.co.in/"}
@@ -118,7 +118,7 @@ END:VCARD`;
             loop={themes[0].loop}
             fname={"Siddhartha"}
             lname={"Singh"}
-            bio={"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "}
+            bio={"A proud part of the Black Cab Agency Network "}
             designation={"Co-Founder"}
             company={"Black Cab"}
             website={"https://blackcab.co.in/"}
@@ -144,7 +144,7 @@ END:VCARD`;
             loop={themes[0].loop}
             fname={"Aayushman"}
             lname={"Sinha"}
-            bio={"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "}
+            bio={"A proud part of the Black Cab Agency Network "}
             designation={"Co-Founder"}
             company={"Black Cab"}
             website={"https://blackcab.co.in/"}
@@ -169,7 +169,7 @@ END:VCARD`;
             loop={themes[0].loop}
             fname={"Rishikesh"}
             lname={"Bhanushali"}
-            bio={"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "}
+            bio={"A proud part of the Black Cab Agency Network"}
             designation={"Co-Founder"}
             company={"Black Cab"}
             website={"https://blackcab.co.in/"}
@@ -194,7 +194,7 @@ END:VCARD`;
             loop={themes[0].loop}
             fname={"Alok"}
             lname={"Verma"}
-            bio={"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "}
+            bio={"A proud part of the Black Cab Agency Network  "}
             designation={"Co-Founder"}
             company={"Secret Sauce Studios- A Black Cab Network Agency "}
             website={"https://secretsaucestudios.in/"}
@@ -219,7 +219,7 @@ END:VCARD`;
             loop={themes[0].loop}
             fname={"Nishant"}
             lname={"Joshi"}
-            bio={"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "}
+            bio={"A proud part of the Black Cab Agency Network"}
             designation={"Co-Founder"}
             company={"Secret Sauce Studios- A Black Cab Network Agency "}
             website={"https://secretsaucestudios.in/"}
@@ -244,7 +244,7 @@ END:VCARD`;
             loop={themes[0].loop}
             fname={"Ujjwal"}
             lname={"Sharma"}
-            bio={"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "}
+            bio={"A proud part of the Black Cab Agency Network  "}
             designation={"Co-Founder"}
             company={"Secret Sauce Studios- A Black Cab Network Agency "}
             website={"https://radaragency.io/"}
@@ -269,7 +269,7 @@ END:VCARD`;
             loop={themes[0].loop}
             fname={"Sandesh"}
             lname={"Jha"}
-            bio={"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "}
+            bio={"A proud part of the Black Cab Agency Network  "}
             designation={"Co-Founder"}
             company={"Black Cab"}
             website={"https://blackcab.co.in/"}
@@ -294,7 +294,7 @@ END:VCARD`;
             loop={themes[0].loop}
             fname={"Sidhantha"}
             lname={"Jain"}
-            bio={"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "}
+            bio={"A proud part of the Black Cab Agency Network "}
             designation={"Co-Founder"}
             company={"Black Cab"}
             website={"https://blackcab.co.in/"}
@@ -319,7 +319,7 @@ END:VCARD`;
             loop={themes[0].loop}
             fname={"Khushi"}
             lname={"Gadhia"}
-            bio={"Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "}
+            bio={"A proud part of the Black Cab Agency Network  "}
             designation={"Executive Assistant "}
             company={"Black Cab"}
             website={"https://blackcab.co.in/"}

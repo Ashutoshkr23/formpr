@@ -3,6 +3,7 @@ import ProfileImg from "./ProfileImg";
 import Image from "next/image";
 import BioTemp from "./BioTemp";
 import Socialpg from "./Socialpg";
+import { saveAs } from "file-saver"; // Import the file-saver library
 
 const Template = ({
   fname,
@@ -68,7 +69,7 @@ END:VCARD`;
           </div>
           <div className="flex justify-center mt-[11px] font-semibold text-[16px]">
             <input
-              className={`text-center bg-transparent ${text2}`}
+              className={`text-center bg-transparent ${text2} text-[#7D9695] `}
               type="text"
               placeholder="Design Lead"
               value={designation}
@@ -99,7 +100,7 @@ END:VCARD`;
 
           <div className="">
             <button
-              className={`${btn} border-2 font-thin text-[20px] ${btntext} text-white h-[50px] w-[304px] rounded-[14px] mt-7`}
+              className={`${btn} border-2 font-thin text-[20px] ${btntext} text-black bg-white  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
               onClick={downloadVCard}
             >
               SAVE CONTACT
@@ -109,11 +110,11 @@ END:VCARD`;
           <div
             className={`text-[10px] flex justify-center mt-7 pb-[29px] ${text1}`}
           >
-            made with love by{" "}
+            made with love by
             <Image
               className="ml-1 mt-[2px]"
               alt="loop"
-              src={loop}
+              src="/assets/images/display/loopro.png"
               width={27}
               height={12}
             />
