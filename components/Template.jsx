@@ -26,6 +26,7 @@ const Template = ({
   gmail,
   instaLink,
   watspLink,
+  linkedLink,
 }) => {
   const downloadVCard = () => {
     // Create a vCard string from the contact data
@@ -92,6 +93,7 @@ END:VCARD`;
               type={type}
               instaLink={instaLink}
               watspLink={watspLink}
+              linkedLink={linkedLink}
             />
           </div>
 

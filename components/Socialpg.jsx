@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Socialpg = ({ text1, type, instaLink, watspLink }) => {
+const Socialpg = ({ text1, type, instaLink, watspLink, linkedLink }) => {
   return (
     <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] ">
       <div className="">
@@ -28,7 +28,7 @@ const Socialpg = ({ text1, type, instaLink, watspLink }) => {
         <p className={`text-[12px] ${text1} pl-3`}>Mail</p>
       </div>
       <div>
-        <Link href={"#"}>
+        <Link href={`${linkedLink}`}>
           <Image
             src={`/assets/images/social/folder1/linked.png`}
             alt="linkedin Logo"

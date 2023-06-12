@@ -78,7 +78,7 @@ END:VCARD`;
     saveAs(blob, "hello.vcf");
   };
   return (
-    <div className=" ">
+    <div className="flex justify-center ">
       {/* ayush bansal */}
       {id == "d5d7d6f3-2583-4c9b-af23-6a712e3b4d4d" && (
         <div className="min-w-[375px]  flex ml-4">
@@ -100,6 +100,7 @@ END:VCARD`;
             gmail={"aayush@blackcab.co.in"}
             instaLink={`https://www.instagram.com/aayushbansal26/`}
             watspLink={`https://api.whatsapp.com/send?phone=919820447476`}
+            linkedLink={`https://www.linkedin.com/in/aayush-bansal-110385a7/`}
           />
         </div>
       )}
@@ -125,6 +126,7 @@ END:VCARD`;
             gmail={"siddhartha@blackcab.co.in"}
             instaLink={"https://www.instagram.com/siddharthasingh05/"}
             watspLink={`https://api.whatsapp.com/send?phone=919004922756`}
+            linkedLink={`https://www.linkedin.com/in/siddhartha-singh-7552b5107/`}
           />
         </div>
       )}
@@ -150,6 +152,7 @@ END:VCARD`;
             gmail={"aayushman@blackcab.co.in"}
             instaLink={`https://www.instagram.com/aayushmansinha/`}
             watspLink={`https://api.whatsapp.com/send?phone=919833556650`}
+            linkedLink={`https://www.linkedin.com/in/aayushmansinha/`}
           />
         </div>
       )}
@@ -174,6 +177,7 @@ END:VCARD`;
             gmail={"rishikesh@blackcab.co.in "}
             instaLink={`https://www.instagram.com/rishi_235/`}
             watspLink={`https://api.whatsapp.com/send?phone=919920223594`}
+            linkedLink={`https://www.linkedin.com/in/rishikeshbhanushali/`}
           />
         </div>
       )}
@@ -198,6 +202,7 @@ END:VCARD`;
             gmail={"alok@secretsaucestudios.in "}
             instaLink={`https://www.instagram.com/allaboutthatpalate/`}
             watspLink={`https://api.whatsapp.com/send?phone=919930981280`}
+            linkedLink={`https://www.linkedin.com/in/nishant-joshi-54632b26a`}
           />
         </div>
       )}
@@ -222,6 +227,7 @@ END:VCARD`;
             gmail={"nishant@secretsaucestudios.in "}
             instLink={`https://www.instagram.com/joshinishant91/`}
             watspLink={`https://api.whatsapp.com/send?phone=919819566568`}
+            linkedLink={`https://www.linkedin.com/in/nishant-joshi-54632b26a`}
           />
         </div>
       )}
@@ -246,6 +252,7 @@ END:VCARD`;
             gmail={"ujjwal@radaragency.io "}
             instaLink={"https://www.instagram.com/ujjwalsharmma/"}
             watspLink={`https://api.whatsapp.com/send?phone=919999234245`}
+            linkedLink={`https://www.linkedin.com/in/ujjwalsh/`}
           />
         </div>
       )}
@@ -270,6 +277,7 @@ END:VCARD`;
             gmail={"sandesh@m-3.in"}
             instaLink={`https://www.instagram.com/theperpetualdaydreamer/`}
             watspLink={`https://api.whatsapp.com/send?phone=918693882326`}
+            linkedLink={`https://www.linkedin.com/in/sandesh-jha-4913261b6/`}
           />
         </div>
       )}
@@ -294,6 +302,7 @@ END:VCARD`;
             gmail={"sid@m-3.in"}
             instaLink={`https://www.instagram.com/theperpetualdaydreamer/`}
             watspLink={`https://api.whatsapp.com/send?phone=918700118994`}
+            linkedLink={`https://www.linkedin.com/in/sidhantha-jain-a1300b113/`}
           />
         </div>
       )}
@@ -318,6 +327,7 @@ END:VCARD`;
             gmail={"khushi@blackcab.co.in"}
             instaLink={`https://www.instagram.com/khushigadhiaa/`}
             watspLink={`https://api.whatsapp.com/send?phone=919167837466`}
+            linkedLink={`https://www.linkedin.com/in/khushigadhia/`}
           />
         </div>
       )}
