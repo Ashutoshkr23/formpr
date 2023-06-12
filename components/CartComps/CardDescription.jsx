@@ -10,7 +10,7 @@ const CardDescription = ({
   color,
   setColor,
   index,
-  quantity
+  quantity,
 }) => {
   const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
   const [State, setState] = useState(1);
@@ -120,9 +120,7 @@ const CardDescription = ({
                       >
                         -
                       </span>
-                      <span className="text-md">
-                        {quantity}
-                      </span>
+                      <span className="text-md">{quantity}</span>
                       <span
                         className="bg-[#cfcfcf] rounded-full h-6 w-6 text-center cursor-pointer"
                         onClick={() => plusCartFunc(cardTypeSelected?._id)}
@@ -137,15 +135,17 @@ const CardDescription = ({
             <div className="hidden lg:block">
               <div className="flex pt-8 space-x-3 ">
                 <div
-                  className={`${State == 1 && "border-b-2 border-black font-bold"
-                    } cursor-pointer`}
+                  className={`${
+                    State == 1 && "border-b-2 border-black font-bold"
+                  } cursor-pointer`}
                   onClick={() => setState(1)}
                 >
                   <p className="text-xs leading-[186%]">SPECIFICATIONS</p>
                 </div>
                 <div
-                  className={`${State == 2 && "border-b-2 border-black font-bold"
-                    } cursor-pointer`}
+                  className={`${
+                    State == 2 && "border-b-2 border-black font-bold"
+                  } cursor-pointer`}
                   onClick={() => setState(2)}
                 >
                   <p className="text-xs leading-[186%]">Compatibility</p>
@@ -184,7 +184,7 @@ const CardDescription = ({
               )}
               {State == 2 && (
                 <div className="max-w-[330px]">
-                  <div className="pt-5">
+                  <div className="pt-2">
                     <p className="text-xs leading-[150%]">
                       With Loop Cards, you can easily tap and connect with all
                       iPhones and most Android devices. For Android receivers,
@@ -192,7 +192,7 @@ const CardDescription = ({
                       settings.
                     </p>
                   </div>
-                  <div className="pt-7">
+                  <div className="pt-4">
                     <p className="text-xs leading-[150%]">
                       The best part is, you can effortlessly share your profile
                       with others without the need for them to have a specific

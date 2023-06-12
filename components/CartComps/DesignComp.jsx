@@ -30,16 +30,18 @@ const DesignComp = ({
                 <div>
                   <div className=" pr-1">
                     <div
-                      className={`flex items-center justify-between pb-2   cursor-pointer  h-full  ${selectedTypeIndex == 0 ? " " : ""
-                        } `}
+                      className={`flex items-center justify-between pb-2   cursor-pointer  h-full  ${
+                        selectedTypeIndex == 0 ? " " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(0);
                         setType("Lite");
                       }}
                     >
                       <p
-                        className={`text-base  leading-7 text-center ${selectedTypeIndex == 0 ? "font-bold" : ""
-                          }`}
+                        className={`text-base  leading-7 text-center ${
+                          selectedTypeIndex == 0 ? "font-bold" : ""
+                        }`}
                       >
                         Loop Lite
                       </p>
@@ -55,16 +57,18 @@ const DesignComp = ({
 
                   <div className="pr-1">
                     <div
-                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${selectedTypeIndex == 1 ? "  " : ""
-                        } `}
+                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${
+                        selectedTypeIndex == 1 ? "  " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(1);
                         setType("Elevate");
                       }}
                     >
                       <p
-                        className={`text-base leading-7 text-center ${selectedTypeIndex == 1 ? "font-bold" : ""
-                          }`}
+                        className={`text-base leading-7 text-center ${
+                          selectedTypeIndex == 1 ? "font-bold" : ""
+                        }`}
                       >
                         Loop Elevate
                       </p>
@@ -78,20 +82,22 @@ const DesignComp = ({
                   </div>
                   <div className="pr-1">
                     <div
-                      className={`flex cursor-pointer justify-between pb-2   h-full ${selectedTypeIndex == 2 ? "font-bold" : ""
-                        } `}
+                      className={`flex cursor-pointer justify-between pb-2   h-full ${
+                        selectedTypeIndex == 2 ? "font-bold" : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(2);
                       }}
                     >
                       <p
-                        className={`text-base  leading-7 text-center ${selectedTypeIndex == 2 ? "" : ""
-                          }`}
+                        className={`text-base  leading-7 text-center ${
+                          selectedTypeIndex == 2 ? "" : ""
+                        }`}
                       >
                         Loop Supreme
                       </p>
                       {cartItems[2].quantity > 0 && (
-                        <span className="text-md font-semibold h-8 w-8 top-[-10px] right-[-10px] text-center pt-1  bg-slate-100 drop-shadow-2xl shadow-2xl rounded-full ">
+                        <span className="text-md font-semibold h-8 w-8  text-center pt-1  bg-[#F6F6F6] drop-shadow-2xl  rounded-full ">
                           {cartItems[2].quantity}
                         </span>
                       )}
@@ -109,13 +115,13 @@ const DesignComp = ({
                     </div>
                     <hr className="w-[156px]" />
                   </div>
-                  <div className="pt-[14px]">
-                    <p className="text-sm  font-semibold text-[#F66F6F] ">
+                  <div className="pt-2 lg:pt-[14px]">
+                    <p className="text-xs  font-semibold text-[#F66F6F] ">
                       *Maximum 10
                     </p>
                   </div>
                   <div className="pt-4 text-center">
-                    <button className="h-[41px] w-[164px] px-4 rounded-[10px]  bg-black text-white text-xs font-bold">
+                    <button className="h-9 w-[145px] lg:h-[41px] lg:w-[164px] px-4 rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold">
                       FOR BULK ORDERS CONTACT US
                     </button>
                   </div>
