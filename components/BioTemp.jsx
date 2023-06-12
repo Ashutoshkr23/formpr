@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
   return (
-    <div className={`${border} rounded-[10px]  p-5 mt-3`}>
+    <div className={`${border} rounded-[10px]  pt-2 pb-2 `}>
       <div className={`text-[12px] ${text2} text-[#7D9695] `}>Bio</div>
       <div className="pt-[11px] text-[12px]">
         <textarea
@@ -23,18 +23,20 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
             width={27}
             height={22}
           />
-          <p className="text-[10px] ml-1.5 tracking-[-0.5px] ">
-            <input
-              className={`bg-transparent ${text2} text-[#7D9695] `}
+
+          <p className="text-[8px] ml-[2px] tracking-[-0.5px] text-[#7D9695]  ">
+            {company}
+            {/* <input
+              className={`bg-transparent ${text2} text-[#7D9695] w-[120px]  `}
               type="text"
               placeholder="company Name"
               value={company}
               readOnly={true}
               //   onChange={handleChange}
-            />
+            /> */}
           </p>
         </div>
-        <div className="flex ml-[40px] ">
+        <div className="flex ml-[50px] ">
           <Image
             src={"/assets/images/display/phone.png"}
             alt="phone"
@@ -52,7 +54,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
             />
           </p>
         </div>
-        <div className="flex">
+        <div className="flex pt-1">
           <Image
             src={"/assets/images/display/website.png"}
             alt="website"
@@ -62,7 +64,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
           <Link href={`${website}`}>
             <p className="text-[10px] ml-1.5 tracking-[-0.5px]">
               <input
-                className={`bg-transparent ${text2} text-[#7D9695] cursor-pointer `}
+                className={`bg-transparent ${text2} text-[#7D9695] cursor-pointer w-[200px] `}
                 type="text"
                 placeholder=" www.alphamintlabs.com"
                 value={website}
