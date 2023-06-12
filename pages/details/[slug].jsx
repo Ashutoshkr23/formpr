@@ -78,10 +78,10 @@ END:VCARD`;
     saveAs(blob, "hello.vcf");
   };
   return (
-    <div className="flex justify-center ">
+    <div className="mx-auto max-w-xs lg:max-w-xs  flex justify-center items-center ">
       {/* ayush bansal */}
       {id == "d5d7d6f3-2583-4c9b-af23-6a712e3b4d4d" && (
-        <div className="max-w-[375px]  ">
+        <div>
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[3].gradient2}
@@ -108,7 +108,7 @@ END:VCARD`;
 
       {/*  2*/}
       {id == "6b18db9c-0c96-45c5-ba77-04dc3293dc7c" && (
-        <div className="min-w-[375px]  ">
+        <div>
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[3].gradient2}
@@ -135,7 +135,7 @@ END:VCARD`;
 
       {/* 3 */}
       {id == "a82d7d0e-7e32-4fe5-a4b2-cfe79f0c4c4f" && (
-        <div className="min-w-[375px] ">
+        <div>
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[3].gradient2}
@@ -161,7 +161,7 @@ END:VCARD`;
       )}
       {/* 4 */}
       {id == "7a932f36-70b4-4ad5-bd6a-91139b898874" && (
-        <div className="min-w-[375px]  ">
+        <div>
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[3].gradient2}
@@ -187,7 +187,7 @@ END:VCARD`;
       )}
       {/* 5 */}
       {id == "0a7f5a3d-6b2d-4740-bd34-2285792344b6" && (
-        <div className="min-w-[375px]  ">
+        <div>
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[3].gradient2}
@@ -213,7 +213,7 @@ END:VCARD`;
       )}
       {/* 6 */}
       {id == "f50f7844-7b2e-4459-82c3-2f82e32d1026" && (
-        <div className="min-w-[375px]  ">
+        <div>
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[3].gradient2}
@@ -239,7 +239,7 @@ END:VCARD`;
       )}
       {/* 7 */}
       {id == "9b05175e-eeb3-4d71-8a36-1e2b11fe5d75" && (
-        <div className="min-w-[375px] ">
+        <div>
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[3].gradient2}
@@ -265,7 +265,7 @@ END:VCARD`;
       )}
       {/* 8 */}
       {id == "c45748fe-20e5-4cfe-a8c9-4ed0f1061f5a" && (
-        <div className="min-w-[375px]  ">
+        <div>
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[3].gradient2}
@@ -291,7 +291,7 @@ END:VCARD`;
       )}
       {/* 9 */}
       {id == "3beaf24d-7c8f-47a5-8796-9f8d47706712" && (
-        <div className="min-w-[375px]  ">
+        <div>
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[3].gradient2}
@@ -317,7 +317,7 @@ END:VCARD`;
       )}
       {/* 10 */}
       {id == "64350fc2-7f97-4b54-82e1-82b3f2cfc7ff" && (
-        <div className="min-w-[375px] ">
+        <div>
           <Template
             gradient1={themes[3].gradient1}
             gradient2={themes[3].gradient2}
