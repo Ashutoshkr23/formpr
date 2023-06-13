@@ -225,9 +225,18 @@ const CartComponent = () => {
             </div>
           </div>
           <div className="hidden lg:block pl-5">
-            <button disabled={totalQuantity == 0 ? true : false} className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px] disabled:cursor-not-allowed " onClick={() => handleNext()} >
+            {stepState == 2 ? <div className="lg:w-[350px] xl:w-[390px] flex space-x-2">
+              <button className="cursor-pointer tracking-wide outline-none w-full h-10 text-center  bg-white shadow border rounded-lg border-black font-semibold" onClick={() => setStepState(1)} >
+                PREVIOUS
+              </button>
+              <button className="cursor-pointer tracking-wide outline-none  w-full h-10 bg-black shadow rounded-lg  text-center text-white font-semibold" onClick={() => handleNext()}>
+                NEXT (₹ {totalAmount})
+              </button>
+            </div> : stepState == 3 ? <button disabled={totalQuantity == 0 ? true : false} className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-white text-black border font-semibold tracking-wide rounded-[10px] disabled:cursor-not-allowed " onClick={() => handleNext()} >
+              PREVIOUS
+            </button> : <button disabled={totalQuantity == 0 ? true : false} className="lg:w-[350px] xl:w-[390px] tracking-wide shadow-xl h-[40px] bg-black text-white rounded-[10px] disabled:cursor-not-allowed " onClick={() => handleNext()} >
               NEXT
-            </button>
+            </button>}
           </div>
         </div>
       </div>
