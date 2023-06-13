@@ -26,9 +26,9 @@ const DesignComp = ({
         <div className="flex gap-10  xl:gap-20 lg:justify-between justify-center h-full ">
           <div className="flex items-center gap-10  xl:gap-20 mt-10 flex-col-reverse justify-center lg:flex-row ">
             <div className="">
-              <div className="flex flex-row lg:flex-col justify-between gap-6 ">
+              <div className="flex flex-row lg:flex-col  justify-between gap-6 ">
                 <div>
-                  <div className=" pr-2 bg-white h-12 w-[190px] pl-7  rounded-[10px]">
+                  <div className=" pr-2 mb-2 bg-white h-12 w-[190px] pl-7   rounded-[10px] drop-shadow-lg">
                     <div
                       className={`flex items-center justify-between    cursor-pointer  h-full  ${
                         selectedTypeIndex == 0 ? " " : ""
@@ -56,7 +56,7 @@ const DesignComp = ({
                     </div>
                   </div>
 
-                  <div className="pr-2 bg-white h-12 w-[190px] pl-7  rounded-[10px]">
+                  <div className="pr-2 mb-2 bg-white h-12 w-[190px] pl-7  rounded-[10px] drop-shadow-lg">
                     <div
                       className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${
                         selectedTypeIndex == 1 ? "  " : ""
@@ -82,7 +82,7 @@ const DesignComp = ({
                       )}
                     </div>
                   </div>
-                  <div className="pr-2 bg-white h-12 w-[190px] pl-7  rounded-[10px]">
+                  <div className="pr-2 bg-white h-12 w-[190px] pl-7  rounded-[10px] drop-shadow-lg">
                     <div
                       className={`flex cursor-pointer justify-between pb-2   h-full ${
                         selectedTypeIndex == 2 ? " " : ""
@@ -110,7 +110,7 @@ const DesignComp = ({
                 </div>
                 <div>
                   <div className="">
-                    <div className="flex cursor-pointer justify-between pb-4 pr-4 ">
+                    <div className="flex cursor-pointer justify-between pb-3 lg:pb-1 pl-2 pr-4 ">
                       <p className="text-sm  font-bold ">Total Quantity :</p>
                       <span className="text-sm font-bold ">
                         {totalQuantity}
@@ -118,13 +118,13 @@ const DesignComp = ({
                     </div>
                     <hr className="w-[156px]" />
                   </div>
-                  <div className="pt-2 lg:pt-[14px]">
+                  <div className="pt-2  pl-2 lg:pt-1">
                     <p className="text-xs  font-semibold text-[#F66F6F] ">
                       *Maximum 10
                     </p>
                   </div>
-                  <div className="pt-4 text-center">
-                    <button className="h-9 w-[145px] lg:h-[41px] lg:w-[164px] px-4 rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold">
+                  <div className="pt-11 lg:pt-4 text-center">
+                    <button className="h-9 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold">
                       FOR BULK ORDERS CONTACT US
                     </button>
                   </div>
