@@ -52,6 +52,7 @@ const Socialpg = ({ text1, type, instaLink, watspLink, linkedLink }) => {
       <div>
         <Link href={"#"}>
           <Image
+            className="grayscale"
             src={`/assets/images/social/folder1/facebook.png`}
             alt="facebook Logo"
             width={50}
@@ -63,6 +64,7 @@ const Socialpg = ({ text1, type, instaLink, watspLink, linkedLink }) => {
       <div>
         <Link href={"#"}>
           <Image
+            className="grayscale"
             src={`/assets/images/social/folder1/pdf.png`}
             alt="deck Logo"
             width={50}
