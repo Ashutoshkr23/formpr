@@ -2,7 +2,7 @@ import React from 'react'
 import DetailsInput from './DetailsInput'
 // import { CartContext } from '@/context/CartContext'
 
-const DetailsComp = ({ cardsArray }) => {
+const DetailsComp = ({ cardsArray, checkFormValid }) => {
 
     console.log(cardsArray, "array")
 
@@ -14,7 +14,7 @@ const DetailsComp = ({ cardsArray }) => {
                 {cardsArray.map((card, index) => {
                     return (
                         <div key={card.key}>
-                            <DetailsInput card={card} index={index} />
+                            <DetailsInput card={card} index={index} checkFormValid={checkFormValid} />
 
                         </div>
                     )

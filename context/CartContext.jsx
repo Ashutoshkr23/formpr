@@ -112,6 +112,7 @@ export const CartProvider = ({ children }) => {
                             fullName: "",
                             companyName: "",
                             companyLogo: "",
+                            fileName: "",
 
                         }
                         console.log(temp, "temp")
@@ -213,7 +214,7 @@ export const CartProvider = ({ children }) => {
 
     // new
     // type 0 : company name and type 1 : company logo
-    const handleApplyToAll = (type, value) => {
+    const handleApplyToAll = (type, value, fileName) => {
         if (type == 0) {
             let tempArr = []
             for (let i = 0; i < cardsArray.length; i++) {
@@ -230,7 +231,8 @@ export const CartProvider = ({ children }) => {
             for (let i = 0; i < cardsArray.length; i++) {
                 let temp = {
                     ...cardsArray[i],
-                    companyLogo: value
+                    companyLogo: value,
+                    fileName: fileName,
                 }
                 tempArr.push(temp)
             }
@@ -240,13 +242,16 @@ export const CartProvider = ({ children }) => {
     }
 
     // type 0 : companyName,1:full name 
-    const handleName = (name, key, value) => {
+    const handleName = (name, key, value, fileName) => {
         console.log(name, key, value, "type, key, value")
 
         const newCardArr = cardsArray.map((item) => {
             if (item.key == key) {
                 let newItem = { ...item }
                 newItem[name] = value
+                if (name == "companyLogo") {
+                    newItem["fileName"] = fileName
+                }
 
                 return newItem
             }
