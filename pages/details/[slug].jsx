@@ -78,7 +78,7 @@ END:VCARD`;
     saveAs(blob, "hello.vcf");
   };
   return (
-    <div className="mx-auto max-w-[351px] flex justify-center items-center ">
+    <div className="mx-auto max-w-[375px] flex justify-center items-center ">
       {/* ayush bansal */}
       {id == "d5d7d6f3-2583-4c9b-af23-6a712e3b4d4d" && (
         <div>
