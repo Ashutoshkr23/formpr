@@ -49,12 +49,12 @@ END:VCARD`;
   };
 
   return (
-    <div className="flex justify-center max-w-[375px] h-[840px]">
+    <div className="flex justify-center mx-auto max-w-[320px] h-[840px]">
       <div
-        className={`${gradient1} max-w-[375px] h-[840px] rounded-[30px] pt-[161px]  `}
+        className={`${gradient1} max-w-[320px] mx-auto h-[840px] rounded-[30px] pt-[161px]  `}
       >
         <div
-          className={`${gradient2} max-w-[375px] relative px-6  mx-auto h-[679px]   rounded-[20px] `}
+          className={`${gradient2} max-w-[320px] relative px-6  mx-auto h-[679px]   rounded-[20px] `}
         >
           <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
             <ProfileImg profileimg={profile} />
@@ -112,8 +112,10 @@ END:VCARD`;
             </button>
           </div>
 
-          <div className={`text-[10px] flex justify-center mt-7 ${text1}`}>
-            made with love by
+          <div
+            className={`text-[10px] flex justify-center items-center mt-7 ${text1}`}
+          >
+            <p> made with love by</p>
             <img
               className="h-[12px] w-[27px] ml-1"
               src="/assets/images/display/loops.png"
