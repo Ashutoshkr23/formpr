@@ -102,6 +102,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919820447476`}
             linkedLink={`https://www.linkedin.com/in/aayush-bansal-110385a7/`}
             profile={`/assets/images/profilePic/Aayush Bansal.jpeg`}
+            gmailLink={`mailto:aayush@blackcab.co.in`}
           />
         </div>
       )}
@@ -129,6 +130,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919004922756`}
             linkedLink={`https://www.linkedin.com/in/siddhartha-singh-7552b5107/`}
             profile={`/assets/images/profilePic/Siddhartha Singh.jpeg`}
+            gmailLink={`mailto:siddhartha@blackcab.co.in`}
           />
         </div>
       )}
@@ -156,6 +158,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919833556650`}
             linkedLink={`https://www.linkedin.com/in/aayushmansinha/`}
             profile={`/assets/images/profilePic/Aayushman Sinha.jpg`}
+            gmailLink={`mailto:aayushman@blackcab.co.in`}
           />
         </div>
       )}
@@ -182,6 +185,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919920223594`}
             linkedLink={`https://www.linkedin.com/in/rishikeshbhanushali/`}
             profile={`/assets/images/profilePic/Rishikesh Bhanushali.jpeg`}
+            gmailLink={`mailto:rishikesh@blackcab.co.in`}
           />
         </div>
       )}
@@ -208,6 +212,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919930981280`}
             linkedLink={`https://www.linkedin.com/in/nishant-joshi-54632b26a`}
             profile={`/assets/images/profilePic/Alok Verma.jpg`}
+            gmailLink={`mailto:alok@secretsaucestudios.in`}
           />
         </div>
       )}
@@ -234,6 +239,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919819566568`}
             linkedLink={`https://www.linkedin.com/in/nishant-joshi-54632b26a`}
             profile={`/assets/images/profilePic/Nishant Joshi.jpg`}
+            gmailLink={`mailto:nishant@secretsaucestudios.in `}
           />
         </div>
       )}
@@ -250,9 +256,9 @@ END:VCARD`;
             loop={themes[2].loop}
             fname={"Ujjwal"}
             lname={"Sharma"}
-            bio={"A proud part of the Black Cab Agency Network  "}
+            bio={"A proud part of the Black Cab Agency Network "}
             designation={"Co-Founder"}
-            company={"Secret Sauce Studios- A Black Cab Network Agency "}
+            company={"Binary Chai & RADAR Agency-A Black Cab Network Agency"}
             website={"https://radaragency.io/"}
             mobile={"9999234245"}
             gmail={"ujjwal@radaragency.io "}
@@ -260,6 +266,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919999234245`}
             linkedLink={`https://www.linkedin.com/in/ujjwalsh/`}
             profile={`/assets/images/profilePic/Ujjwal Sharma High res.jpg`}
+            gmailLink={`mailto:ujjwal@radaragency.io`}
           />
         </div>
       )}
@@ -278,7 +285,7 @@ END:VCARD`;
             lname={"Jha"}
             bio={"A proud part of the Black Cab Agency Network  "}
             designation={"Co-Founder"}
-            company={"Black Cab"}
+            company={"M3 - A Black Cab Network Agency"}
             website={"https://blackcab.co.in/"}
             mobile={"8693882326"}
             gmail={"sandesh@m-3.in"}
@@ -286,6 +293,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=918693882326`}
             linkedLink={`https://www.linkedin.com/in/sandesh-jha-4913261b6/`}
             profile={`/assets/images/profilePic/Sandesh Jha.jpeg`}
+            gmailLink={`mailto:sandesh@m-3.in`}
           />
         </div>
       )}
@@ -304,7 +312,7 @@ END:VCARD`;
             lname={"Jain"}
             bio={"A proud part of the Black Cab Agency Network "}
             designation={"Co-Founder"}
-            company={"Black Cab"}
+            company={"M3 - A Black Cab Network Agency "}
             website={"https://blackcab.co.in/"}
             mobile={"8700118994"}
             gmail={"sid@m-3.in"}
@@ -312,6 +320,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=918700118994`}
             linkedLink={`https://www.linkedin.com/in/sidhantha-jain-a1300b113/`}
             profile={`/assets/images/profilePic/Sidhantha Jain.jpeg`}
+            gmailLink={`mailto:sid@m-3.in`}
           />
         </div>
       )}
@@ -338,6 +347,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919167837466`}
             linkedLink={`https://www.linkedin.com/in/khushigadhia/`}
             profile={`/assets/images/profilePic/Khushi Gadhia.jpeg`}
+            gmailLink={`mailto:khushi@blackcab.co.in`}
           />
         </div>
       )}
@@ -366,6 +376,7 @@ END:VCARD`;
             linkedLink={`https://www.linkedin.com/in/siddharth-nair-b30a3413b/`}
             profile={`/assets/images/profilePic/employee SID@1.25x@1.25x@2x.png`}
             faceLink={`https://www.facebook.com/siddharth.nair.39948`}
+            gmailLink={`mailto:siddharth@alphamintlabs.com`}
           />
         </div>
       )}
@@ -393,6 +404,7 @@ END:VCARD`;
             linkedLink={`https://www.linkedin.com/in/sandeeptelang/`}
             profile={`/assets/images/profilePic/sandeep.jpeg`}
             faceLink={`https://www.facebook.com/sandeep.telang94`}
+            gmailLink={`mailto:sandeep@alphamintlabs.com`}
           />
         </div>
       )}

@@ -9,6 +9,7 @@ const Socialpg = ({
   watspLink,
   linkedLink,
   faceLink,
+  gmailLink,
 }) => {
   return (
     <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] ">
@@ -24,7 +25,7 @@ const Socialpg = ({
         <p className={`text-[12px] ${text1}  `}>Whatsapp</p>
       </div>
       <div>
-        <Link href={"#"}>
+        <Link href={`${gmailLink}`}>
           <Image
             src={`/assets/images/social/folder1/email.png`}
             alt="gmail Logo"
