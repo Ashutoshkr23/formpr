@@ -47,12 +47,12 @@ END:VCARD`;
   };
   console.log(instaLink);
   return (
-    <div className="flex justify-center max-w-[360px]">
+    <div className="flex justify-center max-w-[351px]">
       <div
-        className={`${gradient1} max-w-[360px] h-[812px] rounded-[30px] pt-[161px]  `}
+        className={`${gradient1} max-w-[351px] h-[812px] rounded-[30px] pt-[161px]  `}
       >
         <div
-          className={`${gradient2} max-w-[360px] relative px-6  mx-auto h-[651px]   rounded-[20px] `}
+          className={`${gradient2} max-w-[351px] relative px-6  mx-auto h-[651px]   rounded-[20px] `}
         >
           <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
             <ProfileImg profileimg={profile} />
