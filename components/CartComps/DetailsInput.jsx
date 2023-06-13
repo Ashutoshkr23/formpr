@@ -3,12 +3,11 @@ import Image from 'next/image'
 import { CartContext } from '@/context/CartContext';
 import axios from 'axios';
 
-function DetailsInput({ card, index }) {
+function DetailsInput({ card, index, checkFormValid }) {
 
     const [selectedDiv, setSelectedDiv] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
     const fileInputRef = useRef(null);
-    const [fileName, setFileName] = useState(''); // State to store the file name
     const { userProfile, handleApplyToAll, handleName, handleRemoveCardArr } = useContext(CartContext)
 
     const divStyle = {
@@ -59,7 +58,7 @@ function DetailsInput({ card, index }) {
         console.log(uploadImage)
         if (uploadImage.status == 200 && !uploadImage.data.error) {
             const awsLink = uploadImage.data.result
-            handleName("companyLogo", card.key, awsLink);
+            handleName("companyLogo", card.key, awsLink, image.name);
         }
     }
 
@@ -67,7 +66,7 @@ function DetailsInput({ card, index }) {
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         const fileSizeInMB = file.size / (1024 * 1024);
-        setFileName(file.name);
+
 
         if (fileSizeInMB > 5) {
             setErrorMessage('File size exceeds the limit of 5MB.');
@@ -159,21 +158,24 @@ function DetailsInput({ card, index }) {
                 <div className='w-[350px] xl:w-[390px]'>
                     <h2>{card.cardTypeName}</h2>
                     <div className='flex mt-8'>
-                        <input className='border w-[180px] xl:w-[220px] h-10 rounded-xl pl-4'
+                        <input className={`border outline-none ${checkFormValid && card?.companyName?.length == 0 && "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"} w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
                             type="text"
                             name="companyName"
                             value={card.companyName}
                             onChange={handleCompanyNameChange}
                             placeholder="Company Name"
                         />
-                        {index == 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4' onClick={() => handleApplyToAll(0, card.companyName)} >APPLY TO ALL</button>}
+                        {index == 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold' onClick={() => handleApplyToAll(0, card.companyName)} >APPLY TO ALL</button>}
                     </div>
+                    {checkFormValid && card?.companyName?.length == 0 && <div className=''>
+                        <p className='text-xs text-red-500 font-bold py-1 px-2'>Required *</p>
+                    </div>}
                     <div>
                         <div className="flex mt-4">
-                            {fileName ? ( // Display the file name if it exists
-                                <p className='py-2 flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4'>{fileName}</p>
+                            {card.fileName ? ( // Display the file name if it exists
+                                <p className='py-2 flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden'>{card.fileName}</p>
                             ) : (
-                                <label htmlFor="fileInput" className="cursor-pointer py-2 flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4" onClick={handleLabelClick}>
+                                <label htmlFor="fileInput" className={`cursor-pointer py-2 flex justify-between border ${checkFormValid && card?.fileName?.length == 0 && "border-2 border-red-400 "}  w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `} onClick={handleLabelClick}>
                                     Upload Logo
                                     <Image src={"/assets/images/uploadLogo.png"} height={40} width={40} alt='icon' style={{ objectFit: "contain" }} />
                                 </label>
@@ -187,11 +189,17 @@ function DetailsInput({ card, index }) {
                                 name="companyLogo"
                                 style={{ display: 'none' }}
                             />
-                            {index === 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4' onClick={() => handleApplyToAll(1, card.companyLogo)}>APPLY TO ALL</button>}
+                            {index === 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold' onClick={() => {
+
+                                handleApplyToAll(1, card.companyLogo, card.fileName)
+                            }}>APPLY TO ALL</button>}
                         </div>
+                        {checkFormValid && card?.fileName?.length == 0 && <div className=''>
+                            <p className='text-xs text-red-500 font-bold py-1 px-2'>Please Upload Company logo *</p>
+                        </div>}
                     </div>
                     <div>
-                        <input className='border w-[180px] xl:w-[220px] h-10 rounded-xl pl-4 mt-4'
+                        <input className={`border outline-none mt-4 ${checkFormValid && card?.fullName?.length == 0 && "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"} w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
                             type="text"
                             value={card.fullName}
                             name="fullName"
@@ -199,6 +207,9 @@ function DetailsInput({ card, index }) {
                             placeholder="Full Name"
                         />
                     </div>
+                    {checkFormValid && card?.fullName?.length == 0 && <div className=''>
+                        <p className='text-xs text-red-500 font-bold py-1 px-2'>Required *</p>
+                    </div>}
 
 
 

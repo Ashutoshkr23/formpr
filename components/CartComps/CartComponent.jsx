@@ -12,6 +12,8 @@ const CartComponent = () => {
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
+  // when step2 next button is clicked we will check form is filled properly or not
+  const [checkFormValid, setFormValid] = useState(false);
 
 
   // console.log(cartItems, "cart")
@@ -20,6 +22,12 @@ const CartComponent = () => {
     setCardTypeSelected(cartItems[type]);
     setSelectedTypeIndex(type);
   };
+
+  useEffect(() => {
+    if (!cardsArray.length) {
+      setStepState(1)
+    }
+  }, [cardsArray, stepState])
 
 
   useEffect(() => {
@@ -58,12 +66,37 @@ const CartComponent = () => {
     }
   }, [cartItems]);
 
+  const checkValidation = () => {
+    let error = false
+    cardsArray.map(card => {
+      if (!card.fullName.length) {
+        error = true;
 
-  const handleNext = () => {
+      }
+      if (!card.fileName) {
+        error = true
+      }
+      if (!card.companyName) {
+        error = true
+      }
+    })
+    return error
+  }
+
+  const handleNext = async () => {
+    const isError = await checkValidation()
+    console.log(isError, "isError")
     if (stepState == 2) {
+      setFormValid(true)
       setFinalDataFunc(cardsArray)
     }
-    setStepState(stepState + 1)
+
+    if (stepState == 2 && isError) {
+      alert("Please fill the details properly !")
+    } else {
+      setStepState(stepState + 1)
+
+    }
   }
 
   const saveDataToServer = async (razorData) => {
@@ -198,6 +231,7 @@ const CartComponent = () => {
         ) : stepState == 2 ? (
           <DetailsComp
             cardsArray={cardsArray}
+            checkFormValid={checkFormValid}
           />
         ) : (
           <CheckoutComp cardsArray={cardsArray} handleSubmitFunction={handleSubmitFunction} />
