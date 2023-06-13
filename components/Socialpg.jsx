@@ -2,7 +2,14 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Socialpg = ({ text1, type, instaLink, watspLink, linkedLink }) => {
+const Socialpg = ({
+  text1,
+  type,
+  instaLink,
+  watspLink,
+  linkedLink,
+  faceLink,
+}) => {
   return (
     <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] ">
       <div className="">
@@ -50,9 +57,9 @@ const Socialpg = ({ text1, type, instaLink, watspLink, linkedLink }) => {
         <p className={`text-[12px] ${text1}`}>Instagram</p>
       </div>
       <div>
-        <Link href={"#"}>
+        <Link href={`${faceLink}`}>
           <Image
-            className="grayscale"
+            className={`${faceLink ? "grayscale-0" : "grayscale"}`}
             src={`/assets/images/social/folder1/facebook.png`}
             alt="facebook Logo"
             width={50}

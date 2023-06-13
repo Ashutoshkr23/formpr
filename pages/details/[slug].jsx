@@ -341,6 +341,61 @@ END:VCARD`;
           />
         </div>
       )}
+
+      {/* 11 */}
+      {id == "6d186e04-6984-4808-8d57-5a9143c1d66a" && (
+        <div>
+          <Template
+            gradient1={themes[3].gradient1}
+            gradient2={themes[3].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
+            fname={"Siddharth "}
+            lname={"Nair"}
+            bio={"A bearded corporate fixer  "}
+            designation={"Chief Operating Officer "}
+            company={"alphamint labs"}
+            website={"alphamintlabs.com"}
+            mobile={"9167837466"}
+            gmail={"siddharth@alphamintlabs.com"}
+            instaLink={`https://www.instagram.com/youcantsaynotoprasad/`}
+            watspLink={`https://api.whatsapp.com/send?phone=917506090337`}
+            linkedLink={`https://www.linkedin.com/in/siddharth-nair-b30a3413b/`}
+            profile={`/assets/images/profilePic/employee SID@1.25x@1.25x@2x.png`}
+            faceLink={`https://www.facebook.com/siddharth.nair.39948`}
+          />
+        </div>
+      )}
+      {/* 12 */}
+      {id == "8cec4f99-723b-431c-8d24-3c938b6c90d6" && (
+        <div>
+          <Template
+            gradient1={themes[3].gradient1}
+            gradient2={themes[3].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
+            fname={"Sandeep"}
+            lname={"Telang"}
+            bio={"Building plug and play blockchain based software at AML"}
+            designation={"Co-Founder and CEO"}
+            company={"alphamint labs"}
+            website={"alphamintlabs.com"}
+            mobile={"917738755565"}
+            gmail={"sandeep@alphamintlabs.com"}
+            instaLink={`https://www.instagram.com/sandeeptelang/`}
+            watspLink={`https://api.whatsapp.com/send?phone=917738755565`}
+            linkedLink={`https://www.linkedin.com/in/sandeeptelang/`}
+            profile={`/assets/images/profilePic/sandeep.jpeg`}
+            faceLink={`https://www.facebook.com/sandeep.telang94`}
+          />
+        </div>
+      )}
     </div>
   );
 }
