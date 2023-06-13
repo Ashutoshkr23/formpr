@@ -49,7 +49,7 @@ END:VCARD`;
   };
 
   return (
-    <div className="flex justify-center bg-red-500 mx-auto w-[320px] h-[840px]">
+    <div className="flex justify-center  mx-auto w-[320px] h-[840px]">
       <div
         className={`${gradient1} w-[320px] mx-auto h-[840px] rounded-[30px] pt-[161px]  `}
       >
