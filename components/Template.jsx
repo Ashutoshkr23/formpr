@@ -49,10 +49,10 @@ END:VCARD`;
   return (
     <div className="">
       <div
-        className={`${gradient1} w-[375px] h-[812px] rounded-[30px] pt-[161px]  `}
+        className={`${gradient1} max-w-[375px] h-[812px] rounded-[30px] pt-[161px]  `}
       >
         <div
-          className={`${gradient2} relative px-6  mx-auto h-[651px] w-[375px]  rounded-[20px] `}
+          className={`${gradient2} relative px-6  mx-auto h-[651px] max-w-[375px]  rounded-[20px] `}
         >
           <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
             <ProfileImg profileimg={profile} />
