@@ -105,7 +105,7 @@ const CartComponent = () => {
 
   const stepThreeOnclick = async () => {
     const isError = await checkValidation()
-    if (stepState == 1 && isError) {
+    if (isError) {
       toast.error("Please Complete Step 2  !")
     } else {
       setStepState(3)
