@@ -4,6 +4,8 @@ import DetailsComp from "./DetailsComp";
 import CheckoutComp from "./CheckoutComp";
 import { CartContext } from "@/context/CartContext";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartComponent = () => {
 
@@ -92,10 +94,21 @@ const CartComponent = () => {
     }
 
     if (stepState == 2 && isError) {
-      alert("Please fill the details properly !")
+
+      toast.error("Please fill details properly !")
     } else {
       setStepState(stepState + 1)
 
+    }
+  }
+
+
+  const stepThreeOnclick = async () => {
+    const isError = await checkValidation()
+    if (stepState == 1 && isError) {
+      toast.error("Please Complete Step 2  !")
+    } else {
+      setStepState(3)
     }
   }
 
@@ -204,7 +217,7 @@ const CartComponent = () => {
             <div
               className={` rounded-lg text-[#686A6C] font-bold w-1/3 ${stepState == 3 && "border-2 border-slate-700 text-black"
                 } flex justify-center items-center `}
-              onClick={() => setStepState(3)}
+              onClick={() => stepThreeOnclick()}
             >
               <p className="text-center text-[12px] md:text-sm">
                 STEP 3: CHECKOUT
@@ -242,6 +255,7 @@ const CartComponent = () => {
           NEXT
         </button>
       </div>
+      <ToastContainer />
     </div>
   );
 };

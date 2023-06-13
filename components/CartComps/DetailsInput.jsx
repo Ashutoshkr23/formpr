@@ -2,6 +2,8 @@ import React, { useContext, useRef, useState } from 'react'
 import Image from 'next/image'
 import { CartContext } from '@/context/CartContext';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function DetailsInput({ card, index, checkFormValid }) {
 
@@ -59,6 +61,7 @@ function DetailsInput({ card, index, checkFormValid }) {
         if (uploadImage.status == 200 && !uploadImage.data.error) {
             const awsLink = uploadImage.data.result
             handleName("companyLogo", card.key, awsLink, image.name);
+            toast.success("Logo Uploaded Successfully !")
         }
     }
 
@@ -165,7 +168,10 @@ function DetailsInput({ card, index, checkFormValid }) {
                             onChange={handleCompanyNameChange}
                             placeholder="Company Name"
                         />
-                        {index == 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold' onClick={() => handleApplyToAll(0, card.companyName)} >APPLY TO ALL</button>}
+                        {index == 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold' onClick={() => {
+                            handleApplyToAll(0, card.companyName);
+                            toast.success("Applied to all successfully")
+                        }} >APPLY TO ALL</button>}
                     </div>
                     {checkFormValid && card?.companyName?.length == 0 && <div className=''>
                         <p className='text-xs text-red-500 font-bold py-1 px-2'>Required *</p>
@@ -190,7 +196,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                                 style={{ display: 'none' }}
                             />
                             {index === 0 && <button className='bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold' onClick={() => {
-
+                                toast.success("Applied to all successfully")
                                 handleApplyToAll(1, card.companyLogo, card.fileName)
                             }}>APPLY TO ALL</button>}
                         </div>
@@ -216,6 +222,7 @@ function DetailsInput({ card, index, checkFormValid }) {
 
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }
