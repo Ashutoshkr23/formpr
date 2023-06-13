@@ -92,7 +92,9 @@ END:VCARD`;
             loop={themes[2].loop}
             fname={"Aayush"}
             lname={"Bansal"}
-            bio={"A proud part of the Black Cab Agency Network "}
+            bio={
+              "I build brands through Brand Strategy, Design & Digital Marketing at Black Cab, Content Production at Secret Sauce Studios, Tech at Binary Chai, Immersive Marketing at RADAR Agency and Music Marketing at M3."
+            }
             designation={"Co-Founder"}
             company={"Black Cab"}
             website={"https://blackcab.co.in/"}
@@ -283,7 +285,9 @@ END:VCARD`;
             loop={themes[2].loop}
             fname={"Sandesh"}
             lname={"Jha"}
-            bio={"A proud part of the Black Cab Agency Network  "}
+            bio={
+              "I build brands through Brand Strategy, Design & Digital Marketing at Black Cab, Content Production at Secret Sauce Studios, Tech at Binary Chai, Immersive Marketing at RADAR Agency and Music Marketing at M3."
+            }
             designation={"Co-Founder"}
             company={"M3 - A Black Cab Network Agency"}
             website={"https://blackcab.co.in/"}

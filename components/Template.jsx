@@ -49,12 +49,12 @@ END:VCARD`;
   };
 
   return (
-    <div className="flex justify-center max-w-[375px]">
+    <div className="flex justify-center max-w-[375px] h-[840px]">
       <div
-        className={`${gradient1} max-w-[375px] h-[812px] rounded-[30px] pt-[161px]  `}
+        className={`${gradient1} max-w-[375px] h-[840px] rounded-[30px] pt-[161px]  `}
       >
         <div
-          className={`${gradient2} max-w-[375px] relative px-6  mx-auto h-[651px]   rounded-[20px] `}
+          className={`${gradient2} max-w-[375px] relative px-6  mx-auto h-[679px]   rounded-[20px] `}
         >
           <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
             <ProfileImg profileimg={profile} />
@@ -103,26 +103,23 @@ END:VCARD`;
             />
           </div>
 
-          <div className="">
+          <div className="flex justify-center">
             <button
-              className={`${btn} border-2  text-[20px] ${btntext} text-black bg-white  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
+              className={`${btn} border-2 text-[20px] ${btntext} text-black bg-white  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
               onClick={downloadVCard}
             >
               SAVE CONTACT
             </button>
           </div>
 
-          <div
-            className={`text-[10px] flex justify-center mt-7 pb-[29px] ${text1}`}
-          >
+          <div className={`text-[10px] flex justify-center mt-7 ${text1}`}>
             made with love by
             <img
-              className="h-[27px] w-[27px] pl-1"
+              className="h-[12px] w-[27px] ml-1"
               src="/assets/images/display/loops.png"
               alt="logo"
             />
           </div>
-          <div className="flex mx-auto mt-[-12px] rounded-[31px]  h-[3px] w-[133px] bg-[#A8A8A8]"></div>
         </div>
       </div>
     </div>
