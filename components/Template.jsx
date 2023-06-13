@@ -49,12 +49,12 @@ END:VCARD`;
   };
 
   return (
-    <div className="flex justify-center  mx-auto max-w-[375px] h-[840px]">
+    <div className="flex justify-center  mx-auto  h-full">
       <div
-        className={`${gradient1} max-w-[375px] mx-auto h-[840px] rounded-[30px] pt-[161px]  `}
+        className={`${gradient1} mx-auto h-full rounded-[30px] pt-[161px]  `}
       >
         <div
-          className={`${gradient2} max-w-[375px] relative px-6  mx-auto h-[679px]   rounded-[20px] `}
+          className={`${gradient2} relative px-6  mx-auto h-full  rounded-[20px] `}
         >
           <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
             <ProfileImg profileimg={profile} />
@@ -113,7 +113,7 @@ END:VCARD`;
           </div>
 
           <div
-            className={`text-[10px] flex justify-center items-center mt-7 ${text1}`}
+            className={`text-[10px] flex justify-center items-center mt-7 pb-7  ${text1}`}
           >
             <p> made with love by</p>
             <img
