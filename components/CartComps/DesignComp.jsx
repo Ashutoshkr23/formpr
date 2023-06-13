@@ -28,18 +28,22 @@ const DesignComp = ({
             <div className="">
               <div className="flex flex-row lg:flex-col justify-between gap-6 ">
                 <div>
-                  <div className=" pr-1">
+                  <div className=" pr-2 bg-white h-12 w-[190px] pl-7  rounded-[10px]">
                     <div
-                      className={`flex items-center justify-between pb-2   cursor-pointer  h-full  ${selectedTypeIndex == 0 ? " " : ""
-                        } `}
+                      className={`flex items-center justify-between    cursor-pointer  h-full  ${
+                        selectedTypeIndex == 0 ? " " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(0);
                         setType("Lite");
                       }}
                     >
                       <p
-                        className={` leading-7 pt-2 text-[#686A6C] text-center ${selectedTypeIndex == 0 ? "text-base font-bold text-black " : "text-sm"
-                          }`}
+                        className={` leading-7 pt-2 text-[#686A6C] text-center ${
+                          selectedTypeIndex == 0
+                            ? "text-sm font-bold text-black "
+                            : "text-sm"
+                        }`}
                       >
                         Loop Lite
                       </p>
@@ -50,21 +54,24 @@ const DesignComp = ({
                         </span>
                       )}
                     </div>
-                    <hr className="w-[156px]" />
                   </div>
 
-                  <div className="pr-1">
+                  <div className="pr-2 bg-white h-12 w-[190px] pl-7  rounded-[10px]">
                     <div
-                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${selectedTypeIndex == 1 ? "  " : ""
-                        } `}
+                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${
+                        selectedTypeIndex == 1 ? "  " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(1);
                         setType("Elevate");
                       }}
                     >
                       <p
-                        className={` leading-7 pt-3 text-[#686A6C] text-center ${selectedTypeIndex == 1 ? "text-base font-bold text-black " : "text-sm"
-                          }`}
+                        className={` leading-7 pt-3 text-[#686A6C] text-center ${
+                          selectedTypeIndex == 1
+                            ? "text-sm font-bold text-black "
+                            : "text-sm"
+                        }`}
                       >
                         Loop Elevate
                       </p>
@@ -74,19 +81,22 @@ const DesignComp = ({
                         </span>
                       )}
                     </div>
-                    <hr className="w-[156px]" />
                   </div>
-                  <div className="pr-1">
+                  <div className="pr-2 bg-white h-12 w-[190px] pl-7  rounded-[10px]">
                     <div
-                      className={`flex cursor-pointer justify-between pb-2   h-full ${selectedTypeIndex == 2 ? " " : ""
-                        } `}
+                      className={`flex cursor-pointer justify-between pb-2   h-full ${
+                        selectedTypeIndex == 2 ? " " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(2);
                       }}
                     >
                       <p
-                        className={`text-[#686A6C]  pt-3 leading-7 text-center ${selectedTypeIndex == 2 ? "text-base font-bold text-black" : "text-sm"
-                          }`}
+                        className={`text-[#686A6C]  pt-3 leading-7 text-center ${
+                          selectedTypeIndex == 2
+                            ? "text-sm font-bold text-black"
+                            : "text-sm"
+                        }`}
                       >
                         Loop Supreme
                       </p>
@@ -96,7 +106,6 @@ const DesignComp = ({
                         </span>
                       )}
                     </div>
-                    <hr className="w-[156px]" />
                   </div>
                 </div>
                 <div>
