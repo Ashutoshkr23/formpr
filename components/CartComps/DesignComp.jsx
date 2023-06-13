@@ -28,7 +28,7 @@ const DesignComp = ({
             <div className="">
               <div className="flex flex-row lg:flex-col  justify-between gap-6 ">
                 <div>
-                  <div className=" pr-2 mb-2 bg-white h-12 w-[190px] pl-7   rounded-[10px] drop-shadow-lg">
+                  <div className=" pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-7   rounded-[10px] drop-shadow-lg">
                     <div
                       className={`flex items-center justify-between    cursor-pointer  h-full  ${
                         selectedTypeIndex == 0 ? " " : ""
@@ -39,24 +39,22 @@ const DesignComp = ({
                       }}
                     >
                       <p
-                        className={` leading-7 pt-2 text-[#686A6C] text-center ${
-                          selectedTypeIndex == 0
-                            ? "text-sm font-bold text-black "
-                            : "text-sm"
+                        className={` leading-7 pt-2 text-[#686A6C] text-center text-xs lg:text-sm ${
+                          selectedTypeIndex == 0 ? " font-bold text-black " : ""
                         }`}
                       >
                         Loop Lite
                       </p>
 
                       {cartItems[0].quantity > 0 && (
-                        <span className="text-md font-semibold h-8 w-8 text-center pt-1    bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db]  rounded-full ">
+                        <span className="text-md font-semibold h-6 w-6 lg:h-9 lg:w-9 text-center lg:pt-1    bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db]  rounded-full ">
                           {cartItems[0].quantity}
                         </span>
                       )}
                     </div>
                   </div>
 
-                  <div className="pr-2 mb-2 bg-white h-12 w-[190px] pl-7  rounded-[10px] drop-shadow-lg">
+                  <div className="pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
                       className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${
                         selectedTypeIndex == 1 ? "  " : ""
@@ -67,24 +65,22 @@ const DesignComp = ({
                       }}
                     >
                       <p
-                        className={` leading-7 pt-3 text-[#686A6C] text-center ${
-                          selectedTypeIndex == 1
-                            ? "text-sm font-bold text-black "
-                            : "text-sm"
+                        className={` leading-7 pt-3 text-[#686A6C] text-center text-xs lg:text-sm ${
+                          selectedTypeIndex == 1 ? " font-bold text-black " : ""
                         }`}
                       >
                         Loop Elevate
                       </p>
                       {cartItems[1].quantity > 0 && (
-                        <span className="text-md font-semibold h-8 w-8  text-center pt-1 mt-1 bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
+                        <span className="text-md font-semibold h-6 w-6 lg:h-9 lg:w-9  text-center lg:pt-1 mt-1 bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
                           {cartItems[1].quantity}
                         </span>
                       )}
                     </div>
                   </div>
-                  <div className="pr-2 bg-white h-12 w-[190px] pl-7  rounded-[10px] drop-shadow-lg">
+                  <div className="pr-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex cursor-pointer justify-between pb-2   h-full ${
+                      className={`flex cursor-pointer items-center justify-between pb-2   h-full ${
                         selectedTypeIndex == 2 ? " " : ""
                       } `}
                       onClick={() => {
@@ -92,16 +88,14 @@ const DesignComp = ({
                       }}
                     >
                       <p
-                        className={`text-[#686A6C]  pt-3 leading-7 text-center ${
-                          selectedTypeIndex == 2
-                            ? "text-sm font-bold text-black"
-                            : "text-sm"
+                        className={`text-[#686A6C] text-xs lg:text-sm  pt-3 leading-7 text-center ${
+                          selectedTypeIndex == 2 ? " font-bold text-black" : ""
                         }`}
                       >
                         Loop Supreme
                       </p>
                       {cartItems[2].quantity > 0 && (
-                        <span className=" text-md font-semibold h-8 w-8  text-center pt-1 mt-2   bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
+                        <span className=" text-md font-semibold h-6 w-6 lg:h-9 lg:w-9  text-center lg:pt-1 mt-2   bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
                           {cartItems[2].quantity}
                         </span>
                       )}
@@ -123,11 +117,9 @@ const DesignComp = ({
                       *Maximum 10
                     </p>
                   </div>
-                  <div className="pt-11 lg:pt-4 text-center">
-                    <button className="h-9 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold">
-                      FOR BULK ORDERS CONTACT US
-                    </button>
-                  </div>
+                  <button className="h-9 mt-10 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold">
+                    FOR BULK ORDERS CONTACT US
+                  </button>
                 </div>
               </div>
             </div>
