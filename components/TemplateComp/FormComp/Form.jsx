@@ -5,6 +5,7 @@ import ChooseTemplates from './ChooseTemplates'
 import Details from './Details'
 import Socials from './Socials'
 import Cover from './Cover'
+import Image from 'next/image';
 
 function Form() {
    
@@ -16,7 +17,10 @@ function Form() {
     const [address, setAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [location, setLocation] = useState('');
+    const [selectedtemplate , setSelectedTemplate] = useState('1')
+    const theme = themes[selectedtemplate];
 
+   
 
     
 
@@ -57,6 +61,8 @@ function Form() {
         setLocation(value);
     };
 
+    console.log({themes})
+
 
   return (
     <div>
@@ -90,7 +96,9 @@ function Form() {
               </div>
               <div className='flex gap-5'>
                 <div className='flex flex-grow flex-col'>
-                      <ChooseTemplates />
+                      <ChooseTemplates
+                        selectedTemplate={selectedtemplate} 
+                        setSelectedTemplate={setSelectedTemplate} />
                       <Cover />
                       <Details
                           onCompanyChange={handleCompanyChange}
@@ -102,21 +110,85 @@ function Form() {
                           onPhoneNumberChange={handlePhoneNumberChange} />
                 </div>
                   <div className='w-[350px] xl:w-[390px]  flex justify-center'>
-                    <Template
-                          gradient1={themes[0].gradient1}
-                          gradient2={themes[0].gradient2}
-                          text1={themes[0].text1}
-                          text2={themes[0].text2}
-                          text3={themes[0].text3}
-                          btn={themes[0].btn}
-                          loop={themes[0].loop}
-                          company={company}
-                          bio={bio}
-                          website={companyLink}
-                          mobile={phoneNumber}
-                          fname={name}
-                          designation={role}
-                        />
+                    <div className='relative'>
+                          <Image src="/assets/images/templateimg/Mobile-border.png" width={331} height={665}/>
+                          <div className='absolute top-1 right-1'> 
+
+                          </div>
+                    </div>
+                      {selectedtemplate === '1' && 
+                          <Template
+                              gradient1={themes[0].gradient1}
+                              gradient2={themes[0].gradient2}
+                              text1={themes[0].text1}
+                              text2={themes[0].text2}
+                              text3={themes[0].text3}
+                              btn={themes[0].btn}
+                              btntext={themes[0].btntext}
+                              type={themes[0].type}
+                              loop={themes[0].loop}
+                              company={company}
+                              bio={bio}
+                              website={companyLink}
+                              mobile={phoneNumber}
+                              fname={name}
+                              designation={role}
+                          />}
+                      {selectedtemplate === '2' &&
+                          <Template
+                              gradient1={themes[1].gradient1}
+                              gradient2={themes[1].gradient2}
+                              text1={themes[1].text1}
+                              text2={themes[1].text2}
+                              text3={themes[1].text3}
+                              btn={themes[1].btn}
+                              btntext={themes[1].btntext}
+                              type={themes[1].type}
+                              loop={themes[1].loop}
+                              company={company}
+                              bio={bio}
+                              website={companyLink}
+                              mobile={phoneNumber}
+                              fname={name}
+                              designation={role}
+                          />}
+                      {selectedtemplate === '4' && 
+                          <Template
+                              gradient1={themes[2].gradient1}
+                              gradient2={themes[2].gradient2}
+                              text1={themes[2].text1}
+                              text2={themes[2].text2}
+                              text3={themes[2].text3}
+                              btn={themes[2].btn}
+                              btntext={themes[2].btntext}
+                              type={themes[2].type}
+                              loop={themes[2].loop}
+                              company={company}
+                              bio={bio}
+                              website={companyLink}
+                              mobile={phoneNumber}
+                              fname={name}
+                              designation={role}
+                          />}
+                      {selectedtemplate === '3' && 
+                          <Template
+                              gradient1={themes[3].gradient1}
+                              gradient2={themes[3].gradient2}
+                              text1={themes[3].text1}
+                              text2={themes[3].text2}
+                              text3={themes[3].text3}
+                              btn={themes[3].btn}
+                              type={themes[3].type}
+                              btntext={themes[3].btntext}
+                              loop={themes[3].loop}
+                              company={company}
+                              bio={bio}
+                              website={companyLink}
+                              mobile={phoneNumber}
+                              fname={name}
+                              designation={role}
+                          />}
+
                   </div>
               </div>
           </div>
