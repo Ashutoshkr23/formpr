@@ -5,7 +5,7 @@ import TemplateDesign from './TemplateDesign';
 import themes from '@/components/Themes';
 
 function Form() {
-    const [stepState, setStepState] = useState(1);
+   
     const [company, setCompany] = useState('');
     const [name, setName] = useState('');
     const [role, setRole] = useState('');
@@ -16,9 +16,7 @@ function Form() {
     const [location, setLocation] = useState('');
 
 
-    const handleButtonClick = () => {
-        setStepState(2);
-    };
+    
 
     const handleSaveClick = () => {
         console.log('Hi');
@@ -65,40 +63,21 @@ function Form() {
                   <div className="max-w-[1208px] mb-7 mx-auto flex lg:justify-between justify-center items-center ">
                       <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
                           <div
-                              className={`rounded-lg text-[#686A6C] font-bold w-2/3 ${stepState == 1 && "border-2 border-slate-700 text-black"
-                                  } flex justify-center items-center `}
-                              onClick={() => setStepState(1)}
+                              className={`rounded-lg  font-bold flex flex-grow border-2 border-slate-700 text-black  justify-center items-center `}
                           >
                               <p className="text-center text-[12px] md:text-sm">
-                                  STEP 1 : CARD TYPE & QTY.
-                              </p>
-                          </div>
-                          <div
-                              className={`rounded-lg text-[#686A6C] font-bold  w-2/3 ${stepState == 2 && "border-2 border-slate-700 text-black"
-                                  } flex justify-center items-center `}
-                              onClick={() => setStepState(2)}
-                          >
-                              <p className="text-center text-[12px] md:text-sm">
-                                  STEP 2 : DETAILS
+                                  DETAILS AND DESIGN
                               </p>
                           </div>
                       </div>
                       <div className="hidden lg:block pl-5">
-                          {stepState === 1 ? (
-                              <button
-                                  className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px] disabled:cursor-not-allowed"
-                                  onClick={handleButtonClick}
-                              >
-                                  NEXT
-                              </button>
-                          ) : (
+
                               <button
                                   className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px]"
                                   onClick={handleSaveClick}
                               >
                                   SAVE
                               </button>
-                          )}
                       </div>
                   </div>
               </div>
@@ -109,7 +88,7 @@ function Form() {
               </div>
               <div className='flex gap-5'>
                 <div className='flex flex-grow'>
-                      {stepState === 1 && <TemplateDetails 
+                <TemplateDetails 
                       onCompanyChange={handleCompanyChange} 
                       onNameChange={handleNameChange} 
                       onRoleChange={handleRoleChange} 
@@ -117,8 +96,7 @@ function Form() {
                       onBioChange={handleBioChange}
                       onAddressChange={handleAddressChange}
                       onPhoneNumberChange={handlePhoneNumberChange}
-                      />}
-                      {stepState === 2 && <TemplateDesign/>}
+                />
                 </div>
                   <div className='w-[350px] xl:w-[390px]  flex justify-center'>
                     <Template
