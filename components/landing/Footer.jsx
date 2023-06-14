@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="" id="contact">
       <div className="hidden md:block">
-        <div className="md:px-8 lg:px-4 xl:px-0 bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96]">
+        <div className="md:px-8 lg:px-4 xl:px-0 bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] ">
           <div className="flex justify-between  items-center h-[200px] max-w-[1208px] mx-auto ">
             <div className="hidden lg:block ">
               <Image
@@ -149,17 +149,14 @@ const Footer = () => {
               <p>Made with love by</p>
             </div>
             <div>
-                <a
-                    href="https://alphamintlabs.com"
-                    target="_blank"
-                    >
-                  <Image
-                    src={"/assets/images/landing/amlLogo.png"}
-                    alt="aml Logo"
-                    height={23}
-                    width={63}
-                  />
-                  </a>
+              <a href="https://alphamintlabs.com" target="_blank">
+                <Image
+                  src={"/assets/images/landing/amlLogo.png"}
+                  alt="aml Logo"
+                  height={23}
+                  width={63}
+                />
+              </a>
             </div>
           </div>
         </div>
