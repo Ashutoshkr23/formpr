@@ -13,6 +13,8 @@ function DetailsInput({ card, index, checkFormValid }) {
   const fileInputRef = useRef(null);
   const { userProfile, handleApplyToAll, handleName, handleRemoveCardArr } =
     useContext(CartContext);
+  const [design, setDesign] = useState(1);
+  const [font, setFont] = useState("white");
 
   const divStyle = {
     border: "1px solid transparent",
@@ -131,7 +133,7 @@ function DetailsInput({ card, index, checkFormValid }) {
             <p className="text-xs">colors</p>
             <div id="container" className="flex space-x-2">
               <div
-                className="rounded-full bg-[#FFF490] w-5 h-5"
+                className={`rounded-full bg-[#FFF490] w-5 h-5`}
                 style={selectedDiv === 0 ? selectedDivStyle : divStyle}
                 onClick={() => handleDivClick(0)}
               ></div>
@@ -276,7 +278,7 @@ function DetailsInput({ card, index, checkFormValid }) {
         </div>
       </div>
       {/* supreme */}
-      {/* <div className="mt-4 px-4 h-[373px] bg-white rounded-xl drop-shadow-white flex items-center justify-between">
+      <div className="mt-4 px-4 h-[373px] bg-white rounded-xl drop-shadow-white flex items-center justify-between">
         <div
           className="absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] hover:text-black  items-center bg-black text-[10px] font-bold text-white h-6 w-20"
           onClick={() => handleRemoveCardArr(card.key)}
@@ -289,16 +291,19 @@ function DetailsInput({ card, index, checkFormValid }) {
             <p className="text-sm">Abstract Design</p>
             <div className="flex gap-2">
               <Image
+                className={``}
                 src={"/assets/images/storeImages/Supreme/Abstract/Design1.png"}
                 height={55}
                 width={55}
                 alt="icon"
+                onClick={() => setDesign(1)}
               />
               <Image
                 src={"/assets/images/storeImages/Supreme/Abstract/Design2.png"}
                 height={55}
                 width={55}
                 alt="icon"
+                onClick={() => setDesign(2)}
               />
             </div>
             <div className="flex  gap-2">
@@ -307,12 +312,14 @@ function DetailsInput({ card, index, checkFormValid }) {
                 height={55}
                 width={55}
                 alt="icon"
+                onClick={() => setDesign(3)}
               />
               <Image
                 src={"/assets/images/storeImages/Supreme/Abstract/Design4.png"}
                 height={55}
                 width={55}
                 alt="icon"
+                onClick={() => setDesign(4)}
               />
             </div>
             <div className="flex  gap-2">
@@ -321,36 +328,64 @@ function DetailsInput({ card, index, checkFormValid }) {
                 height={55}
                 width={55}
                 alt="icon"
+                onClick={() => setDesign(5)}
               />
               <Image
                 src={"/assets/images/storeImages/Supreme/Abstract/Design6.png"}
                 height={55}
                 width={55}
                 alt="icon"
+                onClick={() => setDesign(6)}
               />
             </div>
           </div>
           <div className="flex">
             <div className="flex flex-col gap-6">
               <div
-                className="bg-[#66D3E1] drop-shadow-white rounded-2xl relative w-full "
+                className="bg-black drop-shadow-white rounded-2xl relative w-full "
                 style={{ width: 400, height: 250 }}
-              ></div>
+              >
+                <Image
+                  className="absolute top-5 right-8 z-10"
+                  src={"/assets/images/storeImages/Supreme/loop.png"}
+                  height={18}
+                  width={43}
+                  alt="icon"
+                />
+                <Image
+                  className="absolute bottom-6 right-6"
+                  src={"/assets/images/storeImages/Supreme/Qr.png"}
+                  height={43}
+                  width={43}
+                  alt="icon"
+                />
+                <Image
+                  className="absolute top-0 left-0"
+                  src={`/assets/images/storeImages/Supreme/Abstract/Des${design}.png`}
+                  height={250}
+                  width={400}
+                  alt="icon"
+                />
+              </div>
               <div className="flex justify-between ">
-                <div>
-                  <p>color:</p> */}
-      {/* <input
-                    type="text"
-                    value={color}
-                    onChange={(e) => setColor(e.target.value)}
-                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-                  />
-                  <div className="mt-2">
-                    <CompactPicker color={color} onChange={handleColorChange} />
-                  </div> */}
-      {/* </div>
-                <div>
+                <div>color:</div>
+                <div className="flex gap-1 items-center">
                   <p>font color:</p>
+                  <div
+                    className={`rounded-full bg-[#ECECEC] w-5 h-5 ${
+                      font === "white" ? "scale-110 border-2 border-black " : ""
+                    }
+                    `}
+                    onClick={() => setFont("white")}
+                  ></div>
+                  <div
+                    className={`rounded-full bg-[#000000] w-5 h-5 ${
+                      font === "black"
+                        ? "scale-110 border-2 border-yellow-500 "
+                        : ""
+                    }`}
+                    onClick={() => setFont("black")}
+                  ></div>
                 </div>
               </div>
             </div>
@@ -476,7 +511,7 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
           )}
         </div>
-      </div> */}
+      </div>
 
       <ToastContainer />
     </div>
