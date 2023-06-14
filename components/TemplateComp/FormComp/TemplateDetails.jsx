@@ -1,5 +1,5 @@
 import React from 'react'
-import Templates from './Templates'
+import ChooseTemplates from './ChooseTemplates'
 import Details from './Details'
 import Socials from './Socials'
 import Cover from './Cover'
@@ -8,7 +8,7 @@ function TemplateDetails({ onCompanyChange, onNameChange, onRoleChange,onCompany
   onBioChange ,onAddressChange,onPhoneNumberChange }) {
   return (
     <div className=' flex flex-col flex-grow'>
-      <Templates/>
+      <ChooseTemplates/>
       <Cover/>
       <Details 
       onCompanyChange={onCompanyChange}

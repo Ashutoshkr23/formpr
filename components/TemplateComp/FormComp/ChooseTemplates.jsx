@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-function Templates() {
+function ChooseTemplates() {
   return (
     <div className='flex flex-grow drop-shadow-white flex-col h-[330px] rounded-[10px]  mb-5 bg-bright-gray pl-9 pt-4'>
         <p className='font-bold text-xs'>TEMPLATE</p>
@@ -23,4 +23,4 @@ function Templates() {
   )
 }
 
-export default Templates
+export default ChooseTemplates
