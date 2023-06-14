@@ -112,8 +112,18 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                 </div>
             </div>
             <div className='flex flex-col mt-5'>
-                <label for="Bio" className='text-xs leading-[186%]'>Bio</label>
-                <input type="text" id="Bio" name="Bio" className='bg-white h-[117px] mt-0.5 border px-5 border-dim-gray rounded-md' required onChange={handleBioChange} />
+                <label htmlFor="Bio" className="text-xs leading-[186%]">
+                    Bio
+                </label>
+                <textarea
+                    id="Bio"
+                    name="Bio"
+                    className="bg-white mt-0.5 border px-5 py-2 border-dim-gray rounded-md block w-full resize-none"
+                    rows={4}
+                    required
+                    onChange={handleBioChange}
+                />
+
             </div>
             
 

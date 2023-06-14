@@ -25,7 +25,7 @@ function Form() {
     
 
     const handleSaveClick = () => {
-        console.log('Hi');
+        console.log(name,role,companyLink,bio,address,phoneNumber,selectedtemplate);
     };
 
     
