@@ -1,6 +1,6 @@
 import Template from '../Template';
-import React , {useState} from 'react'
-import themes from '@/components/Themes';
+import React , {useState , useEffect} from 'react'
+import themes from '../Themes';
 import ChooseTemplates from './ChooseTemplates'
 import Details from './Details'
 import Socials from './Socials'
@@ -18,9 +18,23 @@ function Form() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [location, setLocation] = useState('');
     const [selectedtemplate , setSelectedTemplate] = useState('1')
+    const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
+    console.log("grad "+themes[0].gradient1)
 
-   
+    useEffect(() => {
+        if (selectedtemplate === '1') {
+            setCover(themes[0].gradient1);
+        } else if (selectedtemplate === '2') {
+            setCover(themes[1].gradient1);
+        } else if (selectedtemplate === '3') {
+            setCover(themes[3].gradient1);
+        } else if (selectedtemplate === '4') {
+            setCover(themes[2].gradient1);
+        } else  {
+            setCover(themes[0].gradient1); // Set a default value if needed
+        }
+    }, [selectedtemplate]);
 
     
 
@@ -99,7 +113,9 @@ function Form() {
                       <ChooseTemplates
                         selectedTemplate={selectedtemplate} 
                         setSelectedTemplate={setSelectedTemplate} />
-                      <Cover />
+                      <Cover 
+                      cover={cover}
+                      setCover={setCover}/>
                       <Details
                           onCompanyChange={handleCompanyChange}
                           onNameChange={handleNameChange}
@@ -118,7 +134,7 @@ function Form() {
                     </div>
                       {selectedtemplate === '1' && 
                           <Template
-                              gradient1={themes[0].gradient1}
+                              gradient1={cover}
                               gradient2={themes[0].gradient2}
                               text1={themes[0].text1}
                               text2={themes[0].text2}
@@ -136,7 +152,7 @@ function Form() {
                           />}
                       {selectedtemplate === '2' &&
                           <Template
-                              gradient1={themes[1].gradient1}
+                              gradient1={cover}
                               gradient2={themes[1].gradient2}
                               text1={themes[1].text1}
                               text2={themes[1].text2}
@@ -154,7 +170,7 @@ function Form() {
                           />}
                       {selectedtemplate === '4' && 
                           <Template
-                              gradient1={themes[2].gradient1}
+                              gradient1={cover}
                               gradient2={themes[2].gradient2}
                               text1={themes[2].text1}
                               text2={themes[2].text2}
@@ -172,7 +188,7 @@ function Form() {
                           />}
                       {selectedtemplate === '3' && 
                           <Template
-                              gradient1={themes[3].gradient1}
+                              gradient1={cover}
                               gradient2={themes[3].gradient2}
                               text1={themes[3].text1}
                               text2={themes[3].text2}

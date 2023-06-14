@@ -2,7 +2,7 @@ const themes = [
     {
         id: 0,
         // gradient1: 'bg-gradient-to-b from-[#D2FFEC] via-[#F16869] to-[#FF932F]',
-        gradient1: 'bg-[url(/assets/images/templateimg/tempBg1.png)]',
+        gradient1: "/assets/images/templateimg/BGCover6.png",
         gradient2: 'bg-gradient-to-b from-[#FFFFFF] to-[#FFF9EB]',
         text1: 'text-black',
         text2: 'text-[#53727D]',
@@ -18,7 +18,7 @@ const themes = [
     },
     {
         id: 1,
-        gradient1: 'bg-[#FDFF96]',
+        gradient1: "/assets/images/templateimg/BGCover13.png",
         gradient2: 'bg-[#F9F9F9]',
         text1: 'text-black',
         text2: 'text-[#53727D]',
@@ -34,7 +34,7 @@ const themes = [
     },
     {
         id: 2,
-        gradient1: 'bg-gradient-to-b from-[#3AAD7B] to-[#47BBAA]',
+        gradient1: "/assets/images/templateimg/BGCover12.png",
         gradient2: 'bg-[#090909]',
         text1: 'text-white',
         text2: 'text-[#66D3E1]',
@@ -50,7 +50,7 @@ const themes = [
     },
     {
         id: 3,
-        gradient1: 'bg-[url(/assets/images/templateimg/tempBg2.png)]',
+        gradient1: "/assets/images/templateimg/BGCover4.png",
         gradient2: 'bg-gradient-to-b from-[#090909] to-[#1E3739]',
         text1: 'text-white',
         text2: 'text-[#97B2BC]',

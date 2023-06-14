@@ -81,19 +81,7 @@ const ContactForm = ({ cuuid }) => {
     deckUrl: Yup.string().required('deck is required'),
   });
 
-  // old submit func
-  // const onSubmit = async (values, { resetForm }) => {
-  //   try {
-  //     const data = { ...values, template, cuuid };
-  //     const response = await axios.post('/api/contact', data);
-
-  //     resetForm();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
-  // new submit func
+  
   const onSubmit = async (values, { resetForm }) => {
     try {
       const data = { ...values };

@@ -41,7 +41,7 @@ TEL;TYPE=CELL:${mobile}
 EMAIL;: ${gmail}
 URL:${website}
 END:VCARD`;
-
+console.log(gradient2)
         // Convert the vCard string to a Blob object
         const blob = new Blob([vCard], { type: "text/vcard;charset=utf-8" });
 
@@ -55,7 +55,11 @@ END:VCARD`;
     return (
         <div className="flex justify-center  mx-auto max-w-[375px] h-auto">
             <div
-                className={`${gradient1} mx-auto h-[800px] max-w-[375px] rounded-[30px] pt-[161px]  `}
+                className={` mx-auto h-[800px] max-w-[375px] rounded-[30px] pt-[161px]`}
+                style={{backgroundImage:`url(${gradient1})`,
+                    backgroundSize: '100% auto',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'top',}}
             >
                 <div
                     className={`${gradient2} relative px-6 max-w-[375px] mx-auto h-full  rounded-[20px] `}
