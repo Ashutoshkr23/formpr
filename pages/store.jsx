@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState, useRef } from "react";
 import React from "react";
 import ProductComp from "@/components/landing/ProductComp";
-import { LoopBlack } from "@/components";
+import { Footer, LoopBlack } from "@/components";
 import CartNav from "@/components/CartComps/CartNav";
 
 export default function Home() {
@@ -59,6 +59,7 @@ export default function Home() {
         </div>
         <LoopBlack text={"BUY FOR ₹ 1899"} />
       </div>
+      <Footer />
     </div>
   );
 }

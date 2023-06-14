@@ -11,13 +11,12 @@ const poppins = Poppins({
 });
 
 function MyApp({ Component, pageProps }) {
-
   return (
     <SessionProvider session={pageProps.session}>
       <CartProvider>
         <main className={`${poppins.variable} font-sans bg-whitebg `}>
           <Component {...pageProps} />
-          <Footer />
+          {/* <Footer /> */}
         </main>
       </CartProvider>
     </SessionProvider>
