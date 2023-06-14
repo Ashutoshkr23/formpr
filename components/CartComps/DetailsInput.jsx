@@ -60,7 +60,7 @@ function DetailsInput({ card, index, checkFormValid }) {
     formData.append("puuid", userProfile.puuid);
 
     const uploadImage = await axios.post("/api/uploadImageAws", formData);
-    console.log(uploadImage);
+    console.log(uploadImage, "uploadImageAws");
     if (uploadImage.status == 200 && !uploadImage.data.error) {
       const awsLink = uploadImage.data.result;
       handleName("companyLogo", card.key, awsLink, image.name);
