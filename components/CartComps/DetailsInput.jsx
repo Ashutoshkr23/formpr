@@ -15,6 +15,7 @@ function DetailsInput({ card, index, checkFormValid }) {
     useContext(CartContext);
   const [design, setDesign] = useState(1);
   const [font, setFont] = useState("white");
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const divStyle = {
     border: "1px solid transparent",
@@ -80,10 +81,15 @@ function DetailsInput({ card, index, checkFormValid }) {
     }
   };
 
-  const [color, setColor] = useState("#000000"); // Set initial color
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
+  const [showPicker, setShowPicker] = useState(false);
+  const [cardColor, setCardColor] = useState("#000000");
+  const [Color, setColor] = useState("#bd10e0");
 
-  const handleColorChange = (selectedColor) => {
-    setColor(selectedColor.hex);
+  const handleChangeComplete = (color) => {
+    setCardColor(color.hex);
   };
   return (
     <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] mx-auto my-6">
@@ -291,7 +297,9 @@ function DetailsInput({ card, index, checkFormValid }) {
             <p className="text-sm">Abstract Design</p>
             <div className="flex gap-2">
               <Image
-                className={``}
+                className={` cursor-pointer ${
+                  design === 1 ? `border-2 border-black` : ""
+                }`}
                 src={"/assets/images/storeImages/Supreme/Abstract/Design1.png"}
                 height={55}
                 width={55}
@@ -299,6 +307,9 @@ function DetailsInput({ card, index, checkFormValid }) {
                 onClick={() => setDesign(1)}
               />
               <Image
+                className={` cursor-pointer ${
+                  design === 2 ? `border-2 border-black` : ""
+                }`}
                 src={"/assets/images/storeImages/Supreme/Abstract/Design2.png"}
                 height={55}
                 width={55}
@@ -308,6 +319,9 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div className="flex  gap-2">
               <Image
+                className={` cursor-pointer ${
+                  design === 3 ? `border-2 border-black` : ""
+                }`}
                 src={"/assets/images/storeImages/Supreme/Abstract/Design3.png"}
                 height={55}
                 width={55}
@@ -315,6 +329,9 @@ function DetailsInput({ card, index, checkFormValid }) {
                 onClick={() => setDesign(3)}
               />
               <Image
+                className={` cursor-pointer ${
+                  design === 4 ? `border-2 border-black` : ""
+                }`}
                 src={"/assets/images/storeImages/Supreme/Abstract/Design4.png"}
                 height={55}
                 width={55}
@@ -324,6 +341,9 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div className="flex  gap-2">
               <Image
+                className={` cursor-pointer ${
+                  design === 5 ? `border-2 border-black` : ""
+                }`}
                 src={"/assets/images/storeImages/Supreme/Abstract/Design5.png"}
                 height={55}
                 width={55}
@@ -331,6 +351,9 @@ function DetailsInput({ card, index, checkFormValid }) {
                 onClick={() => setDesign(5)}
               />
               <Image
+                className={` cursor-pointer ${
+                  design === 6 ? `border-2 border-black` : ""
+                }`}
                 src={"/assets/images/storeImages/Supreme/Abstract/Design6.png"}
                 height={55}
                 width={55}
@@ -341,45 +364,107 @@ function DetailsInput({ card, index, checkFormValid }) {
           </div>
           <div className="flex">
             <div className="flex flex-col gap-6">
-              <div
-                className="bg-black drop-shadow-white rounded-2xl relative w-full "
-                style={{ width: 400, height: 250 }}
-              >
-                <Image
-                  className="absolute top-5 right-8 z-10"
-                  src={"/assets/images/storeImages/Supreme/loop.png"}
-                  height={18}
-                  width={43}
-                  alt="icon"
-                />
-                <Image
-                  className="absolute bottom-6 right-6"
-                  src={"/assets/images/storeImages/Supreme/Qr.png"}
-                  height={43}
-                  width={43}
-                  alt="icon"
-                />
-                <Image
-                  className="absolute top-0 left-0"
-                  src={`/assets/images/storeImages/Supreme/Abstract/Des${design}.png`}
-                  height={250}
-                  width={400}
-                  alt="icon"
-                />
+              <div className={`card ${isFlipped ? "flipped" : ""}`}>
+                <div className="w-[400px] h-[250px]">
+                  <div className={` card-inner w-[400px] h-[250px]`}>
+                    <div className="card-front">
+                      <div
+                        className={` drop-shadow-white rounded-2xl relative w-full `}
+                        style={{
+                          width: 400,
+                          height: 250,
+                          backgroundColor: cardColor,
+                        }}
+                      >
+                        <Image
+                          className="absolute top-5 right-8 z-10"
+                          src={"/assets/images/storeImages/Supreme/loop.png"}
+                          height={18}
+                          width={43}
+                          alt="icon"
+                        />
+                        <Image
+                          className="absolute bottom-6 right-6"
+                          src={"/assets/images/storeImages/Supreme/Qr.png"}
+                          height={43}
+                          width={43}
+                          alt="icon"
+                        />
+                        {design !== 6 && (
+                          <Image
+                            className="absolute top-0 left-0"
+                            src={`/assets/images/storeImages/Supreme/Abstract/Des${design}.png`}
+                            height={250}
+                            width={400}
+                            alt="icon"
+                          />
+                        )}
+                        <div className="absolute bottom-8 left-6">
+                          <h2
+                            className={`text-[20px]  font-semibold text-${font}`}
+                          >
+                            John DOE
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* back card */}
+
+                    <div
+                      className={`card-back drop-shadow-white rounded-2xl relative w-[400px] h-[250px] `}
+                      style={{
+                        width: 400,
+                        height: 250,
+                        backgroundColor: cardColor,
+                      }}
+                    >
+                      <Image
+                        src={"/assets/images/nfcIcon.png"}
+                        className="absolute top-4 right-4"
+                        alt="nfc"
+                        height={25}
+                        width={25}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="flex justify-between ">
-                <div>color:</div>
+                <div className="flex items-center">
+                  <p>color:</p>
+                  <div className="ml-1 text-center w-32 h-8 bg-gradient-to-b from-white to-gray-400 shadow-inner border-2 rounded-lg border-black">
+                    <p> {showPicker ? cardColor : cardColor}</p>
+                  </div>
+                  <Image
+                    className="ml-1 cursor-pointer"
+                    src={`/assets/images/storeImages/Supreme/eyeDroper.png`}
+                    height={31}
+                    width={31}
+                    alt="icon"
+                    onClick={() => setShowPicker(!showPicker)}
+                  />
+
+                  {showPicker && (
+                    <div className="absolute bottom-0 left-0">
+                      <SketchPicker
+                        color={cardColor}
+                        onChangeComplete={handleChangeComplete}
+                      />
+                    </div>
+                  )}
+                </div>
                 <div className="flex gap-1 items-center">
                   <p>font color:</p>
                   <div
-                    className={`rounded-full bg-[#ECECEC] w-5 h-5 ${
+                    className={`rounded-full bg-[#ECECEC] cursor-pointer w-5 h-5 ${
                       font === "white" ? "scale-110 border-2 border-black " : ""
                     }
                     `}
                     onClick={() => setFont("white")}
                   ></div>
                   <div
-                    className={`rounded-full bg-[#000000] w-5 h-5 ${
+                    className={`rounded-full cursor-pointer bg-[#000000] w-5 h-5 ${
                       font === "black"
                         ? "scale-110 border-2 border-yellow-500 "
                         : ""
@@ -392,10 +477,11 @@ function DetailsInput({ card, index, checkFormValid }) {
             <div className=" ml-4">
               <Image
                 src={"/assets/images/cart-images/flipImage.png"}
-                className=""
+                className=" cursor-pointer"
                 alt="flip"
                 height={36}
                 width={36}
+                onClick={handleFlip}
               />
             </div>
           </div>
