@@ -285,9 +285,7 @@ END:VCARD`;
             loop={themes[2].loop}
             fname={"Sandesh"}
             lname={"Jha"}
-            bio={
-              "I build brands through Brand Strategy, Design & Digital Marketing at Black Cab, Content Production at Secret Sauce Studios, Tech at Binary Chai, Immersive Marketing at RADAR Agency and Music Marketing at M3."
-            }
+            bio={"Building cults, clutter free"}
             designation={"Co-Founder"}
             company={"M3 - A Black Cab Network Agency"}
             website={"https://blackcab.co.in/"}
@@ -314,7 +312,7 @@ END:VCARD`;
             loop={themes[2].loop}
             fname={"Sidhantha"}
             lname={"Jain"}
-            bio={"A proud part of the Black Cab Agency Network "}
+            bio={"Building cults, clutter free"}
             designation={"Co-Founder"}
             company={"M3 - A Black Cab Network Agency "}
             website={"https://blackcab.co.in/"}
@@ -372,7 +370,7 @@ END:VCARD`;
             bio={"A bearded corporate fixer  "}
             designation={"Chief Operating Officer "}
             company={"alphamint labs"}
-            website={"alphamintlabs.com"}
+            website={"https://alphamintlabs.com/"}
             mobile={"9167837466"}
             gmail={"siddharth@alphamintlabs.com"}
             instaLink={`https://www.instagram.com/youcantsaynotoprasad/`}
@@ -400,7 +398,7 @@ END:VCARD`;
             bio={"Building plug and play blockchain based software at AML"}
             designation={"Co-Founder and CEO"}
             company={"alphamint labs"}
-            website={"alphamintlabs.com"}
+            website={"https://alphamintlabs.com/"}
             mobile={"917738755565"}
             gmail={"sandeep@alphamintlabs.com"}
             instaLink={`https://www.instagram.com/sandeeptelang/`}

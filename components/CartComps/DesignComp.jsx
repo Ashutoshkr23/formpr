@@ -15,9 +15,14 @@ const DesignComp = ({
   const [value, setValue] = useState("Front");
   const [type, setType] = useState("Lite");
   const [color, setColor] = useState("Blue");
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
     setValue(value === "Front" ? "Back" : "Front");
+  };
+
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
   };
 
   return (
@@ -125,16 +130,32 @@ const DesignComp = ({
             </div>
             <div className="hidden md:block">
               <div className="flex space-x-5">
-                <div>
-                  <Image
-                    src={`/assets/images/storeImages/${type}/${value}/${color}.png`}
-                    className=""
-                    alt="flip"
-                    height={258}
-                    width={400}
-                  />
+                <div className={`card ${isFlipped ? "flipped" : ""}`}>
+                  <div>
+                    <div className="card-inner">
+                      <div className={`card-front`}>
+                        <Image
+                          src={`/assets/images/storeImages/${type}/Front/${color}.png`}
+                          className={` `}
+                          alt="flip"
+                          height={258}
+                          width={400}
+                        />
+                      </div>
+                      <div className={``}>
+                        <Image
+                          src={`/assets/images/storeImages/${type}/Back/${color}.png`}
+                          className={``}
+                          alt="flip"
+                          height={258}
+                          width={400}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="cursor-pointer" onClick={handleClick}>
+
+                <div className="cursor-pointer" onClick={handleFlip}>
                   <Image
                     src={"/assets/images/cart-images/flipImage.png"}
                     className=""
@@ -147,17 +168,33 @@ const DesignComp = ({
             </div>
             {/* foe mobile */}
             <div className="md:hidden">
-              <div className="flex space-x-5">
-                <div className="">
-                  <Image
-                    src={`/assets/images/storeImages/${type}/${value}/${color}.png`}
-                    className=""
-                    alt="flip"
-                    height={172}
-                    width={300}
-                  />
+              <div className="flex space-x-3">
+                <div className={`card ${isFlipped ? "flipped" : ""}`}>
+                  <div>
+                    <div className="card-inner">
+                      <div className="card-front">
+                        <Image
+                          src={`/assets/images/storeImages/${type}/Front/${color}.png`}
+                          className=""
+                          alt="flip"
+                          height={172}
+                          width={300}
+                        />
+                      </div>
+                      <div className="">
+                        <Image
+                          src={`/assets/images/storeImages/${type}/Back/${color}.png`}
+                          className=""
+                          alt="flip"
+                          height={172}
+                          width={300}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="cursor-pointer" onClick={handleClick}>
+
+                <div className="cursor-pointer" onClick={handleFlip}>
                   <Image
                     src={"/assets/images/cart-images/flipImage.png"}
                     className=""
