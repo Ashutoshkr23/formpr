@@ -67,7 +67,7 @@ function DetailsInput({ card, index, checkFormValid }) {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    const fileSizeInMB = file.size / (1024 * 1024);
+    const fileSizeInMB = file?.size / (1024 * 1024);
 
     if (fileSizeInMB > 5) {
       setErrorMessage("File size exceeds the limit of 5MB.");
@@ -167,11 +167,10 @@ function DetailsInput({ card, index, checkFormValid }) {
           <h2>{card.cardTypeName}</h2>
           <div className="flex mt-8">
             <input
-              className={`border outline-none ${
-                checkFormValid &&
+              className={`border outline-none ${checkFormValid &&
                 card?.companyName?.length == 0 &&
                 "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-              } w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
+                } w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
               type="text"
               name="companyName"
               value={card.companyName}
@@ -206,11 +205,10 @@ function DetailsInput({ card, index, checkFormValid }) {
               ) : (
                 <label
                   htmlFor="fileInput"
-                  className={`cursor-pointer py-2 flex justify-between border ${
-                    checkFormValid &&
+                  className={`cursor-pointer py-2 flex justify-between border ${checkFormValid &&
                     card?.fileName?.length == 0 &&
                     "border-2 border-red-400 "
-                  }  w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
+                    }  w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
                   onClick={handleLabelClick}
                 >
                   Upload Logo
@@ -254,11 +252,10 @@ function DetailsInput({ card, index, checkFormValid }) {
           </div>
           <div>
             <input
-              className={`border outline-none mt-4 ${
-                checkFormValid &&
+              className={`border outline-none mt-4 ${checkFormValid &&
                 card?.fullName?.length == 0 &&
                 "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-              } w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
+                } w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
               type="text"
               value={card.fullName}
               name="fullName"
