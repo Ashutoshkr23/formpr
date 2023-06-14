@@ -46,6 +46,9 @@ END:VCARD`;
     saveAs(blob, "hello.vcf");
   };
   console.log(instaLink);
+
+  const fullName = fname || lname ? `${fname} ${lname}` : "Andrew Darren";
+  
   return (
     <div className="">
       <div
