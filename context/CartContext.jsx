@@ -124,7 +124,7 @@ export const CartProvider = ({ children }) => {
                     }
                 }
             })
-            console.log("runned 2", cards)
+            // console.log("runned 2", cards)
             setCardsArray(cards)
             // localStorage.setItem('cardsArray', JSON.stringify(cards));
 
@@ -134,7 +134,7 @@ export const CartProvider = ({ children }) => {
     }, [cartItems])
 
 
-    // console.log(cardsArray, "Cards Array", cartItems)
+    console.log(cardsArray, "Cards Array", cartItems)
 
 
     // Function to add an item to the cart
@@ -298,6 +298,7 @@ export const CartProvider = ({ children }) => {
         finalData,
         cardsArray,
         stepState,
+        totalQuantity,
         clearCart,
         plusCartFunc,
         minusCartFunc,
