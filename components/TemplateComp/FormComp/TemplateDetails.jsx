@@ -3,11 +3,19 @@ import Templates from './Templates'
 import Details from './Details'
 import Socials from './Socials'
 
-function TemplateDetails() {
+function TemplateDetails({ onCompanyChange, onNameChange, onRoleChange,onCompanyLinkChange,
+  onBioChange ,onAddressChange,onPhoneNumberChange }) {
   return (
     <div className=' flex flex-col flex-grow'>
       <Templates/>
-      <Details/>
+      <Details 
+      onCompanyChange={onCompanyChange}
+      onNameChange={onNameChange}
+      onRoleChange={onRoleChange}
+      onCompanyLinkChange={onCompanyLinkChange}
+      onBioChange={onBioChange}
+      onAddressChange={onAddressChange}
+      onPhoneNumberChange={onPhoneNumberChange}/>
 
     </div>
   )

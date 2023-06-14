@@ -6,6 +6,15 @@ import themes from '@/components/Themes';
 
 function Form() {
     const [stepState, setStepState] = useState(1);
+    const [company, setCompany] = useState('');
+    const [name, setName] = useState('');
+    const [role, setRole] = useState('');
+    const [companyLink, setCompanyLink] = useState('');
+    const [bio, setBio] = useState('');
+    const [address, setAddress] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [location, setLocation] = useState('');
+
 
     const handleButtonClick = () => {
         setStepState(2);
@@ -14,6 +23,40 @@ function Form() {
     const handleSaveClick = () => {
         console.log('Hi');
     };
+
+    
+    const handleCompanyChange = (value) => {
+        setCompany(value);
+    };
+
+    const handleNameChange = (value) => {
+        setName(value);
+    };
+
+    const handleRoleChange = (value) => {
+        setRole(value);
+    };
+
+    const handleCompanyLinkChange = (value) => {
+        setCompanyLink(value);
+    };
+
+    const handleBioChange = (value) => {
+        setBio(value);
+    };
+
+    const handleAddressChange = (value) => {
+        setAddress(value);
+    };
+
+    const handlePhoneNumberChange = (value) => {
+        setPhoneNumber(value);
+    };
+
+    const handleLocationChange = (value) => {
+        setLocation(value);
+    };
+
 
   return (
     <div>
@@ -66,7 +109,15 @@ function Form() {
               </div>
               <div className='flex gap-5'>
                 <div className='flex flex-grow'>
-                      {stepState === 1 && <TemplateDetails/>}
+                      {stepState === 1 && <TemplateDetails 
+                      onCompanyChange={handleCompanyChange} 
+                      onNameChange={handleNameChange} 
+                      onRoleChange={handleRoleChange} 
+                      onCompanyLinkChange={handleCompanyLinkChange} 
+                      onBioChange={handleBioChange}
+                      onAddressChange={handleAddressChange}
+                      onPhoneNumberChange={handlePhoneNumberChange}
+                      />}
                       {stepState === 2 && <TemplateDesign/>}
                 </div>
                   <div className='w-[350px] xl:w-[390px]  flex justify-center'>
@@ -78,6 +129,12 @@ function Form() {
                           text3={themes[0].text3}
                           btn={themes[0].btn}
                           loop={themes[0].loop}
+                          company={company}
+                          bio={bio}
+                          website={companyLink}
+                          mobile={phoneNumber}
+                          fname={name}
+                          designation={role}
                         />
                   </div>
               </div>

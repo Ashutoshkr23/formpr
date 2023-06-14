@@ -25,15 +25,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
           />
 
           <p className="text-[8px] ml-[2px] tracking-[-0.5px] text-[#7D9695]  ">
-            {company}
-            {/* <input
-              className={`bg-transparent ${text2} text-[#7D9695] w-[120px]  `}
-              type="text"
-              placeholder="company Name"
-              value={company}
-              readOnly={true}
-              //   onChange={handleChange}
-            /> */}
+            {company ? company : "Alphamintlabs"}
           </p>
         </div>
         <div className="flex ml-[50px] ">

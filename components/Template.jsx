@@ -65,8 +65,9 @@ END:VCARD`;
             <input
               className={`text-center bg-transparent ${text1} `}
               type="text"
-              value={fname || lname ? `${fname} ${lname}` : "Andrew Darren"}
-              placeholder={fname || lname ? undefined : "Andrew Darren"}
+              value={lname !== undefined ? `${fname} ${lname}` : fname || "Andrew Darren"}
+              placeholder={lname !== undefined ? '' : fname || "Andrew Darren"}
+
               //   value={inputValue}
               //   onChange={handleChange}
             />
