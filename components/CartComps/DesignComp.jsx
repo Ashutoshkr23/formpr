@@ -15,9 +15,14 @@ const DesignComp = ({
   const [value, setValue] = useState("Front");
   const [type, setType] = useState("Lite");
   const [color, setColor] = useState("Blue");
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
     setValue(value === "Front" ? "Back" : "Front");
+  };
+
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
   };
 
   return (
@@ -26,82 +31,85 @@ const DesignComp = ({
         <div className="flex gap-10  xl:gap-20 lg:justify-between justify-center h-full ">
           <div className="flex items-center gap-10  xl:gap-20 mt-10 flex-col-reverse justify-center lg:flex-row ">
             <div className="">
-              <div className="flex flex-row lg:flex-col justify-between gap-6 ">
+              <div className="flex flex-row lg:flex-col  justify-between gap-6 ">
                 <div>
-                  <div className=" pr-1">
+                  <div className=" pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-7   rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex items-center justify-between pb-2   cursor-pointer  h-full  ${selectedTypeIndex == 0 ? " " : ""
-                        } `}
+                      className={`flex items-center justify-between    cursor-pointer  h-full  ${
+                        selectedTypeIndex == 0 ? " " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(0);
                         setType("Lite");
                       }}
                     >
                       <p
-                        className={` leading-7 pt-2 text-[#686A6C] text-center ${selectedTypeIndex == 0 ? "text-base font-bold text-black " : "text-sm"
-                          }`}
+                        className={` leading-7 pt-2 text-[#686A6C] text-center text-xs lg:text-sm ${
+                          selectedTypeIndex == 0 ? " font-bold text-black " : ""
+                        }`}
                       >
                         Loop Lite
                       </p>
 
                       {cartItems[0].quantity > 0 && (
-                        <span className="text-md font-semibold h-8 w-8 text-center pt-1    bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db]  rounded-full ">
+                        <span className="text-md font-semibold h-6 w-6 lg:h-9 lg:w-9 text-center lg:pt-1    bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db]  rounded-full ">
                           {cartItems[0].quantity}
                         </span>
                       )}
                     </div>
-                    <hr className="w-[156px]" />
                   </div>
 
-                  <div className="pr-1">
+                  <div className="pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${selectedTypeIndex == 1 ? "  " : ""
-                        } `}
+                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${
+                        selectedTypeIndex == 1 ? "  " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(1);
                         setType("Elevate");
                       }}
                     >
                       <p
-                        className={` leading-7 pt-3 text-[#686A6C] text-center ${selectedTypeIndex == 1 ? "text-base font-bold text-black " : "text-sm"
-                          }`}
+                        className={` leading-7 pt-3 text-[#686A6C] text-center text-xs lg:text-sm ${
+                          selectedTypeIndex == 1 ? " font-bold text-black " : ""
+                        }`}
                       >
                         Loop Elevate
                       </p>
                       {cartItems[1].quantity > 0 && (
-                        <span className="text-md font-semibold h-8 w-8  text-center pt-1 mt-1 bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
+                        <span className="text-md font-semibold h-6 w-6 lg:h-9 lg:w-9  text-center lg:pt-1 mt-1 bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
                           {cartItems[1].quantity}
                         </span>
                       )}
                     </div>
-                    <hr className="w-[156px]" />
                   </div>
-                  <div className="pr-1">
+                  <div className="pr-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex cursor-pointer justify-between pb-2   h-full ${selectedTypeIndex == 2 ? " " : ""
-                        } `}
+                      className={`flex cursor-pointer items-center justify-between pb-2   h-full ${
+                        selectedTypeIndex == 2 ? " " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(2);
                       }}
                     >
                       <p
-                        className={`text-[#686A6C]  pt-3 leading-7 text-center ${selectedTypeIndex == 2 ? "text-base font-bold text-black" : "text-sm"
-                          }`}
+                        className={`text-[#686A6C] text-xs lg:text-sm  pt-3 leading-7 text-center ${
+                          selectedTypeIndex == 2 ? " font-bold text-black" : ""
+                        }`}
                       >
                         Loop Supreme
                       </p>
                       {cartItems[2].quantity > 0 && (
-                        <span className=" text-md font-semibold h-8 w-8  text-center pt-1 mt-2   bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
+                        <span className=" text-md font-semibold h-6 w-6 lg:h-9 lg:w-9  text-center lg:pt-1 mt-2   bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
                           {cartItems[2].quantity}
                         </span>
                       )}
                     </div>
-                    <hr className="w-[156px]" />
                   </div>
                 </div>
                 <div>
                   <div className="">
-                    <div className="flex cursor-pointer justify-between pb-4 pr-4 ">
+                    <div className="flex cursor-pointer justify-between pb-3 lg:pb-1 pl-2 pr-4 ">
                       <p className="text-sm  font-bold ">Total Quantity :</p>
                       <span className="text-sm font-bold ">
                         {totalQuantity}
@@ -109,31 +117,45 @@ const DesignComp = ({
                     </div>
                     <hr className="w-[156px]" />
                   </div>
-                  <div className="pt-2 lg:pt-[14px]">
+                  <div className="pt-2  pl-2 lg:pt-1">
                     <p className="text-xs  font-semibold text-[#F66F6F] ">
                       *Maximum 10
                     </p>
                   </div>
-                  <div className="pt-4 text-center">
-                    <button className="h-9 w-[145px] lg:h-[41px] lg:w-[164px] px-4 rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold">
-                      FOR BULK ORDERS CONTACT US
-                    </button>
-                  </div>
+                  <button className="h-9 mt-10 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold">
+                    FOR BULK ORDERS CONTACT US
+                  </button>
                 </div>
               </div>
             </div>
             <div className="hidden md:block">
               <div className="flex space-x-5">
-                <div>
-                  <Image
-                    src={`/assets/images/storeImages/${type}/${value}/${color}.png`}
-                    className=""
-                    alt="flip"
-                    height={258}
-                    width={400}
-                  />
+                <div className={`card ${isFlipped ? "flipped" : ""}`}>
+                  <div>
+                    <div className="card-inner">
+                      <div className={`card-front`}>
+                        <Image
+                          src={`/assets/images/storeImages/${type}/Front/${color}.png`}
+                          className={` `}
+                          alt="flip"
+                          height={258}
+                          width={400}
+                        />
+                      </div>
+                      <div className={``}>
+                        <Image
+                          src={`/assets/images/storeImages/${type}/Back/${color}.png`}
+                          className={``}
+                          alt="flip"
+                          height={258}
+                          width={400}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="cursor-pointer" onClick={handleClick}>
+
+                <div className="cursor-pointer" onClick={handleFlip}>
                   <Image
                     src={"/assets/images/cart-images/flipImage.png"}
                     className=""
@@ -146,17 +168,33 @@ const DesignComp = ({
             </div>
             {/* foe mobile */}
             <div className="md:hidden">
-              <div className="flex space-x-5">
-                <div className="">
-                  <Image
-                    src={`/assets/images/storeImages/${type}/${value}/${color}.png`}
-                    className=""
-                    alt="flip"
-                    height={172}
-                    width={300}
-                  />
+              <div className="flex space-x-3">
+                <div className={`card ${isFlipped ? "flipped" : ""}`}>
+                  <div>
+                    <div className="card-inner">
+                      <div className="card-front">
+                        <Image
+                          src={`/assets/images/storeImages/${type}/Front/${color}.png`}
+                          className=""
+                          alt="flip"
+                          height={172}
+                          width={300}
+                        />
+                      </div>
+                      <div className="">
+                        <Image
+                          src={`/assets/images/storeImages/${type}/Back/${color}.png`}
+                          className=""
+                          alt="flip"
+                          height={172}
+                          width={300}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="cursor-pointer" onClick={handleClick}>
+
+                <div className="cursor-pointer" onClick={handleFlip}>
                   <Image
                     src={"/assets/images/cart-images/flipImage.png"}
                     className=""

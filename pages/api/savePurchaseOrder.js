@@ -36,7 +36,6 @@ export default async function handler(req, res) {
                 })
             })
             const data = await card.insertMany(temp)
-            console.log(data, "Data")
 
             let tempPurchaseArr = []
             let orderId = uuidv4()
@@ -57,7 +56,6 @@ export default async function handler(req, res) {
                 tempPurchaseArr.push(tempObj)
             })
             const purchaseData = await purchase.insertMany(tempPurchaseArr)
-            console.log(purchaseData, "purchaseData")
             const shippinData = {
                 puuid: puuid,
                 totalAmount: totalAmount,
@@ -83,10 +81,8 @@ export default async function handler(req, res) {
             const updateShipping = new shipping(shippinData)
             // Save the instance to the database
             const savedShipping = await updateShipping.save();
-            console.log(savedShipping, "savedShipping")
 
             const updateUserProfile = await UserData.updateOne({ puuid: puuid }, { $inc: { totalCards: totalQuantity } })
-            console.log(updateUserProfile, "updateUserProfile")
             res.status(200).json({
                 error: false,
                 message: "Success",

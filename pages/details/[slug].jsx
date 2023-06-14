@@ -78,7 +78,7 @@ END:VCARD`;
     saveAs(blob, "hello.vcf");
   };
   return (
-    <div className="mx-auto flex justify-center items-center ">
+    <div className="mx-auto max-w-[375px] flex justify-center items-center ">
       {/* ayush bansal */}
       {id == "d5d7d6f3-2583-4c9b-af23-6a712e3b4d4d" && (
         <div>
@@ -92,7 +92,9 @@ END:VCARD`;
             loop={themes[2].loop}
             fname={"Aayush"}
             lname={"Bansal"}
-            bio={"A proud part of the Black Cab Agency Network "}
+            bio={
+              "I build brands through Brand Strategy, Design & Digital Marketing at Black Cab, Content Production at Secret Sauce Studios, Tech at Binary Chai, Immersive Marketing at RADAR Agency and Music Marketing at M3."
+            }
             designation={"Co-Founder"}
             company={"Black Cab"}
             website={"https://blackcab.co.in/"}
@@ -102,6 +104,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919820447476`}
             linkedLink={`https://www.linkedin.com/in/aayush-bansal-110385a7/`}
             profile={`/assets/images/profilePic/Aayush Bansal.jpeg`}
+            gmailLink={`mailto:aayush@blackcab.co.in`}
           />
         </div>
       )}
@@ -129,6 +132,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919004922756`}
             linkedLink={`https://www.linkedin.com/in/siddhartha-singh-7552b5107/`}
             profile={`/assets/images/profilePic/Siddhartha Singh.jpeg`}
+            gmailLink={`mailto:siddhartha@blackcab.co.in`}
           />
         </div>
       )}
@@ -156,6 +160,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919833556650`}
             linkedLink={`https://www.linkedin.com/in/aayushmansinha/`}
             profile={`/assets/images/profilePic/Aayushman Sinha.jpg`}
+            gmailLink={`mailto:aayushman@blackcab.co.in`}
           />
         </div>
       )}
@@ -182,6 +187,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919920223594`}
             linkedLink={`https://www.linkedin.com/in/rishikeshbhanushali/`}
             profile={`/assets/images/profilePic/Rishikesh Bhanushali.jpeg`}
+            gmailLink={`mailto:rishikesh@blackcab.co.in`}
           />
         </div>
       )}
@@ -208,6 +214,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919930981280`}
             linkedLink={`https://www.linkedin.com/in/nishant-joshi-54632b26a`}
             profile={`/assets/images/profilePic/Alok Verma.jpg`}
+            gmailLink={`mailto:alok@secretsaucestudios.in`}
           />
         </div>
       )}
@@ -234,6 +241,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919819566568`}
             linkedLink={`https://www.linkedin.com/in/nishant-joshi-54632b26a`}
             profile={`/assets/images/profilePic/Nishant Joshi.jpg`}
+            gmailLink={`mailto:nishant@secretsaucestudios.in `}
           />
         </div>
       )}
@@ -250,9 +258,9 @@ END:VCARD`;
             loop={themes[2].loop}
             fname={"Ujjwal"}
             lname={"Sharma"}
-            bio={"A proud part of the Black Cab Agency Network  "}
+            bio={"A proud part of the Black Cab Agency Network "}
             designation={"Co-Founder"}
-            company={"Secret Sauce Studios- A Black Cab Network Agency "}
+            company={"Binary Chai & RADAR Agency-A Black Cab Network Agency"}
             website={"https://radaragency.io/"}
             mobile={"9999234245"}
             gmail={"ujjwal@radaragency.io "}
@@ -260,6 +268,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919999234245`}
             linkedLink={`https://www.linkedin.com/in/ujjwalsh/`}
             profile={`/assets/images/profilePic/Ujjwal Sharma High res.jpg`}
+            gmailLink={`mailto:ujjwal@radaragency.io`}
           />
         </div>
       )}
@@ -276,9 +285,9 @@ END:VCARD`;
             loop={themes[2].loop}
             fname={"Sandesh"}
             lname={"Jha"}
-            bio={"A proud part of the Black Cab Agency Network  "}
+            bio={"Building cults, clutter free"}
             designation={"Co-Founder"}
-            company={"Black Cab"}
+            company={"M3 - A Black Cab Network Agency"}
             website={"https://blackcab.co.in/"}
             mobile={"8693882326"}
             gmail={"sandesh@m-3.in"}
@@ -286,6 +295,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=918693882326`}
             linkedLink={`https://www.linkedin.com/in/sandesh-jha-4913261b6/`}
             profile={`/assets/images/profilePic/Sandesh Jha.jpeg`}
+            gmailLink={`mailto:sandesh@m-3.in`}
           />
         </div>
       )}
@@ -302,9 +312,9 @@ END:VCARD`;
             loop={themes[2].loop}
             fname={"Sidhantha"}
             lname={"Jain"}
-            bio={"A proud part of the Black Cab Agency Network "}
+            bio={"Building cults, clutter free"}
             designation={"Co-Founder"}
-            company={"Black Cab"}
+            company={"M3 - A Black Cab Network Agency "}
             website={"https://blackcab.co.in/"}
             mobile={"8700118994"}
             gmail={"sid@m-3.in"}
@@ -312,6 +322,7 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=918700118994`}
             linkedLink={`https://www.linkedin.com/in/sidhantha-jain-a1300b113/`}
             profile={`/assets/images/profilePic/Sidhantha Jain.jpeg`}
+            gmailLink={`mailto:sid@m-3.in`}
           />
         </div>
       )}
@@ -338,6 +349,64 @@ END:VCARD`;
             watspLink={`https://api.whatsapp.com/send?phone=919167837466`}
             linkedLink={`https://www.linkedin.com/in/khushigadhia/`}
             profile={`/assets/images/profilePic/Khushi Gadhia.jpeg`}
+            gmailLink={`mailto:khushi@blackcab.co.in`}
+          />
+        </div>
+      )}
+
+      {/* 11 */}
+      {id == "6d186e04-6984-4808-8d57-5a9143c1d66a" && (
+        <div>
+          <Template
+            gradient1={themes[3].gradient1}
+            gradient2={themes[3].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
+            fname={"Siddharth "}
+            lname={"Nair"}
+            bio={"A bearded corporate fixer  "}
+            designation={"Chief Operating Officer "}
+            company={"alphamint labs"}
+            website={"https://alphamintlabs.com/"}
+            mobile={"9167837466"}
+            gmail={"siddharth@alphamintlabs.com"}
+            instaLink={`https://www.instagram.com/youcantsaynotoprasad/`}
+            watspLink={`https://api.whatsapp.com/send?phone=917506090337`}
+            linkedLink={`https://www.linkedin.com/in/siddharth-nair-b30a3413b/`}
+            profile={`/assets/images/profilePic/employee SID@1.25x@1.25x@2x.png`}
+            faceLink={`https://www.facebook.com/siddharth.nair.39948`}
+            gmailLink={`mailto:siddharth@alphamintlabs.com`}
+          />
+        </div>
+      )}
+      {/* 12 */}
+      {id == "8cec4f99-723b-431c-8d24-3c938b6c90d6" && (
+        <div>
+          <Template
+            gradient1={themes[3].gradient1}
+            gradient2={themes[3].gradient2}
+            text1={themes[2].text1}
+            text2={themes[2].text2}
+            text3={themes[2].text3}
+            btn={themes[2].btn}
+            loop={themes[2].loop}
+            fname={"Sandeep"}
+            lname={"Telang"}
+            bio={"Building plug and play blockchain based software at AML"}
+            designation={"Co-Founder and CEO"}
+            company={"alphamint labs"}
+            website={"https://alphamintlabs.com/"}
+            mobile={"917738755565"}
+            gmail={"sandeep@alphamintlabs.com"}
+            instaLink={`https://www.instagram.com/sandeeptelang/`}
+            watspLink={`https://api.whatsapp.com/send?phone=917738755565`}
+            linkedLink={`https://www.linkedin.com/in/sandeeptelang/`}
+            profile={`/assets/images/profilePic/sandeep.jpeg`}
+            faceLink={`https://www.facebook.com/sandeep.telang94`}
+            gmailLink={`mailto:sandeep@alphamintlabs.com`}
           />
         </div>
       )}

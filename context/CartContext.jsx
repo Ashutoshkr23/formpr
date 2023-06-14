@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { useSession } from "next-auth/react"
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
 // Create the cart context
@@ -19,6 +20,7 @@ export const CartProvider = ({ children }) => {
     const [finalData, setFinalData] = useState({})
     const [cardsArray, setCardsArray] = useState([])
     const [stepState, setStepState] = useState(1);
+    const [totalQuantity, setTotalQuantity] = useState(0)
 
     useEffect(() => {
 
@@ -97,6 +99,7 @@ export const CartProvider = ({ children }) => {
             for (var i = 0; i < cartItems.length; i++) {
                 totalQuantity += cartItems[i].quantity;
             }
+            setTotalQuantity(totalQuantity)
 
             cartItems.map((item, index) => {
                 if (item.quantity > 0) {
@@ -112,6 +115,7 @@ export const CartProvider = ({ children }) => {
                             fullName: "",
                             companyName: "",
                             companyLogo: "",
+                            fileName: "",
 
                         }
                         console.log(temp, "temp")
@@ -143,16 +147,22 @@ export const CartProvider = ({ children }) => {
     }
 
     const plusCartFunc = (id) => {
-        const newCartItems = cartItems.map((item) => {
-            if (item._id == id) {
-                let newItem = { ...item, quantity: parseInt(item.quantity) + 1 }
-                newItem.totalAmount = parseInt(newItem.quantity) * parseInt(newItem.amount)
-                return newItem
-            }
-            return item
-        })
-        setCartItems(newCartItems)
-        localStorage.setItem('cartData', JSON.stringify(newCartItems));
+        if (totalQuantity < 10) {
+
+
+            const newCartItems = cartItems.map((item) => {
+                if (item._id == id) {
+                    let newItem = { ...item, quantity: parseInt(item.quantity) + 1 }
+                    newItem.totalAmount = parseInt(newItem.quantity) * parseInt(newItem.amount)
+                    return newItem
+                }
+                return item
+            })
+            setCartItems(newCartItems)
+            localStorage.setItem('cartData', JSON.stringify(newCartItems));
+        } else {
+            toast.error("Maximum 10 cards limit reached !")
+        }
 
     }
     const minusCartFunc = (id) => {
@@ -213,7 +223,7 @@ export const CartProvider = ({ children }) => {
 
     // new
     // type 0 : company name and type 1 : company logo
-    const handleApplyToAll = (type, value) => {
+    const handleApplyToAll = (type, value, fileName) => {
         if (type == 0) {
             let tempArr = []
             for (let i = 0; i < cardsArray.length; i++) {
@@ -230,7 +240,8 @@ export const CartProvider = ({ children }) => {
             for (let i = 0; i < cardsArray.length; i++) {
                 let temp = {
                     ...cardsArray[i],
-                    companyLogo: value
+                    companyLogo: value,
+                    fileName: fileName,
                 }
                 tempArr.push(temp)
             }
@@ -240,13 +251,16 @@ export const CartProvider = ({ children }) => {
     }
 
     // type 0 : companyName,1:full name 
-    const handleName = (name, key, value) => {
+    const handleName = (name, key, value, fileName) => {
         console.log(name, key, value, "type, key, value")
 
         const newCardArr = cardsArray.map((item) => {
             if (item.key == key) {
                 let newItem = { ...item }
                 newItem[name] = value
+                if (name == "companyLogo") {
+                    newItem["fileName"] = fileName
+                }
 
                 return newItem
             }

@@ -41,8 +41,6 @@ const Remainder = () => {
     const editARemainder = async (idOfTheItem) => {
         const itemId = idOfTheItem;
 
-        console.log(router.pathname + '/' + itemId)
-
         router.push('/editReminder/' + itemId)
     };
 

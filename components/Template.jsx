@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import ProfileImg from "./ProfileImg";
 import Image from "next/image";
 import BioTemp from "./BioTemp";
@@ -29,6 +30,8 @@ const Template = ({
   watspLink,
   linkedLink,
   profile,
+  faceLink,
+  gmailLink,
 }) => {
   const downloadVCard = () => {
     // Create a vCard string from the contact data
@@ -50,12 +53,12 @@ END:VCARD`;
   const fullName = fname || lname ? `${fname} ${lname}` : "Andrew Darren";
   
   return (
-    <div className="">
+    <div className="flex justify-center  mx-auto max-w-[375px] h-full">
       <div
-        className={`${gradient1} max-w-[375px] h-[812px] rounded-[30px] pt-[161px]  `}
+        className={`${gradient1} mx-auto h-full max-w-[375px] rounded-[30px] pt-[161px]  `}
       >
         <div
-          className={`${gradient2} relative px-6  mx-auto h-[651px] max-w-[375px]  rounded-[20px] `}
+          className={`${gradient2} relative px-6 max-w-[375px] mx-auto h-full  rounded-[20px] `}
         >
           <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
             <ProfileImg profileimg={profile} />
@@ -100,12 +103,14 @@ END:VCARD`;
               instaLink={instaLink}
               watspLink={watspLink}
               linkedLink={linkedLink}
+              faceLink={faceLink}
+              gmailLink={gmailLink}
             />
           </div>
 
-          <div className="">
+          <div className="flex justify-center">
             <button
-              className={`${btn} border-2  text-[20px] ${btntext} text-black bg-white  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
+              className={`${btn} border-2 text-[20px] ${btntext} text-black bg-white  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
               onClick={downloadVCard}
             >
               SAVE CONTACT
@@ -113,16 +118,15 @@ END:VCARD`;
           </div>
 
           <div
-            className={`text-[10px] flex justify-center mt-7 pb-[29px] ${text1}`}
+            className={`text-[10px] flex justify-center items-center mt-7 pb-7  ${text1}`}
           >
-            made with love by
+            <p> made with love by</p>
             <img
-              className="h-[27px] w-[27px] pl-1"
+              className="h-[12px] w-[27px] ml-1"
               src="/assets/images/display/loops.png"
               alt="logo"
             />
           </div>
-          <div className="flex mx-auto mt-[-12px] rounded-[31px]  h-[3px] w-[133px] bg-[#A8A8A8]"></div>
         </div>
       </div>
     </div>
