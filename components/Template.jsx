@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import ProfileImg from "./ProfileImg";
 import Image from "next/image";
 import BioTemp from "./BioTemp";
@@ -47,7 +48,10 @@ END:VCARD`;
     // Save the Blob as a file using the file-saver library
     saveAs(blob, "hello.vcf");
   };
-
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => (document.body.style.overflow = "scroll");
+  });
   return (
     <div className="flex justify-center  mx-auto max-w-[375px] h-full">
       <div
