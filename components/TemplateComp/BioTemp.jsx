@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
     return (
-        <div className={`${border} rounded-[10px]  pt-2 pb-2 `}>
+        <div className={`${border} rounded-[10px]  pt-2 pb-2 px-4 mx-2 `}>
             <div className={`text-[12px] ${text2} text-[#7D9695] `}>Bio</div>
             <div className="pt-[11px] text-[12px]">
                 <textarea

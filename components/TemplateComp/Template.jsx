@@ -55,14 +55,18 @@ console.log(gradient2)
     return (
         <div className="flex justify-center  mx-auto max-w-[375px] h-auto">
             <div
-                className={` mx-auto h-[800px] max-w-[375px] rounded-[30px] pt-[161px]`}
+                className={`relative mx-auto h-[820px] max-w-[375px]  border-black border-[10px] rounded-[30px] pt-[161px]`}
                 style={{backgroundImage:`url(${gradient1})`,
                     backgroundSize: '100% auto',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'top',}}
             >
+                <Image src="/assets/images/templateimg/Button.png" height={80} width={10} className="absolute top-48 -right-3.5"/>
+                <Image src="/assets/images/templateimg/PowerButoon.png" height={40} width={10} className="absolute top-28 -left-3.5" />
+                <Image src="/assets/images/templateimg/VolumeButton.png" height={60} width={10} className="absolute top-44 -left-3.5" />
+                <Image src="/assets/images/templateimg/VolumeButton.png" height={60} width={10} className="absolute top-64 -left-3.5" />
                 <div
-                    className={`${gradient2} relative px-6 max-w-[375px] mx-auto h-full  rounded-[20px] `}
+                    className={`${gradient2} relative  max-w-[375px] mx-auto h-full  rounded-[20px] `}
                 >
                     <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
                         <ProfileImg profileimg={profile} />
@@ -114,7 +118,7 @@ console.log(gradient2)
 
                     <div className="flex justify-center">
                         <button
-                            className={`${btn} border-2 text-[20px] ${btntext}  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
+                            className={`${btn} border-2 mx-6 text-[20px] ${btntext}  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
                             onClick={downloadVCard}
                         >
                             SAVE CONTACT

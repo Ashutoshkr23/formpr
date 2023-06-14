@@ -12,7 +12,7 @@ const Socialpg = ({
   gmailLink,
 }) => {
   return (
-    <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] ">
+    <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] mx-6 ">
       <div className="flex flex-col items-center">
         <Link href={`${watspLink}`}>
           <Image

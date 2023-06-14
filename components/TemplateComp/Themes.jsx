@@ -25,7 +25,7 @@ const themes = [
         text3: 'text-white',
         btn: 'bg-white',
         btntext: 'text-black',
-        border: 'border-2',
+        border: 'border-[1px] drop-shadow-white',
         loop: '/loop.png',
         profileimg: '/assets/images/templateimg/andrew.png',
         type: 'folder2'
@@ -41,7 +41,7 @@ const themes = [
         text3: 'text-black',
         btn: 'bg-[#0F0F0F]',
         btntext: 'text-white',
-        border: 'border-2',
+        border: 'border-[1px] border-white',
         loop: '/loopwh.svg',
         profileimg: '/employee.svg',
         type: 'folder3'

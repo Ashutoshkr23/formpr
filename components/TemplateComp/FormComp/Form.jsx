@@ -143,6 +143,7 @@ function Form() {
                               btntext={themes[0].btntext}
                               type={themes[0].type}
                               loop={themes[0].loop}
+                              border={themes[0].border}
                               company={company}
                               bio={bio}
                               website={companyLink}
@@ -161,6 +162,7 @@ function Form() {
                               btntext={themes[1].btntext}
                               type={themes[1].type}
                               loop={themes[1].loop}
+                              border={themes[1].border}
                               company={company}
                               bio={bio}
                               website={companyLink}
@@ -179,6 +181,7 @@ function Form() {
                               btntext={themes[2].btntext}
                               type={themes[2].type}
                               loop={themes[2].loop}
+                              border={themes[2].border}
                               company={company}
                               bio={bio}
                               website={companyLink}
@@ -197,6 +200,7 @@ function Form() {
                               type={themes[3].type}
                               btntext={themes[3].btntext}
                               loop={themes[3].loop}
+                              border={themes[3].border}
                               company={company}
                               bio={bio}
                               website={companyLink}
