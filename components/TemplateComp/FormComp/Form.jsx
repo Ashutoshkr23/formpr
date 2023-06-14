@@ -1,8 +1,10 @@
-import Template from '@/components/Template';
+import Template from '../Template';
 import React , {useState} from 'react'
-import TemplateDetails from './TemplateDetails';
-import TemplateDesign from './TemplateDesign';
 import themes from '@/components/Themes';
+import ChooseTemplates from './ChooseTemplates'
+import Details from './Details'
+import Socials from './Socials'
+import Cover from './Cover'
 
 function Form() {
    
@@ -87,16 +89,17 @@ function Form() {
                   </button>
               </div>
               <div className='flex gap-5'>
-                <div className='flex flex-grow'>
-                <TemplateDetails 
-                      onCompanyChange={handleCompanyChange} 
-                      onNameChange={handleNameChange} 
-                      onRoleChange={handleRoleChange} 
-                      onCompanyLinkChange={handleCompanyLinkChange} 
-                      onBioChange={handleBioChange}
-                      onAddressChange={handleAddressChange}
-                      onPhoneNumberChange={handlePhoneNumberChange}
-                />
+                <div className='flex flex-grow flex-col'>
+                      <ChooseTemplates />
+                      <Cover />
+                      <Details
+                          onCompanyChange={handleCompanyChange}
+                          onNameChange={handleNameChange}
+                          onRoleChange={handleRoleChange}
+                          onCompanyLinkChange={handleCompanyLinkChange}
+                          onBioChange={handleBioChange}
+                          onAddressChange={handleAddressChange}
+                          onPhoneNumberChange={handlePhoneNumberChange} />
                 </div>
                   <div className='w-[350px] xl:w-[390px]  flex justify-center'>
                     <Template
