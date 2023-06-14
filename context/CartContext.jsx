@@ -285,6 +285,7 @@ export const CartProvider = ({ children }) => {
 
         minusCartFunc(cartType[0]._id)
         setCardsArray(array)
+        toast.success("Successfully removed")
         // localStorage.setItem('cardsArray', JSON.stringify(array));
 
     }
