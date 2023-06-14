@@ -298,6 +298,7 @@ export const CartProvider = ({ children }) => {
         finalData,
         cardsArray,
         stepState,
+        totalQuantity,
         clearCart,
         plusCartFunc,
         minusCartFunc,

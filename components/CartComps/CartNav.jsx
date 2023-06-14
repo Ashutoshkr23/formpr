@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import { CartContext } from "@/context/CartContext";
 
 const CartNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { totalQuantity } = useContext(CartContext)
 
   const [date, setDate] = useState();
   const router = useRouter();
@@ -47,21 +50,22 @@ const CartNav = () => {
             />
           </div>
           <div className="flex gap-12">
-            <div>
+            <Link href={"/manageCards"}>
               <p className="text-sm leading-[17px]">Manage cards</p>
-            </div>
+            </Link>
             <div>
               <p className="text-sm leading-[17px]">Order history</p>
             </div>
           </div>
           <div className="flex gap-10 items-center">
-            <div>
+            <div className="relative">
               <Image
                 src={"/assets/images/cart-images/CartImage.png"}
                 alt="loop"
                 width={30}
                 height={30}
               />
+              <span className="absolute rounded-full border w-6 text-center  h-6 top-[-15px] right-[-23px] font-medium text-black text-md">{totalQuantity}</span>
             </div>
             <button
               className=" h-10 w-[165px] text-[16px] font-bold text-white bg-black rounded-[10px]"
@@ -94,19 +98,16 @@ const CartNav = () => {
               >
                 <div className={`{} h-3.5 w-5 ${isOpen ? "fixed" : ""}`}>
                   <div
-                    className={` h-0.5 bg-black w-5 origin-top-left ease-in duration-200 rounded-md ${
-                      isOpen ? "rotate-45 translate-x-px" : "rotate-0"
-                    }`}
+                    className={` h-0.5 bg-black w-5 origin-top-left ease-in duration-200 rounded-md ${isOpen ? "rotate-45 translate-x-px" : "rotate-0"
+                      }`}
                   />
                   <div
-                    className={` h-0.5 w-5 bg-black ease-in duration-200 rounded-md mt-1 ${
-                      isOpen ? "hidden" : "block"
-                    }`}
+                    className={` h-0.5 w-5 bg-black ease-in duration-200 rounded-md mt-1 ${isOpen ? "hidden" : "block"
+                      }`}
                   />
                   <div
-                    className={` h-0.5 w-5 bg-black ease-in duration-200  rounded-md mt-1  ${
-                      isOpen ? "-rotate-45 -translate-x-0.5 " : "rotate-0 "
-                    }`}
+                    className={` h-0.5 w-5 bg-black ease-in duration-200  rounded-md mt-1  ${isOpen ? "-rotate-45 -translate-x-0.5 " : "rotate-0 "
+                      }`}
                   />
                 </div>
               </button>
