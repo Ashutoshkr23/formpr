@@ -3,22 +3,26 @@ import Image from 'next/image'
 
 
 function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkChange,
-    onBioChange, onAddressChange, onPhoneNumberChange }) {
-    const fileInputRef = useRef(null);
-    const handleLabelClick = () => {
-        fileInputRef.current.click();
-    };
-    const handleFileChange = (event) => {
+    onBioChange, onAddressChange, onPhoneNumberChange , profileImg , setProfileImg , bio }) {
+    
+    const handleProfileUpload = (event) => {
         const file = event.target.files[0];
-        const fileSizeInMB = file.size / (1024 * 1024);
-
-        if (fileSizeInMB > 5) {
-            setErrorMessage('File size exceeds the limit of 5MB.');
-        } else {
-            setErrorMessage('');
-            handleAwsUpload(file);
-        }
+        const imageUrl = URL.createObjectURL(file);
+        setProfileImg(imageUrl);
     };
+
+    const maxLength = 80;
+
+    const handleBioChange = (e) => {
+    const value = e.target.value;
+    onBioChange(value.slice(0, maxLength));
+    };
+
+    const remainingChars = maxLength - bio.length;
+    
+
+
+    console.log("hello" + profileImg)
 
     const handleCompanyChange = (e) => {
         const value = e.target.value;
@@ -43,11 +47,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
         onCompanyLinkChange(value);
     };
 
-         const handleBioChange = (e) => {
-        const value = e.target.value;
-        onBioChange(value);
-    };
-
+        
     
     const handleAddressChange = (e) => {
         const value = e.target.value;
@@ -69,19 +69,19 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                 <div className='flex flex-col w-full space-y-5'>
                     <div>
                         <p className='text-xs leading-[186%]'>Profile Photo</p>
-                        <label htmlFor="fileInput" className="cursor-pointer bg-white  flex flex-col spaxe-y-1 justify-center items-center w-[127px] h-[127px] border border-dim-gray rounded-xl  " onClick={handleLabelClick}>
-                            <Image src={"/assets/images/uploadIcon.png"} height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
+                        <label htmlFor="logoInput" className="cursor-pointer bg-white flex flex-col space-y-1 justify-center items-center w-[127px] h-[127px] border border-dim-gray rounded-xl">
+                            <Image src="/assets/images/uploadIcon.png" height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
                             <p className='text-sm'>Upload</p>
                         </label>
                         <input
-                            id="companyLogo"
+                            id="logoInput"
                             type="file"
                             accept=".png, .jpeg, .jpg"
-                            onChange={handleFileChange}
-                            ref={fileInputRef}
                             name="companyLogo"
                             style={{ display: 'none' }}
+                            onChange={handleProfileUpload}
                         />
+
                     </div>
                     <div className='flex flex-col'>
                         <label for="Company" className='text-xs leading-[186%]'>Company</label>
@@ -122,7 +122,9 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     rows={4}
                     required
                     onChange={handleBioChange}
+                    maxLength={maxLength}
                 />
+                <p>{remainingChars} characters remaining</p> 
 
             </div>
             

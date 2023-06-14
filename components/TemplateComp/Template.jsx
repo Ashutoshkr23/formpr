@@ -12,7 +12,7 @@ const Template = ({
     border,
     lname,
     btntext,
-    profileimg,
+    profileImg,
     designation,
     bio,
     company,
@@ -42,6 +42,7 @@ EMAIL;: ${gmail}
 URL:${website}
 END:VCARD`;
 console.log(gradient2)
+        console.log("imghello" + profileImg)
         // Convert the vCard string to a Blob object
         const blob = new Blob([vCard], { type: "text/vcard;charset=utf-8" });
 
@@ -69,7 +70,7 @@ console.log(gradient2)
                     className={`${gradient2} relative  max-w-[375px] mx-auto h-full  rounded-[20px] `}
                 >
                     <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
-                        <ProfileImg profileimg={profile} />
+                        <ProfileImg profileImg={profileImg} />
                     </div>
 
                     <div className="flex justify-center pt-[40px] font-semibold text-[20px] tracking-[-0.5px] ">

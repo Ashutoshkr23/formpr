@@ -2,6 +2,17 @@ import Image from 'next/image'
 import React from 'react'
 
 function Cover({cover , setCover}) {
+
+
+
+    const handleCoverUpload = (event) => {
+        const file = event.target.files[0];
+        const imageUrl = URL.createObjectURL(file);
+        setCover(imageUrl);
+    };
+
+    console.log("cover" +cover)
+
     const Cover1 = "/assets/images/templateimg/BGCover1.png"
     const Cover2 = "/assets/images/templateimg/BGCover2.png"
     const Cover3 = "/assets/images/templateimg/BGCover3.png"
@@ -20,18 +31,20 @@ function Cover({cover , setCover}) {
             <p className='font-bold text-xs mb-5'>COVER</p>
             <div className='flex flex-wrap gap-5'>
                 <div>
-                    <label htmlFor="fileInput" className="cursor-pointer bg-white  flex flex-col spaxe-y-1 justify-center items-center w-[105px] h-[105px] border border-dim-gray rounded-xl  " >
-                        <Image src={"/assets/images/uploadIcon.png"} height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
+                    <label htmlFor="fileInput" className="cursor-pointer bg-white  flex flex-col space-y-1 justify-center items-center w-[105px] h-[105px] border border-dim-gray rounded-xl" >
+                        <Image src="/assets/images/uploadIcon.png" height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
                         <p className='text-sm'>Upload</p>
                     </label>
                     <input
-                        id="companyLogo"
+                        id="fileInput"
                         type="file"
                         accept=".png, .jpeg, .jpg"
-                        name="companyLogo"
+                        name="coverImage"
                         style={{ display: 'none' }}
+                        onChange={handleCoverUpload}
                     />
                 </div>
+
                 <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover1)}>
                     <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover1.png"/>
                 </div>

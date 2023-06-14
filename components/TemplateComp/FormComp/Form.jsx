@@ -18,10 +18,10 @@ function Form() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [location, setLocation] = useState('');
     const [selectedtemplate , setSelectedTemplate] = useState('1')
+    const [profileImg, setProfileImg] = useState('/assets/images/templateimg/andrew.png')
     const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
-    console.log("grad "+themes[0].gradient1)
-
+    
     useEffect(() => {
         if (selectedtemplate === '1') {
             setCover(themes[0].gradient1);
@@ -117,8 +117,11 @@ function Form() {
                       cover={cover}
                       setCover={setCover}/>
                       <Details
+                          profileImg={profileImg}
+                          setProfileImg={setProfileImg}
                           onCompanyChange={handleCompanyChange}
                           onNameChange={handleNameChange}
+                          bio={bio}
                           onRoleChange={handleRoleChange}
                           onCompanyLinkChange={handleCompanyLinkChange}
                           onBioChange={handleBioChange}
@@ -144,6 +147,7 @@ function Form() {
                               type={themes[0].type}
                               loop={themes[0].loop}
                               border={themes[0].border}
+                              profileImg={profileImg}
                               company={company}
                               bio={bio}
                               website={companyLink}
@@ -163,6 +167,7 @@ function Form() {
                               type={themes[1].type}
                               loop={themes[1].loop}
                               border={themes[1].border}
+                              profileImg={profileImg}
                               company={company}
                               bio={bio}
                               website={companyLink}
@@ -182,6 +187,7 @@ function Form() {
                               type={themes[2].type}
                               loop={themes[2].loop}
                               border={themes[2].border}
+                              profileImg={profileImg}
                               company={company}
                               bio={bio}
                               website={companyLink}
@@ -201,6 +207,7 @@ function Form() {
                               btntext={themes[3].btntext}
                               loop={themes[3].loop}
                               border={themes[3].border}
+                              profileimg={profileimg}
                               company={company}
                               bio={bio}
                               website={companyLink}
