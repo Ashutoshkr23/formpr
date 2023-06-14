@@ -13,7 +13,8 @@ const CardTypeSchema = new mongoose.Schema({
             designUuid: { type: String, default: uuidv4, unique: true },
             designName: { type: String },
             hexCode: { type: String, default: "" },
-            color: { type: String, default: "" }
+            color: { type: String, default: "" },
+            gradient: { type: Boolean, default: false }
         }
     ]
 

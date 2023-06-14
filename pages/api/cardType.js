@@ -44,6 +44,7 @@ export default async function handler(req, res) {
                         designName: designObj.name,
                         hexCode: designObj.hexCode,
                         color: designObj.color,
+                        gradient: designObj?.gradient,
                     }
                 }
             }
