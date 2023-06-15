@@ -14,16 +14,38 @@ const DesignComp = ({
   const [State, setState] = useState(1);
   const [value, setValue] = useState("Front");
   const [type, setType] = useState("Lite");
-  const [color, setColor] = useState("Blue");
+  const [color, setColor] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
     setValue(value === "Front" ? "Back" : "Front");
   };
 
+  console.log(selectedTypeIndex, "selectedTypeIndex")
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
   };
+
+  useEffect(() => {
+    if (selectedTypeIndex == 0) {
+      setType("Lite")
+    } else if (selectedTypeIndex == 1) {
+      setType("Elevate")
+    } else {
+      setType("Supreme")
+    }
+  }, [selectedTypeIndex])
+
+  useEffect(() => {
+    if (type == "Lite") {
+      setColor("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a")
+    } else if (type == "Elevate") {
+      setColor("c591107d-b134-4cbf-9667-2da6fb07b339")
+    } else {
+      setColor("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a")
+    }
+  }, [type])
+
 
   return (
     <div className="lg:mx-4 max-w-[1208px] xl:mx-auto ">
@@ -35,18 +57,16 @@ const DesignComp = ({
                 <div>
                   <div className=" pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-7   rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex items-center justify-between    cursor-pointer  h-full  ${
-                        selectedTypeIndex == 0 ? " " : ""
-                      } `}
+                      className={`flex items-center justify-between    cursor-pointer  h-full  ${selectedTypeIndex == 0 ? " " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(0);
                         setType("Lite");
                       }}
                     >
                       <p
-                        className={` leading-7 pt-2 text-[#686A6C] text-center text-xs lg:text-sm ${
-                          selectedTypeIndex == 0 ? " font-bold text-black " : ""
-                        }`}
+                        className={` leading-7 pt-2 text-[#686A6C] text-center text-xs lg:text-sm ${selectedTypeIndex == 0 ? " font-bold text-black " : ""
+                          }`}
                       >
                         Loop Lite
                       </p>
@@ -61,18 +81,16 @@ const DesignComp = ({
 
                   <div className="pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${
-                        selectedTypeIndex == 1 ? "  " : ""
-                      } `}
+                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${selectedTypeIndex == 1 ? "  " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(1);
                         setType("Elevate");
                       }}
                     >
                       <p
-                        className={` leading-7 pt-3 text-[#686A6C] text-center text-xs lg:text-sm ${
-                          selectedTypeIndex == 1 ? " font-bold text-black " : ""
-                        }`}
+                        className={` leading-7 pt-3 text-[#686A6C] text-center text-xs lg:text-sm ${selectedTypeIndex == 1 ? " font-bold text-black " : ""
+                          }`}
                       >
                         Loop Elevate
                       </p>
@@ -85,17 +103,15 @@ const DesignComp = ({
                   </div>
                   <div className="pr-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex cursor-pointer items-center justify-between pb-2   h-full ${
-                        selectedTypeIndex == 2 ? " " : ""
-                      } `}
+                      className={`flex cursor-pointer items-center justify-between pb-2   h-full ${selectedTypeIndex == 2 ? " " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(2);
                       }}
                     >
                       <p
-                        className={`text-[#686A6C] text-xs lg:text-sm  pt-3 leading-7 text-center ${
-                          selectedTypeIndex == 2 ? " font-bold text-black" : ""
-                        }`}
+                        className={`text-[#686A6C] text-xs lg:text-sm  pt-3 leading-7 text-center ${selectedTypeIndex == 2 ? " font-bold text-black" : ""
+                          }`}
                       >
                         Loop Supreme
                       </p>
@@ -136,7 +152,7 @@ const DesignComp = ({
                       <div className="card-front">
                         <div className={``}>
                           <Image
-                            src={`/assets/images/storeImages/${type}/Front/${color}.png`}
+                            src={`/assets/images/cards/Front/${color}.png`}
                             className={` `}
                             alt="flip"
                             height={258}
@@ -149,7 +165,7 @@ const DesignComp = ({
                         className={`card-back h-[258px] w-[400px] relative `}
                       >
                         <Image
-                          src={`/assets/images/storeImages/${type}/Back/${color}.png`}
+                          src={`/assets/images/cards/Back/${color}.png`}
                           className={``}
                           alt="flip"
                           height={258}

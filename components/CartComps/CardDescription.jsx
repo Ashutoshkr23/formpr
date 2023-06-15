@@ -34,7 +34,7 @@ const CardDescription = ({
               <div className="flex items-center  space-x-5">
                 {(index === 0 || index === 1) && (
                   <div>
-                    <p className="text-xs leading-[186%]">Available in </p>
+                    <p className="text-xs leading-[186%] break-normal w-full min-w-[80px]">Available in </p>
                   </div>
                 )}
                 {index == 2 && (
@@ -46,7 +46,7 @@ const CardDescription = ({
                 )}
                 <div>
                   <div>
-                    {index == 0 && (
+                    {/* {index == 0 && (
                       <div className="flex space-x-2 justify-center items-center ">
                         <div
                           className={`w-4 h-4 shadow-inner  rounded-full cursor-pointer ${color === 'Yellow' ? 'scale-125 border border-black p-px' : ''
@@ -80,8 +80,41 @@ const CardDescription = ({
                         ><div className="w-full h-full rounded-full bg-black"></div>
                         </div>
                       </div>
-                    )}
-                    {index == 1 && (
+                    )} */}
+                    <div className={`flex space-x-2 justify-start items-center`} >
+                      {index == 0 ? <>
+                        {
+                          cartItems[0].designs.map((item) => {
+
+                            return (
+                              <div
+                                key={item.designUuid}
+                                className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${color === item.designUuid ? 'scale-125 border border-black p-px' : ''
+                                  } `}
+                                onClick={() => setColor(item.designUuid)}
+                              ><div className={`w-full h-full rounded-full bg-[${item.hexCode}]`}></div></div>
+                            )
+                          })
+                        }
+                      </> : index == 1 ? <div className=" flex flex-wrap  gap-x-4 gap-y-2 w-[75%]">
+                        {
+                          cartItems[1].designs.map((item) => {
+
+                            return (
+                              <div
+                                key={item.designUuid}
+                                className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${color === item.designUuid ? 'scale-125 border border-black p-px' : ''
+                                  } `}
+                                onClick={() => setColor(item.designUuid)}
+                              >
+                                <Image src={`/assets/images/radio_buttons/elevate/${item.designUuid}.png`} alt="radio button" height={25} width={25} quality={100} className="rounded-full" />
+                              </div>
+                            )
+                          })
+                        }
+                      </div> : <></>}
+                    </div>
+                    {/* {index == 1 && (
                       <div className="flex space-x-2 justify-center items-center">
                         <div
                           className={`w-4 h-4 shadow-inner  rounded-full cursor-pointer ${color === 'Yellow' ? 'scale-125 border border-black p-px' : ''
@@ -115,7 +148,7 @@ const CardDescription = ({
                         ><div className="w-full h-full rounded-full bg-gradient-to-br from-[#000000] via-[#F37232]"></div>
                         </div>
                       </div>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>
