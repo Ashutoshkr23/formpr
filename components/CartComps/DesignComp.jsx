@@ -131,18 +131,23 @@ const DesignComp = ({
             <div className="hidden md:block">
               <div className="flex space-x-5">
                 <div className={`card ${isFlipped ? "flipped" : ""}`}>
-                  <div>
-                    <div className="card-inner">
-                      <div className={`card-front`}>
-                        <Image
-                          src={`/assets/images/storeImages/${type}/Front/${color}.png`}
-                          className={` `}
-                          alt="flip"
-                          height={258}
-                          width={400}
-                        />
+                  <div className="w-[400px] h-[258px]">
+                    <div className={` card-inner w-[400px] h-[258px]`}>
+                      <div className="card-front">
+                        <div className={``}>
+                          <Image
+                            src={`/assets/images/storeImages/${type}/Front/${color}.png`}
+                            className={` `}
+                            alt="flip"
+                            height={258}
+                            width={400}
+                          />
+                        </div>
                       </div>
-                      <div className={``}>
+
+                      <div
+                        className={`card-back h-[258px] w-[400px] relative `}
+                      >
                         <Image
                           src={`/assets/images/storeImages/${type}/Back/${color}.png`}
                           className={``}
@@ -150,6 +155,9 @@ const DesignComp = ({
                           height={258}
                           width={400}
                         />
+                        <div className="absolute bottom-14 left-6">
+                          <p>John Doe</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -170,18 +178,22 @@ const DesignComp = ({
             <div className="md:hidden">
               <div className="flex space-x-3">
                 <div className={`card ${isFlipped ? "flipped" : ""}`}>
-                  <div>
-                    <div className="card-inner">
+                  <div className="w-[300px] h-[175px]">
+                    <div className={` card-inner w-[300px] h-[172px]`}>
                       <div className="card-front">
-                        <Image
-                          src={`/assets/images/storeImages/${type}/Front/${color}.png`}
-                          className=""
-                          alt="flip"
-                          height={172}
-                          width={300}
-                        />
+                        <div className="">
+                          <Image
+                            src={`/assets/images/storeImages/${type}/Front/${color}.png`}
+                            className=""
+                            alt="flip"
+                            height={172}
+                            width={300}
+                          />
+                        </div>
                       </div>
-                      <div className="">
+                      <div
+                        className={`card-back h-[172px] w-[300px] relative `}
+                      >
                         <Image
                           src={`/assets/images/storeImages/${type}/Back/${color}.png`}
                           className=""
@@ -189,6 +201,9 @@ const DesignComp = ({
                           height={172}
                           width={300}
                         />
+                        <div className="absolute bottom-6 left-6">
+                          <p>John Doe</p>
+                        </div>
                       </div>
                     </div>
                   </div>
