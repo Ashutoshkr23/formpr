@@ -8,7 +8,7 @@ import { CartContext } from "@/context/CartContext";
 
 const CartNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { totalQuantity } = useContext(CartContext)
+  const { totalQuantity } = useContext(CartContext);
 
   const [date, setDate] = useState();
   const router = useRouter();
@@ -65,7 +65,9 @@ const CartNav = () => {
                 width={30}
                 height={30}
               />
-              <span className="absolute rounded-full border w-6 text-center  h-6 top-[-15px] right-[-23px] font-medium text-black text-md">{totalQuantity}</span>
+              <span className="absolute rounded-full border w-6 text-center  h-6 top-[-15px] right-[-23px] font-medium text-black text-md">
+                {totalQuantity}
+              </span>
             </div>
             <button
               className=" h-10 w-[165px] text-[16px] font-bold text-white bg-black rounded-[10px]"
@@ -80,7 +82,7 @@ const CartNav = () => {
       {/* mobile */}
 
       <div className="lg:hidden ">
-        <nav className="bg-dark pl-2 pr-6 sm:px-4 py-2.5  w-full z-50 top-0 left-0">
+        <nav className="bg-dark px-2 pr-1 sm:px-4 py-2.5  w-full z-50 top-0 left-0">
           <div className="container flex flex-wrap items-center justify-between mx-auto">
             <a href="#" className="flex items-center">
               <Image
@@ -90,7 +92,18 @@ const CartNav = () => {
                 height={22}
               />
             </a>
-            <div className="flex  ">
+            <div className="flex gap-4">
+              <div className="relative ">
+                <Image
+                  src={"/assets/images/cart-images/CartImage.png"}
+                  alt="loop"
+                  width={25}
+                  height={25}
+                />
+                <span className="absolute rounded-full border w-5 text-center  h-5 top-[-10px] right-[-10px] font-medium text-black text-md">
+                  {totalQuantity}
+                </span>
+              </div>
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
@@ -98,16 +111,19 @@ const CartNav = () => {
               >
                 <div className={`{} h-3.5 w-5 ${isOpen ? "fixed" : ""}`}>
                   <div
-                    className={` h-0.5 bg-black w-5 origin-top-left ease-in duration-200 rounded-md ${isOpen ? "rotate-45 translate-x-px" : "rotate-0"
-                      }`}
+                    className={` h-0.5 bg-black w-5 origin-top-left ease-in duration-200 rounded-md ${
+                      isOpen ? "rotate-45 translate-x-px" : "rotate-0"
+                    }`}
                   />
                   <div
-                    className={` h-0.5 w-5 bg-black ease-in duration-200 rounded-md mt-1 ${isOpen ? "hidden" : "block"
-                      }`}
+                    className={` h-0.5 w-5 bg-black ease-in duration-200 rounded-md mt-1 ${
+                      isOpen ? "hidden" : "block"
+                    }`}
                   />
                   <div
-                    className={` h-0.5 w-5 bg-black ease-in duration-200  rounded-md mt-1  ${isOpen ? "-rotate-45 -translate-x-0.5 " : "rotate-0 "
-                      }`}
+                    className={` h-0.5 w-5 bg-black ease-in duration-200  rounded-md mt-1  ${
+                      isOpen ? "-rotate-45 -translate-x-0.5 " : "rotate-0 "
+                    }`}
                   />
                 </div>
               </button>

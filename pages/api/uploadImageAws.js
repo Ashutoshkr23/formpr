@@ -39,29 +39,27 @@ export default async function handle(req, res) {
                     if (err) reject(err)
                     resolve(fields, files);
                     let requestObj = await transformFormData(fields)
-                    let link = ""
-                    for (let i = 0; i < 2; i++) {
-                        // if i is 0 profile picture is uploded to aws else company logo
-                        const ImgData = files.companyLogo[0]
-                        let userId = requestObj.puuid
-                        // Aws code for uploading a Image 
-                        const Time = Date.now()
-                        // Getting File Extension
-                        const ext = ImgData.originalFilename.split('.').pop();
-                        // Generating New File Name
-                        const newFilename = userId + "_" + Time + '.' + ext;
-                        // Sending Image To S3
-                        const upload = await client.send(new PutObjectCommand({
-                            Bucket: bucketName,
-                            Key: newFilename,
-                            Body: fs.readFileSync(ImgData.path),
-                            // ACL: 'public-read',
-                            ContentType: mime.lookup(ImgData.path),
-                        }))
-                        // Getting Link For Image/Images And Storing Inside An Array
-                        link = `https://${bucketName}.s3.amazonaws.com/${newFilename}`
 
-                    }
+                    const ImgData = files.companyLogo[0]
+                    let userId = requestObj.puuid
+                    // Aws code for uploading a Image 
+                    const Time = Date.now()
+                    // Getting File Extension
+                    const ext = ImgData.originalFilename.split('.').pop();
+                    // Generating New File Name
+                    const newFilename = userId + "_" + Time + '.' + ext;
+                    // Sending Image To S3
+                    const upload = await client.send(new PutObjectCommand({
+                        Bucket: bucketName,
+                        Key: newFilename,
+                        Body: fs.readFileSync(ImgData.path),
+                        // ACL: 'public-read',
+                        ContentType: mime.lookup(ImgData.path),
+                    }))
+                    // Getting Link For Image/Images And Storing Inside An Array
+                    const link = `https://${bucketName}.s3.amazonaws.com/${newFilename}`
+
+
 
                     return res.status(200).json({ error: false, message: "successfully updated", result: link })
 
