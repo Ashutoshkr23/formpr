@@ -2,8 +2,8 @@ import { CartContext } from '@/context/CartContext'
 import Image from 'next/image'
 import React, { useContext } from 'react'
 
-const CheckoutComp = ({ cardsArray, handleSubmitFunction }) => {
-    const { handleRemoveCardArr } = useContext(CartContext)
+const CheckoutComp = ({ cardsArray, handleSubmitFunction, }) => {
+    const { handleRemoveCardArr, totalQuantity, totalAmount } = useContext(CartContext)
     console.log(cardsArray)
     return (
         <div className='max-w-[1208px] mx-auto flex lg:justify-between justify-center px-4 xl:px-0'>
@@ -57,11 +57,12 @@ const CheckoutComp = ({ cardsArray, handleSubmitFunction }) => {
                     <div className='px-10 mt-16 space-y-2'>
                         <div className='flex justify-between items-center'>
                             <span className=" text-sm font-bold">Total Items</span>
-                            <span className=" text-sm font-bold text-right">3</span>
+                            <span className=" text-sm font-bold text-right">{totalQuantity}</span>
                         </div>
                         <div className='flex justify-between items-center'>
-                            <p className=" text-sm font-bold leading-10 text-right">₹ 2797</p>
                             <p className=" text-sm font-bold">Subtotal </p>
+
+                            <p className=" text-sm font-bold leading-10 text-right">₹ {totalAmount}</p>
                         </div>
                         <div className='flex justify-between items-center'>
                             <p className="text-sm font-bold leading-relaxed">Shipping</p>
@@ -71,7 +72,7 @@ const CheckoutComp = ({ cardsArray, handleSubmitFunction }) => {
                     <div className='mx-5 mt-16'>
                         <div className="flex items-center justify-between w-full h-10 px-5 border rounded-lg border-black">
                             <p className="text-base font-bold text-center">Total</p>
-                            <p className="w-40 text-base font-bold leading-10 text-right">₹ 2797</p>
+                            <p className="w-40 text-base font-bold leading-10 text-right">₹ {totalAmount}</p>
 
                         </div>
                     </div>

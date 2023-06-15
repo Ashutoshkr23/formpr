@@ -21,6 +21,7 @@ export const CartProvider = ({ children }) => {
     const [cardsArray, setCardsArray] = useState([])
     const [stepState, setStepState] = useState(1);
     const [totalQuantity, setTotalQuantity] = useState(0)
+    const [totalAmount, setTotalAmount] = useState(0)
 
     useEffect(() => {
 
@@ -94,12 +95,15 @@ export const CartProvider = ({ children }) => {
 
         if (cartItems.length > 0 && stepState == 1) {
             let totalQuantity = 0;
+            let totalAmount = 0
             let cards = []
             // Loop over the array and add up the quantity field of each object
             for (var i = 0; i < cartItems.length; i++) {
                 totalQuantity += cartItems[i].quantity;
+                totalAmount += cartItems[i].amount * cartItems[i].quantity;
             }
             setTotalQuantity(totalQuantity)
+            setTotalAmount(totalAmount)
 
             cartItems.map((item, index) => {
                 if (item.quantity > 0) {
@@ -299,6 +303,7 @@ export const CartProvider = ({ children }) => {
         cardsArray,
         stepState,
         totalQuantity,
+        totalAmount,
         clearCart,
         plusCartFunc,
         minusCartFunc,

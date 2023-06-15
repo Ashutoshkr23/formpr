@@ -17,10 +17,10 @@ const CartComponent = () => {
     cardsArray,
     stepState,
     setStepState,
+    totalQuantity,
+    totalAmount,
   } = useContext(CartContext);
   const [cardTypeSelected, setCardTypeSelected] = useState(cartItems[0]);
-  const [totalAmount, setTotalAmount] = useState(0);
-  const [totalQuantity, setTotalQuantity] = useState(0);
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
   // when step2 next button is clicked we will check form is filled properly or not
   const [checkFormValid, setFormValid] = useState(false);
@@ -53,27 +53,7 @@ const CartComponent = () => {
     }
   }, []);
 
-  // console.log(cardTypeSelected, "Card type selected")
 
-  useEffect(() => {
-    if (cartItems.length > 0) {
-      // if (!cardTypeSelected) {
-      //   console.log("runned 2")
-      //   setCardTypeSelected(cartItems[0]);
-      // }
-
-      let totalQuantity = 0;
-      let totalAmount = 0;
-      // Loop over the array and add up the quantity field of each object
-      for (var i = 0; i < cartItems.length; i++) {
-        totalQuantity += cartItems[i].quantity;
-        totalAmount += cartItems[i].amount * cartItems[i].quantity;
-      }
-      setTotalAmount(totalAmount);
-      setTotalQuantity(parseInt(totalQuantity));
-      // setCardTypeSelected(cartItems[selectedTypeIndex]);
-    }
-  }, [cartItems]);
 
   const checkValidation = () => {
     let error = false;

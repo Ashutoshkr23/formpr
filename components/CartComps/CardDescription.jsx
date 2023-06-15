@@ -84,7 +84,7 @@ const CardDescription = ({
                     <div className={`flex space-x-2 justify-start items-center`} >
                       {index == 0 ? <>
                         {
-                          cartItems[0].designs.map((item) => {
+                          cartItems[0]?.designs?.map((item) => {
 
                             return (
                               <div
@@ -98,7 +98,7 @@ const CardDescription = ({
                         }
                       </> : index == 1 ? <div className=" flex flex-wrap  gap-x-4 gap-y-2 w-[75%]">
                         {
-                          cartItems[1].designs.map((item) => {
+                          cartItems[1]?.designs?.map((item) => {
 
                             return (
                               <div
