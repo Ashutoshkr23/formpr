@@ -6,6 +6,8 @@ import { CartContext } from "@/context/CartContext";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 const CartComponent = () => {
   const {
@@ -22,7 +24,9 @@ const CartComponent = () => {
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
   // when step2 next button is clicked we will check form is filled properly or not
   const [checkFormValid, setFormValid] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
+  const router = useRouter()
   // console.log(cartItems, "cart")
   // type 0 :Lite ,1 :Elevate ,2:Supreme ,3 :black
   const handleCardSelection = (type) => {
@@ -123,6 +127,7 @@ const CartComponent = () => {
     };
     console.log(postData, "postData");
     const response = await axios.post("/api/savePurchaseOrder", postData);
+    setIsModalVisible(true);
     console.log(response, "response");
   };
 
@@ -186,6 +191,10 @@ const CartComponent = () => {
     return <>Loading...</>;
   }
 
+  const closeModal = () => {
+    setIsModalVisible(false)
+  }
+
   // console.log(cardsArray, "cardsArray")
   return (
     <div className=" ">
@@ -194,9 +203,8 @@ const CartComponent = () => {
         <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center items-center px-4 xl:px-0">
           <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
             <div
-              className={`rounded-lg text-[#686A6C] font-bold w-1/3 ${
-                stepState == 1 && "border-2 border-slate-700 text-black"
-              } flex justify-center items-center `}
+              className={`rounded-lg text-[#686A6C] font-bold w-1/3 ${stepState == 1 && "border-2 border-slate-700 text-black"
+                } flex justify-center items-center `}
               onClick={() => setStepState(1)}
             >
               <p className="text-center text-[12px] md:text-sm">
@@ -204,9 +212,8 @@ const CartComponent = () => {
               </p>
             </div>
             <div
-              className={`rounded-lg text-[#686A6C] font-bold  w-1/3 ${
-                stepState == 2 && "border-2 border-slate-700 text-black"
-              } flex justify-center items-center `}
+              className={`rounded-lg text-[#686A6C] font-bold  w-1/3 ${stepState == 2 && "border-2 border-slate-700 text-black"
+                } flex justify-center items-center `}
               onClick={() => setStepState(2)}
             >
               <p className="text-center text-[12px] md:text-sm">
@@ -214,9 +221,8 @@ const CartComponent = () => {
               </p>
             </div>
             <div
-              className={` rounded-lg text-[#686A6C] font-bold w-1/3 ${
-                stepState == 3 && "border-2 border-slate-700 text-black"
-              } flex justify-center items-center `}
+              className={` rounded-lg text-[#686A6C] font-bold w-1/3 ${stepState == 3 && "border-2 border-slate-700 text-black"
+                } flex justify-center items-center `}
               onClick={() => stepThreeOnclick()}
             >
               <p className="text-center text-[12px] md:text-sm">
@@ -282,6 +288,38 @@ const CartComponent = () => {
           />
         )}
       </div>
+      {isModalVisible && (
+        <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen  text-center  sm:p-0">
+            <div
+              className="fixed inset-0 transition-opacity"
+              aria-hidden="true"
+            // onClick={closeModal}
+            >
+              <div className="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+            <div
+              className="inline-block min-h-[450px] align-bottom bg-gradient-to-br from-[#67D4E1] to-[#8DF6B8] rounded-lg text-left overflow-hidden shadow-xl transform transition-all  sm:align-middle sm:max-w-lg sm:w-full sm:p-6"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-headline"
+            >
+              <div className="h-full w-full flex flex-col justify-center items-center">
+
+                <Image src={"/assets/images/rightImage.png"} height={200} width={200} alt="right icon" className="" />
+                <p className="text-3xl font-bold text-center mt-6">Payment Completed</p>
+                <p className=" text-sm font-medium text-center text-[#626262] mt-6">Thank you for your purchase!</p>
+                <button className="text-xs bg-black shadow border rounded-lg border-black text-white font-medium mt-6 px-6 py-2" onClick={() => {
+                  closeModal();
+                  router.push("/manageCards")
+                }} >
+                  Go to Manage Cards and create your profile
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="flex justify-center pt-10 lg:hidden ">
         <button className="w-[350px] shadow-xl h-[40px] bg-black text-white rounded-[10px]">
           NEXT
