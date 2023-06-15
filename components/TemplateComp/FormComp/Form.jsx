@@ -21,6 +21,13 @@ function Form() {
     const [profileImg, setProfileImg] = useState('/assets/images/templateimg/andrew.png')
     const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
+    const [selectedInput, setSelectedInput] = useState('');
+
+    // Function to update the selected input
+    const handleSelectInput = (inputName) => {
+        setSelectedInput(inputName);
+    };
+
     
     useEffect(() => {
         if (selectedtemplate === '1') {
@@ -127,6 +134,8 @@ function Form() {
                           onBioChange={handleBioChange}
                           onAddressChange={handleAddressChange}
                           onPhoneNumberChange={handlePhoneNumberChange} />
+                    <Socials 
+                    onSelectInput={handleSelectInput} />
                 </div>
                   <div className='w-[350px] xl:w-[390px]  flex justify-center'>
                     <div className='relative'>

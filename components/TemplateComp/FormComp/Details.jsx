@@ -125,10 +125,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     maxLength={maxLength}
                 />
                 <p>{remainingChars} characters remaining</p> 
-
             </div>
-            
-
         </div>
     )
 }
