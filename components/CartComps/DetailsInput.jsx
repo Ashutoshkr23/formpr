@@ -56,12 +56,14 @@ function DetailsInput({ card, index, checkFormValid }) {
   };
 
   const handleAwsUpload = async (image) => {
+    console.log("runned 3");
+
     const formData = new FormData();
     formData.append("companyLogo", image);
     formData.append("puuid", userProfile.puuid);
 
     const uploadImage = await axios.post("/api/uploadImageAws", formData);
-
+    console.log("runned 4");
     console.log(uploadImage, "uploadImageAws");
     if (uploadImage.status == 200 && !uploadImage.data.error) {
       const awsLink = uploadImage.data.result;
@@ -71,16 +73,15 @@ function DetailsInput({ card, index, checkFormValid }) {
   };
 
   const handleFileChange = (event) => {
-
+    console.log("runned 1");
     const file = event.target.files[0];
     const fileSizeInMB = file?.size / (1024 * 1024);
-    // console.log("fileSizeInMB: " + fileSizeInMB);
-    if (fileSizeInMB > 1) {
-      setErrorMessage("File size exceeds the limit of 1MB.");
-      toast.error("Maximum file size 1MB Exceeded !");
+    console.log("fileSizeInMB: " + fileSizeInMB);
+    if (fileSizeInMB > 5) {
+      setErrorMessage("File size exceeds the limit of 5MB.");
     } else {
       setErrorMessage("");
-      // console.log("runned 2");
+      console.log("runned 2");
 
       handleAwsUpload(file);
       // handleName(event.target.name, card.key, file);
@@ -98,9 +99,9 @@ function DetailsInput({ card, index, checkFormValid }) {
     setCardColor(color.hex);
   };
   return (
-    <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto my-6 mx-4 sm:mx-1">
+    <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto my-6  sm:mx-1">
       {card.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
-        <div className="mt-4 px-4 h-full lg:h-[373px] bg-white rounded-xl drop-shadow-white flex flex-col lg:flex-row items-center justify-between">
+        <div className="mt-4  h-full lg:h-[373px] bg-white rounded-xl drop-shadow-white flex flex-col lg:flex-row items-center justify-between">
           {/* supreme */}
           <div
             className="absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] hover:text-black  items-center bg-black text-[10px] font-bold text-white h-6 w-20"
@@ -186,7 +187,7 @@ function DetailsInput({ card, index, checkFormValid }) {
               </div>
             </div>
             <div className="flex">
-              <div className="flex flex-col gap-6 mt-4 lg:mt-0 items-center lg:items-stretch">
+              <div className="flex flex-col gap-6 mt-4 lg:mt-0  lg:items-stretch">
                 <div className={`card ${isFlipped ? "flipped" : ""}`}>
                   <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
                     <div
@@ -265,9 +266,9 @@ function DetailsInput({ card, index, checkFormValid }) {
                   </div>
                 </div>
                 <div className="flex justify-between ">
-                  <div className="flex items-center">
-                    <p className="lg:text-sm text-xs">color:</p>
-                    <div className="ml-1 text-center w-32 h-8 bg-gradient-to-b from-white to-gray-400 shadow-inner border-2 rounded-lg border-black">
+                  <div className="flex items-center ">
+                    <p className="sm:text-sm text-xs">color:</p>
+                    <div className="ml-1 text-center w-20 sm:w-32 h-8 bg-gradient-to-b from-white to-gray-400 shadow-inner border-2 rounded-lg border-black">
                       <p> {showPicker ? cardColor : cardColor}</p>
                     </div>
                     <Image
@@ -289,28 +290,28 @@ function DetailsInput({ card, index, checkFormValid }) {
                     )}
                   </div>
                   <div className="flex gap-1 items-center">
-                    <p className="lg:text-sm text-xs pl-4 lg:pl-0 ">
+                    <p className="sm:text-sm text-xs pl-1 lg:pl-0 ">
                       font color:
                     </p>
                     <div
-                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-5 h-5 ${font === "white"
-                        ? "scale-110 border-2 border-black "
-                        : ""
+                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${font === "white"
+                          ? "scale-110 border-2 border-black "
+                          : ""
                         }
                     `}
                       onClick={() => setFont("white")}
                     ></div>
                     <div
-                      className={`rounded-full cursor-pointer bg-[#000000] w-5 h-5 ${font === "black"
-                        ? "scale-110 border-2 border-yellow-500 "
-                        : ""
+                      className={`rounded-full cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${font === "black"
+                          ? "scale-110 border-2 border-yellow-500 "
+                          : ""
                         }`}
                       onClick={() => setFont("black")}
                     ></div>
                   </div>
                 </div>
               </div>
-              <div className=" ml-1 lg:ml-4 mt-4 lg:mt-0">
+              <div className="mt-4 lg:mt-0 ml-4 hidden sm:block">
                 <Image
                   src={"/assets/images/cart-images/flipImage.png"}
                   className=" cursor-pointer"
@@ -320,16 +321,26 @@ function DetailsInput({ card, index, checkFormValid }) {
                   onClick={handleFlip}
                 />
               </div>
+              <div className="  sm:hidden mt-4 ml-1 sm:ml-4">
+                <Image
+                  src={"/assets/images/cart-images/flipImage.png"}
+                  className=" cursor-pointer"
+                  alt="flip"
+                  height={25}
+                  width={25}
+                  onClick={handleFlip}
+                />
+              </div>
             </div>
           </div>
-          <div className="w-[350px] xl:w-[390px]">
+          <div className="max-w-[340px] px-2 sm:px-0 sm:w-[350px] xl:w-[390px]">
             <h2>{card.cardTypeName}</h2>
             <div className="flex mt-8">
               <input
                 className={`border outline-none ${checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
+                  } w-[150px] sm:w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -358,16 +369,16 @@ function DetailsInput({ card, index, checkFormValid }) {
             <div>
               <div className="flex mt-4">
                 {card.fileName ? ( // Display the file name if it exists
-                  <p className="py-2 cursor-pointer flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden" onClick={handleLabelClick}>
+                  <p className="py-2 flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden">
                     {card.fileName}
                   </p>
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`cursor-pointer py-2 flex justify-between border ${checkFormValid &&
+                    className={`cursor-pointer py-2 flex justify-between border text-xs sm:text-sm lg:text-base  ${checkFormValid &&
                       card?.fileName?.length == 0 &&
-                      "border-2 border-red-400"
-                      }  w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
+                      "border-2 border-red-400 "
+                      }  w-[150px] sm:w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-2 sm:px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -414,7 +425,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                 className={`border outline-none mt-4 ${checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
+                  } w-[150px] sm:w-[180px] mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"
@@ -546,7 +557,7 @@ function DetailsInput({ card, index, checkFormValid }) {
             <div>
               <div className="flex mt-4">
                 {card.fileName ? ( // Display the file name if it exists
-                  <p className="py-2 cursor-pointer flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden" onClick={handleLabelClick}>
+                  <p className="py-2 flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden">
                     {card.fileName}
                   </p>
                 ) : (

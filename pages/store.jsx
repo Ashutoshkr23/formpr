@@ -57,7 +57,7 @@ export default function Home() {
             index={3}
           />
         </div>
-        <LoopBlack text={"BUY FOR ₹ 1899"} />
+        <LoopBlack text={"Coming Soon"} />
       </div>
       <Footer />
     </div>
