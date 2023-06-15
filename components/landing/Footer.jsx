@@ -28,9 +28,11 @@ const Footer = () => {
 
             <div className="flex gap-x-8">
               <div className="flex flex-col gap-y-7 ">
-                <div>
-                  <p className="text-[14px] font-bold">PRIVACY POLICY</p>
-                </div>
+                <Link href='/PrivacyPolicy'>
+                  <div>
+                    <p className="text-[14px] font-bold cursor-pointer">PRIVACY POLICY</p>
+                  </div>
+                </Link>
                 <div className="flex space-x-5  items-center ">
                   <div>
                     <a
@@ -60,9 +62,11 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div>
-                <p className="text-[14px] font-bold">TERMS AND CONDITIONS</p>
-              </div>
+              <Link href='/RefundPolicy'>
+                <div>
+                  <p className="text-[14px] font-bold cursor-pointer uppercase">refund policy</p>
+                </div>
+              </Link>
             </div>
 
             <div className="flex flex-col pt-6 ">
@@ -103,12 +107,16 @@ const Footer = () => {
               alt="loop logo"
             />
           </div>
-          <div className=" pt-10 font-bold">
-            <p>PRIVACY POLICY</p>
-          </div>
-          <div className=" pt-[30px] font-bold">
-            <p>TERMS AND CONDITIONS</p>
-          </div>
+          <Link href='/PrivacyPolicy'>
+            <div className=" pt-10 font-bold cursor-pointer">
+              <p>PRIVACY POLICY</p>
+            </div>
+          </Link>
+          <Link href='/RefundPolicy'>
+            <div className=" pt-[30px] font-bold cursor-pointer uppercase">
+              <p>refund policy</p>
+            </div>
+          </Link>
           <div className=" pt-[30px] font-bold">
             <p>CONTACT US </p>
           </div>
