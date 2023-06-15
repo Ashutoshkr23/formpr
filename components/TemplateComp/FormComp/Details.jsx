@@ -124,7 +124,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     onChange={handleBioChange}
                     maxLength={maxLength}
                 />
-                <p>{remainingChars} characters remaining</p> 
+                {bio.length > 0 && <p>{remainingChars} characters remaining</p>}
             </div>
         </div>
     )

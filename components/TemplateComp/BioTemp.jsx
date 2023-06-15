@@ -9,7 +9,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
             <div className="pt-[11px] text-[12px]">
                 <textarea
                     className={`bg-transparent w-full resize-none ${text1}`}
-                    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis eleifend arcu in fringilla. "
+                    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis"
                     value={bio}
                     readOnly={true}
                 //   onChange={handleChange}

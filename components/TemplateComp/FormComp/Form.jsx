@@ -21,12 +21,18 @@ function Form() {
     const [profileImg, setProfileImg] = useState('/assets/images/templateimg/andrew.png')
     const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
-    const [selectedInput, setSelectedInput] = useState('');
 
-    // Function to update the selected input
-    const handleSelectInput = (inputName) => {
-        setSelectedInput(inputName);
+    const [visibleInputs, setVisibleInputs] = useState(['whatsapp', 'mail', 'linkedin']);
+
+    // Function to update the visible inputs
+    const handleToggleInput = (inputName) => {
+        if (visibleInputs.includes(inputName)) {
+            setVisibleInputs(visibleInputs.filter((name) => name !== inputName));
+        } else {
+            setVisibleInputs([...visibleInputs, inputName]);
+        }
     };
+    
 
     
     useEffect(() => {
@@ -135,7 +141,9 @@ function Form() {
                           onAddressChange={handleAddressChange}
                           onPhoneNumberChange={handlePhoneNumberChange} />
                     <Socials 
-                    onSelectInput={handleSelectInput} />
+                          visibleInputs={visibleInputs}
+                          setVisibleInputs={setVisibleInputs} 
+                          onToggleInput={handleToggleInput} />
                 </div>
                   <div className='w-[350px] xl:w-[390px]  flex justify-center'>
                     <div className='relative'>
