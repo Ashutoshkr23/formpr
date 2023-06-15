@@ -27,6 +27,7 @@ const Template = ({
     loop,
     gmail,
     instaLink,
+    visibleInputs,
     watspLink,
     linkedLink,
     profile,
@@ -114,6 +115,7 @@ console.log(gradient2)
                             linkedLink={linkedLink}
                             faceLink={faceLink}
                             gmailLink={gmailLink}
+                            visibleInputs={visibleInputs}
                         />
                     </div>
 

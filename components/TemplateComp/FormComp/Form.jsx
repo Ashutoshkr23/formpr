@@ -167,6 +167,7 @@ function Form() {
                               type={themes[0].type}
                               loop={themes[0].loop}
                               border={themes[0].border}
+                              visibleInputs={visibleInputs}
                               profileImg={profileImg}
                               company={company}
                               bio={bio}
@@ -187,6 +188,7 @@ function Form() {
                               type={themes[1].type}
                               loop={themes[1].loop}
                               border={themes[1].border}
+                              visibleInputs={visibleInputs}
                               profileImg={profileImg}
                               company={company}
                               bio={bio}
@@ -207,6 +209,7 @@ function Form() {
                               type={themes[2].type}
                               loop={themes[2].loop}
                               border={themes[2].border}
+                              visibleInputs={visibleInputs}
                               profileImg={profileImg}
                               company={company}
                               bio={bio}
@@ -227,7 +230,8 @@ function Form() {
                               btntext={themes[3].btntext}
                               loop={themes[3].loop}
                               border={themes[3].border}
-                              profileimg={profileimg}
+                              visibleInputs={visibleInputs}
+                              profileImg={profileImg}
                               company={company}
                               bio={bio}
                               website={companyLink}
