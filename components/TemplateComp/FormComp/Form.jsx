@@ -29,7 +29,10 @@ function Form() {
         if (visibleInputs.includes(inputName)) {
             setVisibleInputs(visibleInputs.filter((name) => name !== inputName));
         } else {
-            setVisibleInputs([...visibleInputs, inputName]);
+            if (visibleInputs.length < 6) {
+                setVisibleInputs([...visibleInputs, inputName]);
+            }
+
         }
     };
     
