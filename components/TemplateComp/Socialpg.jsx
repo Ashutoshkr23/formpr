@@ -5,18 +5,14 @@ import Image from "next/image";
 const Socialpg = ({
   text1,
   type,
-  instaLink,
-  watspLink,
-  linkedLink,
-  faceLink,
-  gmailLink,
-  visibleInputs
+  visibleInputs,
+  inputValues
 }) => {
   return (
     <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] mx-6 ">
       {visibleInputs.includes('whatsapp') && (
       <div className="flex flex-col items-center">
-        <Link href={`${watspLink}`}>
+          <Link target="_blank" href={`https://wa.me/${inputValues.whatsapp}`}>
           <Image
             src={`/assets/images/social/${type}/watsp.png`}
             alt="WhatsApp Logo"
@@ -29,7 +25,7 @@ const Socialpg = ({
       )}
       {visibleInputs.includes('mail') && (
       <div className="flex flex-col  items-center">
-        <Link href={`${gmailLink}`}>
+          <Link target="_blank" href={`mailto:${inputValues.mail}`}>
           <Image
             src={`/assets/images/social/${type}/email.png`}
             alt="gmail Logo"
@@ -42,7 +38,7 @@ const Socialpg = ({
       )}
       {visibleInputs.includes('linkedin') && (
       <div className="flex flex-col  items-center">
-        <Link href={`${linkedLink}`}>
+          <Link target="_blank" href={`${inputValues.linkedin}`}>
           <Image
             src={`/assets/images/social/${type}/linked.png`}
             alt="linkedin Logo"
@@ -55,7 +51,7 @@ const Socialpg = ({
       )}
       {visibleInputs.includes('instagram') && (
       <div className="flex flex-col  items-center">
-        <Link href={`${instaLink}`}>
+          <Link target="_blank" href={`${inputValues.instagram}`}>
           <Image
             src={`/assets/images/social/${type}/insta.png`}
             alt="instagram Logo"
@@ -68,7 +64,7 @@ const Socialpg = ({
       )}
       {visibleInputs.includes('facebook') && (
       <div className="flex flex-col  items-center">
-        <Link href={`${faceLink}`}>
+          <Link target="_blank" href={`${inputValues.facebook}`}>
           <Image
             src={`/assets/images/social/${type}/facebook.png`}
             alt="facebook Logo"
@@ -81,7 +77,7 @@ const Socialpg = ({
       )}
       {visibleInputs.includes('youtube') && (
       <div className="flex flex-col  items-center">
-        <Link href={`${faceLink}`}>
+          <Link target="_blank" href={`${inputValues.youtube}`}>
           <Image
             src={`/assets/images/social/${type}/Youtube.png`}
             alt="Youtube Logo"
@@ -94,7 +90,7 @@ const Socialpg = ({
       )}
       {visibleInputs.includes('twitter') && (
       <div className="flex flex-col  items-center">
-        <Link href={`${faceLink}`}>
+          <Link target="_blank" href={`${inputValues.twitter}`}>
           <Image
             src={`/assets/images/social/${type}/Twitter.png`}
             alt="Twitter Logo"
@@ -107,7 +103,7 @@ const Socialpg = ({
       )}
       {visibleInputs.includes('reddit') && (
       <div className="flex flex-col  items-center">
-        <Link href={`${faceLink}`}>
+          <Link target="_blank" href={`${inputValues.reddit}`}>
           <Image
             src={`/assets/images/social/${type}/Reddit.png`}
             alt="Reddit Logo"
@@ -120,7 +116,7 @@ const Socialpg = ({
       )}
       {visibleInputs.includes('behance') && (
       <div className="flex flex-col  items-center">
-        <Link href={`${faceLink}`}>
+        <Link target="_blank" href={`${inputValues.behance}`}>
           <Image
             src={`/assets/images/social/${type}/Behance.png`}
             alt="Behance Logo"

@@ -22,6 +22,30 @@ function Form() {
     const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
 
+    const [inputValues, setInputValues] = useState({
+        whatsapp: '',
+        mail: '',
+        linkedin: '',
+        instagram: '',
+        facebook: '',
+        youtube: '',
+        twitter: '', 
+        behance:'',
+        reddit:'',
+
+    });
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setInputValues((prevInputValues) => ({
+            ...prevInputValues,
+            [name]: value,
+        }));
+    };
+
+
+
+
     const [visibleInputs, setVisibleInputs] = useState(['whatsapp', 'mail', 'linkedin']);
 
     // Function to update the visible inputs
@@ -136,6 +160,7 @@ function Form() {
                           onAddressChange={handleAddressChange}
                           onPhoneNumberChange={handlePhoneNumberChange} />
                     <Socials 
+                          inputValues={inputValues} handleInputChange={handleInputChange}
                           visibleInputs={visibleInputs}
                           setVisibleInputs={setVisibleInputs} 
                           onToggleInput={handleToggleInput} />
@@ -159,6 +184,7 @@ function Form() {
                               type={themes[selectedtemplate].type}
                               loop={themes[selectedtemplate].loop}
                               border={themes[selectedtemplate].border}
+                              inputValues={inputValues}
                               visibleInputs={visibleInputs}
                               profileImg={profileImg}
                               company={company}

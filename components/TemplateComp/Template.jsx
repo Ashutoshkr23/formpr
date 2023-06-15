@@ -25,14 +25,9 @@ const Template = ({
     text3,
     btn,
     loop,
-    gmail,
-    instaLink,
     visibleInputs,
-    watspLink,
-    linkedLink,
     profile,
-    faceLink,
-    gmailLink,
+    inputValues
 }) => {
     const downloadVCard = () => {
         // Create a vCard string from the contact data
@@ -50,7 +45,6 @@ console.log(gradient2)
         // Save the Blob as a file using the file-saver library
         saveAs(blob, "hello.vcf");
     };
-    console.log(instaLink);
 
     const fullName = fname || lname ? `${fname} ${lname}` : "Andrew Darren";
 
@@ -110,11 +104,7 @@ console.log(gradient2)
                         <Socialpg
                             text1={text1}
                             type={type}
-                            instaLink={instaLink}
-                            watspLink={watspLink}
-                            linkedLink={linkedLink}
-                            faceLink={faceLink}
-                            gmailLink={gmailLink}
+                            inputValues={inputValues}
                             visibleInputs={visibleInputs}
                         />
                     </div>
