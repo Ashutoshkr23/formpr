@@ -122,6 +122,18 @@ function Socials({ visibleInputs, onToggleInput ,setVisibleInputs }) {
             </div>
           </div>
           )}
+          {visibleInputs.includes('behance') && (
+            <div className='flex items-center mt-7 gap-2'>
+              <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Behance</div>
+              <div className='h-[30px] w-[30px]'>
+                <Image src="/assets/images/social/folder1/Behance.png" height={30} width={30} />
+              </div>
+              <input type="text" id="Behance" name="Behance" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md' />
+              <div className='h-[20px] w-[20px]' onClick={() => handleHide('Behance')}>
+                <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} />
+              </div>
+            </div>
+          )}
           <div className='mt-12 relative w-20 - '>
           <div className=' h-10 w-28  text-xs bg-white border-1 flex justify-center items-center rounded-md' onClick={handleButtonClick}>Add Link</div>
             {showMenu && (
@@ -142,6 +154,8 @@ function Socials({ visibleInputs, onToggleInput ,setVisibleInputs }) {
                 <button onClick={() => handleToggle('twitter')}>Twitter</button>)}
               {!visibleInputs.includes('reddit') && (
                 <button onClick={() => handleToggle('reddit')}>Reddit</button>)}
+              {!visibleInputs.includes('behance') && (
+                  <button onClick={() => handleToggle('behance')}>Behance</button>)}
           </div>
             )}
           </div>
