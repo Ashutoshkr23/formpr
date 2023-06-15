@@ -1,4 +1,5 @@
 import ContactForm from '@/components/ContactForm/ContactForm';
+import Form from '@/components/TemplateComp/FormComp/Form';
 import { CartContext } from '@/context/CartContext';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -37,8 +38,13 @@ export default function Page() {
         return <h5>Loading...</h5>
     }
     return <div>
+        {/*        {cuuid && cardValid ?
+            <ContactForm cuuid={cuuid} /> : !cardValid ? <h5>Invalid Card</h5> : <h5>Something went wrong ! No Card id found</h5>}*/}
+            {/**/}
         {cuuid && cardValid ?
-            <ContactForm cuuid={cuuid} /> : !cardValid ? <h5>Invalid Card</h5> : <h5>Something went wrong ! No Card id found</h5>}
+            <Form cuuid={cuuid} /> : !cardValid ? <h5>Invalid Card</h5> : <h5>Something went wrong ! No Card id found</h5>}
+            
+
     </div>
 
 }

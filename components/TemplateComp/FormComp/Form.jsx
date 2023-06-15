@@ -1,14 +1,15 @@
 import Template from '../Template';
-import React , {useState , useEffect} from 'react'
+import React , {useState , useEffect ,useContext} from 'react'
 import themes from '../Themes';
 import ChooseTemplates from './ChooseTemplates'
 import Details from './Details'
 import Socials from './Socials'
+import axios from 'axios';
 import Cover from './Cover'
 import Image from 'next/image';
+import { CartContext } from '@/context/CartContext';
 
-function Form() {
-   
+function Form({ cuuid }) {
     const [company, setCompany] = useState('');
     const [name, setName] = useState('');
     const [role, setRole] = useState('');
@@ -16,11 +17,11 @@ function Form() {
     const [bio, setBio] = useState('');
     const [address, setAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [location, setLocation] = useState('');
     const [selectedtemplate , setSelectedTemplate] = useState('0')
     const [profileImg, setProfileImg] = useState('/assets/images/templateimg/andrew.png')
     const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
+    const { userProfile } = useContext(CartContext);
 
     const [inputValues, setInputValues] = useState({
         whatsapp: '',
@@ -109,6 +110,91 @@ function Form() {
         setPhoneNumber(value);
     };
 
+    const handleClick = async () => {
+        try {
+            const formData = new FormData();
+
+            formData.append('company', company);
+            console.log('company:', company);
+
+            formData.append('name', name);
+            console.log('name:', name);
+
+            formData.append('role', role);
+            console.log('role:', role);
+
+            formData.append('companyLink', companyLink);
+            console.log('companyLink:', companyLink);
+
+            formData.append('bio', bio);
+            console.log('bio:', bio);
+
+            formData.append('address', address);
+            console.log('address:', address);
+
+            formData.append('mobileNumber', phoneNumber);
+            console.log('mobileNumber:', phoneNumber);
+
+            formData.append('selectedTemplate', selectedtemplate);
+            console.log('selectedTemplate:', selectedtemplate);
+
+            formData.append('profileImg', profileImg);
+            console.log('profileImg:', profileImg);
+
+            formData.append('whatsappNumber', inputValues.whatsapp);
+            console.log('whatsappNumber:', inputValues.whatsapp);
+
+            formData.append('mail', inputValues.mail);
+            console.log('mail:', inputValues.mail);
+
+            formData.append('linkedin', inputValues.linkedin);
+            console.log('linkedin:', inputValues.linkedin);
+
+            formData.append('instagram', inputValues.instagram);
+            console.log('instagram:', inputValues.instagram);
+
+            formData.append('twitter', inputValues.twitter);
+            console.log('twitter:', inputValues.twitter);
+
+            formData.append('youtube', inputValues.youtube);
+            console.log('youtube:', inputValues.youtube);
+
+            formData.append('facebook', inputValues.facebook);
+            console.log('facebook:', inputValues.facebook);
+
+            formData.append('behance', inputValues.behance);
+            console.log('behance:', inputValues.behance);
+
+            formData.append('reddit', inputValues.reddit);
+            console.log('reddit:', inputValues.reddit);
+
+            // Append inputValues
+            for (const key in inputValues) {
+                if (inputValues.hasOwnProperty(key)) {
+                    formData.append(key, inputValues[key]);
+                    console.log(key + ':', inputValues[key]);
+                }
+            }
+
+            // Append additional data if needed
+            formData.append('puuid', userProfile.puuid);
+            console.log('puuid:', userProfile.puuid);
+
+            formData.append('cuuid', cuuid);
+            console.log('cuuid:', cuuid);
+
+            const response = await axios.post('/api/handleFormData', formData);
+            console.log('Response:', response.data);
+
+            // Handle response
+            // ...
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+
+
 
   return (
     <div>
@@ -128,7 +214,7 @@ function Form() {
 
                               <button
                                   className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px]"
-                                  onClick={handleSaveClick}
+                                  onClick={handleClick}
                               >
                                   SAVE
                               </button>

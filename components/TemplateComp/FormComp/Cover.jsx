@@ -11,8 +11,6 @@ function Cover({cover , setCover}) {
         setCover(imageUrl);
     };
 
-    console.log("cover" +cover)
-
     const Cover1 = "/assets/images/templateimg/BGCover1.png"
     const Cover2 = "/assets/images/templateimg/BGCover2.png"
     const Cover3 = "/assets/images/templateimg/BGCover3.png"

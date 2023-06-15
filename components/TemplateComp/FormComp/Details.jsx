@@ -20,10 +20,6 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
 
     const remainingChars = maxLength - bio.length;
     
-
-
-    console.log("hello" + profileImg)
-
     const handleCompanyChange = (e) => {
         const value = e.target.value;
         onCompanyChange(value);
