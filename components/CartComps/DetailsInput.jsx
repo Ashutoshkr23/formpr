@@ -99,9 +99,9 @@ function DetailsInput({ card, index, checkFormValid }) {
     setCardColor(color.hex);
   };
   return (
-    <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] mx-auto my-6">
+    <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto my-6 mx-4 sm:mx-1">
       {card.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
-        <div className="mt-4 px-4 h-[373px] bg-white rounded-xl drop-shadow-white flex items-center justify-between">
+        <div className="mt-4 px-4 h-full lg:h-[373px] bg-white rounded-xl drop-shadow-white flex flex-col lg:flex-row items-center justify-between">
           {/* supreme */}
           <div
             className="absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] hover:text-black  items-center bg-black text-[10px] font-bold text-white h-6 w-20"
@@ -110,8 +110,8 @@ function DetailsInput({ card, index, checkFormValid }) {
             REMOVE <span className="text-base font-medium pl-2">X</span>
           </div>
 
-          <div className="flex  gap-[42px] ">
-            <div className=" flex flex-col gap-4">
+          <div className="flex lg:flex-row flex-col-reverse gap-[42px] ">
+            <div className=" flex flex-col gap-4 items-center">
               <p className="text-sm">Abstract Design</p>
               <div className="flex gap-2">
                 <Image
@@ -193,16 +193,16 @@ function DetailsInput({ card, index, checkFormValid }) {
               </div>
             </div>
             <div className="flex">
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-6 mt-4 lg:mt-0 items-center lg:items-stretch">
                 <div className={`card ${isFlipped ? "flipped" : ""}`}>
-                  <div className="w-[400px] h-[250px]">
-                    <div className={` card-inner w-[400px] h-[250px]`}>
+                  <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
+                    <div
+                      className={` card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
+                    >
                       <div className="card-front">
                         <div
-                          className={` drop-shadow-white rounded-2xl relative w-full `}
+                          className={` drop-shadow-white rounded-2xl relative lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
                           style={{
-                            width: 400,
-                            height: 250,
                             backgroundColor: cardColor,
                           }}
                         >
@@ -221,20 +221,33 @@ function DetailsInput({ card, index, checkFormValid }) {
                             alt="icon"
                           />
                           {design !== 6 && (
-                            <Image
-                              className="absolute top-0 left-0"
-                              src={`/assets/images/storeImages/Supreme/Abstract/Des${design}.png`}
-                              height={250}
-                              width={400}
-                              alt="icon"
-                            />
+                            <div>
+                              <div className="hidden lg:block">
+                                <Image
+                                  className="absolute top-0 left-0"
+                                  src={`/assets/images/storeImages/Supreme/Abstract/Des${design}.png`}
+                                  height={250}
+                                  width={400}
+                                  alt="icon"
+                                />
+                              </div>
+                              <div className="lg:hidden">
+                                <Image
+                                  className="absolute top-0 left-0"
+                                  src={`/assets/images/storeImages/Supreme/Abstract/Des${design}.png`}
+                                  height={172}
+                                  width={300}
+                                  alt="icon"
+                                />
+                              </div>
+                            </div>
                           )}
                           <div className="absolute bottom-8 left-6">
-                            <h2
-                              className={`text-[20px]  font-semibold text-${font}`}
+                            <p
+                              className={`lg:text-[20px] text:sm  font-semibold text-${font}`}
                             >
                               John DOE
-                            </h2>
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -242,10 +255,8 @@ function DetailsInput({ card, index, checkFormValid }) {
                       {/* back card */}
 
                       <div
-                        className={`card-back drop-shadow-white rounded-2xl relative w-[400px] h-[250px] `}
+                        className={`card-back drop-shadow-white rounded-2xl relative lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
                         style={{
-                          width: 400,
-                          height: 250,
                           backgroundColor: cardColor,
                         }}
                       >
@@ -262,7 +273,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                 </div>
                 <div className="flex justify-between ">
                   <div className="flex items-center">
-                    <p>color:</p>
+                    <p className="lg:text-sm text-xs">color:</p>
                     <div className="ml-1 text-center w-32 h-8 bg-gradient-to-b from-white to-gray-400 shadow-inner border-2 rounded-lg border-black">
                       <p> {showPicker ? cardColor : cardColor}</p>
                     </div>
@@ -285,7 +296,9 @@ function DetailsInput({ card, index, checkFormValid }) {
                     )}
                   </div>
                   <div className="flex gap-1 items-center">
-                    <p>font color:</p>
+                    <p className="lg:text-sm text-xs pl-4 lg:pl-0 ">
+                      font color:
+                    </p>
                     <div
                       className={`rounded-full bg-[#ECECEC] cursor-pointer w-5 h-5 ${
                         font === "white"
@@ -306,7 +319,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                   </div>
                 </div>
               </div>
-              <div className=" ml-4">
+              <div className=" ml-1 lg:ml-4 mt-4 lg:mt-0">
                 <Image
                   src={"/assets/images/cart-images/flipImage.png"}
                   className=" cursor-pointer"
