@@ -17,7 +17,7 @@ function Form() {
     const [address, setAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [location, setLocation] = useState('');
-    const [selectedtemplate , setSelectedTemplate] = useState('1')
+    const [selectedtemplate , setSelectedTemplate] = useState('0')
     const [profileImg, setProfileImg] = useState('/assets/images/templateimg/andrew.png')
     const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
@@ -36,17 +36,15 @@ function Form() {
         }
     };
     
-
-    
     useEffect(() => {
-        if (selectedtemplate === '1') {
+        if (selectedtemplate === '0') {
             setCover(themes[0].gradient1);
-        } else if (selectedtemplate === '2') {
+        } else if (selectedtemplate === '1') {
             setCover(themes[1].gradient1);
+        } else if (selectedtemplate === '2') {
+            setCover(themes[2].gradient1);
         } else if (selectedtemplate === '3') {
             setCover(themes[3].gradient1);
-        } else if (selectedtemplate === '4') {
-            setCover(themes[2].gradient1);
         } else  {
             setCover(themes[0].gradient1); // Set a default value if needed
         }
@@ -86,12 +84,6 @@ function Form() {
     const handlePhoneNumberChange = (value) => {
         setPhoneNumber(value);
     };
-
-    const handleLocationChange = (value) => {
-        setLocation(value);
-    };
-
-    console.log({themes})
 
 
   return (
@@ -155,18 +147,18 @@ function Form() {
 
                           </div>
                     </div>
-                      {selectedtemplate === '1' && 
+                      {selectedtemplate && 
                           <Template
                               gradient1={cover}
-                              gradient2={themes[0].gradient2}
-                              text1={themes[0].text1}
-                              text2={themes[0].text2}
-                              text3={themes[0].text3}
-                              btn={themes[0].btn}
-                              btntext={themes[0].btntext}
-                              type={themes[0].type}
-                              loop={themes[0].loop}
-                              border={themes[0].border}
+                              gradient2={themes[selectedtemplate].gradient2}
+                              text1={themes[selectedtemplate].text1}
+                              text2={themes[selectedtemplate].text2}
+                              text3={themes[selectedtemplate].text3}
+                              btn={themes[selectedtemplate].btn}
+                              btntext={themes[selectedtemplate].btntext}
+                              type={themes[selectedtemplate].type}
+                              loop={themes[selectedtemplate].loop}
+                              border={themes[selectedtemplate].border}
                               visibleInputs={visibleInputs}
                               profileImg={profileImg}
                               company={company}
@@ -176,70 +168,6 @@ function Form() {
                               fname={name}
                               designation={role}
                           />}
-                      {selectedtemplate === '2' &&
-                          <Template
-                              gradient1={cover}
-                              gradient2={themes[1].gradient2}
-                              text1={themes[1].text1}
-                              text2={themes[1].text2}
-                              text3={themes[1].text3}
-                              btn={themes[1].btn}
-                              btntext={themes[1].btntext}
-                              type={themes[1].type}
-                              loop={themes[1].loop}
-                              border={themes[1].border}
-                              visibleInputs={visibleInputs}
-                              profileImg={profileImg}
-                              company={company}
-                              bio={bio}
-                              website={companyLink}
-                              mobile={phoneNumber}
-                              fname={name}
-                              designation={role}
-                          />}
-                      {selectedtemplate === '4' && 
-                          <Template
-                              gradient1={cover}
-                              gradient2={themes[2].gradient2}
-                              text1={themes[2].text1}
-                              text2={themes[2].text2}
-                              text3={themes[2].text3}
-                              btn={themes[2].btn}
-                              btntext={themes[2].btntext}
-                              type={themes[2].type}
-                              loop={themes[2].loop}
-                              border={themes[2].border}
-                              visibleInputs={visibleInputs}
-                              profileImg={profileImg}
-                              company={company}
-                              bio={bio}
-                              website={companyLink}
-                              mobile={phoneNumber}
-                              fname={name}
-                              designation={role}
-                          />}
-                      {selectedtemplate === '3' && 
-                          <Template
-                              gradient1={cover}
-                              gradient2={themes[3].gradient2}
-                              text1={themes[3].text1}
-                              text2={themes[3].text2}
-                              text3={themes[3].text3}
-                              btn={themes[3].btn}
-                              type={themes[3].type}
-                              btntext={themes[3].btntext}
-                              loop={themes[3].loop}
-                              border={themes[3].border}
-                              visibleInputs={visibleInputs}
-                              profileImg={profileImg}
-                              company={company}
-                              bio={bio}
-                              website={companyLink}
-                              mobile={phoneNumber}
-                              fname={name}
-                              designation={role}
-                          />}
-
                   </div>
               </div>
           </div>

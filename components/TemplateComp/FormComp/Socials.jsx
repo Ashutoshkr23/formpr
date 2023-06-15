@@ -129,7 +129,7 @@ function Socials({ visibleInputs, onToggleInput ,setVisibleInputs }) {
                 <Image src="/assets/images/social/folder1/Behance.png" height={30} width={30} />
               </div>
               <input type="text" id="Behance" name="Behance" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md' />
-              <div className='h-[20px] w-[20px]' onClick={() => handleHide('Behance')}>
+              <div className='h-[20px] w-[20px]' onClick={() => handleHide('behance')}>
                 <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} />
               </div>
             </div>
