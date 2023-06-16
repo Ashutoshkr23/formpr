@@ -99,9 +99,9 @@ function DetailsInput({ card, index, checkFormValid }) {
     setCardColor(color.hex);
   };
   return (
-    <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto my-6  sm:mx-1">
+    <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] mx-auto my-6  ">
       {card.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
-        <div className=" mt-4 pl-7 pr-4  h-full lg:h-[373px] bg-white rounded-xl drop-shadow-white flex flex-col lg:flex-row items-center justify-between">
+        <div className=" mt-4 pl-7 pr-4 h-full lg:h-[373px] bg-white rounded-xl drop-shadow-white flex flex-col lg:flex-row items-center justify-between ">
           {/* supreme */}
           <div
             className="absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] hover:text-black  items-center bg-black text-[10px] font-bold text-white h-6 w-20"
@@ -110,7 +110,7 @@ function DetailsInput({ card, index, checkFormValid }) {
             REMOVE <span className="text-base font-medium pl-2">X</span>
           </div>
 
-          <div className="flex lg:flex-row flex-col-reverse gap-[42px] ">
+          <div className="flex lg:flex-row flex-col-reverse gap-[42px] flex-grow ">
             <div className=" flex flex-col gap-1 lg:gap-4 ">
               <p className="text-sm">Abstract Design</p>
               <div className=" flex flex-row lg:flex-col gap-1.5 lg:gap-4 ">
@@ -235,7 +235,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                             <p
                               className={`lg:text-[20px] text:sm  font-semibold text-${font}`}
                             >
-                              John Doe
+                              {card.fullName ? card.fullName : "John Doe"}
                             </p>
                           </div>
                         </div>
@@ -343,7 +343,7 @@ function DetailsInput({ card, index, checkFormValid }) {
               </div>
             </div>
           </div>
-          <div className="max-w-[350px] xl:max-w-[390px]">
+          <div className="w-[330px] sm:w-[350px] xl:w-[390px]">
             <div className="flex mt-6 lg:mt-0 gap-5  items-center">
               <h2 className="text-[20px]">{card.cardTypeName}</h2>
               <p className="lg:hidden text-[20px] text-[#F66F6F]">₹ 1499</p>
