@@ -21,6 +21,7 @@ export const CartProvider = ({ children }) => {
     const [cardsArray, setCardsArray] = useState([])
     const [stepState, setStepState] = useState(1);
     const [totalQuantity, setTotalQuantity] = useState(0)
+    const [totalAmount, setTotalAmount] = useState(0)
 
     useEffect(() => {
 
@@ -88,18 +89,21 @@ export const CartProvider = ({ children }) => {
         // const localCardData = localStorage.getItem('cardsArray');
         // console.log(localCardData, "local", JSON.parse(localCardData))
         // if (localCardData && localCardData?.length && !cardsArray.length) {
-        //     console.log("runned 1")
+        //     // console.log("runned 1")
         //     setCardsArray(JSON.parse(localCardData))
         // }
 
         if (cartItems.length > 0 && stepState == 1) {
             let totalQuantity = 0;
+            let totalAmount = 0
             let cards = []
             // Loop over the array and add up the quantity field of each object
             for (var i = 0; i < cartItems.length; i++) {
                 totalQuantity += cartItems[i].quantity;
+                totalAmount += cartItems[i].amount * cartItems[i].quantity;
             }
             setTotalQuantity(totalQuantity)
+            setTotalAmount(totalAmount)
 
             cartItems.map((item, index) => {
                 if (item.quantity > 0) {
@@ -118,7 +122,7 @@ export const CartProvider = ({ children }) => {
                             fileName: "",
 
                         }
-                        console.log(temp, "temp")
+                        // console.log(temp, "temp")
                         cards.push(temp)
 
                     }
@@ -134,7 +138,7 @@ export const CartProvider = ({ children }) => {
     }, [cartItems])
 
 
-    console.log(cardsArray, "Cards Array", cartItems)
+    // console.log(cardsArray, "Cards Array", cartItems)
 
 
     // Function to add an item to the cart
@@ -252,7 +256,7 @@ export const CartProvider = ({ children }) => {
 
     // type 0 : companyName,1:full name 
     const handleName = (name, key, value, fileName) => {
-        console.log(name, key, value, "type, key, value")
+        // console.log(name, key, value, "type, key, value")
 
         const newCardArr = cardsArray.map((item) => {
             if (item.key == key) {
@@ -299,6 +303,7 @@ export const CartProvider = ({ children }) => {
         cardsArray,
         stepState,
         totalQuantity,
+        totalAmount,
         clearCart,
         plusCartFunc,
         minusCartFunc,

@@ -22,10 +22,10 @@ const Discount = () => {
 
         const response = await axios.post('/api/checkDiscount', data)
         if (response.data.success === false) {
-            console.log("Invalid Coupon.");
+            // console.log("Invalid Coupon.");
         } else if (response.data.success === true) {
-            console.log("Valid Coupon.");
-            console.log(response);
+            // console.log("Valid Coupon.");
+            // console.log(response);
             setproductPrice((productPrice) - ((productPrice * response.data.couponCode) / 100))
             setenterCouponCode(true)
             setinputReadOnly('disabled')

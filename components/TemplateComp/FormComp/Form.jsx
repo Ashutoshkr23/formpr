@@ -17,7 +17,8 @@ function Form({ cuuid }) {
     const [bio, setBio] = useState('');
     const [address, setAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [selectedtemplate , setSelectedTemplate] = useState('0')
+    const [location, setLocation] = useState('');
+    const [selectedtemplate, setSelectedTemplate] = useState('0')
     const [profileImg, setProfileImg] = useState('/assets/images/templateimg/andrew.png')
     const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
@@ -31,9 +32,9 @@ function Form({ cuuid }) {
         instagram: '',
         facebook: '',
         youtube: '',
-        twitter: '', 
-        behance:'',
-        reddit:'',
+        twitter: '',
+        behance: '',
+        reddit: '',
 
     });
 
@@ -61,7 +62,7 @@ function Form({ cuuid }) {
 
         }
     };
-    
+
     useEffect(() => {
         if (selectedtemplate === '0') {
             setCover(themes[0].gradient1);
@@ -71,18 +72,18 @@ function Form({ cuuid }) {
             setCover(themes[2].gradient1);
         } else if (selectedtemplate === '3') {
             setCover(themes[3].gradient1);
-        } else  {
+        } else {
             setCover(themes[0].gradient1); // Set a default value if needed
         }
     }, [selectedtemplate]);
 
-    
+
 
     const handleSaveClick = () => {
-        console.log(name,role,companyLink,bio,address,phoneNumber,selectedtemplate);
+        // console.log(name,role,companyLink,bio,address,phoneNumber,selectedtemplate);
     };
 
-    
+
     const handleCompanyChange = (value) => {
         setCompany(value);
     };
@@ -151,21 +152,21 @@ function Form({ cuuid }) {
 
 
 
-  return (
-    <div>
-          <div className="sm:px-8 md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto ">
-              <div className="pt-10">
-                  <div className="max-w-[1208px] mb-7 mx-auto flex lg:justify-between justify-center items-center ">
-                      <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
-                          <div
-                              className={`rounded-lg  font-bold flex flex-grow border-2 border-slate-700 text-black  justify-center items-center `}
-                          >
-                              <p className="text-center text-[12px] md:text-sm">
-                                  DETAILS AND DESIGN
-                              </p>
-                          </div>
-                      </div>
-                      <div className="hidden lg:block pl-5">
+    return (
+        <div>
+            <div className="sm:px-8 md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto ">
+                <div className="pt-10">
+                    <div className="max-w-[1208px] mb-7 mx-auto flex lg:justify-between justify-center items-center ">
+                        <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
+                            <div
+                                className={`rounded-lg  font-bold flex flex-grow border-2 border-slate-700 text-black  justify-center items-center `}
+                            >
+                                <p className="text-center text-[12px] md:text-sm">
+                                    DETAILS AND DESIGN
+                                </p>
+                            </div>
+                        </div>
+                        <div className="hidden lg:block pl-5">
 
                               <button
                                   className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px]"
@@ -211,35 +212,35 @@ function Form({ cuuid }) {
                           <Image src="/assets/images/templateimg/Mobile-border.png" width={331} height={665}/>
                           <div className='absolute top-1 right-1'> 
 
-                          </div>
+                            </div>
+                        </div>
+                        {selectedtemplate &&
+                            <Template
+                                gradient1={cover}
+                                gradient2={themes[selectedtemplate].gradient2}
+                                text1={themes[selectedtemplate].text1}
+                                text2={themes[selectedtemplate].text2}
+                                text3={themes[selectedtemplate].text3}
+                                btn={themes[selectedtemplate].btn}
+                                btntext={themes[selectedtemplate].btntext}
+                                type={themes[selectedtemplate].type}
+                                loop={themes[selectedtemplate].loop}
+                                border={themes[selectedtemplate].border}
+                                inputValues={inputValues}
+                                visibleInputs={visibleInputs}
+                                profileImg={profileImg}
+                                company={company}
+                                bio={bio}
+                                website={companyLink}
+                                mobile={phoneNumber}
+                                fname={name}
+                                designation={role}
+                            />}
                     </div>
-                      {selectedtemplate && 
-                          <Template
-                              gradient1={cover}
-                              gradient2={themes[selectedtemplate].gradient2}
-                              text1={themes[selectedtemplate].text1}
-                              text2={themes[selectedtemplate].text2}
-                              text3={themes[selectedtemplate].text3}
-                              btn={themes[selectedtemplate].btn}
-                              btntext={themes[selectedtemplate].btntext}
-                              type={themes[selectedtemplate].type}
-                              loop={themes[selectedtemplate].loop}
-                              border={themes[selectedtemplate].border}
-                              inputValues={inputValues}
-                              visibleInputs={visibleInputs}
-                              profileImg={profileImg}
-                              company={company}
-                              bio={bio}
-                              website={companyLink}
-                              mobile={phoneNumber}
-                              fname={name}
-                              designation={role}
-                          />}
-                  </div>
-              </div>
-          </div>
-    </div>
-  )
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Form

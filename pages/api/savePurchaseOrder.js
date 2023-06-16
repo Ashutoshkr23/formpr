@@ -92,7 +92,7 @@ export default async function handler(req, res) {
             return res.status(405).json({ message: 'Method not allowed' });
         }
     } catch (error) {
-        console.log(error, "errr")
+        // console.log(error, "errr")
         return res.status(500).json({ message: 'Unable to create purchase', error });
     }
 } 

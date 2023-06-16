@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-function Cover({cover , setCover}) {
+function Cover({ cover, setCover }) {
 
 
     const handleCoverUpload = (event) => {
@@ -42,10 +42,10 @@ function Cover({cover , setCover}) {
     const Cover7 = "/assets/images/templateimg/BGCover7.png"
     const Cover8 = "/assets/images/templateimg/BGCover8.png"
     const Cover9 = "/assets/images/templateimg/BGCover9.png"
-    const Cover10 ="/assets/images/templateimg/BGCover10.png"
-    const Cover11 ="/assets/images/templateimg/BGCover11.png"
-    const Cover12= "/assets/images/templateimg/BGCover12.png"
-    const Cover13= "/assets/images/templateimg/BGCover13.png"
+    const Cover10 = "/assets/images/templateimg/BGCover10.png"
+    const Cover11 = "/assets/images/templateimg/BGCover11.png"
+    const Cover12 = "/assets/images/templateimg/BGCover12.png"
+    const Cover13 = "/assets/images/templateimg/BGCover13.png"
     return (
         <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto bg-bright-gray px-9 py-8 my-5'>
             <p className='font-bold text-xs mb-5'>COVER</p>
@@ -66,7 +66,7 @@ function Cover({cover , setCover}) {
                 </div>
 
                 <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover1)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover1.png"/>
+                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover1.png" />
                 </div>
                 <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover2)}>
                     <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover2.png" />

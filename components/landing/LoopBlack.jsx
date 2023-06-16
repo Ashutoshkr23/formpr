@@ -60,7 +60,7 @@ const LoopBlack = ({ text }) => {
             </div>
 
             <div className="pt-4">
-              <button className="rounded-[10px] h-[41px] w-[165px] bg-gradient-to-br from-[#68D5DF] to-[#95FEAF] text-black">
+              <button className="rounded-[10px] h-[41px] w-[165px] bg-gradient-to-br from-[#68D5DF] to-[#95FEAF] text-black font-semibold">
                 {text}
               </button>
             </div>
