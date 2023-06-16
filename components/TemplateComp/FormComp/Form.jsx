@@ -1,14 +1,15 @@
 import Template from '../Template';
-import React, { useState, useEffect } from 'react'
+import React , {useState , useEffect ,useContext} from 'react'
 import themes from '../Themes';
 import ChooseTemplates from './ChooseTemplates'
 import Details from './Details'
 import Socials from './Socials'
+import axios from 'axios';
 import Cover from './Cover'
 import Image from 'next/image';
+import { CartContext } from '@/context/CartContext';
 
-function Form() {
-
+function Form({ cuuid }) {
     const [company, setCompany] = useState('');
     const [name, setName] = useState('');
     const [role, setRole] = useState('');
@@ -21,6 +22,8 @@ function Form() {
     const [profileImg, setProfileImg] = useState('/assets/images/templateimg/andrew.png')
     const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
+    const { userProfile } = useContext(CartContext);
+   
 
     const [inputValues, setInputValues] = useState({
         whatsapp: '',
@@ -109,6 +112,46 @@ function Form() {
         setPhoneNumber(value);
     };
 
+    const handleClick = async () => {
+        try {
+            const data = {
+                company: company,
+                name: name,
+                role: role,
+                companyLink: companyLink,
+                bio: bio,
+                address: address,
+                mobileNumber: phoneNumber,
+                adress: address,
+                selectedTemplate: selectedtemplate,
+                profileImg: profileImg,
+                cover: cover,
+                whatsappNumber: inputValues.whatsapp,
+                mail: inputValues.mail,
+                linkedin: inputValues.linkedin,
+                instagram: inputValues.instagram,
+                twitter: inputValues.twitter,
+                youtube: inputValues.youtube,
+                facebook: inputValues.facebook,
+                behance: inputValues.behance,
+                reddit: inputValues.reddit,
+                puuid: userProfile.puuid,
+                cuuid: cuuid
+            };
+            console.log(data)
+
+            const response = await axios.post('/api/handleFormData', data);
+           
+            console.log(response.data);
+            // Handle response
+            // ...
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+
+
 
     return (
         <div>
@@ -126,49 +169,49 @@ function Form() {
                         </div>
                         <div className="hidden lg:block pl-5">
 
-                            <button
-                                className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px]"
-                                onClick={handleSaveClick}
-                            >
-                                SAVE
-                            </button>
-                        </div>
-                    </div>
+                              <button
+                                  className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px]"
+                                  onClick={handleClick}
+                              >
+                                  SAVE
+                              </button>
+                      </div>
+                  </div>
+              </div>
+              <div className="flex justify-center pt-10 lg:hidden pl-2">
+                  <button className="w-[350px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
+                      NEXT
+                  </button>
+              </div>
+              <div className='flex gap-5'>
+                <div className='flex flex-grow flex-col'>
+                      <ChooseTemplates
+                        selectedTemplate={selectedtemplate} 
+                        setSelectedTemplate={setSelectedTemplate} />
+                      <Cover 
+                      cover={cover}
+                      setCover={setCover}/>
+                      <Details
+                          profileImg={profileImg}
+                          setProfileImg={setProfileImg}
+                          onCompanyChange={handleCompanyChange}
+                          onNameChange={handleNameChange}
+                          bio={bio}
+                          onRoleChange={handleRoleChange}
+                          onCompanyLinkChange={handleCompanyLinkChange}
+                          onBioChange={handleBioChange}
+                          onAddressChange={handleAddressChange}
+                          onPhoneNumberChange={handlePhoneNumberChange} />
+                    <Socials 
+                          inputValues={inputValues} handleInputChange={handleInputChange}
+                          visibleInputs={visibleInputs}
+                          setVisibleInputs={setVisibleInputs} 
+                          onToggleInput={handleToggleInput} />
                 </div>
-                <div className="flex justify-center pt-10 lg:hidden pl-2">
-                    <button className="w-[350px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
-                        NEXT
-                    </button>
-                </div>
-                <div className='flex gap-5'>
-                    <div className='flex flex-grow flex-col'>
-                        <ChooseTemplates
-                            selectedTemplate={selectedtemplate}
-                            setSelectedTemplate={setSelectedTemplate} />
-                        <Cover
-                            cover={cover}
-                            setCover={setCover} />
-                        <Details
-                            profileImg={profileImg}
-                            setProfileImg={setProfileImg}
-                            onCompanyChange={handleCompanyChange}
-                            onNameChange={handleNameChange}
-                            bio={bio}
-                            onRoleChange={handleRoleChange}
-                            onCompanyLinkChange={handleCompanyLinkChange}
-                            onBioChange={handleBioChange}
-                            onAddressChange={handleAddressChange}
-                            onPhoneNumberChange={handlePhoneNumberChange} />
-                        <Socials
-                            inputValues={inputValues} handleInputChange={handleInputChange}
-                            visibleInputs={visibleInputs}
-                            setVisibleInputs={setVisibleInputs}
-                            onToggleInput={handleToggleInput} />
-                    </div>
-                    <div className='w-[350px] xl:w-[390px]  flex justify-center'>
-                        <div className='relative'>
-                            <Image src="/assets/images/templateimg/Mobile-border.png" width={331} height={665} />
-                            <div className='absolute top-1 right-1'>
+                  <div className='w-[350px] xl:w-[390px]  flex justify-center'>
+                    <div className='relative'>
+                          <Image src="/assets/images/templateimg/Mobile-border.png" width={331} height={665}/>
+                          <div className='absolute top-1 right-1'> 
 
                             </div>
                         </div>

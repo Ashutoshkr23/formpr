@@ -8,6 +8,7 @@ import { CartNav } from '@/components';
 import Image from 'next/image';
 import SortBy from '@/components/ProfilePage/SortBy';
 import SearchByName from '@/components/ProfilePage/SearchByName';
+import ToggleSwtich from '@/components/ToggleSwtich';
 
 
 const Profile = () => {
@@ -85,6 +86,7 @@ const Profile = () => {
   return (
     <>
       <CartNav />
+      <ToggleSwtich />
       <div className="profile-page max-w-6xl mx-auto mt-24">
         <div className="profile-section flex items-center">
           <div className="left-side mr-28">

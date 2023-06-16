@@ -11,7 +11,7 @@ function PrivacyPolicy() {
 
       <main class="container mx-auto px-4 py-8">
         <section>
-          <h2 class="text-2xl font-bold mb-4">Effective Date: 08.06.2023</h2>
+          <h2 class="text-2xl font-bold mb-4">Effective Date: 14.06.2023</h2>
           <p class="mb-4">At loopcard.club, we take your privacy seriously and are committed to protecting the personal information you provide to us. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information in accordance with applicable privacy laws and search engine compliances. By accessing or using our website <a href="https://www.yourwebsite.com" class="text-blue-500">www.yourwebsite.com</a>, you agree to the terms of this Privacy Policy.</p>
         </section>
 
