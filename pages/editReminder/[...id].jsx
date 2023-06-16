@@ -82,9 +82,14 @@ const EditReminder = () => {
         return <div>Loading...</div>;
     }
 
+    const currentDate = new Date();
+    const minDate = new Date(currentDate.getTime());
+    const minTime = new Date(currentDate.getTime());
+    const maxTime = new Date(currentDate.getTime() + 31556952000);
+
     return (
         <div>
-            <Link href={'/remainder'}>← Reminder</Link>
+            <Link href={'/profile'}>← Reminder</Link>
             <div className='flex justify-between px-4'>
                 <div>Name:- <input type="text" value={userName} onChange={handleuserNameChange} placeholder="Enter Name" /></div>
                 <div>Date:- {moment(userRemainder.createdAt).format("DD-MM-YY HH:mm")}</div>
@@ -99,7 +104,7 @@ const EditReminder = () => {
             <div>
                 Select Date
                 <div>{yourDate}</div>
-                <DatePicker selected={selectedDate} onChange={handleDateChange} showTimeSelect dateFormat="MMMM d, yyyy h:mm aa" />
+                <DatePicker selected={selectedDate} onChange={handleDateChange} showTimeSelect minDate={minDate} minTime={minTime} maxTime={maxTime} dateFormat="MMMM d, yyyy h:mm aa" />
             </div>
         </div>
     );
