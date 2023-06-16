@@ -182,7 +182,7 @@ function DetailsInput({ card, index, checkFormValid }) {
               </div>
             </div>
             <div className="flex">
-              <div className="flex flex-col gap-6 mt-8 lg:mt-0  lg:items-stretch">
+              <div className="flex flex-col gap-6 mt-8 lg:mt-0  ">
                 <div className={`card ${isFlipped ? "flipped" : ""}`}>
                   <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
                     <div
@@ -311,7 +311,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                       onClick={() => setFont("white")}
                     ></div>
                     <div
-                      className={`rounded-full ml-4 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${
+                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${
                         font === "black"
                           ? "scale-110 border-2 border-yellow-500 "
                           : ""
@@ -346,7 +346,9 @@ function DetailsInput({ card, index, checkFormValid }) {
           <div className="w-[325px] sm:w-[350px] xl:w-[390px]">
             <div className="flex mt-6 lg:mt-0 gap-5  items-center">
               <h2 className="text-[20px]">{card.cardTypeName}</h2>
-              <p className="lg:hidden text-[20px] text-[#F66F6F]">₹ 1499</p>
+              <p className="lg:hidden text-[20px] text-[#F66F6F]">
+                ₹ {card.amount}
+              </p>
             </div>
             <div className="flex mt-8">
               <input
@@ -457,7 +459,9 @@ function DetailsInput({ card, index, checkFormValid }) {
               </div>
             )}
             <div className="mt-6 hidden lg:block">
-              <h3 className="text-[20px] text-[#F66F6F] font-bold">₹ 1499</h3>
+              <h3 className="text-[20px] text-[#F66F6F] font-bold">
+                ₹ {card.amount}
+              </h3>
             </div>
           </div>
         </div>
@@ -470,13 +474,10 @@ function DetailsInput({ card, index, checkFormValid }) {
             REMOVE <span className="text-base font-medium pl-2">X</span>
           </div>
 
-          <div className="flex flex-col items-center flex-grow ">
-            <div className="flex">
-              <div style={{ width: 400, height: 250 }}>
-                <div
-                  className="bg-[#66D3E1] drop-shadow-white rounded-2xl relative w-full "
-                  style={{ width: 400, height: 250 }}
-                >
+          <div className="flex flex-col items-center lg:flex-grow ">
+            <div className="flex mt-8 lg:mt-0">
+              <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
+                <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] bg-[#66D3E1] drop-shadow-white rounded-2xl relative w-full ">
                   <Image
                     src={"/assets/images/nfcIcon.png"}
                     className="absolute top-2 right-3"
@@ -487,20 +488,34 @@ function DetailsInput({ card, index, checkFormValid }) {
 
                   <Image
                     src={"/assets/images/loopIcon.svg"}
-                    className="absolute top-12 left-14"
+                    className="hidden lg:block absolute top-12 left-14"
                     alt="loop"
                     height={300}
                     width={370}
+                  />
+                  <Image
+                    src={"/assets/images/loopIcon.svg"}
+                    className="lg:hidden  absolute top-10 left-16"
+                    alt="loop"
+                    height={132}
+                    width={182}
                   />
                 </div>
               </div>
               <div className=" ml-4">
                 <Image
                   src={"/assets/images/cart-images/flipImage.png"}
-                  className=""
+                  className="hidden lg:block"
                   alt="flip"
                   height={36}
                   width={36}
+                />
+                <Image
+                  src={"/assets/images/cart-images/flipImage.png"}
+                  className="lg:hidden"
+                  alt="flip"
+                  height={25}
+                  width={25}
                 />
               </div>
             </div>
@@ -508,41 +523,46 @@ function DetailsInput({ card, index, checkFormValid }) {
               <p className="text-xs">colors</p>
               <div id="container" className="flex space-x-2">
                 <div
-                  className={`rounded-full bg-[#FFF490] w-5 h-5`}
+                  className={`rounded-full bg-[#FFF490] lg:w-5 lg:h-5 w-4 h-4`}
                   style={selectedDiv === 0 ? selectedDivStyle : divStyle}
                   onClick={() => handleDivClick(0)}
                 ></div>
                 <div
-                  className="rounded-full bg-[#96FFAD] w-5 h-5"
+                  className="rounded-full bg-[#96FFAD] lg:w-5 lg:h-5 w-4 h-4"
                   style={selectedDiv === 1 ? selectedDivStyle : divStyle}
                   onClick={() => handleDivClick(1)}
                 ></div>
                 <div
-                  className="rounded-full bg-[#66D3E1] w-5 h-5"
+                  className="rounded-full bg-[#66D3E1] lg:w-5 lg:h-5 w-4 h-4"
                   style={selectedDiv === 2 ? selectedDivStyle : divStyle}
                   onClick={() => handleDivClick(2)}
                 ></div>
                 <div
-                  className="rounded-full bg-[#F66F6F] w-5 h-5"
+                  className="rounded-full bg-[#F66F6F] lg:w-5 lg:h-5 w-4 h-4"
                   style={selectedDiv === 3 ? selectedDivStyle : divStyle}
                   onClick={() => handleDivClick(3)}
                 ></div>
                 <div
-                  className="rounded-full bg-[#ECECEC] w-5 h-5"
+                  className="rounded-full bg-[#ECECEC] lg:w-5 lg:h-5 w-4 h-4"
                   style={selectedDiv === 4 ? selectedDivStyle : divStyle}
                   onClick={() => handleDivClick(4)}
                 ></div>
                 <div
-                  className="rounded-full bg-[#323232] w-5 h-5"
+                  className="rounded-full bg-[#323232] lg:w-5 lg:h-5 w-4 h-4"
                   style={selectedDiv === 5 ? selectedDivStyle : divStyle}
                   onClick={() => handleDivClick(5)}
                 ></div>
               </div>
             </div>
           </div>
-          <div className="w-[350px] xl:w-[390px]">
-            <h2>{card.cardTypeName}</h2>
-            <div className="flex mt-8">
+          <div className="w-[325px] sm:w-[350px] xl:w-[390px]">
+            <div className="flex mt-6 lg:mt-0 gap-5  items-center">
+              <h2 className="text-[20px] ">{card.cardTypeName}</h2>
+              <p className="lg:hidden text-[20px] text-[#F66F6F]">
+                ₹ {card.amount}
+              </p>
+            </div>
+            <div className="flex mt-6">
               <input
                 className={`border outline-none ${
                   checkFormValid &&
@@ -557,7 +577,7 @@ function DetailsInput({ card, index, checkFormValid }) {
               />
               {index == 0 && (
                 <button
-                  className="bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold"
+                  className="bg-black h-10 w-[98px] lg:w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold"
                   onClick={() => {
                     handleApplyToAll(0, card.companyName);
                     toast.success("Applied to all successfully");
@@ -575,7 +595,7 @@ function DetailsInput({ card, index, checkFormValid }) {
               </div>
             )}
             <div>
-              <div className="flex mt-4">
+              <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
                   <p className="py-2 flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden">
                     {card.fileName}
@@ -611,7 +631,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                 />
                 {index === 0 && (
                   <button
-                    className="bg-black h-10 w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold"
+                    className="bg-black h-10 w-[98px] lg:w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold"
                     onClick={() => {
                       toast.success("Applied to all successfully");
                       handleApplyToAll(1, card.companyLogo, card.fileName);
@@ -629,13 +649,13 @@ function DetailsInput({ card, index, checkFormValid }) {
                 </div>
               )}
             </div>
-            <div>
+            <div className="mt-8">
               <input
-                className={`border outline-none mt-4 ${
+                className={`border outline-none ${
                   checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
+                } w-[180px] xl:w-[220px] lg:mb-0 mb-[30px] h-10  h-10 rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"
@@ -650,6 +670,11 @@ function DetailsInput({ card, index, checkFormValid }) {
                 </p>
               </div>
             )}
+            <div className="mt-6 hidden lg:block">
+              <h3 className="text-[20px] text-[#F66F6F] font-bold">
+                ₹ {card.amount}
+              </h3>
+            </div>
           </div>
         </div>
       )}
