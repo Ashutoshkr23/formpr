@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
+
+
 const CartComponent = () => {
   const {
     userProfile,
@@ -19,6 +21,9 @@ const CartComponent = () => {
     setStepState,
     totalQuantity,
     totalAmount,
+    address,
+    defaultCart,
+    setCartItems
   } = useContext(CartContext);
   const [cardTypeSelected, setCardTypeSelected] = useState(cartItems[0]);
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
@@ -104,11 +109,19 @@ const CartComponent = () => {
       razorpay_payment_id: razorData.razorpay_payment_id,
       razorpay_signature: razorData.razorpay_signature,
       razorpay_order_id: razorData.razorpay_order_id,
+      address: address,
     };
+    localStorage.setItem('addressData', JSON.stringify(address));
     // console.log(postData, "postData");
     const response = await axios.post("/api/savePurchaseOrder", postData);
-    setIsModalVisible(true);
-    // console.log(response, "response");
+    console.log(response, "response");
+
+    if (response.status == 200) {
+      setCartItems(defaultCart)
+      setIsModalVisible(true);
+
+
+    }
   };
 
   // main submit function
