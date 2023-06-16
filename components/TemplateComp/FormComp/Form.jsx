@@ -125,6 +125,7 @@ function Form({ cuuid }) {
                 adress: address,
                 selectedTemplate: selectedtemplate,
                 profileImg: profileImg,
+                cover: cover,
                 whatsappNumber: inputValues.whatsapp,
                 mail: inputValues.mail,
                 linkedin: inputValues.linkedin,
