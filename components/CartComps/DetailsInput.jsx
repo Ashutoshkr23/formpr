@@ -343,8 +343,8 @@ function DetailsInput({ card, index, checkFormValid }) {
               </div>
             </div>
           </div>
-          <div className=" w-[350px] xl:w-[390px]">
-            <div className="flex mt-6 lg:mt-0 gap-5">
+          <div className="max-w-[350px] xl:max-w-[390px]">
+            <div className="flex mt-6 lg:mt-0 gap-5  items-center">
               <h2 className="text-[20px]">{card.cardTypeName}</h2>
               <p className="lg:hidden text-[20px] text-[#F66F6F]">₹ 1499</p>
             </div>
