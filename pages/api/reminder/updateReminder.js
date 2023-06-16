@@ -39,7 +39,7 @@ export default async function handler(req, res) {
                 // Code to send the reminder to the user
                 try {
                     await sgMail.send(message);
-                    console.log('Notification email sent successfully');
+                    // console.log('Notification email sent successfully');
                 } catch (error) {
                     console.error('Error sending notification email:', error);
                 }

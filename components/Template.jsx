@@ -48,10 +48,10 @@ END:VCARD`;
     // Save the Blob as a file using the file-saver library
     saveAs(blob, "hello.vcf");
   };
-  console.log(instaLink);
+  // console.log(instaLink);
 
   const fullName = fname || lname ? `${fname} ${lname}` : "Andrew Darren";
-  
+
   return (
     <div className="flex justify-center  mx-auto max-w-[375px] h-full">
       <div
@@ -71,8 +71,8 @@ END:VCARD`;
               value={lname !== undefined ? `${fname} ${lname}` : fname || "Andrew Darren"}
               placeholder={lname !== undefined ? '' : fname || "Andrew Darren"}
 
-              //   value={inputValue}
-              //   onChange={handleChange}
+            //   value={inputValue}
+            //   onChange={handleChange}
             />
           </div>
           <div className="flex justify-center mt-[11px] font-semibold text-[16px]">
@@ -81,7 +81,7 @@ END:VCARD`;
               type="text"
               placeholder="Design Lead"
               value={designation}
-              //   onChange={handleChange}
+            //   onChange={handleChange}
             />
           </div>
           <div>

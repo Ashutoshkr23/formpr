@@ -6,6 +6,8 @@ import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { CartNav } from '@/components';
 import Image from 'next/image';
+import SortBy from '@/components/ProfilePage/SortBy';
+import SearchByName from '@/components/ProfilePage/SearchByName';
 
 
 const Profile = () => {
@@ -81,7 +83,7 @@ const Profile = () => {
   }
 
   return (
-    <div>
+    <>
       <CartNav />
       <div className="profile-page max-w-6xl mx-auto mt-24">
         <div className="profile-section flex items-center">
@@ -110,25 +112,8 @@ const Profile = () => {
               total cards bought
             </div>
           </div>
-
-          <div className='relative capitalize text-[#686A6C] flex items-center border px-4 bg-white rounded-xl'>
-            <div className='cursor-pointer flex items-center gap-2' onClick={openSortBy}>
-              <Image width={27} height={18} src={'/assets/images/profilePage/sortBy.png'} alt="profile pic"></Image>
-              sort by
-            </div>
-
-            {sortBy &&
-              <div className='absolute capitalize bg-white pl-6 pr-16 py-4 border rounded-xl text-black -ml-[18px] -mt-44 '>
-                <div>latest</div>
-                <div className='my-2'>oldest</div>
-                <div>a-z</div>
-              </div>}
-          </div>
-
-          <div className='capitalize text-[#686A6C] flex items-center gap-2 border px-4 bg-white rounded-xl'>
-            <Image width={17} height={15} src={'/assets/images/profilePage/searchIcon.png'} alt="profile pic"></Image>
-            <input className='outline-none' type="text" placeholder='Search By Name' />
-          </div>
+          <SortBy />
+          <SearchByName />
         </div>
       </div>
 
@@ -186,7 +171,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-    </div >
+    </ >
   )
 }
 

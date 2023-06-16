@@ -89,7 +89,7 @@ export const CartProvider = ({ children }) => {
         // const localCardData = localStorage.getItem('cardsArray');
         // console.log(localCardData, "local", JSON.parse(localCardData))
         // if (localCardData && localCardData?.length && !cardsArray.length) {
-        //     console.log("runned 1")
+        //     // console.log("runned 1")
         //     setCardsArray(JSON.parse(localCardData))
         // }
 
@@ -122,7 +122,7 @@ export const CartProvider = ({ children }) => {
                             fileName: "",
 
                         }
-                        console.log(temp, "temp")
+                        // console.log(temp, "temp")
                         cards.push(temp)
 
                     }
@@ -138,7 +138,7 @@ export const CartProvider = ({ children }) => {
     }, [cartItems])
 
 
-    console.log(cardsArray, "Cards Array", cartItems)
+    // console.log(cardsArray, "Cards Array", cartItems)
 
 
     // Function to add an item to the cart
@@ -256,7 +256,7 @@ export const CartProvider = ({ children }) => {
 
     // type 0 : companyName,1:full name 
     const handleName = (name, key, value, fileName) => {
-        console.log(name, key, value, "type, key, value")
+        // console.log(name, key, value, "type, key, value")
 
         const newCardArr = cardsArray.map((item) => {
             if (item.key == key) {

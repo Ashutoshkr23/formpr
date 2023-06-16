@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 
 function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkChange,
-    onBioChange, onAddressChange, onPhoneNumberChange , profileImg , setProfileImg , bio }) {
-    
+    onBioChange, onAddressChange, onPhoneNumberChange, profileImg, setProfileImg, bio }) {
+
     const handleProfileUpload = (event) => {
         const file = event.target.files[0];
         const imageUrl = URL.createObjectURL(file);
@@ -14,41 +14,41 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
     const maxLength = 80;
 
     const handleBioChange = (e) => {
-    const value = e.target.value;
-    onBioChange(value.slice(0, maxLength));
+        const value = e.target.value;
+        onBioChange(value.slice(0, maxLength));
     };
 
     const remainingChars = maxLength - bio.length;
-    
 
 
-    console.log("hello" + profileImg)
+
+    // console.log("hello" + profileImg)
 
     const handleCompanyChange = (e) => {
         const value = e.target.value;
         onCompanyChange(value);
     };
 
-     
+
     const handleNameChange = (e) => {
         const value = e.target.value;
         onNameChange(value);
     };
 
-     
+
     const handleRoleChange = (e) => {
         const value = e.target.value;
         onRoleChange(value);
     };
 
-    
+
     const handleCompanyLinkChange = (e) => {
         const value = e.target.value;
         onCompanyLinkChange(value);
     };
 
-        
-    
+
+
     const handleAddressChange = (e) => {
         const value = e.target.value;
         onAddressChange(value);

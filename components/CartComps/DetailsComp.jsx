@@ -4,7 +4,7 @@ import DetailsInput from './DetailsInput'
 
 const DetailsComp = ({ cardsArray, checkFormValid }) => {
 
-    console.log(cardsArray, "array")
+    // console.log(cardsArray, "array")
 
 
 

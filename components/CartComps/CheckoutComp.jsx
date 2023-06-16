@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 const CheckoutComp = ({ cardsArray, handleSubmitFunction }) => {
   const { handleRemoveCardArr, totalQuantity, totalAmount } =
     useContext(CartContext);
-  console.log(cardsArray);
+  // console.log(cardsArray);
   return (
     <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center px-4 xl:px-0">
       <div className=" lg:w-3/5  flex  flex-wrap space-x-2  lg:justify-between   ">

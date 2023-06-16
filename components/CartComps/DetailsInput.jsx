@@ -30,7 +30,7 @@ function DetailsInput({ card, index, checkFormValid }) {
   };
 
   const handleDivClick = (index) => {
-    console.log(selectedDiv);
+    // console.log(selectedDiv);
     setSelectedDiv(index === selectedDiv ? null : index);
   };
 
@@ -47,7 +47,7 @@ function DetailsInput({ card, index, checkFormValid }) {
   // const [logo, setLogo] = useState('');
 
   const handleLogoChange = (event) => {
-    console.log(event.target);
+    // console.log(event.target);
     handleName(event.target.name, card.key, event.target.value);
   };
 
@@ -56,15 +56,15 @@ function DetailsInput({ card, index, checkFormValid }) {
   };
 
   const handleAwsUpload = async (image) => {
-    console.log("runned 3");
+    // console.log("runned 3");
 
     const formData = new FormData();
     formData.append("companyLogo", image);
     formData.append("puuid", userProfile.puuid);
 
     const uploadImage = await axios.post("/api/uploadImageAws", formData);
-    console.log("runned 4");
-    console.log(uploadImage, "uploadImageAws");
+    // console.log("runned 4");
+    // console.log(uploadImage, "uploadImageAws");
     if (uploadImage.status == 200 && !uploadImage.data.error) {
       const awsLink = uploadImage.data.result;
       handleName("companyLogo", card.key, awsLink, image.name);
@@ -73,15 +73,15 @@ function DetailsInput({ card, index, checkFormValid }) {
   };
 
   const handleFileChange = (event) => {
-    console.log("runned 1");
+    // console.log("runned 1");
     const file = event.target.files[0];
     const fileSizeInMB = file?.size / (1024 * 1024);
-    console.log("fileSizeInMB: " + fileSizeInMB);
+    // console.log("fileSizeInMB: " + fileSizeInMB);
     if (fileSizeInMB > 5) {
       setErrorMessage("File size exceeds the limit of 5MB.");
     } else {
       setErrorMessage("");
-      console.log("runned 2");
+      // console.log("runned 2");
 
       handleAwsUpload(file);
       // handleName(event.target.name, card.key, file);

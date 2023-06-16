@@ -73,7 +73,7 @@ const CartComponent = () => {
 
   const handleNext = async () => {
     const isError = await checkValidation();
-    console.log(isError, "isError");
+    // console.log(isError, "isError");
     if (stepState == 2) {
       setFormValid(true);
       setFinalDataFunc(cardsArray);
@@ -105,10 +105,10 @@ const CartComponent = () => {
       razorpay_signature: razorData.razorpay_signature,
       razorpay_order_id: razorData.razorpay_order_id,
     };
-    console.log(postData, "postData");
+    // console.log(postData, "postData");
     const response = await axios.post("/api/savePurchaseOrder", postData);
     setIsModalVisible(true);
-    console.log(response, "response");
+    // console.log(response, "response");
   };
 
   // main submit function
