@@ -4,12 +4,34 @@ import React from 'react'
 function Cover({cover , setCover}) {
 
 
-
     const handleCoverUpload = (event) => {
         const file = event.target.files[0];
         const imageUrl = URL.createObjectURL(file);
-        setCover(imageUrl);
+        // Create a new FormData object
+        const formData = new FormData();
+        formData.append('coverImage', file);
+
+        // Send the file to the server
+        fetch('/api/uploadImageAws', {
+            method: 'POST',
+            body: formData,
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // Handle the response from the server
+                const { result: link } = data;
+                setCover(link);
+                console.log(setCover)
+                // ...
+            })
+            .catch((error) => {
+                // Handle any errors
+                console.log(error);
+            });
     };
+
+    console.log(setCover)
+
 
     const Cover1 = "/assets/images/templateimg/BGCover1.png"
     const Cover2 = "/assets/images/templateimg/BGCover2.png"
