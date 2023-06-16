@@ -181,8 +181,8 @@ function DetailsInput({ card, index, checkFormValid }) {
                 </div>
               </div>
             </div>
-            <div className="flex">
-              <div className="flex flex-col gap-6 mt-8 lg:mt-0  ">
+            <div className="flex mt-8 lg:mt-0">
+              <div className="flex flex-col gap-6  lg:mt-0  ">
                 <div className={`card ${isFlipped ? "flipped" : ""}`}>
                   <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
                     <div
@@ -190,7 +190,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                     >
                       <div className="card-front">
                         <div
-                          className={` drop-shadow-white rounded-2xl relative lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
+                          className={` drop-shadow-white rounded-2xl relative lg:w-[400px] lg:h-[250px] w-full h-[172px]`}
                           style={{
                             backgroundColor: cardColor,
                           }}
@@ -321,20 +321,18 @@ function DetailsInput({ card, index, checkFormValid }) {
                   </div>
                 </div>
               </div>
-              <div className="mt-4 lg:mt-0 ml-4 hidden sm:block">
+              <div className="ml-1">
                 <Image
                   src={"/assets/images/cart-images/flipImage.png"}
-                  className=" cursor-pointer"
+                  className=" cursor-pointer hidden lg:block"
                   alt="flip"
                   height={36}
                   width={36}
                   onClick={handleFlip}
                 />
-              </div>
-              <div className="  sm:hidden mt-8 ml-1 sm:ml-4">
                 <Image
                   src={"/assets/images/cart-images/flipImage.png"}
-                  className=" cursor-pointer"
+                  className=" cursor-pointer lg:hidden"
                   alt="flip"
                   height={25}
                   width={25}
@@ -477,7 +475,7 @@ function DetailsInput({ card, index, checkFormValid }) {
           <div className="flex flex-col items-center lg:flex-grow ">
             <div className="flex mt-8 lg:mt-0">
               <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
-                <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] bg-[#66D3E1] drop-shadow-white rounded-2xl relative w-full ">
+                <div className="lg:w-[400px] lg:h-[250px] w-full h-[172px] bg-[#66D3E1] drop-shadow-white rounded-2xl relative  ">
                   <Image
                     src={"/assets/images/nfcIcon.png"}
                     className="absolute top-2 right-3"
@@ -568,7 +566,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                   checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[180px] xl:w-[220px] h-10 rounded-xl pl-4`}
+                } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -607,7 +605,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                       checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                    }  w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
+                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -655,7 +653,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                   checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[180px] xl:w-[220px] lg:mb-0 mb-[30px] h-10  h-10 rounded-xl pl-4`}
+                } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"
