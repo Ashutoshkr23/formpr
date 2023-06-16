@@ -21,7 +21,7 @@ const DesignComp = ({
     setValue(value === "Front" ? "Back" : "Front");
   };
 
-  console.log(selectedTypeIndex, "selectedTypeIndex")
+  // console.log(selectedTypeIndex, "selectedTypeIndex")
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
   };

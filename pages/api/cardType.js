@@ -49,7 +49,7 @@ export default async function handler(req, res) {
                 }
             }
             const updateData = await cardType.updateOne(filter, query)
-            console.log(updateData, "updateData")
+            // console.log(updateData, "updateData")
 
 
             return res.status(201).json({ message: 'CardType updated successfully' });
