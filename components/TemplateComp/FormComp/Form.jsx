@@ -22,6 +22,7 @@ function Form({ cuuid }) {
     const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
     const { userProfile } = useContext(CartContext);
+   
 
     const [inputValues, setInputValues] = useState({
         whatsapp: '',
@@ -112,80 +113,34 @@ function Form({ cuuid }) {
 
     const handleClick = async () => {
         try {
-            const formData = new FormData();
+            const data = {
+                company: company,
+                name: name,
+                role: role,
+                companyLink: companyLink,
+                bio: bio,
+                address: address,
+                mobileNumber: phoneNumber,
+                adress: address,
+                selectedTemplate: selectedtemplate,
+                profileImg: profileImg,
+                whatsappNumber: inputValues.whatsapp,
+                mail: inputValues.mail,
+                linkedin: inputValues.linkedin,
+                instagram: inputValues.instagram,
+                twitter: inputValues.twitter,
+                youtube: inputValues.youtube,
+                facebook: inputValues.facebook,
+                behance: inputValues.behance,
+                reddit: inputValues.reddit,
+                puuid: userProfile.puuid,
+                cuuid: cuuid
+            };
+            console.log(data)
 
-            formData.append('company', company);
-            console.log('company:', company);
-
-            formData.append('name', name);
-            console.log('name:', name);
-
-            formData.append('role', role);
-            console.log('role:', role);
-
-            formData.append('companyLink', companyLink);
-            console.log('companyLink:', companyLink);
-
-            formData.append('bio', bio);
-            console.log('bio:', bio);
-
-            formData.append('address', address);
-            console.log('address:', address);
-
-            formData.append('mobileNumber', phoneNumber);
-            console.log('mobileNumber:', phoneNumber);
-
-            formData.append('selectedTemplate', selectedtemplate);
-            console.log('selectedTemplate:', selectedtemplate);
-
-            formData.append('profileImg', profileImg);
-            console.log('profileImg:', profileImg);
-
-            formData.append('whatsappNumber', inputValues.whatsapp);
-            console.log('whatsappNumber:', inputValues.whatsapp);
-
-            formData.append('mail', inputValues.mail);
-            console.log('mail:', inputValues.mail);
-
-            formData.append('linkedin', inputValues.linkedin);
-            console.log('linkedin:', inputValues.linkedin);
-
-            formData.append('instagram', inputValues.instagram);
-            console.log('instagram:', inputValues.instagram);
-
-            formData.append('twitter', inputValues.twitter);
-            console.log('twitter:', inputValues.twitter);
-
-            formData.append('youtube', inputValues.youtube);
-            console.log('youtube:', inputValues.youtube);
-
-            formData.append('facebook', inputValues.facebook);
-            console.log('facebook:', inputValues.facebook);
-
-            formData.append('behance', inputValues.behance);
-            console.log('behance:', inputValues.behance);
-
-            formData.append('reddit', inputValues.reddit);
-            console.log('reddit:', inputValues.reddit);
-
-            // Append inputValues
-            for (const key in inputValues) {
-                if (inputValues.hasOwnProperty(key)) {
-                    formData.append(key, inputValues[key]);
-                    console.log(key + ':', inputValues[key]);
-                }
-            }
-
-            // Append additional data if needed
-            formData.append('puuid', userProfile.puuid);
-            console.log('puuid:', userProfile.puuid);
-
-            formData.append('cuuid', cuuid);
-            console.log('cuuid:', cuuid);
-
-            const response = await axios.post('/api/handleFormData', formData);
-            console.log('Response:', response.data);
-
+            const response = await axios.post('/api/handleFormData', data);
+           
+            console.log(response.data);
             // Handle response
             // ...
         } catch (error) {
