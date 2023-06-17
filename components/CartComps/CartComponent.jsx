@@ -9,8 +9,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-
-
 const CartComponent = () => {
   const {
     userProfile,
@@ -23,13 +21,14 @@ const CartComponent = () => {
     totalAmount,
     address,
     defaultCart,
-    setCartItems
+    setCartItems,
   } = useContext(CartContext);
   const [cardTypeSelected, setCardTypeSelected] = useState(cartItems[0]);
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
   // when step2 next button is clicked we will check form is filled properly or not
   const [checkFormValid, setFormValid] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [color, setColor] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
 
   const router = useRouter();
   // console.log(cartItems, "cart")
@@ -58,6 +57,7 @@ const CartComponent = () => {
     }
   }, []);
 
+  console.log(color);
   const checkValidation = () => {
     let error = false;
     cardsArray.map((card) => {
@@ -109,16 +109,14 @@ const CartComponent = () => {
       razorpay_order_id: razorData.razorpay_order_id,
       address: address,
     };
-    localStorage.setItem('addressData', JSON.stringify(address));
+    localStorage.setItem("addressData", JSON.stringify(address));
     // console.log(postData, "postData");
     const response = await axios.post("/api/savePurchaseOrder", postData);
     console.log(response, "response");
 
     if (response.status == 200) {
-      setCartItems(defaultCart)
+      setCartItems(defaultCart);
       setIsModalVisible(true);
-
-
     }
   };
 
@@ -264,6 +262,8 @@ const CartComponent = () => {
         {/* step 1 */}
         {stepState == 1 ? (
           <DesignComp
+            color={color}
+            setColor={setColor}
             cardTypeSelected={cardTypeSelected}
             handleCardSelection={handleCardSelection}
             totalAmount={totalAmount}
@@ -272,6 +272,7 @@ const CartComponent = () => {
           />
         ) : stepState == 2 ? (
           <DetailsComp
+            color={color}
             cardsArray={cardsArray}
             checkFormValid={checkFormValid}
           />

@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { SketchPicker } from "react-color";
 import { CompactPicker } from "react-color";
 
-function DetailsInput({ card, index, checkFormValid }) {
+function DetailsInput({ card, index, checkFormValid, color }) {
   // console.log(card, "Card")
   const [selectedDiv, setSelectedDiv] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
@@ -125,8 +125,9 @@ function DetailsInput({ card, index, checkFormValid }) {
                     onClick={() => setDesign(1)}
                   />
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 2 ? `border-2 border-black` : ""
-                      }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
+                      design === 2 ? `border-2 border-black` : ""
+                    }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design2.png"
                     }
@@ -136,8 +137,9 @@ function DetailsInput({ card, index, checkFormValid }) {
                 </div>
                 <div className="flex  gap-2">
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 3 ? `border-2 border-black` : ""
-                      }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
+                      design === 3 ? `border-2 border-black` : ""
+                    }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design3.png"
                     }
@@ -145,8 +147,9 @@ function DetailsInput({ card, index, checkFormValid }) {
                     onClick={() => setDesign(3)}
                   />
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 4 ? `border-2 border-black` : ""
-                      }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
+                      design === 4 ? `border-2 border-black` : ""
+                    }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design4.png"
                     }
@@ -156,8 +159,9 @@ function DetailsInput({ card, index, checkFormValid }) {
                 </div>
                 <div className="flex  gap-2">
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 5 ? `border-2 border-black` : ""
-                      }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
+                      design === 5 ? `border-2 border-black` : ""
+                    }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design5.png"
                     }
@@ -165,8 +169,9 @@ function DetailsInput({ card, index, checkFormValid }) {
                     onClick={() => setDesign(5)}
                   />
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 6 ? `border-2 border-black` : ""
-                      }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
+                      design === 6 ? `border-2 border-black` : ""
+                    }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design6.png"
                     }
@@ -195,7 +200,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                         >
                           <Image
                             className="absolute top-5 right-8 z-10"
-                            src={"/assets/images/storeImages/Supreme/loop.png"}
+                            src={`/assets/images/storeImages/Supreme/loop${font}.png`}
                             height={18}
                             width={43}
                             alt="icon"
@@ -274,7 +279,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                 <div className="flex justify-between ">
                   <div className="flex items-center ">
                     <p className="sm:text-sm text-xs">color:</p>
-                    <div className="ml-1 text-center w-50 sm:w-52 h-8 bg-gradient-to-b from-white to-gray-400 shadow-inner border-2 rounded-lg border-black">
+                    <div className="ml-1 text-center w-[80px] lg:w-[130px] h-8 bg-gradient-to-b from-white to-gray-400 shadow-inner border-2 rounded-lg border-black">
                       <p> {showPicker ? cardColor : cardColor}</p>
                     </div>
                     <Image
@@ -300,18 +305,20 @@ function DetailsInput({ card, index, checkFormValid }) {
                       font color:
                     </p>
                     <div
-                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${font === "white"
-                        ? "scale-110 border-2 border-black "
-                        : ""
-                        }
+                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${
+                        font === "white"
+                          ? "scale-110 border-2 border-black "
+                          : ""
+                      }
                     `}
                       onClick={() => setFont("white")}
                     ></div>
                     <div
-                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${font === "black"
-                        ? "scale-110 border-2 border-yellow-500 "
-                        : ""
-                        }`}
+                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${
+                        font === "black"
+                          ? "scale-110 border-2 border-yellow-500 "
+                          : ""
+                      }`}
                       onClick={() => setFont("black")}
                     ></div>
                   </div>
@@ -338,10 +345,11 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div className="flex mt-8">
               <input
-                className={`border outline-none ${checkFormValid &&
+                className={`border outline-none ${
+                  checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px] h-10 rounded-xl pl-4`}
+                } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -370,16 +378,20 @@ function DetailsInput({ card, index, checkFormValid }) {
             <div>
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
-                  <p className="py-2 flex cursor-pointer justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden" onClick={handleLabelClick}>
+                  <p
+                    className="py-2 flex cursor-pointer justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden"
+                    onClick={handleLabelClick}
+                  >
                     {card.fileName}
                   </p>
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${checkFormValid &&
+                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${
+                      checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                      }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
+                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -423,10 +435,11 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div>
               <input
-                className={`border outline-none mt-8 ${checkFormValid &&
+                className={`border outline-none mt-8 ${
+                  checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px]  mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
+                } w-[220px]  mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"
@@ -459,36 +472,29 @@ function DetailsInput({ card, index, checkFormValid }) {
 
           <div className="flex flex-col items-center lg:flex-grow ">
             <div className="flex mt-8 lg:mt-0">
-              <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
-                <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] bg-[#66D3E1] drop-shadow-white rounded-2xl relative  ">
-                  <Image
-                    src={"/assets/images/nfcIcon.png"}
-                    className="absolute top-2 right-3"
-                    alt="nfc"
-                    height={25}
-                    width={25}
-                  />
-
-                  <Image
-                    src={"/assets/images/loopIcon.svg"}
-                    className="hidden lg:block absolute top-12 left-14"
-                    alt="loop"
-                    height={300}
-                    width={370}
-                  />
-                  <Image
-                    src={"/assets/images/loopIcon.svg"}
-                    className="lg:hidden  absolute top-10 left-16"
-                    alt="loop"
-                    height={132}
-                    width={182}
-                  />
+              <div
+                className={`card ${isFlipped ? "flipped" : ""}`}
+                onClick={handleFlip}
+              >
+                <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
+                  <div className="card-front lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                    <img
+                      src={`/assets/images/cards/Front/${color}.png`}
+                      className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
+                    />
+                  </div>
+                  <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                    <img
+                      src={`/assets/images/cards/Back/${color}.png`}
+                      className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
+                    />
+                  </div>
                 </div>
               </div>
-              <div className=" ml-4">
+              <div className=" ml-4" onClick={handleFlip}>
                 <Image
                   src={"/assets/images/cart-images/flipImage.png"}
-                  className="hidden lg:block"
+                  className="hidden lg:block "
                   alt="flip"
                   height={36}
                   width={36}
@@ -540,10 +546,11 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div className="flex mt-6">
               <input
-                className={`border outline-none ${checkFormValid &&
+                className={`border outline-none ${
+                  checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px] h-10 rounded-xl pl-4`}
+                } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -572,16 +579,20 @@ function DetailsInput({ card, index, checkFormValid }) {
             <div>
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
-                  <p className="py-2 flex cursor-pointer justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden" onClick={handleLabelClick}>
+                  <p
+                    className="py-2 flex cursor-pointer justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden"
+                    onClick={handleLabelClick}
+                  >
                     {card.fileName}
                   </p>
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`cursor-pointer py-2 flex justify-between border ${checkFormValid &&
+                    className={`cursor-pointer py-2 flex justify-between border ${
+                      checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                      }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
+                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -625,10 +636,11 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div className="mt-8">
               <input
-                className={`border outline-none ${checkFormValid &&
+                className={`border outline-none ${
+                  checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
+                } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"

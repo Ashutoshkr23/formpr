@@ -9,12 +9,14 @@ const DesignComp = ({
   totalAmount,
   totalQuantity,
   selectedTypeIndex,
+  color,
+  setColor,
 }) => {
   const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
   const [State, setState] = useState(1);
   const [value, setValue] = useState("Front");
   const [type, setType] = useState("Lite");
-  const [color, setColor] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
+  //const [color, setColor] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
