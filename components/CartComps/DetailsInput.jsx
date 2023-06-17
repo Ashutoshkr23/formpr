@@ -478,44 +478,75 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
             className="absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] hover:text-black  items-center bg-black text-[10px] font-bold text-white h-6 w-20"
             onClick={() => handleRemoveCardArr(card.key)}
           >
-            REMOVEhello <span className="text-base font-medium pl-2">X</span>
+            REMOVE <span className="text-base font-medium pl-2">X</span>
           </div>
 
           <div className="flex flex-col items-center lg:flex-grow ">
-            <div className="flex mt-8 lg:mt-0">
-              <div
-                className={`card ${isFlipped ? "flipped" : ""}`}
-                onClick={handleFlip}
-              >
-                <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
-                  <div className="card-front lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
-                    <img
-                      src={`/assets/images/cards/Front/${color}.png`}
-                      className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
-                    />
-                  </div>
-                  <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
-                    <img
-                      src={`/assets/images/cards/Back/${color}.png`}
-                      className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
-                    />
+              {card.cardTypeName === 'Lite' && (<div className="flex mt-8 lg:mt-0">
+                <div
+                  className={`card ${isFlipped ? "flipped" : ""}`}
+                  onClick={handleFlip}
+                >
+                  <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
+                    <div className="card-front lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                      <img
+                        src={`/assets/images/cards/Front/${colorLite}.png`}
+                        className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
+                      />
+                    </div>
+                    <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                      <img
+                        src={`/assets/images/cards/Back/${colorLite}.png`}
+                        className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className=" ml-4" onClick={handleFlip}>
-                <Image
-                  src={"/assets/images/cart-images/flipImage.png"}
-                  className="hidden lg:block "
-                  alt="flip"
-                  height={36}
-                  width={36}
-                />
-              </div>
-            </div>
+                <div className=" ml-4" onClick={handleFlip}>
+                  <Image
+                    src={"/assets/images/cart-images/flipImage.png"}
+                    className="hidden lg:block "
+                    alt="flip"
+                    height={36}
+                    width={36}
+                  />
+                </div>
+              </div>)}
+              {card.cardTypeName === 'Elevate' && (<div className="flex mt-8 lg:mt-0">
+                <div
+                  className={`card ${isFlipped ? "flipped" : ""}`}
+                  onClick={handleFlip}
+                >
+                  <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
+                    <div className="card-front lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                      <img
+                        src={`/assets/images/cards/Front/${colorElevate}.png`}
+                        className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
+                      />
+                    </div>
+                    <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                      <img
+                        src={`/assets/images/cards/Back/${colorElevate}.png`}
+                        className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className=" ml-4" onClick={handleFlip}>
+                  <Image
+                    src={"/assets/images/cart-images/flipImage.png"}
+                    className="hidden lg:block "
+                    alt="flip"
+                    height={36}
+                    width={36}
+                  />
+                </div>
+              </div>)}
+
             <div className="flex mt-6  gap-4">
               <p className="text-xs">colors</p>
               <div className={`flex space-x-2 justify-start items-center`}>
-                {index == 0 ? (
+                  {card.cardTypeName === 'Lite' ? (
                   <>
                     {cartItems[0]?.designs?.map((item) => {
                       return (
@@ -535,7 +566,7 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
                       );
                     })}
                   </>
-                ) : index == 1 ? (
+                  ) : card.cardTypeName === 'Elevate' ? (
                   <div className=" flex flex-wrap  gap-x-4 gap-y-2 w-[75%]">
                     {cartItems[1]?.designs?.map((item) => {
                       return (
@@ -546,7 +577,7 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
                               ? "scale-125 border border-black p-px"
                               : ""
                           } `}
-                          onClick={() => setColor(item.designUuid)}
+                          onClick={() => setColorElevate(item.designUuid)}
                         >
                           <Image
                             src={`/assets/images/radio_buttons/elevate/${item.designUuid}.png`}
