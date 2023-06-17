@@ -28,24 +28,23 @@ const DesignComp = ({
 
   useEffect(() => {
     if (selectedTypeIndex == 0) {
-      setType("Lite")
+      setType("Lite");
     } else if (selectedTypeIndex == 1) {
-      setType("Elevate")
+      setType("Elevate");
     } else {
-      setType("Supreme")
+      setType("Supreme");
     }
-  }, [selectedTypeIndex])
+  }, [selectedTypeIndex]);
 
   useEffect(() => {
     if (type == "Lite") {
-      setColor("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a")
+      setColor("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
     } else if (type == "Elevate") {
-      setColor("c591107d-b134-4cbf-9667-2da6fb07b339")
+      setColor("c591107d-b134-4cbf-9667-2da6fb07b339");
     } else {
-      setColor("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a")
+      setColor("supreme");
     }
-  }, [type])
-
+  }, [type]);
 
   return (
     <div className="lg:mx-4 max-w-[1208px] xl:mx-auto ">
@@ -57,16 +56,18 @@ const DesignComp = ({
                 <div>
                   <div className=" pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-7   rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex items-center justify-between    cursor-pointer  h-full  ${selectedTypeIndex == 0 ? " " : ""
-                        } `}
+                      className={`flex items-center justify-between    cursor-pointer  h-full  ${
+                        selectedTypeIndex == 0 ? " " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(0);
                         setType("Lite");
                       }}
                     >
                       <p
-                        className={` leading-7 pt-2 text-[#686A6C] text-center text-xs lg:text-sm ${selectedTypeIndex == 0 ? " font-bold text-black " : ""
-                          }`}
+                        className={` leading-7 pt-2 text-[#686A6C] text-center text-xs lg:text-sm ${
+                          selectedTypeIndex == 0 ? " font-bold text-black " : ""
+                        }`}
                       >
                         Loop Lite
                       </p>
@@ -81,16 +82,18 @@ const DesignComp = ({
 
                   <div className="pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${selectedTypeIndex == 1 ? "  " : ""
-                        } `}
+                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${
+                        selectedTypeIndex == 1 ? "  " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(1);
                         setType("Elevate");
                       }}
                     >
                       <p
-                        className={` leading-7 pt-3 text-[#686A6C] text-center text-xs lg:text-sm ${selectedTypeIndex == 1 ? " font-bold text-black " : ""
-                          }`}
+                        className={` leading-7 pt-3 text-[#686A6C] text-center text-xs lg:text-sm ${
+                          selectedTypeIndex == 1 ? " font-bold text-black " : ""
+                        }`}
                       >
                         Loop Elevate
                       </p>
@@ -103,15 +106,17 @@ const DesignComp = ({
                   </div>
                   <div className="pr-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex cursor-pointer items-center justify-between pb-2   h-full ${selectedTypeIndex == 2 ? " " : ""
-                        } `}
+                      className={`flex cursor-pointer items-center justify-between pb-2   h-full ${
+                        selectedTypeIndex == 2 ? " " : ""
+                      } `}
                       onClick={() => {
                         handleCardSelection(2);
                       }}
                     >
                       <p
-                        className={`text-[#686A6C] text-xs lg:text-sm  pt-3 leading-7 text-center ${selectedTypeIndex == 2 ? " font-bold text-black" : ""
-                          }`}
+                        className={`text-[#686A6C] text-xs lg:text-sm  pt-3 leading-7 text-center ${
+                          selectedTypeIndex == 2 ? " font-bold text-black" : ""
+                        }`}
                       >
                         Loop Supreme
                       </p>
@@ -146,7 +151,10 @@ const DesignComp = ({
             </div>
             <div className="hidden md:block">
               <div className="flex space-x-5">
-                <div className={`card ${isFlipped ? "flipped" : ""}`}>
+                <div
+                  className={`card ${isFlipped ? "flipped" : ""}`}
+                  onClick={handleFlip}
+                >
                   <div className="w-[400px] h-[258px]">
                     <div className={` card-inner w-[400px] h-[258px]`}>
                       <div className="card-front">
@@ -171,15 +179,18 @@ const DesignComp = ({
                           height={258}
                           width={400}
                         />
-                        <div className="absolute bottom-14 left-6">
+                        {/* <div className="absolute bottom-14 left-6">
                           <p>John Doe</p>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="cursor-pointer" onClick={handleFlip}>
+                <div
+                  className="hidden lg:block cursor-pointer"
+                  onClick={handleFlip}
+                >
                   <Image
                     src={"/assets/images/cart-images/flipImage.png"}
                     className=""
@@ -193,39 +204,45 @@ const DesignComp = ({
             {/* foe mobile */}
             <div className="md:hidden">
               <div className="flex space-x-3">
-                <div className={`card ${isFlipped ? "flipped" : ""}`}>
+                <div
+                  className={`card ${isFlipped ? "flipped" : ""}`}
+                  onClick={handleFlip}
+                >
                   <div className="w-[300px] h-[175px]">
                     <div className={` card-inner w-[300px] h-[172px]`}>
                       <div className="card-front">
-                        <div className="">
+                        <div className="relative">
                           <Image
-                            src={`/assets/images/storeImages/${type}/Front/${color}.png`}
+                            src={`/assets/images/cards/Front/${color}.png`}
                             className=""
                             alt="flip"
                             height={172}
                             width={300}
                           />
+                          {/* <div className="absolute bottom-6 left-6">
+                            <p>John Doe</p>
+                          </div> */}
                         </div>
                       </div>
                       <div
                         className={`card-back h-[172px] w-[300px] relative `}
                       >
                         <Image
-                          src={`/assets/images/storeImages/${type}/Back/${color}.png`}
+                          src={`/assets/images/cards/Back/${color}.png`}
                           className=""
                           alt="flip"
                           height={172}
                           width={300}
                         />
-                        <div className="absolute bottom-6 left-6">
-                          <p>John Doe</p>
-                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="cursor-pointer" onClick={handleFlip}>
+                <div
+                  className="hidden lg:block cursor-pointer"
+                  onClick={handleFlip}
+                >
                   <Image
                     src={"/assets/images/cart-images/flipImage.png"}
                     className=""

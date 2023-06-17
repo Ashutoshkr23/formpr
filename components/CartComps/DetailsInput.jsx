@@ -183,7 +183,10 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div className="flex mt-8 lg:mt-0">
               <div className="flex flex-col gap-6  lg:mt-0  ">
-                <div className={`card ${isFlipped ? "flipped" : ""}`}>
+                <div
+                  className={`card ${isFlipped ? "flipped" : ""}`}
+                  onClick={handleFlip}
+                >
                   <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
                     <div
                       className={` card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
@@ -251,17 +254,17 @@ function DetailsInput({ card, index, checkFormValid }) {
                       >
                         <Image
                           src={"/assets/images/nfcIcon.png"}
-                          className="absolute top-4 right-4"
+                          className="absolute top-4 right-4 "
                           alt="nfc"
                           height={25}
                           width={25}
                         />
 
                         {card.companyLogo && card.companyLogo.length ? (
-                          <div className="absolute lg:left-[60px] lg:bottom-[60px] left-[50px] bottom-[40px]  lg:h-[130px] h-[90px] w-[200px] lg:w-[280px] object-cover">
+                          <div className="absolute flex justify-srat items-center  lg:left-[60px] lg:bottom-[60px] left-[50px] bottom-[40px]  lg:h-[130px] h-[90px] max-w-[300px] lg:w-[400px] object-cover">
                             <img
                               src={card.companyLogo}
-                              className=" object-fill lg:w-[280px] lg:h-[130px] h-[90px] w-[200px] "
+                              className=" object-fill w-full lg:h-[130px] lg:w-[300px] h-[90px] "
                             />
                           </div>
                         ) : (
@@ -276,7 +279,7 @@ function DetailsInput({ card, index, checkFormValid }) {
                 <div className="flex justify-between ">
                   <div className="flex items-center ">
                     <p className="sm:text-sm text-xs">color:</p>
-                    <div className="ml-1 text-center w-20 sm:w-32 h-8 bg-gradient-to-b from-white to-gray-400 shadow-inner border-2 rounded-lg border-black">
+                    <div className="ml-1 text-center w-50 sm:w-52 h-8 bg-gradient-to-b from-white to-gray-400 shadow-inner border-2 rounded-lg border-black">
                       <p> {showPicker ? cardColor : cardColor}</p>
                     </div>
                     <Image
@@ -321,21 +324,13 @@ function DetailsInput({ card, index, checkFormValid }) {
                   </div>
                 </div>
               </div>
-              <div className="ml-1">
+              <div className="ml-4">
                 <Image
                   src={"/assets/images/cart-images/flipImage.png"}
                   className=" cursor-pointer hidden lg:block"
                   alt="flip"
                   height={36}
                   width={36}
-                  onClick={handleFlip}
-                />
-                <Image
-                  src={"/assets/images/cart-images/flipImage.png"}
-                  className=" cursor-pointer lg:hidden"
-                  alt="flip"
-                  height={25}
-                  width={25}
                   onClick={handleFlip}
                 />
               </div>
@@ -475,7 +470,7 @@ function DetailsInput({ card, index, checkFormValid }) {
           <div className="flex flex-col items-center lg:flex-grow ">
             <div className="flex mt-8 lg:mt-0">
               <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
-                <div className="lg:w-[400px] lg:h-[250px] w-full h-[172px] bg-[#66D3E1] drop-shadow-white rounded-2xl relative  ">
+                <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] bg-[#66D3E1] drop-shadow-white rounded-2xl relative  ">
                   <Image
                     src={"/assets/images/nfcIcon.png"}
                     className="absolute top-2 right-3"
@@ -507,13 +502,6 @@ function DetailsInput({ card, index, checkFormValid }) {
                   alt="flip"
                   height={36}
                   width={36}
-                />
-                <Image
-                  src={"/assets/images/cart-images/flipImage.png"}
-                  className="lg:hidden"
-                  alt="flip"
-                  height={25}
-                  width={25}
                 />
               </div>
             </div>
