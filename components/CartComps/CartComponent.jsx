@@ -57,7 +57,7 @@ const CartComponent = () => {
     }
   }, []);
 
-  console.log(color);
+  //console.log(color);
   const checkValidation = () => {
     let error = false;
     cardsArray.map((card) => {
@@ -273,11 +273,13 @@ const CartComponent = () => {
         ) : stepState == 2 ? (
           <DetailsComp
             color={color}
+            setColor={setColor}
             cardsArray={cardsArray}
             checkFormValid={checkFormValid}
           />
         ) : (
           <CheckoutComp
+            color={color}
             cardsArray={cardsArray}
             handleSubmitFunction={handleSubmitFunction}
           />

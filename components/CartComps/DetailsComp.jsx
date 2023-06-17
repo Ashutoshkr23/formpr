@@ -2,7 +2,7 @@ import React from "react";
 import DetailsInput from "./DetailsInput";
 // import { CartContext } from '@/context/CartContext'
 
-const DetailsComp = ({ cardsArray, checkFormValid, color }) => {
+const DetailsComp = ({ cardsArray, checkFormValid, color, setColor }) => {
   // console.log(cardsArray, "array")
 
   return (
@@ -17,6 +17,7 @@ const DetailsComp = ({ cardsArray, checkFormValid, color }) => {
                   index={index}
                   checkFormValid={checkFormValid}
                   color={color}
+                  setColor={setColor}
                 />
               </div>
             );

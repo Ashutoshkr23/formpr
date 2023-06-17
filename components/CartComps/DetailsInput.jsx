@@ -7,13 +7,21 @@ import "react-toastify/dist/ReactToastify.css";
 import { SketchPicker } from "react-color";
 import { CompactPicker } from "react-color";
 
-function DetailsInput({ card, index, checkFormValid, color }) {
+function DetailsInput({ card, index, checkFormValid, color, setColor }) {
   // console.log(card, "Card")
+
   const [selectedDiv, setSelectedDiv] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const fileInputRef = useRef(null);
-  const { userProfile, handleApplyToAll, handleName, handleRemoveCardArr } =
-    useContext(CartContext);
+  const {
+    cartItems,
+    minusCartFunc,
+    plusCartFunc,
+    userProfile,
+    handleApplyToAll,
+    handleName,
+    handleRemoveCardArr,
+  } = useContext(CartContext);
   const [design, setDesign] = useState(1);
   const [font, setFont] = useState("white");
   const [isFlipped, setIsFlipped] = useState(false);
@@ -93,11 +101,11 @@ function DetailsInput({ card, index, checkFormValid, color }) {
   };
   const [showPicker, setShowPicker] = useState(false);
   const [cardColor, setCardColor] = useState("#000000");
-  const [Color, setColor] = useState("#bd10e0");
 
   const handleChangeComplete = (color) => {
     setCardColor(color.hex);
   };
+  console.log(color);
   return (
     <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto mx-[10px] my-6  ">
       {card.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
@@ -503,37 +511,55 @@ function DetailsInput({ card, index, checkFormValid, color }) {
             </div>
             <div className="flex mt-6  gap-4">
               <p className="text-xs">colors</p>
-              <div id="container" className="flex space-x-2">
-                <div
-                  className={`rounded-full bg-[#FFF490] lg:w-5 lg:h-5 w-4 h-4`}
-                  style={selectedDiv === 0 ? selectedDivStyle : divStyle}
-                  onClick={() => handleDivClick(0)}
-                ></div>
-                <div
-                  className="rounded-full bg-[#96FFAD] lg:w-5 lg:h-5 w-4 h-4"
-                  style={selectedDiv === 1 ? selectedDivStyle : divStyle}
-                  onClick={() => handleDivClick(1)}
-                ></div>
-                <div
-                  className="rounded-full bg-[#66D3E1] lg:w-5 lg:h-5 w-4 h-4"
-                  style={selectedDiv === 2 ? selectedDivStyle : divStyle}
-                  onClick={() => handleDivClick(2)}
-                ></div>
-                <div
-                  className="rounded-full bg-[#F66F6F] lg:w-5 lg:h-5 w-4 h-4"
-                  style={selectedDiv === 3 ? selectedDivStyle : divStyle}
-                  onClick={() => handleDivClick(3)}
-                ></div>
-                <div
-                  className="rounded-full bg-[#ECECEC] lg:w-5 lg:h-5 w-4 h-4"
-                  style={selectedDiv === 4 ? selectedDivStyle : divStyle}
-                  onClick={() => handleDivClick(4)}
-                ></div>
-                <div
-                  className="rounded-full bg-[#323232] lg:w-5 lg:h-5 w-4 h-4"
-                  style={selectedDiv === 5 ? selectedDivStyle : divStyle}
-                  onClick={() => handleDivClick(5)}
-                ></div>
+              <div className={`flex space-x-2 justify-start items-center`}>
+                {index == 0 ? (
+                  <>
+                    {cartItems[0]?.designs?.map((item) => {
+                      return (
+                        <div
+                          key={item.designUuid}
+                          className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${
+                            color === item.designUuid
+                              ? "scale-125 border border-black p-px"
+                              : ""
+                          } `}
+                          onClick={() => setColor(item.designUuid)}
+                        >
+                          <div
+                            className={`w-full h-full rounded-full bg-[${item.hexCode}]`}
+                          ></div>
+                        </div>
+                      );
+                    })}
+                  </>
+                ) : index == 1 ? (
+                  <div className=" flex flex-wrap  gap-x-4 gap-y-2 w-[75%]">
+                    {cartItems[1]?.designs?.map((item) => {
+                      return (
+                        <div
+                          key={item.designUuid}
+                          className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${
+                            color === item.designUuid
+                              ? "scale-125 border border-black p-px"
+                              : ""
+                          } `}
+                          onClick={() => setColor(item.designUuid)}
+                        >
+                          <Image
+                            src={`/assets/images/radio_buttons/elevate/${item.designUuid}.png`}
+                            alt="radio button"
+                            height={25}
+                            width={25}
+                            quality={100}
+                            className="rounded-full"
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
           </div>
