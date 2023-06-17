@@ -14,6 +14,8 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
   // console.log(card, "Card")
 
   const [selectedDiv, setSelectedDiv] = useState(null);
+  const [selectedColorLite, setSelectedColorLite] = useState(colorLite);
+  const [selectedColorElevate, setSelectedColorElevate] = useState(colorElevate);
   const [errorMessage, setErrorMessage] = useState("");
   const fileInputRef = useRef(null);
   const {
@@ -490,13 +492,13 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
                   <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
                     <div className="card-front lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
                       <img
-                        src={`/assets/images/cards/Front/${colorLite}.png`}
+                        src={`/assets/images/cards/Front/${selectedColorLite}.png`}
                         className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
                       />
                     </div>
                     <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
                       <img
-                        src={`/assets/images/cards/Back/${colorLite}.png`}
+                        src={`/assets/images/cards/Back/${selectedColorLite}.png`}
                         className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
                       />
                     </div>
@@ -520,13 +522,13 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
                   <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
                     <div className="card-front lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
                       <img
-                        src={`/assets/images/cards/Front/${colorElevate}.png`}
+                        src={`/assets/images/cards/Front/${selectedColorElevate}.png`}
                         className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
                       />
                     </div>
                     <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
                       <img
-                        src={`/assets/images/cards/Back/${colorElevate}.png`}
+                        src={`/assets/images/cards/Back/${selectedColorElevate}.png`}
                         className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
                       />
                     </div>
@@ -557,7 +559,7 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
                               ? "scale-125 border border-black p-px"
                               : ""
                           } `}
-                          onClick={() => setColorLite(item.designUuid)}
+                          onClick={() => setSelectedColorLite(item.designUuid)}
                         >
                           <div
                             className={`w-full h-full rounded-full bg-[${item.hexCode}]`}
@@ -577,7 +579,7 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
                               ? "scale-125 border border-black p-px"
                               : ""
                           } `}
-                          onClick={() => setColorElevate(item.designUuid)}
+                          onClick={() => setSelectedColorElevate(item.designUuid)}
                         >
                           <Image
                             src={`/assets/images/radio_buttons/elevate/${item.designUuid}.png`}

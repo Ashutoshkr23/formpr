@@ -11,6 +11,10 @@ const CardDescription = ({
   setColor,
   index,
   quantity,
+  setColorElevate,
+  colorLite,
+  setColorLite,
+  colorElevate,
 }) => {
   // console.log(color);
 
@@ -99,7 +103,7 @@ const CardDescription = ({
                                     ? "scale-125 border border-black p-px"
                                     : ""
                                 } `}
-                                onClick={() => setColor(item.designUuid)}
+                                onClick={() => setColorLite(item.designUuid)}
                               >
                                 <div
                                   className={`w-full h-full rounded-full bg-[${item.hexCode}]`}
@@ -119,7 +123,7 @@ const CardDescription = ({
                                     ? "scale-125 border border-black p-px"
                                     : ""
                                 } `}
-                                onClick={() => setColor(item.designUuid)}
+                                onClick={() => setColorElevate(item.designUuid)}
                               >
                                 <Image
                                   src={`/assets/images/radio_buttons/elevate/${item.designUuid}.png`}
