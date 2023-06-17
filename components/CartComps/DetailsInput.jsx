@@ -7,7 +7,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { SketchPicker } from "react-color";
 import { CompactPicker } from "react-color";
 
-function DetailsInput({ card, index, checkFormValid, color, setColor }) {
+function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
+  setColorLite,
+  colorElevate,
+  setColorElevate }) {
   // console.log(card, "Card")
 
   const [selectedDiv, setSelectedDiv] = useState(null);
@@ -475,7 +478,7 @@ function DetailsInput({ card, index, checkFormValid, color, setColor }) {
             className="absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] hover:text-black  items-center bg-black text-[10px] font-bold text-white h-6 w-20"
             onClick={() => handleRemoveCardArr(card.key)}
           >
-            REMOVE <span className="text-base font-medium pl-2">X</span>
+            REMOVEhello <span className="text-base font-medium pl-2">X</span>
           </div>
 
           <div className="flex flex-col items-center lg:flex-grow ">
@@ -523,7 +526,7 @@ function DetailsInput({ card, index, checkFormValid, color, setColor }) {
                               ? "scale-125 border border-black p-px"
                               : ""
                           } `}
-                          onClick={() => setColor(item.designUuid)}
+                          onClick={() => setColorLite(item.designUuid)}
                         >
                           <div
                             className={`w-full h-full rounded-full bg-[${item.hexCode}]`}

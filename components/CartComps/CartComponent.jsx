@@ -29,6 +29,8 @@ const CartComponent = () => {
   const [checkFormValid, setFormValid] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [color, setColor] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
+  const [colorLite, setColorLite] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
+  const [colorElevate, setColorElevate] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
 
   const router = useRouter();
   // console.log(cartItems, "cart")
@@ -264,6 +266,10 @@ const CartComponent = () => {
           <DesignComp
             color={color}
             setColor={setColor}
+            colorLite={colorLite}
+            setColorLite={setColorLite}
+            colorElevate={colorElevate}
+            setColorElevate={setColorElevate}
             cardTypeSelected={cardTypeSelected}
             handleCardSelection={handleCardSelection}
             totalAmount={totalAmount}
@@ -274,12 +280,20 @@ const CartComponent = () => {
           <DetailsComp
             color={color}
             setColor={setColor}
+            colorLite={colorLite}
+            setColorLite={setColorLite}
+            colorElevate={colorElevate}
+            setColorElevate={setColorElevate}
             cardsArray={cardsArray}
             checkFormValid={checkFormValid}
           />
         ) : (
           <CheckoutComp
             color={color}
+            colorLite={colorLite}
+            setColorLite={setColorLite}
+            colorElevate={colorElevate}
+            setColorElevate={setColorElevate}
             cardsArray={cardsArray}
             handleSubmitFunction={handleSubmitFunction}
           />
