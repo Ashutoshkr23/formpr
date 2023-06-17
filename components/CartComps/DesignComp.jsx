@@ -54,7 +54,7 @@ const DesignComp = ({
             <div className="">
               <div className="flex flex-row lg:flex-col  justify-between gap-6 ">
                 <div>
-                  <div className=" pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-7   rounded-[10px] drop-shadow-lg">
+                  <div className=" pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4   rounded-[10px] drop-shadow-lg">
                     <div
                       className={`flex items-center justify-between    cursor-pointer  h-full  ${
                         selectedTypeIndex == 0 ? " " : ""

@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     try {
         await connectToDatabase();
         if (req.method === 'POST') {
-            const { cardsArray, cartItems, puuid, razorpay_payment_id, razorpay_order_id, razorpay_signature } = req.body;
+            const { cardsArray, cartItems, puuid, razorpay_payment_id, razorpay_order_id, razorpay_signature, address } = req.body;
             if (!puuid) {
                 return res.status(422).json({ error: "Missing required fields." });
 
@@ -67,10 +67,14 @@ export default async function handler(req, res) {
                 orderId: orderId,
                 orderTrackingNumber: "1234",
                 shippingAddress: {
-                    recipientName: "John",
-                    lane1: "abcd",
-                    postalCode: "400072",
-                    state: "Maharashtra",
+                    firstName: address.firstName,
+                    lastName: address.lastName,
+                    address: address.address,
+                    email: address.email,
+                    phoneNumber: address.phoneNumber,
+                    pinCode: address.pinCode,
+                    city: address.city,
+                    state: address.state,
 
                 },
                 orderStatus: 0,

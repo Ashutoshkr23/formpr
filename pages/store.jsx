@@ -1,13 +1,17 @@
 // import First from "@/components/First";
 import { useSession, signIn, getSession, signOut } from "next-auth/react";
 import axios from "axios";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import React from "react";
 import ProductComp from "@/components/landing/ProductComp";
 import { Footer, LoopBlack } from "@/components";
 import CartNav from "@/components/CartComps/CartNav";
+import { CartContext } from "@/context/CartContext";
 
 export default function Home() {
+
+  const { cartItems } = useContext(CartContext)
+  // console.log(cartItems, "cartItems")
   return (
     <div>
       <CartNav />

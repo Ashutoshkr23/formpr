@@ -29,14 +29,26 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
     const handleHover = () => {
         setIsHovered(!isHovered);
     };
+
+    const handleRedirect = () => {
+        if (totalQuantity == 0) {
+            let position = index - 1
+            let tempObj = cartItems[position]
+            let id = tempObj._id;
+            if (id) {
+                plusCartFunc(id)
+            } else {
+                console.log("error id")
+            }
+        }
+        router.push("/cart")
+    }
+
     return (
         <div onClick={() => {
-            if (totalQuantity == 0) {
-                let id = cartItems[index - 1]._id
-                plusCartFunc(id)
-            }
+            handleRedirect()
 
-            router.push("/cart")
+
         }} className='flex flex-col lg:hover:scale-105 '>
             <div className=' relative z-20 ml-3 -mb-5  w-[116px] h-9 rounded-lg bg-black pt-2'>
                 <p className='text-center  font-semibold text-xs text-white'>{cardtype}</p>

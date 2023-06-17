@@ -125,9 +125,8 @@ function DetailsInput({ card, index, checkFormValid }) {
                     onClick={() => setDesign(1)}
                   />
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 2 ? `border-2 border-black` : ""
-                    }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 2 ? `border-2 border-black` : ""
+                      }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design2.png"
                     }
@@ -137,9 +136,8 @@ function DetailsInput({ card, index, checkFormValid }) {
                 </div>
                 <div className="flex  gap-2">
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 3 ? `border-2 border-black` : ""
-                    }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 3 ? `border-2 border-black` : ""
+                      }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design3.png"
                     }
@@ -147,9 +145,8 @@ function DetailsInput({ card, index, checkFormValid }) {
                     onClick={() => setDesign(3)}
                   />
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 4 ? `border-2 border-black` : ""
-                    }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 4 ? `border-2 border-black` : ""
+                      }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design4.png"
                     }
@@ -159,9 +156,8 @@ function DetailsInput({ card, index, checkFormValid }) {
                 </div>
                 <div className="flex  gap-2">
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 5 ? `border-2 border-black` : ""
-                    }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 5 ? `border-2 border-black` : ""
+                      }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design5.png"
                     }
@@ -169,9 +165,8 @@ function DetailsInput({ card, index, checkFormValid }) {
                     onClick={() => setDesign(5)}
                   />
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 6 ? `border-2 border-black` : ""
-                    }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 6 ? `border-2 border-black` : ""
+                      }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design6.png"
                     }
@@ -305,20 +300,18 @@ function DetailsInput({ card, index, checkFormValid }) {
                       font color:
                     </p>
                     <div
-                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${
-                        font === "white"
-                          ? "scale-110 border-2 border-black "
-                          : ""
-                      }
+                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${font === "white"
+                        ? "scale-110 border-2 border-black "
+                        : ""
+                        }
                     `}
                       onClick={() => setFont("white")}
                     ></div>
                     <div
-                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${
-                        font === "black"
-                          ? "scale-110 border-2 border-yellow-500 "
-                          : ""
-                      }`}
+                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${font === "black"
+                        ? "scale-110 border-2 border-yellow-500 "
+                        : ""
+                        }`}
                       onClick={() => setFont("black")}
                     ></div>
                   </div>
@@ -345,11 +338,10 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div className="flex mt-8">
               <input
-                className={`border outline-none ${
-                  checkFormValid &&
+                className={`border outline-none ${checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[220px] h-10 rounded-xl pl-4`}
+                  } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -378,17 +370,16 @@ function DetailsInput({ card, index, checkFormValid }) {
             <div>
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
-                  <p className="py-2 flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden">
+                  <p className="py-2 flex cursor-pointer justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden" onClick={handleLabelClick}>
                     {card.fileName}
                   </p>
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${
-                      checkFormValid &&
+                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
+                      }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -432,11 +423,10 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div>
               <input
-                className={`border outline-none mt-8 ${
-                  checkFormValid &&
+                className={`border outline-none mt-8 ${checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[220px]  mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
+                  } w-[220px]  mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"
@@ -550,11 +540,10 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div className="flex mt-6">
               <input
-                className={`border outline-none ${
-                  checkFormValid &&
+                className={`border outline-none ${checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[220px] h-10 rounded-xl pl-4`}
+                  } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -583,17 +572,16 @@ function DetailsInput({ card, index, checkFormValid }) {
             <div>
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
-                  <p className="py-2 flex justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden">
+                  <p className="py-2 flex cursor-pointer justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden" onClick={handleLabelClick}>
                     {card.fileName}
                   </p>
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`cursor-pointer py-2 flex justify-between border ${
-                      checkFormValid &&
+                    className={`cursor-pointer py-2 flex justify-between border ${checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
+                      }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -637,11 +625,10 @@ function DetailsInput({ card, index, checkFormValid }) {
             </div>
             <div className="mt-8">
               <input
-                className={`border outline-none ${
-                  checkFormValid &&
+                className={`border outline-none ${checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
+                  } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"

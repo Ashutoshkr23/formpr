@@ -7,6 +7,7 @@ import { CartNav } from '@/components';
 import SortBy from '@/components/ProfilePage/SortBy';
 import SearchByName from '@/components/ProfilePage/SearchByName';
 import Image from 'next/image';
+import ToggleSwtich from '@/components/ToggleSwtich';
 
 const Remainder = () => {
 
@@ -66,6 +67,7 @@ const Remainder = () => {
     return (
         <>
             <CartNav />
+            <ToggleSwtich />
             <div className='flex gap-4 max-w-[1208px] mx-auto mt-24'>
                 <SortBy sortByCustomClasses='py-2' />
                 <SearchByName />

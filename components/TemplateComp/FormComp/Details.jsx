@@ -8,8 +8,30 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
     const handleProfileUpload = (event) => {
         const file = event.target.files[0];
         const imageUrl = URL.createObjectURL(file);
-        setProfileImg(imageUrl);
+
+        // Create a new FormData object
+        const formData = new FormData();
+        formData.append('profileImage', file);
+
+        // Send the file to the server
+        fetch('/api/uploadImageAws', {
+            method: 'POST',
+            body: formData,
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // Handle the response from the server
+                const { result: link } = data;
+                setProfileImg(link);
+                console.log(setCover);
+                // ...
+            })
+            .catch((error) => {
+                // Handle any errors
+                console.log(error);
+            });
     };
+
 
     const maxLength = 80;
 
@@ -19,11 +41,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
     };
 
     const remainingChars = maxLength - bio.length;
-
-
-
-    // console.log("hello" + profileImg)
-
+    
     const handleCompanyChange = (e) => {
         const value = e.target.value;
         onCompanyChange(value);

@@ -13,19 +13,23 @@ const ShippingSchema = new mongoose.Schema({
     razorpay_order_id: { type: String, required: true },
     razorpay_signature: { type: String, required: true },
     shippingAddress: {
-        recipientName: {
+        firstName: {
             type: String,
             required: true
         },
-        lane1: {
+        lastName: {
+            type: String,
+            required: true
+        },
+        address: {
             type: String,
             required: true,
         },
-        lane2: {
+        pinCode: {
             type: String,
-            default: "",
+            required: true
         },
-        postalCode: {
+        city: {
             type: String,
             required: true
         },

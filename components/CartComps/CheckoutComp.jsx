@@ -1,15 +1,58 @@
 import { CartContext } from "@/context/CartContext";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import ShippingComp from "./ShippingComp";
+import { toast } from "react-toastify";
 
 const CheckoutComp = ({ cardsArray, handleSubmitFunction }) => {
-  const { handleRemoveCardArr, totalQuantity, totalAmount } =
-    useContext(CartContext);
+  const { handleRemoveCardArr, totalQuantity, totalAmount, address, setAddress } = useContext(CartContext);
+
+  const [shippingState, setShippingState] = useState(false);
+  const [submitPressed, setSubmitPressed] = useState(false)
+  // const [address, setAddress] = useState({
+  //   email: "",
+  //   phoneNumber: "",
+  //   firstName: "",
+  //   lastName: "",
+  //   address: "",
+  //   pinCode: "",
+  //   city: "",
+  //   state: ""
+  // })
+
+  const checkShippingValidation = () => {
+    let error = false;
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (!address.email.length || !emailRegex.test(address.email)) {
+      toast.error("Please enter a valid email address")
+      error = true
+    }
+    if (!address.phoneNumber.length || !address.firstName.length || !address.lastName.length || !address.address.length || address.pinCode.length !== 6 || !address.city.length || !address.state.length) {
+      error = true
+      toast.error("Please fill shipping details properly !")
+    }
+    return error
+  }
+
+  const handleClick = async () => {
+    if (shippingState) {
+      setSubmitPressed(true)
+      const error = await checkShippingValidation()
+      if (!error) {
+        handleSubmitFunction()
+
+      }
+    } else {
+
+      setShippingState(true)
+    }
+  }
+
   // console.log(cardsArray);
   return (
     <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center px-4 xl:px-0">
-      <div className=" lg:w-3/5  flex  flex-wrap space-x-2  lg:justify-between   ">
-        <div className="container mx-auto mb-5">
+      {!shippingState ? <div className=" lg:w-3/5  flex  flex-wrap space-x-2  lg:justify-between   ">
+        <div className="container mx-auto mb-5 ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {cardsArray.length &&
               cardsArray.map((data) => {
@@ -89,7 +132,10 @@ const CheckoutComp = ({ cardsArray, handleSubmitFunction }) => {
               })}
           </div>
         </div>
-      </div>
+      </div> :
+        <>
+          <ShippingComp address={address} setAddress={setAddress} submitPressed={submitPressed} />
+        </>}
       <div className="hidden lg:block  pl-2">
         <div className="w-full  lg:w-[300px] xl:w-[385px] shadow-xl min-h-[510px] bg-white rounded-xl py-8">
           <p className="text-2xl font-bold text-center">Order Summary</p>
@@ -123,14 +169,14 @@ const CheckoutComp = ({ cardsArray, handleSubmitFunction }) => {
             </div>
           </div>
           <div className="mx-5 my-6">
-            <div
-              className="flex items-center justify-between w-full h-10 px-5 bg-black border rounded-lg border-black cursor-pointer"
-              onClick={handleSubmitFunction}
+            <button
+              className="w-full h-10 px-5 bg-black border rounded-lg border-black cursor-pointer text-base font-bold text-center text-white "
+              onClick={handleClick}
             >
-              <p className="text-base font-bold text-center text-white pl-24">
-                CHECKOUT
-              </p>
-            </div>
+
+              {shippingState ? "CHECKOUT" : "GO TO SHIPPING"}
+
+            </button>
           </div>
           <p className="mx-5 text-sm font-medium text-red-400">
             *You can edit your contact details after checkout

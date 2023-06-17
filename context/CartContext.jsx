@@ -22,6 +22,18 @@ export const CartProvider = ({ children }) => {
     const [stepState, setStepState] = useState(1);
     const [totalQuantity, setTotalQuantity] = useState(0)
     const [totalAmount, setTotalAmount] = useState(0)
+    const [address, setAddress] = useState({
+        email: "",
+        phoneNumber: "",
+        firstName: "",
+        lastName: "",
+        address: "",
+        pinCode: "",
+        city: "",
+        state: ""
+    })
+
+
 
     useEffect(() => {
 
@@ -71,6 +83,11 @@ export const CartProvider = ({ children }) => {
         if (storedData) {
             setCartItems(JSON.parse(storedData))
         }
+        const storedAddData = localStorage.getItem('addressData');
+        if (storedAddData) {
+            setAddress(JSON.parse(storedAddData))
+        }
+
         if (!cartItems.length && !storedData) {
             fetchCartType()
         }
@@ -151,21 +168,24 @@ export const CartProvider = ({ children }) => {
     }
 
     const plusCartFunc = (id) => {
-        if (totalQuantity < 10) {
+        console.log("runned plus cart")
+        if (id) {
+            if (totalQuantity < 10) {
 
 
-            const newCartItems = cartItems.map((item) => {
-                if (item._id == id) {
-                    let newItem = { ...item, quantity: parseInt(item.quantity) + 1 }
-                    newItem.totalAmount = parseInt(newItem.quantity) * parseInt(newItem.amount)
-                    return newItem
-                }
-                return item
-            })
-            setCartItems(newCartItems)
-            localStorage.setItem('cartData', JSON.stringify(newCartItems));
-        } else {
-            toast.error("Maximum 10 cards limit reached !")
+                const newCartItems = cartItems.map((item) => {
+                    if (item._id == id) {
+                        let newItem = { ...item, quantity: parseInt(item.quantity) + 1 }
+                        newItem.totalAmount = parseInt(newItem.quantity) * parseInt(newItem.amount)
+                        return newItem
+                    }
+                    return item
+                })
+                setCartItems(newCartItems)
+                localStorage.setItem('cartData', JSON.stringify(newCartItems));
+            } else {
+                toast.error("Maximum 10 cards limit reached !")
+            }
         }
 
     }
@@ -304,6 +324,8 @@ export const CartProvider = ({ children }) => {
         stepState,
         totalQuantity,
         totalAmount,
+        address,
+        defaultCart,
         clearCart,
         plusCartFunc,
         minusCartFunc,
@@ -313,7 +335,9 @@ export const CartProvider = ({ children }) => {
         handleApplyToAll,
         handleName,
         handleRemoveCardArr,
-        setStepState
+        setStepState,
+        setAddress,
+        setCartItems
     };
 
     // Provide the cart context to its children components

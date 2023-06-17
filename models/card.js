@@ -11,27 +11,31 @@ const CardSchema = new mongoose.Schema({
     // cardName is name displayed on card
     cardName: { type: String },
     companyLogo: { type: String },
-    companyName: { type: String },
-
+    
     // above fields get filled while creating card and below fields will be updated later
-
-    fullName: { type: String },
-    mobileNumber: { type: String },
-    // aws url will be stored in pfp
-    profilePicture: { type: String },
-    companyNumber: { type: String },
-    email: { type: String },
-    designation: { type: String },
+    //details
+    comapany: { type: String },
+    name: { type: String },
+    role: { type: String },
+    companylink: { type: String },
     bio: { type: String },
-    websiteUrl: { type: String },
-    instagramUrl: { type: String },
-    whatsappUrl: { type: String },
-    linkedinUrl: { type: String },
-    facebookUrl: { type: String },
-    contactUrl: { type: String, required: true },
-    deckUrl: { type: String },
-    themeId: { type: String },  // theme id will be coming from theme.js uuid
+    adress: { type: String },
+    mobileNumber: { type: String },
+    selectedTemplate: { type: String },
+        // aws url will be stored in pfp
+    profileImg: { type: String },
+    cover: { type: String },
 
+    //Social
+    whatsappNumber: { type: String },
+    mail: { type: String },
+    linkedin: { type: String },
+    instagram: { type: String },
+    twitter: { type: String },
+    youtube: { type: String },
+    facebook: { type: String },
+    behance: { type: String, required: true },
+    reddit: { type: String },
 
 });
 

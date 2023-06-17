@@ -1,3 +1,4 @@
+import moment from 'moment/moment';
 import { connectToDatabase } from '../../../lib/mongoose';
 import setRemainderModel from '../../../models/setRemainderModel';
 import mongoose from 'mongoose';
@@ -13,7 +14,7 @@ export default async function handler(req, res) {
 
         const specificTime = new Date(selectedDate);
         const currentTime = new Date();
-        const timeDifference = specificTime - currentTime;
+        const timeDifference = Math.abs((specificTime - currentTime));
 
         // Converting To DD-MM-YYYY HH-MM
         const mySelectedDate = new Date(selectedDate);
@@ -39,11 +40,13 @@ export default async function handler(req, res) {
                 // Code to send the reminder to the user
                 try {
                     await sgMail.send(message);
-                    // console.log('Notification email sent successfully');
+                    console.log('Notification email sent successfully');
                 } catch (error) {
                     console.error('Error sending notification email:', error);
                 }
             }, timeDifference);
+        } else {
+            console.log('Selected date is in the past. No notification will be sent.');
         }
 
         res.json({
