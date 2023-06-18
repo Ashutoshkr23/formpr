@@ -29,9 +29,17 @@ const CartComponent = () => {
   const [checkFormValid, setFormValid] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [color, setColor] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
-  const [colorLite, setColorLite] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
-  const [colorElevate, setColorElevate] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
+  const [colorLite, setColorLite] = useState(
+    "7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a"
+  );
+  const [colorElevate, setColorElevate] = useState(
+    "7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a"
+  );
+  const [cardBg, setCardBg] = useState("#000000");
+  const [cardDesign, setCardDesign] = useState(" ");
+  const [loopColor, setLoopColor] = useState(" ");
 
+  // console.log(cardBg);
   const router = useRouter();
   // console.log(cartItems, "cart")
   // type 0 :Lite ,1 :Elevate ,2:Supreme ,3 :black
@@ -286,9 +294,19 @@ const CartComponent = () => {
             setColorElevate={setColorElevate}
             cardsArray={cardsArray}
             checkFormValid={checkFormValid}
+            cardBg={cardBg}
+            setCardBg={setCardBg}
+            setCardDesign={setCardDesign}
+            cardDesign={cardDesign}
+            setLoopColor={setLoopColor}
+            loopColor={loopColor}
           />
         ) : (
           <CheckoutComp
+            setLoopColor={setLoopColor}
+            loopColor={loopColor}
+            setCardDesign={setCardDesign}
+            cardDesign={cardDesign}
             color={color}
             colorLite={colorLite}
             setColorLite={setColorLite}
@@ -296,6 +314,9 @@ const CartComponent = () => {
             setColorElevate={setColorElevate}
             cardsArray={cardsArray}
             handleSubmitFunction={handleSubmitFunction}
+            cardTypeSelected={cardTypeSelected}
+            cardBg={cardBg}
+            setCardBg={setCardBg}
           />
         )}
       </div>

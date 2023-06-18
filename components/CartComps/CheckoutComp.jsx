@@ -4,7 +4,20 @@ import React, { useContext, useState } from "react";
 import ShippingComp from "./ShippingComp";
 import { toast } from "react-toastify";
 
-const CheckoutComp = ({ cardsArray, handleSubmitFunction, color }) => {
+const CheckoutComp = ({
+  cardsArray,
+  handleSubmitFunction,
+  color,
+  colorLite,
+  colorElevate,
+  cardTypeSelected,
+  cardBg,
+  cardDesign,
+  loopColor,
+}) => {
+  console.log(`colorlite=${colorLite}`);
+  console.log(`colorelevate=${colorElevate}`);
+  console.log({ cardBg });
   const {
     handleRemoveCardArr,
     totalQuantity,
@@ -74,15 +87,66 @@ const CheckoutComp = ({ cardsArray, handleSubmitFunction, color }) => {
                       key={data.key}
                       className="relative grid grid-cols-2 gap-5 bg-white rounded-xl cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926] p-4 h-[250px]"
                     >
-                      <div>
-                        <Image
-                          src={`/assets/images/cards/Front/${color}.png`}
-                          height={250}
-                          width={300}
-                          alt="demo"
-                          quality={100}
-                        />
-                      </div>
+                      {data.cardTypeName === "Lite" && (
+                        <div>
+                          <Image
+                            src={`/assets/images/cards/Front/${colorLite}.png`}
+                            height={250}
+                            width={300}
+                            alt="demo"
+                            quality={100}
+                          />
+                        </div>
+                      )}
+                      {data.cardTypeName === "Elevate" && (
+                        <div>
+                          <Image
+                            src={`/assets/images/cards/Front/${colorElevate}.png`}
+                            height={250}
+                            width={300}
+                            alt="demo"
+                            quality={100}
+                          />
+                        </div>
+                      )}
+                      {data.cardTypeName === "Supreme" && (
+                        <div
+                          className={`relative h-[100px] w-[165px]`}
+                          style={{
+                            backgroundColor: cardBg,
+                          }}
+                        >
+                          <Image
+                            className="absolute top-0 left-0 "
+                            src={`/assets/images/storeImages/Supreme/Abstract/Des${cardDesign}.png`}
+                            height={100}
+                            width={165}
+                            alt="icon"
+                          />
+
+                          <Image
+                            className="absolute bottom-3 right-3"
+                            src={"/assets/images/storeImages/Supreme/Qr.png"}
+                            height={15}
+                            width={15}
+                            alt="icon"
+                          />
+                          <Image
+                            className="absolute top-3 right-3 z-10"
+                            src={`/assets/images/storeImages/Supreme/loop${loopColor}.png`}
+                            height={15}
+                            width={25}
+                            alt="icon"
+                          />
+                          <div className="absolute bottom-3 left-4">
+                            <p
+                              className={`lg:text-[8px] text:sm  font-semibold text-${loopColor}`}
+                            >
+                              {data.fullName ? data.fullName : "John Doe"}
+                            </p>
+                          </div>
+                        </div>
+                      )}
                       <div className="absolute top-[-12px] right-0 rounded-md flex  items-center justify-end w-[100px] px-1 pt-0.5 bg-black">
                         <p
                           className="text-xs font-bold leading-tight text-center text-white cursor-pointer"
@@ -112,15 +176,52 @@ const CheckoutComp = ({ cardsArray, handleSubmitFunction, color }) => {
                         </div>
                       </div>
                       <div>
-                        <div>
-                          <Image
-                            src={`/assets/images/cards/Back/${color}.png`}
-                            height={250}
-                            width={300}
-                            alt="demo"
-                            quality={100}
-                          />
-                        </div>
+                        {data.cardTypeName === "Lite" && (
+                          <div>
+                            <Image
+                              src={`/assets/images/cards/Back/${colorLite}.png`}
+                              height={250}
+                              width={300}
+                              alt="demo"
+                              quality={100}
+                            />
+                          </div>
+                        )}
+                        {data.cardTypeName === "Elevate" && (
+                          <div>
+                            <Image
+                              src={`/assets/images/cards/Back/${colorElevate}.png`}
+                              height={250}
+                              width={300}
+                              alt="demo"
+                              quality={100}
+                            />
+                          </div>
+                        )}
+                        {data.cardTypeName === "Supreme" && (
+                          <div>
+                            {" "}
+                            <div
+                              className="h-[100px] w-[165px] relative"
+                              style={{
+                                backgroundColor: cardBg,
+                              }}
+                            >
+                              {data.companyLogo && data.companyLogo.length ? (
+                                <div className="absolute flex  left-7 bottom-4 justify-srat items-center h-[70px] w-[110px] object-cover">
+                                  <img
+                                    src={data.companyLogo}
+                                    className=" object-fill w-full h-[70px] "
+                                  />
+                                </div>
+                              ) : (
+                                <div className="absolute lg:left-16 flex justify-center items-center left-[50px] bottom-[40px] lg:bottom-16 h-[90px] w-[200px] lg:w-[260px] lg:h-[130px] bg-slate-200 rounded-md mt-1">
+                                  <h3>upload Company Logo</h3>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
                       </div>
                       <div className="flex ">
                         <div>

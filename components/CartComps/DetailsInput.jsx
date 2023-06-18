@@ -7,15 +7,28 @@ import "react-toastify/dist/ReactToastify.css";
 import { SketchPicker } from "react-color";
 import { CompactPicker } from "react-color";
 
-function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
+function DetailsInput({
+  card,
+  index,
+  checkFormValid,
+  color,
+  setColor,
+  colorLite,
   setColorLite,
   colorElevate,
-  setColorElevate }) {
+  setColorElevate,
+  setCardBg,
+  cardBg,
+  setCardDesign,
+  cardDesign,
+  setLoopColor,
+}) {
   // console.log(card, "Card")
 
   const [selectedDiv, setSelectedDiv] = useState(null);
   const [selectedColorLite, setSelectedColorLite] = useState(colorLite);
-  const [selectedColorElevate, setSelectedColorElevate] = useState(colorElevate);
+  const [selectedColorElevate, setSelectedColorElevate] =
+    useState(colorElevate);
   const [errorMessage, setErrorMessage] = useState("");
   const fileInputRef = useRef(null);
   const {
@@ -30,6 +43,8 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
   const [design, setDesign] = useState(1);
   const [font, setFont] = useState("white");
   const [isFlipped, setIsFlipped] = useState(false);
+  setCardDesign(design);
+  setLoopColor(font);
 
   const divStyle = {
     border: "1px solid transparent",
@@ -105,12 +120,13 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
     setIsFlipped(!isFlipped);
   };
   const [showPicker, setShowPicker] = useState(false);
-  const [cardColor, setCardColor] = useState("#000000");
+  const [cardColor, setCardColor] = useState("#123456");
+  setCardBg(cardColor);
 
   const handleChangeComplete = (color) => {
     setCardColor(color.hex);
   };
-  console.log(color);
+
   return (
     <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto mx-[10px] my-6  ">
       {card.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
@@ -484,7 +500,8 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
           </div>
 
           <div className="flex flex-col items-center lg:flex-grow ">
-              {card.cardTypeName === 'Lite' && (<div className="flex mt-8 lg:mt-0">
+            {card.cardTypeName === "Lite" && (
+              <div className="flex mt-8 lg:mt-0">
                 <div
                   className={`card ${isFlipped ? "flipped" : ""}`}
                   onClick={handleFlip}
@@ -513,8 +530,10 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
                     width={36}
                   />
                 </div>
-              </div>)}
-              {card.cardTypeName === 'Elevate' && (<div className="flex mt-8 lg:mt-0">
+              </div>
+            )}
+            {card.cardTypeName === "Elevate" && (
+              <div className="flex mt-8 lg:mt-0">
                 <div
                   className={`card ${isFlipped ? "flipped" : ""}`}
                   onClick={handleFlip}
@@ -543,12 +562,13 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
                     width={36}
                   />
                 </div>
-              </div>)}
+              </div>
+            )}
 
             <div className="flex mt-6  gap-4">
               <p className="text-xs">colors</p>
               <div className={`flex space-x-2 justify-start items-center`}>
-                  {card.cardTypeName === 'Lite' ? (
+                {card.cardTypeName === "Lite" ? (
                   <>
                     {cartItems[0]?.designs?.map((item) => {
                       return (
@@ -568,7 +588,7 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
                       );
                     })}
                   </>
-                  ) : card.cardTypeName === 'Elevate' ? (
+                ) : card.cardTypeName === "Elevate" ? (
                   <div className=" flex flex-wrap  gap-x-4 gap-y-2 w-[75%]">
                     {cartItems[1]?.designs?.map((item) => {
                       return (
@@ -579,7 +599,9 @@ function DetailsInput({ card, index, checkFormValid, color, setColor, colorLite,
                               ? "scale-125 border border-black p-px"
                               : ""
                           } `}
-                          onClick={() => setSelectedColorElevate(item.designUuid)}
+                          onClick={() =>
+                            setSelectedColorElevate(item.designUuid)
+                          }
                         >
                           <Image
                             src={`/assets/images/radio_buttons/elevate/${item.designUuid}.png`}

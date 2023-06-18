@@ -2,10 +2,22 @@ import React from "react";
 import DetailsInput from "./DetailsInput";
 // import { CartContext } from '@/context/CartContext'
 
-const DetailsComp = ({ cardsArray, checkFormValid, color, setColor, colorLite,
+const DetailsComp = ({
+  cardsArray,
+  checkFormValid,
+  color,
+  setColor,
+  colorLite,
   setColorLite,
   colorElevate,
-  setColorElevate }) => {
+  setColorElevate,
+  setCardBg,
+  cardBg,
+  setCardDesign,
+  cardDesign,
+  setLoopColor,
+  loopColor,
+}) => {
   // console.log(cardsArray, "array")
 
   return (
@@ -25,6 +37,12 @@ const DetailsComp = ({ cardsArray, checkFormValid, color, setColor, colorLite,
                   setColorLite={setColorLite}
                   colorElevate={colorElevate}
                   setColorElevate={setColorElevate}
+                  setCardBg={setCardBg}
+                  cardBg={cardBg}
+                  setCardDesign={setCardDesign}
+                  cardDesign={cardDesign}
+                  setLoopColor={setLoopColor}
+                  loopColor={loopColor}
                 />
               </div>
             );
