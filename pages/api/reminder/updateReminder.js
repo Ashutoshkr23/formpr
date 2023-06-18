@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         const formattedDate = `${day}-${month}-${year} ${hours}:${minutes}`;
 
         const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber, customMessage: userCustomMessage, customDate: formattedDate }, { new: true });
-
+        console.log(updatedReminder);
         const message = {
             to: updatedReminder.userEmail,
             from: process.env.SENDGRID_EMAIL_ID,
