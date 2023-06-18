@@ -202,7 +202,7 @@ const CheckoutComp = ({
                           <div>
                             {" "}
                             <div
-                              className="h-[100px] w-[165px] relative"
+                              className="h-[100px] w-[165px] rounded-[10px] relative"
                               style={{
                                 backgroundColor: cardBg,
                               }}

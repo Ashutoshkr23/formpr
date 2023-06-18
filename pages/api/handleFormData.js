@@ -1,38 +1,56 @@
 import { connectToDatabase } from "@/lib/mongoose";
-import card from "@/models/card";
+import Card from "@/models/card";
 
 export default async function handle(req, res) {
+  try {
+    await connectToDatabase();
+  } catch (err) {
+    return res.status(500).json({ message: "Connection failed...!", error: err });
+  }
+
+  if (req.method === "POST") {
     try {
-        await connectToDatabase();
-    } catch (err) {
-        return res.status(500).json({ message: 'Connection failed...!', error: err });
+      const requestData = req.body;
+      console.log("Request Body:", requestData);
+      const filter = {
+        cuuid: requestData.cuuid,
+        puuid: requestData.puuid,
+      };
+      const updateOperation = { $set: { ...requestData } };
+      const updateCard = await Card.updateOne(filter, updateOperation);
+
+      return res.status(200).json({ error: false, message: "Successfully updated", result: updateCard });
+    } catch (error) {
+      console.log("Error:", error);
+      return res.status(500).json({ message: "Unable to manage cards", error });
     }
+  }
 
-    if (req.method === 'POST') {
-        try {
-            const requestData = req.body;
-            console.log('Request Body:', requestData);
-            const filter = {
-                cuuid: requestData.cuuid, // Access cuuid directly from req.body
-                puuid: requestData.puuid
-            };
-            const updateOperation = { $set: { ...requestData } };
-            const updateCard = await card.updateOne(filter, updateOperation);
+  if (req.method === "GET") {
+    try {
+      const { cuuid } = req.query;
 
-            return res.status(200).json({ error: false, message: "Successfully updated", result: updateCard });
-        } catch (error) {
-            console.log('Error:', error);
-            return res.status(500).json({ message: 'Unable to manage cards', error });
+      if (cuuid) {
+        const card = await Card.findOne({ cuuid });
+        if (card) {
+          return res.status(200).json({ card });
         }
-    } else {
-        res.status(400).json({
-            error: true,
-            message: "This type of request is not allowed"
-        });
+        return res.status(404).json({ message: "Card not found" });
+      } else {
+        return res.status(400).json({ message: "Invalid query parameters" });
+      }
+    } catch (error) {
+      console.error("Error retrieving card:", error);
+      return res.status(500).json({ message: "Unable to retrieve card", error });
     }
+  }
+
+  return res.status(405).json({ message: "Method not allowed" });
 }
 
 export const config = {
-    api: { bodyParser: true }
+  api: {
+    bodyParser: true,
+  },
 };
 
