@@ -14,7 +14,7 @@ const DesignComp = ({
   colorLite,
   setColorLite,
   colorElevate,
-  setColorElevate
+  setColorElevate,
 }) => {
   const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
   const [State, setState] = useState(1);
@@ -157,110 +157,132 @@ const DesignComp = ({
             </div>
             {selectedTypeIndex == 0 && (
               <div>
-              <div className="hidden md:block">
-                <div className="flex space-x-5">
-                  <div
-                    className={`card ${isFlipped ? "flipped" : ""}`}
-                    onClick={handleFlip}
-                  >
-                    <div className="w-[400px] h-[258px]">
-                      <div className={` card-inner w-[400px] h-[258px]`}>
-                        <div className="card-front">
-                          <div className={``}>
+                <div className="hidden md:block">
+                  <div className="flex space-x-5">
+                    <div
+                      className={`card ${isFlipped ? "flipped" : ""}`}
+                      onClick={handleFlip}
+                    >
+                      <div className="w-[400px] h-[258px]">
+                        <div className={` card-inner w-[400px] h-[258px]`}>
+                          <div className="card-front">
+                            <div className={`relative`}>
+                              <Image
+                                src={`/assets/images/cards/Front/${colorLite}.png`}
+                                className={` `}
+                                alt="flip"
+                                height={258}
+                                width={400}
+                              />
+                              {colorLite ===
+                                "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
+                              colorLite ===
+                                "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
+                              colorLite ===
+                                "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
+                                <div className="absolute text-white  bottom-14 left-6">
+                                  <p>John Doe</p>
+                                </div>
+                              ) : (
+                                <div className="absolute text-black bottom-14 left-6">
+                                  <p>John Doe</p>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+                          <div
+                            className={`card-back h-[258px] w-[400px] relative `}
+                          >
                             <Image
-                              src={`/assets/images/cards/Front/${colorLite}.png`}
-                              className={` `}
+                              src={`/assets/images/cards/Back/${colorLite}.png`}
+                              className={``}
                               alt="flip"
                               height={258}
                               width={400}
                             />
                           </div>
                         </div>
-
-                        <div
-                          className={`card-back h-[258px] w-[400px] relative `}
-                        >
-                          <Image
-                            src={`/assets/images/cards/Back/${colorLite}.png`}
-                            className={``}
-                            alt="flip"
-                            height={258}
-                            width={400}
-                          />
-                          {/* <div className="absolute bottom-14 left-6">
-                          <p>John Doe</p>
-                        </div> */}
-                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div
-                    className="hidden lg:block cursor-pointer"
-                    onClick={handleFlip}
-                  >
-                    <Image
-                      src={"/assets/images/cart-images/flipImage.png"}
-                      className=""
-                      alt="flip"
-                      height={36}
-                      width={36}
-                    />
-                  </div>
-                </div>
-              </div>
-                   <div className="md:hidden">
-              <div className="flex space-x-3">
-                <div
-                  className={`card ${isFlipped ? "flipped" : ""}`}
-                  onClick={handleFlip}
-                >
-                  <div className="w-[300px] h-[175px]">
-                    <div className={` card-inner w-[300px] h-[172px]`}>
-                      <div className="card-front">
-                        <div className="relative">
-                          <Image
-                            src={`/assets/images/cards/Front/${colorLite}.png`}
-                            className=""
-                            alt="flip"
-                            height={172}
-                            width={300}
-                          />
-                          {/* <div className="absolute bottom-6 left-6">
-                            <p>John Doe</p>
-                          </div> */}
-                        </div>
-                      </div>
-                      <div
-                        className={`card-back h-[172px] w-[300px] relative `}
-                      >
-                        <Image
-                          src={`/assets/images/cards/Back/${colorLite}.png`}
-                          className=""
-                          alt="flip"
-                          height={172}
-                          width={300}
-                        />
-                      </div>
+                    <div
+                      className="hidden lg:block cursor-pointer"
+                      onClick={handleFlip}
+                    >
+                      <Image
+                        src={"/assets/images/cart-images/flipImage.png"}
+                        className=""
+                        alt="flip"
+                        height={36}
+                        width={36}
+                      />
                     </div>
                   </div>
                 </div>
+                <div className="md:hidden">
+                  <div className="flex space-x-3">
+                    <div
+                      className={`card ${isFlipped ? "flipped" : ""}`}
+                      onClick={handleFlip}
+                    >
+                      <div className="w-[300px] h-[175px]">
+                        <div className={` card-inner w-[300px] h-[172px]`}>
+                          <div className="card-front">
+                            <div className="relative">
+                              <Image
+                                src={`/assets/images/cards/Front/${colorLite}.png`}
+                                className=""
+                                alt="flip"
+                                height={172}
+                                width={300}
+                              />
+                              {colorLite ===
+                                "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
+                              colorLite ===
+                                "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
+                              colorLite ===
+                                "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
+                                <div className="absolute text-white  bottom-14 left-6">
+                                  <p>John Doe</p>
+                                </div>
+                              ) : (
+                                <div className="absolute text-black bottom-14 left-6">
+                                  <p>John Doe</p>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                          <div
+                            className={`card-back h-[172px] w-[300px] relative `}
+                          >
+                            <Image
+                              src={`/assets/images/cards/Back/${colorLite}.png`}
+                              className=""
+                              alt="flip"
+                              height={172}
+                              width={300}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-                <div
-                  className="hidden lg:block cursor-pointer"
-                  onClick={handleFlip}
-                >
-                  <Image
-                    src={"/assets/images/cart-images/flipImage.png"}
-                    className=""
-                    alt="flip"
-                    height={25}
-                    width={25}
-                  />
+                    <div
+                      className="hidden lg:block cursor-pointer"
+                      onClick={handleFlip}
+                    >
+                      <Image
+                        src={"/assets/images/cart-images/flipImage.png"}
+                        className=""
+                        alt="flip"
+                        height={25}
+                        width={25}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            </div>
             )}
             {selectedTypeIndex == 1 && (
               <div>
@@ -273,7 +295,7 @@ const DesignComp = ({
                       <div className="w-[400px] h-[258px]">
                         <div className={` card-inner w-[400px] h-[258px]`}>
                           <div className="card-front">
-                            <div className={``}>
+                            <div className={`relative`}>
                               <Image
                                 src={`/assets/images/cards/Front/${colorElevate}.png`}
                                 className={` `}
@@ -281,6 +303,26 @@ const DesignComp = ({
                                 height={258}
                                 width={400}
                               />
+                              {colorElevate ===
+                                "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
+                              colorElevate ===
+                                "d73f6121-6dc5-4170-8b3b-40a02835ddd1" ||
+                              colorElevate ===
+                                "de47eb30-ec56-4d98-8069-50bcac1cfcc7" ||
+                              colorElevate ===
+                                "f07f8b1f-3947-4121-a0eb-a60230f7a14b" ||
+                              colorElevate ===
+                                "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
+                              colorElevate ===
+                                "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
+                                <div className="absolute text-white  bottom-14 left-6">
+                                  <p>John Doe</p>
+                                </div>
+                              ) : (
+                                <div className="absolute text-black bottom-14 left-6">
+                                  <p>John Doe</p>
+                                </div>
+                              )}
                             </div>
                           </div>
 
@@ -294,9 +336,6 @@ const DesignComp = ({
                               height={258}
                               width={400}
                             />
-                            {/* <div className="absolute bottom-14 left-6">
-                          <p>John Doe</p>
-                        </div> */}
                           </div>
                         </div>
                       </div>
@@ -369,9 +408,114 @@ const DesignComp = ({
                 </div>
               </div>
             )}
-          
+            {selectedTypeIndex !== 0 && selectedTypeIndex !== 1 && (
+              <div>
+                <div className="hidden md:block">
+                  <div className="flex space-x-5">
+                    <div
+                      className={`card ${isFlipped ? "flipped" : ""}`}
+                      onClick={handleFlip}
+                    >
+                      <div className="w-[400px] h-[258px]">
+                        <div className={` card-inner w-[400px] h-[258px]`}>
+                          <div className="card-front">
+                            <div className={``}>
+                              <Image
+                                src={`/assets/images/cards/Front/supreme.png`}
+                                className={` `}
+                                alt="flip"
+                                height={258}
+                                width={400}
+                              />
+                            </div>
+                          </div>
+
+                          <div
+                            className={`card-back h-[258px] w-[400px] relative `}
+                          >
+                            <Image
+                              src={`/assets/images/cards/Back/supreme.png`}
+                              className={``}
+                              alt="flip"
+                              height={258}
+                              width={400}
+                            />
+                            {/* <div className="absolute bottom-14 left-6">
+                          <p>John Doe</p>
+                        </div> */}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      className="hidden lg:block cursor-pointer"
+                      onClick={handleFlip}
+                    >
+                      <Image
+                        src={"/assets/images/cart-images/flipImage.png"}
+                        className=""
+                        alt="flip"
+                        height={36}
+                        width={36}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="md:hidden">
+                  <div className="flex space-x-3">
+                    <div
+                      className={`card ${isFlipped ? "flipped" : ""}`}
+                      onClick={handleFlip}
+                    >
+                      <div className="w-[300px] h-[175px]">
+                        <div className={` card-inner w-[300px] h-[172px]`}>
+                          <div className="card-front">
+                            <div className="relative">
+                              <Image
+                                src={`/assets/images/cards/Front/supreme.png`}
+                                className=""
+                                alt="flip"
+                                height={172}
+                                width={300}
+                              />
+                              {/* <div className="absolute bottom-6 left-6">
+                            <p>John Doe</p>
+                          </div> */}
+                            </div>
+                          </div>
+                          <div
+                            className={`card-back h-[172px] w-[300px] relative `}
+                          >
+                            <Image
+                              src={`/assets/images/cards/Back/supreme.png`}
+                              className=""
+                              alt="flip"
+                              height={172}
+                              width={300}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      className="hidden lg:block cursor-pointer"
+                      onClick={handleFlip}
+                    >
+                      <Image
+                        src={"/assets/images/cart-images/flipImage.png"}
+                        className=""
+                        alt="flip"
+                        height={25}
+                        width={25}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             {/* foe mobile */}
-       
           </div>
         </div>
         {/* pricing section */}
