@@ -100,7 +100,8 @@ export const CartProvider = ({ children }) => {
 
     }, [session])
 
-    console.log(cartItems, "Car")
+    // console.log(cartItems, "Car")
+    console.log(cardsArray,"Cards")
 
 
     useEffect(() => {
@@ -129,6 +130,22 @@ export const CartProvider = ({ children }) => {
                     for (var j = 0; j < item.quantity; j++) {
                         const min = 100000; // Minimum value (inclusive)
                         const max = 999999; // Maximum value (inclusive)
+                        let designId = "";
+                        let hexCode = "";
+                        let fontCode = "";
+                        if(item.cardTypeUuid == "3fa766b5-9f66-4a38-8471-23026a59d84d"){
+                            // lite card
+                            designId = "7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a"
+                        }else if(item.cardTypeUuid == "801baf78-ce33-446f-b132-618f92ccfc5f"){  
+                            // elevate card
+                            designId = "c591107d-b134-4cbf-9667-2da6fb07b339"
+
+                        }else{
+                            // supreme card
+                            designId = "9d69ecbc-fd72-4732-b3c0-a344045f402e";
+                            fontCode = "#FFFFFF";
+                            hexCode = "#000000";
+                        }
 
                         let temp = {
                             amount: item.amount,
@@ -139,6 +156,9 @@ export const CartProvider = ({ children }) => {
                             companyName: "",
                             companyLogo: "",
                             fileName: "",
+                            designUuid : designId,
+                            fontCode:fontCode,
+                            hexCode:hexCode,
 
                         }
                         // console.log(temp, "temp")
@@ -324,6 +344,41 @@ export const CartProvider = ({ children }) => {
 
     }
 
+     const handleDesignUuid = (key,designId)=>{
+        if(key && designId){
+            const newCardArr = cardsArray.map((item) => {
+                if (item.key == key) {
+                    let newItem = { ...item }
+                    newItem["designUuid"] = designId
+                    return newItem
+                }
+                return item
+            })
+            setCardsArray(newCardArr)
+        }
+    }
+
+    const handleColorUuid = (key,colorCode,type)=>{
+        // type 1 color code & type 2 font code
+        
+        if(key && colorCode){
+            const newCardArr = cardsArray.map((item) => {
+                if (item.key == key) {
+                    let newItem = { ...item }
+                    if(type==1){
+                    newItem["hexCode"] = colorCode
+
+                    }else{
+                        newItem["fontCode"] = colorCode
+                    }
+                    return newItem
+                }
+                return item
+            })
+            setCardsArray(newCardArr)
+        }
+    }
+
     // Create the cart context value
     const cartContextValue = {
         cartItems,
@@ -346,6 +401,8 @@ export const CartProvider = ({ children }) => {
         handleRemoveCardArr,
         setStepState,
         setAddress,
+        handleDesignUuid,
+        handleColorUuid,
     };
 
     // Provide the cart context to its children components

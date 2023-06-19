@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { CartContext } from "@/context/CartContext";
 import axios from "axios";
@@ -46,6 +46,8 @@ function DetailsInput({
     handleName,
     handleRemoveCardArr,
     totalQuantity,
+    handleDesignUuid,
+    handleColorUuid,
   } = useContext(CartContext);
   const [design, setDesign] = useState(1);
   const [font, setFont] = useState("white");
@@ -134,6 +136,15 @@ function DetailsInput({
     setCardColor(color.hex);
   };
 
+  useEffect(()=>{
+    if(cardColor !== card.hexCode){
+    handleColorUuid(card.key,cardColor,1)
+
+    }
+  },[cardColor])
+
+  // console.log(cartItems[2],"cartItems[2]")
+
   return (
     <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto mx-[10px] my-6  ">
       {card.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
@@ -149,7 +160,7 @@ function DetailsInput({
           <div className="flex lg:flex-row flex-col-reverse gap-[42px] flex-grow ">
             <div className=" flex flex-col gap-1 lg:gap-4 ">
               <p className="text-sm">Abstract Design</p>
-              <div className=" flex flex-row lg:flex-col gap-1.5 lg:gap-4 ">
+              {/* <div className=" flex flex-row lg:flex-col gap-1.5 lg:gap-4 ">
                 <div className="flex gap-2 ">
                   <img
                     className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px]
@@ -215,6 +226,25 @@ function DetailsInput({
                     onClick={() => setDesign(6)}
                   />
                 </div>
+              </div> */}
+
+              <div className="flex flex-row  w-[150px]  gap-1.5 lg:gap-4 flex-wrap">
+                {
+                  cartItems && cartItems.length && cartItems[2].designs.map((abstract)=>{
+                    return(
+
+                      <img
+                      className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px]
+                     ${card.designUuid == abstract.designUuid ? `border-2 border-black` : ""}`}
+                      src={
+                        `/assets/images/abstracts/${abstract.designUuid}.png`
+                      }
+                      alt="icon"
+                      onClick={() => handleDesignUuid(card.key,abstract.designUuid)}
+                    />
+                    )
+                  })
+                }
               </div>
             </div>
             <div className="flex mt-8 lg:mt-0">
@@ -248,12 +278,12 @@ function DetailsInput({
                             width={43}
                             alt="icon"
                           />
-                          {design !== 6 && (
+                          {card.designUuid !== "1bb3aa1e-410f-441c-a290-827bccc7f777" && (
                             <div>
                               <div className="hidden lg:block">
                                 <Image
                                   className="absolute top-0 left-0"
-                                  src={`/assets/images/storeImages/Supreme/Abstract/Des${design}.png`}
+                                  src={`/assets/images/abstracts/card/${card.designUuid}.png`}
                                   height={250}
                                   width={400}
                                   alt="icon"
@@ -262,7 +292,7 @@ function DetailsInput({
                               <div className="lg:hidden">
                                 <Image
                                   className="absolute top-0 left-0"
-                                  src={`/assets/images/storeImages/Supreme/Abstract/Des${design}.png`}
+                                  src={`/assets/images/abstracts/card/${card.designUuid}.png`}
                                   height={172}
                                   width={300}
                                   alt="icon"
@@ -347,7 +377,10 @@ function DetailsInput({
                           : ""
                       }
                     `}
-                      onClick={() => setFont("white")}
+                      onClick={() => {
+                        setFont("white")
+                        handleColorUuid(card.key,"#FFFFFF",2)
+                      }}
                     ></div>
                     <div
                       className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${
@@ -355,7 +388,10 @@ function DetailsInput({
                           ? "scale-110 border-2 border-yellow-500 "
                           : ""
                       }`}
-                      onClick={() => setFont("black")}
+                      onClick={() => {
+                        setFont("black")
+                        handleColorUuid(card.key,"#000000",2)
+                      }}
                     ></div>
                   </div>
                 </div>
@@ -621,11 +657,13 @@ function DetailsInput({
                         <div
                           key={item.designUuid}
                           className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${
-                            color === item.designUuid
+                            card.designUuid === item.designUuid
                               ? "scale-125 border border-black p-px"
                               : ""
                           } `}
-                          onClick={() => setSelectedColorLite(item.designUuid)}
+                          onClick={() => {setSelectedColorLite(item.designUuid)
+                            handleDesignUuid(card.key,item.designUuid)
+                          }}
                         >
                           <div
                             className={`w-full h-full rounded-full bg-[${item.hexCode}]`}
@@ -641,12 +679,13 @@ function DetailsInput({
                         <div
                           key={item.designUuid}
                           className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${
-                            color === item.designUuid
+                            card.designUuid === item.designUuid
                               ? "scale-125 border border-black p-px"
                               : ""
                           } `}
-                          onClick={() =>
+                          onClick={() =>{
                             setSelectedColorElevate(item.designUuid)
+                            handleDesignUuid(card.key,item.designUuid)}
                           }
                         >
                           <Image
