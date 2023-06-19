@@ -68,7 +68,7 @@ export default function CartComp(props) {
         const { data } = await axios.post("/api/razorpay", { cartItems: cartItems });
         var options = {
             key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
-            name: "Alphamit Labs",
+            name: "Alphamint Labs",
             currency: data.currency,
             amount: data.amount,
             order_id: data.id,
