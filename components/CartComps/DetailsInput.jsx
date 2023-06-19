@@ -39,6 +39,7 @@ function DetailsInput({
     handleApplyToAll,
     handleName,
     handleRemoveCardArr,
+    totalQuantity
   } = useContext(CartContext);
   const [design, setDesign] = useState(1);
   const [font, setFont] = useState("white");
@@ -154,9 +155,8 @@ function DetailsInput({
                     onClick={() => setDesign(1)}
                   />
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 2 ? `border-2 border-black` : ""
-                    }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 2 ? `border-2 border-black` : ""
+                      }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design2.png"
                     }
@@ -166,9 +166,8 @@ function DetailsInput({
                 </div>
                 <div className="flex  gap-2">
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 3 ? `border-2 border-black` : ""
-                    }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 3 ? `border-2 border-black` : ""
+                      }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design3.png"
                     }
@@ -176,9 +175,8 @@ function DetailsInput({
                     onClick={() => setDesign(3)}
                   />
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 4 ? `border-2 border-black` : ""
-                    }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 4 ? `border-2 border-black` : ""
+                      }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design4.png"
                     }
@@ -188,9 +186,8 @@ function DetailsInput({
                 </div>
                 <div className="flex  gap-2">
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 5 ? `border-2 border-black` : ""
-                    }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 5 ? `border-2 border-black` : ""
+                      }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design5.png"
                     }
@@ -198,9 +195,8 @@ function DetailsInput({
                     onClick={() => setDesign(5)}
                   />
                   <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 6 ? `border-2 border-black` : ""
-                    }`}
+                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${design === 6 ? `border-2 border-black` : ""
+                      }`}
                     src={
                       "/assets/images/storeImages/Supreme/Abstract/Design6.png"
                     }
@@ -334,20 +330,18 @@ function DetailsInput({
                       font color:
                     </p>
                     <div
-                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${
-                        font === "white"
+                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${font === "white"
                           ? "scale-110 border-2 border-black "
                           : ""
-                      }
+                        }
                     `}
                       onClick={() => setFont("white")}
                     ></div>
                     <div
-                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${
-                        font === "black"
+                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${font === "black"
                           ? "scale-110 border-2 border-yellow-500 "
                           : ""
-                      }`}
+                        }`}
                       onClick={() => setFont("black")}
                     ></div>
                   </div>
@@ -374,18 +368,17 @@ function DetailsInput({
             </div>
             <div className="flex mt-8">
               <input
-                className={`border outline-none ${
-                  checkFormValid &&
+                className={`border outline-none ${checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[220px] h-10 rounded-xl pl-4`}
+                  } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
                 onChange={handleCompanyNameChange}
                 placeholder="Company Name"
               />
-              {index == 0 && (
+              {index == 0 && totalQuantity > 1 && (
                 <button
                   className="bg-black h-10 w-[98px] lg:w-[130px] flex justify-center items-center text-white rounded-lg ml-2 text-xs lg:text-sm font-bold"
                   onClick={() => {
@@ -416,11 +409,10 @@ function DetailsInput({
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${
-                      checkFormValid &&
+                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
+                      }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -442,7 +434,7 @@ function DetailsInput({
                   name="companyLogo"
                   style={{ display: "none" }}
                 />
-                {index === 0 && (
+                {index === 0 && totalQuantity > 1 && (
                   <button
                     className="bg-black h-10 w-[98px] lg:w-[130px] flex justify-center items-center text-white rounded-lg ml-2 text-xs lg:text-sm font-bold"
                     onClick={() => {
@@ -464,11 +456,10 @@ function DetailsInput({
             </div>
             <div>
               <input
-                className={`border outline-none mt-8 ${
-                  checkFormValid &&
+                className={`border outline-none mt-8 ${checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[220px]  mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
+                  } w-[220px]  mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"
@@ -503,9 +494,8 @@ function DetailsInput({
             {card.cardTypeName === "Lite" && (
               <div className="flex mt-8 lg:mt-0  ">
                 <div
-                  className={`card ${
-                    isFlipped ? "flipped" : ""
-                  } h-[172px] lg:h-[250px] lg:w-[400px] w-[300px]`}
+                  className={`card ${isFlipped ? "flipped" : ""
+                    } h-[172px] lg:h-[250px] lg:w-[400px] w-[300px]`}
                   onClick={handleFlip}
                 >
                   <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
@@ -516,9 +506,9 @@ function DetailsInput({
                       />
                       {selectedColorLite ===
                         "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
-                      selectedColorLite ===
+                        selectedColorLite ===
                         "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
-                      selectedColorLite ===
+                        selectedColorLite ===
                         "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
                         <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
@@ -551,9 +541,8 @@ function DetailsInput({
             {card.cardTypeName === "Elevate" && (
               <div className="flex mt-8 lg:mt-0">
                 <div
-                  className={`card ${
-                    isFlipped ? "flipped" : ""
-                  } lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
+                  className={`card ${isFlipped ? "flipped" : ""
+                    } lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
                   onClick={handleFlip}
                 >
                   <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
@@ -565,15 +554,15 @@ function DetailsInput({
 
                       {selectedColorElevate ===
                         "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
-                      selectedColorElevate ===
+                        selectedColorElevate ===
                         "d73f6121-6dc5-4170-8b3b-40a02835ddd1" ||
-                      selectedColorElevate ===
+                        selectedColorElevate ===
                         "de47eb30-ec56-4d98-8069-50bcac1cfcc7" ||
-                      selectedColorElevate ===
+                        selectedColorElevate ===
                         "f07f8b1f-3947-4121-a0eb-a60230f7a14b" ||
-                      selectedColorElevate ===
+                        selectedColorElevate ===
                         "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
-                      selectedColorElevate ===
+                        selectedColorElevate ===
                         "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
                         <div className="absolute text-white  bottom-12 left-8">
                           {card.fullName ? card.fullName : "John Doe"}
@@ -613,11 +602,10 @@ function DetailsInput({
                       return (
                         <div
                           key={item.designUuid}
-                          className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${
-                            color === item.designUuid
+                          className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${color === item.designUuid
                               ? "scale-125 border border-black p-px"
                               : ""
-                          } `}
+                            } `}
                           onClick={() => setSelectedColorLite(item.designUuid)}
                         >
                           <div
@@ -633,11 +621,10 @@ function DetailsInput({
                       return (
                         <div
                           key={item.designUuid}
-                          className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${
-                            color === item.designUuid
+                          className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${color === item.designUuid
                               ? "scale-125 border border-black p-px"
                               : ""
-                          } `}
+                            } `}
                           onClick={() =>
                             setSelectedColorElevate(item.designUuid)
                           }
@@ -669,18 +656,17 @@ function DetailsInput({
             </div>
             <div className="flex mt-6">
               <input
-                className={`border outline-none ${
-                  checkFormValid &&
+                className={`border outline-none ${checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[220px] h-10 rounded-xl pl-4`}
+                  } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
                 onChange={handleCompanyNameChange}
                 placeholder="Company Name"
               />
-              {index == 0 && (
+              {index == 0 && totalQuantity > 1 && (
                 <button
                   className="bg-black h-10 w-[98px] lg:w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold"
                   onClick={() => {
@@ -711,11 +697,10 @@ function DetailsInput({
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`cursor-pointer py-2 flex justify-between border ${
-                      checkFormValid &&
+                    className={`cursor-pointer py-2 flex justify-between border ${checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
+                      }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -737,7 +722,7 @@ function DetailsInput({
                   name="companyLogo"
                   style={{ display: "none" }}
                 />
-                {index === 0 && (
+                {index === 0 && totalQuantity > 1 && (
                   <button
                     className="bg-black h-10 w-[98px] lg:w-[130px] flex justify-center items-center text-white rounded-lg ml-4 text-xs font-bold"
                     onClick={() => {
@@ -759,11 +744,10 @@ function DetailsInput({
             </div>
             <div className="mt-8">
               <input
-                className={`border outline-none ${
-                  checkFormValid &&
+                className={`border outline-none ${checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
+                  } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"
