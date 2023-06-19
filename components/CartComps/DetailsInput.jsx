@@ -132,11 +132,6 @@ function DetailsInput({
   const [cardColor, setCardColor] = useState("#000000");
   setCardBg(cardColor);
 
-  const handleChangeComplete = (color) => {
-    setCardColor(color.hex);
-  };
-  const colorPickerRef = useRef();
-
   useEffect(() => {
     if (cardColor !== card.hexCode) {
       handleColorUuid(card.key, cardColor, 1);
@@ -144,6 +139,21 @@ function DetailsInput({
   }, [cardColor]);
 
   // console.log(cartItems[2],"cartItems[2]")
+  const handleChangeComplete = (color) => {
+    setCardColor(color.hex);
+  };
+
+  const colorPickerRef = useRef();
+
+  const handleParentClick = (event) => {
+    if (
+      showPicker &&
+      (!colorPickerRef.current ||
+        !colorPickerRef.current.contains(event.target))
+    ) {
+      setShowPicker(false);
+    }
+  };
 
   return (
     <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto mx-[10px] my-6  ">
