@@ -1,5 +1,5 @@
 // import First from "@/components/First";
-import { useSession, signIn, getSession, signOut } from "next-auth/react";
+import { useSession, getSession } from 'next-auth/react';
 import axios from "axios";
 import { useEffect, useState, useRef, useContext } from "react";
 import React from "react";
@@ -9,6 +9,19 @@ import CartNav from "@/components/CartComps/CartNav";
 import { CartContext } from "@/context/CartContext";
 
 export default function Home() {
+
+  const { data: session } = useSession();
+
+  async function sendMailToNewUser() {
+    const userEmail = session.user.email;
+    const data = { userEmail }
+    const response = await axios.post("/api/sendMailToNewUser", data);
+  }
+
+  useEffect(() => {
+    sendMailToNewUser()
+  }, [])
+
 
   const { cartItems } = useContext(CartContext)
   // console.log(cartItems, "cartItems")
