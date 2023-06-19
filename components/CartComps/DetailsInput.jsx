@@ -502,40 +502,38 @@ function DetailsInput({
           <div className="flex flex-col items-center flex-grow ">
             {card.cardTypeName === "Lite" && (
               <div className="flex mt-8 lg:mt-0  ">
-                <div className={`card ${isFlipped ? "flipped" : ""}`}>
-                  <div
-                    className={`card ${
-                      isFlipped ? "flipped" : ""
-                    }lg:h-[250px] w-[300px] h-[172px] lg:w-[400px]`}
-                    onClick={handleFlip}
-                  >
-                    <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
-                      <div className="card-front lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
-                        <img
-                          src={`/assets/images/cards/Front/${selectedColorLite}.png`}
-                          className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
-                        />
-                        {selectedColorLite ===
-                          "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
-                        selectedColorLite ===
-                          "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
-                        selectedColorLite ===
-                          "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
-                          <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
-                            {card.fullName ? card.fullName : "John Doe"}
-                          </div>
-                        ) : (
-                          <div className="absolute text-black lg:bottom-12 lg:left-8 bottom-7 left-5">
-                            {card.fullName ? card.fullName : "John Doe"}
-                          </div>
-                        )}
-                      </div>
-                      <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
-                        <img
-                          src={`/assets/images/cards/Back/${selectedColorLite}.png`}
-                          className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
-                        />
-                      </div>
+                <div
+                  className={`card ${
+                    isFlipped ? "flipped" : ""
+                  } h-[172px] lg:h-[250px] lg:w-[400px] w-[300px]`}
+                  onClick={handleFlip}
+                >
+                  <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
+                    <div className="card-front lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                      <img
+                        src={`/assets/images/cards/Front/${selectedColorLite}.png`}
+                        className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
+                      />
+                      {selectedColorLite ===
+                        "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
+                      selectedColorLite ===
+                        "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
+                      selectedColorLite ===
+                        "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
+                        <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
+                          {card.fullName ? card.fullName : "John Doe"}
+                        </div>
+                      ) : (
+                        <div className="absolute text-black lg:bottom-12 lg:left-8 bottom-7 left-5">
+                          {card.fullName ? card.fullName : "John Doe"}
+                        </div>
+                      )}
+                    </div>
+                    <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                      <img
+                        src={`/assets/images/cards/Back/${selectedColorLite}.png`}
+                        className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
+                      />
                     </div>
                   </div>
                 </div>
