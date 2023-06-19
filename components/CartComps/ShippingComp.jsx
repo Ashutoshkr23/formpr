@@ -34,7 +34,7 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
                     <div className='w-full '>
                         <div className='w-full flex flex-col pr-4'>
                             <label className='text-sm pb-1'>Email</label>
-                            <input type="email" className='outline-none bg-white border rounded-md border-zinc-500 h-9 px-2 text-sm ' onChange={(e) => {
+                            <input type="email" className='outline-none bg-white border rounded-md border-zinc-500 h-9 px-2 text-sm ' value={address.email} onChange={(e) => {
                                 setAddress({ ...address, email: e.target.value })
                             }} />
                         </div>
@@ -57,13 +57,13 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
                 <div className='flex w-full justify-between items-center mt-8'>
                     <div className='w-full flex flex-col pr-4'>
                         <label className='text-sm pb-1'>First name</label>
-                        <input type="text" defaultValue={address.firstName} className='outline-none bg-white border rounded-md border-zinc-500 h-9 px-2 text-sm' name="firstName" onChange={(e) => {
+                        <input type="text" value={address.firstName} className='outline-none bg-white border rounded-md border-zinc-500 h-9 px-2 text-sm' name="firstName" onChange={(e) => {
                             setAddress({ ...address, firstName: e.target.value })
                         }} />
                     </div>
                     <div className='w-full flex flex-col'>
                         <label className='text-sm pb-1'>Last name</label>
-                        <input type="text" defaultValue={address.lastName} className='outline-none bg-white border rounded-md border-zinc-500 h-9 px-2 text-sm' name="lastName" onChange={(e) => {
+                        <input type="text" value={address.lastName} className='outline-none bg-white border rounded-md border-zinc-500 h-9 px-2 text-sm' name="lastName" onChange={(e) => {
                             setAddress({ ...address, lastName: e.target.value })
                         }} />
                     </div>
@@ -72,7 +72,7 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
                 <div className='flex w-full justify-between items-center mt-5'>
                     <div className='w-full flex flex-col'>
                         <label className='text-sm pb-1'>Address</label>
-                        <input type="text" className='outline-none bg-white border rounded-md border-zinc-500 h-9 px-2 text-sm' defaultValue={address.address} onChange={(e) => {
+                        <input type="text" className='outline-none bg-white border rounded-md border-zinc-500 h-9 px-2 text-sm' value={address.address} onChange={(e) => {
                             setAddress({ ...address, address: e.target.value })
                         }} />
                     </div>
@@ -80,7 +80,7 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
                 <div className='flex w-full justify-between items-center mt-5'>
                     <div className='w-full flex flex-col pr-4'>
                         <label className='text-sm pb-1'>PIN code</label>
-                        <input type="text" className='outline-none bg-white border rounded-md border-zinc-500 h-9 px-2 text-sm' name="pinCode" onChange={(e) => {
+                        <input type="text" className='outline-none bg-white border rounded-md border-zinc-500 h-9 px-2 text-sm' value={address.pinCode} name="pinCode" onChange={(e) => {
                             setAddress({ ...address, pinCode: e.target.value })
                         }}
                             onBlur={() => {

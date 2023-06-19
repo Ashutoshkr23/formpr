@@ -11,7 +11,7 @@ const CardSchema = new mongoose.Schema({
     // cardName is name displayed on card
     cardName: { type: String },
     companyLogo: { type: String },
-    
+
     // above fields get filled while creating card and below fields will be updated later
     //details
     comapany: { type: String },
@@ -22,7 +22,7 @@ const CardSchema = new mongoose.Schema({
     adress: { type: String },
     mobileNumber: { type: String },
     selectedTemplate: { type: String },
-        // aws url will be stored in pfp
+    // aws url will be stored in pfp
     profileImg: { type: String },
     cover: { type: String },
 
@@ -34,7 +34,7 @@ const CardSchema = new mongoose.Schema({
     twitter: { type: String },
     youtube: { type: String },
     facebook: { type: String },
-    behance: { type: String, required: true },
+    behance: { type: String },
     reddit: { type: String },
 
 });

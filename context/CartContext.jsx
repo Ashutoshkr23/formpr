@@ -100,6 +100,8 @@ export const CartProvider = ({ children }) => {
 
     }, [session])
 
+    console.log(cartItems, "Car")
+
 
     useEffect(() => {
 
@@ -152,6 +154,14 @@ export const CartProvider = ({ children }) => {
 
 
         }
+
+        if (!cartItems.length) {
+            if (defaultCart.length) {
+                setCartItems(defaultCart)
+
+            }
+        }
+
     }, [cartItems])
 
 
@@ -325,7 +335,6 @@ export const CartProvider = ({ children }) => {
         totalQuantity,
         totalAmount,
         address,
-        defaultCart,
         clearCart,
         plusCartFunc,
         minusCartFunc,
@@ -337,7 +346,6 @@ export const CartProvider = ({ children }) => {
         handleRemoveCardArr,
         setStepState,
         setAddress,
-        setCartItems
     };
 
     // Provide the cart context to its children components
