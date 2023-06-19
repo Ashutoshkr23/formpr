@@ -17,6 +17,10 @@ const DetailsComp = ({
   cardDesign,
   setLoopColor,
   loopColor,
+  checkColor,
+  setCheckColor,
+  checkLiteColor,
+  setCheckLiteColor,
 }) => {
   // console.log(cardsArray, "array")
 
@@ -43,6 +47,10 @@ const DetailsComp = ({
                   cardDesign={cardDesign}
                   setLoopColor={setLoopColor}
                   loopColor={loopColor}
+                  checkColor={checkColor}
+                  setCheckColor={setCheckColor}
+                  setCheckLiteColor={setCheckLiteColor}
+                  checkLiteColor={checkLiteColor}
                 />
               </div>
             );

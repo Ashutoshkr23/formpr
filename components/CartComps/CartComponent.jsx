@@ -34,6 +34,12 @@ const CartComponent = () => {
   const [colorElevate, setColorElevate] = useState(
     "7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a"
   );
+  const [checkColor, setCheckColor] = useState(
+    "7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a"
+  );
+  const [checkLiteColor, setCheckLiteColor] = useState(
+    "7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a"
+  );
   const [cardBg, setCardBg] = useState("#000000");
   const [cardDesign, setCardDesign] = useState(" ");
   const [loopColor, setLoopColor] = useState(" ");
@@ -201,8 +207,9 @@ const CartComponent = () => {
         <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center items-center px-4 xl:px-0">
           <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
             <div
-              className={`rounded-lg text-[#686A6C] font-bold w-1/3 ${stepState == 1 && "border-2 border-slate-700 text-black"
-                } flex justify-center items-center `}
+              className={`rounded-lg text-[#686A6C] font-bold w-1/3 ${
+                stepState == 1 && "border-2 border-slate-700 text-black"
+              } flex justify-center items-center `}
               onClick={() => setStepState(1)}
             >
               <p className="text-center text-[12px] md:text-sm">
@@ -210,8 +217,9 @@ const CartComponent = () => {
               </p>
             </div>
             <div
-              className={`rounded-lg text-[#686A6C] font-bold  w-1/3 ${stepState == 2 && "border-2 border-slate-700 text-black"
-                } flex justify-center items-center `}
+              className={`rounded-lg text-[#686A6C] font-bold  w-1/3 ${
+                stepState == 2 && "border-2 border-slate-700 text-black"
+              } flex justify-center items-center `}
               onClick={() => setStepState(2)}
             >
               <p className="text-center text-[12px] md:text-sm">
@@ -219,8 +227,9 @@ const CartComponent = () => {
               </p>
             </div>
             <div
-              className={` rounded-lg text-[#686A6C] font-bold w-1/3 ${stepState == 3 && "border-2 border-slate-700 text-black"
-                } flex justify-center items-center `}
+              className={` rounded-lg text-[#686A6C] font-bold w-1/3 ${
+                stepState == 3 && "border-2 border-slate-700 text-black"
+              } flex justify-center items-center `}
               onClick={() => stepThreeOnclick()}
             >
               <p className="text-center text-[12px] md:text-sm">
@@ -296,6 +305,10 @@ const CartComponent = () => {
             cardDesign={cardDesign}
             setLoopColor={setLoopColor}
             loopColor={loopColor}
+            checkColor={checkColor}
+            setCheckColor={setCheckColor}
+            setCheckLiteColor={setCheckLiteColor}
+            checkLiteColor={checkLiteColor}
           />
         ) : (
           <CheckoutComp
@@ -313,6 +326,10 @@ const CartComponent = () => {
             cardTypeSelected={cardTypeSelected}
             cardBg={cardBg}
             setCardBg={setCardBg}
+            checkColor={checkColor}
+            setCheckColor={setCheckColor}
+            setCheckLiteColor={setCheckLiteColor}
+            checkLiteColor={checkLiteColor}
           />
         )}
       </div>
@@ -322,7 +339,7 @@ const CartComponent = () => {
             <div
               className="fixed inset-0 transition-opacity"
               aria-hidden="true"
-            // onClick={closeModal}
+              // onClick={closeModal}
             >
               <div className="absolute inset-0 bg-black opacity-50"></div>
             </div>
@@ -350,7 +367,7 @@ const CartComponent = () => {
                   className="text-xs bg-black shadow border rounded-lg border-black text-white font-medium mt-6 px-6 py-2"
                   onClick={() => {
                     closeModal();
-                    clearCart()
+                    clearCart();
                     router.push("/manageCards");
                   }}
                 >

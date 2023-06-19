@@ -14,6 +14,9 @@ const CheckoutComp = ({
   cardBg,
   cardDesign,
   loopColor,
+  checkColor,
+  setCheckColor,
+  checkLiteColor,
 }) => {
   console.log(`colorlite=${colorLite}`);
   console.log(`colorelevate=${colorElevate}`);
@@ -90,7 +93,7 @@ const CheckoutComp = ({
                       {data.cardTypeName === "Lite" && (
                         <div>
                           <Image
-                            src={`/assets/images/cards/Front/${colorLite}.png`}
+                            src={`/assets/images/cards/Front/${checkLiteColor}.png`}
                             height={250}
                             width={300}
                             alt="demo"
@@ -101,7 +104,7 @@ const CheckoutComp = ({
                       {data.cardTypeName === "Elevate" && (
                         <div>
                           <Image
-                            src={`/assets/images/cards/Front/${colorElevate}.png`}
+                            src={`/assets/images/cards/Front/${checkColor}.png`}
                             height={250}
                             width={300}
                             alt="demo"
@@ -179,7 +182,7 @@ const CheckoutComp = ({
                         {data.cardTypeName === "Lite" && (
                           <div>
                             <Image
-                              src={`/assets/images/cards/Back/${colorLite}.png`}
+                              src={`/assets/images/cards/Back/${checkLiteColor}.png`}
                               height={250}
                               width={300}
                               alt="demo"
@@ -190,7 +193,7 @@ const CheckoutComp = ({
                         {data.cardTypeName === "Elevate" && (
                           <div>
                             <Image
-                              src={`/assets/images/cards/Back/${colorElevate}.png`}
+                              src={`/assets/images/cards/Back/${checkColor}.png`}
                               height={250}
                               width={300}
                               alt="demo"
