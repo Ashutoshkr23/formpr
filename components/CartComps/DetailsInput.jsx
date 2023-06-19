@@ -133,11 +133,20 @@ function DetailsInput({
   const handleChangeComplete = (color) => {
     setCardColor(color.hex);
   };
+  const colorPickerRef = useRef();
 
+  const handleParentClick = (event) => {
+    if (showPicker && !colorPickerRef.current.contains(event.target)) {
+      setShowPicker(false);
+    }
+  };
   return (
     <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto mx-[10px] my-6  ">
       {card.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
-        <div className=" mt-4 lg:pl-7 pl-4 pr-4 h-full lg:h-[373px] bg-white rounded-xl drop-shadow-white flex flex-col lg:flex-row items-center justify-between ">
+        <div
+          className=" mt-4 lg:pl-7 pl-4 pr-4 h-full lg:h-[373px] bg-white rounded-xl drop-shadow-white flex flex-col lg:flex-row items-center justify-between "
+          onClick={handleParentClick}
+        >
           {/* supreme */}
           <div
             className="absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] hover:text-black  items-center bg-black text-[10px] font-bold text-white h-6 w-20"
@@ -328,7 +337,10 @@ function DetailsInput({
                     />
 
                     {showPicker && (
-                      <div className="absolute bottom-0 left-0">
+                      <div
+                        className="absolute bottom-0 left-0 "
+                        ref={colorPickerRef}
+                      >
                         <SketchPicker
                           color={cardColor}
                           onChangeComplete={handleChangeComplete}
@@ -414,12 +426,24 @@ function DetailsInput({
             <div>
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
-                  <p
-                    className="py-2 flex cursor-pointer justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden"
-                    onClick={handleLabelClick}
-                  >
-                    {card.fileName}
-                  </p>
+                  <label>
+                    <p
+                      className="py-2  flex cursor-pointer justify-between border w-[220px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-3 text-xs overflow-hidden"
+                      onClick={handleLabelClick}
+                    >
+                      <p>{card.fileName} </p>{" "}
+                      <span>
+                        {" "}
+                        <Image
+                          src={"/assets/images/uploadLogo.png"}
+                          height={20}
+                          width={20}
+                          alt="icon"
+                          style={{ objectFit: "contain" }}
+                        />
+                      </span>
+                    </p>
+                  </label>
                 ) : (
                   <label
                     htmlFor="fileInput"
@@ -521,6 +545,16 @@ function DetailsInput({
                         src={`/assets/images/cards/Front/${selectedColorLite}.png`}
                         className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
                       />
+                      {card.companyLogo && card.companyLogo.length ? (
+                        <div className="absolute flex  right-6 bottom-6  lg:right-8 lg:bottom-8  w-10 h-10 lg:h-[60px]  lg:w-[60px] object-cover">
+                          <img
+                            src={card.companyLogo}
+                            className=" object-fill w-full h-10 lg:h-[60px] lg:w-[60px]  "
+                          />
+                        </div>
+                      ) : (
+                        ""
+                      )}
                       {selectedColorLite ===
                         "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
                       selectedColorLite ===
@@ -569,7 +603,16 @@ function DetailsInput({
                         src={`/assets/images/cards/Front/${selectedColorElevate}.png`}
                         className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
                       />
-
+                      {card.companyLogo && card.companyLogo.length ? (
+                        <div className="absolute flex  right-6 bottom-6  lg:right-8 lg:bottom-8  w-10 h-10 lg:h-[60px]  lg:w-[60px] object-cover">
+                          <img
+                            src={card.companyLogo}
+                            className=" object-fill w-full h-10 lg:h-[60px] lg:w-[60px]  "
+                          />
+                        </div>
+                      ) : (
+                        ""
+                      )}
                       {selectedColorElevate ===
                         "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
                       selectedColorElevate ===
@@ -582,11 +625,11 @@ function DetailsInput({
                         "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
                       selectedColorElevate ===
                         "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
-                        <div className="absolute text-white  bottom-12 left-8">
+                        <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
                         </div>
                       ) : (
-                        <div className="absolute text-black bottom-12 left-8">
+                        <div className="absolute text-black lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
                         </div>
                       )}
@@ -709,12 +752,25 @@ function DetailsInput({
             <div>
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
-                  <p
-                    className="py-2 flex cursor-pointer justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden"
-                    onClick={handleLabelClick}
-                  >
-                    {card.fileName}
-                  </p>
+                  <label>
+                    {" "}
+                    <p
+                      className="py-2 flex cursor-pointer justify-between border w-[220px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-2 text-xs overflow-hidden"
+                      onClick={handleLabelClick}
+                    >
+                      <p>{card.fileName} </p>{" "}
+                      <span>
+                        {" "}
+                        <Image
+                          src={"/assets/images/uploadLogo.png"}
+                          height={20}
+                          width={20}
+                          alt="icon"
+                          style={{ objectFit: "contain" }}
+                        />
+                      </span>
+                    </p>
+                  </label>
                 ) : (
                   <label
                     htmlFor="fileInput"
