@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { CartContext } from "@/context/CartContext";
 import axios from "axios";
@@ -46,6 +46,8 @@ function DetailsInput({
     handleName,
     handleRemoveCardArr,
     totalQuantity,
+    handleDesignUuid,
+    handleColorUuid,
   } = useContext(CartContext);
   const [design, setDesign] = useState(1);
   const [font, setFont] = useState("white");
@@ -130,14 +132,36 @@ function DetailsInput({
   const [cardColor, setCardColor] = useState("#000000");
   setCardBg(cardColor);
 
+  useEffect(() => {
+    if (cardColor !== card.hexCode) {
+      handleColorUuid(card.key, cardColor, 1);
+    }
+  }, [cardColor]);
+
+  // console.log(cartItems[2],"cartItems[2]")
   const handleChangeComplete = (color) => {
     setCardColor(color.hex);
+  };
+
+  const colorPickerRef = useRef();
+
+  const handleParentClick = (event) => {
+    if (
+      showPicker &&
+      (!colorPickerRef.current ||
+        !colorPickerRef.current.contains(event.target))
+    ) {
+      setShowPicker(false);
+    }
   };
 
   return (
     <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto mx-[10px] my-6  ">
       {card.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
-        <div className=" mt-4 lg:pl-7 pl-4 pr-4 h-full lg:h-[373px] bg-white rounded-xl drop-shadow-white flex flex-col lg:flex-row items-center justify-between ">
+        <div
+          className=" mt-4 lg:pl-7 pl-4 pr-4 h-full lg:h-[373px] bg-white rounded-xl drop-shadow-white flex flex-col lg:flex-row items-center justify-between "
+          onClick={handleParentClick}
+        >
           {/* supreme */}
           <div
             className="absolute cursor-pointer left-0 -top-3 rounded-md flex justify-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] hover:text-black  items-center bg-black text-[10px] font-bold text-white h-6 w-20"
@@ -149,7 +173,7 @@ function DetailsInput({
           <div className="flex lg:flex-row flex-col-reverse gap-[42px] flex-grow ">
             <div className=" flex flex-col gap-1 lg:gap-4 ">
               <p className="text-sm">Abstract Design</p>
-              <div className=" flex flex-row lg:flex-col gap-1.5 lg:gap-4 ">
+              {/* <div className=" flex flex-row lg:flex-col gap-1.5 lg:gap-4 ">
                 <div className="flex gap-2 ">
                   <img
                     className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px]
@@ -215,6 +239,28 @@ function DetailsInput({
                     onClick={() => setDesign(6)}
                   />
                 </div>
+              </div> */}
+
+              <div className="flex flex-row  w-[150px]  gap-1.5 lg:gap-4 flex-wrap">
+                {cartItems &&
+                  cartItems.length &&
+                  cartItems[2].designs.map((abstract) => {
+                    return (
+                      <img
+                        className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px]
+                     ${
+                       card.designUuid == abstract.designUuid
+                         ? `border-2 border-black`
+                         : ""
+                     }`}
+                        src={`/assets/images/abstracts/${abstract.designUuid}.png`}
+                        alt="icon"
+                        onClick={() =>
+                          handleDesignUuid(card.key, abstract.designUuid)
+                        }
+                      />
+                    );
+                  })}
               </div>
             </div>
             <div className="flex mt-8 lg:mt-0">
@@ -248,12 +294,13 @@ function DetailsInput({
                             width={43}
                             alt="icon"
                           />
-                          {design !== 6 && (
+                          {card.designUuid !==
+                            "1bb3aa1e-410f-441c-a290-827bccc7f777" && (
                             <div>
                               <div className="hidden lg:block">
                                 <Image
                                   className="absolute top-0 left-0"
-                                  src={`/assets/images/storeImages/Supreme/Abstract/Des${design}.png`}
+                                  src={`/assets/images/abstracts/card/${card.designUuid}.png`}
                                   height={250}
                                   width={400}
                                   alt="icon"
@@ -262,7 +309,7 @@ function DetailsInput({
                               <div className="lg:hidden">
                                 <Image
                                   className="absolute top-0 left-0"
-                                  src={`/assets/images/storeImages/Supreme/Abstract/Des${design}.png`}
+                                  src={`/assets/images/abstracts/card/${card.designUuid}.png`}
                                   height={172}
                                   width={300}
                                   alt="icon"
@@ -328,7 +375,10 @@ function DetailsInput({
                     />
 
                     {showPicker && (
-                      <div className="absolute bottom-0 left-0">
+                      <div
+                        className="absolute bottom-0 left-0 "
+                        ref={colorPickerRef}
+                      >
                         <SketchPicker
                           color={cardColor}
                           onChangeComplete={handleChangeComplete}
@@ -347,7 +397,10 @@ function DetailsInput({
                           : ""
                       }
                     `}
-                      onClick={() => setFont("white")}
+                      onClick={() => {
+                        setFont("white");
+                        handleColorUuid(card.key, "#FFFFFF", 2);
+                      }}
                     ></div>
                     <div
                       className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${
@@ -355,7 +408,10 @@ function DetailsInput({
                           ? "scale-110 border-2 border-yellow-500 "
                           : ""
                       }`}
-                      onClick={() => setFont("black")}
+                      onClick={() => {
+                        setFont("black");
+                        handleColorUuid(card.key, "#000000", 2);
+                      }}
                     ></div>
                   </div>
                 </div>
@@ -414,12 +470,24 @@ function DetailsInput({
             <div>
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
-                  <p
-                    className="py-2 flex cursor-pointer justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden"
-                    onClick={handleLabelClick}
-                  >
-                    {card.fileName}
-                  </p>
+                  <label>
+                    <p
+                      className="py-2  flex cursor-pointer justify-between border w-[220px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-3 text-xs overflow-hidden"
+                      onClick={handleLabelClick}
+                    >
+                      <p>{card.fileName} </p>{" "}
+                      <span>
+                        {" "}
+                        <Image
+                          src={"/assets/images/uploadLogo.png"}
+                          height={20}
+                          width={20}
+                          alt="icon"
+                          style={{ objectFit: "contain" }}
+                        />
+                      </span>
+                    </p>
+                  </label>
                 ) : (
                   <label
                     htmlFor="fileInput"
@@ -521,6 +589,16 @@ function DetailsInput({
                         src={`/assets/images/cards/Front/${selectedColorLite}.png`}
                         className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
                       />
+                      {card.companyLogo && card.companyLogo.length ? (
+                        <div className="absolute flex  right-6 bottom-6  lg:right-8 lg:bottom-8  w-10 h-10 lg:h-[60px]  lg:w-[60px] object-cover">
+                          <img
+                            src={card.companyLogo}
+                            className=" object-fill w-full h-10 lg:h-[60px] lg:w-[60px]  "
+                          />
+                        </div>
+                      ) : (
+                        ""
+                      )}
                       {selectedColorLite ===
                         "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
                       selectedColorLite ===
@@ -569,7 +647,16 @@ function DetailsInput({
                         src={`/assets/images/cards/Front/${selectedColorElevate}.png`}
                         className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
                       />
-
+                      {card.companyLogo && card.companyLogo.length ? (
+                        <div className="absolute flex  right-6 bottom-6  lg:right-8 lg:bottom-8  w-10 h-10 lg:h-[60px]  lg:w-[60px] object-cover">
+                          <img
+                            src={card.companyLogo}
+                            className=" object-fill w-full h-10 lg:h-[60px] lg:w-[60px]  "
+                          />
+                        </div>
+                      ) : (
+                        ""
+                      )}
                       {selectedColorElevate ===
                         "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
                       selectedColorElevate ===
@@ -582,11 +669,11 @@ function DetailsInput({
                         "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
                       selectedColorElevate ===
                         "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
-                        <div className="absolute text-white  bottom-12 left-8">
+                        <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
                         </div>
                       ) : (
-                        <div className="absolute text-black bottom-12 left-8">
+                        <div className="absolute text-black lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
                         </div>
                       )}
@@ -621,11 +708,14 @@ function DetailsInput({
                         <div
                           key={item.designUuid}
                           className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${
-                            color === item.designUuid
+                            card.designUuid === item.designUuid
                               ? "scale-125 border border-black p-px"
                               : ""
                           } `}
-                          onClick={() => setSelectedColorLite(item.designUuid)}
+                          onClick={() => {
+                            setSelectedColorLite(item.designUuid);
+                            handleDesignUuid(card.key, item.designUuid);
+                          }}
                         >
                           <div
                             className={`w-full h-full rounded-full bg-[${item.hexCode}]`}
@@ -641,13 +731,14 @@ function DetailsInput({
                         <div
                           key={item.designUuid}
                           className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${
-                            color === item.designUuid
+                            card.designUuid === item.designUuid
                               ? "scale-125 border border-black p-px"
                               : ""
                           } `}
-                          onClick={() =>
-                            setSelectedColorElevate(item.designUuid)
-                          }
+                          onClick={() => {
+                            setSelectedColorElevate(item.designUuid);
+                            handleDesignUuid(card.key, item.designUuid);
+                          }}
                         >
                           <Image
                             src={`/assets/images/radio_buttons/elevate/${item.designUuid}.png`}
@@ -709,12 +800,25 @@ function DetailsInput({
             <div>
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
-                  <p
-                    className="py-2 flex cursor-pointer justify-between border w-[180px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 text-xs overflow-hidden"
-                    onClick={handleLabelClick}
-                  >
-                    {card.fileName}
-                  </p>
+                  <label>
+                    {" "}
+                    <p
+                      className="py-2 flex cursor-pointer justify-between border w-[220px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-2 text-xs overflow-hidden"
+                      onClick={handleLabelClick}
+                    >
+                      <p>{card.fileName} </p>{" "}
+                      <span>
+                        {" "}
+                        <Image
+                          src={"/assets/images/uploadLogo.png"}
+                          height={20}
+                          width={20}
+                          alt="icon"
+                          style={{ objectFit: "contain" }}
+                        />
+                      </span>
+                    </p>
+                  </label>
                 ) : (
                   <label
                     htmlFor="fileInput"
