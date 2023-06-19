@@ -11,8 +11,16 @@ const CardSchema = new mongoose.Schema({
     // cardName is name displayed on card
     cardName: { type: String },
     companyLogo: { type: String },
-
+    designUuid:{type:String,default:""}, // design uuid if its lite or elevate
+    hexCode:{type:String,default:""}, //hex color code of card if card is supreme
+    fontCode:{type:String,default:""}, //font coded of card if card is supreme
+    abstract:{
+        abstractUsed:{type:Boolean,default:false},
+        abstractHexCode:{type:String,default:"#FFFFFF"},
+        abstractUuid:{type:String},
+    },
     // above fields get filled while creating card and below fields will be updated later
+
     //details
     comapany: { type: String },
     name: { type: String },
