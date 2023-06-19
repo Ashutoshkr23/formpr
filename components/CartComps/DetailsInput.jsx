@@ -120,7 +120,7 @@ function DetailsInput({
     setIsFlipped(!isFlipped);
   };
   const [showPicker, setShowPicker] = useState(false);
-  const [cardColor, setCardColor] = useState("#123456");
+  const [cardColor, setCardColor] = useState("#000000");
   setCardBg(cardColor);
 
   const handleChangeComplete = (color) => {
@@ -499,25 +499,43 @@ function DetailsInput({
             REMOVE <span className="text-base font-medium pl-2">X</span>
           </div>
 
-          <div className="flex flex-col items-center lg:flex-grow ">
+          <div className="flex flex-col items-center flex-grow ">
             {card.cardTypeName === "Lite" && (
-              <div className="flex mt-8 lg:mt-0">
-                <div
-                  className={`card ${isFlipped ? "flipped" : ""}`}
-                  onClick={handleFlip}
-                >
-                  <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
-                    <div className="card-front lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
-                      <img
-                        src={`/assets/images/cards/Front/${selectedColorLite}.png`}
-                        className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
-                      />
-                    </div>
-                    <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
-                      <img
-                        src={`/assets/images/cards/Back/${selectedColorLite}.png`}
-                        className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
-                      />
+              <div className="flex mt-8 lg:mt-0  ">
+                <div className={`card ${isFlipped ? "flipped" : ""}`}>
+                  <div
+                    className={`card ${
+                      isFlipped ? "flipped" : ""
+                    }lg:h-[250px] w-[300px] h-[172px] lg:w-[400px]`}
+                    onClick={handleFlip}
+                  >
+                    <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
+                      <div className="card-front lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                        <img
+                          src={`/assets/images/cards/Front/${selectedColorLite}.png`}
+                          className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
+                        />
+                        {selectedColorLite ===
+                          "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
+                        selectedColorLite ===
+                          "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
+                        selectedColorLite ===
+                          "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
+                          <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
+                            {card.fullName ? card.fullName : "John Doe"}
+                          </div>
+                        ) : (
+                          <div className="absolute text-black lg:bottom-12 lg:left-8 bottom-7 left-5">
+                            {card.fullName ? card.fullName : "John Doe"}
+                          </div>
+                        )}
+                      </div>
+                      <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                        <img
+                          src={`/assets/images/cards/Back/${selectedColorLite}.png`}
+                          className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -535,7 +553,9 @@ function DetailsInput({
             {card.cardTypeName === "Elevate" && (
               <div className="flex mt-8 lg:mt-0">
                 <div
-                  className={`card ${isFlipped ? "flipped" : ""}`}
+                  className={`card ${
+                    isFlipped ? "flipped" : ""
+                  } lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
                   onClick={handleFlip}
                 >
                   <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
@@ -544,6 +564,27 @@ function DetailsInput({
                         src={`/assets/images/cards/Front/${selectedColorElevate}.png`}
                         className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]"
                       />
+
+                      {selectedColorElevate ===
+                        "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
+                      selectedColorElevate ===
+                        "d73f6121-6dc5-4170-8b3b-40a02835ddd1" ||
+                      selectedColorElevate ===
+                        "de47eb30-ec56-4d98-8069-50bcac1cfcc7" ||
+                      selectedColorElevate ===
+                        "f07f8b1f-3947-4121-a0eb-a60230f7a14b" ||
+                      selectedColorElevate ===
+                        "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
+                      selectedColorElevate ===
+                        "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
+                        <div className="absolute text-white  bottom-12 left-8">
+                          {card.fullName ? card.fullName : "John Doe"}
+                        </div>
+                      ) : (
+                        <div className="absolute text-black bottom-12 left-8">
+                          {card.fullName ? card.fullName : "John Doe"}
+                        </div>
+                      )}
                     </div>
                     <div className="card-back lg:w-[400px] lg:h-[250px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
                       <img
