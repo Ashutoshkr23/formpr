@@ -22,6 +22,7 @@ const CartComponent = () => {
     totalAmount,
     address,
     clearCart,
+    setAllCards,
   } = useContext(CartContext);
   const [cardTypeSelected, setCardTypeSelected] = useState(cartItems[0]);
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
@@ -134,8 +135,11 @@ const CartComponent = () => {
     console.log(response, "response");
     setRupayLoader(false)
     if (response.status == 200) {
-      // setCartItems(defaultCart);
+      if(!response.data.error){
       setIsModalVisible(true);
+      setAllCards(response.data.result)
+      }
+      // setCartItems(defaultCart);
     }else{
       toast.error("Something went wrong !")
       toast.info("PLease Contact Support for assistance")

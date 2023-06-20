@@ -106,11 +106,13 @@ export default async function handler(req, res) {
             // Save the instance to the database
             const savedShipping = await updateShipping.save();
 
+            const fetchUserCards = await card.find({puuid :puuid })
+
             const updateUserProfile = await UserData.updateOne({ puuid: puuid }, { $inc: { totalCards: totalQuantity } })
             res.status(200).json({
                 error: false,
                 message: "Success",
-                result: cardsArray
+                result: fetchUserCards,
             })
         } else {
             return res.status(405).json({ message: 'Method not allowed' });

@@ -406,6 +406,7 @@ export const CartProvider = ({ children }) => {
         setAddress,
         handleDesignUuid,
         handleColorUuid,
+        setAllCards,
     };
 
     // Provide the cart context to its children components
