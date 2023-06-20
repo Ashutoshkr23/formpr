@@ -23,8 +23,14 @@ export default async function handler(req, res) {
             }
             let temp = []
             cardsArray.map((item) => {
+                let supremeCard = false ;
+                // this uuid is of supreme
+                if(item.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744"){
+                    supremeCard = true
+                }
+
                 let cuuid = uuidv4()
-                temp.push({
+                let  tempObj = {
                     cuuid: cuuid,
                     puuid: puuid,
                     cardType: item.cardTypeUuid,
@@ -32,8 +38,22 @@ export default async function handler(req, res) {
                     cardName: item.fullName,
                     companyName: item.companyName,
                     companyLogo: item.companyLogo,
+                    designUuid: supremeCard ? "" : item.designUuid,
                     contactUrl: `https://loopcard.club/details/${cuuid}`
-                })
+                }
+                if(supremeCard){
+
+                    tempObj.hexCode = item.hexCode,
+                    tempObj.fontCode = item.fontCode,
+                    tempObj.abstract = {
+                        // this uuid is of not using abstract design
+                        abstractUsed:item.designUuid == "1bb3aa1e-410f-441c-a290-827bccc7f777" ? false :true ,
+                        abstractHexCode:"#ffffff",
+                        abstractUuid : item.designUuid
+                    }
+                }
+                console.log(tempObj,"tempObj")
+                temp.push(tempObj)
             })
             const data = await card.insertMany(temp)
 
@@ -86,11 +106,13 @@ export default async function handler(req, res) {
             // Save the instance to the database
             const savedShipping = await updateShipping.save();
 
+            const fetchUserCards = await card.find({puuid :puuid })
+
             const updateUserProfile = await UserData.updateOne({ puuid: puuid }, { $inc: { totalCards: totalQuantity } })
             res.status(200).json({
                 error: false,
                 message: "Success",
-                result: cardsArray
+                result: fetchUserCards,
             })
         } else {
             return res.status(405).json({ message: 'Method not allowed' });

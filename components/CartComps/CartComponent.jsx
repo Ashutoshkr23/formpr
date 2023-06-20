@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
+// import { BeatLoader } from "react-spinners";
 
 const CartComponent = () => {
   const {
@@ -21,12 +22,14 @@ const CartComponent = () => {
     totalAmount,
     address,
     clearCart,
+    setAllCards,
   } = useContext(CartContext);
   const [cardTypeSelected, setCardTypeSelected] = useState(cartItems[0]);
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
   // when step2 next button is clicked we will check form is filled properly or not
   const [checkFormValid, setFormValid] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [rupayLoader ,setRupayLoader] = useState(false)
   const [color, setColor] = useState("7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a");
   const [colorLite, setColorLite] = useState(
     "7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a"
@@ -114,6 +117,8 @@ const CartComponent = () => {
   };
 
   const saveDataToServer = async (razorData) => {
+  
+   
     // Make API call to save the data to the server
     let postData = {
       cardsArray: cardsArray,
@@ -128,20 +133,29 @@ const CartComponent = () => {
     // console.log(postData, "postData");
     const response = await axios.post("/api/savePurchaseOrder", postData);
     console.log(response, "response");
-
+    setRupayLoader(false)
     if (response.status == 200) {
-      // setCartItems(defaultCart);
+      if(!response.data.error){
       setIsModalVisible(true);
+      setAllCards(response.data.result)
+      }
+      // setCartItems(defaultCart);
+    }else{
+      toast.error("Something went wrong !")
+      toast.info("PLease Contact Support for assistance")
     }
   };
 
   // main submit function
   const handleSubmitFunction = async () => {
+    
+    setRupayLoader(true)
     const res = await initializeRazorpay();
     if (!res) {
       alert("Razorpay SDK Failed to load");
       return;
     }
+   
     // Make API call to the serverless API
     const { data } = await axios.post("/api/razorpay", {
       cartItems: cartItems,
@@ -188,6 +202,8 @@ const CartComponent = () => {
       };
 
       document.body.appendChild(script);
+     
+    
     });
   };
 
@@ -330,6 +346,7 @@ const CartComponent = () => {
             setCheckColor={setCheckColor}
             setCheckLiteColor={setCheckLiteColor}
             checkLiteColor={checkLiteColor}
+            rupayLoader={rupayLoader}
           />
         )}
       </div>

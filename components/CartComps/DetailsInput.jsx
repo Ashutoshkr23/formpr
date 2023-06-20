@@ -295,6 +295,7 @@ function DetailsInput({
                   cartItems[2].designs.map((abstract) => {
                     return (
                       <img
+                      key={abstract.designUuid}
                         className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px]
                      ${
                        card.designUuid == abstract.designUuid
@@ -579,7 +580,7 @@ function DetailsInput({
                 <input
                   id="companyLogo"
                   type="file"
-                  accept=".png, .jpeg, .jpg"
+                  accept=".png, .jpeg, .jpg, .webp"
                   onChange={handleFileChange}
                   ref={fileInputRef}
                   name="companyLogo"
@@ -910,7 +911,7 @@ function DetailsInput({
                 <input
                   id="companyLogo"
                   type="file"
-                  accept=".png, .jpeg, .jpg"
+                  accept=".png, .jpeg, .jpg , .webp"
                   onChange={handleFileChange}
                   ref={fileInputRef}
                   name="companyLogo"

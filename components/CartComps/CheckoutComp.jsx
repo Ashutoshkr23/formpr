@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useContext, useState } from "react";
 import ShippingComp from "./ShippingComp";
 import { toast } from "react-toastify";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const CheckoutComp = ({
   cardsArray,
@@ -17,6 +18,7 @@ const CheckoutComp = ({
   checkColor,
   setCheckColor,
   checkLiteColor,
+  rupayLoader,
 }) => {
   console.log(`colorlite=${colorLite}`);
   console.log(`colorelevate=${colorElevate}`);
@@ -294,7 +296,8 @@ const CheckoutComp = ({
               className="w-full h-10 px-5 bg-black border rounded-lg border-black cursor-pointer text-base font-bold text-center text-white "
               onClick={handleClick}
             >
-              {shippingState ? "CHECKOUT" : "GO TO SHIPPING"}
+              {rupayLoader ?<BeatLoader color="#FFFFFF" size={12} /> :shippingState ? "CHECKOUT" : "GO TO SHIPPING"  }
+              
             </button>
           </div>
           <p className="mx-5 text-sm font-medium text-red-400">

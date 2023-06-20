@@ -13,7 +13,7 @@ const CardSchema = new mongoose.Schema({
     companyLogo: { type: String },
     designUuid:{type:String,default:""}, // design uuid if its lite or elevate
     hexCode:{type:String,default:""}, //hex color code of card if card is supreme
-    fontCode:{type:String,default:""}, //font coded of card if card is supreme
+    fontCode:{type:String,default:"#000000"}, //font coded of card if card is supreme
     abstract:{
         abstractUsed:{type:Boolean,default:false},
         abstractHexCode:{type:String,default:"#FFFFFF"},
