@@ -19,6 +19,7 @@ const CardSchema = new mongoose.Schema({
         abstractHexCode:{type:String,default:"#FFFFFF"},
         abstractUuid:{type:String},
     },
+    status:{type:Number ,default:0}, // status 0 means created and 1 means updated 
     // above fields get filled while creating card and below fields will be updated later
 
     //details
