@@ -20,9 +20,9 @@ const CheckoutComp = ({
   checkLiteColor,
   rupayLoader,
 }) => {
-  console.log(`colorlite=${colorLite}`);
-  console.log(`colorelevate=${colorElevate}`);
-  console.log({ cardBg });
+  // console.log(`colorlite=${colorLite}`);
+  // console.log(`colorelevate=${colorElevate}`);
+  // console.log({ cardBg });
   const {
     handleRemoveCardArr,
     totalQuantity,
@@ -43,6 +43,40 @@ const CheckoutComp = ({
   //   city: "",
   //   state: ""
   // })
+
+  const checkFontArray = (uuid)=>{
+    let tempArr = [
+        "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7",
+        "d73f6121-6dc5-4170-8b3b-40a02835ddd1",
+        "de47eb30-ec56-4d98-8069-50bcac1cfcc7",
+        "f07f8b1f-3947-4121-a0eb-a60230f7a14b",
+        "fbc8a97b-178e-4582-afaf-be755b69ca2b" ,
+        "d886fa29-1622-4a08-ade2-f58fca1237d9" ,
+        "44d97f3f-1393-48a3-95e2-2d4866a3a589",
+        "7d223de6-dc2d-4caa-b111-63d5a4e219fa",
+        "ef574738-8969-4e8a-a17e-51b8bc6e2eae"
+
+    ]
+    if(tempArr.includes(uuid)){
+        return true
+    }else{
+        return false
+    }
+}
+
+const checkLiteOrElevate = (uuid)=>{
+  let tempArr = [
+      "3fa766b5-9f66-4a38-8471-23026a59d84d",
+      "801baf78-ce33-446f-b132-618f92ccfc5f",
+     
+
+  ]
+  if(tempArr.includes(uuid)){
+      return true
+  }else{
+      return false
+  }
+}
 
   const checkShippingValidation = () => {
     let error = false;
@@ -78,7 +112,10 @@ const CheckoutComp = ({
     }
   };
 
-  // console.log(cardsArray);
+
+  
+
+  console.log(cardsArray);
   return (
     <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center px-4 xl:px-0">
       {!shippingState ? (
@@ -92,31 +129,41 @@ const CheckoutComp = ({
                       key={data.key}
                       className="relative grid grid-cols-2 gap-5 bg-white rounded-xl cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926] p-4 h-[250px]"
                     >
-                      {data.cardTypeName === "Lite" && (
-                        <div>
-                          <Image
-                            src={`/assets/images/cards/Front/${checkLiteColor}.png`}
-                            height={250}
-                            width={300}
-                            alt="demo"
-                            quality={100}
-                          />
-                        </div>
+                      {checkLiteOrElevate(data.cardTypeUuid) &&  (
+                       <div className={`card w-[170px] h-[105px]`}>
+                       <div className="card-inner lg:w-[170px] lg:h-[105px] w-[300px] h-[172px]">
+                         <div className="card-front lg:w-[170px] lg:h-[105px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                           <img
+                             src={`/assets/images/cards/Front/${data.designUuid}.png`}
+                             className="w-[170px] h-[105px]"
+                           />
+                           {data.companyLogo && data.companyLogo.length ? (
+                             <div className="absolute flex items-center lg:right-2 lg:bottom-2  lg:h-auto  lg:w-auto max-h-[45px] max-w-[45px]  object-contain">
+                               <img
+                                 src={data.companyLogo}
+                                 className=" object-contain w-full h-full"
+                               />
+                             </div>
+                           ) : (
+                             ""
+                           )}
+                           {checkFontArray(data.designUuid) ? (
+                             <div className="absolute text-[10px] text-white lg:bottom-5 lg:left-4 bottom-7 left-5">
+                               {data.fullName ? data.fullName : "John Doe"}
+                             </div>
+                           ) : (
+                             <div className="absolute text-[10px] text-black font-semibold lg:bottom-5 lg:left-4 bottom-7 left-5">
+                               {data.fullName ? data.fullName : "John Doe"}
+                             </div>
+                           )}
+                         </div>
+                       </div>
+                     </div>
                       )}
-                      {data.cardTypeName === "Elevate" && (
-                        <div>
-                          <Image
-                            src={`/assets/images/cards/Front/${checkColor}.png`}
-                            height={250}
-                            width={300}
-                            alt="demo"
-                            quality={100}
-                          />
-                        </div>
-                      )}
+                      
                       {data.cardTypeName === "Supreme" && (
                         <div
-                          className={`relative h-[100px] w-[165px]`}
+                          className={`relative h-[100px] w-[165px] rounded-xl`}
                           style={{
                             backgroundColor: cardBg,
                           }}
@@ -170,7 +217,7 @@ const CheckoutComp = ({
                         <p className="text-sm font-bold leading-7 text-red-400 mt-1">
                           ₹ 899
                         </p>
-                        <div className="flex justify-between mt-1">
+                        {/* <div className="flex justify-between mt-1">
                           <span className="text-xs font-medium leading-snug">
                             Color :{" "}
                             <span className="w-4 h-4 bg-green-300 shadow-inner rounded-full px-2 ml-1"></span>
@@ -178,13 +225,13 @@ const CheckoutComp = ({
                           <span className="text-xs font-medium leading-snug">
                             Qty : 1{" "}
                           </span>
-                        </div>
+                        </div> */}
                       </div>
                       <div>
-                        {data.cardTypeName === "Lite" && (
+                        {checkLiteOrElevate(data.cardTypeUuid) && (
                           <div>
                             <Image
-                              src={`/assets/images/cards/Back/${checkLiteColor}.png`}
+                              src={`/assets/images/cards/Back/${data.designUuid}.png`}
                               height={250}
                               width={300}
                               alt="demo"
@@ -192,17 +239,7 @@ const CheckoutComp = ({
                             />
                           </div>
                         )}
-                        {data.cardTypeName === "Elevate" && (
-                          <div>
-                            <Image
-                              src={`/assets/images/cards/Back/${checkColor}.png`}
-                              height={250}
-                              width={300}
-                              alt="demo"
-                              quality={100}
-                            />
-                          </div>
-                        )}
+                        
                         {data.cardTypeName === "Supreme" && (
                           <div>
                             {" "}
