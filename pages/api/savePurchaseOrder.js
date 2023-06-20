@@ -39,7 +39,8 @@ export default async function handler(req, res) {
                     companyName: item.companyName,
                     companyLogo: item.companyLogo,
                     designUuid: supremeCard ? "" : item.designUuid,
-                    contactUrl: `https://loopcard.club/details/${cuuid}`
+                    contactUrl: `https://loopcard.club/details/${cuuid}`,
+                    status:0,
                 }
                 if(supremeCard){
 
