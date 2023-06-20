@@ -16,26 +16,26 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
         />
       </div>
       <div className="pt-[30px] grid grid-cols-2 gap-y-4">
-        <div className="flex">
+        <div className="flex items-center">
           <Image
             src={"/assets/images/display/log.png"}
             alt="log"
-            width={27}
-            height={22}
+            width={24}
+            height={20}
           />
 
-          <p className="text-[8px] ml-[2px] tracking-[-0.5px] text-[#7D9695]  ">
+          <p className="text-[8px] ml-1.5 tracking-[-0.5px] text-[#7D9695]  ">
             {company ? company : "Alphamintlabs"}
           </p>
         </div>
-        <div className="flex ml-[50px] ">
+        <div className="flex ml-[50px] items-center ">
           <Image
             src={"/assets/images/display/phone.png"}
             alt="phone"
             width={22}
             height={22}
           />
-          <p className="text-[10px] ml-[1px] tracking-[-0.5px]">
+          <p className="text-[10px] ml-1.5 tracking-[-0.5px]">
             <input
               className={`bg-transparent w-20 ${text2} text-[#7D9695] `}
               type="text"
@@ -46,17 +46,19 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
             />
           </p>
         </div>
-        <div className="flex pt-1">
-          <Image
-            src={"/assets/images/display/website.png"}
-            alt="website"
-            width={22}
-            height={22}
-          />
+        <div className="flex w-[300px] items-center">
+          <div className="h-[22px] w-[24px] flex justify-center">
+            <Image
+              src={"/assets/images/display/website.png"}
+              alt="website"
+              width={22}
+              height={22}
+            />
+          </div> 
           <Link href={`${website}`}>
             <p className="text-[10px] ml-1.5 tracking-[-0.5px]">
               <input
-                className={`bg-transparent ${text2} text-[#7D9695] cursor-pointer w-[200px] `}
+                className={`bg-transparent ${text2}  text-[#7D9695] cursor-pointer w-[200px] `}
                 type="text"
                 placeholder=" www.alphamintlabs.com"
                 value={website}

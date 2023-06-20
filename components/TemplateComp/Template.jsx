@@ -126,7 +126,7 @@ END:VCARD`;
                         <p> made with love by</p>
                         <img
                             className="h-[12px] w-[27px] ml-1"
-                            src="/assets/images/display/loops.png"
+                            src={`/assets/images/display/${loop}`}
                             alt="logo"
                         />
                     </div>

@@ -11,7 +11,7 @@ const themes = [
         btntext: 'text-white',
         border: 'border-0',
 
-        loop: '/loop.png',
+        loop: '/LoopBl.png',
         profileimg: '/assets/images/templateimg/andrew.png',
         type: 'folder1'
 
@@ -26,7 +26,7 @@ const themes = [
         btn: 'bg-white',
         btntext: 'text-black',
         border: 'border-[1px] drop-shadow-white',
-        loop: '/loop.png',
+        loop: '/LoopBl.png',
         profileimg: '/assets/images/templateimg/andrew.png',
         type: 'folder2'
 
