@@ -187,7 +187,7 @@ const ManageCardComps = () => {
                       
                         <Image height={23} width={23} className='rounded-full' alt="color" src ={`/assets/images/radio_buttons/elevate/${card.designUuid}.png`} />
                       ):<>
-                        <div className="w-5 h-5 rounded-[45px] bg-[#66d3e1]"></div>
+                        <Image height={23} width={23} className='rounded-full' alt="color" src ={`/assets/images/radio_buttons/lite/${card.designUuid}.png`} />
                       </>}
                     </div>
                   </div>
@@ -206,7 +206,7 @@ const ManageCardComps = () => {
                         Company Name
                       </span>
 
-                      <p className="text-xl font-medium text-left text-black ">
+                      <p className="text-xs font-medium text-left text-black ">
                         {card.companyName}
                       </p>
                     </p>
