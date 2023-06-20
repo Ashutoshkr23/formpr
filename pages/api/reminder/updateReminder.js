@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         const formattedDate = `${day}-${month}-${year} ${hours}:${minutes}`;
 
         const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber, customMessage: userCustomMessage, customDate: formattedDate }, { new: true });
-        console.log(updatedReminder);
+        // console.log(updatedReminder);
         const message = {
             to: updatedReminder.userEmail,
             from: process.env.SENDGRID_EMAIL_ID,
@@ -40,13 +40,13 @@ export default async function handler(req, res) {
                 // Code to send the reminder to the user
                 try {
                     await sgMail.send(message);
-                    console.log('Notification email sent successfully');
+                    // console.log('Notification email sent successfully');
                 } catch (error) {
                     console.error('Error sending notification email:', error);
                 }
             }, timeDifference);
         } else {
-            console.log('Selected date is in the past. No notification will be sent.');
+            // console.log('Selected date is in the past. No notification will be sent.');
         }
 
         res.json({

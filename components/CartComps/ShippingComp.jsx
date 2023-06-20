@@ -8,13 +8,12 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
 
 
     const fetchCityState = async () => {
-        // console.log(address.pinCode)
         if (address.pinCode.length == 6) {
             const result = await axios.get(`https://api.postalpincode.in/pincode/${address.pinCode}`)
             if (result.status === 200) {
                 if (result?.data[0]?.PostOffice) {
                     let temp = result.data[0].PostOffice[0]
-                    console.log(temp, "temp")
+                    // console.log(temp, "temp")
                     setAddress({ ...address, city: temp.Region, state: temp.State })
                 }
 
@@ -25,7 +24,6 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
 
 
 
-    console.log(address, "address")
     return (
         <div className='w-full h-full ml-1 mr-4 text-white'>
             <div className='h-full w-full rounded-lg shadow drop-shadow-2xl bg-[#000000] p-6 '>
@@ -45,7 +43,6 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
                         <input type="text" className='outline-none  bg-white border rounded-md text-black border-zinc-500 h-9 px-2 text-sm' value={address.phoneNumber} onChange={(e) => {
                             let input = e.target.value;
                             let number = input.replace(/\D/g, '');
-                            console.log(number, "num")
                             setAddress({ ...address, phoneNumber: number })
                         }} />
                     </div>

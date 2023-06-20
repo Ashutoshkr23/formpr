@@ -23,12 +23,12 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                 // Handle the response from the server
                 const { result: link } = data;
                 setProfileImg(link);
-                console.log(setCover);
+                // console.log(setCover);
                 // ...
             })
             .catch((error) => {
                 // Handle any errors
-                console.log(error);
+                // console.log(error);
             });
     };
 
@@ -41,7 +41,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
     };
 
     const remainingChars = maxLength - bio.length;
-    
+
     const handleCompanyChange = (e) => {
         const value = e.target.value;
         onCompanyChange(value);

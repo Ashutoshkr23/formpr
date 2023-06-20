@@ -10,7 +10,7 @@ const Contact = () => {
   const router = useRouter();
   useEffect(() => {
     const { slug } = router.query;
-    console.log(slug);
+    // console.log(slug);
     async function fetchContact() {
       try {
         const res = await fetch(`/api/handleFormData?cuuid=${slug}`);
@@ -59,7 +59,7 @@ const Contact = () => {
                 profileImg: profileImg,
                 cover: cover,*/}
 
-               
+
   return (
     <div>
       {contactData && (

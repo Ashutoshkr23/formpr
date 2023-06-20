@@ -18,11 +18,11 @@ const FilterIcon = (props) => {
             <div className='relative capitalize text-[#686A6C] flex items-center px-3 bg-white rounded-xl'>
                 <div className={`cursor-pointer flex items-center gap-1 ${props.sortByCustomClasses}`} onClick={openSortBy}>
                     <Image width={21} height={18} src={'/assets/images/profilePage/filterIcon.png'} alt="profile pic"></Image>
-                    filter
+                    <span className='sm:block hidden'>filter</span>
                 </div>
 
                 {sortBy &&
-                    <div className='absolute capitalize bg-white pl-4 pr-8 py-4 border rounded-xl text-black -ml-[18px] -mt-36 space-y-4 whitespace-nowrap'>
+                    <div className='absolute capitalize bg-white pl-4 pr-8 py-4 border rounded-xl text-black -ml-[12px] -mt-36 space-y-4 whitespace-nowrap'>
                         <div className='mb-2 cursor-pointer'>reminder on</div>
                         <div className='cursor-pointer'>reminder off</div>
                     </div>}

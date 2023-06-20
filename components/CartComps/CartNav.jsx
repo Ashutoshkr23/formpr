@@ -103,7 +103,17 @@ const CartNav = () => {
               />
             </a>
             <div className="flex gap-4">
-              <div className="relative ">
+              <div className="relative flex">
+                <Link href={"/profile"}>
+                  <div className="relative">
+                    <Image
+                      src={"/assets/images/profileIcon.png"}
+                      alt="loop"
+                      width={30}
+                      height={30}
+                    />
+                  </div>
+                </Link>
                 <Image
                   src={"/assets/images/cart-images/CartImage.png"}
                   alt="loop"

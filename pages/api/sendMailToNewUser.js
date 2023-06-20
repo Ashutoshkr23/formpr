@@ -56,7 +56,7 @@ export default async function handler(req, res) {
 
             try {
                 await sgMail.send(message);
-                console.log('Notification email sent successfully');
+                // console.log('Notification email sent successfully');
             } catch (error) {
                 console.error('Error sending notification email:', error);
             }
@@ -65,7 +65,7 @@ export default async function handler(req, res) {
         if (getUserRemainders2 === null) {
             sendMailToNewUser()
         } else if (getUserRemainders2 !== null) {
-            console.log("User Already Exist.");
+            // console.log("User Already Exist.");
         }
         res.json({
             success: true

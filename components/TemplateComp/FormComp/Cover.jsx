@@ -21,16 +21,16 @@ function Cover({ cover, setCover }) {
                 // Handle the response from the server
                 const { result: link } = data;
                 setCover(link);
-                console.log(setCover)
+                // console.log(setCover)
                 // ...
             })
             .catch((error) => {
                 // Handle any errors
-                console.log(error);
+                // console.log(error);
             });
     };
 
-    console.log(setCover)
+    // console.log(setCover)
 
 
     const Cover1 = "/assets/images/templateimg/BGCover1.png"
