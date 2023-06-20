@@ -40,6 +40,8 @@ function Form({ cuuid }) {
 
     });
 
+    
+
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setInputValues((prevInputValues) => ({
@@ -215,13 +217,8 @@ function Form({ cuuid }) {
                           setVisibleInputs={setVisibleInputs} 
                           onToggleInput={handleToggleInput} />
                 </div>
-                  <div className='w-[350px] xl:w-[390px]  flex justify-center'>
-                    <div className='relative'>
-                          <Image src="/assets/images/templateimg/Mobile-border.png" width={331} height={665}/>
-                          <div className='absolute top-1 right-1'> 
-
-                            </div>
-                        </div>
+                  <div className='w-[350px] xl:w-[390px]  flex justify-center relative'>
+                    <div className='sticky top-0 h-[820px]'>
                         {selectedtemplate &&
                             <Template
                                 gradient1={cover}
@@ -244,6 +241,8 @@ function Form({ cuuid }) {
                                 fname={name}
                                 designation={role}
                             />}
+
+                        </div>
                     </div>
                 </div>
             </div>
