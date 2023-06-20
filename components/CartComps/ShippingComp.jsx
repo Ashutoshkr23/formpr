@@ -27,8 +27,8 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
 
     console.log(address, "address")
     return (
-        <div className='w-full h-full ml-1 mr-4'>
-            <div className='h-full w-full rounded-lg shadow drop-shadow-2xl bg-[#E3EDEE] p-6'>
+        <div className='w-full h-full ml-1 mr-4 text-white'>
+            <div className='h-full w-full rounded-lg shadow drop-shadow-2xl bg-[#000000] p-6 '>
                 <p className="text-sm font-bold leading-snug uppercase mt-1">CONTACT INFORMATION</p>
                 <div className='flex w-full justify-between items-center mt-6'>
                     <div className='w-full '>
@@ -52,7 +52,7 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
 
                 </div>
             </div>
-            <div className='h-full w-full rounded-lg shadow drop-shadow-2xl bg-[#E3EDEE] p-6 pb-10 mt-4'>
+            <div className='h-full w-full rounded-lg shadow drop-shadow-2xl bg-[#000000] p-6 pb-10 mt-4'>
                 <p className="text-sm font-bold leading-snug uppercase mt-1">SHIPPING ADDRESS</p>
                 <div className='flex w-full justify-between items-center mt-8'>
                     <div className='w-full flex flex-col pr-4'>
