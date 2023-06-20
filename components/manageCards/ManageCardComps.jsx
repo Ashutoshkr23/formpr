@@ -7,6 +7,27 @@ import Image from 'next/image';
 const ManageCardComps = () => {
     const { cartItems, userProfile, allCards } = useContext(CartContext);
 
+
+    const checkFontArray = (uuid)=>{
+        let tempArr = [
+            "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7",
+            "d73f6121-6dc5-4170-8b3b-40a02835ddd1",
+            "de47eb30-ec56-4d98-8069-50bcac1cfcc7",
+            "f07f8b1f-3947-4121-a0eb-a60230f7a14b",
+            "fbc8a97b-178e-4582-afaf-be755b69ca2b" ,
+            "d886fa29-1622-4a08-ade2-f58fca1237d9" ,
+            "44d97f3f-1393-48a3-95e2-2d4866a3a589",
+            "7d223de6-dc2d-4caa-b111-63d5a4e219fa",
+            "ef574738-8969-4e8a-a17e-51b8bc6e2eae"
+
+        ]
+        if(tempArr.includes(uuid)){
+            return true
+        }else{
+            return false
+        }
+    }
+
     console.log(allCards)
     return (
       <div className="w-full h-full px-36 py-4">
@@ -14,7 +35,7 @@ const ManageCardComps = () => {
 
         {allCards?.length > 0 ? 
         (
-          <div className="grid grid-cols-2 gap-12 mt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
             {allCards.map((card) => 
             {
                 let fontCode = card?.fontCode?.toLowerCase()
@@ -126,24 +147,7 @@ const ManageCardComps = () => {
                                 ) : (
                                   ""
                                 )}
-                                {card.designUuid ===
-                                  "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
-                                card.designUuid ===
-                                  "d73f6121-6dc5-4170-8b3b-40a02835ddd1" ||
-                                card.designUuid ===
-                                  "de47eb30-ec56-4d98-8069-50bcac1cfcc7" ||
-                                card.designUuid ===
-                                  "f07f8b1f-3947-4121-a0eb-a60230f7a14b" ||
-                                card.designUuid ===
-                                  "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
-                                  card.designUuid ===
-                                  "d886fa29-1622-4a08-ade2-f58fca1237d9" ||
-                                  card.designUuid ===
-                                  "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
-                                  card.designUuid ===
-                                  "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
-                                card.designUuid ===
-                                  "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
+                                {checkFontArray(card.designUuid) ? (
                                   <div className="absolute text-[10px] text-white lg:bottom-5 lg:left-4 bottom-7 left-5">
                                     {card.cardName ? card.cardName : "John Doe"}
                                   </div>
