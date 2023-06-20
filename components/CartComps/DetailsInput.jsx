@@ -579,7 +579,7 @@ function DetailsInput({
                 <input
                   id="companyLogo"
                   type="file"
-                  accept=".png, .jpeg, .jpg"
+                  accept=".png, .jpeg, .jpg, .webp"
                   onChange={handleFileChange}
                   ref={fileInputRef}
                   name="companyLogo"
@@ -910,7 +910,7 @@ function DetailsInput({
                 <input
                   id="companyLogo"
                   type="file"
-                  accept=".png, .jpeg, .jpg"
+                  accept=".png, .jpeg, .jpg , .webp"
                   onChange={handleFileChange}
                   ref={fileInputRef}
                   name="companyLogo"
