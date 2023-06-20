@@ -8,6 +8,7 @@ import axios from 'axios';
 import Cover from './Cover'
 import Image from 'next/image';
 import { CartContext } from '@/context/CartContext';
+import ProfileCompleted from './ProfileCompleted';
 
 function Form({ cuuid }) {
     const [company, setCompany] = useState('');
@@ -23,6 +24,7 @@ function Form({ cuuid }) {
     const [cover, setCover] = useState(themes[0].gradient1)
     const theme = themes[selectedtemplate];
     const { userProfile } = useContext(CartContext);
+    const [showProfileComplete, setShowProfileComplete] = useState(false);
    
 
     const [inputValues, setInputValues] = useState({
@@ -141,6 +143,9 @@ function Form({ cuuid }) {
             console.log(data)
 
             const response = await axios.post('/api/handleFormData', data);
+            if (response.status === 200 && response.data.error === false) {
+                setShowProfileComplete(true); // Update the visibility state variable
+            }
            
             console.log(response.data);
             // Handle response
@@ -154,9 +159,11 @@ function Form({ cuuid }) {
 
 
     return (
-        <div>
-            <div className="sm:px-8 md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto ">
-                <div className="pt-10">
+        <div className="  ">
+            {showProfileComplete && <ProfileCompleted />}
+            <div className='max-w-[1208px] mx-auto relative' >
+                
+                <div className={`pt-10 sm:px-8 md:px-8 lg:px-4 xl:px-0 ${showProfileComplete ? 'bg-opacity-75 backdrop-filter backdrop-blur-sm' : ''}`}>
                     <div className="max-w-[1208px] mb-7 mx-auto flex lg:justify-between justify-center items-center ">
                         <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
                             <div

@@ -59,7 +59,7 @@ END:VCARD`;
   return (
     <div className="flex justify-center w-full  md:w-[375px] mx-auto  h-auto">
       <div
-        className={`relative mx-auto min-h-screen md:h-[820px] w-full md:w-[375px]  md:rounded-[30px] pt-[161px]`}
+        className={`relative mx-auto min-h-screen md:min-h-[820px] md:h-[820px] w-full md:w-[375px]  md:rounded-[30px] pt-[161px]`}
         style={{
           backgroundImage: `url(${gradient1})`,
           backgroundSize: '100% auto',

@@ -43,7 +43,7 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
           )}
           {visibleInputs.includes('mail') && (
           <div className='flex items-center mt-7 gap-2'>
-            <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Mail : {inputValues.mail}</div>
+            <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Mail</div>
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/email.png" height={30} width={30} />
             </div>
