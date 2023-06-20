@@ -22,7 +22,7 @@ const CardSchema = new mongoose.Schema({
     // above fields get filled while creating card and below fields will be updated later
 
     //details
-    comapany: { type: String },
+    company: { type: String },
     name: { type: String },
     role: { type: String },
     companylink: { type: String },
