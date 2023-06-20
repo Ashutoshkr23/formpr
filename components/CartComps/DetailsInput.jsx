@@ -5,7 +5,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SketchPicker } from "react-color";
-import { CompactPicker } from "react-color";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 
 function DetailsInput({
   card,
@@ -155,6 +155,54 @@ function DetailsInput({
     }
   };
 
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  // console.log(x);
+  // console.log(y);
+  const containerRef = useRef(null);
+  const imageRef = useRef(null);
+  const [dragging, setDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (dragging) {
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const imageRect = imageRef.current.getBoundingClientRect();
+        const newX = e.clientX - containerRect.left - imageRect.width / 2;
+        const newY = e.clientY - containerRect.top - imageRect.height / 2;
+        setPosition({ x: newX, y: newY });
+      }
+    };
+
+    const handleMouseUp = () => {
+      setDragging(false);
+    };
+
+    if (imageRef.current) {
+      imageRef.current.addEventListener("mousemove", handleMouseMove);
+      imageRef.current.addEventListener("mouseup", handleMouseUp);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        imageRef.current.removeEventListener("mousemove", handleMouseMove);
+        imageRef.current.removeEventListener("mouseup", handleMouseUp);
+      }
+    };
+  }, [dragging]);
+
+  const handleMouseDown = () => {
+    setDragging(true);
+  };
+  const handleIncreaseSize = () => {
+    setScale((prevScale) => prevScale + 0.1);
+  };
+
+  const handleDecreaseSize = () => {
+    setScale((prevScale) => prevScale - 0.1);
+  };
   return (
     <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto mx-[10px] my-6  ">
       {card.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
@@ -330,7 +378,7 @@ function DetailsInput({
                       {/* back card */}
 
                       <div
-                        className={`card-back drop-shadow-white rounded-2xl relative lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
+                        className={`card-back flex justify-center items-center drop-shadow-white rounded-2xl relative lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
                         style={{
                           backgroundColor: cardColor,
                         }}
@@ -344,10 +392,19 @@ function DetailsInput({
                         />
 
                         {card.companyLogo && card.companyLogo.length ? (
-                          <div className="absolute flex justify-srat items-center  lg:left-[60px] lg:bottom-[60px] left-[50px] bottom-[40px]  lg:h-[130px] h-[90px] max-w-[300px] lg:w-[400px] object-cover">
+                          <div
+                            className=" w-auto max-w-[300px] h-[100px] lg:h-[120px] object-cover relative"
+                            ref={containerRef}
+                          >
+                            <div className="absolute inset-0"></div>
                             <img
                               src={card.companyLogo}
-                              className=" object-fill w-full lg:h-[130px] lg:w-[300px] h-[90px] "
+                              className="object-fill h-[100px] lg:h-[120px] max-w-[300px] w-auto"
+                              style={{
+                                transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+                              }}
+                              ref={imageRef}
+                              onMouseDown={handleMouseDown}
                             />
                           </div>
                         ) : (
@@ -361,6 +418,13 @@ function DetailsInput({
                 </div>
                 <div className="flex justify-between ">
                   <div className="flex items-center ">
+                    <button
+                      className=" rounded-full"
+                      onClick={handleIncreaseSize}
+                    >
+                      +
+                    </button>
+                    <button onClick={handleDecreaseSize}>-</button>
                     <p className="sm:text-sm text-xs">color:</p>
                     <div className="ml-1 text-center w-[80px] lg:w-[130px] h-8 bg-gradient-to-b from-white to-gray-400 shadow-inner border-2 rounded-lg border-black">
                       <p> {showPicker ? cardColor : cardColor}</p>
@@ -475,7 +539,11 @@ function DetailsInput({
                       className="py-2  flex cursor-pointer justify-between border w-[220px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-3 text-xs overflow-hidden"
                       onClick={handleLabelClick}
                     >
-                      <p>{card.fileName} </p>{" "}
+                      <p>
+                        {card.fileName && card.fileName.length > 20
+                          ? `${card.fileName.substring(0, 20)}...`
+                          : card.fileName}
+                      </p>{" "}
                       <span>
                         {" "}
                         <Image
