@@ -33,6 +33,20 @@ export const CartProvider = ({ children }) => {
         state: ""
     })
 
+    const fetchCartType = async () => {
+        const requestData = await fetch(`/api/cardType`)
+        const data = await requestData.json()
+        const cardType = !data.error ? data.result : []
+
+        const newArray = cardType.map((obj) => {
+            let newObj = { ...obj, quantity: 0 }
+            newObj.totalAmount = newObj.amount * newObj.quantity
+            return newObj
+        });
+        setCartItems(newArray)
+        setDefaultCart(newArray)
+        localStorage.setItem('cartData', JSON.stringify(newArray));
+    }
 
 
     useEffect(() => {
@@ -64,20 +78,7 @@ export const CartProvider = ({ children }) => {
                 }
             }
         }
-        const fetchCartType = async () => {
-            const requestData = await fetch(`/api/cardType`)
-            const data = await requestData.json()
-            const cardType = !data.error ? data.result : []
-
-            const newArray = cardType.map((obj) => {
-                let newObj = { ...obj, quantity: 0 }
-                newObj.totalAmount = newObj.amount * newObj.quantity
-                return newObj
-            });
-            setCartItems(newArray)
-            setDefaultCart(newArray)
-            localStorage.setItem('cartData', JSON.stringify(newArray));
-        }
+        
 
         const storedData = localStorage.getItem('cartData');
         if (storedData) {
@@ -101,7 +102,7 @@ export const CartProvider = ({ children }) => {
     }, [session])
 
     // console.log(cartItems, "Car")
-    console.log(cardsArray,"Cards")
+    console.log(cardsArray,"Cards",defaultCart)
 
 
     useEffect(() => {
@@ -179,6 +180,8 @@ export const CartProvider = ({ children }) => {
             if (defaultCart.length) {
                 setCartItems(defaultCart)
 
+            }else{
+                fetchCartType()
             }
         }
 
