@@ -149,9 +149,14 @@ const DesignComp = ({
                       *Maximum 10
                     </p>
                   </div>
-                  <button className="h-9 mt-10 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold">
+                  <div className="flex flex-col">
+                  <button className="h-9 mt-10 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold" onClick={()=>plusCartFunc(cartItems[selectedTypeIndex]._id)}>
+                  ADD TO CART
+                  </button>
+                  <button className="h-9 mt-10 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-white text-black outline-none border text-[10px] lg:text-xs font-bold">
                     FOR BULK ORDERS CONTACT US
                   </button>
+                  </div>
                 </div>
               </div>
             </div>
