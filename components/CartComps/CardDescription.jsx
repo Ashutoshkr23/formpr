@@ -20,6 +20,11 @@ const CardDescription = ({
 
   const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
   const [State, setState] = useState(1);
+  const [selectedColor, setSelectedColor] = useState(
+    "7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a"
+  );
+  const [selected, setSelected] = useState("null");
+
   return (
     <div>
       <div className="flex justify-center lg:px-0 lg:py-0 pt-5 lg:pt-0 ">
@@ -98,12 +103,15 @@ const CardDescription = ({
                             return (
                               <div
                                 key={item.designUuid}
-                                className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${
-                                  color === item.designUuid
-                                    ? "scale-125 border border-black p-px"
+                                className={`w-4 h-4 shadow-inner rounded-full cursor-pointer ${
+                                  selectedColor === item.designUuid
+                                    ? "scale-125 border border-black"
                                     : ""
-                                } `}
-                                onClick={() => setColorLite(item.designUuid)}
+                                }`}
+                                onClick={() => {
+                                  setColorLite(item.designUuid);
+                                  setSelectedColor(item.designUuid);
+                                }}
                               >
                                 <div
                                   className={`w-full h-full rounded-full bg-[${item.hexCode}]`}
@@ -119,11 +127,14 @@ const CardDescription = ({
                               <div
                                 key={item.designUuid}
                                 className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${
-                                  color === item.designUuid
+                                  selected === item.designUuid
                                     ? "scale-125 border border-black p-px"
                                     : ""
                                 } `}
-                                onClick={() => setColorElevate(item.designUuid)}
+                                onClick={() => {
+                                  setColorElevate(item.designUuid);
+                                  setSelected(item.designUuid);
+                                }}
                               >
                                 <Image
                                   src={`/assets/images/radio_buttons/elevate/${item.designUuid}.png`}
