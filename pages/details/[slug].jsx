@@ -63,7 +63,7 @@ const Contact = () => {
   return (
     <div>
       {contactData && (
-        <>
+        <div className="bg-black">
           <Template
             gradient1={contactData.cover}
             gradient2={themes[contactData.selectedTemplate].gradient2}
@@ -93,7 +93,7 @@ const Contact = () => {
             whatsappNumber={contactData.whatsappNumber || ""}
             youtube={contactData.youtube || ""}
           />
-        </>
+        </div>
       )}
     </div>
   );
