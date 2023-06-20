@@ -9,6 +9,8 @@ import Cover from './Cover'
 import Image from 'next/image';
 import { CartContext } from '@/context/CartContext';
 import ProfileCompleted from './ProfileCompleted';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Form({ cuuid }) {
 
@@ -119,6 +121,10 @@ function Form({ cuuid }) {
     };
 
     const handleClick = async () => {
+        if (progress !== 100) {
+            toast.error('Please fill all details.'); // Display error toast message
+            return;
+        }
         try {
             const data = {
                 company: company,
@@ -203,7 +209,7 @@ function Form({ cuuid }) {
         <div className="  ">
             {showProfileComplete && <ProfileCompleted />}
             <div className='max-w-[1208px] mx-auto relative' >
-                
+                <ToastContainer />
                 <div className={`pt-10 sm:px-8 md:px-8 lg:px-4 xl:px-0 ${showProfileComplete ? 'bg-opacity-75 backdrop-filter backdrop-blur-sm' : ''}`}>
                     <div className="max-w-[1208px] mb-7 mx-auto flex lg:justify-between justify-center items-center ">
                         <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
