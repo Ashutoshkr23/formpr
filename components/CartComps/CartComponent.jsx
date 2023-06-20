@@ -273,7 +273,7 @@ const CartComponent = () => {
               <button
                 disabled={totalQuantity == 0 ? true : false}
                 className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-white text-black border font-semibold tracking-wide rounded-[10px] disabled:cursor-not-allowed "
-                onClick={() => handleNext()}
+                onClick={() => setStepState(2)}
               >
                 PREVIOUS
               </button>
