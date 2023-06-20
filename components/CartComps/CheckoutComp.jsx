@@ -115,7 +115,7 @@ const checkLiteOrElevate = (uuid)=>{
 
   
 
-  console.log(cardsArray);
+  // console.log(cardsArray);
   return (
     <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center px-4 xl:px-0">
       {!shippingState ? (

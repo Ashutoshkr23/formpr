@@ -787,7 +787,8 @@ function DetailsInput({
                           }}
                         >
                           <div
-                            className={`w-full h-full rounded-full bg-[${item.hexCode}]`}
+                            className={`w-full h-full rounded-full`}
+                            style={{backgroundColor:item.hexCode}}
                           ></div>
                         </div>
                       );
