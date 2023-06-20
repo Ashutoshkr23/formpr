@@ -11,6 +11,7 @@ import { getSession, useSession } from 'next-auth/react';
 import moment from 'moment';
 import Link from 'next/link';
 import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import FilterIcon from '@/components/ProfilePage/FilterIcon';
 
 
@@ -304,12 +305,16 @@ const Profile = () => {
             </div>
           </div>
           <div className='max-w-[1208px] m-auto w-full items-center pb-4'>
-            {userAllRemainder?.filter(item => item.customDate > formattedTime).map((item, index) => (
+            {userAllRemainder?.filter(item => item.customDate > formattedTime || item.customDate.length === 0).map((item, index) => (
               <div key={index} className='bg-white rounded-xl drop-shadow-xl xl:mx-0 mx-2'>
                 <div className='flex flex-row xl:px-8 md:px-6 px-2 mb-2'>
 
                   <div className={`block-1 ${block1ForActiveIndex0} text-left flex items-center gap-2 cursor-pointer capitalize`}>
-                    <span onClick={() => editAName(item._id)}>
+                    <span className='md:block hidden' onClick={() => editAName(item._id)}>
+                      <Image width={20} height={20} src={'/assets/images/profilePage/editReminder.png'} alt="profile pic"></Image>
+                    </span>
+
+                    <span className='md:hidden block' onClick={() => editARemainder(item._id)}>
                       <Image width={20} height={20} src={'/assets/images/profilePage/editReminder.png'} alt="profile pic"></Image>
                     </span>
                     {((item.name.length !== 0 ? item.name : 'John Doe').slice(0, 8))}
@@ -328,7 +333,9 @@ const Profile = () => {
                     />
                   </div>
 
-                  <div className={`block-4 ${block4ForActiveIndex0} m-auto text-center text-red-600`}>{(item.customMessage.length === 0 ? "-" : ((item.customDate) > formattedTime ? (item.customDate) : 'Expired')).slice(0, 8)}</div>
+                  <div className={`block-4 ${block4ForActiveIndex0} m-auto text-center text-red-600`}>
+                    {(item.customMessage.length === 0 ? "-" : ((item.customDate) > formattedTime ? (item.customDate) : 'Expired')).slice(0, 8)}
+                  </div>
 
                   <div className={`block-5 ${block5ForActiveIndex0} m-auto text-center`}>{item.customMessage}</div>
 
@@ -356,7 +363,7 @@ const Profile = () => {
             </div>
           </div>
           <div className='max-w-[1208px] m-auto w-full items-center pb-4'>
-            {userAllRemainder?.filter(item => item.customDate < formattedTime).map((item, index) => (
+            {userAllRemainder?.filter(item => (item.customDate < formattedTime || item.customDate === formattedTime) && item.customDate.length !== 0).map((item, index) => (
               <div key={index} className='bg-white rounded-xl drop-shadow-xl xl:mx-0 mx-2'>
                 <div className='flex flex-row xl:px-8 md:px-6 px-2 mb-2'>
 
@@ -369,7 +376,7 @@ const Profile = () => {
                   </div>
 
                   <div className={`block-3 flex ${block3ForActiveIndex0} max-w-[241px] my-2 text-center flex justify-center`}>
-                    {moment(item.createdAt).format("DD-MM-YY HH:mm").slice(0, 8)}
+                    {(item.customMessage.length === 0 ? "-" : ((item.customDate) > formattedTime ? (item.customDate) : 'Expired')).slice(0, 8)}
                   </div>
 
                   <div className={`block-4 ${block4ForActiveIndex0} m-auto text-center`}>{moment(item.createdAt).format("DD-MM-YY HH:mm").slice(8, 14)}</div>
