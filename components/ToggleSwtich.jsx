@@ -3,8 +3,7 @@ import { Switch } from '@headlessui/react'
 
 export default function ToggleSwtich(props) {
     const [enabled, setEnabled] = useState(props.boolean)
-    console.log("switch");
-    console.log(enabled);
+
     const style1 = 'background: linear-gradient(91.67deg, #96FFAD 0.94%, #66D3E1 101.73%);'
 
     return (

@@ -58,6 +58,16 @@ const CartNav = () => {
             </div>
           </div>
           <div className="flex gap-10 items-center">
+            <Link href={"/profile"}>
+              <div className="relative">
+                <Image
+                  src={"/assets/images/profileIcon.png"}
+                  alt="loop"
+                  width={30}
+                  height={30}
+                />
+              </div>
+            </Link>
             <div className="relative">
               <Image
                 src={"/assets/images/cart-images/CartImage.png"}

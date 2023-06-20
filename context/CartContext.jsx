@@ -78,7 +78,7 @@ export const CartProvider = ({ children }) => {
                 }
             }
         }
-        
+
 
         const storedData = localStorage.getItem('cartData');
         if (storedData) {
@@ -102,7 +102,7 @@ export const CartProvider = ({ children }) => {
     }, [session])
 
     // console.log(cartItems, "Car")
-    console.log(cardsArray,"Cards",defaultCart)
+    // console.log(cardsArray,"Cards",defaultCart)
 
 
     useEffect(() => {
@@ -134,14 +134,14 @@ export const CartProvider = ({ children }) => {
                         let designId = "";
                         let hexCode = "";
                         let fontCode = "";
-                        if(item.cardTypeUuid == "3fa766b5-9f66-4a38-8471-23026a59d84d"){
+                        if (item.cardTypeUuid == "3fa766b5-9f66-4a38-8471-23026a59d84d") {
                             // lite card
                             designId = "7dae8f7f-bcc9-4ef9-bc1e-a2196a9c628a"
-                        }else if(item.cardTypeUuid == "801baf78-ce33-446f-b132-618f92ccfc5f"){  
+                        } else if (item.cardTypeUuid == "801baf78-ce33-446f-b132-618f92ccfc5f") {
                             // elevate card
                             designId = "c591107d-b134-4cbf-9667-2da6fb07b339"
 
-                        }else{
+                        } else {
                             // supreme card
                             designId = "9d69ecbc-fd72-4732-b3c0-a344045f402e";
                             fontCode = "#FFFFFF";
@@ -157,9 +157,9 @@ export const CartProvider = ({ children }) => {
                             companyName: "",
                             companyLogo: "",
                             fileName: "",
-                            designUuid : designId,
-                            fontCode:fontCode,
-                            hexCode:hexCode,
+                            designUuid: designId,
+                            fontCode: fontCode,
+                            hexCode: hexCode,
 
                         }
                         // console.log(temp, "temp")
@@ -180,7 +180,7 @@ export const CartProvider = ({ children }) => {
             if (defaultCart.length) {
                 setCartItems(defaultCart)
 
-            }else{
+            } else {
                 fetchCartType()
             }
         }
@@ -347,8 +347,8 @@ export const CartProvider = ({ children }) => {
 
     }
 
-     const handleDesignUuid = (key,designId)=>{
-        if(key && designId){
+    const handleDesignUuid = (key, designId) => {
+        if (key && designId) {
             const newCardArr = cardsArray.map((item) => {
                 if (item.key == key) {
                     let newItem = { ...item }
@@ -361,17 +361,17 @@ export const CartProvider = ({ children }) => {
         }
     }
 
-    const handleColorUuid = (key,colorCode,type)=>{
+    const handleColorUuid = (key, colorCode, type) => {
         // type 1 color code & type 2 font code
-        
-        if(key && colorCode){
+
+        if (key && colorCode) {
             const newCardArr = cardsArray.map((item) => {
                 if (item.key == key) {
                     let newItem = { ...item }
-                    if(type==1){
-                    newItem["hexCode"] = colorCode
+                    if (type == 1) {
+                        newItem["hexCode"] = colorCode
 
-                    }else{
+                    } else {
                         newItem["fontCode"] = colorCode
                     }
                     return newItem

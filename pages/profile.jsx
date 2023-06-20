@@ -11,6 +11,7 @@ import { getSession } from 'next-auth/react';
 import moment from 'moment';
 import Link from 'next/link';
 import DatePicker from 'react-datepicker';
+import FilterIcon from '@/components/ProfilePage/FilterIcon';
 
 
 const Profile = () => {
@@ -148,8 +149,8 @@ const Profile = () => {
 
   return (
     <>
+      {editingReminder && <CartNav />}
       {editingReminder
-        && <CartNav />
         && <ToggleSwtich
           outlineCSS='h-[47px] w-[94px]'
           circleCSS='h-[34px] w-[34px]'
@@ -172,101 +173,72 @@ const Profile = () => {
       }
 
       {editingReminder
-        && <div className='max-w-[1208px] mx-auto mt-8'>
+        && <div className='max-w-[1208px] mx-auto mt-8 bg-white drop-shadow-xl rounded-xl'>
           <div className='flex justify-between'>
-            <div className='flex font-bold capitalize bg-white drop-shadow-xl rounded-xl text-sm'>
-              <div className={`whitespace-nowrap  m-auto px-6 rounded-xl py-2 cursor-pointer ${activeIndex === 0 ? 'border' : 'text-[#686A6C]'}`} onClick={() => handleClick(0)}>
+            <div className='flex font-bold capitalize text-sm gap-14'>
+              <div className={`whitespace-nowrap m-auto px-6 rounded-xl py-3 cursor-pointer ${activeIndex === 0 ? 'border' : 'text-[#686A6C]'}`} onClick={() => handleClick(0)}>
                 my contacts
               </div>
-              <div className={`whitespace-nowrap  m-auto px-6 rounded-xl py-2 cursor-pointer ${activeIndex === 1 ? 'border' : 'text-[#686A6C]'}`} onClick={() => handleClick(1)}>
-                Total reminders set
-              </div>
-              <div className={`whitespace-nowrap  m-auto px-6 rounded-xl py-2 cursor-pointer ${activeIndex === 2 ? 'border' : 'text-[#686A6C]'}`} onClick={() => handleClick(2)}>
-                total cards bought
-              </div>
-              <div className={`whitespace-nowrap  m-auto px-6 rounded-xl py-2 cursor-pointer ${activeIndex === 3 ? 'border' : 'text-[#686A6C]'}`} onClick={() => handleClick(3)}>
+              <div className={`whitespace-nowrap m-auto px-6 rounded-xl py-3 cursor-pointer ${activeIndex === 1 ? 'border' : 'text-[#686A6C]'}`} onClick={() => handleClick(1)}>
                 reminder history
+              </div>
+              <div className={`whitespace-nowrap m-auto px-6 rounded-xl py-3 cursor-pointer ${activeIndex === 2 ? 'border' : 'text-[#686A6C]'}`} onClick={() => handleClick(2)}>
+                analytics
               </div>
             </div>
             <SortBy />
+            <FilterIcon />
             <SearchByName />
           </div>
         </div>
       }
 
       {editingReminder
-        && <div className='max-w-6xl mx-auto'>
-          <div className='mt-8 flex'>
-            <div className='w-full'>
-              <table className="table-auto w-full text-sm">
-                <thead>
-                  <tr className='text-[#4D6472] text-left capitalize'>
-                    <th className="px-4 py-2 font-medium">name</th>
-                    <th className="px-4 py-2 font-medium w-[128px] text-center">date entered</th>
-                    <th className="px-4 py-2 font-medium text-center">set reminder</th>
-                    <th className="px-4 py-2 font-medium w-[137px]">reminder date</th>
-                    <th className="px-4 py-2 font-medium text-center">title</th>
-                    <th className="px-4 py-2 font-medium w-[163px] text-center">edit reminder</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {userAllRemainder?.map((item, index) => (
-                    <tr key={index}>
-                      <td className="border-0 px-4 py-2">{item.name}</td>
-                      <td className="border-0 px-4 py-2 text-center">{moment(item.createdAt).format("DD-MM-YY HH:mm").slice(0, 8)}</td>
-                      <td className={`${(item.name).length === 0 ? "pointer-events-auto" : "pointer-events-none"} flex my-4`} onClick={() => editARemainder(item._id)}>
-                        <ToggleSwtich
-                          outlineCSS='h-[35px] w-[70px]'
-                          circleCSS='h-[22px] w-[22px]'
-                          rightSideCircleCSS='translate-x-9 bg-black'
-                          offText='off'
-                          onText='on'
-                          boolean={(item.name).length === 0 ? false : true}
-                        />
-                      </td>
-                      <td className="border-0 px-4 py-2 text-center">{(item.name.length === 0 ? "-" : ((item.customDate) > formattedTime ? (item.customDate) : 'Expired')).slice(0, 8)}</td>
-                      <td className="border-0 px-4 py-2 text-center">{item.customMessage}</td>
-                      <td className='inline-flex items-center gap-2 uppercase border-2 border-black rounded-xl py-2 px-4 text-[#4D6472] -mt-3 cursor-pointer' onClick={() => editARemainder(item._id)}>
-                        edit reminder<Image width={20} height={20} src={'/assets/images/profilePage/editReminder.png'} alt="profile pic"></Image>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className='capitalize text-[#4D6472] font-bold space-y-1 pl-4'>
-              <div className='cursor-pointer text-center'>a</div>
-              <div className='cursor-pointer text-center'>b</div>
-              <div className='cursor-pointer text-center'>c</div>
-              <div className='cursor-pointer text-center'>d</div>
-              <div className='cursor-pointer text-center'>e</div>
-              <div className='cursor-pointer text-center'>f</div>
-              <div className='cursor-pointer text-center'>g</div>
-              <div className='cursor-pointer text-center'>h</div>
-              <div className='cursor-pointer text-center'>i</div>
-              <div className='cursor-pointer text-center'>j</div>
-              <div className='cursor-pointer text-center'>k</div>
-              <div className='cursor-pointer text-center'>l</div>
-              <div className='cursor-pointer text-center'>m</div>
-              <div className='cursor-pointer text-center'>n</div>
-              <div className='cursor-pointer text-center'>o</div>
-              <div className='cursor-pointer text-center'>p</div>
-              <div className='cursor-pointer text-center'>q</div>
-              <div className='cursor-pointer text-center'>r</div>
-              <div className='cursor-pointer text-center'>s</div>
-              <div className='cursor-pointer text-center'>t</div>
-              <div className='cursor-pointer text-center'>u</div>
-              <div className='cursor-pointer text-center'>v</div>
-              <div className='cursor-pointer text-center'>w</div>
-              <div className='cursor-pointer text-center'>x</div>
-              <div className='cursor-pointer text-center'>y</div>
-              <div className='cursor-pointer text-center'>z</div>
+        && <>
+          <div className="mt-8 flex">
+            <div className='max-w-[1208px] m-auto flex w-full items-center capitalize font-bold text-[#4D6472] px-8'>
+              <div className="py-2 w-[200px] text-center">name</div>
+              <div className="py-2 w-[150px] text-center">date entered</div>
+              <div className="py-2 w-[150px] text-center">set reminder</div>
+              <div className="py-2 w-[150px] text-center">reminder date</div>
+              <div className="py-2 w-[358px] text-center">message</div>
+              <div className="py-2 w-[200px] text-center">edit reminder</div>
             </div>
           </div>
-        </div>
+          <div className='max-w-[1208px] m-auto w-full items-center bg-white rounded-xl drop-shadow-xl'>
+            {userAllRemainder?.map((item, index) => (
+              <div key={index}>
+                <div className='flex flex-row px-8'>
+                  <div className='w-[200px] max-w-[200px] text-left flex items-center gap-2 cursor-pointer'>
+                    <Image width={20} height={20} src={'/assets/images/profilePage/editReminder.png'} alt="profile pic"></Image>
+                    {((item.name.length !== 0 ? item.name : 'John Doe').slice(0, 8))}
+                  </div>
+                  <div className='w-[150px] max-w-[150px] m-auto text-center'>{moment(item.createdAt).format("DD-MM-YY HH:mm").slice(0, 8)}</div>
+                  <div className={`${(item.name).length === 0 ? "pointer-events-auto" : "pointer-events-none"} flex w-[150px] max-w-[150px] my-2 text-center`} onClick={() => editARemainder(item._id)}>
+                    <ToggleSwtich
+                      outlineCSS='h-[35px] w-[70px]'
+                      circleCSS='h-[22px] w-[22px]'
+                      rightSideCircleCSS='translate-x-9 bg-black'
+                      offText='off'
+                      onText='on'
+                      boolean={(item.name).length === 0 ? false : true}
+                    />
+                  </div>
+                  <div className='w-[150px] max-w-[150px] m-auto text-center text-red-600'>{(item.name.length === 0 ? "-" : ((item.customDate) > formattedTime ? (item.customDate) : 'Expired')).slice(0, 8)}</div>
+                  <div className='w-[358px] max-w-[358px] m-auto text-center'>{item.customMessage}</div>
+                  <div className='w-[200px] max-w-[200px] m-auto flex items-center justify-center gap-2 uppercase border-2 border-black rounded-xl py-1 px-4 text-[#4D6472] cursor-pointer text-center' onClick={() => editARemainder(item._id)}>
+                    edit reminder
+                    <Image width={20} height={20} src={'/assets/images/profilePage/editReminder.png'} alt="profile pic"></Image>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
       }
 
-      {!editingReminder
+      {
+        !editingReminder
         && <div className='fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-[547px] h-[423px] border rounded-3xl'>
           <div className='capitalize text-red-600 text-sm absolute top-[40px] left-[28px] cursor-pointer' onClick={editARemainder}>cancel</div>
           <div className='capitalize flex justify-center font-bold text-3xl mt-8'>reminder</div>
