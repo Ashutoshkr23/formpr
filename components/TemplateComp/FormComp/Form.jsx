@@ -11,20 +11,22 @@ import { CartContext } from '@/context/CartContext';
 import ProfileCompleted from './ProfileCompleted';
 
 function Form({ cuuid }) {
-    const [company, setCompany] = useState('');
-    const [name, setName] = useState('');
-    const [role, setRole] = useState('');
-    const [companyLink, setCompanyLink] = useState('');
-    const [bio, setBio] = useState('');
-    const [address, setAddress] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [location, setLocation] = useState('');
-    const [selectedtemplate, setSelectedTemplate] = useState('0')
-    const [profileImg, setProfileImg] = useState('/assets/images/templateimg/andrew.png')
-    const [cover, setCover] = useState(themes[0].gradient1)
-    const theme = themes[selectedtemplate];
+
     const { userProfile } = useContext(CartContext);
     const [showProfileComplete, setShowProfileComplete] = useState(false);
+    const [progress, setProgress] = useState(0);
+
+
+    const [selectedtemplate, setSelectedTemplate] = useState('0')
+    const [cover, setCover] = useState(themes[0].gradient1)
+    const [profileImg, setProfileImg] = useState('')
+    const [bio, setBio] = useState('');
+    const [name, setName] = useState('');
+    const [role, setRole] = useState('');
+    const [company, setCompany] = useState('');
+    const [companyLink, setCompanyLink] = useState('');
+    const [address, setAddress] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
    
 
     const [inputValues, setInputValues] = useState({
@@ -158,6 +160,43 @@ function Form({ cuuid }) {
     };
 
 
+    
+
+    useEffect(() => {
+        const calculateProgress = () => {
+            let progress = 0;
+
+            // Check selectedtemplate, cover, profileImg, and bio
+            if (selectedtemplate ) progress += 10;
+            if (cover) progress += 10;
+            if (profileImg) progress += 10;
+            if (bio) progress += 10;
+
+            // Check name, role, company, companyLink, address, and phoneNumber
+            if (name) progress += 5;
+            if (role) progress += 5;
+            if (company) progress += 5;
+            if (companyLink) progress += 5;
+            if (address) progress += 5;
+            if (phoneNumber) progress += 5;
+
+            // Check inputValues
+            const inputValuesCount = Object.values(inputValues).filter(value => value !== '').length;
+            const inputValuesProgress = Math.min(inputValuesCount, 3) * 10;
+            progress += inputValuesProgress;
+            return progress;
+        };
+
+        const calculatedProgress = calculateProgress();
+        setProgress(calculatedProgress);
+    }, [selectedtemplate, cover, profileImg, bio, name, role, company, companyLink, address, phoneNumber, inputValues]);
+
+    const innerDivStyle = {
+        height: '100%',
+        width: `${progress}%`,
+        background: 'linear-gradient(to right, #96FFAD, #66D3E1)',
+    };
+
 
 
     return (
@@ -169,11 +208,15 @@ function Form({ cuuid }) {
                     <div className="max-w-[1208px] mb-7 mx-auto flex lg:justify-between justify-center items-center ">
                         <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
                             <div
-                                className={`rounded-lg  font-bold flex flex-grow border-2 border-slate-700 text-black  justify-center items-center `}
+                                className={`rounded-lg  font-bold px-10 flex gap-9 flex-grow border-2 border-slate-700 text-black  justify-center items-center `}
                             >
-                                <p className="text-center text-[12px] md:text-sm">
+                                <p className="text-center w-60 text-[12px] md:text-sm">
                                     DETAILS AND DESIGN
                                 </p>
+                                <div className='h-2 w-full bg-[#DFDFDF]'>
+                                    <div style={innerDivStyle}></div>
+                                </div>
+                                <p>  {progress}% </p>
                             </div>
                         </div>
                         <div className="hidden lg:block pl-5">
@@ -233,7 +276,7 @@ function Form({ cuuid }) {
                                 border={themes[selectedtemplate].border}
                                 inputValues={inputValues}
                                 visibleInputs={visibleInputs}
-                                profileImg={profileImg}
+                                profileImg={profileImg || '/assets/images/templateimg/andrew.png'}
                                 company={company}
                                 bio={bio}
                                 website={companyLink}
