@@ -25,7 +25,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
                     />
 
                     <p className="text-[8px] ml-1.5 tracking-[-0.5px] text-[#7D9695]  ">
-                        {company ? company : "Alphamintlabs"}
+                        {company ? company : "Lorem Ipsum"}
                     </p>
                 </div>
                 <div className="flex ml-[50px] items-center ">
@@ -60,7 +60,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
                             <input
                                 className={`bg-transparent ${text2}  text-[#7D9695] cursor-pointer w-[200px] `}
                                 type="text"
-                                placeholder=" www.alphamintlabs.com"
+                                placeholder=" www.LoremIpsum.com"
                                 value={website}
                                 readOnly={true}
                             //   onChange={handleChange}
