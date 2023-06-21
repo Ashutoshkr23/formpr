@@ -102,7 +102,7 @@ export const CartProvider = ({ children }) => {
     }, [session])
 
     // console.log(cartItems, "Car")
-    // console.log(cardsArray,"Cards",defaultCart)
+    // console.log(cardsArray, "Cards", defaultCart)
 
 
     useEffect(() => {
@@ -201,7 +201,7 @@ export const CartProvider = ({ children }) => {
     }
 
     const plusCartFunc = (id) => {
-        console.log("runned plus cart")
+        // console.log("runned plus cart")
         if (id) {
             if (totalQuantity < 10) {
 

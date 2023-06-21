@@ -10,8 +10,10 @@ export default async function handler(req, res) {
     } catch (error) {
         return res.json({ error: "Connection Failed...!" });
     }
+
     if (req.method === "GET") {
         const checkUser = await UserData.find()
+        // console.log(checkUser);
         res.status(200).json({
             error: false,
             message: "User Data",

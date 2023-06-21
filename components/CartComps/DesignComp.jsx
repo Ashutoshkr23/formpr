@@ -62,18 +62,16 @@ const DesignComp = ({
                 <div>
                   <div className=" pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4   rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex items-center justify-between    cursor-pointer  h-full  ${
-                        selectedTypeIndex == 0 ? " " : ""
-                      } `}
+                      className={`flex items-center justify-between    cursor-pointer  h-full  ${selectedTypeIndex == 0 ? " " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(0);
                         setType("Lite");
                       }}
                     >
                       <p
-                        className={` leading-7 pt-2 text-[#686A6C] text-center text-xs lg:text-sm ${
-                          selectedTypeIndex == 0 ? " font-bold text-black " : ""
-                        }`}
+                        className={` leading-7 pt-2 text-[#686A6C] text-center text-xs lg:text-sm ${selectedTypeIndex == 0 ? " font-bold text-black " : ""
+                          }`}
                       >
                         Loop Lite
                       </p>
@@ -88,18 +86,16 @@ const DesignComp = ({
 
                   <div className="pr-2 mb-3 lg:mb-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${
-                        selectedTypeIndex == 1 ? "  " : ""
-                      } `}
+                      className={`flex items-center justify-between space-x-4  cursor-pointer pb-2  h-full ${selectedTypeIndex == 1 ? "  " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(1);
                         setType("Elevate");
                       }}
                     >
                       <p
-                        className={` leading-7 pt-3 text-[#686A6C] text-center text-xs lg:text-sm ${
-                          selectedTypeIndex == 1 ? " font-bold text-black " : ""
-                        }`}
+                        className={` leading-7 pt-3 text-[#686A6C] text-center text-xs lg:text-sm ${selectedTypeIndex == 1 ? " font-bold text-black " : ""
+                          }`}
                       >
                         Loop Elevate
                       </p>
@@ -112,17 +108,15 @@ const DesignComp = ({
                   </div>
                   <div className="pr-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
-                      className={`flex cursor-pointer items-center justify-between pb-2   h-full ${
-                        selectedTypeIndex == 2 ? " " : ""
-                      } `}
+                      className={`flex cursor-pointer items-center justify-between pb-2   h-full ${selectedTypeIndex == 2 ? " " : ""
+                        } `}
                       onClick={() => {
                         handleCardSelection(2);
                       }}
                     >
                       <p
-                        className={`text-[#686A6C] text-xs lg:text-sm  pt-3 leading-7 text-center ${
-                          selectedTypeIndex == 2 ? " font-bold text-black" : ""
-                        }`}
+                        className={`text-[#686A6C] text-xs lg:text-sm  pt-3 leading-7 text-center ${selectedTypeIndex == 2 ? " font-bold text-black" : ""
+                          }`}
                       >
                         Loop Supreme
                       </p>
@@ -150,12 +144,12 @@ const DesignComp = ({
                     </p>
                   </div>
                   <div className="flex flex-col">
-                  <button className="h-9 mt-10 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold" onClick={()=>plusCartFunc(cartItems[selectedTypeIndex]._id)}>
-                  ADD TO CART
-                  </button>
-                  <button className="h-9 mt-10 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-white text-black outline-none border text-[10px] lg:text-xs font-bold">
-                    FOR BULK ORDERS CONTACT US
-                  </button>
+                    <button className="h-9 mt-10 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold" onClick={() => plusCartFunc(cartItems[selectedTypeIndex]._id)}>
+                      ADD TO CART
+                    </button>
+                    <button className="h-9 mt-10 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-white text-black outline-none border text-[10px] lg:text-xs font-bold">
+                      FOR BULK ORDERS CONTACT US
+                    </button>
                   </div>
                 </div>
               </div>
@@ -181,9 +175,9 @@ const DesignComp = ({
                               />
                               {colorLite ===
                                 "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
-                              colorLite ===
+                                colorLite ===
                                 "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
-                              colorLite ===
+                                colorLite ===
                                 "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
                                 <div className="absolute text-white  bottom-12 left-8">
                                   <p>John Doe</p>
@@ -244,9 +238,9 @@ const DesignComp = ({
                               />
                               {colorLite ===
                                 "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
-                              colorLite ===
+                                colorLite ===
                                 "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
-                              colorLite ===
+                                colorLite ===
                                 "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
                                 <div className="absolute text-white  bottom-8 left-6">
                                   <p>John Doe</p>
@@ -310,15 +304,15 @@ const DesignComp = ({
                               />
                               {colorElevate ===
                                 "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
-                              colorElevate ===
+                                colorElevate ===
                                 "d73f6121-6dc5-4170-8b3b-40a02835ddd1" ||
-                              colorElevate ===
+                                colorElevate ===
                                 "de47eb30-ec56-4d98-8069-50bcac1cfcc7" ||
-                              colorElevate ===
+                                colorElevate ===
                                 "f07f8b1f-3947-4121-a0eb-a60230f7a14b" ||
-                              colorElevate ===
+                                colorElevate ===
                                 "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
-                              colorElevate ===
+                                colorElevate ===
                                 "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
                                 <div className="absolute text-white  bottom-12 left-8">
                                   <p>John Doe</p>
@@ -379,15 +373,15 @@ const DesignComp = ({
                               />
                               {colorElevate ===
                                 "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
-                              colorElevate ===
+                                colorElevate ===
                                 "d73f6121-6dc5-4170-8b3b-40a02835ddd1" ||
-                              colorElevate ===
+                                colorElevate ===
                                 "de47eb30-ec56-4d98-8069-50bcac1cfcc7" ||
-                              colorElevate ===
+                                colorElevate ===
                                 "f07f8b1f-3947-4121-a0eb-a60230f7a14b" ||
-                              colorElevate ===
+                                colorElevate ===
                                 "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
-                              colorElevate ===
+                                colorElevate ===
                                 "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
                                 <div className="absolute text-white  bottom-8 left-6">
                                   <p>John Doe</p>

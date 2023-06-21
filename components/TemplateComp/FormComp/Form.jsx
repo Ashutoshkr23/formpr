@@ -1,5 +1,5 @@
 import Template from '../Template';
-import React , {useState , useEffect ,useContext} from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import themes from '../Themes';
 import ChooseTemplates from './ChooseTemplates'
 import Details from './Details'
@@ -29,7 +29,7 @@ function Form({ cuuid }) {
     const [companyLink, setCompanyLink] = useState('');
     const [address, setAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-   
+
 
     const [inputValues, setInputValues] = useState({
         whatsapp: '',
@@ -44,7 +44,7 @@ function Form({ cuuid }) {
 
     });
 
-    
+
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -88,7 +88,7 @@ function Form({ cuuid }) {
 
 
     const handleSaveClick = () => {
-        // console.log(name,role,companyLink,bio,address,phoneNumber,selectedtemplate);
+        // console.log(name, role, companyLink, bio, address, phoneNumber, selectedtemplate);
     };
 
 
@@ -150,14 +150,14 @@ function Form({ cuuid }) {
                 puuid: userProfile.puuid,
                 cuuid: cuuid
             };
-            console.log(data)
+            // console.log(data)
 
             const response = await axios.post('/api/handleFormData', data);
             if (response.status === 200 && response.data.error === false) {
                 setShowProfileComplete(true); // Update the visibility state variable
             }
-           
-            console.log(response.data);
+
+            // console.log(response.data);
             // Handle response
             // ...
         } catch (error) {
@@ -166,14 +166,14 @@ function Form({ cuuid }) {
     };
 
 
-    
+
 
     useEffect(() => {
         const calculateProgress = () => {
             let progress = 0;
 
             // Check selectedtemplate, cover, profileImg, and bio
-            if (selectedtemplate ) progress += 10;
+            if (selectedtemplate) progress += 10;
             if (cover) progress += 10;
             if (profileImg) progress += 10;
             if (bio) progress += 10;
@@ -227,69 +227,69 @@ function Form({ cuuid }) {
                         </div>
                         <div className="hidden lg:block pl-5">
 
-                              <button
-                                  className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px]"
-                                  onClick={handleClick}
-                              >
-                                  SAVE
-                              </button>
-                      </div>
-                  </div>
-              </div>
-              <div className="flex justify-center pt-10 lg:hidden pl-2">
-                  <button className="w-[350px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
-                      NEXT
-                  </button>
-              </div>
-              <div className='flex gap-5'>
-                <div className='flex flex-grow flex-col'>
-                      <ChooseTemplates
-                        selectedTemplate={selectedtemplate} 
-                        setSelectedTemplate={setSelectedTemplate} />
-                      <Cover 
-                      cover={cover}
-                      setCover={setCover}/>
-                      <Details
-                          profileImg={profileImg}
-                          setProfileImg={setProfileImg}
-                          onCompanyChange={handleCompanyChange}
-                          onNameChange={handleNameChange}
-                          bio={bio}
-                          onRoleChange={handleRoleChange}
-                          onCompanyLinkChange={handleCompanyLinkChange}
-                          onBioChange={handleBioChange}
-                          onAddressChange={handleAddressChange}
-                          onPhoneNumberChange={handlePhoneNumberChange} />
-                    <Socials 
-                          inputValues={inputValues} handleInputChange={handleInputChange}
-                          visibleInputs={visibleInputs}
-                          setVisibleInputs={setVisibleInputs} 
-                          onToggleInput={handleToggleInput} />
+                            <button
+                                className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px]"
+                                onClick={handleClick}
+                            >
+                                SAVE
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                  <div className='w-[350px] xl:w-[390px]  flex justify-center relative'>
-                    <div className='sticky top-0 h-[820px]'>
-                        {selectedtemplate &&
-                            <Template
-                                gradient1={cover}
-                                gradient2={themes[selectedtemplate].gradient2}
-                                text1={themes[selectedtemplate].text1}
-                                text2={themes[selectedtemplate].text2}
-                                text3={themes[selectedtemplate].text3}
-                                btn={themes[selectedtemplate].btn}
-                                btntext={themes[selectedtemplate].btntext}
-                                type={themes[selectedtemplate].type}
-                                loop={themes[selectedtemplate].loop}
-                                border={themes[selectedtemplate].border}
-                                inputValues={inputValues}
-                                visibleInputs={visibleInputs}
-                                profileImg={profileImg || '/assets/images/templateimg/andrew.png'}
-                                company={company}
-                                bio={bio}
-                                website={companyLink}
-                                mobile={phoneNumber}
-                                fname={name}
-                                designation={role}
-                            />}
+                <div className="flex justify-center pt-10 lg:hidden pl-2">
+                    <button className="w-[350px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
+                        NEXT
+                    </button>
+                </div>
+                <div className='flex gap-5'>
+                    <div className='flex flex-grow flex-col'>
+                        <ChooseTemplates
+                            selectedTemplate={selectedtemplate}
+                            setSelectedTemplate={setSelectedTemplate} />
+                        <Cover
+                            cover={cover}
+                            setCover={setCover} />
+                        <Details
+                            profileImg={profileImg}
+                            setProfileImg={setProfileImg}
+                            onCompanyChange={handleCompanyChange}
+                            onNameChange={handleNameChange}
+                            bio={bio}
+                            onRoleChange={handleRoleChange}
+                            onCompanyLinkChange={handleCompanyLinkChange}
+                            onBioChange={handleBioChange}
+                            onAddressChange={handleAddressChange}
+                            onPhoneNumberChange={handlePhoneNumberChange} />
+                        <Socials
+                            inputValues={inputValues} handleInputChange={handleInputChange}
+                            visibleInputs={visibleInputs}
+                            setVisibleInputs={setVisibleInputs}
+                            onToggleInput={handleToggleInput} />
+                    </div>
+                    <div className='w-[350px] xl:w-[390px]  flex justify-center relative'>
+                        <div className='sticky top-0 h-[820px]'>
+                            {selectedtemplate &&
+                                <Template
+                                    gradient1={cover}
+                                    gradient2={themes[selectedtemplate].gradient2}
+                                    text1={themes[selectedtemplate].text1}
+                                    text2={themes[selectedtemplate].text2}
+                                    text3={themes[selectedtemplate].text3}
+                                    btn={themes[selectedtemplate].btn}
+                                    btntext={themes[selectedtemplate].btntext}
+                                    type={themes[selectedtemplate].type}
+                                    loop={themes[selectedtemplate].loop}
+                                    border={themes[selectedtemplate].border}
+                                    inputValues={inputValues}
+                                    visibleInputs={visibleInputs}
+                                    profileImg={profileImg || '/assets/images/templateimg/andrew.png'}
+                                    company={company}
+                                    bio={bio}
+                                    website={companyLink}
+                                    mobile={phoneNumber}
+                                    fname={name}
+                                    designation={role}
+                                />}
 
                         </div>
                     </div>

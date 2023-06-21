@@ -38,7 +38,7 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
             if (id) {
                 plusCartFunc(id)
             } else {
-                console.log("error id")
+                // console.log("error id")
             }
         }
         router.push("/cart")

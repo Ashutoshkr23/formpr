@@ -12,6 +12,7 @@ html {
 }
 
 body {
+    background-color: #F9F9F9;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -47,9 +48,6 @@ body {
         border-right-color: transparent;
     }
 }
-
-
-
 
 
 .card {

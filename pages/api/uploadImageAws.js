@@ -38,8 +38,8 @@ export default async function handle(req, res) {
                 });
             });
 
-            console.log('Fields:', fields);
-            console.log('Files:', files);
+            // console.log('Fields:', fields);
+            // console.log('Files:', files);
 
             const requestData = transformFormData(fields);
 
@@ -58,14 +58,14 @@ export default async function handle(req, res) {
                 fieldName = 'profileImage';
             }
 
-            console.log('File Data:', fileData);
-            console.log('Field Name:', fieldName);
+            // console.log('File Data:', fileData);
+            // console.log('Field Name:', fieldName);
 
             const file = fileData[0];
 
             const { puuid } = requestData;
 
-            console.log('Request Data:', requestData);
+            // console.log('Request Data:', requestData);
 
             // AWS code for uploading an image
             const Time = Date.now();
@@ -81,8 +81,8 @@ export default async function handle(req, res) {
             );
             const link = `https://${bucketName}.s3.amazonaws.com/${newFilename}`;
 
-            console.log('Upload Result:', upload);
-            console.log('Image Link:', link);
+            // console.log('Upload Result:', upload);
+            // console.log('Image Link:', link);
 
             return res
                 .status(200)

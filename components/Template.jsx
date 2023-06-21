@@ -7,7 +7,7 @@ import Socialpg from "./Socialpg";
 import { saveAs } from "file-saver"; // Import the file-saver library
 
 const Template = ({
-  lname ,
+  lname,
   gradient1,
   gradient2,
   text1,
@@ -24,16 +24,16 @@ const Template = ({
   mobile,
   fname,
   designation,
-  behance ,
- facebook , 
- instagram ,
- linkedin , 
- mail , 
- reddit , 
- twitter , 
- whatsappNumber , 
- youtube ,
-  
+  behance,
+  facebook,
+  instagram,
+  linkedin,
+  mail,
+  reddit,
+  twitter,
+  whatsappNumber,
+  youtube,
+
 
 }) => {
   const downloadVCard = () => {
@@ -54,7 +54,7 @@ END:VCARD`;
   };
 
   const fullName = fname || lname ? `${fname} ${lname}` : "Andrew Darren";
-  console.log(profileImg)
+  // console.log(profileImg)
 
   return (
     <div className="flex justify-center w-full  md:w-[375px] mx-auto  h-auto">
@@ -66,13 +66,13 @@ END:VCARD`;
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'top',
         }}
-      >  
-      {/*
+      >
+        {/*
       <Image src="/assets/images/templateimg/Button.png" height={80} width={10} className="absolute top-48 -right-3.5" />
         <Image src="/assets/images/templateimg/PowerButoon.png" height={40} width={10} className="absolute top-28 -left-3.5" />
         <Image src="/assets/images/templateimg/VolumeButton.png" height={60} width={10} className="absolute top-44 -left-3.5" />
         <Image src="/assets/images/templateimg/VolumeButton.png" height={60} width={10} className="absolute top-64 -left-3.5" />*/}
-        
+
         <div
           className={`${gradient2} relative w-full  md:max-w-[375px] mx-auto h-full  md:rounded-[20px] `}
         >
@@ -102,7 +102,7 @@ END:VCARD`;
             />
           </div>
           <div>
-            
+
             <BioTemp
               bio={bio}
               border={border}
@@ -115,20 +115,20 @@ END:VCARD`;
           </div>
 
           <div className="">
-            
-              <Socialpg
+
+            <Socialpg
               text1={text1}
               type={type}
-              behance ={behance}
-            facebook ={facebook}
-            instagram ={instagram}
-            linkedin = {linkedin}
-            mail = {mail}
-            reddit ={reddit} 
-            twitter = {twitter} 
-            whatsappNumber = {whatsappNumber} 
-            youtube = {youtube}
-          />
+              behance={behance}
+              facebook={facebook}
+              instagram={instagram}
+              linkedin={linkedin}
+              mail={mail}
+              reddit={reddit}
+              twitter={twitter}
+              whatsappNumber={whatsappNumber}
+              youtube={youtube}
+            />
           </div>
 
           <div className="flex justify-center">
