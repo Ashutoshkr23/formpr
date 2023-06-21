@@ -15,16 +15,15 @@ import { Footer } from '@/components';
 
 function Form({ cuuid }) {
 
+    const [contactData, setContactData] = useState(null);
+    const [name, setName] = useState('');
     const { userProfile } = useContext(CartContext);
     const [showProfileComplete, setShowProfileComplete] = useState(false);
     const [progress, setProgress] = useState(0);
-
-
     const [selectedtemplate, setSelectedTemplate] = useState('0')
     const [cover, setCover] = useState(themes[0].gradient1)
     const [profileImg, setProfileImg] = useState('')
     const [bio, setBio] = useState('');
-    const [name, setName] = useState('');
     const [role, setRole] = useState('');
     const [company, setCompany] = useState('');
     const [companyLink, setCompanyLink] = useState('');
@@ -46,6 +45,59 @@ function Form({ cuuid }) {
     });
 
 
+
+    useEffect(() => {
+        async function fetchCardData(cuuid) {
+            try {
+                const res = await fetch(`/api/handleFormData?cuuid=${cuuid}`);
+                const data = await res.json();
+                if (res.ok) {
+                    return data.card;
+                } else {
+                    throw new Error(data.message);
+                }
+            } catch (error) {
+                console.error("Error fetching card data:", error);
+                throw error;
+            }
+        }
+        fetchCardData(cuuid)
+            .then((cardData) => {
+                // Access the fetched card data here
+                console.log(cardData);
+                setContactData(cardData);
+                setName(cardData.name)
+                setProfileImg(cardData.profileImg)
+                setCover(cardData.cover)
+                setSelectedTemplate(cardData.selectedTemplate)
+                setBio(cardData.bio)
+                setRole(cardData.role)
+                setCompany(cardData.company)
+                setCompanyLink(cardData.companylink)
+                setAddress(cardData.adress)
+                setPhoneNumber(cardData.mobileNumber)
+
+                setInputValues({
+                    whatsapp: cardData.whatsappNumber || '',
+                    mail: cardData.mail || '',
+                    linkedin: cardData.linkedin || '',
+                    instagram: cardData.instagram || '',
+                    facebook: cardData.facebook || '',
+                    youtube: cardData.youtube || '',
+                    twitter: cardData.twitter || '',
+                    behance: cardData.behance || '',
+                    reddit: cardData.reddit || '',
+                });
+            })
+            .catch((error) => {
+                // Handle any errors that occurred during fetching
+                console.error(error);
+            });
+    }, [cuuid]);
+
+    console.log(contactData)
+
+    
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -131,7 +183,7 @@ function Form({ cuuid }) {
                 company: company,
                 name: name,
                 role: role,
-                companyLink: companyLink,
+                companylink: companyLink,
                 bio: bio,
                 address: address,
                 mobileNumber: phoneNumber,
@@ -251,11 +303,18 @@ function Form({ cuuid }) {
                             cover={cover}
                             setCover={setCover} />
                         <Details
+                            name={name}
+                            role={role}
+                            company={company}
+                            address={address}
+                            bio={bio}
+                            phoneNumber={phoneNumber}
+                            contactData={contactData}
                             profileImg={profileImg}
+                            companyLink={companyLink}
                             setProfileImg={setProfileImg}
                             onCompanyChange={handleCompanyChange}
                             onNameChange={handleNameChange}
-                            bio={bio}
                             onRoleChange={handleRoleChange}
                             onCompanyLinkChange={handleCompanyLinkChange}
                             onBioChange={handleBioChange}
@@ -268,7 +327,7 @@ function Form({ cuuid }) {
                             onToggleInput={handleToggleInput} />
                     </div>
                     <div className='w-[350px] xl:w-[390px]  flex justify-center relative'>
-                        <div className='sticky top-0 h-[820px]'>
+                        <div className='sticky top-0 h-[820px] mb-5'>
                             {selectedtemplate &&
                                 <Template
                                     gradient1={cover}

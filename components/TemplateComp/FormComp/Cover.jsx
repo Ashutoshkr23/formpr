@@ -47,8 +47,8 @@ function Cover({ cover, setCover }) {
     const Cover12 = "/assets/images/templateimg/BGCover12.png"
     const Cover13 = "/assets/images/templateimg/BGCover13.png"
     return (
-        <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto bg-bright-gray px-9 py-8 my-5'>
-            <p className='font-bold text-xs mb-5'>COVER</p>
+        <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto bg-black-dim px-9 py-8 my-5'>
+            <p className='font-bold text-white text-xs mb-5'>COVER</p>
             <div className='flex flex-wrap gap-5'>
                 <div>
                     <label htmlFor="fileInput" className="cursor-pointer bg-white  flex flex-col space-y-1 justify-center items-center w-[105px] h-[105px] border border-dim-gray rounded-xl" >
