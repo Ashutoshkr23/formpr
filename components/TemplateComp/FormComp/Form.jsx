@@ -11,6 +11,7 @@ import { CartContext } from '@/context/CartContext';
 import ProfileCompleted from './ProfileCompleted';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Footer } from '@/components';
 
 function Form({ cuuid }) {
 
@@ -295,6 +296,7 @@ function Form({ cuuid }) {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
