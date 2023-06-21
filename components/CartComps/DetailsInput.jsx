@@ -227,6 +227,27 @@ function DetailsInput({
       setScale(newScale);
     }
   };
+
+  const checkFontArray = (uuid) => {
+    let tempArr = [
+      "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7",
+      "d73f6121-6dc5-4170-8b3b-40a02835ddd1",
+      "de47eb30-ec56-4d98-8069-50bcac1cfcc7",
+      "f07f8b1f-3947-4121-a0eb-a60230f7a14b",
+      "fbc8a97b-178e-4582-afaf-be755b69ca2b",
+      "d886fa29-1622-4a08-ade2-f58fca1237d9",
+      "44d97f3f-1393-48a3-95e2-2d4866a3a589",
+      "7d223de6-dc2d-4caa-b111-63d5a4e219fa",
+      "ef574738-8969-4e8a-a17e-51b8bc6e2eae"
+
+    ]
+    if (tempArr.includes(uuid)) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const handleDecreaseSize = () => {
     setScale((prevScale) => Math.max(prevScale - 0.1, 1));
   };
@@ -694,12 +715,7 @@ function DetailsInput({
                       ) : (
                         ""
                       )}
-                      {selectedColorLite ===
-                        "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
-                      selectedColorLite ===
-                        "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
-                      selectedColorLite ===
-                        "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
+                      {checkFontArray(selectedColorLite)  ? (
                         <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
                         </div>
@@ -752,18 +768,7 @@ function DetailsInput({
                       ) : (
                         ""
                       )}
-                      {selectedColorElevate ===
-                        "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
-                      selectedColorElevate ===
-                        "d73f6121-6dc5-4170-8b3b-40a02835ddd1" ||
-                      selectedColorElevate ===
-                        "de47eb30-ec56-4d98-8069-50bcac1cfcc7" ||
-                      selectedColorElevate ===
-                        "f07f8b1f-3947-4121-a0eb-a60230f7a14b" ||
-                      selectedColorElevate ===
-                        "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
-                      selectedColorElevate ===
-                        "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
+                      {checkFontArray(selectedColorElevate) ? (
                         <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
                         </div>
