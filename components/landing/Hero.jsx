@@ -26,7 +26,7 @@ const Hero = () => {
                     transition={{ delay: 2.5 }}
                     className='hidden lg:block w-[140px] md:w-[165px] h-9 md:h-10 mt-12 bg-black text-white text-xs md:text-base  font-bold rounded-[10px]  text-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]'
                 >
-                    <a href='/store'>
+                    <a href='/login'>
                     GET NOW
                     </a>
                 </motion.button>
