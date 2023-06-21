@@ -1,9 +1,11 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import React from "react";
 import Template from "@/components/Template";
-import BioTemp from "@/components/BioTemp";
 import themes from "@/components/TemplateComp/Themes";
+import axios from "axios";
 
 const Contact = () => {
   const [contactData, setContactData] = useState(null);
@@ -15,8 +17,18 @@ const Contact = () => {
       try {
         const res = await fetch(`/api/handleFormData?cuuid=${slug}`);
         const data = await res.json();
-        if (data.card) {
+        console.log(data.card);
+        if (data.card !== undefined) {
           setContactData(data.card);
+          const cardUuid = data.card.cuuid;
+          const userEmail = data.card.mail;
+          const sendDataToAPI = { cardUuid, userEmail };
+          console.log(sendDataToAPI);
+          const settingRemainder = await axios.post(
+            "http://localhost:3000/api/setRemainder", sendDataToAPI
+          );
+          console.log(settingRemainder);
+          console.log("2");
         }
       } catch (error) {
         console.error("Error fetching contact:", error);

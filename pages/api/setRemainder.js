@@ -17,6 +17,8 @@ export default async function handler(req, res) {
             userEmail: userEmail
         });
 
+        console.log(saveUser);
+
         await saveUser.save()
             .then((saveUser) => {
             })

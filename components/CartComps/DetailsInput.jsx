@@ -161,53 +161,9 @@ function DetailsInput({
   // console.log(y);
   const containerRef = useRef(null);
   const imageRef = useRef(null);
-  const [dragging, setDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+
   const [scale, setScale] = useState(1);
 
-  const handleMouseMove = (event) => {
-    if (dragging) {
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const imageRect = imageRef.current.getBoundingClientRect();
-      const containerWidth = containerRect.width;
-      const containerHeight = containerRect.height;
-      const imageWidth = imageRect.width;
-      const imageHeight = imageRect.height;
-
-      const minX = 0;
-      const maxX = containerWidth - imageWidth;
-      const minY = 0;
-      const maxY = containerHeight - imageHeight;
-
-      let newX = event.clientX - containerRect.left - imageWidth / 2;
-      let newY = event.clientY - containerRect.top - imageHeight / 2;
-
-      // Restrict image position within the container
-      newX = Math.max(minX, Math.min(newX, maxX));
-      newY = Math.max(minY, Math.min(newY, maxY));
-
-      setPosition({ x: newX, y: newY });
-    }
-  };
-
-  const handleMouseUp = () => {
-    setDragging(false);
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, [dragging]);
-
-  const handleMouseDown = (event) => {
-    event.preventDefault();
-    setDragging(true);
-  };
   const MAX_SCALE = 1.5;
   const handleIncreaseSize = () => {
     const newScale = Math.min(scale + 0.1, MAX_SCALE);
@@ -227,6 +183,27 @@ function DetailsInput({
       setScale(newScale);
     }
   };
+
+  const checkFontArray = (uuid) => {
+    let tempArr = [
+      "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7",
+      "d73f6121-6dc5-4170-8b3b-40a02835ddd1",
+      "de47eb30-ec56-4d98-8069-50bcac1cfcc7",
+      "f07f8b1f-3947-4121-a0eb-a60230f7a14b",
+      "fbc8a97b-178e-4582-afaf-be755b69ca2b",
+      "d886fa29-1622-4a08-ade2-f58fca1237d9",
+      "44d97f3f-1393-48a3-95e2-2d4866a3a589",
+      "7d223de6-dc2d-4caa-b111-63d5a4e219fa",
+      "ef574738-8969-4e8a-a17e-51b8bc6e2eae"
+
+    ]
+    if (tempArr.includes(uuid)) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const handleDecreaseSize = () => {
     setScale((prevScale) => Math.max(prevScale - 0.1, 1));
   };
@@ -248,73 +225,6 @@ function DetailsInput({
           <div className="flex lg:flex-row flex-col-reverse gap-[42px] flex-grow ">
             <div className=" flex flex-col gap-1 lg:gap-4 ">
               <p className="text-sm">Abstract Design</p>
-              {/* <div className=" flex flex-row lg:flex-col gap-1.5 lg:gap-4 ">
-                <div className="flex gap-2 ">
-                  <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px]
-                   ${design === 1 ? `border-2 border-black` : ""}`}
-                    src={
-                      "/assets/images/storeImages/Supreme/Abstract/Design1.png"
-                    }
-                    alt="icon"
-                    onClick={() => setDesign(1)}
-                  />
-                  <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 2 ? `border-2 border-black` : ""
-                    }`}
-                    src={
-                      "/assets/images/storeImages/Supreme/Abstract/Design2.png"
-                    }
-                    alt="icon"
-                    onClick={() => setDesign(2)}
-                  />
-                </div>
-                <div className="flex  gap-2">
-                  <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 3 ? `border-2 border-black` : ""
-                    }`}
-                    src={
-                      "/assets/images/storeImages/Supreme/Abstract/Design3.png"
-                    }
-                    alt="icon"
-                    onClick={() => setDesign(3)}
-                  />
-                  <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 4 ? `border-2 border-black` : ""
-                    }`}
-                    src={
-                      "/assets/images/storeImages/Supreme/Abstract/Design4.png"
-                    }
-                    alt="icon"
-                    onClick={() => setDesign(4)}
-                  />
-                </div>
-                <div className="flex  gap-2">
-                  <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 5 ? `border-2 border-black` : ""
-                    }`}
-                    src={
-                      "/assets/images/storeImages/Supreme/Abstract/Design5.png"
-                    }
-                    alt="icon"
-                    onClick={() => setDesign(5)}
-                  />
-                  <img
-                    className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px] ${
-                      design === 6 ? `border-2 border-black` : ""
-                    }`}
-                    src={
-                      "/assets/images/storeImages/Supreme/Abstract/Design6.png"
-                    }
-                    alt="icon"
-                    onClick={() => setDesign(6)}
-                  />
-                </div>
-              </div> */}
 
               <div className="flex flex-row  w-[150px]  gap-1.5 lg:gap-4 flex-wrap">
                 {cartItems &&
@@ -324,10 +234,11 @@ function DetailsInput({
                       <img
                         key={abstract.designUuid}
                         className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px]
-                     ${card.designUuid == abstract.designUuid
-                            ? `border-2 border-black`
-                            : ""
-                          }`}
+                     ${
+                       card.designUuid == abstract.designUuid
+                         ? `border-2 border-black`
+                         : ""
+                     }`}
                         src={`/assets/images/abstracts/${abstract.designUuid}.png`}
                         alt="icon"
                         onClick={() =>
@@ -342,7 +253,7 @@ function DetailsInput({
               <div className="flex flex-col gap-6  lg:mt-0  ">
                 <div
                   className={`card ${isFlipped ? "flipped" : ""}`}
-                  // onClick={handleFlip}
+                  onClick={handleFlip}
                 >
                   <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
                     <div
@@ -371,27 +282,27 @@ function DetailsInput({
                           />
                           {card.designUuid !==
                             "1bb3aa1e-410f-441c-a290-827bccc7f777" && (
-                              <div>
-                                <div className="hidden lg:block">
-                                  <Image
-                                    className="absolute top-0 left-0"
-                                    src={`/assets/images/abstracts/card/${card.designUuid}.png`}
-                                    height={250}
-                                    width={400}
-                                    alt="icon"
-                                  />
-                                </div>
-                                <div className="lg:hidden">
-                                  <Image
-                                    className="absolute top-0 left-0"
-                                    src={`/assets/images/abstracts/card/${card.designUuid}.png`}
-                                    height={172}
-                                    width={300}
-                                    alt="icon"
-                                  />
-                                </div>
+                            <div>
+                              <div className="hidden lg:block">
+                                <Image
+                                  className="absolute top-0 left-0"
+                                  src={`/assets/images/abstracts/card/${card.designUuid}.png`}
+                                  height={250}
+                                  width={400}
+                                  alt="icon"
+                                />
                               </div>
-                            )}
+                              <div className="lg:hidden">
+                                <Image
+                                  className="absolute top-0 left-0"
+                                  src={`/assets/images/abstracts/card/${card.designUuid}.png`}
+                                  height={172}
+                                  width={300}
+                                  alt="icon"
+                                />
+                              </div>
+                            </div>
+                          )}
                           <div className="absolute bottom-8 left-6">
                             <p
                               className={`lg:text-[20px] text:sm  font-semibold text-${font}`}
@@ -420,17 +331,16 @@ function DetailsInput({
 
                         {card.companyLogo && card.companyLogo.length ? (
                           <div
-                            className=" mt-2 h-[220px] w-[370px] pl-0 object-cover "
+                            className=" mt-2 flex justify-center items-center h-[150px] w-[280px] lg:h-[220px] lg:w-[370px] pl-0 object-cover "
                             ref={containerRef}
                           >
                             <img
                               src={card.companyLogo}
                               className="object-fill h-[100px] lg:h-[120px] max-w-[300px] w-auto"
                               style={{
-                                transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+                                transform: `scale(${scale})`,
                               }}
                               ref={imageRef}
-                              onMouseDown={handleMouseDown}
                             />
                           </div>
                         ) : (
@@ -481,10 +391,11 @@ function DetailsInput({
                       font color:
                     </p>
                     <div
-                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${font === "white"
-                        ? "scale-110 border-2 border-black "
-                        : ""
-                        }
+                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${
+                        font === "white"
+                          ? "scale-110 border-2 border-black "
+                          : ""
+                      }
                     `}
                       onClick={() => {
                         setFont("white");
@@ -492,10 +403,11 @@ function DetailsInput({
                       }}
                     ></div>
                     <div
-                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${font === "black"
-                        ? "scale-110 border-2 border-yellow-500 "
-                        : ""
-                        }`}
+                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${
+                        font === "black"
+                          ? "scale-110 border-2 border-yellow-500 "
+                          : ""
+                      }`}
                       onClick={() => {
                         setFont("black");
                         handleColorUuid(card.key, "#000000", 2);
@@ -504,10 +416,10 @@ function DetailsInput({
                   </div>
                 </div>
               </div>
-              <div className="ml-4">
+              <div className="md:ml-4 ml-1">
                 <Image
                   src={"/assets/images/cart-images/flipImage.png"}
-                  className=" cursor-pointer hidden lg:block"
+                  className=" cursor-pointer hidden lg:block "
                   alt="flip"
                   height={36}
                   width={36}
@@ -525,10 +437,11 @@ function DetailsInput({
             </div>
             <div className="flex mt-8">
               <input
-                className={`border outline-none ${checkFormValid &&
+                className={`border outline-none ${
+                  checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px] h-10 rounded-xl pl-4`}
+                } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -582,10 +495,11 @@ function DetailsInput({
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${checkFormValid &&
+                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${
+                      checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                      }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
+                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -629,10 +543,11 @@ function DetailsInput({
             </div>
             <div>
               <input
-                className={`border outline-none mt-8 ${checkFormValid &&
+                className={`border outline-none mt-8 ${
+                  checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px]  mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
+                } w-[220px]  mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"
@@ -667,8 +582,9 @@ function DetailsInput({
             {card.cardTypeName === "Lite" && (
               <div className="flex mt-8 lg:mt-0  ">
                 <div
-                  className={`card ${isFlipped ? "flipped" : ""
-                    } h-[172px] lg:h-[250px] lg:w-[400px] w-[300px]`}
+                  className={`card ${
+                    isFlipped ? "flipped" : ""
+                  } h-[172px] lg:h-[250px] lg:w-[400px] w-[300px]`}
                   onClick={handleFlip}
                 >
                   <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
@@ -687,12 +603,7 @@ function DetailsInput({
                       ) : (
                         ""
                       )}
-                      {selectedColorLite ===
-                        "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
-                        selectedColorLite ===
-                        "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
-                        selectedColorLite ===
-                        "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
+                      {checkFontArray(selectedColorLite)  ? (
                         <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
                         </div>
@@ -724,8 +635,9 @@ function DetailsInput({
             {card.cardTypeName === "Elevate" && (
               <div className="flex mt-8 lg:mt-0">
                 <div
-                  className={`card ${isFlipped ? "flipped" : ""
-                    } lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
+                  className={`card ${
+                    isFlipped ? "flipped" : ""
+                  } lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
                   onClick={handleFlip}
                 >
                   <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
@@ -744,18 +656,7 @@ function DetailsInput({
                       ) : (
                         ""
                       )}
-                      {selectedColorElevate ===
-                        "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
-                        selectedColorElevate ===
-                        "d73f6121-6dc5-4170-8b3b-40a02835ddd1" ||
-                        selectedColorElevate ===
-                        "de47eb30-ec56-4d98-8069-50bcac1cfcc7" ||
-                        selectedColorElevate ===
-                        "f07f8b1f-3947-4121-a0eb-a60230f7a14b" ||
-                        selectedColorElevate ===
-                        "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
-                        selectedColorElevate ===
-                        "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
+                      {checkFontArray(selectedColorElevate) ? (
                         <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
                         </div>
@@ -794,10 +695,11 @@ function DetailsInput({
                       return (
                         <div
                           key={item.designUuid}
-                          className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${card.designUuid === item.designUuid
-                            ? "scale-125 border border-black p-px"
-                            : ""
-                            } `}
+                          className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${
+                            card.designUuid === item.designUuid
+                              ? "scale-125 border border-black p-px"
+                              : ""
+                          } `}
                           onClick={() => {
                             setSelectedColorLite(item.designUuid);
                             handleDesignUuid(card.key, item.designUuid);
@@ -805,7 +707,7 @@ function DetailsInput({
                         >
                           <div
                             className={`w-full h-full rounded-full`}
-                            style={{ backgroundColor: item.hexCode }}
+                            style={{backgroundColor:item.designUuid == "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ? "#ececec" : item.hexCode}}
                           ></div>
                         </div>
                       );
@@ -817,10 +719,11 @@ function DetailsInput({
                       return (
                         <div
                           key={item.designUuid}
-                          className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${card.designUuid === item.designUuid
-                            ? "scale-125 border border-black p-px"
-                            : ""
-                            } `}
+                          className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${
+                            card.designUuid === item.designUuid
+                              ? "scale-125 border border-black p-px"
+                              : ""
+                          } `}
                           onClick={() => {
                             setSelectedColorElevate(item.designUuid);
                             handleDesignUuid(card.key, item.designUuid);
@@ -853,10 +756,11 @@ function DetailsInput({
             </div>
             <div className="flex mt-6">
               <input
-                className={`border outline-none ${checkFormValid &&
+                className={`border outline-none ${
+                  checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px] h-10 rounded-xl pl-4`}
+                } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -907,10 +811,11 @@ function DetailsInput({
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`cursor-pointer py-2 flex justify-between border ${checkFormValid &&
+                    className={`cursor-pointer py-2 flex justify-between border ${
+                      checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                      }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
+                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -954,10 +859,11 @@ function DetailsInput({
             </div>
             <div className="mt-8">
               <input
-                className={`border outline-none ${checkFormValid &&
+                className={`border outline-none ${
+                  checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
+                } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"

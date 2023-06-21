@@ -127,21 +127,27 @@ const CheckoutComp = ({
                   return (
                     <div
                       key={data.key}
-                      className="relative grid grid-cols-2 gap-5 bg-white rounded-xl cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926] p-4 h-[250px]"
+                      className="relative grid grid-cols-2 max-[320px]:grid-cols-1 max-[320px]:text-left  gap-5 bg-white rounded-xl cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926] p-4 min-h-[250px] h-full"
                     >
                       {checkLiteOrElevate(data.cardTypeUuid) && (
                         <div className={`card w-[170px] h-[105px]`}>
-                          <div className="card-inner lg:w-[170px] lg:h-[105px] w-[300px] h-[172px]">
-                            <div className="card-front lg:w-[170px] lg:h-[105px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
-                              <img
+                          <div className="card-inner lg:w-[170px] lg:h-[105px] w-[170px] h-[105px]">
+                            <div className="card-front lg:w-[170px] lg:h-[105px] w-[170px] h-[105px] drop-shadow-white rounded-2xl relative  ">
+                              <Image
                                 src={`/assets/images/cards/Front/${data.designUuid}.png`}
-                                className="w-[170px] h-[105px]"
+                               
+                                fill={true}
+                                quality={100} alt="card-front"
                               />
                               {data.companyLogo && data.companyLogo.length ? (
-                                <div className="absolute flex items-center lg:right-2 lg:bottom-2  lg:h-auto  lg:w-auto max-h-[45px] max-w-[45px]  object-contain">
-                                  <img
+                                <div className="absolute max-w-[25px] max-h-[25px] bottom-[14px] right-[14px]">
+                                  <Image
                                     src={data.companyLogo}
-                                    className=" object-contain w-full h-full"
+                                    style={{objectFit:"contain"}}
+                                    className=""
+                                    height={23}
+                                    width={23}
+                                    alt="logo"
                                   />
                                 </div>
                               ) : (
@@ -229,11 +235,11 @@ const CheckoutComp = ({
                       </div>
                       <div>
                         {checkLiteOrElevate(data.cardTypeUuid) && (
-                          <div>
+                          <div className="lg:w-[170px] lg:h-[105px] w-[170px] h-[105px] relative">
                             <Image
                               src={`/assets/images/cards/Back/${data.designUuid}.png`}
-                              height={250}
-                              width={300}
+                              fill={true}
+                              style={{objectFit:"contain",position:"absolute"}}
                               alt="demo"
                               quality={100}
                             />
