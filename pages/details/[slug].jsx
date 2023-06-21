@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import React from "react";
 import Template from "@/components/Template";
-import BioTemp from "@/components/BioTemp";
 import themes from "@/components/TemplateComp/Themes";
 import axios from "axios";
 

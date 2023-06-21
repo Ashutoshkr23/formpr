@@ -106,8 +106,8 @@ const Story = () => {
               viewport={{ once: true }}
               transition={{ duration: 1 , delay: 2 }}>
               <Image
-                src={"/assets/images/landing/storyPhoneImages.png"}
-                alt="phone 2"
+                src={"/assets/images/landing/ourStory.png"}
+                alt="our story"
                 height={252}
                 width={345}
               />
