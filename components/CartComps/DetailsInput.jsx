@@ -324,10 +324,11 @@ function DetailsInput({
                       <img
                         key={abstract.designUuid}
                         className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px]
-                     ${card.designUuid == abstract.designUuid
-                            ? `border-2 border-black`
-                            : ""
-                          }`}
+                     ${
+                       card.designUuid == abstract.designUuid
+                         ? `border-2 border-black`
+                         : ""
+                     }`}
                         src={`/assets/images/abstracts/${abstract.designUuid}.png`}
                         alt="icon"
                         onClick={() =>
@@ -371,27 +372,27 @@ function DetailsInput({
                           />
                           {card.designUuid !==
                             "1bb3aa1e-410f-441c-a290-827bccc7f777" && (
-                              <div>
-                                <div className="hidden lg:block">
-                                  <Image
-                                    className="absolute top-0 left-0"
-                                    src={`/assets/images/abstracts/card/${card.designUuid}.png`}
-                                    height={250}
-                                    width={400}
-                                    alt="icon"
-                                  />
-                                </div>
-                                <div className="lg:hidden">
-                                  <Image
-                                    className="absolute top-0 left-0"
-                                    src={`/assets/images/abstracts/card/${card.designUuid}.png`}
-                                    height={172}
-                                    width={300}
-                                    alt="icon"
-                                  />
-                                </div>
+                            <div>
+                              <div className="hidden lg:block">
+                                <Image
+                                  className="absolute top-0 left-0"
+                                  src={`/assets/images/abstracts/card/${card.designUuid}.png`}
+                                  height={250}
+                                  width={400}
+                                  alt="icon"
+                                />
                               </div>
-                            )}
+                              <div className="lg:hidden">
+                                <Image
+                                  className="absolute top-0 left-0"
+                                  src={`/assets/images/abstracts/card/${card.designUuid}.png`}
+                                  height={172}
+                                  width={300}
+                                  alt="icon"
+                                />
+                              </div>
+                            </div>
+                          )}
                           <div className="absolute bottom-8 left-6">
                             <p
                               className={`lg:text-[20px] text:sm  font-semibold text-${font}`}
@@ -420,7 +421,7 @@ function DetailsInput({
 
                         {card.companyLogo && card.companyLogo.length ? (
                           <div
-                            className=" mt-2 h-[220px] w-[370px] pl-0 object-cover "
+                            className=" mt-2 h-[150px] w-[280px] lg:h-[220px] lg:w-[370px] pl-0 object-cover "
                             ref={containerRef}
                           >
                             <img
@@ -481,10 +482,11 @@ function DetailsInput({
                       font color:
                     </p>
                     <div
-                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${font === "white"
-                        ? "scale-110 border-2 border-black "
-                        : ""
-                        }
+                      className={`rounded-full bg-[#ECECEC] cursor-pointer w-3 h-3 lg:w-5 lg:h-5  ${
+                        font === "white"
+                          ? "scale-110 border-2 border-black "
+                          : ""
+                      }
                     `}
                       onClick={() => {
                         setFont("white");
@@ -492,10 +494,11 @@ function DetailsInput({
                       }}
                     ></div>
                     <div
-                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${font === "black"
-                        ? "scale-110 border-2 border-yellow-500 "
-                        : ""
-                        }`}
+                      className={`rounded-full ml-1 cursor-pointer bg-[#000000] w-3 h-3 lg:w-5 lg:h-5 ${
+                        font === "black"
+                          ? "scale-110 border-2 border-yellow-500 "
+                          : ""
+                      }`}
                       onClick={() => {
                         setFont("black");
                         handleColorUuid(card.key, "#000000", 2);
@@ -504,10 +507,10 @@ function DetailsInput({
                   </div>
                 </div>
               </div>
-              <div className="ml-4">
+              <div className="md:ml-4 ml-1">
                 <Image
                   src={"/assets/images/cart-images/flipImage.png"}
-                  className=" cursor-pointer hidden lg:block"
+                  className=" cursor-pointer "
                   alt="flip"
                   height={36}
                   width={36}
@@ -525,10 +528,11 @@ function DetailsInput({
             </div>
             <div className="flex mt-8">
               <input
-                className={`border outline-none ${checkFormValid &&
+                className={`border outline-none ${
+                  checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px] h-10 rounded-xl pl-4`}
+                } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -582,10 +586,11 @@ function DetailsInput({
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${checkFormValid &&
+                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${
+                      checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                      }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
+                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -629,10 +634,11 @@ function DetailsInput({
             </div>
             <div>
               <input
-                className={`border outline-none mt-8 ${checkFormValid &&
+                className={`border outline-none mt-8 ${
+                  checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px]  mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
+                } w-[220px]  mb-4 lg:mb-0 h-10 rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"
@@ -667,8 +673,9 @@ function DetailsInput({
             {card.cardTypeName === "Lite" && (
               <div className="flex mt-8 lg:mt-0  ">
                 <div
-                  className={`card ${isFlipped ? "flipped" : ""
-                    } h-[172px] lg:h-[250px] lg:w-[400px] w-[300px]`}
+                  className={`card ${
+                    isFlipped ? "flipped" : ""
+                  } h-[172px] lg:h-[250px] lg:w-[400px] w-[300px]`}
                   onClick={handleFlip}
                 >
                   <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
@@ -689,9 +696,9 @@ function DetailsInput({
                       )}
                       {selectedColorLite ===
                         "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ||
-                        selectedColorLite ===
+                      selectedColorLite ===
                         "44d97f3f-1393-48a3-95e2-2d4866a3a589" ||
-                        selectedColorLite ===
+                      selectedColorLite ===
                         "d886fa29-1622-4a08-ade2-f58fca1237d9" ? (
                         <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
@@ -724,8 +731,9 @@ function DetailsInput({
             {card.cardTypeName === "Elevate" && (
               <div className="flex mt-8 lg:mt-0">
                 <div
-                  className={`card ${isFlipped ? "flipped" : ""
-                    } lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
+                  className={`card ${
+                    isFlipped ? "flipped" : ""
+                  } lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
                   onClick={handleFlip}
                 >
                   <div className="card-inner lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
@@ -746,15 +754,15 @@ function DetailsInput({
                       )}
                       {selectedColorElevate ===
                         "c5ca6b8b-1ac7-4d49-9a53-70526dfc2fd7" ||
-                        selectedColorElevate ===
+                      selectedColorElevate ===
                         "d73f6121-6dc5-4170-8b3b-40a02835ddd1" ||
-                        selectedColorElevate ===
+                      selectedColorElevate ===
                         "de47eb30-ec56-4d98-8069-50bcac1cfcc7" ||
-                        selectedColorElevate ===
+                      selectedColorElevate ===
                         "f07f8b1f-3947-4121-a0eb-a60230f7a14b" ||
-                        selectedColorElevate ===
+                      selectedColorElevate ===
                         "fbc8a97b-178e-4582-afaf-be755b69ca2b" ||
-                        selectedColorElevate ===
+                      selectedColorElevate ===
                         "ef574738-8969-4e8a-a17e-51b8bc6e2eae" ? (
                         <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
@@ -794,10 +802,11 @@ function DetailsInput({
                       return (
                         <div
                           key={item.designUuid}
-                          className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${card.designUuid === item.designUuid
-                            ? "scale-125 border border-black p-px"
-                            : ""
-                            } `}
+                          className={`w-4 h-4 shadow-inner   rounded-full cursor-pointer ${
+                            card.designUuid === item.designUuid
+                              ? "scale-125 border border-black p-px"
+                              : ""
+                          } `}
                           onClick={() => {
                             setSelectedColorLite(item.designUuid);
                             handleDesignUuid(card.key, item.designUuid);
@@ -817,10 +826,11 @@ function DetailsInput({
                       return (
                         <div
                           key={item.designUuid}
-                          className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${card.designUuid === item.designUuid
-                            ? "scale-125 border border-black p-px"
-                            : ""
-                            } `}
+                          className={`w-4 h-4 shadow-inner gap-y-8  rounded-full cursor-pointer ${
+                            card.designUuid === item.designUuid
+                              ? "scale-125 border border-black p-px"
+                              : ""
+                          } `}
                           onClick={() => {
                             setSelectedColorElevate(item.designUuid);
                             handleDesignUuid(card.key, item.designUuid);
@@ -853,10 +863,11 @@ function DetailsInput({
             </div>
             <div className="flex mt-6">
               <input
-                className={`border outline-none ${checkFormValid &&
+                className={`border outline-none ${
+                  checkFormValid &&
                   card?.companyName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px] h-10 rounded-xl pl-4`}
+                } w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -907,10 +918,11 @@ function DetailsInput({
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`cursor-pointer py-2 flex justify-between border ${checkFormValid &&
+                    className={`cursor-pointer py-2 flex justify-between border ${
+                      checkFormValid &&
                       card?.fileName?.length == 0 &&
                       "border-2 border-red-400 "
-                      }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
+                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -954,10 +966,11 @@ function DetailsInput({
             </div>
             <div className="mt-8">
               <input
-                className={`border outline-none ${checkFormValid &&
+                className={`border outline-none ${
+                  checkFormValid &&
                   card?.fullName?.length == 0 &&
                   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                  } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
+                } w-[220px] lg:mb-0 mb-[30px] h-10  rounded-xl pl-4`}
                 type="text"
                 value={card.fullName}
                 name="fullName"
