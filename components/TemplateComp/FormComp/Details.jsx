@@ -82,8 +82,8 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
 
 
     return (
-        <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-[578px] bg-black-dim px-9 pt-4'>
-            <p className='font-bold text-xs'>REQUIRED DETAILS</p>
+        <div className='flex flex-grow text-white rounded-[10px] drop-shadow-white flex-col h-[578px] bg-black-dim px-9 pt-4'>
+            <p className='font-bold text-white text-xs'>REQUIRED DETAILS</p>
             <div className='flex gap-8 mt-9'>
                 <div className='flex flex-col w-full space-y-5'>
                     <div>

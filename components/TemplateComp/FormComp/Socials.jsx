@@ -22,8 +22,8 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
 
   
   return (
-      <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-[600px] bg-black-dim px-9 pt-4 my-5'>
-        <p className='font-bold text-xs'>Social Links</p>
+      <div className='flex  flex-grow rounded-[10px] drop-shadow-white flex-col h-[600px] bg-black-dim px-9 pt-4 my-5'>
+        <p className='font-bold text-white text-xs'>Social Links</p>
       <div>
         <div className=''>
           {visibleInputs.includes('whatsapp') && (
