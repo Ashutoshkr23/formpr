@@ -52,7 +52,7 @@ function Cover({ cover, setCover }) {
             <div className='flex flex-wrap gap-5'>
                 <div>
                     <label htmlFor="fileInput" className="cursor-pointer bg-white  flex flex-col space-y-1 justify-center items-center w-[105px] h-[105px] border border-dim-gray rounded-xl" >
-                        <Image src="/assets/images/uploadIcon.png" height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
+                        <Image src="/assets/images/UploadIcon.png" height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
                         <p className='text-sm'>Upload</p>
                     </label>
                     <input
