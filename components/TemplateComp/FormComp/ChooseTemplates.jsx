@@ -3,7 +3,7 @@ import React from 'react'
 
 function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
   return (
-    <div className='flex flex-grow drop-shadow-white flex-col h-[330px] rounded-[10px]  mb-5 bg-bright-gray pl-9 pt-4'>
+    <div className='flex flex-grow drop-shadow-white flex-col h-[330px] rounded-[10px]  mb-5 bg-black-dim pl-9 pt-4'>
       <p className='font-bold text-xs'>TEMPLATE</p>
       <div className='flex gap-4 mt-5'>
         <div className='h-[255px] w-[118px]' onClick={() => setSelectedTemplate('0')}>

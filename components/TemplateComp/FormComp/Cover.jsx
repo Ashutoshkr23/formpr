@@ -47,7 +47,7 @@ function Cover({ cover, setCover }) {
     const Cover12 = "/assets/images/templateimg/BGCover12.png"
     const Cover13 = "/assets/images/templateimg/BGCover13.png"
     return (
-        <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto bg-bright-gray px-9 py-8 my-5'>
+        <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto bg-black-dim px-9 py-8 my-5'>
             <p className='font-bold text-xs mb-5'>COVER</p>
             <div className='flex flex-wrap gap-5'>
                 <div>

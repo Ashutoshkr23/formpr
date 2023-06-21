@@ -15,11 +15,38 @@ import { Footer } from '@/components';
 
 function Form({ cuuid }) {
 
+    const [contactData, setContactData] = useState(null);
+
+    useEffect(() => {
+        async function fetchCardData(cuuid) {
+            try {
+                const res = await fetch(`/api/handleFormData?cuuid=${cuuid}`);
+                const data = await res.json();
+                if (res.ok) {
+                    return data.card;
+                } else {
+                    throw new Error(data.message);
+                }
+            } catch (error) {
+                console.error("Error fetching card data:", error);
+                throw error;
+            }
+        }
+        fetchCardData(cuuid)
+            .then((cardData) => {
+                // Access the fetched card data here
+                console.log(cardData);
+            })
+            .catch((error) => {
+                // Handle any errors that occurred during fetching
+                console.error(error);
+            });
+    }, [cuuid]);
+
+
     const { userProfile } = useContext(CartContext);
     const [showProfileComplete, setShowProfileComplete] = useState(false);
     const [progress, setProgress] = useState(0);
-
-
     const [selectedtemplate, setSelectedTemplate] = useState('0')
     const [cover, setCover] = useState(themes[0].gradient1)
     const [profileImg, setProfileImg] = useState('')
@@ -268,7 +295,7 @@ function Form({ cuuid }) {
                             onToggleInput={handleToggleInput} />
                     </div>
                     <div className='w-[350px] xl:w-[390px]  flex justify-center relative'>
-                        <div className='sticky top-0 h-[820px]'>
+                        <div className='sticky top-0 h-[820px] mb-5'>
                             {selectedtemplate &&
                                 <Template
                                     gradient1={cover}
