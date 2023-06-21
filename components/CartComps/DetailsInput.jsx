@@ -165,43 +165,70 @@ function DetailsInput({
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (dragging) {
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const imageRect = imageRef.current.getBoundingClientRect();
-        const newX = e.clientX - containerRect.left - imageRect.width / 2;
-        const newY = e.clientY - containerRect.top - imageRect.height / 2;
-        setPosition({ x: newX, y: newY });
-      }
-    };
+  const handleMouseMove = (event) => {
+    if (dragging) {
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const imageRect = imageRef.current.getBoundingClientRect();
+      const containerWidth = containerRect.width;
+      const containerHeight = containerRect.height;
+      const imageWidth = imageRect.width;
+      const imageHeight = imageRect.height;
 
-    const handleMouseUp = () => {
-      setDragging(false);
-    };
+      const minX = 0;
+      const maxX = containerWidth - imageWidth;
+      const minY = 0;
+      const maxY = containerHeight - imageHeight;
 
-    if (imageRef.current) {
-      imageRef.current.addEventListener("mousemove", handleMouseMove);
-      imageRef.current.addEventListener("mouseup", handleMouseUp);
+      let newX = event.clientX - containerRect.left - imageWidth / 2;
+      let newY = event.clientY - containerRect.top - imageHeight / 2;
+
+      // Restrict image position within the container
+      newX = Math.max(minX, Math.min(newX, maxX));
+      newY = Math.max(minY, Math.min(newY, maxY));
+
+      setPosition({ x: newX, y: newY });
     }
+  };
+
+  const handleMouseUp = () => {
+    setDragging(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
 
     return () => {
-      if (imageRef.current) {
-        imageRef.current.removeEventListener("mousemove", handleMouseMove);
-        imageRef.current.removeEventListener("mouseup", handleMouseUp);
-      }
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
     };
   }, [dragging]);
 
-  const handleMouseDown = () => {
+  const handleMouseDown = (event) => {
+    event.preventDefault();
     setDragging(true);
   };
+  const MAX_SCALE = 1.5;
   const handleIncreaseSize = () => {
-    setScale((prevScale) => prevScale + 0.1);
-  };
+    const newScale = Math.min(scale + 0.1, MAX_SCALE);
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const imageRect = imageRef.current.getBoundingClientRect();
+    const containerWidth = containerRect.width;
+    const containerHeight = containerRect.height;
+    const imageWidth = imageRect.width;
+    const imageHeight = imageRect.height;
 
+    // Check if scaling exceeds container boundaries
+    if (
+      imageWidth * newScale <= containerWidth &&
+      imageHeight * newScale <= containerHeight &&
+      newScale <= MAX_SCALE
+    ) {
+      setScale(newScale);
+    }
+  };
   const handleDecreaseSize = () => {
-    setScale((prevScale) => prevScale - 0.1);
+    setScale((prevScale) => Math.max(prevScale - 0.1, 1));
   };
   return (
     <div className="sm:px-8 relative md:px-8  lg:px-4 xl:px-0 max-w-[1208px] lg:mx-auto mx-[10px] my-6  ">
@@ -295,7 +322,7 @@ function DetailsInput({
                   cartItems[2].designs.map((abstract) => {
                     return (
                       <img
-                      key={abstract.designUuid}
+                        key={abstract.designUuid}
                         className={` cursor-pointer h-[38px] w-[38px] lg:h-[55px] lg:w-[55px]
                      ${
                        card.designUuid == abstract.designUuid
@@ -316,7 +343,7 @@ function DetailsInput({
               <div className="flex flex-col gap-6  lg:mt-0  ">
                 <div
                   className={`card ${isFlipped ? "flipped" : ""}`}
-                  onClick={handleFlip}
+                  // onClick={handleFlip}
                 >
                   <div className="lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]">
                     <div
@@ -379,7 +406,7 @@ function DetailsInput({
                       {/* back card */}
 
                       <div
-                        className={`card-back flex justify-center items-center drop-shadow-white rounded-2xl relative lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
+                        className={`card-back  flex justify-center items-center drop-shadow-white rounded-2xl relative lg:w-[400px] lg:h-[250px] w-[300px] h-[172px]`}
                         style={{
                           backgroundColor: cardColor,
                         }}
@@ -394,10 +421,9 @@ function DetailsInput({
 
                         {card.companyLogo && card.companyLogo.length ? (
                           <div
-                            className=" w-auto max-w-[300px] h-[100px] lg:h-[120px] object-cover relative"
+                            className=" mt-2 h-[220px] w-[370px] pl-0 object-cover "
                             ref={containerRef}
                           >
-                            <div className="absolute inset-0"></div>
                             <img
                               src={card.companyLogo}
                               className="object-fill h-[100px] lg:h-[120px] max-w-[300px] w-auto"
@@ -788,7 +814,7 @@ function DetailsInput({
                         >
                           <div
                             className={`w-full h-full rounded-full`}
-                            style={{backgroundColor:item.hexCode}}
+                            style={{ backgroundColor: item.hexCode }}
                           ></div>
                         </div>
                       );
