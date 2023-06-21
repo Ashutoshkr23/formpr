@@ -22,6 +22,9 @@ export const CartProvider = ({ children }) => {
     const [stepState, setStepState] = useState(1);
     const [totalQuantity, setTotalQuantity] = useState(0)
     const [totalAmount, setTotalAmount] = useState(0)
+    const [discountCode,setDiscountCode] = useState("")
+    const [amountDiscounted,setAmountDiscounted] = useState(0)
+    const [finalPrice,setFinalPrice] = useState(0)
     const [address, setAddress] = useState({
         email: "",
         phoneNumber: "",
@@ -47,6 +50,46 @@ export const CartProvider = ({ children }) => {
         setDefaultCart(newArray)
         localStorage.setItem('cartData', JSON.stringify(newArray));
     }
+
+    const handleDiscount =async ()=>{
+        if (discountCode) {
+          let postData = {
+            discountCode: discountCode.toUpperCase(),
+          };
+          const response = await axios.put("/api/discount", postData);
+          if (response.status == 200) {
+            if (!response.data.error) {
+              console.log(response.data);
+              const discountObj = response.data.result
+              if(discountObj.discountType ==2){
+                const discount = (totalAmount * discountObj.percentage) / 100;
+                setAmountDiscounted(discount)
+                const finalAmount = totalAmount - discount;
+                setFinalPrice(finalAmount)
+
+              }else{
+                setAmountDiscounted(discountObj.amount)
+
+                const finalAmount = totalAmount - discountObj.amount
+                setFinalPrice(finalAmount)
+              }
+              toast.success(response.data.message);
+            } else {
+              toast.error(response.data.message);
+            }
+          } else {
+            console.log(response);
+            toast.error("Something went wrong");
+          }
+        }
+      }
+
+
+    useEffect(()=>{
+        if(totalAmount > 0 && !amountDiscounted && !discountCode){
+            setFinalPrice(totalAmount)
+        }
+    },[totalAmount])
 
 
     useEffect(() => {
@@ -393,6 +436,8 @@ export const CartProvider = ({ children }) => {
         totalQuantity,
         totalAmount,
         address,
+        discountCode,
+        finalPrice,
         clearCart,
         plusCartFunc,
         minusCartFunc,
@@ -407,6 +452,8 @@ export const CartProvider = ({ children }) => {
         handleDesignUuid,
         handleColorUuid,
         setAllCards,
+        setDiscountCode,
+        handleDiscount
     };
 
     // Provide the cart context to its children components

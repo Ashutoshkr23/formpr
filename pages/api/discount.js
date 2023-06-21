@@ -33,32 +33,28 @@ export default async function handler(req, res) {
         //         return res.status(404).json({ error: true, message: 'cardType not found' });
         //     }
         // }
-        // else if (req.method === 'PUT') {
+        else if (req.method === 'PUT') {
 
-        //     const { uuid, designObj } = req.body;
+            const {  discountCode } = req.body;
 
-        //     const designUuid = uuidv4()
-
-        //     const filter = {
-        //         cardTypeUuid: uuid
-        //     }
-        //     const query = {
-        //         $push: {
-        //             designs: {
-        //                 designUuid: designUuid,
-        //                 designName: designObj.name,
-        //                 hexCode: designObj.hexCode,
-        //                 color: designObj.color,
-        //                 gradient: designObj?.gradient,
-        //             }
-        //         }
-        //     }
-        //     const updateData = await cardType.updateOne(filter, query)
-        //     // console.log(updateData, "updateData")
+            if(!discountCode){
+                return res.status(200).json({
+                    error:true,
+                    message:"No discount Code recieved !"
+                })
+            }
+            
+            const discountData = await DiscountSchema.findOne({
+                discountCode:discountCode
+            })
+            if(!discountData){
+                res.status(200).json({error:true,message:"Discount Code Invalid !"})
+            }
+            // console.log(updateData, "updateData")
 
 
-        //     return res.status(201).json({ message: 'CardType updated successfully' });
-        // }
+            return res.status(200).json({error:false,message:"Discount Applied Successfully !",result:discountData ? discountData:[]});
+        }
 
         else {
             return res.status(405).json({ message: 'Method not allowed' });
