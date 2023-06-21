@@ -1,13 +1,17 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useRef, useState , useEffect } from 'react'
+import cities from 'cities-list';
+import Select from 'react-select';
 import Image from 'next/image'
 
 
 function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkChange,
-    onBioChange, onAddressChange, onPhoneNumberChange, profileImg, setProfileImg, bio }) {
+    onBioChange, onAddressChange, onPhoneNumberChange, profileImg, setProfileImg, bio ,contactData ,name ,address , phoneNumber , role , company , companyLink}) {
 
     const handleProfileUpload = (event) => {
         const file = event.target.files[0];
         const imageUrl = URL.createObjectURL(file);
+
+       
 
         // Create a new FormData object
         const formData = new FormData();
@@ -31,7 +35,6 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                 // console.log(error);
             });
     };
-
 
     const maxLength = 80;
 
@@ -78,11 +81,19 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
     };
 
 
+    const indianCities = Object.values(cities)
+        .filter((city) => city.country === 'IN')
+        .map((city) => ({
+            value: city.name,
+            label: city.name,
+        }));
+
+
 
 
     return (
-        <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-[578px] bg-bright-gray px-9 pt-4'>
-            <p className='font-bold text-xs'>REQUIRED DETAILS</p>
+        <div className='flex flex-grow text-white rounded-[10px] drop-shadow-white flex-col h-[578px] bg-black-dim px-9 pt-4'>
+            <p className='font-bold text-white text-xs'>REQUIRED DETAILS</p>
             <div className='flex gap-8 mt-9'>
                 <div className='flex flex-col w-full space-y-5'>
                     <div>
@@ -103,30 +114,39 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     </div>
                     <div className='flex flex-col'>
                         <label for="Company" className='text-xs leading-[186%]'>Company</label>
-                        <input type="text" id="Company" name="Company" className='bg-white h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyChange} />
+                        <input type="text" value={company} id="Company" name="Company" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyChange} />
                     </div>
                     <div className='flex flex-col'>
                         <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number</label>
-                        <input type="text" id="Phone Number" name="Phone Number" className='bg-white h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
+                        <input type="text" value={phoneNumber} id="Phone Number" name="Phone Number" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
                     </div>
                 </div>
                 <div className='flex flex-col w-full space-y-5'>
                     <div className='flex flex-col'>
                         <label for="fullName" className='text-xs leading-[186%]'>Full Name</label>
-                        <input type="text" id="fullName" name="fullName" className='bg-white h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleNameChange} />
+                        <input type="text" id="fullName" name="fullName" value={name} className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleNameChange} />
                     </div>
                     <div className='flex flex-col'>
                         <label for="role" className='text-xs leading-[186%]'>Role</label>
-                        <input type="text" id="role" name="role" className='bg-white h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleRoleChange} />
+                        <input type="text" id="role" value={role} name="role" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleRoleChange} />
                     </div>
                     <div className='flex flex-col'>
                         <label for="Company Link" className='text-xs leading-[186%]'>Company Link</label>
-                        <input type="text" id="Company Link" name="Company Link" className='bg-white h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyLinkChange} />
+                        <input type="text" id="Company Link" value={companyLink} name="Company Link" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyLinkChange} />
                     </div>
                     <div className='flex flex-col'>
-                        <label for="Location" className='text-xs leading-[186%]'>Location</label>
-                        <input type="text" id="Location" name="Location" className='bg-white h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleAddressChange} />
+                        <label htmlFor="Location" className='text-xs leading-[186%]'>Location</label>
+                        <input 
+                           type='text'
+                            id="Location"
+                            name="Location"
+                            value={address}
+                            className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md'
+                            onChange={handleAddressChange}
+                            required
+                        />
                     </div>
+
                 </div>
             </div>
             <div className='flex flex-col mt-5'>
@@ -136,7 +156,8 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                 <textarea
                     id="Bio"
                     name="Bio"
-                    className="bg-white mt-0.5 border px-5 py-2 border-dim-gray rounded-md block w-full resize-none"
+                    value={bio}
+                    className="bg-white text-black mt-0.5 border px-5 py-2 border-dim-gray rounded-md block w-full resize-none"
                     rows={4}
                     required
                     onChange={handleBioChange}

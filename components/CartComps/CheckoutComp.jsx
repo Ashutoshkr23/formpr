@@ -121,7 +121,7 @@ const CheckoutComp = ({
                   return (
                     <div
                       key={data.key}
-                      className="relative grid grid-cols-2 gap-5 bg-white rounded-xl cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926] p-4 h-[250px]"
+                      className="relative grid grid-cols-2 max-[320px]:grid-cols-1 max-[320px]:text-left  gap-5 bg-white rounded-xl cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926] p-4 min-h-[250px] h-full"
                     >
                       {checkLiteOrElevate(data.cardTypeUuid) && (
                         <div className={`card w-[165px] h-[100px]`}>
