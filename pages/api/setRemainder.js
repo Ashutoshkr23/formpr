@@ -1,3 +1,4 @@
+import UserData from '@/models/UserData';
 import { connectToDatabase } from '../../lib/mongoose'
 import setRemainderModel from '../../models/setRemainderModel'
 
@@ -11,10 +12,15 @@ export default async function handler(req, res) {
         // Getting User cardUuid With It's Email From Front-End
         const { cardUuid, userEmail } = req.body;
 
+        // const updateUserProfile = await UserData.find({ puuid: puuid }, { $inc: { totalCards: totalQuantity } })
+        const updateUserProfile = await UserData.findOne({ email: userEmail })
+        const userPUUID = updateUserProfile.puuid;
+
         // Saving User cardUuid With It's Email In MongoDB
         const saveUser = await new setRemainderModel({
             cardUuid: cardUuid,
-            userEmail: userEmail
+            userEmail: userEmail,
+            puuid: userPUUID
         });
 
         console.log(saveUser);

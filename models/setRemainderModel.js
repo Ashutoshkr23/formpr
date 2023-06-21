@@ -5,6 +5,10 @@ const SetRemainderSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
+    puuid: {
+        type: String,
+        default: ''
+    },
     name: {
         type: String,
         default: ''
