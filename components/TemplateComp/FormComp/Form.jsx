@@ -261,15 +261,15 @@ function Form({ cuuid }) {
     return (
         <div className="  ">
             {showProfileComplete && <ProfileCompleted />}
-            <div className='max-w-[1208px] mx-auto relative' >
+            <div className='max-w-[1208px] sm:px-8 md:px-8 lg:px-4 xl:px-0 mx-auto relative' >
                 <ToastContainer />
-                <div className={`pt-10 sm:px-8 md:px-8 lg:px-4 xl:px-0 ${showProfileComplete ? 'bg-opacity-75 backdrop-filter backdrop-blur-sm' : ''}`}>
+                <div className={`pt-10  ${showProfileComplete ? 'bg-opacity-75 backdrop-filter backdrop-blur-sm' : ''}`}>
                     <div className="max-w-[1208px] mb-7 mx-auto flex lg:justify-between justify-center items-center ">
                         <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
                             <div
-                                className={`rounded-lg  font-bold px-10 flex gap-9 flex-grow border-2 border-slate-700 text-black  justify-center items-center `}
+                                className={`rounded-lg  font-bold px-2 lg:px-10 flex gap-4 lg:gap-9 flex-grow border-2 border-slate-700 text-black  justify-center items-center `}
                             >
-                                <p className="text-center w-60 text-[12px] md:text-sm">
+                                <p className="text-center w-52 sm:w-64  text-xs md:text-sm">
                                     DETAILS AND DESIGN
                                 </p>
                                 <div className='h-2 w-full bg-[#DFDFDF]'>
@@ -289,13 +289,8 @@ function Form({ cuuid }) {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-center pt-10 lg:hidden pl-2">
-                    <button className="w-[350px] shadow-xl h-[55px] bg-black text-white rounded-[10px]">
-                        NEXT
-                    </button>
-                </div>
-                <div className='flex gap-5'>
-                    <div className='flex flex-grow flex-col'>
+                <div className='flex flex-col-reverse items-center lg:items-start lg:flex-row gap-5'>
+                    <div className='flex flex-grow flex-col '>
                         <ChooseTemplates
                             selectedTemplate={selectedtemplate}
                             setSelectedTemplate={setSelectedTemplate} />
@@ -353,6 +348,15 @@ function Form({ cuuid }) {
 
                         </div>
                     </div>
+                </div>
+                <div className="lg:hidden  pl-5 mb-10">
+
+                    <button
+                        className="w-full shadow-xl h-[40px] bg-black text-white rounded-[10px]"
+                        onClick={handleClick}
+                    >
+                        SAVE
+                    </button>
                 </div>
             </div>
             <Footer/>
