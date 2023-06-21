@@ -113,7 +113,8 @@ const CardDescription = ({
                                 }}
                               >
                                 <div
-                                  className={`w-full h-full rounded-full bg-[${item.hexCode}]`}
+                                  className={`w-full h-full rounded-full`}
+                                  style={{backgroundColor:item.designUuid == "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ? "#ececec" : item.hexCode}}
                                 ></div>
                               </div>
                             );
