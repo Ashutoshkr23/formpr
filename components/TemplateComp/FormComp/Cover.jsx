@@ -47,11 +47,11 @@ function Cover({ cover, setCover }) {
     const Cover12 = "/assets/images/templateimg/BGCover12.png"
     const Cover13 = "/assets/images/templateimg/BGCover13.png"
     return (
-        <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto bg-black-dim px-9 py-8 my-5'>
+        <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto bg-black-dim px-4 sm:px-9 py-8 my-5'>
             <p className='font-bold text-white text-xs mb-5'>COVER</p>
             <div className='flex flex-wrap gap-5'>
                 <div>
-                    <label htmlFor="fileInput" className="cursor-pointer bg-white  flex flex-col space-y-1 justify-center items-center w-[105px] h-[105px] border border-dim-gray rounded-xl" >
+                    <label htmlFor="fileInput" className="cursor-pointer bg-white  flex flex-col space-y-1 justify-center items-center w-[70px] h-[70px] sm:w-[105px] sm:h-[105px] border border-dim-gray rounded-xl" >
                         <Image src="/assets/images/UploadIcon.png" height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
                         <p className='text-sm'>Upload</p>
                     </label>
@@ -65,38 +65,38 @@ function Cover({ cover, setCover }) {
                     />
                 </div>
 
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover1)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover1.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover1)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover1.png" />
                 </div>
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover2)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover2.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover2)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover2.png" />
                 </div>
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover3)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover3.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover3)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover3.png" />
                 </div>
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover4)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover4.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover4)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover4.png" />
                 </div>
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover5)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover5.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover5)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover5.png" />
                 </div>
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover6)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover6.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover6)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover6.png" />
                 </div>
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover7)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover7.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover7)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover7.png" />
                 </div>
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover8)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover8.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover8)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover8.png" />
                 </div>
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover9)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover9.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover9)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover9.png" />
                 </div>
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover10)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover10.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover10)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover10.png" />
                 </div>
-                <div className='h-[105px] w-[105px]' onClick={() => setCover(Cover11)}>
-                    <Image height={105} width={105} src="/assets/images/templateimg/Cover/Cover11.png" />
+                <div className='relative h-[70px] sm:h-[105px] w-[70px] sm:w-[105px]' onClick={() => setCover(Cover11)}>
+                    <Image fill={true} src="/assets/images/templateimg/Cover/Cover11.png" />
                 </div>
             </div>
 

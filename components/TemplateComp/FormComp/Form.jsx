@@ -261,7 +261,7 @@ function Form({ cuuid }) {
     return (
         <div className="  ">
             {showProfileComplete && <ProfileCompleted />}
-            <div className='max-w-[1208px] sm:px-8 md:px-8 lg:px-4 xl:px-0 mx-auto relative' >
+            <div className='max-w-[1208px] px-2 sm:px-8 md:px-8 lg:px-4 xl:px-0 mx-auto relative' >
                 <ToastContainer />
                 <div className={`pt-10  ${showProfileComplete ? 'bg-opacity-75 backdrop-filter backdrop-blur-sm' : ''}`}>
                     <div className="max-w-[1208px] mb-7 mx-auto flex lg:justify-between justify-center items-center ">
@@ -321,8 +321,8 @@ function Form({ cuuid }) {
                             setVisibleInputs={setVisibleInputs}
                             onToggleInput={handleToggleInput} />
                     </div>
-                    <div className='w-[350px] xl:w-[390px]  flex justify-center relative'>
-                        <div className='sticky top-0 h-[820px] mb-5'>
+                    <div className='w-80 sm:w-[350px]  xl:w-[390px] relative'>
+                        <div className='sticky top-10 sm:h-[820px] mb-5'>
                             {selectedtemplate &&
                                 <Template
                                     gradient1={cover}
@@ -347,9 +347,9 @@ function Form({ cuuid }) {
                                 />}
 
                         </div>
-                    </div>
+                        </div>
                 </div>
-                <div className="lg:hidden  pl-5 mb-10">
+                <div className="lg:hidden  sm:pl-5 mb-10">
 
                     <button
                         className="w-full shadow-xl h-[40px] bg-black text-white rounded-[10px]"

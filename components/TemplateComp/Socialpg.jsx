@@ -10,7 +10,7 @@ const Socialpg = ({
   inputValues
 }) => {
   return (
-    <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] mx-6 ">
+    <div className="grid grid-cols-3 gap-y-3 sm:gap-y-6 tracking-[-0.5px] leading-[17px] sm:gap-x-14  pt-4 sm:pt-8 mx-2 sm:mx-6 ">
       {visibleInputs.includes('whatsapp') && (
       <div className="flex flex-col items-center">
           <Link target="_blank" href={`https://wa.me/${inputValues.whatsapp}`}>
@@ -21,7 +21,7 @@ const Socialpg = ({
             height={60}
           />
         </Link>
-        <p className={`text-[12px] ${text1}  `}>Whatsapp</p>
+        <p className={`text-[10px] sm:text-xs ${text1}  `}>Whatsapp</p>
       </div>
       )}
       {visibleInputs.includes('mail') && (
@@ -34,7 +34,7 @@ const Socialpg = ({
             height={60}
           />
         </Link>
-        <p className={`text-[12px] ${text1} `}>Mail</p>
+        <p className={`text-[10px] sm:text-xs ${text1} `}>Mail</p>
       </div>
       )}
       {visibleInputs.includes('linkedin') && (
@@ -47,7 +47,7 @@ const Socialpg = ({
             height={60}
           />
         </Link>
-        <p className={`text-[12px] ${text1}`}>LinkedIn</p>
+        <p className={`text-[10px] sm:text-xs ${text1}`}>LinkedIn</p>
       </div>
       )}
       {visibleInputs.includes('instagram') && (
@@ -60,7 +60,7 @@ const Socialpg = ({
             height={60}
           />
         </Link>
-        <p className={`text-[12px] ${text1}`}>Instagram</p>
+        <p className={`text-[10px] sm:text-xs ${text1}`}>Instagram</p>
       </div>
       )}
       {visibleInputs.includes('facebook') && (
@@ -73,7 +73,7 @@ const Socialpg = ({
             height={60}
           />
         </Link>
-        <p className={`text-[12px] ${text1}`}>Facebook</p>
+        <p className={`text-[10px] sm:text-xs ${text1}`}>Facebook</p>
       </div>
       )}
       {visibleInputs.includes('youtube') && (
@@ -86,7 +86,7 @@ const Socialpg = ({
             height={60}
           />
         </Link>
-        <p className={`text-[12px] ${text1}`}>Youtube</p>
+        <p className={`text-[10px] sm:text-xs ${text1}`}>Youtube</p>
       </div>
       )}
       {visibleInputs.includes('twitter') && (
@@ -99,7 +99,7 @@ const Socialpg = ({
             height={60}
           />
         </Link>
-        <p className={`text-[12px] ${text1}`}>Twitter</p>
+        <p className={`text-[10px] sm:text-xs ${text1}`}>Twitter</p>
       </div>
       )}
       {visibleInputs.includes('reddit') && (
@@ -112,7 +112,7 @@ const Socialpg = ({
             height={60}
           />
         </Link>
-        <p className={`text-[12px] ${text1}`}>Reddit</p>
+        <p className={`text-[10px] sm:text-xs ${text1}`}>Reddit</p>
       </div>
       )}
       {visibleInputs.includes('behance') && (
@@ -125,7 +125,7 @@ const Socialpg = ({
             height={60}
           />
         </Link>
-        <p className={`text-[12px] ${text1}`}>Behance</p>
+        <p className={`text-[10px] sm:text-xs ${text1}`}>Behance</p>
       </div>
       )}
       {/*
