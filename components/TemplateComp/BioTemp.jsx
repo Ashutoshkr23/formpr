@@ -24,7 +24,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
                         height={20}
                     />
 
-                    <p className="text-[8px] ml-1.5 tracking-[-0.5px] text-[#7D9695]  ">
+                    <p className="text-[10px] ml-1.5 tracking-[-0.5px] text-[#7D9695]  ">
                         {company ? company : "Lorem Ipsum"}
                     </p>
                 </div>
