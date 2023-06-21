@@ -54,29 +54,26 @@ const CheckoutComp = ({
       "d886fa29-1622-4a08-ade2-f58fca1237d9",
       "44d97f3f-1393-48a3-95e2-2d4866a3a589",
       "7d223de6-dc2d-4caa-b111-63d5a4e219fa",
-      "ef574738-8969-4e8a-a17e-51b8bc6e2eae"
-
-    ]
+      "ef574738-8969-4e8a-a17e-51b8bc6e2eae",
+    ];
     if (tempArr.includes(uuid)) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
-  }
+  };
 
   const checkLiteOrElevate = (uuid) => {
     let tempArr = [
       "3fa766b5-9f66-4a38-8471-23026a59d84d",
       "801baf78-ce33-446f-b132-618f92ccfc5f",
-
-
-    ]
+    ];
     if (tempArr.includes(uuid)) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
-  }
+  };
 
   const checkShippingValidation = () => {
     let error = false;
@@ -112,16 +109,13 @@ const CheckoutComp = ({
     }
   };
 
-
-
-
   // console.log(cardsArray);
   return (
-    <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center px-4 xl:px-0">
+    <div className="max-w-[1208px] mx-auto flex lg:flex-row flex-col lg:justify-between justify-center px-4 xl:px-0 pb-10">
       {!shippingState ? (
         <div className=" lg:w-8/12  flex  flex-wrap space-x-2  lg:justify-between   ">
           <div className="container mx-auto mb-5  ">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-4">
               {cardsArray.length &&
                 cardsArray.map((data) => {
                   return (
@@ -130,29 +124,29 @@ const CheckoutComp = ({
                       className="relative grid grid-cols-2 gap-5 bg-white rounded-xl cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926] p-4 h-[250px]"
                     >
                       {checkLiteOrElevate(data.cardTypeUuid) && (
-                        <div className={`card w-[170px] h-[105px]`}>
-                          <div className="card-inner lg:w-[170px] lg:h-[105px] w-[300px] h-[172px]">
-                            <div className="card-front lg:w-[170px] lg:h-[105px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                        <div className={`card w-[165px] h-[100px]`}>
+                          <div className="card-inner h-[100px] w-[165px]">
+                            <div className=" card-front h-[100px] w-[165px] drop-shadow-white rounded-2xl relative  ">
                               <img
                                 src={`/assets/images/cards/Front/${data.designUuid}.png`}
-                                className="w-[170px] h-[105px]"
+                                className=" h-[100px] w-[165px]"
                               />
                               {data.companyLogo && data.companyLogo.length ? (
-                                <div className="absolute flex items-center lg:right-2 lg:bottom-2  lg:h-auto  lg:w-auto max-h-[45px] max-w-[45px]  object-contain">
+                                <div className="absolute flex items-center right-2 bottom-3  lg:h-auto  lg:w-auto max-h-[45px] max-w-[45px]  object-contain">
                                   <img
                                     src={data.companyLogo}
-                                    className=" object-contain w-full h-full"
+                                    className=" object-contain w-[30px] h-[25px]"
                                   />
                                 </div>
                               ) : (
                                 ""
                               )}
                               {checkFontArray(data.designUuid) ? (
-                                <div className="absolute text-[10px] text-white lg:bottom-5 lg:left-4 bottom-7 left-5">
+                                <div className="absolute text-[10px] text-white lg:bottom-5 lg:left-4 bottom-4 left-5">
                                   {data.fullName ? data.fullName : "John Doe"}
                                 </div>
                               ) : (
-                                <div className="absolute text-[10px] text-black font-semibold lg:bottom-5 lg:left-4 bottom-7 left-5">
+                                <div className="absolute text-[10px] text-black font-semibold lg:bottom-5 lg:left-4 bottom-4 left-5">
                                   {data.fullName ? data.fullName : "John Doe"}
                                 </div>
                               )}
@@ -210,7 +204,7 @@ const CheckoutComp = ({
                           X
                         </p>
                       </div>
-                      <div className="px-1 py-2">
+                      <div className="px-1 py-2 pl-6">
                         <p className="text-sm font-bold leading-7">
                           {data.cardTypeName}
                         </p>
@@ -229,11 +223,11 @@ const CheckoutComp = ({
                       </div>
                       <div>
                         {checkLiteOrElevate(data.cardTypeUuid) && (
-                          <div>
+                          <div className="h-[100px] w-[165px]">
                             <Image
                               src={`/assets/images/cards/Back/${data.designUuid}.png`}
-                              height={250}
-                              width={300}
+                              height={105}
+                              width={170}
                               alt="demo"
                               quality={100}
                             />
@@ -250,10 +244,10 @@ const CheckoutComp = ({
                               }}
                             >
                               {data.companyLogo && data.companyLogo.length ? (
-                                <div className="absolute flex  left-7 bottom-4 justify-srat items-center h-[70px] w-[110px] object-cover">
+                                <div className="absolute flex   left-7 bottom-4 justify-center items-center h-[70px] w-[110px] object-cover">
                                   <img
                                     src={data.companyLogo}
-                                    className=" object-fill w-full h-[70px] "
+                                    className=" object-fill w-[50px] h-[50px] "
                                   />
                                 </div>
                               ) : (
@@ -266,7 +260,7 @@ const CheckoutComp = ({
                         )}
                       </div>
                       <div className="flex ">
-                        <div>
+                        <div className="pl-6">
                           <p className="text-xs mb-3 font-medium">
                             Full Name <br />
                             <span className="font-semibold text-sm">
@@ -296,8 +290,8 @@ const CheckoutComp = ({
           />
         </>
       )}
-      <div className="hidden lg:block  pl-2">
-        <div className="w-full   xl:w-[385px] shadow-xl min-h-[510px] bg-white rounded-xl py-8">
+      <div className="  pl-2 pr-0 lg:pr-4 xl:pr-0">
+        <div className="w-full lg:w-[330px]   xl:w-[385px] shadow-xl min-h-[510px] bg-white rounded-xl py-8">
           <p className="text-2xl font-bold text-center">Order Summary</p>
           <div className="px-10 mt-16 space-y-2">
             <div className="flex justify-between items-center">
@@ -323,7 +317,7 @@ const CheckoutComp = ({
           <div className="mx-5 mt-16">
             <div className="flex items-center justify-between w-full h-10 px-5 border rounded-lg border-black">
               <p className="text-base font-bold text-center">Total</p>
-              <p className="w-40 text-base font-bold leading-10 text-right">
+              <p className="w-40 text-base  font-bold leading-10 text-right">
                 ₹ {totalAmount}
               </p>
             </div>
@@ -333,8 +327,13 @@ const CheckoutComp = ({
               className="w-full h-10 px-5 bg-black border rounded-lg border-black cursor-pointer text-base font-bold text-center text-white "
               onClick={handleClick}
             >
-              {rupayLoader ? <BeatLoader color="#FFFFFF" size={12} /> : shippingState ? "CHECKOUT" : "GO TO SHIPPING"}
-
+              {rupayLoader ? (
+                <BeatLoader color="#FFFFFF" size={12} />
+              ) : shippingState ? (
+                `CHECKOUT  (₹ ${totalAmount})`
+              ) : (
+                "GO TO SHIPPING"
+              )}
             </button>
           </div>
           <p className="mx-5 text-sm font-medium text-red-400">
