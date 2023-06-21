@@ -16,7 +16,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
           <Image height={255} width={118} src="/assets/images/templateimg/template/Template-3.png" />
         </div>
         <div className='h-[255px] w-[118px]' onClick={() => setSelectedTemplate('2')}>
-          <Image height={255} width={118} src="/assets/images/templateimg/template/Template-4.png" />
+          <Image height={255} width={118} src="/assets/images/templateimg/template/Template-5.png" />
         </div>
       </div>
     </div>
