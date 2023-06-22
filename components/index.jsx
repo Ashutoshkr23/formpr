@@ -19,5 +19,3 @@ export { default as CartNav } from "../components/CartComps/CartNav";
 export { default as DesignComp } from "../components/CartComps/DesignComp";
 export { default as DetailsComp } from "../components/CartComps/DetailsComp";
 export { default as DetailsInput } from "../components/CartComps/DetailsInput";
-export {default as CartComp} from "../components/cart/CartComp"
-export { default as Item } from "../components/cart/Item"

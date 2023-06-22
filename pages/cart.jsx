@@ -7,8 +7,6 @@ export default function Cart() {
     <>
       <div className="w-full min-h-screen py-5">
         <CartNav />
-
-        {/* <CartComp /> */}
         <CartComponent />
       </div>
     </>
