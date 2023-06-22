@@ -92,9 +92,9 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
 
 
     return (
-        <div className='flex flex-grow text-white rounded-[10px] drop-shadow-white flex-col h-[578px] bg-black-dim px-9 pt-4'>
+        <div className='flex flex-grow text-white rounded-[10px] drop-shadow-white flex-col h-auto pb-5  md:h-[578px] bg-black-dim px-4 md:px-9 pt-4 mb-4'>
             <p className='font-bold text-white text-xs'>REQUIRED DETAILS</p>
-            <div className='flex gap-8 mt-9'>
+            <div className='flex flex-col md:flex-row gap-8 mt-9'>
                 <div className='flex flex-col w-full space-y-5'>
                     <div>
                         <p className='text-xs leading-[186%]'>Profile Photo</p>
@@ -112,14 +112,16 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                         />
 
                     </div>
-                    <div className='flex flex-col'>
-                        <label for="Company" className='text-xs leading-[186%]'>Company</label>
-                        <input type="text" value={company} id="Company" name="Company" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyChange} />
-                    </div>
-                    <div className='flex flex-col'>
-                        <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number</label>
-                        <input type="text" value={phoneNumber} id="Phone Number" name="Phone Number" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
-                    </div>
+                    <div className='hidden md:block'>
+                        <div className='flex flex-col'>
+                            <label for="Company" className='text-xs leading-[186%]'>Company</label>
+                            <input type="text" value={company} id="Company" name="Company" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyChange} />
+                        </div>
+                        <div className='flex flex-col'>
+                            <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number</label>
+                            <input type="text" value={phoneNumber} id="Phone Number" name="Phone Number" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
+                        </div>
+                    </div>            
                 </div>
                 <div className='flex flex-col w-full space-y-5'>
                     <div className='flex flex-col'>
@@ -145,6 +147,16 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                             onChange={handleAddressChange}
                             required
                         />
+                    </div>
+                    <div className='md:hidden'>
+                        <div className='flex flex-col'>
+                            <label for="Company" className='text-xs leading-[186%]'>Company</label>
+                            <input type="text" value={company} id="Company" name="Company" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyChange} />
+                        </div>
+                        <div className='flex flex-col'>
+                            <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number</label>
+                            <input type="text" value={phoneNumber} id="Phone Number" name="Phone Number" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
+                        </div>
                     </div>
 
                 </div>

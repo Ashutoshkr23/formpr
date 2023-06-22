@@ -22,17 +22,17 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
 
   
   return (
-      <div className='flex  flex-grow rounded-[10px] drop-shadow-white flex-col h-[600px] bg-black-dim px-9 pt-4 my-5'>
+      <div className='flex  flex-grow rounded-[10px] drop-shadow-white flex-col h-[600px] bg-black-dim px-4 sm:px-9 pt-4 my-5'>
         <p className='font-bold text-white text-xs'>Social Links</p>
       <div>
         <div className=''>
           {visibleInputs.includes('whatsapp') && (
-          <div className='flex items-center mt-7 gap-2'>
-            <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Whatsapp</div>
+          <div className='flex items-center mt-7 gap-2 flex-wrap'>
+            <div className='h-8 sm:h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Whatsapp</div>
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/watsp.png" height={30} width={30} />
             </div>
-              <input type="text" id="" name="whatsapp" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md' 
+              <input type="text" id="" name="whatsapp" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md' 
               value={inputValues.whatsapp}
               onChange={handleInputChange}
 />
@@ -42,12 +42,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
           </div>
           )}
           {visibleInputs.includes('mail') && (
-          <div className='flex items-center mt-7 gap-2'>
-            <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Mail</div>
+          <div className='flex items-center mt-7 gap-2 flex-wrap'>
+            <div className='h-8 sm:h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Mail</div>
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/email.png" height={30} width={30} />
             </div>
-            <input type="text" id="mail" name="mail" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
+            <input type="text" id="mail" name="mail" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
             value={inputValues.mail}
               onChange={handleInputChange}/>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('mail')}>
@@ -56,12 +56,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
           </div>
           )}
           {visibleInputs.includes('linkedin') && (
-          <div className='flex items-center mt-7 gap-2'>
-            <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>LinkedIn </div>
+          <div className='flex items-center mt-7 gap-2 flex-wrap'>
+            <div className='h-8 sm:h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>LinkedIn </div>
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/linked.png" height={30} width={30} />
             </div>
-            <input type="text" id="linkedIn" name="linkedin" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
+            <input type="text" id="linkedIn" name="linkedin" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
                 value={inputValues.linkedin}
               onChange={handleInputChange}/>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('linkedin')}>
@@ -69,12 +69,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             </div>
           </div>)}
           {visibleInputs.includes('instagram') && (
-          <div className='flex items-center mt-7 gap-2'>
-            <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>InstaGram</div>
+          <div className='flex items-center mt-7 gap-2 flex-wrap'>
+            <div className='h-8 sm:h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>InstaGram</div>
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/insta.png" height={30} width={30} />
             </div>
-            <input type="text" id="Insta" name="instagram" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
+            <input type="text" id="Insta" name="instagram" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
             value={inputValues.instagram}
               onChange={handleInputChange}/>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('instagram')}>
@@ -83,12 +83,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
           </div>
           )}
           {visibleInputs.includes('facebook') && (
-          <div className='flex items-center mt-7 gap-2'>
-            <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Facebook</div>
+          <div className='flex items-center mt-7 gap-2 flex-wrap'>
+            <div className='h-8 sm:h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Facebook</div>
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/facebook.png" height={30} width={30} />
             </div>
-            <input type="text" id="facebook" name="facebook" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
+            <input type="text" id="facebook" name="facebook" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
             value={inputValues.facebook}
               onChange={handleInputChange}/>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('facebook')}>
@@ -97,12 +97,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
           </div>
           )}
           {visibleInputs.includes('youtube') && (
-          <div className='flex items-center mt-7 gap-2'>
-            <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Youtube</div>
+          <div className='flex items-center mt-7 gap-2 flex-wrap'>
+            <div className='h-8 sm:h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Youtube</div>
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/Youtube.png" height={30} width={30} />
             </div>
-            <input type="text" id="youtube" name="youtube" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
+            <input type="text" id="youtube" name="youtube" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
             value={inputValues.youtube}
               onChange={handleInputChange}/>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('youtube')}>
@@ -111,12 +111,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
           </div>
           )}
           {visibleInputs.includes('twitter') && (
-          <div className='flex items-center mt-7 gap-2'>
-            <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Twitter</div>
+          <div className='flex items-center mt-7 gap-2 flex-wrap'>
+            <div className='h-8 sm:h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Twitter</div>
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/Twitter.png" height={30} width={30} />
             </div>
-            <input type="text" id="Twitter" name="twitter" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
+            <input type="text" id="Twitter" name="twitter" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
             value={inputValues.twitter}
               onChange={handleInputChange}/>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('twitter')}>
@@ -125,12 +125,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
           </div>
           )}
           {visibleInputs.includes('reddit') && (
-          <div className='flex items-center mt-7 gap-2'>
-            <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Reddit</div>
+          <div className='flex items-center mt-7 gap-2 flex-wrap'>
+            <div className='h-8 sm:h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Reddit</div>
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/Reddit.png" height={30} width={30} />
             </div>
-            <input type="text" id="Reddit" name="reddit" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
+            <input type="text" id="Reddit" name="reddit" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
             value={inputValues.reddit}
               onChange={handleInputChange}/>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('reddit')}>
@@ -139,12 +139,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
           </div>
           )}
           {visibleInputs.includes('behance') && (
-            <div className='flex items-center mt-7 gap-2'>
-              <div className='h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Behance</div>
+            <div className='flex items-center mt-7 gap-2 flex-wrap'>
+              <div className='h-8 sm:h-10 w-28 text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Behance</div>
               <div className='h-[30px] w-[30px]'>
                 <Image src="/assets/images/social/folder1/Behance.png" height={30} width={30} />
               </div>
-              <input type="text" id="Behance" name="behance" className='bg-white h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
+              <input type="text" id="Behance" name="behance" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
               value={inputValues.behance}
               onChange={handleInputChange}/>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('behance')}>
@@ -153,7 +153,7 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             </div>
           )}
           <div className='mt-12 relative w-20 - '>
-          <div className=' h-10 w-28  text-xs bg-white border-1 flex justify-center items-center rounded-md' onClick={handleButtonClick}>Add Link</div>
+          <div className=' h-8 sm:h-10 w-28  text-xs bg-white border-1 flex justify-center items-center rounded-md' onClick={handleButtonClick}>Add Link</div>
             {showMenu && (
             <div className='absolute flex flex-col bg-white w-40 -right-48 -top-10 px-4 space-y-4 py-4 border rounded-md'>
               {!visibleInputs.includes('whatsapp') && (

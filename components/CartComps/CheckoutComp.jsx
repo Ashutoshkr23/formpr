@@ -19,6 +19,8 @@ const CheckoutComp = ({
   setCheckColor,
   checkLiteColor,
   rupayLoader,
+  
+ 
 }) => {
   // console.log(`colorlite=${colorLite}`);
   // console.log(`colorelevate=${colorElevate}`);
@@ -29,6 +31,10 @@ const CheckoutComp = ({
     totalAmount,
     address,
     setAddress,
+    handleDiscount,
+    discountCode,
+    setDiscountCode,
+    finalPrice
   } = useContext(CartContext);
 
   const [shippingState, setShippingState] = useState(false);
@@ -314,11 +320,17 @@ const CheckoutComp = ({
               </p>
             </div>
           </div>
-          <div className="mx-5 mt-16">
+          <div className="mx-5 mt-14">
+
+          <div className="flex items-center justify-between w-full my-5 space-x-2">
+               <input className="h-10 px-4 border outline-none rounded-[10px] placeholder:text-black" name="discount" type="text" placeholder="Discount code" value={discountCode} onChange={(e)=>setDiscountCode(e.target.value)} />
+               <button className="h-10 rounded-[10px] bg-black border border-black w-full text-white" onClick={()=>handleDiscount()} >APPLY</button>
+            </div>
+
             <div className="flex items-center justify-between w-full h-10 px-5 border rounded-lg border-black">
               <p className="text-base font-bold text-center">Total</p>
               <p className="w-40 text-base  font-bold leading-10 text-right">
-                ₹ {totalAmount}
+                ₹ {finalPrice.toFixed(2)}
               </p>
             </div>
           </div>
@@ -330,7 +342,7 @@ const CheckoutComp = ({
               {rupayLoader ? (
                 <BeatLoader color="#FFFFFF" size={12} />
               ) : shippingState ? (
-                `CHECKOUT  (₹ ${totalAmount})`
+                `CHECKOUT  (₹ ${finalPrice.toFixed(2)})`
               ) : (
                 "GO TO SHIPPING"
               )}

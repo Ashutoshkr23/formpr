@@ -23,6 +23,7 @@ const CartComponent = () => {
     address,
     clearCart,
     setAllCards,
+    discountCode
   } = useContext(CartContext);
   const [cardTypeSelected, setCardTypeSelected] = useState(cartItems[0]);
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
@@ -46,6 +47,7 @@ const CartComponent = () => {
   const [cardBg, setCardBg] = useState("#000000");
   const [cardDesign, setCardDesign] = useState(" ");
   const [loopColor, setLoopColor] = useState(" ");
+  
 
   // console.log(cardBg);
   const router = useRouter();
@@ -126,6 +128,7 @@ const CartComponent = () => {
       razorpay_signature: razorData.razorpay_signature,
       razorpay_order_id: razorData.razorpay_order_id,
       address: address,
+      discountCode,discountCode,
     };
     localStorage.setItem("addressData", JSON.stringify(address));
     // console.log(postData, "postData");
@@ -201,6 +204,8 @@ const CartComponent = () => {
       document.body.appendChild(script);
     });
   };
+
+  
 
   if (!cartItems.length > 0) {
     return <>Loading...</>;
@@ -342,6 +347,7 @@ const CartComponent = () => {
             setCheckLiteColor={setCheckLiteColor}
             checkLiteColor={checkLiteColor}
             rupayLoader={rupayLoader}
+            
           />
         )}
       </div>
