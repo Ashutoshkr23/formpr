@@ -319,7 +319,7 @@ const CheckoutComp = ({
             </div>
           </div>
           <div className="mx-5 mt-14">
-            <div className="flex md:flex-row flex-col items-center justify-between w-full my-5 md:space-x-2 space-y-4">
+            <div className="flex md:flex-row flex-col items-center justify-between w-full my-5 md:space-x-2 space-y-4 md:space-y-0">
               <input
                 className="h-10 w-full px-4 border outline-none rounded-[10px] placeholder:text-black"
                 name="discount"
