@@ -11,12 +11,6 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
     const router = useRouter()
     const [totalQuantity, setTotalQuantity] = useState(0);
 
-    // function handleBuyNow (){
-   
-    //     router.push("/login")
-    // }
-    // console.log(session,"Session")
-
   useEffect(() => {
     if (cartItems.length > 0) {
       let totalQuantity = 0;
@@ -57,7 +51,7 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
       onClick={() => {
         handleRedirect();
       }}
-      className="flex flex-col lg:hover:scale-105 "
+      className="flex flex-col lg:hover:scale-105 cursor-pointer"
     >
       <div className=" relative z-20 ml-3 -mb-5  w-[116px] h-9 rounded-lg bg-black pt-2">
         <p className="text-center  font-semibold text-xs text-white">
