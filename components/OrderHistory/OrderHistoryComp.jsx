@@ -19,8 +19,6 @@ const OrderHistoryComp = ({ orderHistory }) => {
         >
           <div className="pl-8"> ORDER NUMBER</div>
           <div className="">ORDER DATE</div>
-          <div className="">CARD TYPE</div>
-          <div className="">QUANTITY</div>
           <div className="">TOTAL QUANTITY</div>
           <div className="">TOTAL PRICE</div>
         </div>
@@ -42,14 +40,7 @@ const OrderHistoryComp = ({ orderHistory }) => {
                 <div className="text-center text-black text-[14px] font-bold uppercase leading-10">
                   {formatedDate}
                 </div>
-                <div className="text-center text-black text-[14px] font-bold uppercase">
-                  Lite
-                  <br />
-                  Elevate
-                </div>
-                <div className="text-center text-black text-[14px] font-bold uppercase">
-                  3<br />1
-                </div>
+                
                 <div className="text-center text-black text-[14px] font-bold uppercase">
                   {row.numberOfCards}
                 </div>

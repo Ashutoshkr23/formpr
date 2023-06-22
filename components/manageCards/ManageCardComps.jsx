@@ -31,11 +31,11 @@ const ManageCardComps = () => {
   // console.log(allCards)
   return (
     <div className="w-full h-full px-36 py-4">
-      <h3 className="text-4xl font-bold  text-black mt-8">Manage Cards</h3>
+      <h3 className="text-4xl font-bold  text-black mt-8 text-center xl:text-left">Manage Cards</h3>
 
       {allCards?.length > 0 ?
         (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
+          <div className="grid grid-cols-1  min-[1411px]:grid-cols-2 gap-12 mt-10">
             {allCards.map((card) => {
               let fontCode = card?.fontCode?.toLowerCase()
               let blackFont = false;
@@ -44,9 +44,9 @@ const ManageCardComps = () => {
               }
 
               return (
-                <Link href={`/createCard/${card.cuuid}`} key={card.cuuid}>
+                <Link href={`/createCard/${card.cuuid}`} key={card.cuuid} className=' flex place-content-center min-[1411px]:block'>
                   <div
-                    className="w-[566px] relative h-44 rounded-[10px] px-4 bg-white flex justify-evenly"
+                    className="w-[566px] relative h-44 rounded-[10px] px-4 bg-white flex justify-evenly "
                     style={{ boxShadow: "0px 10px 15px 0 rgba(0,25,38,0.25)" }}
                   >
                     <div className="flex justify-center items-center h-full">
