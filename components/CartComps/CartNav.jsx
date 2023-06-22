@@ -59,7 +59,7 @@ const CartNav = () => {
           </div>
           <div className="flex gap-10 items-center">
             <Link href={"/profile"}>
-              <div className="relative">
+              <div className="relative ">
                 <Image
                   src={"/assets/images/profileIcon.png"}
                   alt="loop"
@@ -102,25 +102,15 @@ const CartNav = () => {
                 height={22}
               />
             </a>
-            <div className="flex gap-4">
+            <div className="flex gap-10">
               <div className="relative flex">
-                <Link href={"/profile"}>
-                  <div className="relative">
-                    <Image
-                      src={"/assets/images/profileIcon.png"}
-                      alt="loop"
-                      width={30}
-                      height={30}
-                    />
-                  </div>
-                </Link>
                 <Image
                   src={"/assets/images/cart-images/CartImage.png"}
                   alt="loop"
                   width={25}
                   height={25}
                 />
-                <span className="absolute rounded-full border w-5 text-center  h-5 top-[-10px] right-[-10px] font-medium text-black text-md">
+                <span className="absolute rounded-full border w-5 text-center  h-5 top-[-15px] right-[-10px] font-medium text-black text-md">
                   {totalQuantity}
                 </span>
               </div>
@@ -131,16 +121,19 @@ const CartNav = () => {
               >
                 <div className={`{} h-3.5 w-5 ${isOpen ? "fixed" : ""}`}>
                   <div
-                    className={` h-0.5 bg-black w-5 origin-top-left ease-in duration-200 rounded-md ${isOpen ? "rotate-45 translate-x-px" : "rotate-0"
-                      }`}
+                    className={` h-0.5 bg-black w-5 origin-top-left ease-in duration-200 rounded-md ${
+                      isOpen ? "rotate-45 translate-x-px" : "rotate-0"
+                    }`}
                   />
                   <div
-                    className={` h-0.5 w-5 bg-black ease-in duration-200 rounded-md mt-1 ${isOpen ? "hidden" : "block"
-                      }`}
+                    className={` h-0.5 w-5 bg-black ease-in duration-200 rounded-md mt-1 ${
+                      isOpen ? "hidden" : "block"
+                    }`}
                   />
                   <div
-                    className={` h-0.5 w-5 bg-black ease-in duration-200  rounded-md mt-1  ${isOpen ? "-rotate-45 -translate-x-0.5 " : "rotate-0 "
-                      }`}
+                    className={` h-0.5 w-5 bg-black ease-in duration-200  rounded-md mt-1  ${
+                      isOpen ? "-rotate-45 -translate-x-0.5 " : "rotate-0 "
+                    }`}
                   />
                 </div>
               </button>
@@ -156,7 +149,7 @@ const CartNav = () => {
                   >
                     <div className=" w-full h-full bg-white">
                       <div className="flex flex-col h-full  content-between">
-                        <div className="flex flex-col mx-auto mt-20 text-center font-oswald tracking-light w-10/12 z-20">
+                        <div className="flex flex-col mx-auto mt-20 justify-center items-center text-center font-oswald tracking-light w-10/12 z-20">
                           <div
                             onClick={() => setIsOpen(!isOpen)}
                             className="nav-link-container  py-2  border-b-2 border-white "
@@ -174,10 +167,22 @@ const CartNav = () => {
                             </a>
                           </div>
 
+                          <div className="mb-7">
+                            <Link href={"/profile"}>
+                              {/* <Image
+                                src={"/assets/images/profileIcon.png"}
+                                alt="loop"
+                                width={30}
+                                height={30}
+                              /> */}
+                              Profile
+                            </Link>
+                          </div>
+
                           <div>
                             <button
                               onClick={handleSignOut}
-                              className="w-[140px] h-10 bg-black text-white text-sm mr-4 my-auto font-bold rounded-[10px] text-center"
+                              className="w-[140px] h-10 bg-black text-white text-sm  my-auto font-bold rounded-[10px] text-center"
                             >
                               LOG OUT
                             </button>
