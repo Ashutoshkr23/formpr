@@ -25,7 +25,7 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
         </p>
         <div className="flex md:flex-row flex-col gap-4 md:gap-0 w-full justify-between items-center mt-6">
           <div className="w-full ">
-            <div className="w-full flex flex-col pr-4">
+            <div className=" lg:w-full flex flex-col md:pr-4 pr-0">
               <label className="text-sm pb-1 text-white">Email</label>
               <input
                 type="email"
@@ -58,7 +58,7 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
           SHIPPING ADDRESS
         </p>
         <div className="flex md:flex-row gap-2 md:gap-0 flex-col w-full justify-between items-center mt-8">
-          <div className="w-full flex flex-col pr-4">
+          <div className="w-full flex flex-col md:pr-4 pr-0">
             <label className="text-sm pb-1 text-white">First name</label>
             <input
               type="text"
@@ -97,7 +97,7 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
           </div>
         </div>
         <div className="flex md:flex-row flex-col gap-4 md:gap-0 w-full justify-between items-center mt-5">
-          <div className="w-full flex flex-col pr-4">
+          <div className="w-full flex flex-col md:pr-4 pr-0">
             <label className="text-sm pb-1 text-white">PIN code</label>
             <input
               type="text"
@@ -112,7 +112,7 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
               }}
             />
           </div>
-          <div className="w-full flex flex-col pr-4">
+          <div className="w-full flex flex-col md:pr-4 pr-0">
             <label className="text-sm pb-1 text-white">City</label>
             <input
               type="text"
