@@ -154,17 +154,17 @@ const CartNav = () => {
                             onClick={() => setIsOpen(!isOpen)}
                             className="nav-link-container  py-2  border-b-2 border-white "
                           >
-                            <a href="/manageCards" className="nav-link ">
+                            <Link href="/manageCards" className="nav-link ">
                               Manage cards
-                            </a>
+                            </Link>
                           </div>
                           <div
                             onClick={() => setIsOpen(!isOpen)}
                             className="nav-link-container py-4  border-b-2 border-white"
                           >
-                            <a href="/order-history" className="nav-link ">
+                            <Link href="/order-history" className="nav-link ">
                               Order history
-                            </a>
+                            </Link>
                           </div>
 
                           <div className="mb-5">
