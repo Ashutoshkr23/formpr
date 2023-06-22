@@ -18,19 +18,7 @@ const Socialpg = ({
   
   return (
     <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] mx-6 ">
-      {whatsappNumber && (
-        <div className="flex flex-col items-center">
-          <Link target="_blank" href={`https://wa.me/${whatsappNumber}`}>
-            <Image
-              src={`/assets/images/social/${type}/watsp.png`}
-              alt="WhatsApp Logo"
-              width={60}
-              height={60}
-            />
-          </Link>
-          <p className={`text-[12px] ${text1}  `}>Whatsapp</p>
-        </div>
-      )}
+      
       {mail && (
         <div className="flex flex-col  items-center">
           <Link target="_blank" href={`mailto:${mail}`}>
@@ -42,6 +30,19 @@ const Socialpg = ({
             />
           </Link>
           <p className={`text-[12px] ${text1} `}>Mail</p>
+        </div>
+      )}
+      {whatsappNumber && (
+        <div className="flex flex-col items-center">
+          <Link target="_blank" href={`https://wa.me/${whatsappNumber}`}>
+            <Image
+              src={`/assets/images/social/${type}/watsp.png`}
+              alt="WhatsApp Logo"
+              width={60}
+              height={60}
+            />
+          </Link>
+          <p className={`text-[12px] ${text1}  `}>Whatsapp</p>
         </div>
       )}
       {linkedin && (

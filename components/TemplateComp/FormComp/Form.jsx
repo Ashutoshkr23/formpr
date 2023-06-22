@@ -29,6 +29,7 @@ function Form({ cuuid }) {
     const [companyLink, setCompanyLink] = useState('');
     const [address, setAddress] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [errorMessage , setErrorMessage] = useState('');
 
 
     const [inputValues, setInputValues] = useState({
@@ -173,9 +174,60 @@ function Form({ cuuid }) {
         setPhoneNumber(value);
     };
 
+
+
+
+
+    useEffect(() => {
+        const calculateProgress = () => {
+            let progress = 0;
+            const emptyFields = [];
+
+            // Check selectedtemplate, cover, profileImg, and bio
+            if (selectedtemplate) progress += 10;
+            else emptyFields.push('selectedtemplate');
+            if (cover) progress += 10;
+            else emptyFields.push('cover');
+            if (profileImg) progress += 10;
+            else emptyFields.push('profileImg');
+            if (bio) progress += 10;
+            else emptyFields.push('bio');
+
+            // Check name, role, company, companyLink, address, and phoneNumber
+            if (name) progress += 5;
+            else emptyFields.push('name');
+            if (role) progress += 5;
+            else emptyFields.push('role');
+            if (company) progress += 5;
+            else emptyFields.push('company');
+            if (companyLink) progress += 5;
+            else emptyFields.push('companyLink');
+            if (address) progress += 5;
+            else emptyFields.push('address');
+            if (phoneNumber) progress += 5;
+            else emptyFields.push('phoneNumber');
+            if (inputValues.mail) progress += 30;
+            else emptyFields.push('mail');
+
+            return { progress, emptyFields };
+        };
+
+        const { progress, emptyFields } = calculateProgress();
+        setProgress(progress);
+
+        if (emptyFields.length > 0) {
+            // Display toast message or perform other actions
+            const message = `Please fill in the following details: ${emptyFields.join(', ')}`;
+            setErrorMessage(message)
+            // Display the message using a toast library or any other method
+            console.log(message);
+        }
+    }, [selectedtemplate, cover, profileImg, bio, name, role, company, companyLink, address, phoneNumber, inputValues]);
+
+
     const handleClick = async () => {
         if (progress !== 100) {
-            toast.error('Please fill all details.'); // Display error toast message
+            toast.error(errorMessage); // Display error toast message
             return;
         }
         try {
@@ -221,34 +273,6 @@ function Form({ cuuid }) {
 
 
 
-    useEffect(() => {
-        const calculateProgress = () => {
-            let progress = 0;
-
-            // Check selectedtemplate, cover, profileImg, and bio
-            if (selectedtemplate) progress += 10;
-            if (cover) progress += 10;
-            if (profileImg) progress += 10;
-            if (bio) progress += 10;
-
-            // Check name, role, company, companyLink, address, and phoneNumber
-            if (name) progress += 5;
-            if (role) progress += 5;
-            if (company) progress += 5;
-            if (companyLink) progress += 5;
-            if (address) progress += 5;
-            if (phoneNumber) progress += 5;
-
-            // Check inputValues
-            const inputValuesCount = Object.values(inputValues).filter(value => value !== '').length;
-            const inputValuesProgress = Math.min(inputValuesCount, 3) * 10;
-            progress += inputValuesProgress;
-            return progress;
-        };
-
-        const calculatedProgress = calculateProgress();
-        setProgress(calculatedProgress);
-    }, [selectedtemplate, cover, profileImg, bio, name, role, company, companyLink, address, phoneNumber, inputValues]);
 
     const innerDivStyle = {
         height: '100%',

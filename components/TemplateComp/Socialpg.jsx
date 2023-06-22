@@ -11,19 +11,7 @@ const Socialpg = ({
 }) => {
   return (
     <div className="grid grid-cols-3 gap-y-3 sm:gap-y-6 tracking-[-0.5px] leading-[17px] sm:gap-x-14  pt-4 sm:pt-8 mx-2 sm:mx-6 ">
-      {visibleInputs.includes('whatsapp') && (
-      <div className="flex flex-col items-center">
-          <Link target="_blank" href={`https://wa.me/${inputValues.whatsapp}`}>
-          <Image
-            src={`/assets/images/social/${type}/watsp.png`}
-            alt="WhatsApp Logo"
-            width={60}
-            height={60}
-          />
-        </Link>
-        <p className={`text-[10px] sm:text-xs ${text1}  `}>Whatsapp</p>
-      </div>
-      )}
+      
       {visibleInputs.includes('mail') && (
       <div className="flex flex-col  items-center">
           <Link target="_blank" href={`mailto:${inputValues.mail}`}>
@@ -36,6 +24,19 @@ const Socialpg = ({
         </Link>
         <p className={`text-[10px] sm:text-xs ${text1} `}>Mail</p>
       </div>
+      )}
+      {visibleInputs.includes('whatsapp') && (
+        <div className="flex flex-col items-center">
+          <Link target="_blank" href={`https://wa.me/${inputValues.whatsapp}`}>
+            <Image
+              src={`/assets/images/social/${type}/watsp.png`}
+              alt="WhatsApp Logo"
+              width={60}
+              height={60}
+            />
+          </Link>
+          <p className={`text-[10px] sm:text-xs ${text1}  `}>Whatsapp</p>
+        </div>
       )}
       {visibleInputs.includes('linkedin') && (
       <div className="flex flex-col  items-center">
