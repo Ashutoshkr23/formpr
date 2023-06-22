@@ -128,7 +128,7 @@ const CartComponent = () => {
       razorpay_signature: razorData.razorpay_signature,
       razorpay_order_id: razorData.razorpay_order_id,
       address: address,
-      discountCode,discountCode,
+      discountCode:discountCode,
     };
     localStorage.setItem("addressData", JSON.stringify(address));
     // console.log(postData, "postData");
