@@ -3,6 +3,7 @@ import { useSession, signIn, getSession, signOut } from "next-auth/react";
 import OrderHistoryComp from "@/components/OrderHistory/OrderHistoryComp";
 import { CartContext } from "@/context/CartContext";
 import axios from "axios";
+import { CartNav } from "@/components";
 
 export default function OrderHistory() {
   const { userProfile } = useContext(CartContext);
@@ -28,7 +29,10 @@ export default function OrderHistory() {
     <>
       <div className="w-full  min-h-screen py-5">
         {!loading ? (
+           <>
+           <CartNav />
           <OrderHistoryComp orderHistory={orderHistory} />
+          </>
         ) : (
           <>Loading...</>
         )}
