@@ -10,10 +10,11 @@ export default async function handler(req, res) {
         await connectToDatabase();
 
         // Getting User cardUuid With It's Email From Front-End
-        const { cardUuid, userEmail } = req.body;
+        const { cardUuid, userEmail, userPuuid } = req.body;
 
         // const updateUserProfile = await UserData.find({ puuid: puuid }, { $inc: { totalCards: totalQuantity } })
-        const updateUserProfile = await UserData.findOne({ email: userEmail })
+        const updateUserProfile = await UserData.findOne({ puuid: userPuuid })
+
         const userPUUID = updateUserProfile.puuid;
 
         // Saving User cardUuid With It's Email In MongoDB

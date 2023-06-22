@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 
 function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkChange,
-    onBioChange, onAddressChange, onPhoneNumberChange, profileImg, setProfileImg, bio ,contactData ,name ,address , phoneNumber , role , company , companyLink}) {
+    onBioChange, onAddressChange, onPhoneNumberChange, profileImg, setProfileImg, bio, contactData, name, address, phoneNumber, role, company, companyLink }) {
 
     const handleProfileUpload = (event) => {
         const file = event.target.files[0];
         const imageUrl = URL.createObjectURL(file);
 
-       
+
 
         // Create a new FormData object
         const formData = new FormData();
@@ -38,10 +38,11 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
 
     const handleBioChange = (e) => {
         const value = e.target.value;
-        onBioChange(value.slice(0, maxLength));
+        const truncatedValue = value.slice(0, maxLength);
+        onBioChange(truncatedValue);
     };
 
-    const remainingChars = maxLength - bio.length;
+    const remainingChars = maxLength - (bio ? bio.length : 0);
 
     const handleCompanyChange = (e) => {
         const value = e.target.value;
@@ -79,7 +80,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
     };
 
 
-    
+
 
     return (
         <div className='flex flex-grow text-white rounded-[10px] drop-shadow-white flex-col h-auto pb-5  md:h-[578px] bg-black-dim px-4 md:px-9 pt-4 mb-4'>
@@ -111,7 +112,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                             <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number</label>
                             <input type="text" value={phoneNumber} id="Phone Number" name="Phone Number" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
                         </div>
-                    </div>            
+                    </div>
                 </div>
                 <div className='flex flex-col w-full space-y-5'>
                     <div className='flex flex-col'>
@@ -128,8 +129,8 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     </div>
                     <div className='flex flex-col'>
                         <label htmlFor="Location" className='text-xs leading-[186%]'>Location</label>
-                        <input 
-                           type='text'
+                        <input
+                            type='text'
                             id="Location"
                             name="Location"
                             value={address}
@@ -165,7 +166,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     onChange={handleBioChange}
                     maxLength={maxLength}
                 />
-                {bio.length > 0 && <p>{remainingChars} characters remaining</p>}
+                {bio && bio.length > 0 && <p>{remainingChars} characters remaining</p>}
             </div>
         </div>
     )
