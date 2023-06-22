@@ -215,7 +215,7 @@ const Profile = () => {
 
   const userAccountEmail = session?.user?.email;
   const [userAccountName, setuserAccountName] = useState('John Doe')
-  const [userERC20Wallet, setuserERC20Wallet] = useState('x0ead706B3132ec0888dBd692753066f4635Db02as')
+  const [userERC20Wallet, setuserERC20Wallet] = useState('Getting Wallet ID....')
   const [stopGetUserDataFunction, setstopGetUserDataFunction] = useState(false)
   const [userAccountImage, setuserAccountImage] = useState('/assets/images/profilePage/profilePic.png')
 
@@ -267,6 +267,41 @@ const Profile = () => {
     }
   };
 
+  const [editUserAccountName, seteditUserAccountName] = useState(true)
+
+  const [inputUserAccountName, setinputUserAccountName] = useState('');
+  const handleuserAccountName = (event) => {
+    setinputUserAccountName(event.target.value);
+  };
+
+  async function editUserAccountNameBox() {
+    if (enableDisableBackgroundCSS === 'h-screen blur-none pointer-events-auto') {
+      setenableDisableBackgroundCSS('h-screen blur-sm pointer-events-none')
+    }
+
+    seteditUserAccountName(!editUserAccountName)
+
+    if (enableDisableBackgroundCSS === 'h-screen blur-sm pointer-events-none') {
+      setenableDisableBackgroundCSS('h-screen blur-none pointer-events-auto')
+    }
+  }
+
+  async function updateUserName() {
+    seteditUserAccountName(!editUserAccountName)
+
+    const data = { userAccountEmail, inputUserAccountName }
+
+    const response = await axios.post('/api/profilePage/changeUserDetails', data)
+    if (response.data.success === true) {
+      setstopGetUserDataFunction(!stopGetUserDataFunction)
+      getUserData()
+    }
+
+    if (enableDisableBackgroundCSS === 'h-screen blur-sm pointer-events-none') {
+      setenableDisableBackgroundCSS('h-screen blur-none pointer-events-auto')
+    }
+  }
+
   return (
     <div className=''>
       <div className={`${enableDisableBackgroundCSS}`}>
@@ -288,7 +323,12 @@ const Profile = () => {
               <Image className='rounded-full' width={130} height={130} src={userAccountImage} alt="profile pic"></Image>
             </div>
             <div className="right-side">
-              <div className="username capitalize text-3xl font-bold md:mb-6 mb-4 md:ml-4 ml-0 md:text-left text-center">{userAccountName}</div>
+              <div className="username capitalize text-3xl font-bold md:mb-6 mb-4 md:ml-4 ml-0 md:text-left text-center flex items-center gap-2">
+                {userAccountName}
+                <span className='md:block hidden' onClick={() => editUserAccountNameBox()}>
+                  <Image width={20} height={20} src={'/assets/images/profilePage/editReminder.png'} alt="profile pic"></Image>
+                </span>
+              </div>
               <div className="wallet-address capitalize font-bold md:ml-4 ml-0 text-sm md:text-left text-center">wallet address</div>
               <div className="waeelt-id border py-1 px-4 border-dotted rounded-3xl font-bold my-2 sm:text-base text-xs">{userERC20Wallet}</div>
               <div className="stay-tuned text-[#686A6C] text-xs md:ml-4 ml-0">*Stay tuned for upcoming offers with your wallet address</div>
@@ -493,6 +533,23 @@ const Profile = () => {
             <div onClick={updateName} disabled={isSaveDisabled2} className={`${isSaveDisabled2 ? 'disabled cursor-not-allowed opacity-40' : 'cursor-pointer'} flex justify-center uppercase mt-4`}>
               <div className='bg-black px-4 py-2 text-white font-bold rounded-xl'>
                 save name
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+
+      {!editUserAccountName &&
+        <div className=''>
+          <div className='fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] md:w-[547px] md:h-[230px] w-[347px] h-[230px] border rounded-3xl bg-white'>
+            <div className='capitalize text-red-600 text-sm absolute top-[40px] left-[28px] cursor-pointer' onClick={editUserAccountNameBox}>cancel</div>
+            <div className='capitalize flex justify-center font-bold text-3xl mt-8'>edit name</div>
+            <div className='px-6 space-y-4 mt-8'>
+              <input className='w-full py-[6px] rounded-lg border px-4' type="text" value={inputUserAccountName} onChange={handleuserAccountName} placeholder="Enter Name" />
+            </div>
+            <div onClick={updateUserName} className={`flex justify-center uppercase mt-4`}>
+              <div className='bg-black px-4 py-2 text-white font-bold rounded-xl'>
+                update name
               </div>
             </div>
           </div>
