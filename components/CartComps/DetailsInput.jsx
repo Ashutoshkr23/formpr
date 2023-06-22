@@ -471,7 +471,7 @@ function DetailsInput({
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
                   <label>
-                    <p
+                    <div
                       className="py-2  flex cursor-pointer justify-between border w-[220px] xl:w-[220px] h-10 rounded-xl font-semibold pt-2 px-3 text-xs overflow-hidden"
                       onClick={handleLabelClick}
                     >
@@ -490,7 +490,7 @@ function DetailsInput({
                           style={{ objectFit: "contain" }}
                         />
                       </span>
-                    </p>
+                    </div>
                   </label>
                 ) : (
                   <label
