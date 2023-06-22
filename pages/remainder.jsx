@@ -33,7 +33,7 @@ const Remainder = () => {
 
         const sendDataToAPI = { userEmail }
 
-        const gettingUserRemainder = await axios.post('http://localhost:3000/api/getRemainder', sendDataToAPI);
+        const gettingUserRemainder = await axios.post('/api/getRemainder', sendDataToAPI);
 
         return setuserAllRemainder(gettingUserRemainder?.data?.userRemainderList);
     }
@@ -55,7 +55,7 @@ const Remainder = () => {
 
         try {
             // Call your delete API endpoint here
-            await axios.post('http://localhost:3000/api/deleteARemainder', data);
+            await axios.post('/api/deleteARemainder', data);
 
             // Remove the deleted item from the userAllRemainder state
             setuserAllRemainder(prevRemainders => prevRemainders.filter(item => item._id !== itemId));

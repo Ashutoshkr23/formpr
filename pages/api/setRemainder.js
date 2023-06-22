@@ -24,8 +24,6 @@ export default async function handler(req, res) {
             puuid: userPUUID
         });
 
-        console.log(saveUser);
-
         await saveUser.save()
             .then((saveUser) => {
             })

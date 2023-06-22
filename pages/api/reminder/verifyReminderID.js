@@ -4,9 +4,6 @@ import mongoose from 'mongoose';
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        // Connecting To MongoDB
-        await connectToDatabase();
-
         const { id } = req.body;
 
         // Validate the id as a valid ObjectId
