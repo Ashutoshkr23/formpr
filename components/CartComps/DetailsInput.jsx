@@ -37,7 +37,7 @@ function DetailsInput({
   setCheckColor(selectedColorElevate);
   setCheckLiteColor(selectedColorLite);
   const [errorMessage, setErrorMessage] = useState("");
-  const [imageLoader,setImageLoader] = useState(false)
+  const [imageLoader, setImageLoader] = useState(false);
   const fileInputRef = useRef(null);
   const {
     cartItems,
@@ -96,7 +96,7 @@ function DetailsInput({
 
   const handleAwsUpload = async (image) => {
     // console.log("runned 3");
-    setImageLoader(true)
+    setImageLoader(true);
     const formData = new FormData();
     formData.append("companyLogo", image);
     formData.append("puuid", userProfile.puuid);
@@ -108,10 +108,10 @@ function DetailsInput({
       const awsLink = uploadImage.data.result;
       handleName("companyLogo", card.key, awsLink, image.name);
       toast.success("Logo Uploaded Successfully !");
-      setImageLoader(false)
-    }else{
-      setImageLoader(false)
-      toast.error("Something went wrong!")
+      setImageLoader(false);
+    } else {
+      setImageLoader(false);
+      toast.error("Something went wrong!");
     }
   };
 
@@ -200,15 +200,14 @@ function DetailsInput({
       "d886fa29-1622-4a08-ade2-f58fca1237d9",
       "44d97f3f-1393-48a3-95e2-2d4866a3a589",
       "7d223de6-dc2d-4caa-b111-63d5a4e219fa",
-      "ef574738-8969-4e8a-a17e-51b8bc6e2eae"
-
-    ]
+      "ef574738-8969-4e8a-a17e-51b8bc6e2eae",
+    ];
     if (tempArr.includes(uuid)) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
-  }
+  };
 
   const handleDecreaseSize = () => {
     setScale((prevScale) => Math.max(prevScale - 0.1, 1));
@@ -488,13 +487,17 @@ function DetailsInput({
                       </p>{" "}
                       <span>
                         {" "}
-                        {imageLoader ? <MoonLoader color="#000" size={16} /> :<Image
-                      src={"/assets/images/uploadLogo.png"}
-                      height={20}
-                      width={20}
-                      alt="icon"
-                      style={{ objectFit: "contain" }}
-                    />}
+                        {imageLoader ? (
+                          <MoonLoader color="#000" size={16} />
+                        ) : (
+                          <Image
+                            src={"/assets/images/uploadLogo.png"}
+                            height={20}
+                            width={20}
+                            alt="icon"
+                            style={{ objectFit: "contain" }}
+                          />
+                        )}
                       </span>
                     </div>
                   </label>
@@ -508,14 +511,18 @@ function DetailsInput({
                     }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
                     onClick={handleLabelClick}
                   >
-                    Upload Logo  
-                    {imageLoader ? <MoonLoader color="#000" size={16} /> :<Image
-                      src={"/assets/images/uploadLogo.png"}
-                      height={24}
-                      width={24}
-                      alt="icon"
-                      style={{ objectFit: "contain" }}
-                    />}
+                    Upload Logo
+                    {imageLoader ? (
+                      <MoonLoader color="#000" size={16} />
+                    ) : (
+                      <Image
+                        src={"/assets/images/uploadLogo.png"}
+                        height={24}
+                        width={24}
+                        alt="icon"
+                        style={{ objectFit: "contain" }}
+                      />
+                    )}
                   </label>
                 )}
                 <input
@@ -609,7 +616,7 @@ function DetailsInput({
                       ) : (
                         ""
                       )}
-                      {checkFontArray(selectedColorLite)  ? (
+                      {checkFontArray(selectedColorLite) ? (
                         <div className="absolute text-white  lg:bottom-12 lg:left-8 bottom-7 left-5">
                           {card.fullName ? card.fullName : "John Doe"}
                         </div>
@@ -713,7 +720,13 @@ function DetailsInput({
                         >
                           <div
                             className={`w-full h-full rounded-full`}
-                            style={{backgroundColor:item.designUuid == "7d223de6-dc2d-4caa-b111-63d5a4e219fa" ? "#ececec" : item.hexCode}}
+                            style={{
+                              backgroundColor:
+                                item.designUuid ==
+                                "7d223de6-dc2d-4caa-b111-63d5a4e219fa"
+                                  ? "#ececec"
+                                  : item.hexCode,
+                            }}
                           ></div>
                         </div>
                       );
@@ -803,14 +816,17 @@ function DetailsInput({
                     >
                       <p>{card.fileName} </p>{" "}
                       <span>
-                        
-                        {imageLoader ? <MoonLoader color="#000" size={16} /> :<Image
-                      src={"/assets/images/uploadLogo.png"}
-                      height={20}
-                      width={20}
-                      alt="icon"
-                      style={{ objectFit: "contain" }}
-                    />}
+                        {imageLoader ? (
+                          <MoonLoader color="#000" size={16} />
+                        ) : (
+                          <Image
+                            src={"/assets/images/uploadLogo.png"}
+                            height={20}
+                            width={20}
+                            alt="icon"
+                            style={{ objectFit: "contain" }}
+                          />
+                        )}
                       </span>
                     </p>
                   </label>
@@ -825,14 +841,17 @@ function DetailsInput({
                     onClick={handleLabelClick}
                   >
                     Upload Logo
-                   
-                    {imageLoader ? <MoonLoader color="#000" size={16} /> :<Image
-                      src={"/assets/images/uploadLogo.png"}
-                      height={40}
-                      width={40}
-                      alt="icon"
-                      style={{ objectFit: "contain" }}
-                    />}
+                    {imageLoader ? (
+                      <MoonLoader color="#000" size={16} />
+                    ) : (
+                      <Image
+                        src={"/assets/images/uploadLogo.png"}
+                        height={40}
+                        width={40}
+                        alt="icon"
+                        style={{ objectFit: "contain" }}
+                      />
+                    )}
                   </label>
                 )}
                 <input
