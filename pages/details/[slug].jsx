@@ -112,7 +112,6 @@ const Contact = () => {
                 profileImg: profileImg,
                 cover: cover,*/
   }
-  console.log({ companyLink });
   return (
     <div>
       {contactData && (
