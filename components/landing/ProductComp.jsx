@@ -1,25 +1,19 @@
-import React, { useContext, useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useContext, useEffect, useState } from 'react'
+import Image from 'next/image'
 import { CartContext } from "@/context/CartContext";
-import { useRouter } from "next/router";
+import Router,{ useRouter } from "next/router";
 
-function ProductComp({
-  text,
-  img,
-  content,
-  cardtype,
-  text2,
-  offering1,
-  offering2,
-  price,
-  color,
-  index,
-}) {
-  const [isHovered, setIsHovered] = useState(false);
-  const { cartItems, plusCartFunc } = useContext(CartContext);
-  const router = useRouter();
-  const [totalQuantity, setTotalQuantity] = useState(0);
+function ProductComp({ text, img, content, cardtype, text2, offering1, offering2, price, color, index }) {
+    const [isHovered, setIsHovered] = useState(false);
+    const { cartItems, plusCartFunc } = useContext(CartContext);
+    const router = useRouter()
+    const [totalQuantity, setTotalQuantity] = useState(0);
+
+    function handleBuyNow (){
+   
+        router.push("/login")
+    }
+
 
   useEffect(() => {
     if (cartItems.length > 0) {
@@ -115,9 +109,8 @@ function ProductComp({
                     isHovered
                       ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
                       : "bg-black text-white"
-                  }`}
-                >
-                  <Link href="/login">BUY NOW</Link>
+                  }` }
+                onClick={handleBuyNow}> BUY NOW
                 </button>
               </div>
               <div className="flex-col w-full px-8 mt-10 ">
