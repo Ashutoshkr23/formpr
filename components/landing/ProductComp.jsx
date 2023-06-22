@@ -1,15 +1,26 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Image from 'next/image'
+import React, { useContext, useEffect, useState } from "react";
+import Image from "next/image";
 import { CartContext } from "@/context/CartContext";
-import Router,{ useRouter } from "next/router";
-import { useSession } from 'next-auth/react';
+import Router, { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 
-function ProductComp({ text, img, content, cardtype, text2, offering1, offering2, price, color, index }) {
-    const [isHovered, setIsHovered] = useState(false);
-    const { cartItems, plusCartFunc } = useContext(CartContext);
-    const { data: session } = useSession();
-    const router = useRouter()
-    const [totalQuantity, setTotalQuantity] = useState(0);
+function ProductComp({
+  text,
+  img,
+  content,
+  cardtype,
+  text2,
+  offering1,
+  offering2,
+  price,
+  color,
+  index,
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+  const { cartItems, plusCartFunc } = useContext(CartContext);
+  const { data: session } = useSession();
+  const router = useRouter();
+  const [totalQuantity, setTotalQuantity] = useState(0);
 
   useEffect(() => {
     if (cartItems.length > 0) {
@@ -29,21 +40,21 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
   };
 
   const handleRedirect = () => {
-    if(session){
-    if (totalQuantity == 0) {
-      let position = index - 1;
-      let tempObj = cartItems[position];
-      let id = tempObj._id;
-      if (id) {
-        plusCartFunc(id);
-      } else {
-        // console.log("error id")
+    if (session) {
+      if (totalQuantity == 0) {
+        let position = index - 1;
+        let tempObj = cartItems[position];
+        let id = tempObj._id;
+        if (id) {
+          plusCartFunc(id);
+        } else {
+          // console.log("error id")
+        }
       }
+      router.push("/cart");
+    } else {
+      router.push("/login");
     }
-    router.push("/cart");
-}else{
-    router.push("/login")
-}
   };
 
   return (
@@ -60,7 +71,7 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
       </div>
       <div className="flex flex-col items-center">
         <div
-          className={`h-[600px] lg:h-[685px] border relative p-1 mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${
+          className={`h-[630px] lg:h-[685px] border relative p-1 mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${
             isHovered
               ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] border-0"
               : "border"
@@ -68,9 +79,9 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
           onMouseEnter={handleHover}
           onMouseLeave={handleHover}
         >
-          <div className="h-full w-full rounded-2xl  bg-white">
-            <div className="flex flex-col  items-center">
-              <div className="pt-8">
+          <div className="h-full  w-full rounded-2xl  bg-white">
+            <div className="flex h-full flex-col  items-center">
+              <div className="pt-7 lg:pt-4">
                 <p className="text-sm xl:text-xl">{text} </p>
               </div>
 
@@ -109,8 +120,10 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
                     isHovered
                       ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
                       : "bg-black text-white"
-                  }` }
-                > BUY NOW
+                  }`}
+                >
+                  {" "}
+                  BUY NOW
                 </button>
               </div>
               <div className="flex-col w-full px-8 mt-10 ">

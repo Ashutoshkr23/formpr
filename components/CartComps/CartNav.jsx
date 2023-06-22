@@ -167,7 +167,7 @@ const CartNav = () => {
                             </a>
                           </div>
 
-                          <div className="mb-7">
+                          <div className="mb-5">
                             <Link href={"/profile"}>
                               {/* <Image
                                 src={"/assets/images/profileIcon.png"}
@@ -176,6 +176,18 @@ const CartNav = () => {
                                 height={30}
                               /> */}
                               Profile
+                            </Link>
+                          </div>
+
+                          <div className="mb-7">
+                            <Link href={"/store"}>
+                              {/* <Image
+                                src={"/assets/images/profileIcon.png"}
+                                alt="loop"
+                                width={30}
+                                height={30}
+                              /> */}
+                              Store
                             </Link>
                           </div>
 
