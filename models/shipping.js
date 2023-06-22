@@ -6,7 +6,9 @@ const ShippingSchema = new mongoose.Schema({
 
     // puuid and cuuid will be personId and Card id respectively
     puuid: { type: String },
-    totalAmount: { type: Number, required: true },
+    totalAmount: { type: Number, required: true }, //this is total Amount of cards without discount
+    finalPrice: { type: Number, required: true }, // this is the final Price users pay
+    discountedAmount: { type: Number,default:0 }, //this is amount discounted to user if user uses discount code
     numberOfCards: { type: Number, required: true },
     currency: { type: String, required: true, default: "INR" },
     razorpay_payment_id: { type: String, required: true },

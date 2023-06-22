@@ -61,8 +61,8 @@ END:VCARD`;
             >
                 <Image src="/assets/images/templateimg/Button.png" height={80} width={10} className="absolute top-48 -right-3.5" alt="button" />
                 <Image src="/assets/images/templateimg/PowerButoon.png" height={40} width={10} className="absolute top-28 -left-3.5" alt="button" />
-                <Image src="/assets/images/templateimg/VolumeButton.png" height={60} width={10} className="absolute top-44 -left-3.5" alt="button" />
-                <Image src="/assets/images/templateimg/VolumeButton.png" height={60} width={10} className="absolute top-64 -left-3.5" alt="button" />
+                <Image src="/assets/images/templateimg/Volumebutton.png" height={60} width={10} className="absolute top-44 -left-3.5" alt="button" />
+                <Image src="/assets/images/templateimg/Volumebutton.png" height={60} width={10} className="absolute top-64 -left-3.5" alt="button" />
                 <div className={`${gradient2} relative  w-full mx-auto h-full  rounded-[20px] `}
                 >
                     <div className="-top-[30px] sm:-top-[79px] inset-0 mx-auto absolute  

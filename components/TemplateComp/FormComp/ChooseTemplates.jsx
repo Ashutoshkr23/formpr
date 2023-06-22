@@ -11,7 +11,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
             <div className='absolute inset-0 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
           )}
           <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
-            <Image fill={true}  src="/assets/images/templateimg/template/Template-1.png" />
+            <Image fill={true} alt="template-1"  src="/assets/images/templateimg/template/Template-1.png" />
           </div>
         </div>
         <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('1')}>
@@ -19,7 +19,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
             <div className='absolute inset-0 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
           )}
           <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
-          <Image fill={true}  src="/assets/images/templateimg/template/Template-2.png" />
+          <Image fill={true} alt="template-2"  src="/assets/images/templateimg/template/Template-2.png" />
           </div>
         </div>
         <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('3')}>
@@ -27,7 +27,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
             <div className='absolute inset-0 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
           )}
           <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
-          <Image fill={true}  src="/assets/images/templateimg/template/Template-3.png" />
+          <Image fill={true} alt="template-3"  src="/assets/images/templateimg/template/Template-3.png" />
           </div>
         </div>
         <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('2')}>
@@ -35,7 +35,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
             <div className='absolute inset-0 bg-[#81919A] bg-opacity-50 rounded-[8px]'></div>
           )}
           <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
-          <Image fill={true}  src="/assets/images/templateimg/template/Template-5.png" />
+          <Image fill={true} alt="template-4"  src="/assets/images/templateimg/template/Template-5.png" />
           </div>
         </div>
       </div>

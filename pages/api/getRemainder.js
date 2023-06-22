@@ -1,5 +1,6 @@
 import { connectToDatabase } from '../../lib/mongoose'
 import setRemainderModel from '../../models/setRemainderModel'
+import UserData from '@/models/UserData';
 
 export default async function handler(req, res) {
 
@@ -10,8 +11,11 @@ export default async function handler(req, res) {
 
         const { userEmail } = req.body;
 
-        // Here We Have To Use User Email, Currently No Idea From Where It's Getting Fetched, So It's Hardcoded For Now
-        const getUserRemainders = await setRemainderModel.find({ userEmail: userEmail });
+        const gettinguserPuuid = await UserData.findOne({ email: userEmail })
+
+        const userpuuid = gettinguserPuuid.puuid;
+
+        const getUserRemainders = await setRemainderModel.find({ puuid: userpuuid });
         res.json({
             success: true,
             userRemainderList: getUserRemainders

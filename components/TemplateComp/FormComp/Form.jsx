@@ -313,7 +313,7 @@ function Form({ cuuid }) {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col-reverse items-center lg:items-start lg:flex-row gap-5'>
+                <div className='flex relative flex-col-reverse items-center lg:items-start lg:flex-row gap-5'>
                     <div className='flex flex-grow flex-col '>
                         <ChooseTemplates
                             selectedTemplate={selectedtemplate}
@@ -345,8 +345,8 @@ function Form({ cuuid }) {
                             setVisibleInputs={setVisibleInputs}
                             onToggleInput={handleToggleInput} />
                     </div>
-                    <div className='w-80 sm:w-[350px]  xl:w-[390px] relative'>
-                        <div className='sticky top-10 sm:h-[820px] mb-5'>
+                    <div className='w-80 sticky top-10 sm:w-[350px]  xl:w-[390px]'>
+                        <div className=' sm:h-[820px] mb-5'>
                             {selectedtemplate &&
                                 <Template
                                     gradient1={cover}

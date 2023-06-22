@@ -1,25 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useContext, useEffect, useState } from 'react'
+import Image from 'next/image'
 import { CartContext } from "@/context/CartContext";
-import { useRouter } from "next/router";
+import Router,{ useRouter } from "next/router";
+import { useSession } from 'next-auth/react';
 
-function ProductComp({
-  text,
-  img,
-  content,
-  cardtype,
-  text2,
-  offering1,
-  offering2,
-  price,
-  color,
-  index,
-}) {
-  const [isHovered, setIsHovered] = useState(false);
-  const { cartItems, plusCartFunc } = useContext(CartContext);
-  const router = useRouter();
-  const [totalQuantity, setTotalQuantity] = useState(0);
+function ProductComp({ text, img, content, cardtype, text2, offering1, offering2, price, color, index }) {
+    const [isHovered, setIsHovered] = useState(false);
+    const { cartItems, plusCartFunc } = useContext(CartContext);
+    const { data: session } = useSession();
+    const router = useRouter()
+    const [totalQuantity, setTotalQuantity] = useState(0);
 
   useEffect(() => {
     if (cartItems.length > 0) {
@@ -39,6 +29,7 @@ function ProductComp({
   };
 
   const handleRedirect = () => {
+    if(session){
     if (totalQuantity == 0) {
       let position = index - 1;
       let tempObj = cartItems[position];
@@ -50,6 +41,9 @@ function ProductComp({
       }
     }
     router.push("/cart");
+}else{
+    router.push("/login")
+}
   };
 
   return (
@@ -57,7 +51,7 @@ function ProductComp({
       onClick={() => {
         handleRedirect();
       }}
-      className="flex flex-col lg:hover:scale-105 "
+      className="flex flex-col lg:hover:scale-105 cursor-pointer"
     >
       <div className=" relative z-20 ml-3 -mb-5  w-[116px] h-9 rounded-lg bg-black pt-2">
         <p className="text-center  font-semibold text-xs text-white">
@@ -115,9 +109,8 @@ function ProductComp({
                     isHovered
                       ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
                       : "bg-black text-white"
-                  }`}
-                >
-                  <Link href="/login">BUY NOW</Link>
+                  }` }
+                > BUY NOW
                 </button>
               </div>
               <div className="flex-col w-full px-8 mt-10 ">
