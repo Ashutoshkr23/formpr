@@ -79,15 +79,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
     };
 
 
-    const indianCities = Object.values(cities)
-        .filter((city) => city.country === 'IN')
-        .map((city) => ({
-            value: city.name,
-            label: city.name,
-        }));
-
-
-
+    
 
     return (
         <div className='flex flex-grow text-white rounded-[10px] drop-shadow-white flex-col h-auto pb-5  md:h-[578px] bg-black-dim px-4 md:px-9 pt-4 mb-4'>
