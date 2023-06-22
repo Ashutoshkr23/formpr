@@ -11,7 +11,7 @@ import { CartContext } from '@/context/CartContext';
 import ProfileCompleted from './ProfileCompleted';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Footer } from '@/components';
+import { Footer, LoopMaven } from '@/components';
 
 function Form({ cuuid }) {
 
@@ -345,7 +345,7 @@ function Form({ cuuid }) {
                             setVisibleInputs={setVisibleInputs}
                             onToggleInput={handleToggleInput} />
                     </div>
-                    <div className='w-80 sticky top-10 sm:w-[350px]  xl:w-[390px]'>
+                    <div className='w-80 lg:sticky lg:top-10 sm:w-[350px]  xl:w-[390px]'>
                         <div className=' sm:h-[820px] mb-5'>
                             {selectedtemplate &&
                                 <Template
