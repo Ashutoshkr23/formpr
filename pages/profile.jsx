@@ -49,7 +49,7 @@ const Profile = () => {
 
     const sendDataToAPI = { userEmail }
 
-    const gettingUserRemainder = await axios.post('http://localhost:3000/api/getRemainder', sendDataToAPI);
+    const gettingUserRemainder = await axios.post('/api/getRemainder', sendDataToAPI);
 
     setoriginalUserAllRemainder(gettingUserRemainder?.data?.userRemainderList)
 
@@ -103,7 +103,7 @@ const Profile = () => {
 
     seteditingReminder(!editingReminder)
     if (editingReminder) {
-      const response = await axios.post('http://localhost:3000/api/reminder/verifyReminderID', { id });
+      const response = await axios.post('/api/reminder/verifyReminderID', { id });
       const data = response.data.remainder
       setuserName(data.name);
       setuserContactNumber(data.contactNumber);
@@ -130,7 +130,7 @@ const Profile = () => {
       return; // Don't perform update if inputs are empty or contact number has non-numeric characters
     }
     const data = { userName, userContactNumber, itemID, userCustomMessage, selectedDate };
-    const response = await axios.post('http://localhost:3000/api/reminder/updateReminder', data);
+    const response = await axios.post('/api/reminder/updateReminder', data);
     seteditingReminder(!editingReminder)
     getUserRemainders();
 
@@ -152,7 +152,7 @@ const Profile = () => {
 
     seteditANameOnly(!editANameOnly)
     if (editANameOnly) {
-      const response = await axios.post('http://localhost:3000/api/reminder/verifyReminderID', { id });
+      const response = await axios.post('/api/reminder/verifyReminderID', { id });
       const data = response.data.remainder
       setuserName(data.name);
     }
@@ -174,7 +174,7 @@ const Profile = () => {
       return; // Don't perform update if inputs are empty or contact number has non-numeric characters
     }
     const data = { userName, itemID };
-    const response = await axios.post('http://localhost:3000/api/reminder/editAName', data);
+    const response = await axios.post('/api/reminder/editAName', data);
     seteditANameOnly(!editANameOnly)
     getUserRemainders();
 
@@ -189,7 +189,7 @@ const Profile = () => {
 
     try {
       // Call your delete API endpoint here
-      await axios.post('http://localhost:3000/api/deleteARemainder', data);
+      await axios.post('/api/deleteARemainder', data);
 
       // Remove the deleted item from the userAllRemainder state
       setuserAllRemainder(prevRemainders => prevRemainders.filter(item => item._id !== itemId));
@@ -229,7 +229,11 @@ const Profile = () => {
     if (response?.data?.getUserDetails?.name !== undefined) {
       setuserAccountName(response?.data?.getUserDetails?.name);
       setuserERC20Wallet(response?.data?.getUserDetails?.erc20WalletId);
-      setuserAccountImage(response?.data?.getUserDetails?.avatar);
+      if (response?.data?.getUserDetails?.avatar === null || response?.data?.getUserDetails?.avatar === undefined) {
+        setuserAccountImage('/assets/images/profilePage/profilePic.png');
+      } else {
+        setuserAccountImage(response?.data?.getUserDetails?.avatar);
+      }
       setstopGetUserDataFunction(!stopGetUserDataFunction)
     }
   }

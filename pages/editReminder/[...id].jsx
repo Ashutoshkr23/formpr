@@ -44,7 +44,7 @@ const EditReminder = () => {
     useEffect(() => {
         const verifyReminderID = async () => {
             try {
-                const response = await axios.post('http://localhost:3000/api/reminder/verifyReminderID', { id });
+                const response = await axios.post('/api/reminder/verifyReminderID', { id });
                 setItemID(id);
                 setData(response.data);
                 if (response.data.success === false) {
@@ -75,7 +75,7 @@ const EditReminder = () => {
             return; // Don't perform update if inputs are empty or contact number has non-numeric characters
         }
         const data = { userName, userContactNumber, itemID, userCustomMessage, selectedDate };
-        const response = await axios.post('http://localhost:3000/api/reminder/updateReminder', data);
+        const response = await axios.post('/api/reminder/updateReminder', data);
         router.push('/profile');
     };
 

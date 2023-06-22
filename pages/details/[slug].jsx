@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import React from "react";
@@ -26,7 +24,7 @@ const Contact = () => {
           const sendDataToAPI = { cardUuid, userEmail, userPuuid };
           console.log(sendDataToAPI);
           const settingRemainder = await axios.post(
-            "http://localhost:3000/api/setRemainder",
+            "/api/setRemainder",
             sendDataToAPI
           );
           console.log(settingRemainder);
