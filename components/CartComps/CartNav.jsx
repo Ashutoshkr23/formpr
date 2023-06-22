@@ -41,14 +41,14 @@ const CartNav = () => {
     <div className="px-4 md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto ">
       <div className="hidden lg:block">
         <div className=" mx-auto   my-auto h-20 flex  justify-between items-center">
-          <div>
+          <Link href={"/store"}>
             <Image
               src={"/assets/images/landing/loop.svg"}
               alt="loop"
               width={74}
               height={32}
             />
-          </div>
+          </Link>
           <div className="flex gap-12">
             <Link href={"/manageCards"}>
               <p className="text-sm leading-[17px]">Manage cards</p>

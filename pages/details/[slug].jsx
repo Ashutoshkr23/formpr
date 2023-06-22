@@ -21,8 +21,9 @@ const Contact = () => {
         if (data.card !== undefined) {
           setContactData(data.card);
           const cardUuid = data.card.cuuid;
+          const userPuuid = data.card.puuid;
           const userEmail = data.card.mail;
-          const sendDataToAPI = { cardUuid, userEmail };
+          const sendDataToAPI = { cardUuid, userEmail, userPuuid };
           console.log(sendDataToAPI);
           const settingRemainder = await axios.post(
             "http://localhost:3000/api/setRemainder", sendDataToAPI
