@@ -96,9 +96,10 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
                                 <button className={`buynow text-center w-full py-[5px] font-bold rounded-[10px] ${isHovered ? 'bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black' : 'bg-black text-white'
                                     }`}
                                 >
-                                    <a href='/login'>BUY NOW</a>
+                                    <Link href='/login'>BUY NOW
                                     
-                                    </button>
+                                    </Link>
+                                </button>
                             </div>
                             <div className="flex-col w-full px-8 mt-10 ">
                                 <div className='flex w-full' >
