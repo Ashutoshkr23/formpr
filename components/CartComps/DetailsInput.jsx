@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SketchPicker } from "react-color";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { BeatLoader } from "react-spinners";
+import { MoonLoader } from "react-spinners";
 
 function DetailsInput({
   card,
@@ -37,6 +37,7 @@ function DetailsInput({
   setCheckColor(selectedColorElevate);
   setCheckLiteColor(selectedColorLite);
   const [errorMessage, setErrorMessage] = useState("");
+  const [imageLoader,setImageLoader] = useState(false)
   const fileInputRef = useRef(null);
   const {
     cartItems,
@@ -95,7 +96,7 @@ function DetailsInput({
 
   const handleAwsUpload = async (image) => {
     // console.log("runned 3");
-
+    setImageLoader(true)
     const formData = new FormData();
     formData.append("companyLogo", image);
     formData.append("puuid", userProfile.puuid);
@@ -107,6 +108,10 @@ function DetailsInput({
       const awsLink = uploadImage.data.result;
       handleName("companyLogo", card.key, awsLink, image.name);
       toast.success("Logo Uploaded Successfully !");
+      setImageLoader(false)
+    }else{
+      setImageLoader(false)
+      toast.error("Something went wrong!")
     }
   };
 
@@ -483,13 +488,13 @@ function DetailsInput({
                       </p>{" "}
                       <span>
                         {" "}
-                        <Image
-                          src={"/assets/images/uploadLogo.png"}
-                          height={20}
-                          width={20}
-                          alt="icon"
-                          style={{ objectFit: "contain" }}
-                        />
+                        {imageLoader ? <MoonLoader color="#000" size={16} /> :<Image
+                      src={"/assets/images/uploadLogo.png"}
+                      height={20}
+                      width={20}
+                      alt="icon"
+                      style={{ objectFit: "contain" }}
+                    />}
                       </span>
                     </div>
                   </label>
@@ -503,14 +508,14 @@ function DetailsInput({
                     }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
                     onClick={handleLabelClick}
                   >
-                    Upload Logo
-                    <Image
+                    Upload Logo  
+                    {imageLoader ? <MoonLoader color="#000" size={16} /> :<Image
                       src={"/assets/images/uploadLogo.png"}
                       height={24}
                       width={24}
                       alt="icon"
                       style={{ objectFit: "contain" }}
-                    />
+                    />}
                   </label>
                 )}
                 <input
@@ -798,14 +803,14 @@ function DetailsInput({
                     >
                       <p>{card.fileName} </p>{" "}
                       <span>
-                        {" "}
-                        <Image
-                          src={"/assets/images/uploadLogo.png"}
-                          height={20}
-                          width={20}
-                          alt="icon"
-                          style={{ objectFit: "contain" }}
-                        />
+                        
+                        {imageLoader ? <MoonLoader color="#000" size={16} /> :<Image
+                      src={"/assets/images/uploadLogo.png"}
+                      height={20}
+                      width={20}
+                      alt="icon"
+                      style={{ objectFit: "contain" }}
+                    />}
                       </span>
                     </p>
                   </label>
@@ -820,13 +825,14 @@ function DetailsInput({
                     onClick={handleLabelClick}
                   >
                     Upload Logo
-                    <Image
+                   
+                    {imageLoader ? <MoonLoader color="#000" size={16} /> :<Image
                       src={"/assets/images/uploadLogo.png"}
                       height={40}
                       width={40}
                       alt="icon"
                       style={{ objectFit: "contain" }}
-                    />
+                    />}
                   </label>
                 )}
                 <input
