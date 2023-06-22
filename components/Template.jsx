@@ -20,7 +20,8 @@ const Template = ({
   border,
   profileImg,
   company,
-  bio, website,
+  bio,
+  website,
   mobile,
   fname,
   designation,
@@ -33,8 +34,6 @@ const Template = ({
   twitter,
   whatsappNumber,
   youtube,
-
-
 }) => {
   const downloadVCard = () => {
     // Create a vCard string from the contact data
@@ -43,6 +42,7 @@ FN:${fname}
 TEL;TYPE=CELL:${mobile}
 EMAIL;: ${mail}
 URL:${website}
+ORG:${company}
 END:VCARD`;
     // console.log(gradient2)
     // console.log("imghello" + profileImg)
@@ -62,9 +62,9 @@ END:VCARD`;
         className={`relative mx-auto min-h-screen md:min-h-[820px] md:h-[820px] w-full md:w-[375px]  md:rounded-[30px] pt-[161px]`}
         style={{
           backgroundImage: `url(${gradient1})`,
-          backgroundSize: '100% auto',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'top',
+          backgroundSize: "100% auto",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top",
         }}
       >
         {/*
@@ -87,9 +87,8 @@ END:VCARD`;
               value={fname || "Andrew Darren"}
               placeholder={fname || "Andrew Darren"}
 
-
-            //   value={inputValue}
-            //   onChange={handleChange}
+              //   value={inputValue}
+              //   onChange={handleChange}
             />
           </div>
           <div className="flex justify-center mt-[11px] font-semibold text-[16px]">
@@ -98,11 +97,10 @@ END:VCARD`;
               type="text"
               placeholder="Design Lead"
               value={designation}
-            //   onChange={handleChange}
+              //   onChange={handleChange}
             />
           </div>
           <div>
-
             <BioTemp
               bio={bio}
               border={border}
@@ -115,7 +113,6 @@ END:VCARD`;
           </div>
 
           <div className="">
-
             <Socialpg
               text1={text1}
               type={type}
