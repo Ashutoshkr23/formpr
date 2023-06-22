@@ -117,7 +117,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                             <label for="Company" className='text-xs leading-[186%]'>Company</label>
                             <input type="text" value={company} id="Company" name="Company" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyChange} />
                         </div>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col mt-5'>
                             <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number</label>
                             <input type="text" value={phoneNumber} id="Phone Number" name="Phone Number" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
                         </div>
