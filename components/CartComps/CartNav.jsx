@@ -55,7 +55,7 @@ const CartNav = () => {
             </Link>
             <Link href={"/order-history"}>
               <p className="text-sm leading-[17px]">Order history</p>
-              </Link>
+            </Link>
           </div>
           <div className="flex gap-10 items-center">
             <Link href={"/profile"}>
@@ -154,7 +154,7 @@ const CartNav = () => {
                             onClick={() => setIsOpen(!isOpen)}
                             className="nav-link-container  py-2  border-b-2 border-white "
                           >
-                            <a href="#" className="nav-link ">
+                            <a href="/manageCards" className="nav-link ">
                               Manage cards
                             </a>
                           </div>
@@ -162,7 +162,7 @@ const CartNav = () => {
                             onClick={() => setIsOpen(!isOpen)}
                             className="nav-link-container py-4  border-b-2 border-white"
                           >
-                            <a href="#" className="nav-link ">
+                            <a href="/order-history" className="nav-link ">
                               Order history
                             </a>
                           </div>

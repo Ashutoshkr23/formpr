@@ -24,7 +24,7 @@ export default function Home() {
   const { cartItems } = useContext(CartContext);
   // console.log(cartItems, "cartItems")
   return (
-    <div>
+    <div className="mt-3">
       <CartNav />
       <div className="sm:px-8 md:px-8 lg:px-4 xl:px-0 max-w-[1208px]  mx-auto mb-20 lg:mb-28">
         <h2 className="px-5 sm:px-0 ">Store</h2>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -26,7 +26,8 @@ const Contact = () => {
           const sendDataToAPI = { cardUuid, userEmail, userPuuid };
           console.log(sendDataToAPI);
           const settingRemainder = await axios.post(
-            "http://localhost:3000/api/setRemainder", sendDataToAPI
+            "http://localhost:3000/api/setRemainder",
+            sendDataToAPI
           );
           console.log(settingRemainder);
           console.log("2");
@@ -39,26 +40,67 @@ const Contact = () => {
     fetchContact();
   }, [router.query]);
 
-  const [bio, setBio] = useState(contactData && contactData.bio ? contactData.bio : "");
-  const [name, setName] = useState(contactData && contactData.name ? contactData.name : "");
-  const [role, setRole] = useState(contactData && contactData.role ? contactData.role : "");
-  const [companyName, setCompanyName] = useState(contactData && contactData.companyName ? contactData.companyName : "");
-  const [companyLink, setCompanyLink] = useState(contactData && contactData.companyLink ? contactData.companyLink : "");
-  const [address, setAddress] = useState(contactData && contactData.address ? contactData.address : "");
-  const [mobileNumber, setMobileNumber] = useState(contactData && contactData.mobileNumber ? contactData.mobileNumber : "");
-  const [profileImg, setProfileImg] = useState(contactData && contactData.profileImg ? contactData.profileImg : "");
-  const [selectedTemplate, setSelectedTemplate] = useState(contactData && contactData.selectedTemplate ? contactData.selectedTemplate : "");
-  const [cover, setCover] = useState(contactData && contactData.cover ? contactData.cover : "");
-  const [behance, setBehance] = useState(contactData && contactData.behance ? contactData.behance : "");
-  const [facebook, setFacebook] = useState(contactData && contactData.facebook ? contactData.facebook : "");
-  const [instagram, setInstagram] = useState(contactData && contactData.instagram ? contactData.instagram : "");
-  const [linkedin, setLinkedin] = useState(contactData && contactData.linkedin ? contactData.linkedin : "");
-  const [mail, setMail] = useState(contactData && contactData.mail ? contactData.mail : "");
-  const [reddit, setReddit] = useState(contactData && contactData.reddit ? contactData.reddit : "");
-  const [twitter, setTwitter] = useState(contactData && contactData.twitter ? contactData.twitter : "");
-  const [whatsappNumber, setWhatsappNumber] = useState(contactData && contactData.whatsappNumber ? contactData.whatsappNumber : "");
-  const [youtube, setYoutube] = useState(contactData && contactData.youtube ? contactData.youtube : "");
-  {/*
+  const [bio, setBio] = useState(
+    contactData && contactData.bio ? contactData.bio : ""
+  );
+  const [name, setName] = useState(
+    contactData && contactData.name ? contactData.name : ""
+  );
+  const [role, setRole] = useState(
+    contactData && contactData.role ? contactData.role : ""
+  );
+  const [companyName, setCompanyName] = useState(
+    contactData && contactData.companyName ? contactData.companyName : ""
+  );
+  const [companyLink, setCompanyLink] = useState(
+    contactData && contactData.companyLink ? contactData.companyLink : ""
+  );
+  const [address, setAddress] = useState(
+    contactData && contactData.address ? contactData.address : ""
+  );
+  const [mobileNumber, setMobileNumber] = useState(
+    contactData && contactData.mobileNumber ? contactData.mobileNumber : ""
+  );
+  const [profileImg, setProfileImg] = useState(
+    contactData && contactData.profileImg ? contactData.profileImg : ""
+  );
+  const [selectedTemplate, setSelectedTemplate] = useState(
+    contactData && contactData.selectedTemplate
+      ? contactData.selectedTemplate
+      : ""
+  );
+  const [cover, setCover] = useState(
+    contactData && contactData.cover ? contactData.cover : ""
+  );
+  const [behance, setBehance] = useState(
+    contactData && contactData.behance ? contactData.behance : ""
+  );
+  const [facebook, setFacebook] = useState(
+    contactData && contactData.facebook ? contactData.facebook : ""
+  );
+  const [instagram, setInstagram] = useState(
+    contactData && contactData.instagram ? contactData.instagram : ""
+  );
+  const [linkedin, setLinkedin] = useState(
+    contactData && contactData.linkedin ? contactData.linkedin : ""
+  );
+  const [mail, setMail] = useState(
+    contactData && contactData.mail ? contactData.mail : ""
+  );
+  const [reddit, setReddit] = useState(
+    contactData && contactData.reddit ? contactData.reddit : ""
+  );
+  const [twitter, setTwitter] = useState(
+    contactData && contactData.twitter ? contactData.twitter : ""
+  );
+  const [whatsappNumber, setWhatsappNumber] = useState(
+    contactData && contactData.whatsappNumber ? contactData.whatsappNumber : ""
+  );
+  const [youtube, setYoutube] = useState(
+    contactData && contactData.youtube ? contactData.youtube : ""
+  );
+  {
+    /*
 
                 company: company,
                 name: name,
@@ -70,9 +112,9 @@ const Contact = () => {
                 adress: address,
                 selectedTemplate: selectedtemplate,
                 profileImg: profileImg,
-                cover: cover,*/}
-
-
+                cover: cover,*/
+  }
+  console.log({ companyLink });
   return (
     <div>
       {contactData && (
