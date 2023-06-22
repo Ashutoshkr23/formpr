@@ -229,7 +229,11 @@ const Profile = () => {
     if (response?.data?.getUserDetails?.name !== undefined) {
       setuserAccountName(response?.data?.getUserDetails?.name);
       setuserERC20Wallet(response?.data?.getUserDetails?.erc20WalletId);
-      setuserAccountImage(response?.data?.getUserDetails?.avatar);
+      if (response?.data?.getUserDetails?.avatar === null || response?.data?.getUserDetails?.avatar === undefined) {
+        setuserAccountImage('/assets/images/profilePage/profilePic.png');
+      } else {
+        setuserAccountImage(response?.data?.getUserDetails?.avatar);
+      }
       setstopGetUserDataFunction(!stopGetUserDataFunction)
     }
   }
