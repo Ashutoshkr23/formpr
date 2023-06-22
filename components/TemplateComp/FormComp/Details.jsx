@@ -1,6 +1,4 @@
-import React, { useContext, useRef, useState , useEffect } from 'react'
-import cities from 'cities-list';
-import Select from 'react-select';
+import React from 'react'
 import Image from 'next/image'
 
 
