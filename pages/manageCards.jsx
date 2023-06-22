@@ -14,3 +14,23 @@ const manageCards = () => {
 }
 
 export default manageCards
+
+
+
+export async function getServerSideProps({ req }) {
+    const session = await getSession({ req });
+    if (!session) {
+      return {
+        redirect: {
+          destination: "/login",
+          permanent: false,
+        },
+      };
+    }
+  
+    return {
+      props: {
+        session,
+      },
+    };
+  }

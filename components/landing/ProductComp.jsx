@@ -2,18 +2,20 @@ import React, { useContext, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { CartContext } from "@/context/CartContext";
 import Router,{ useRouter } from "next/router";
+import { useSession } from 'next-auth/react';
 
 function ProductComp({ text, img, content, cardtype, text2, offering1, offering2, price, color, index }) {
     const [isHovered, setIsHovered] = useState(false);
     const { cartItems, plusCartFunc } = useContext(CartContext);
+    const { data: session } = useSession();
     const router = useRouter()
     const [totalQuantity, setTotalQuantity] = useState(0);
 
-    function handleBuyNow (){
+    // function handleBuyNow (){
    
-        router.push("/login")
-    }
-
+    //     router.push("/login")
+    // }
+    // console.log(session,"Session")
 
   useEffect(() => {
     if (cartItems.length > 0) {
@@ -33,6 +35,7 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
   };
 
   const handleRedirect = () => {
+    if(session){
     if (totalQuantity == 0) {
       let position = index - 1;
       let tempObj = cartItems[position];
@@ -44,6 +47,9 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
       }
     }
     router.push("/cart");
+}else{
+    router.push("/login")
+}
   };
 
   return (
@@ -110,7 +116,7 @@ function ProductComp({ text, img, content, cardtype, text2, offering1, offering2
                       ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
                       : "bg-black text-white"
                   }` }
-                onClick={handleBuyNow}> BUY NOW
+                > BUY NOW
                 </button>
               </div>
               <div className="flex-col w-full px-8 mt-10 ">

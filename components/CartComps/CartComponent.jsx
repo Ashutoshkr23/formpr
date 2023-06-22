@@ -23,7 +23,8 @@ const CartComponent = () => {
     address,
     clearCart,
     setAllCards,
-    discountCode
+    discountCode,
+    finalPrice
   } = useContext(CartContext);
   const [cardTypeSelected, setCardTypeSelected] = useState(cartItems[0]);
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
@@ -150,6 +151,7 @@ const CartComponent = () => {
   // main submit function
   const handleSubmitFunction = async () => {
     setRupayLoader(true);
+    if(finalPrice > 0){
     const res = await initializeRazorpay();
     if (!res) {
       alert("Razorpay SDK Failed to load");
@@ -159,6 +161,7 @@ const CartComponent = () => {
     // Make API call to the serverless API
     const { data } = await axios.post("/api/razorpay", {
       cartItems: cartItems,
+      discountCode:discountCode,
     });
     var options = {
       key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
@@ -185,6 +188,14 @@ const CartComponent = () => {
 
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
+  }else{
+    let response = {
+      razorpay_order_id:"000000",
+      razorpay_signature:"000000",
+      razorpay_payment_id:"000000",
+    }
+    saveDataToServer(response);
+  }
   };
 
   // this function is to initialize razorpay

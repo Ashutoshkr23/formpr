@@ -9,10 +9,12 @@ export const CartContext = createContext();
 
 // Create a CartProvider component
 export const CartProvider = ({ children }) => {
+    console.log("runned cart context")
     const { data: session } = useSession()
 
     // Define the state for the cart items
     const [cartItems, setCartItems] = useState([]);
+    console.log(cartItems,"Cart")
     const [userProfile, setUserProfile] = useState([])
     const [allCards, setAllCards] = useState([])
     const [defaultCart, setDefaultCart] = useState([])
@@ -230,7 +232,7 @@ export const CartProvider = ({ children }) => {
 
     }, [cartItems])
 
-
+    // console.log(cartItems,"cart")
     // console.log(cardsArray, "Cards Array", cartItems)
 
 
@@ -316,9 +318,10 @@ export const CartProvider = ({ children }) => {
 
     // Function to clear the cart
     const clearCart = () => {
-        setCartItems(defaultCart)
         localStorage.setItem('cartData', JSON.stringify(defaultCart));
-
+        setCartItems(defaultCart)
+        setStepState(1)
+        
     };
 
     // new

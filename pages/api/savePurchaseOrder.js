@@ -4,23 +4,56 @@ import card from '@/models/card';
 import purchase from '@/models/purchase';
 import UserData from '@/models/UserData';
 import shipping from '@/models/shipping';
+import DiscountSchema from '@/models/DiscountSchema';
 
 export default async function handler(req, res) {
     try {
         await connectToDatabase();
         if (req.method === 'POST') {
-            const { cardsArray, cartItems, puuid, razorpay_payment_id, razorpay_order_id, razorpay_signature, address } = req.body;
+            const { cardsArray, cartItems, puuid, razorpay_payment_id, razorpay_order_id, razorpay_signature, address , discountCode } = req.body;
             if (!puuid) {
                 return res.status(422).json({ error: "Missing required fields." });
 
             }
             let totalQuantity = 0;
             let totalAmount = 0;
+            let discountedAmount = 0 
+            let finalPrice = 0
+
             // Loop over the array and add up the quantity field of each object
             for (var i = 0; i < cartItems.length; i++) {
                 totalQuantity += cartItems[i].quantity;
                 totalAmount += cartItems[i].amount * cartItems[i].quantity;
             }
+
+            if(discountCode && discountCode.length){
+                const discountData = await DiscountSchema.findOne({
+                    discountCode:discountCode
+                })
+                if(discountData){
+                    if(discountData.discountType ==2){
+                        const discount = (totalAmount * discountData.percentage) / 100;
+                        discountedAmount = Number(discount.toFixed(2))
+                        const finalAmount = totalAmount - discount;
+                        // const roundedTotalPrice = Math.round(finalAmount * 100) / 100;
+                        const roundedTotalPrice = Number(finalAmount.toFixed(2));
+                        finalPrice = roundedTotalPrice
+        
+                    }else{
+                        discountedAmount =discountData.amount
+        
+                        const finalAmount = totalAmount - discountData.amount
+                        finalPrice = finalAmount
+                      }
+                }else{
+                    finalPrice = totalAmount
+                }
+            }else{
+                finalPrice = totalAmount
+            }
+
+            // console.log(finalPrice,"final")
+
             let temp = []
             cardsArray.map((item) => {
                 let supremeCard = false;
@@ -81,6 +114,8 @@ export default async function handler(req, res) {
                 puuid: puuid,
                 totalAmount: totalAmount,
                 numberOfCards: totalQuantity,
+                finalPrice:finalPrice,
+                discountedAmount:discountedAmount,
                 currency: "INR",
                 razorpay_payment_id: razorpay_payment_id,
                 razorpay_order_id: razorpay_order_id,
@@ -103,6 +138,8 @@ export default async function handler(req, res) {
                     status: 0
                 }
             }
+
+            // console.log(shippinData,"shipping",totalAmount,discountedAmount)
             const updateShipping = new shipping(shippinData)
             // Save the instance to the database
             const savedShipping = await updateShipping.save();
@@ -119,7 +156,7 @@ export default async function handler(req, res) {
             return res.status(405).json({ message: 'Method not allowed' });
         }
     } catch (error) {
-        // console.log(error, "errr")
+        console.log(error, "errr")
         return res.status(500).json({ message: 'Unable to create purchase', error });
     }
 } 
