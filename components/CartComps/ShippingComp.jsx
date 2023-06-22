@@ -11,7 +11,7 @@ const ShippingComp = ({ address, setAddress, submitPressed }) => {
         if (result?.data[0]?.PostOffice) {
           let temp = result.data[0].PostOffice[0];
           // console.log(temp, "temp")
-          setAddress({ ...address, city: temp.Region, state: temp.State });
+          setAddress({ ...address, city: temp.District, state: temp.State });
         }
       }
     }

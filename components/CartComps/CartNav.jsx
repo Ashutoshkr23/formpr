@@ -53,9 +53,9 @@ const CartNav = () => {
             <Link href={"/manageCards"}>
               <p className="text-sm leading-[17px]">Manage cards</p>
             </Link>
-            <div>
+            <Link href={"/order-history"}>
               <p className="text-sm leading-[17px]">Order history</p>
-            </div>
+              </Link>
           </div>
           <div className="flex gap-10 items-center">
             <Link href={"/profile"}>

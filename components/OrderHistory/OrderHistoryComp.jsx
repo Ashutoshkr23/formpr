@@ -1,50 +1,59 @@
-import React from 'react'
+import React from "react";
+import { format } from "date-fns";
 
 const OrderHistoryComp = ({ orderHistory }) => {
-    let data = orderHistory
-    for (let i = 0; i < data.length; i++) {
-        // Access the object at the current index
-        const obj = data[i];
+  function formatDate(date) {
+    const formattedDate = format(date, "do MMMM, yyyy").toUpperCase();
+    return formattedDate;
+  }
 
-        // Edit the desired values
-        obj.shippingAddress = "India";
-        obj.statusHistory = "order placed";
-
-        // Update the modified object back into the array
-        data[i] = obj;
-    }
-
-    const tableData = Array.isArray(data) ? data : [];
-    return (
-        <div>
-            <div>
-                <h1>Order History</h1>
-                {orderHistory.length > 0 ? (
-                    <table>
-                        <thead>
-                            <tr>
-                                {Object.keys(tableData[0] || {}).map(key => (
-                                    <th key={key}>{key}</th>
-                                ))}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {tableData.map((row, index) => (
-
-                                <tr key={index}>
-                                    {Object.values(row).map((value, index) => (
-                                        <td key={index} className='text-sm '>{value}</td>
-                                    ))}
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                ) : (
-                    <p>No order history available.</p>
-                )}
-            </div>
+  return (
+    <div>
+      <div className="px-36">
+        <p className="text-4xl font-bold  text-black mt-20 mb-8">
+          Order history
+        </p>
+        <div
+          className="grid grid-cols-6 gap-4 bg-white rounded-[10px] p-2"
+          style={{ boxShadow: "0px 10px 15px rgba(0, 25, 38, 0.25)" }}
+        >
+          <div className="pl-8"> ORDER NUMBER</div>
+          <div className="">ORDER DATE</div>
+          <div className="">TOTAL QUANTITY</div>
+          <div className="">TOTAL PRICE</div>
         </div>
-    )
-}
 
-export default OrderHistoryComp
+        <div className="mt-10">
+          {orderHistory?.map((row, index) => {
+            var myDate = new Date(row.createdAt);
+            const formatedDate = formatDate(myDate);
+
+            return (
+              <div
+                class="grid grid-cols-6 gap-4 bg-white rounded-[10px] p-4 my-2"
+                style={{ boxShadow: "0px 10px 15px rgba(0, 25, 38, 0.25)" }}
+              >
+                <div className="text-center text-black text-[8px] font-bold uppercase leading-10">
+                  {row.orderId}
+                </div>
+
+                <div className="text-center text-black text-[14px] font-bold uppercase leading-10">
+                  {formatedDate}
+                </div>
+                
+                <div className="text-center text-black text-[14px] font-bold uppercase">
+                  {row.numberOfCards}
+                </div>
+                <div className=" text-right text-black text-[14px] font-bold leading-10">
+                  ₹ {row.finalPrice}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default OrderHistoryComp;
