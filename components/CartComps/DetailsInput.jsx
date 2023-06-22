@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SketchPicker } from "react-color";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { BeatLoader } from "react-spinners";
 
 function DetailsInput({
   card,

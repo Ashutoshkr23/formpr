@@ -1,5 +1,6 @@
 import { CartNav } from "@/components"
 import ManageCardComps from "@/components/manageCards/ManageCardComps"
+import { getSession } from "next-auth/react"
 
 const manageCards = () => {
 
