@@ -15,12 +15,14 @@ const Socialpg = ({
       {visibleInputs.includes('mail') && (
       <div className="flex flex-col  items-center">
           <Link target="_blank" href={`mailto:${inputValues.mail}`}>
+          <div className="h-[60px] w-[60px]">
           <Image
             src={`/assets/images/social/${type}/email.png`}
             alt="gmail Logo"
             width={60}
             height={60}
           />
+          </div>
         </Link>
         <p className={`text-[10px] sm:text-xs ${text1} `}>Mail</p>
       </div>
@@ -28,12 +30,14 @@ const Socialpg = ({
       {visibleInputs.includes('whatsapp') && (
         <div className="flex flex-col items-center">
           <Link target="_blank" href={`https://wa.me/${inputValues.whatsapp}`}>
+            <div className="h-[60px] w-[60px]">
             <Image
               src={`/assets/images/social/${type}/watsp.png`}
               alt="WhatsApp Logo"
               width={60}
               height={60}
             />
+            </div>
           </Link>
           <p className={`text-[10px] sm:text-xs ${text1}  `}>Whatsapp</p>
         </div>
@@ -41,12 +45,14 @@ const Socialpg = ({
       {visibleInputs.includes('linkedin') && (
       <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${inputValues.linkedin}`}>
+          <div className="h-[60px] w-[60px]">
           <Image
             src={`/assets/images/social/${type}/linked.png`}
             alt="linkedin Logo"
             width={60}
             height={60}
           />
+          </div>
         </Link>
         <p className={`text-[10px] sm:text-xs ${text1}`}>LinkedIn</p>
       </div>
@@ -54,12 +60,14 @@ const Socialpg = ({
       {visibleInputs.includes('instagram') && (
       <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${inputValues.instagram}`}>
+          <div className="h-[60px] w-[60px]">
           <Image
             src={`/assets/images/social/${type}/insta.png`}
             alt="instagram Logo"
             width={60}
             height={60}
           />
+          </div>
         </Link>
         <p className={`text-[10px] sm:text-xs ${text1}`}>Instagram</p>
       </div>
@@ -67,12 +75,14 @@ const Socialpg = ({
       {visibleInputs.includes('facebook') && (
       <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${inputValues.facebook}`}>
+          <div className="h-[60px] w-[60px]">
           <Image
             src={`/assets/images/social/${type}/facebook.png`}
             alt="facebook Logo"
             width={60}
             height={60}
           />
+          </div>
         </Link>
         <p className={`text-[10px] sm:text-xs ${text1}`}>Facebook</p>
       </div>
@@ -80,12 +90,14 @@ const Socialpg = ({
       {visibleInputs.includes('youtube') && (
       <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${inputValues.youtube}`}>
+          <div className="h-[60px] w-[60px]">
           <Image
             src={`/assets/images/social/${type}/Youtube.png`}
             alt="Youtube Logo"
             width={60}
             height={60}
           />
+          </div>
         </Link>
         <p className={`text-[10px] sm:text-xs ${text1}`}>Youtube</p>
       </div>
@@ -93,12 +105,14 @@ const Socialpg = ({
       {visibleInputs.includes('twitter') && (
       <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${inputValues.twitter}`}>
+          <div className="h-[60px] w-[60px]">
           <Image
             src={`/assets/images/social/${type}/Twitter.png`}
             alt="Twitter Logo"
             width={60}
             height={60}
           />
+          </div>
         </Link>
         <p className={`text-[10px] sm:text-xs ${text1}`}>Twitter</p>
       </div>
@@ -106,12 +120,14 @@ const Socialpg = ({
       {visibleInputs.includes('reddit') && (
       <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${inputValues.reddit}`}>
+          <div className="h-[60px] w-[60px]">
           <Image
             src={`/assets/images/social/${type}/Reddit.png`}
             alt="Reddit Logo"
             width={60}
             height={60}
           />
+          </div>
         </Link>
         <p className={`text-[10px] sm:text-xs ${text1}`}>Reddit</p>
       </div>
@@ -119,12 +135,14 @@ const Socialpg = ({
       {visibleInputs.includes('behance') && (
       <div className="flex flex-col  items-center">
         <Link target="_blank" href={`${inputValues.behance}`}>
+          <div className="h-[60px] w-[60px]">
           <Image
             src={`/assets/images/social/${type}/Behance.png`}
             alt="Behance Logo"
             width={60}
             height={60}
           />
+          </div>
         </Link>
         <p className={`text-[10px] sm:text-xs ${text1}`}>Behance</p>
       </div>

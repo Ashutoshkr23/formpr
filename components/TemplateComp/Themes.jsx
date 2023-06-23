@@ -10,7 +10,6 @@ const themes = [
         btn: 'bg-[#0F0F0F]',
         btntext: 'text-white',
         border: 'border-0',
-
         loop: '/LoopBl.png',
         profileimg: '/assets/images/templateimg/andrew.png',
         type: 'folder1'
@@ -61,6 +60,38 @@ const themes = [
         loop: '/loopwh.svg',
         profileimg: '/assets/images/templateimg/andrew.png',
         type: 'folder1'
+
+
+    },
+    {
+        id: 4,
+        gradient1: "/assets/images/templateimg/BGCover9.png",
+        gradient2: 'bg-white',
+        text1: 'text-black',
+        text2: 'text-[#F23C47]',
+        text3: 'text-black',
+        btn: 'bg-white',
+        btntext: 'text-black',
+        border: 'border-0',
+        loop: '/LoopBl.png',
+        profileimg: '/assets/images/templateimg/andrew.png',
+        type: 'folder4'
+
+
+    },
+    {
+        id: 5,
+        gradient1: "/assets/images/templateimg/BGCover8.png",
+        gradient2: 'bg-black',
+        text1: 'text-white',
+        text2: 'text-[#FDFF96]',
+        text3: 'text-white',
+        btn: 'bg-black',
+        btntext: 'text-white',
+        border: 'border-0',
+        loop: '/loopwh.svg',
+        profileimg: '/assets/images/templateimg/andrew.png',
+        type: 'folder5'
 
 
     },
