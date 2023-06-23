@@ -37,7 +37,7 @@ function MavenSwiper() {
 
     return (
         <div className='mt-20 md:hidden'>
-            <div className='w-80 mobile:w-full max-w-[380px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center'>
+            <div className='w-80 mobile:w-full  max-w-[360px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center'>
                 <Image src={'/assets/images/landing/Left-Arrow.svg'} height={12} width={12} onClick={handlePrev} className='lg:hidden' />
                 <div className='w-[280px] mobile:w-80 md:w-[700px] lg:min-w-full lg:max-w-[1020] xl:max-w-[1230px] xl:w-full h-60 overflow-hidden '>
                     <div
