@@ -11,7 +11,7 @@ import { CartContext } from "@/context/CartContext";
 import ProfileCompleted from "./ProfileCompleted";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Footer, LoopMaven } from "@/components";
+import { CartNav, Footer, LoopMaven } from "@/components";
 
 function Form({ cuuid }) {
   const [contactData, setContactData] = useState(null);
@@ -280,6 +280,7 @@ function Form({ cuuid }) {
   };
   return (
     <div className="  ">
+      <CartNav/>
       {showProfileComplete && <ProfileCompleted />}
       <div className="max-w-[1208px] px-2 sm:px-8 md:px-8 lg:px-4 xl:px-0 mx-auto relative">
         <ToastContainer />
