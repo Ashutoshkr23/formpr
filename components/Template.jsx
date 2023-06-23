@@ -34,7 +34,10 @@ const Template = ({
   twitter,
   whatsappNumber,
   youtube,
+  companyLink,
 }) => {
+  console.log({ mail });
+
   const downloadVCard = () => {
     // Create a vCard string from the contact data
     const vCard = `BEGIN:VCARD

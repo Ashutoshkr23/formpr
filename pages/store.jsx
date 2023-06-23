@@ -1,5 +1,5 @@
 // import First from "@/components/First";
-import { useSession, getSession } from 'next-auth/react';
+import { useSession, getSession } from "next-auth/react";
 import axios from "axios";
 import { useEffect, useState, useRef, useContext } from "react";
 import React from "react";
@@ -9,27 +9,25 @@ import CartNav from "@/components/CartComps/CartNav";
 import { CartContext } from "@/context/CartContext";
 
 export default function Home() {
-
   const { data: session } = useSession();
 
   async function sendMailToNewUser() {
     const userEmail = session.user.email;
-    const data = { userEmail }
+    const data = { userEmail };
     const response = await axios.post("/api/sendMailToNewUser", data);
   }
 
   useEffect(() => {
-    sendMailToNewUser()
-  }, [])
+    sendMailToNewUser();
+  }, []);
 
-
-  const { cartItems } = useContext(CartContext)
+  const { cartItems } = useContext(CartContext);
   // console.log(cartItems, "cartItems")
   return (
-    <div>
+    <div className="mt-3">
       <CartNav />
-      <div className="sm:px-8 md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto mb-20 lg:mb-28">
-        <h2>Store</h2>
+      <div className="sm:px-8 md:px-8 lg:px-4 xl:px-0 max-w-[1208px]  mx-auto mb-20 lg:mb-28">
+        <h2 className="px-5 sm:px-0 ">Store</h2>
         <div className="flex w-[280px] mobile:w-[320px] lg:w-auto mx-auto gap-4 flex-col py-12 mb-4 lg:flex-row lg:justify-between">
           <ProductComp
             text={"Loop Lite"}

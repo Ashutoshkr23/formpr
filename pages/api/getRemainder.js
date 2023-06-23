@@ -5,10 +5,6 @@ import UserData from '@/models/UserData';
 export default async function handler(req, res) {
 
     if (req.method === 'POST') {
-
-        // Connecting To MongoDB
-        await connectToDatabase();
-
         const { userEmail } = req.body;
 
         const gettinguserPuuid = await UserData.findOne({ email: userEmail })

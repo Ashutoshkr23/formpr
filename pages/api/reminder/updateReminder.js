@@ -7,8 +7,6 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        // Connecting To MongoDB
-        await connectToDatabase();
 
         const { userName, userContactNumber, itemID, userCustomMessage, selectedDate } = req.body;
 

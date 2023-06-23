@@ -29,25 +29,27 @@ const OrderHistoryComp = ({ orderHistory }) => {
             const formatedDate = formatDate(myDate);
 
             return (
-              <div
-                class="grid grid-cols-6 gap-4 bg-white rounded-[10px] p-4 my-2"
-                style={{ boxShadow: "0px 10px 15px rgba(0, 25, 38, 0.25)" }}
-              >
-                <div className="text-center text-black text-[8px] font-bold uppercase leading-10">
-                  {row.orderId}
-                </div>
+              <>
+                <div
+                  class="grid grid-cols-6 gap-4 bg-white rounded-[10px] p-4 my-2"
+                  style={{ boxShadow: "0px 10px 15px rgba(0, 25, 38, 0.25)" }}
+                >
+                  <div className="text-center text-black text-[8px] font-bold uppercase leading-10">
+                    {row.orderId}
+                  </div>
 
-                <div className="text-center text-black text-[14px] font-bold uppercase leading-10">
-                  {formatedDate}
+                  <div className="text-center text-black text-[14px] font-bold uppercase leading-10">
+                    {formatedDate}
+                  </div>
+
+                  <div className="text-center text-black text-[14px] font-bold uppercase">
+                    {row.numberOfCards}
+                  </div>
+                  <div className=" text-right text-black text-[14px] font-bold leading-10">
+                    ₹ {row.finalPrice}
+                  </div>
                 </div>
-                
-                <div className="text-center text-black text-[14px] font-bold uppercase">
-                  {row.numberOfCards}
-                </div>
-                <div className=" text-right text-black text-[14px] font-bold leading-10">
-                  ₹ {row.finalPrice}
-                </div>
-              </div>
+              </>
             );
           })}
         </div>

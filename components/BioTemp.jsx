@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
+  const handlePhoneNumberClick = () => {
+    window.open(`tel:${mobile}`);
+  };
   return (
     <div className={`${border} rounded-[10px]  pt-2 pb-2 px-4 mx-2 `}>
       <div className={`text-[12px] ${text2} text-[#7D9695] `}>Bio</div>
@@ -12,7 +15,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
           placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis"
           value={bio}
           readOnly={true}
-        //   onChange={handleChange}
+          //   onChange={handleChange}
         />
       </div>
       <div className="pt-[30px] grid grid-cols-2 gap-y-4">
@@ -24,11 +27,14 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
             height={20}
           />
 
-          <p className="text-[8px] ml-1.5 tracking-[-0.5px] text-[#7D9695]  ">
+          <p className="text-[10px] ml-1.5 tracking-[-0.5px] text-[#7D9695]  ">
             {company ? company : "Alphamintlabs"}
           </p>
         </div>
-        <div className="flex ml-[50px] items-center ">
+        <div
+          className="flex ml-[50px] items-center "
+          onClick={handlePhoneNumberClick}
+        >
           <Image
             src={"/assets/images/display/phone.png"}
             alt="phone"
@@ -42,7 +48,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
               placeholder="+919833XXXXXX"
               value={mobile}
               readOnly={true}
-            //   onChange={handleChange}
+              //   onChange={handleChange}
             />
           </p>
         </div>
@@ -54,16 +60,15 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
               width={22}
               height={22}
             />
-          </div> 
+          </div>
           <Link href={`${website}`}>
-            <p className="text-[10px] ml-1.5 tracking-[-0.5px]">
+            <p className="ml-1.5 tracking-[-0.5px]">
               <input
-                className={`bg-transparent ${text2}  text-[#7D9695] cursor-pointer w-[200px] `}
+                className={`bg-transparent ${text2} text-[#7D9695] cursor-pointer w-[200px] font-[10px] `}
                 type="text"
-                placeholder=" www.alphamintlabs.com"
+                placeholder=" www.LoremIpsum.com"
                 value={website}
                 readOnly={true}
-              //   onChange={handleChange}
               />
             </p>
           </Link>

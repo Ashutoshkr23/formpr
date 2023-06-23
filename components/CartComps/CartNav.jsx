@@ -55,7 +55,7 @@ const CartNav = () => {
             </Link>
             <Link href={"/order-history"}>
               <p className="text-sm leading-[17px]">Order history</p>
-              </Link>
+            </Link>
           </div>
           <div className="flex gap-10 items-center">
             <Link href={"/profile"}>
@@ -154,20 +154,20 @@ const CartNav = () => {
                             onClick={() => setIsOpen(!isOpen)}
                             className="nav-link-container  py-2  border-b-2 border-white "
                           >
-                            <a href="#" className="nav-link ">
+                            <Link href="/manageCards" className="nav-link ">
                               Manage cards
-                            </a>
+                            </Link>
                           </div>
                           <div
                             onClick={() => setIsOpen(!isOpen)}
                             className="nav-link-container py-4  border-b-2 border-white"
                           >
-                            <a href="#" className="nav-link ">
+                            <Link href="/order-history" className="nav-link ">
                               Order history
-                            </a>
+                            </Link>
                           </div>
 
-                          <div className="mb-7">
+                          <div className="mb-5">
                             <Link href={"/profile"}>
                               {/* <Image
                                 src={"/assets/images/profileIcon.png"}
@@ -176,6 +176,18 @@ const CartNav = () => {
                                 height={30}
                               /> */}
                               Profile
+                            </Link>
+                          </div>
+
+                          <div className="mb-7">
+                            <Link href={"/store"}>
+                              {/* <Image
+                                src={"/assets/images/profileIcon.png"}
+                                alt="loop"
+                                width={30}
+                                height={30}
+                              /> */}
+                              Store
                             </Link>
                           </div>
 

@@ -24,7 +24,7 @@ const CartComponent = () => {
     clearCart,
     setAllCards,
     discountCode,
-    finalPrice
+    finalPrice,
   } = useContext(CartContext);
   const [cardTypeSelected, setCardTypeSelected] = useState(cartItems[0]);
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
@@ -48,7 +48,6 @@ const CartComponent = () => {
   const [cardBg, setCardBg] = useState("#000000");
   const [cardDesign, setCardDesign] = useState(" ");
   const [loopColor, setLoopColor] = useState(" ");
-  
 
   // console.log(cardBg);
   const router = useRouter();
@@ -129,7 +128,7 @@ const CartComponent = () => {
       razorpay_signature: razorData.razorpay_signature,
       razorpay_order_id: razorData.razorpay_order_id,
       address: address,
-      discountCode:discountCode,
+      discountCode: discountCode,
     };
     localStorage.setItem("addressData", JSON.stringify(address));
     // console.log(postData, "postData");
@@ -151,51 +150,51 @@ const CartComponent = () => {
   // main submit function
   const handleSubmitFunction = async () => {
     setRupayLoader(true);
-    if(finalPrice > 0){
-    const res = await initializeRazorpay();
-    if (!res) {
-      alert("Razorpay SDK Failed to load");
-      return;
+    if (finalPrice > 0) {
+      const res = await initializeRazorpay();
+      if (!res) {
+        alert("Razorpay SDK Failed to load");
+        return;
+      }
+
+      // Make API call to the serverless API
+      const { data } = await axios.post("/api/razorpay", {
+        cartItems: cartItems,
+        discountCode: discountCode,
+      });
+      var options = {
+        key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
+        name: "Alphamit Labs",
+        currency: data.currency,
+        amount: data.amount,
+        order_id: data.id,
+        description: "Thank you for your test donation",
+        handler: function (response) {
+          // Validate payment at server - using webhooks is a better idea.
+          // alert(response.razorpay_payment_id);
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature);
+          // Save the data to the server if payment is successful
+
+          saveDataToServer(response);
+          // window.location.href = '/ContactForm';
+        },
+        prefill: {
+          name: userProfile?.name,
+          email: userProfile?.email,
+        },
+      };
+
+      const paymentObject = new window.Razorpay(options);
+      paymentObject.open();
+    } else {
+      let response = {
+        razorpay_order_id: "000000",
+        razorpay_signature: "000000",
+        razorpay_payment_id: "000000",
+      };
+      saveDataToServer(response);
     }
-
-    // Make API call to the serverless API
-    const { data } = await axios.post("/api/razorpay", {
-      cartItems: cartItems,
-      discountCode:discountCode,
-    });
-    var options = {
-      key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
-      name: "Alphamit Labs",
-      currency: data.currency,
-      amount: data.amount,
-      order_id: data.id,
-      description: "Thank you for your test donation",
-      handler: function (response) {
-        // Validate payment at server - using webhooks is a better idea.
-        // alert(response.razorpay_payment_id);
-        // alert(response.razorpay_order_id);
-        // alert(response.razorpay_signature);
-        // Save the data to the server if payment is successful
-
-        saveDataToServer(response);
-        // window.location.href = '/ContactForm';
-      },
-      prefill: {
-        name: userProfile?.name,
-        email: userProfile?.email,
-      },
-    };
-
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
-  }else{
-    let response = {
-      razorpay_order_id:"000000",
-      razorpay_signature:"000000",
-      razorpay_payment_id:"000000",
-    }
-    saveDataToServer(response);
-  }
   };
 
   // this function is to initialize razorpay
@@ -215,8 +214,6 @@ const CartComponent = () => {
       document.body.appendChild(script);
     });
   };
-
-  
 
   if (!cartItems.length > 0) {
     return <>Loading...</>;
@@ -358,7 +355,6 @@ const CartComponent = () => {
             setCheckLiteColor={setCheckLiteColor}
             checkLiteColor={checkLiteColor}
             rupayLoader={rupayLoader}
-            
           />
         )}
       </div>

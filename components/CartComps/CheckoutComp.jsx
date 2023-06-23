@@ -19,8 +19,6 @@ const CheckoutComp = ({
   setCheckColor,
   checkLiteColor,
   rupayLoader,
-  
- 
 }) => {
   // console.log(`colorlite=${colorLite}`);
   // console.log(`colorelevate=${colorElevate}`);
@@ -34,7 +32,7 @@ const CheckoutComp = ({
     handleDiscount,
     discountCode,
     setDiscountCode,
-    finalPrice
+    finalPrice,
   } = useContext(CartContext);
 
   const [shippingState, setShippingState] = useState(false);
@@ -320,10 +318,21 @@ const CheckoutComp = ({
             </div>
           </div>
           <div className="mx-5 mt-14">
-
-          <div className="flex items-center justify-between w-full my-5 space-x-2">
-               <input className="h-10 px-4 border outline-none rounded-[10px] placeholder:text-black" name="discount" type="text" placeholder="Discount code" value={discountCode} onChange={(e)=>setDiscountCode(e.target.value)} />
-               <button className="h-10 rounded-[10px] bg-black border border-black w-full text-white" onClick={()=>handleDiscount()} >APPLY</button>
+            <div className="flex md:flex-row flex-col items-center justify-between w-full my-5 md:space-x-2 space-y-4 md:space-y-0">
+              <input
+                className="h-10 w-full px-4 border outline-none rounded-[10px] placeholder:text-black"
+                name="discount"
+                type="text"
+                placeholder="Discount code"
+                value={discountCode}
+                onChange={(e) => setDiscountCode(e.target.value)}
+              />
+              <button
+                className="h-10 rounded-[10px] bg-black border border-black w-full text-white"
+                onClick={() => handleDiscount()}
+              >
+                APPLY
+              </button>
             </div>
 
             <div className="flex items-center justify-between w-full h-10 px-5 border rounded-lg border-black">
