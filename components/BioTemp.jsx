@@ -24,7 +24,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
             height={20}
           />
 
-          <p className="text-[8px] ml-1.5 tracking-[-0.5px] text-[#7D9695]  ">
+          <p className="text-[10px] ml-1.5 tracking-[-0.5px] text-[#7D9695]  ">
             {company ? company : "Alphamintlabs"}
           </p>
         </div>
@@ -58,11 +58,10 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
           <Link href={`${website}`}>
             <p className="ml-1.5 tracking-[-0.5px]">
               <input
-                className={`bg-transparent ${text2} text-[#7D9695] cursor-pointer w-[200px] ${website.length > 15 ? 'text-[8px]' : 'text-[10px]'
-                  }`}
+                className={`bg-transparent ${text2} text-[#7D9695] cursor-pointer w-[200px] font-[10px] `}
                 type="text"
                 placeholder=" www.LoremIpsum.com"
-                value={website.replace(/(https?:\/\/)?(www\.)?/, '')}
+                value={website}
                 readOnly={true}
               />
             </p>

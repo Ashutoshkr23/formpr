@@ -51,7 +51,7 @@ const Contact = () => {
     contactData && contactData.companyName ? contactData.companyName : ""
   );
   const [companyLink, setCompanyLink] = useState(
-    contactData && contactData.companyLink ? contactData.companyLink : ""
+    contactData && contactData.companylink ? contactData.companylink : ""
   );
   const [address, setAddress] = useState(
     contactData && contactData.address ? contactData.address : ""
