@@ -127,6 +127,10 @@ function Form({ cuuid }) {
       setCover(themes[2].gradient1);
     } else if (selectedtemplate === "3") {
       setCover(themes[3].gradient1);
+    } else if (selectedtemplate === "4") {
+      setCover(themes[4].gradient1);
+    } else if (selectedtemplate === "5") {
+      setCover(themes[5].gradient1);
     } else {
       setCover(themes[0].gradient1); // Set a default value if needed
     }
@@ -358,6 +362,7 @@ function Form({ cuuid }) {
                   type={themes[selectedtemplate].type}
                   loop={themes[selectedtemplate].loop}
                   border={themes[selectedtemplate].border}
+                  selectedTemplate={selectedtemplate}
                   inputValues={inputValues}
                   visibleInputs={visibleInputs}
                   profileImg={

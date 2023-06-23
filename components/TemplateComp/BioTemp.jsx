@@ -2,13 +2,16 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
+const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selectedTemplate }) => {
   const handlePhoneNumberClick = () => {
     window.open(`tel:${mobile}`);
+    console.log(selectedTemplate)
   };
   return (
     <div className={`${border} rounded-[10px]  pt-2 pb-2 px-2  sm:px-4 mx-2 `}>
-      <div className={`text-[12px] ${text2} text-[#7D9695] `}>Bio</div>
+      {selectedTemplate >= 0 && selectedTemplate <= 3 && (
+        <div className={`text-[12px] ${text2} text-[#7D9695]`}>Bio</div>
+      )}
       <div className="pt-2 sm:pt-4 text-[12px]">
         <textarea
           className={`bg-transparent w-full resize-none ${text1}`}
