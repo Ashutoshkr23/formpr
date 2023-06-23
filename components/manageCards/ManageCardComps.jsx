@@ -233,7 +233,7 @@ const handleClick = (card) => {
                           loopcard.club/details/{card.cuuid.substring(0, 2)}..
                         </p>
                          <div className="h-[18px] w-[18px]">
-                          <Image src={"/assets/images/COPY.png"} height={18} width={18} onClick={() => {handleClick(card.cuuid);}} />
+                          <Image src={"/assets/images/COPY.png"} height={18} width={18} onClick={() => {handleClick(card.cuuid);}} alt="copy" />
                         </div>
                       </div>
 
