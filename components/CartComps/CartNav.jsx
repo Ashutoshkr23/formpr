@@ -51,10 +51,19 @@ const CartNav = () => {
           </Link>
           <div className="flex gap-12">
             <Link href={"/manageCards"}>
-              <p className="text-sm leading-[17px]">Manage cards</p>
+              <p className="text-sm leading-[17px] w-[110px]  hover:font-bold">
+                Manage cards
+              </p>
             </Link>
             <Link href={"/order-history"}>
-              <p className="text-sm leading-[17px]">Order history</p>
+              <p className="text-sm leading-[17px] w-[110px]  hover:font-bold">
+                Order history
+              </p>
+            </Link>
+            <Link href={"/store"}>
+              <p className="text-sm leading-[17px] w-[80px]  hover:font-bold">
+                Store
+              </p>
             </Link>
           </div>
           <div className="flex gap-10 items-center">
