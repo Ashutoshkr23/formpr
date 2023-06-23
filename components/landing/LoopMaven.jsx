@@ -82,7 +82,7 @@ const LoopMaven = () => {
             </div>
 
 
-            <div>
+            <div className='hidden md:block'>
                 <div className='loop-maven-info font-bold flex sm:flex-row flex-col justify-between gap-[80px] lg:pt-32 pt-16 lg:px-0 px-4'>
                     <div className='text-1'>
                         With a simple tap, Loop Maven asks and records the names of your contacts in your profile on the Loop website, eliminating the risk of forgetting important connections.

@@ -15,6 +15,7 @@ import {
 } from "@/components";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import MavenSwiper from "@/components/landing/MavenSwiper";
 
 const Landing = () => {
   const router = useRouter();
@@ -58,6 +59,7 @@ const Landing = () => {
       {showHomePage && <Hero />}
       {showHomePage && <Benefits />}
       {showHomePage && <LoopMaven />}
+      {showHomePage && <MavenSwiper />}
       {showHomePage && <Products />}
       {showHomePage && <LoopBlack text={"BUY NOW"} />}
       {showHomePage && <Story />}
@@ -65,6 +67,8 @@ const Landing = () => {
       {showHomePage && <Android />}
       {showHomePage && <FAQ />}
       {showHomePage && <Footer />}
+      
+
     </div>
   );
 };
