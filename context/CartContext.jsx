@@ -61,7 +61,7 @@ export const CartProvider = ({ children }) => {
           const response = await axios.put("/api/discount", postData);
           if (response.status == 200) {
             if (!response.data.error) {
-              console.log(response.data);
+            //   console.log(response.data);
               const discountObj = response.data.result
               if(discountObj.discountType ==2){
                 const discount = (totalAmount * discountObj.percentage) / 100;
@@ -80,7 +80,7 @@ export const CartProvider = ({ children }) => {
               toast.error(response.data.message);
             }
           } else {
-            console.log(response);
+            // console.log(response);
             toast.error("Something went wrong");
           }
         }
@@ -378,7 +378,6 @@ export const CartProvider = ({ children }) => {
 
     }
     const handleRemoveCardArr = (key) => {
-        console.log("runned")
         let array = [...cardsArray]
         let ctuuid = ""
         for (let i = 0; i < array.length; i++) {
@@ -388,9 +387,7 @@ export const CartProvider = ({ children }) => {
                 break; // Exit the loop since the object has been removed
             }
         }
-        console.log(ctuuid,"ctuuid")
         let cartType = cartItems.filter(item => item.cardTypeUuid == ctuuid)
-        console.log(cartType[0]._id)
 
         minusCartFunc(cartType[0]._id)
         setCardsArray(array)
@@ -399,7 +396,6 @@ export const CartProvider = ({ children }) => {
 
     }
 
-    console.log(totalAmount,totalQuantity,"total a q")
 
     const handleDesignUuid = (key, designId) => {
         if (key && designId) {

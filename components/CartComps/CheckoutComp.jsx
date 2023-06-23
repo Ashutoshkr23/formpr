@@ -1,6 +1,6 @@
 import { CartContext } from "@/context/CartContext";
 import Image from "next/image";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ShippingComp from "./ShippingComp";
 import { toast } from "react-toastify";
 import BeatLoader from "react-spinners/BeatLoader";
@@ -112,6 +112,12 @@ const CheckoutComp = ({
       setShippingState(true);
     }
   };
+
+  useEffect(()=>{
+    if(totalQuantity && discountCode){
+      handleDiscount()
+    }
+  },[totalQuantity])
 
   // console.log(cardsArray);
   return (
