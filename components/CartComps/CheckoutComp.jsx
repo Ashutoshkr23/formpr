@@ -203,7 +203,7 @@ const CheckoutComp = ({
                         >
                           REMOVE
                         </p>
-                        <p className="text-base font-medium leading-7 text-center text-white pl-2">
+                        <p className="text-base font-medium leading-7 text-center text-white pl-2 pr-2">
                           X
                         </p>
                       </div>
