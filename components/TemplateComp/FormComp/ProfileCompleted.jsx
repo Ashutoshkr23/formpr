@@ -11,7 +11,7 @@ function ProfileCompleted() {
         </div>
             <h1 className='text-xl sm:text-[40px] font-bold  mt-10 '>Profile Creation Completed</h1>
             <div className='pt-20'>
-                  <Link href="/manageCards">
+                  <Link href="/profile">
                       <button className="h-10 px-2 w-full sm:w-[388px] rounded-[10px] bg-black text-white text-xs sm:text-base">
                           Go to Manage Cards and view your profile
                       </button>

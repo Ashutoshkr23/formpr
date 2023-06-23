@@ -56,14 +56,14 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
             />
           </div> 
           <Link href={`${website}`}>
-            <p className="text-[10px] ml-1.5 tracking-[-0.5px]">
+            <p className="ml-1.5 tracking-[-0.5px]">
               <input
-                className={`bg-transparent ${text2}  text-[#7D9695] cursor-pointer w-[200px] `}
+                className={`bg-transparent ${text2} text-[#7D9695] cursor-pointer w-[200px] ${website.length > 15 ? 'text-[8px]' : 'text-[10px]'
+                  }`}
                 type="text"
-                placeholder=" www.alphamintlabs.com"
-                value={website}
+                placeholder=" www.LoremIpsum.com"
+                value={website.replace(/(https?:\/\/)?(www\.)?/, '')}
                 readOnly={true}
-              //   onChange={handleChange}
               />
             </p>
           </Link>
