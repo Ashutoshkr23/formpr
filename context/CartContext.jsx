@@ -61,7 +61,7 @@ export const CartProvider = ({ children }) => {
           const response = await axios.put("/api/discount", postData);
           if (response.status == 200) {
             if (!response.data.error) {
-              console.log(response.data);
+            //   console.log(response.data);
               const discountObj = response.data.result
               if(discountObj.discountType ==2){
                 const discount = (totalAmount * discountObj.percentage) / 100;
@@ -80,7 +80,7 @@ export const CartProvider = ({ children }) => {
               toast.error(response.data.message);
             }
           } else {
-            console.log(response);
+            // console.log(response);
             toast.error("Something went wrong");
           }
         }
@@ -158,18 +158,21 @@ export const CartProvider = ({ children }) => {
         //     // console.log("runned 1")
         //     setCardsArray(JSON.parse(localCardData))
         // }
-
-        if (cartItems.length > 0 && stepState == 1) {
-            let totalQuantity = 0;
-            let totalAmount = 0
-            let cards = []
-            // Loop over the array and add up the quantity field of each object
+        let totalQuantity = 0;
+        let totalAmount = 0
+        let cards = []
+        // Loop over the array and add up the quantity field of each object
+        if(cartItems && cartItems.length){
             for (var i = 0; i < cartItems.length; i++) {
                 totalQuantity += cartItems[i].quantity;
                 totalAmount += cartItems[i].amount * cartItems[i].quantity;
             }
             setTotalQuantity(totalQuantity)
             setTotalAmount(totalAmount)
+        }
+        
+        if (cartItems.length > 0 && stepState == 1) {
+
 
             cartItems.map((item, index) => {
                 if (item.quantity > 0) {
@@ -392,6 +395,7 @@ export const CartProvider = ({ children }) => {
         // localStorage.setItem('cardsArray', JSON.stringify(array));
 
     }
+
 
     const handleDesignUuid = (key, designId) => {
         if (key && designId) {

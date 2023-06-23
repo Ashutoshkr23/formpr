@@ -1,6 +1,6 @@
 import { CartContext } from "@/context/CartContext";
 import Image from "next/image";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ShippingComp from "./ShippingComp";
 import { toast } from "react-toastify";
 import BeatLoader from "react-spinners/BeatLoader";
@@ -113,6 +113,12 @@ const CheckoutComp = ({
     }
   };
 
+  useEffect(()=>{
+    if(totalQuantity && discountCode){
+      handleDiscount()
+    }
+  },[totalQuantity])
+
   // console.log(cardsArray);
   return (
     <div className="max-w-[1208px] mx-auto flex lg:flex-row flex-col lg:justify-between justify-center px-4 xl:px-0 pb-10">
@@ -197,14 +203,13 @@ const CheckoutComp = ({
                           </div>
                         </div>
                       )}
-                      <div className="absolute top-[-12px] right-0 rounded-md flex  items-center justify-end w-[100px] px-1 pt-0.5 bg-black">
+                      <div className="absolute top-[-12px] right-0 rounded-md flex  items-center justify-end w-[100px] px-1 pt-0.5 bg-black" onClick={() => handleRemoveCardArr(data.key)}>
                         <p
                           className="text-xs font-bold leading-tight text-center text-white cursor-pointer"
-                          onClick={() => handleRemoveCardArr(data.key)}
                         >
                           REMOVE
                         </p>
-                        <p className="text-base font-medium leading-7 text-center text-white pl-2">
+                        <p className="text-base font-medium leading-7 text-center text-white pl-2 pr-2">
                           X
                         </p>
                       </div>
@@ -213,7 +218,7 @@ const CheckoutComp = ({
                           {data.cardTypeName}
                         </p>
                         <p className="text-sm font-bold leading-7 text-red-400 mt-1">
-                          ₹ 899
+                          ₹ {data.amount}
                         </p>
                         {/* <div className="flex justify-between mt-1">
                           <span className="text-xs font-medium leading-snug">

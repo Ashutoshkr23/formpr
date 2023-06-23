@@ -18,6 +18,15 @@ const LoopMaven = () => {
 
             {/* Desktop And Tablet */}
             <div className='mt-[55px] sm:pb-4 pb-10 sm:pt-9 pt-0 lg:mt-[91px] lg:pt-0 flex flex-col items-center space-y-9 overflow-hidden bg-[url(/assets/images/landing/loopMavenBG.png)] bg-[length:100%_100%]'>
+            <div className='relative w-full h-full'>
+                <div className='absolute inset-0'>
+                    <Image
+                        src="/assets/images/landing/loopMavenBG.png"
+                        alt="Loop Maven Background"
+                        fill={true}
+                    />
+                </div>
+                </div>
                 <div className='sm:flex hidden xl:flex-row flex-col items-center space-y-9 lg:space-y-0 justify-center lg:space-x-16'>
                     <div className='bg-white w-[526px] h-[191px] rounded-[20px] drop-shadow-white'>
                         <div className='font-bold text-2xl absolute top-4 left-8'>My Contacts</div>
