@@ -23,6 +23,7 @@ const Template = ({
   text1,
   text2,
   text3,
+  selectedTemplate,
   btn,
   loop,
   visibleInputs,
@@ -113,14 +114,15 @@ const Template = ({
               //   onChange={handleChange}
             />
           </div>
-          <div className="flex justify-center mt-2 sm:mt-4 font-semibold text-xs sm:text-[16px]">
+          <div className="flex justify-center mt-2 sm:mt-4  text-xs sm:text-[14px]">
             <input
-              className={`text-center bg-transparent ${text2} text-[#7D9695] `}
+              className={`text-center bg-transparent ${selectedTemplate >= 0 && selectedTemplate <= 3 ? text2 : text1} text-[#7D9695]`}
               type="text"
               placeholder="Design Lead"
               value={designation}
-              //   onChange={handleChange}
+            // onChange={handleChange}
             />
+
           </div>
           <div>
             <BioTemp
@@ -131,6 +133,7 @@ const Template = ({
               company={company}
               mobile={mobile}
               website={website}
+              selectedTemplate={selectedTemplate}
             />
           </div>
 

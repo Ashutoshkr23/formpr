@@ -11,7 +11,7 @@ import { CartContext } from "@/context/CartContext";
 import ProfileCompleted from "./ProfileCompleted";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Footer, LoopMaven } from "@/components";
+import { CartNav, Footer, LoopMaven } from "@/components";
 
 function Form({ cuuid }) {
   const [contactData, setContactData] = useState(null);
@@ -127,6 +127,10 @@ function Form({ cuuid }) {
       setCover(themes[2].gradient1);
     } else if (selectedtemplate === "3") {
       setCover(themes[3].gradient1);
+    } else if (selectedtemplate === "4") {
+      setCover(themes[4].gradient1);
+    } else if (selectedtemplate === "5") {
+      setCover(themes[5].gradient1);
     } else {
       setCover(themes[0].gradient1); // Set a default value if needed
     }
@@ -276,6 +280,7 @@ function Form({ cuuid }) {
   };
   return (
     <div className="  ">
+      <CartNav/>
       {showProfileComplete && <ProfileCompleted />}
       <div className="max-w-[1208px] px-2 sm:px-8 md:px-8 lg:px-4 xl:px-0 mx-auto relative">
         <ToastContainer />
@@ -358,6 +363,7 @@ function Form({ cuuid }) {
                   type={themes[selectedtemplate].type}
                   loop={themes[selectedtemplate].loop}
                   border={themes[selectedtemplate].border}
+                  selectedTemplate={selectedtemplate}
                   inputValues={inputValues}
                   visibleInputs={visibleInputs}
                   profileImg={

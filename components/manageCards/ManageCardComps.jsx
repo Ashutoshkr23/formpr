@@ -1,11 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext , useState } from 'react'
 import { CartContext } from '@/context/CartContext';
 import Link from 'next/link';
 import Image from 'next/image';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const ManageCardComps = () => {
   const { cartItems, userProfile, allCards } = useContext(CartContext);
+  const [textToCopy, setTextToCopy] = useState('');
+
 
 
   const checkFontArray = (uuid) => {
@@ -28,10 +32,30 @@ const ManageCardComps = () => {
     }
   }
 
+const handleClick = (card) => {
+  navigator.clipboard.writeText("loopcard.club/details/" + (card));
+  navigator.clipboard.writeText("loopcard.club/details/" + (card))
+    .then(() => {
+      toast.success('Text copied to clipboard!', {
+        position: toast.POSITION.TOP_RIGHT
+      });
+    })
+    .catch((error) => {
+      toast.error('Failed to copy text to clipboard!', {
+        position: toast.POSITION.TOP_RIGHT
+      });
+      console.error(error);
+    });
+};
+
+  
+
   // console.log(allCards)
   return (
     <div className="w-full h-full px-36 py-4">
+      <ToastContainer/>
       <h3 className="text-4xl font-bold  text-black mt-8 text-center xl:text-left">Manage Cards</h3>
+      
 
       {allCards?.length > 0 ?
         (
@@ -44,9 +68,9 @@ const ManageCardComps = () => {
               }
 
               return (
-                <Link href={`/createCard/${card.cuuid}`} key={card.cuuid} className=' flex place-content-center min-[1411px]:block'>
+                <div  key={card.cuuid} className=' flex place-content-center min-[1411px]:block'>
                   <div
-                    className="w-[566px] relative h-44 rounded-[10px] px-4 bg-white flex justify-evenly "
+                    className="w-[566px] relative h-auto rounded-[10px] pl-4 bg-white flex justify-evenly "
                     style={{ boxShadow: "0px 10px 15px 0 rgba(0,25,38,0.25)" }}
                   >
                     <div className="flex justify-center items-center h-full">
@@ -185,7 +209,7 @@ const ManageCardComps = () => {
                         </>}
                       </div>
                     </div>
-                    <div className=" flex flex-col py-2 px-4">
+                    <div className=" flex flex-col py-2 pl-4">
                       <p className="font-medium text-left text-black mt-5">
                         <span className="text-xs font-medium text-left text-black">
                           Full Name
@@ -204,10 +228,20 @@ const ManageCardComps = () => {
                           {card.companyName}
                         </p>
                       </p>
+                      <div className="flex border border-dashed mt-2 border-[#7D9695] ml-5 px-2 rounded-xl">
+                        <p className="w-32 text-[#7D9695] text-[10px]">
+                          loopcard.club/details/{card.cuuid.substring(0, 2)}..
+                        </p>
+                         <div className="h-[18px] w-[18px]">
+                          <Image src={"/assets/images/COPY.png"} height={18} width={18} onClick={() => {handleClick(card.cuuid);}} />
+                        </div>
+                      </div>
+
+                      
                     </div>
 
                     {card?.status == 1 ? (
-                      <div className="w-[203px] h-10 rounded-[10px] border border-black flex justify-center items-center space-x-2 bg-black text-white absolute bottom-[-18px]">
+                      <Link href={`/createCard/${card.cuuid}`} className="w-[180px] h-10 rounded-[10px] border border-black flex justify-center items-center space-x-2 bg-black text-white absolute bottom-[-18px]">
                         <p className="text-sm font-bold text-center  text-white">
                           EDIT DETAILS
                         </p>
@@ -218,9 +252,9 @@ const ManageCardComps = () => {
                           alt="edit icon"
                           style={{ objectFit: "contain", marginBottom: "3px" }}
                         />
-                      </div>
+                      </Link>
                     ) : (
-                      <div className="w-[203px] h-10 rounded-[10px] border border-black flex justify-center items-center space-x-2 bg-white absolute bottom-[-18px]">
+                      <Link href={`/createCard/${card.cuuid}`} className="w-[180px] h-10 rounded-[10px] border border-black flex justify-center items-center space-x-2 bg-white absolute bottom-[-18px]">
                         <p className="text-sm font-bold text-center  text-black">
                           CREATE PROFILE
                         </p>
@@ -231,10 +265,10 @@ const ManageCardComps = () => {
                           alt="plus icon"
                           style={{ objectFit: "contain" }}
                         />
-                      </div>
+                      </Link >
                     )}
                   </div>
-                </Link>
+                </div>
               )
             })}
           </div>

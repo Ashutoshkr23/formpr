@@ -22,7 +22,7 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
 
   
   return (
-      <div className='flex  flex-grow rounded-[10px] drop-shadow-white flex-col h-[600px] bg-black-dim px-4 sm:px-9 pt-4 my-5'>
+      <div className='flex  flex-grow rounded-[10px] drop-shadow-white flex-col h-auto pb-60 sm:h-[600px] bg-black-dim px-4 sm:px-9 pt-4 my-5'>
         <p className='font-bold text-white text-xs'>Social Links</p>
       <div>
         <div className=''>
