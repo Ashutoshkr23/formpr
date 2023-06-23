@@ -257,6 +257,7 @@ function Form({ cuuid }) {
         reddit: inputValues.reddit,
         puuid: userProfile.puuid,
         cuuid: cuuid,
+        status: "1",
       };
       // console.log(data)
 
