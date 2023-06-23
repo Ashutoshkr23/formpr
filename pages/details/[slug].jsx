@@ -131,7 +131,7 @@ const Contact = () => {
             cover={contactData.cover}
             company={contactData.companyName}
             bio={contactData.bio}
-            website={contactData.companyLink}
+            website={contactData.companylink}
             mobile={contactData.mobileNumber}
             fname={contactData.name}
             designation={contactData.role}

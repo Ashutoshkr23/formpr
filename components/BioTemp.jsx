@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
+  const handlePhoneNumberClick = () => {
+    window.open(`tel:${mobile}`);
+  };
   return (
     <div className={`${border} rounded-[10px]  pt-2 pb-2 px-4 mx-2 `}>
       <div className={`text-[12px] ${text2} text-[#7D9695] `}>Bio</div>
@@ -12,7 +15,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
           placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis"
           value={bio}
           readOnly={true}
-        //   onChange={handleChange}
+          //   onChange={handleChange}
         />
       </div>
       <div className="pt-[30px] grid grid-cols-2 gap-y-4">
@@ -28,7 +31,10 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
             {company ? company : "Alphamintlabs"}
           </p>
         </div>
-        <div className="flex ml-[50px] items-center ">
+        <div
+          className="flex ml-[50px] items-center "
+          onClick={handlePhoneNumberClick}
+        >
           <Image
             src={"/assets/images/display/phone.png"}
             alt="phone"
@@ -42,7 +48,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
               placeholder="+919833XXXXXX"
               value={mobile}
               readOnly={true}
-            //   onChange={handleChange}
+              //   onChange={handleChange}
             />
           </p>
         </div>
@@ -54,7 +60,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 }) => {
               width={22}
               height={22}
             />
-          </div> 
+          </div>
           <Link href={`${website}`}>
             <p className="ml-1.5 tracking-[-0.5px]">
               <input
