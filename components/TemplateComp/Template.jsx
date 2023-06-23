@@ -34,7 +34,7 @@ const Template = ({
     const vCard = `BEGIN:VCARD
     FN:${fname} ${lname}
     TEL;TYPE=CELL:${mobile}
-    EMAIL;: ${gmail}
+    EMAIL;: ${mail}
     URL:${website}
     ORG:${company}
     END:VCARD`;
