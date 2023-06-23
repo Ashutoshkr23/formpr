@@ -199,10 +199,9 @@ const CheckoutComp = ({
                           </div>
                         </div>
                       )}
-                      <div className="absolute top-[-12px] right-0 rounded-md flex  items-center justify-end w-[100px] px-1 pt-0.5 bg-black">
+                      <div className="absolute top-[-12px] right-0 rounded-md flex  items-center justify-end w-[100px] px-1 pt-0.5 bg-black" onClick={() => handleRemoveCardArr(data.key)}>
                         <p
                           className="text-xs font-bold leading-tight text-center text-white cursor-pointer"
-                          onClick={() => handleRemoveCardArr(data.key)}
                         >
                           REMOVE
                         </p>
@@ -215,7 +214,7 @@ const CheckoutComp = ({
                           {data.cardTypeName}
                         </p>
                         <p className="text-sm font-bold leading-7 text-red-400 mt-1">
-                          ₹ 899
+                          ₹ {data.amount}
                         </p>
                         {/* <div className="flex justify-between mt-1">
                           <span className="text-xs font-medium leading-snug">

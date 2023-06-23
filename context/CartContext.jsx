@@ -158,18 +158,21 @@ export const CartProvider = ({ children }) => {
         //     // console.log("runned 1")
         //     setCardsArray(JSON.parse(localCardData))
         // }
-
-        if (cartItems.length > 0 && stepState == 1) {
-            let totalQuantity = 0;
-            let totalAmount = 0
-            let cards = []
-            // Loop over the array and add up the quantity field of each object
+        let totalQuantity = 0;
+        let totalAmount = 0
+        let cards = []
+        // Loop over the array and add up the quantity field of each object
+        if(cartItems && cartItems.length){
             for (var i = 0; i < cartItems.length; i++) {
                 totalQuantity += cartItems[i].quantity;
                 totalAmount += cartItems[i].amount * cartItems[i].quantity;
             }
             setTotalQuantity(totalQuantity)
             setTotalAmount(totalAmount)
+        }
+        
+        if (cartItems.length > 0 && stepState == 1) {
+
 
             cartItems.map((item, index) => {
                 if (item.quantity > 0) {
@@ -375,6 +378,7 @@ export const CartProvider = ({ children }) => {
 
     }
     const handleRemoveCardArr = (key) => {
+        console.log("runned")
         let array = [...cardsArray]
         let ctuuid = ""
         for (let i = 0; i < array.length; i++) {
@@ -384,7 +388,9 @@ export const CartProvider = ({ children }) => {
                 break; // Exit the loop since the object has been removed
             }
         }
+        console.log(ctuuid,"ctuuid")
         let cartType = cartItems.filter(item => item.cardTypeUuid == ctuuid)
+        console.log(cartType[0]._id)
 
         minusCartFunc(cartType[0]._id)
         setCardsArray(array)
@@ -392,6 +398,8 @@ export const CartProvider = ({ children }) => {
         // localStorage.setItem('cardsArray', JSON.stringify(array));
 
     }
+
+    console.log(totalAmount,totalQuantity,"total a q")
 
     const handleDesignUuid = (key, designId) => {
         if (key && designId) {
