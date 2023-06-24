@@ -74,12 +74,6 @@ const handleClick = (card) => {
                     style={{ boxShadow: "0px 10px 15px 0 rgba(0,25,38,0.25)" }}
                   >
                     <div className="flex justify-center items-center h-full">
-                      {/* <Image
-                      src={"/assets/images/johnDoe.png"}
-                      height={110}
-                      width={180}
-                      alt="card"
-                    /> */}
                       {card.cardType == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
                         <>
                           <div className="flex mt-8 lg:mt-0">
@@ -180,6 +174,7 @@ const handleClick = (card) => {
                                     </div>
                                   )}
                                 </div>
+                                
                               </div>
                             </div>
                           </div>
@@ -238,7 +233,7 @@ const handleClick = (card) => {
                           loopcard.club/details/{card.cuuid.substring(0, 2)}..
                         </p>
                          <div className="h-[18px] w-[18px]">
-                          <Image src={"/assets/images/COPY.png"} height={18} width={18} onClick={() => {handleClick(card.cuuid);}} />
+                          <Image src={"/assets/images/COPY.png"} height={18} width={18} onClick={() => {handleClick(card.cuuid);}} alt="copy" />
                         </div>
                       </div>
 
