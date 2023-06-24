@@ -30,13 +30,7 @@ function Form({ cuuid }) {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  useEffect(() => {
-    setSelectedTemplate("1");
-    alert(selectedTemplate)
-  }, []);
-
-
-
+  
   const [inputValues, setInputValues] = useState({
     whatsapp: "",
     mail: "",
