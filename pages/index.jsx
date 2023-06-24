@@ -42,7 +42,7 @@ const Landing = () => {
 
   return (
     // max-w-[1440px]  mx-auto px-4 sm:px-8 md:px-16 xl:px-20
-    <div className="   mx-auto">
+    <div className="mx-auto">
       {showHomePage && (
         <Head>
           <link rel="icon" href="/assets/images/favicon.ico" />
@@ -61,7 +61,7 @@ const Landing = () => {
       {showHomePage && <LoopMaven />}
       {showHomePage && <MavenSwiper />}
       {showHomePage && <Products />}
-      {showHomePage && <LoopBlack text={"BUY NOW"} />}
+      {showHomePage && <LoopBlack text={"COMING SOON"} />}
       {showHomePage && <Story />}
       {showHomePage && <Partners />}
       {showHomePage && <Android />}
