@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 
 function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
+  console.log(selectedTemplate)
   return (
     <div className='flex flex-grow drop-shadow-white flex-col h-auto pb-6 rounded-[10px]  mb-5 bg-black-dim px-4 md:px-9 pt-4'>
       <p className='font-bold text-white text-xs'>TEMPLATE</p>

@@ -19,7 +19,7 @@ function Form({ cuuid }) {
   const { userProfile } = useContext(CartContext);
   const [showProfileComplete, setShowProfileComplete] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [selectedtemplate, setSelectedTemplate] = useState("0");
+  const [selectedTemplate, setSelectedTemplate] = useState("0");
   const [cover, setCover] = useState(themes[0].gradient1);
   const [profileImg, setProfileImg] = useState("");
   const [bio, setBio] = useState("");
@@ -29,6 +29,13 @@ function Form({ cuuid }) {
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    setSelectedTemplate("1");
+    alert(selectedTemplate)
+  }, []);
+
+
 
   const [inputValues, setInputValues] = useState({
     whatsapp: "",
@@ -65,7 +72,7 @@ function Form({ cuuid }) {
         setName(cardData.name);
         setProfileImg(cardData.profileImg);
         setCover(cardData.cover);
-        setSelectedTemplate(cardData.selectedTemplate);
+        setSelectedTemplate(cardData.selectedTemplate || "0"); 
         setBio(cardData.bio);
         setRole(cardData.role);
         setCompany(cardData.company);
@@ -119,22 +126,22 @@ function Form({ cuuid }) {
   };
 
   useEffect(() => {
-    if (selectedtemplate === "0") {
+    if (selectedTemplate === "0") {
       setCover(themes[0].gradient1);
-    } else if (selectedtemplate === "1") {
+    } else if (selectedTemplate === "1") {
       setCover(themes[1].gradient1);
-    } else if (selectedtemplate === "2") {
+    } else if (selectedTemplate === "2") {
       setCover(themes[2].gradient1);
-    } else if (selectedtemplate === "3") {
+    } else if (selectedTemplate === "3") {
       setCover(themes[3].gradient1);
-    } else if (selectedtemplate === "4") {
+    } else if (selectedTemplate === "4") {
       setCover(themes[4].gradient1);
-    } else if (selectedtemplate === "5") {
+    } else if (selectedTemplate === "5") {
       setCover(themes[5].gradient1);
     } else {
       setCover(themes[0].gradient1); // Set a default value if needed
     }
-  }, [selectedtemplate]);
+  }, [selectedTemplate]);
 
   const handleSaveClick = () => {
     // console.log(name, role, companyLink, bio, address, phoneNumber, selectedtemplate);
@@ -174,8 +181,8 @@ function Form({ cuuid }) {
       const emptyFields = [];
 
       // Check selectedtemplate, cover, profileImg, and bio
-      if (selectedtemplate) progress += 10;
-      else emptyFields.push("selectedtemplate");
+      if (selectedTemplate) progress += 10;
+      else emptyFields.push("selectedTemplate");
       if (cover) progress += 10;
       else emptyFields.push("cover");
       if (profileImg) progress += 10;
@@ -215,7 +222,7 @@ function Form({ cuuid }) {
       console.log(message);
     }
   }, [
-    selectedtemplate,
+    selectedTemplate,
     cover,
     profileImg,
     bio,
@@ -243,7 +250,7 @@ function Form({ cuuid }) {
         address: address,
         mobileNumber: phoneNumber,
         adress: address,
-        selectedTemplate: selectedtemplate,
+        selectedTemplate: selectedTemplate,
         profileImg: profileImg,
         cover: cover,
         whatsappNumber: inputValues.whatsapp,
@@ -319,7 +326,7 @@ function Form({ cuuid }) {
         <div className="flex relative flex-col-reverse items-center lg:items-start lg:flex-row gap-5">
           <div className="flex flex-grow flex-col ">
             <ChooseTemplates
-              selectedTemplate={selectedtemplate}
+              selectedTemplate={selectedTemplate}
               setSelectedTemplate={setSelectedTemplate}
             />
             <Cover cover={cover} setCover={setCover} />
@@ -352,19 +359,19 @@ function Form({ cuuid }) {
           </div>
           <div className="w-80 lg:sticky lg:top-10 sm:w-[350px]  xl:w-[390px]">
             <div className=" sm:h-[820px] mb-5">
-              {selectedtemplate && (
+              {selectedTemplate && (
                 <Template
                   gradient1={cover}
-                  gradient2={themes[selectedtemplate].gradient2}
-                  text1={themes[selectedtemplate].text1}
-                  text2={themes[selectedtemplate].text2}
-                  text3={themes[selectedtemplate].text3}
-                  btn={themes[selectedtemplate].btn}
-                  btntext={themes[selectedtemplate].btntext}
-                  type={themes[selectedtemplate].type}
-                  loop={themes[selectedtemplate].loop}
-                  border={themes[selectedtemplate].border}
-                  selectedTemplate={selectedtemplate}
+                  gradient2={themes[selectedTemplate].gradient2}
+                  text1={themes[selectedTemplate].text1}
+                  text2={themes[selectedTemplate].text2}
+                  text3={themes[selectedTemplate].text3}
+                  btn={themes[selectedTemplate].btn}
+                  btntext={themes[selectedTemplate].btntext}
+                  type={themes[selectedTemplate].type}
+                  loop={themes[selectedTemplate].loop}
+                  border={themes[selectedTemplate].border}
+                  selectedTemplate={selectedTemplate}
                   inputValues={inputValues}
                   visibleInputs={visibleInputs}
                   profileImg={
