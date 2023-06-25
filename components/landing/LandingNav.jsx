@@ -106,7 +106,8 @@ function LandingNavbar() {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="mobileNavbar inline-flex relative z-[100] items-center "
+                className="inline-flex relative z-[100] items-center "
+                name="mobile Navbar"
               >
                 <div className={`{} h-3.5 w-5 ${isOpen ? "fixed" : ""}`}>
                   <div

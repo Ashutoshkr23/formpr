@@ -6,7 +6,6 @@ import Details from "./Details";
 import Socials from "./Socials";
 import axios from "axios";
 import Cover from "./Cover";
-import Image from "next/image";
 import { CartContext } from "@/context/CartContext";
 import ProfileCompleted from "./ProfileCompleted";
 import { toast, ToastContainer } from "react-toastify";

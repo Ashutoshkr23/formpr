@@ -182,13 +182,13 @@ const Hero = () => {
             <div className='md:hidden'>
                 <div className=' relative w-[190px] h-[400px]'>
                     <div className='absolute top-[175px] -right-[65px]  '>
-                        <Image src={'/assets/images/landing/LoopCard1.png'} width={135} height={117} alt='sample nfc visting card' quality={100} />
+                        <Image src={'/assets/images/landing/LoopCard1.png'} width={135} height={110} alt='sample nfc visting card' quality={100} />
                     </div>
                     <div>
                     <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
-                        width={190}
+                        width={189}
                         height={400}
-                        alt='smaple visting card profile'
+                        alt='sample visting card profile'
                         priority
                     />
                     </div>
@@ -198,7 +198,7 @@ const Hero = () => {
                 </div>
                 <div className=' z-40 mt-[-5px]'>
                     <Image src={'/assets/images/landing/phone2.png'}
-                        width={190}
+                        width={189}
                         height={425}
                         alt='sample visting card profile reflection'
                         quality={100}

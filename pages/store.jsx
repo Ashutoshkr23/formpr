@@ -1,4 +1,3 @@
-// import First from "@/components/First";
 import { useSession, getSession } from "next-auth/react";
 import axios from "axios";
 import { useEffect, useState, useRef, useContext } from "react";
