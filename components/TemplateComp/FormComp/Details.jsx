@@ -88,7 +88,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
             <div className='flex flex-col md:flex-row gap-8 mt-9'>
                 <div className='flex flex-col w-full space-y-5'>
                     <div>
-                        <p className='text-xs leading-[186%]'>Profile Photo</p>
+                        <p className='text-xs leading-[186%]'>Profile Photo<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
                         <label htmlFor="logoInput" className="cursor-pointer bg-white flex flex-col space-y-1 justify-center items-center w-[127px] h-[127px] border border-dim-gray rounded-xl">
                             <Image src="/assets/images/UploadIcon.png" height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
                             <p className='text-sm'>Upload</p>
@@ -105,30 +105,30 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     </div>
                     <div className='hidden md:block'>
                         <div className='flex flex-col'>
-                            <label for="Company" className='text-xs leading-[186%]'>Company</label>
+                            <label for="Company" className='text-xs leading-[186%]'>Company<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
                             <input type="text" value={company} id="Company" name="Company" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyChange} />
                         </div>
                         <div className='flex flex-col mt-5'>
-                            <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number</label>
+                            <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
                             <input type="text" value={phoneNumber} id="Phone Number" name="Phone Number" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
                         </div>
                     </div>
                 </div>
                 <div className='flex flex-col w-full space-y-5'>
                     <div className='flex flex-col'>
-                        <label for="fullName" className='text-xs leading-[186%]'>Full Name</label>
+                        <label for="fullName" className='text-xs leading-[186%]'>Full Name<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
                         <input type="text" id="fullName" name="fullName" value={name} className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleNameChange} />
                     </div>
                     <div className='flex flex-col'>
-                        <label for="role" className='text-xs leading-[186%]'>Role</label>
+                        <label for="role" className='text-xs leading-[186%]'>Role<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
                         <input type="text" id="role" value={role} name="role" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleRoleChange} />
                     </div>
                     <div className='flex flex-col'>
-                        <label for="Company Link" className='text-xs leading-[186%]'>Company Link</label>
+                        <label for="Company Link" className='text-xs leading-[186%]'>Company Link<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
                         <input type="text" maxLength={20} id="Company Link" value={companyLink} name="Company Link" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyLinkChange} />
                     </div>
                     <div className='flex flex-col'>
-                        <label htmlFor="Location" className='text-xs leading-[186%]'>Location</label>
+                        <label htmlFor="Location" className='text-xs leading-[186%]'>Location<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
                         <input
                             type='text'
                             id="Location"
@@ -141,11 +141,11 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     </div>
                     <div className='md:hidden'>
                         <div className='flex flex-col'>
-                            <label for="Company" className='text-xs leading-[186%]'>Company</label>
+                            <label for="Company" className='text-xs leading-[186%]'>Company<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
                             <input type="text" value={company} id="Company" name="Company" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyChange} />
                         </div>
                         <div className='flex flex-col'>
-                            <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number</label>
+                            <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
                             <input type="text" value={phoneNumber} id="Phone Number" name="Phone Number" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
                         </div>
                     </div>
@@ -154,7 +154,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
             </div>
             <div className='flex flex-col mt-5'>
                 <label htmlFor="Bio" className="text-xs leading-[186%]">
-                    Bio
+                    Bio<span className='text-[#F66F6f] text-base ml-0.5 '>*</span>
                 </label>
                 <textarea
                     id="Bio"

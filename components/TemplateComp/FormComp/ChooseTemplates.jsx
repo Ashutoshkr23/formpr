@@ -5,7 +5,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
   console.log(selectedTemplate)
   return (
     <div className='flex flex-grow drop-shadow-white flex-col h-auto pb-6 rounded-[10px]  mb-5 bg-black-dim px-4 md:px-9 pt-4'>
-      <p className='font-bold text-white text-xs'>TEMPLATE</p>
+      <p className='font-bold text-white text-xs'>TEMPLATE<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
       <div className='flex flex-wrap gap-4 mt-5'>
         <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('0')}>
           {selectedTemplate === '0' && (
