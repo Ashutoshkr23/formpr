@@ -68,14 +68,14 @@ const LoopMaven = () => {
                 <div className='flex flex-row items-center justify-center pt-12'>
                
                     <div className=' hidden md:block z-30'>
-                        <Image width={450} height={98} src="/assets/images/landing/mobileMyContact1.png" alt="" /></div>
+                        <Image width={450} height={98} src="/assets/images/landing/mobileMyContact1.png" alt="manage contacts" /></div>
                     <div className='md:hidden block z-30'>
-                    <Image width={200} height={50} src="/assets/images/landing/mobileMyContact1.png" alt="" /></div>
+                    <Image width={200} height={50} src="/assets/images/landing/mobileMyContact1.png" alt="manage contacts" /></div>
                    
                     <div className='bg-whitebg md:w-96 w-48 md: lg:h-28 md:h-20 h-14 rounded-md md:rounded-xl drop-shadow-white font-bold flex items-center px-1 md:px-2 lg:px-4 gap-2 md:gap-4 md:mr-4 '>
                         <div className="left-side bg-whitebg">
-                            <div className='hidden md:flex'><Image width={46} height={46} src="/assets/images/landing/mailIcon.png" alt="" /></div>
-                            <div className='md:hidden flex'><Image width={23} height={23} src="/assets/images/landing/mailIcon.png" alt="" /></div>
+                            <div className='hidden md:flex'><Image width={46} height={46} src="/assets/images/landing/mailIcon.png" alt="email icon" /></div>
+                            <div className='md:hidden flex'><Image width={23} height={23} src="/assets/images/landing/mailIcon.png" alt="email icon" /></div>
                         </div>
                         <div className="right-side bg-whitebg">
                             <div className='text-[8px] md:text-sm lg:text-xl '>Loop</div>
@@ -86,8 +86,8 @@ const LoopMaven = () => {
                 </div>
                 <div className='bg-whitebg md:w-80 lg:w-[475px] w-48 lg:h-28 md:h-20 h-10 rounded-md md:rounded-xl drop-shadow-white font-bold flex items-center px-1 md:px-2 lg:px-4 gap-2 md:gap-4'>
                     <div className="left-side">
-                        <div className='hidden md:flex'><Image width={46} height={46} src="/assets/images/landing/whatsappIcon.png" alt="" /></div>
-                        <div className='md:hidden flex'><Image width={23} height={23} src="/assets/images/landing/whatsappIcon.png" alt="" /></div>
+                        <div className='hidden md:flex'><Image width={46} height={46} src="/assets/images/landing/whatsappIcon.png" alt="whatsapp icon" /></div>
+                        <div className='md:hidden flex'><Image width={23} height={23} src="/assets/images/landing/whatsappIcon.png" alt="whatsapp icon" /></div>
                     </div>
                     <div className="right-side">
                         <div className='text-[8px] md:text-sm lg:text-xl '>Loop</div>

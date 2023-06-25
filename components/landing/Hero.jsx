@@ -48,32 +48,32 @@ const Hero = () => {
                         transition={{ delay: 3 }}
                     >
                         <div className='bg-white w-[215px] items-center flex rounded-2xl h-[74px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/Eco-Friendly.png" alt="" height={50} width={50} className=' mx-6' />
+                            <Image src="/assets/images/landing/Eco-Friendly.png" alt="sustainable" height={50} width={50} className=' mx-6' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>
                                 Eco-conscious
                             </p>
                         </div>
                         <div className='bg-white w-[215px] items-center flex rounded-2xl h-[74px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/NFC.png" alt="" height={50} width={50} className=' mx-6' />
+                            <Image src="/assets/images/landing/NFC.png" alt="NFC" height={50} width={50} className=' mx-6' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>NFC-enabled</p>
                         </div>
                         <div className='bg-white w-[215px] items-center flex  rounded-2xl h-[74px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/QR-code.png" alt="" height={50} width={50} className=' mx-6' />
+                            <Image src="/assets/images/landing/QR-code.png" alt="QR" height={50} width={50} className=' mx-6' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>QR code-enabled</p>
 
                         </div>
                         <div className='bg-white w-[215px] items-center flex rounded-2xl h-[74px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/Infinite-Symbol.png" alt="" height={50} width={50} className=' mx-6' />
+                            <Image src="/assets/images/landing/Infinite-Symbol.png" alt="Timeless" height={50} width={50} className=' mx-6' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>Timeless</p>
 
                         </div>
                         <div className='bg-white w-[215px] items-center flex rounded-2xl h-[74px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/Alarm.png" alt="" height={50} width={50} className=' mx-6' />
+                            <Image src="/assets/images/landing/Alarm.png" alt="Follow up with reminders" height={50} width={50} className=' mx-6' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>Set Reminders</p>
 
                         </div>
                         <div className='bg-white w-[215px] items-center flex rounded-2xl h-[74px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/Pocket.png" alt="" height={50} width={50} className=' mx-6' />
+                            <Image src="/assets/images/landing/Pocket.png" alt="Perfect size" height={50} width={50} className=' mx-6' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>Pocket-friendly</p>
 
                         </div>
@@ -88,32 +88,32 @@ const Hero = () => {
                         transition={{ delay: 2.5 }}
                     >
                         <div className='bg-white w-[150px] items-center flex rounded-2xl h-[60px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/Eco-Friendly.png" alt="" height={32} width={32} className=' mx-2' />
+                            <Image src="/assets/images/landing/Eco-Friendly.png" alt="eco-freindly" height={32} width={32} className=' mx-2' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>
                                 Eco-conscious
                             </p>
                         </div>
                         <div className='bg-white w-[150px] items-center flex rounded-2xl h-[60px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/NFC.png" alt="" height={32} width={32} className=' mx-2' />
+                            <Image src="/assets/images/landing/NFC.png" alt="NFC" height={32} width={32} className=' mx-2' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>NFC-enabled</p>
                         </div>
                         <div className='bg-white w-[150px] items-center flex  rounded-2xl h-[60px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/QR-code.png" alt="" height={32} width={32} className=' mx-2' />
+                            <Image src="/assets/images/landing/QR-code.png" alt="QR" height={32} width={32} className=' mx-2' />
                             <p className='text-xs font-bold pr-2 -tracking-[0.5px]'>QR code-enabled</p>
 
                         </div>
                         <div className='bg-white w-[150px] items-center flex rounded-2xl h-[60px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/Infinite-Symbol.png" alt="" height={32} width={32} className=' mx-2' />
+                            <Image src="/assets/images/landing/Infinite-Symbol.png" alt="Timeless" height={32} width={32} className=' mx-2' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>Timeless</p>
 
                         </div>
                         <div className='bg-white w-[150px] items-center flex rounded-2xl h-[60px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/Alarm.png" alt="" height={32} width={32} className=' mx-2' />
+                            <Image src="/assets/images/landing/Alarm.png" alt="Set follow up reminders" height={32} width={32} className=' mx-2' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>Set Reminders</p>
 
                         </div>
                         <div className='bg-white w-[150px] items-center flex rounded-2xl h-[60px] drop-shadow-white'>
-                            <Image src="/assets/images/landing/Pocket.png" alt="" height={32} width={32} className=' mx-2' />
+                            <Image src="/assets/images/landing/Pocket.png" alt="Pocket friendly" height={32} width={32} className=' mx-2' />
                             <p className='text-xs font-bold -tracking-[0.5px]'>Pocket-friendly</p>
 
                         </div>

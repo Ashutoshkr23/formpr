@@ -60,7 +60,8 @@ const LoopBlack = ({ text }) => {
             </div>
 
             <div className="pt-4">
-              <button className="rounded-[10px] h-[41px] w-[165px] bg-gradient-to-br from-[#68D5DF] to-[#95FEAF] text-black font-semibold">
+              <button className="rounded-[10px] h-[41px] w-[165px] bg-gradient-to-br from-[#68D5DF] to-[#95FEAF] text-black font-semibold"
+              name="Loop Black Buy now">
                 {text}
               </button>
             </div>
@@ -107,7 +108,8 @@ const LoopBlack = ({ text }) => {
               </div>
             </div>
             <div className="pt-7 flex justify-center">
-              <button className="rounded-[10px] h-[34px] w-[139px] bg-gradient-to-br from-[#68D5DF] to-[#95FEAF] text-black">
+              <button className="rounded-[10px] h-[34px] w-[139px] bg-gradient-to-br from-[#68D5DF] to-[#95FEAF] text-black"
+              name="Loop Black Buy Now">
                 {text}
               </button>
             </div>

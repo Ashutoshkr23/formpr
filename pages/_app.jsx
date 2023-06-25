@@ -1,4 +1,3 @@
-import { Footer } from "@/components";
 import { CartProvider } from "@/context/CartContext";
 import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
@@ -16,7 +15,6 @@ function MyApp({ Component, pageProps }) {
       <CartProvider>
         <main className={`${poppins.variable} font-sans bg-whitebg `}>
           <Component {...pageProps} />
-          {/* <Footer /> */}
         </main>
       </CartProvider>
     </SessionProvider>

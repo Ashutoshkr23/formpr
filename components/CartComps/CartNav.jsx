@@ -101,6 +101,7 @@ const CartNav = () => {
               onMouseEnter={handleHover}
               onMouseLeave={handleHover}
               onClick={handleSignOut}
+              name="log out"
             >
               LOG OUT
             </button>
@@ -137,6 +138,7 @@ const CartNav = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
                 className="mobileNavbar inline-flex relative z-[100] items-center "
+                name="isOpen"
               >
                 <div className={`{} h-3.5 w-5 ${isOpen ? "fixed" : ""}`}>
                   <div
@@ -214,6 +216,7 @@ const CartNav = () => {
                             <button
                               onClick={handleSignOut}
                               className="w-[140px] h-10 bg-black text-white text-sm  my-auto font-bold rounded-[10px] text-center"
+                              name="log out"
                             >
                               LOG OUT
                             </button>

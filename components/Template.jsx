@@ -133,6 +133,7 @@ END:VCARD`;
 
           <div className="flex justify-center">
             <button
+              name="save contact card"
               className={`${btn} border-2 mx-6 text-[20px] ${btntext}  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
               onClick={downloadVCard}
             >
