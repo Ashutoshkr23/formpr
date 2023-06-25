@@ -26,7 +26,7 @@ const Card = () => {
 <span>&#8377;499</span>
 </div>
 <div className='flex justify-center mt-5'>
-<button onClick={handleGoogleSignin} className='px-2 rounded-sm text-lg bg-green-200'>Buy</button>
+<button name="Buy Visiting Card" onClick={handleGoogleSignin} className='px-2 rounded-sm text-lg bg-green-200'>Buy</button>
 </div>
 </div>
 <div>
@@ -46,7 +46,7 @@ const Card = () => {
 </div>
 <div className='flex justify-center mt-5'>
 
-<button onClick={handleGoogleSignin} className='px-2 rounded-sm text-lg bg-green-200'>Buy</button>
+<button name='Buy Visting Card' onClick={handleGoogleSignin} className='px-2 rounded-sm text-lg bg-green-200'>Buy</button>
 </div>
 </div>
 <div>
@@ -65,7 +65,7 @@ const Card = () => {
 </div>
 <div className='flex justify-center mt-5'>
 
-<button onClick={handleGoogleSignin} className='px-2 rounded-sm text-lg bg-green-200'>Buy</button>
+<button name ="Buy Card" onClick={handleGoogleSignin} className='px-2 rounded-sm text-lg bg-green-200'>Buy</button>
 </div>
 </div>
 </div>
