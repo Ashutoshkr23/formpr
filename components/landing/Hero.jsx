@@ -211,6 +211,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 3 }}
                 className='lg:hidden w-[140px] md:w-[165px] h-9 md:h-10 mt-12 md:mt-56 bg-black text-white text-xs md:text-base  font-bold rounded-[10px]  text-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]'
+                onClick={handleGetNow}
             >
                 GET NOW
             </motion.button>
