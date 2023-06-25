@@ -53,7 +53,7 @@ const Template = ({
   return (
     <div className="flex justify-center  mx-auto w-[260px] sm:w-[375px] h-auto">
       <div
-        className={`relative mx-auto h-[640px] sm:h-[820px] w-[260px] sm:w-[350px]   border-black border-[10px] rounded-[30px] pt-[100px] sm:pt-[150px]`}
+        className={`relative mx-auto h-auto w-[260px] sm:w-[350px]   border-black border-[10px] rounded-[30px] pt-[100px] sm:pt-[150px]`}
         style={{
           backgroundImage: `url(${gradient1})`,
           backgroundSize: "100% auto",
@@ -114,7 +114,7 @@ const Template = ({
               //   onChange={handleChange}
             />
           </div>
-          <div className="flex justify-center mt-2 sm:mt-4  text-xs sm:text-[14px]">
+          <div className="flex justify-center my-2 sm:mt-4  text-xs sm:text-[14px]">
             <input
               className={`text-center bg-transparent ${selectedTemplate >= 0 && selectedTemplate <= 3 ? text2 : text1} text-[#7D9695]`}
               type="text"

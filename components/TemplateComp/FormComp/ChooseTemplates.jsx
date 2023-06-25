@@ -9,7 +9,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
       <div className='flex flex-wrap gap-4 mt-5'>
         <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('0')}>
           {selectedTemplate === '0' && (
-            <div className='absolute inset-0 z-30 z-30 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
+            <div className='absolute inset-0  z-30 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
           )}
           <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
             <Image fill={true} alt="template-1"  src="/assets/images/templateimg/template/Template-1.png" />

@@ -7,21 +7,16 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selected
     window.open(`tel:${mobile}`);
     console.log(selectedTemplate)
   };
+
   return (
-    <div className={`${border} rounded-[10px]  pt-2 pb-2 px-2  sm:px-4 mx-2 `}>
-      {selectedTemplate >= 0 && selectedTemplate <= 3 && (
-        <div className={`text-[12px] ${text2} text-[#7D9695]`}>Bio</div>
-      )}
+    <div className={`${border} ${text2} rounded-[10px]  pt-2 pb-2 px-2  sm:px-4 mx-2 `}>
+      <div className={`text-[12px] `}>Bio</div>
       <div className="pt-2 sm:pt-4 text-[12px]">
-        <textarea
-          className={`bg-transparent w-full resize-none ${text1}`}
-          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis"
-          value={bio}
-          readOnly={true}
-          //   onChange={handleChange}
-        />
+        <p className={`text-[12px] w-full ${text1} h-auto`} >
+          {bio ? bio : "Lorem Ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis"}
+        </p>
       </div>
-      <div className="pt-4 sm:pt-8 grid grid-cols-2 gap-y-4">
+      <div className="pt-4  grid grid-cols-2 gap-y-4">
         <div className="flex items-center">
           <Image
             src={"/assets/images/display/log.png"}
@@ -31,7 +26,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selected
           />
 
           <p
-            className={`text-[10px] ml-1.5 ${text2} tracking-[-0.5px] text-[#7D9695] `}
+            className={`text-[10px] ml-1.5 tracking-[-0.5px]  `}
           >
             {company ? company : "Lorem Ipsum"}
           </p>
@@ -47,14 +42,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selected
             height={22}
           />
           <p className="text-[10px] ml-1.5 tracking-[-0.5px]">
-            <input
-              className={`bg-transparent w-16 ${text2} text-[#7D9695] `}
-              type="text"
-              placeholder="+919833XXXXXX"
-              value={mobile}
-              readOnly={true}
-              //   onChange={handleChange}
-            />
+            {mobile ? mobile : "919833XXXXXX"}
           </p>
         </div>
         <div className="flex w-[200px] lg:w-72 items-center">
@@ -69,13 +57,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selected
           <Link href={`${website}`}>
             <p className={`ml-1.5 tracking-[-0.5px] ${website && website.length > 15 ? "text-[8px]" : "text-[10px]"
               }`}>
-              <input
-                className={`bg-transparent ${text2} text-[#7D9695] cursor-pointer w-[200px]`}
-                type="text"
-                placeholder=" www.LoremIpsum.com"
-                value={website ? website.replace(/(https?:\/\/)?(www\.)?/, "") : ""}
-                readOnly={true}
-              />
+              {website ? website.replace(/(https?:\/\/)?(www\.)?/, "") : "www.loremipsum.com"}
             </p>
           </Link>
         </div>
