@@ -17,6 +17,10 @@ const DesignComp = ({
   setColorElevate,
 }) => {
   const { cartItems, minusCartFunc, plusCartFunc } = useContext(CartContext);
+  const [isHovered, setIsHovered] = useState(false);
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
   const [State, setState] = useState(1);
   const [value, setValue] = useState("Front");
   const [type, setType] = useState("Lite");
@@ -151,7 +155,13 @@ const DesignComp = ({
                   </div>
                   <div className="flex flex-col">
                     <button
-                      className="h-9 mt-2 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold"
+                      className={`h-9 mt-2 lg:mt-4 w-[145px] lg:h-[41px] lg:w-[164px]  rounded-[10px]  bg-black text-white text-[10px] lg:text-xs font-bold ${
+                        isHovered
+                          ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
+                          : "bg-black text-white"
+                      }`}
+                      onMouseEnter={handleHover}
+                      onMouseLeave={handleHover}
                       onClick={() =>
                         plusCartFunc(cartItems[selectedTypeIndex]._id)
                       }

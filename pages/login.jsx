@@ -95,6 +95,11 @@ function Login() {
     parseInt(counter.hours) > 0 ||
     parseInt(counter.minutes) > 0;
 
+  const [isHovered, setIsHovered] = useState(false);
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
+
   return (
     <div>
       <div className="flex flex-col  lg:flex-row  ">
@@ -139,7 +144,13 @@ function Login() {
                 <div className=" mt-7 text-[16px]  ">
                   <button
                     type="submit"
-                    className="signIn bg-black w-[120px] sm:w-[165px] h-10  text-white font-bold rounded-[10px] "
+                    className={`signIn bg-black w-[120px] sm:w-[165px] h-10  text-white font-bold rounded-[10px] ${
+                      isHovered
+                        ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
+                        : "bg-black text-white"
+                    }`}
+                    onMouseEnter={handleHover}
+                    onMouseLeave={handleHover}
                   >
                     Sign In
                   </button>

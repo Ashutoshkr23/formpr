@@ -8,6 +8,10 @@ import { CartContext } from "@/context/CartContext";
 
 const CartNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
   const { totalQuantity } = useContext(CartContext);
 
   const [date, setDate] = useState();
@@ -89,7 +93,13 @@ const CartNav = () => {
               </span>
             </div>
             <button
-              className=" h-10 w-[165px] text-[16px] font-bold text-white bg-black rounded-[10px]"
+              className={` h-10 w-[165px] text-[16px] font-bold text-white  rounded-[10px] ${
+                isHovered
+                  ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
+                  : "bg-black text-white"
+              }`}
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHover}
               onClick={handleSignOut}
             >
               LOG OUT

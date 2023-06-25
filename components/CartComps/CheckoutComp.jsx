@@ -34,7 +34,10 @@ const CheckoutComp = ({
     setDiscountCode,
     finalPrice,
   } = useContext(CartContext);
-
+  const [isHovered, setIsHovered] = useState(false);
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
   const [shippingState, setShippingState] = useState(false);
   const [submitPressed, setSubmitPressed] = useState(false);
   // const [address, setAddress] = useState({
@@ -113,11 +116,11 @@ const CheckoutComp = ({
     }
   };
 
-  useEffect(()=>{
-    if(totalQuantity && discountCode){
-      handleDiscount()
+  useEffect(() => {
+    if (totalQuantity && discountCode) {
+      handleDiscount();
     }
-  },[totalQuantity])
+  }, [totalQuantity]);
 
   // console.log(cardsArray);
   return (
@@ -203,10 +206,11 @@ const CheckoutComp = ({
                           </div>
                         </div>
                       )}
-                      <div className="absolute top-[-12px] right-0 rounded-md flex  items-center justify-end w-[100px] px-1 pt-0.5 bg-black" onClick={() => handleRemoveCardArr(data.key)}>
-                        <p
-                          className="text-xs font-bold leading-tight text-center text-white cursor-pointer"
-                        >
+                      <div
+                        className="absolute top-[-12px] right-0 rounded-md flex  items-center justify-end w-[100px] px-1 pt-0.5 bg-black"
+                        onClick={() => handleRemoveCardArr(data.key)}
+                      >
+                        <p className="text-xs font-bold leading-tight text-center text-white cursor-pointer">
                           REMOVE
                         </p>
                         <p className="text-base font-medium leading-7 text-center text-white pl-2 pr-2">
@@ -334,7 +338,13 @@ const CheckoutComp = ({
                 onChange={(e) => setDiscountCode(e.target.value)}
               />
               <button
-                className="h-10 rounded-[10px] bg-black border border-black w-full text-white"
+                className={`h-10 rounded-[10px] bg-black border border-black w-full text-white ${
+                  isHovered
+                    ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
+                    : "bg-black text-white"
+                }`}
+                onMouseEnter={handleHover}
+                onMouseLeave={handleHover}
                 onClick={() => handleDiscount()}
               >
                 APPLY
@@ -350,7 +360,7 @@ const CheckoutComp = ({
           </div>
           <div className="mx-5 my-6">
             <button
-              className="w-full h-10 px-5 bg-black border rounded-lg border-black cursor-pointer text-base font-bold text-center text-white "
+              className={`w-full h-10 px-5 bg-black border rounded-lg border-black cursor-pointer text-base font-bold text-center text-white `}
               onClick={handleClick}
             >
               {rupayLoader ? (
