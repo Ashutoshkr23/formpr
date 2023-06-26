@@ -52,7 +52,7 @@ const handleClick = (card) => {
 
   // console.log(allCards)
   return (
-    <div className="w-full h-full px-36 py-4">
+    <div className="w-full h-full lg:px-36 py-4">
       <ToastContainer/>
       <h3 className="text-4xl font-bold  text-black mt-8 text-center xl:text-left">Manage Cards</h3>
       
@@ -70,178 +70,184 @@ const handleClick = (card) => {
               return (
                 <div  key={card.cuuid} className=' flex place-content-center min-[1411px]:block'>
                   <div
-                    className="w-[566px] relative h-auto rounded-[10px] pl-4 bg-white flex justify-evenly "
+                    className="w-[320px] md:w-[566px] pb-6 relative h-auto rounded-[10px] pl-4 bg-white flex-col sm:flex-row flex justify-evenly "
                     style={{ boxShadow: "0px 10px 15px 0 rgba(0,25,38,0.25)" }}
                   >
-                    <div className="flex justify-center items-center h-full">
-                      {card.cardType == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
-                        <>
-                          <div className="flex mt-8 lg:mt-0">
-                            <div className={`card w-[180px] h-[110px]`}>
-                              <div className={`card`}>
-                                <div
-                                  className={` card-inner`}
-                                >
-                                  <div className="card-front">
-                                    <div
-                                      className={` drop-shadow-white rounded-2xl relative lg:w-[180px] lg:h-[110px] w-full h-[172px]`}
-                                      style={{
-                                        backgroundColor: card.hexCode,
-                                      }}
-                                    >
-                                      <Image
-                                        className="absolute top-4 right-4 z-10"
-                                        src={`/assets/images/${blackFont ? "loop-black.png" : "loop-white.png"}`}
-                                        height={15}
-                                        width={25}
-                                        alt="icon"
-                                      />
-                                      <Image
-                                        className="absolute bottom-3 right-4"
-                                        src={
-                                          "/assets/images/storeImages/Supreme/Qr.png"
-                                        }
-                                        height={20}
-                                        width={20}
-                                        alt="icon"
-                                      />
-                                      {card.abstract.abstractUsed && (
-                                        <div>
-                                          <div className="hidden lg:block">
-                                            <Image
-                                              className="absolute top-0 left-0"
-                                              src={`/assets/images/abstracts/card/${card.abstract.abstractUuid}.png`}
-                                              height={250}
-                                              width={400}
-                                              alt="icon"
-                                            />
+                    <div className='flex'>
+                      <div className="flex justify-center items-center h-full">
+                        {card.cardType == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
+                          <>
+                            <div className="flex mt-8 lg:mt-0">
+                              <div className={`card w-[180px] h-[110px]`}>
+                                <div className={`card`}>
+                                  <div
+                                    className={` card-inner`}
+                                  >
+                                    <div className="card-front">
+                                      <div
+                                        className={` drop-shadow-white rounded-2xl relative lg:w-[180px] lg:h-[110px] w-full h-[172px]`}
+                                        style={{
+                                          backgroundColor: card.hexCode,
+                                        }}
+                                      >
+                                        <Image
+                                          className="absolute top-4 right-4 z-10"
+                                          src={`/assets/images/${blackFont ? "loop-black.png" : "loop-white.png"}`}
+                                          height={15}
+                                          width={25}
+                                          alt="icon"
+                                        />
+                                        <Image
+                                          className="absolute bottom-3 right-4"
+                                          src={
+                                            "/assets/images/storeImages/Supreme/Qr.png"
+                                          }
+                                          height={20}
+                                          width={20}
+                                          alt="icon"
+                                        />
+                                        {card.abstract.abstractUsed && (
+                                          <div>
+                                            <div className="hidden lg:block">
+                                              <Image
+                                                className="absolute top-0 left-0"
+                                                src={`/assets/images/abstracts/card/${card.abstract.abstractUuid}.png`}
+                                                height={250}
+                                                width={400}
+                                                alt="icon"
+                                              />
+                                            </div>
+                                            <div className="lg:hidden">
+                                              <Image
+                                                className="absolute top-0 left-0"
+                                                src={`/assets/images/abstracts/card/${card.abstract.abstractUuid}.png`}
+                                                height={172}
+                                                width={300}
+                                                alt="icon"
+                                              />
+                                            </div>
                                           </div>
-                                          <div className="lg:hidden">
-                                            <Image
-                                              className="absolute top-0 left-0"
-                                              src={`/assets/images/abstracts/card/${card.abstract.abstractUuid}.png`}
-                                              height={172}
-                                              width={300}
-                                              alt="icon"
-                                            />
-                                          </div>
+                                        )}
+                                        <div className="absolute bottom-3 left-3">
+                                          <p
+                                            className={`text-xs font-semibold ${blackFont ? "text-black" : "text-white"}`}
+                                          >
+                                            {card.cardName
+                                              ? card.cardName
+                                              : "John Doe"}
+                                          </p>
                                         </div>
-                                      )}
-                                      <div className="absolute bottom-3 left-3">
-                                        <p
-                                          className={`text-xs font-semibold ${blackFont ? "text-black" : "text-white"}`}
-                                        >
-                                          {card.cardName
-                                            ? card.cardName
-                                            : "John Doe"}
-                                        </p>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
 
+                              </div>
                             </div>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="flex mt-8 lg:mt-0">
-                            <div className={`card w-[180px] h-[110px]`}>
-                              <div className="card-inner lg:w-[180px] lg:h-[110px] w-[300px] h-[172px]">
-                                <div className="card-front lg:w-[180px] lg:h-[110px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
-                                  <img
-                                    src={`/assets/images/cards/Front/${card.designUuid}.png`}
-                                    className="w-[180px] h-[110px]"
-                                  />
-                                  {card.companyLogo && card.companyLogo.length ? (
-                                    <div className="absolute flex items-center lg:right-3 lg:bottom-3  lg:h-auto  lg:w-auto max-h-[50px] max-w-[50px]  object-cover">
-                                      <img
-                                        src={card.companyLogo}
-                                        className=" object-fill w-full h-full"
-                                      />
-                                    </div>
-                                  ) : (
-                                    ""
-                                  )}
-                                  {checkFontArray(card.designUuid) ? (
-                                    <div className="absolute text-[10px] text-white lg:bottom-5 lg:left-4 bottom-7 left-5">
-                                      {card.cardName ? card.cardName : "John Doe"}
-                                    </div>
-                                  ) : (
-                                    <div className="absolute text-[10px] text-black font-semibold lg:bottom-5 lg:left-4 bottom-7 left-5">
-                                      {card.cardName ? card.cardName : "John Doe"}
-                                    </div>
-                                  )}
+                          </>
+                        ) : (
+                          <>
+                            <div className="flex mt-8 lg:mt-0">
+                              <div className={`card w-[180px] h-[110px]`}>
+                                <div className="card-inner lg:w-[180px] lg:h-[110px] w-[300px] h-[172px]">
+                                  <div className="card-front lg:w-[180px] lg:h-[110px] w-[300px] h-[172px] drop-shadow-white rounded-2xl relative  ">
+                                    <img
+                                      src={`/assets/images/cards/Front/${card.designUuid}.png`}
+                                      className="w-[180px] h-[110px]"
+                                    />
+                                    {card.companyLogo && card.companyLogo.length ? (
+                                      <div className="absolute flex items-center right-3 bottom-3  lg:h-auto  lg:w-auto max-h-[50px] max-w-[50px]  object-cover">
+                                        <img
+                                          src={card.companyLogo}
+                                          className=" object-fill w-full h-full"
+                                        />
+                                      </div>
+                                    ) : (
+                                      ""
+                                    )}
+                                    {checkFontArray(card.designUuid) ? (
+                                      <div className="absolute text-[10px] text-white lg:bottom-5 lg:left-4 bottom-7 left-5">
+                                        {card.cardName ? card.cardName : "John Doe"}
+                                      </div>
+                                    ) : (
+                                      <div className="absolute text-[10px] text-black font-semibold lg:bottom-5 lg:left-4 bottom-7 left-5">
+                                        {card.cardName ? card.cardName : "John Doe"}
+                                      </div>
+                                    )}
+                                  </div>
+
                                 </div>
-                                
                               </div>
                             </div>
-                          </div>
-                        </>
-                      )}
-                    </div>
-                    <div className=" flex flex-col py-2 px-4">
-                      <p className="text-base font-bold text-center text-black mt-6">
-                        {card.cardType == "3fa766b5-9f66-4a38-8471-23026a59d84d"
-                          ? "Loop Lite"
-                          : card.cardType ==
-                            "801baf78-ce33-446f-b132-618f92ccfc5f"
-                            ? "Loop Elevate"
-                            : "Loop Supreme"}
-                      </p>
-                      <div className="mt-8 flex flex-row items-center">
-                        <p className="w-[52px] text-xs font-medium text-left text-black ">
-                          Color :
-                        </p>
-                        {card.cardType ==
-                          "7031e440-bc0b-4b39-8b8e-2afe3360d744" &&
-                          card.hexCode ? (
-                          <div
-                            className={`w-5 h-5 rounded-[45px]`}
-                            style={{ backgroundColor: card.hexCode }}
-                          ></div>
-                        ) : card.cardType == "801baf78-ce33-446f-b132-618f92ccfc5f" ? (
-
-                          <Image height={23} width={23} className='rounded-full' alt="color" src={`/assets/images/radio_buttons/elevate/${card.designUuid}.png`} />
-                        ) : <>
-                          <Image height={23} width={23} className='rounded-full' alt="color" src={`/assets/images/radio_buttons/lite/${card.designUuid}.png`} />
-                        </>}
+                          </>
+                        )}
                       </div>
-                    </div>
-                    <div className=" flex flex-col py-2 pl-4">
-                      <p className="font-medium text-left text-black mt-5">
-                        <span className="text-xs font-medium text-left text-black">
-                          Full Name
-                        </span>
-                        <br />
-                        <p className="text-xs font-medium text-left text-black mt-[2px]">
-                          {card.cardName}
+                      <div className=" flex flex-col py-2 px-4">
+                        <p className="text-base font-bold text-center text-black mt-6">
+                          {card.cardType == "3fa766b5-9f66-4a38-8471-23026a59d84d"
+                            ? "Loop Lite"
+                            : card.cardType ==
+                              "801baf78-ce33-446f-b132-618f92ccfc5f"
+                              ? "Loop Elevate"
+                              : "Loop Supreme"}
                         </p>
-                      </p>
-                      <p className="font-medium text-left text-black mt-3">
-                        <span className="text-xs font-medium text-left text-black">
-                          Company Name
-                        </span>
+                        <div className="mt-8 flex flex-row items-center">
+                          <p className="w-[52px] text-xs font-medium text-left text-black ">
+                            Color :
+                          </p>
+                          {card.cardType ==
+                            "7031e440-bc0b-4b39-8b8e-2afe3360d744" &&
+                            card.hexCode ? (
+                            <div
+                              className={`w-5 h-5 rounded-[45px]`}
+                              style={{ backgroundColor: card.hexCode }}
+                            ></div>
+                          ) : card.cardType == "801baf78-ce33-446f-b132-618f92ccfc5f" ? (
 
-                        <p className="text-xs font-medium text-left text-black ">
-                          {card.companyName}
-                        </p>
-                      </p>
-                      <div className="flex border border-dashed mt-2 border-[#7D9695] ml-5 px-2 rounded-xl">
-                        <p className="w-32 text-[#7D9695] text-[10px]">
-                          loopcard.club/details/{card.cuuid.substring(0, 2)}..
-                        </p>
-                         <div className="h-[18px] w-[18px]">
-                          <Image src={"/assets/images/COPY.png"} height={18} width={18} onClick={() => {handleClick(card.cuuid);}} alt="copy" />
+                            <Image height={23} width={23} className='rounded-full' alt="color" src={`/assets/images/radio_buttons/elevate/${card.designUuid}.png`} />
+                          ) : <>
+                            <Image height={23} width={23} className='rounded-full' alt="color" src={`/assets/images/radio_buttons/lite/${card.designUuid}.png`} />
+                          </>}
                         </div>
                       </div>
-
-                      
                     </div>
+                    <div className='flex ml-auto'>
+                
+
+                      <div className=" flex flex-col py-2 pl-4">
+                        <p className="font-medium text-left text-black mt-5">
+                          <span className="text-xs font-medium text-left text-black">
+                            Full Name
+                          </span>
+                          <br />
+                          <p className="text-xs font-medium text-left text-black mt-[2px]">
+                            {card.cardName}
+                          </p>
+                        </p>
+                        <p className="font-medium text-left text-black mt-3">
+                          <span className="text-xs font-medium text-left text-black">
+                            Company Name
+                          </span>
+
+                          <p className="text-xs font-medium text-left text-black ">
+                            {card.companyName}
+                          </p>
+                        </p>
+                        <div className="flex border border-dashed mt-2 border-[#7D9695] ml-5 px-2 rounded-xl">
+                          <p className="w-32 text-[#7D9695] text-[10px]">
+                            loopcard.club/details/{card.cuuid.substring(0, 2)}..
+                          </p>
+                          <div className="h-[18px] w-[18px]">
+                            <Image src={"/assets/images/COPY.png"} height={18} width={18} onClick={() => { handleClick(card.cuuid); }} alt="copy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+           
+             
 
                     {card?.status == 1 ? (
-                      <Link href={`/createCard/${card.cuuid}`} className="w-[180px] h-10 rounded-[10px] border border-black flex justify-center items-center space-x-2 bg-black text-white absolute bottom-[-18px]">
+                      <Link href={`/createCard/${card.cuuid}`} className="w-[180px] h-10 rounded-[10px] border border-black flex justify-center items-center space-x-2 bg-black inset-x-0 mx-auto text-white absolute bottom-[-18px]">
                         <p className="text-sm font-bold text-center  text-white">
                           EDIT DETAILS
                         </p>
@@ -254,7 +260,7 @@ const handleClick = (card) => {
                         />
                       </Link>
                     ) : (
-                      <Link href={`/createCard/${card.cuuid}`} className="w-[180px] h-10 rounded-[10px] border border-black flex justify-center items-center space-x-2 bg-white absolute bottom-[-18px]">
+                        <Link href={`/createCard/${card.cuuid}`} className="w-[180px] h-10 rounded-[10px] border border-black flex justify-center items-center space-x-2 bg-white inset-x-0 mx-auto absolute bottom-[-18px]">
                         <p className="text-sm font-bold text-center  text-black">
                           CREATE PROFILE
                         </p>
