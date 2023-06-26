@@ -70,10 +70,10 @@ const handleClick = (card) => {
               return (
                 <div  key={card.cuuid} className=' flex place-content-center min-[1411px]:block'>
                   <div
-                    className="w-[320px] md:w-[566px] pb-6 relative h-auto rounded-[10px] pl-4 bg-white flex-col sm:flex-row flex justify-evenly "
+                    className="w-[320px] md:w-[566px] md:pr-5 pb-6 relative h-auto rounded-[10px] pl-4 bg-white flex-col sm:flex-row flex justify-evenly "
                     style={{ boxShadow: "0px 10px 15px 0 rgba(0,25,38,0.25)" }}
                   >
-                    <div className='flex'>
+                    <div className='flex gap-4'>
                       <div className="flex justify-center items-center h-full">
                         {card.cardType == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
                           <>
@@ -211,7 +211,7 @@ const handleClick = (card) => {
                         </div>
                       </div>
                     </div>
-                    <div className='flex ml-auto'>
+                    <div className='flex '>
                 
 
                       <div className=" flex flex-col py-2 pl-4">
