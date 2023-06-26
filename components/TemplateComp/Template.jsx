@@ -130,6 +130,7 @@ const Template = ({
               border={border}
               text1={text1}
               text2={text2}
+              type={type}
               company={company}
               mobile={mobile}
               website={website}

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selectedTemplate }) => {
+const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selectedTemplate , type }) => {
   const handlePhoneNumberClick = () => {
     window.open(`tel:${mobile}`);
     console.log(selectedTemplate)
@@ -19,7 +19,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selected
       <div className="pt-4  grid grid-cols-2 gap-y-4">
         <div className="flex items-center">
           <Image
-            src={"/assets/images/display/log.png"}
+            src={`/assets/images/display/${type}/log.png`}
             alt="log"
             width={24}
             height={20}
@@ -36,7 +36,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selected
           onClick={handlePhoneNumberClick}
         >
           <Image
-            src={"/assets/images/display/phone.png"}
+            src={`/assets/images/display/${type}/phone.png`}
             alt="phone"
             width={22}
             height={22}
@@ -48,7 +48,7 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selected
         <div className="flex w-[200px] lg:w-72 items-center">
           <div className="h-[22px] w-[24px] flex justify-center">
             <Image
-              src={"/assets/images/display/website.png"}
+              src={`/assets/images/display/${type}/website.png`}
               alt="website"
               width={22}
               height={22}
