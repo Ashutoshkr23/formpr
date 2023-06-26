@@ -55,11 +55,21 @@ export default async function handler(req, res) {
             // console.log(finalPrice,"final")
 
             let temp = []
+            let lite  = 0;
+            let elevate = 0 ;
+            let supreme = 0 ;
             cardsArray.map((item) => {
                 let supremeCard = false;
                 // this uuid is of supreme
                 if (item.cardTypeUuid == "7031e440-bc0b-4b39-8b8e-2afe3360d744") {
                     supremeCard = true
+                    supreme +=  1
+                }
+                if(item.cardTypeUuid == "801baf78-ce33-446f-b132-618f92ccfc5f"){
+                    elevate +=1
+                }
+                if(item.cardTypeUuid == "3fa766b5-9f66-4a38-8471-23026a59d84d"){
+                    lite +=1
                 }
 
                 let cuuid = uuidv4()
@@ -120,6 +130,11 @@ export default async function handler(req, res) {
                 razorpay_payment_id: razorpay_payment_id,
                 razorpay_order_id: razorpay_order_id,
                 razorpay_signature: razorpay_signature,
+                card_types: {
+                    lite:lite,
+                    elevate:elevate,
+                    supreme:supreme,
+                    },
                 orderId: orderId,
                 orderTrackingNumber: "1234",
                 shippingAddress: {
