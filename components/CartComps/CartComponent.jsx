@@ -267,14 +267,12 @@ const CartComponent = () => {
                 <button
                   className="cursor-pointer tracking-wide outline-none w-full h-10 text-center  bg-white shadow border rounded-lg border-black font-semibold"
                   onClick={() => setStepState(1)}
-                  name="previous"
                 >
                   PREVIOUS
                 </button>
                 <button
                   className="cursor-pointer tracking-wide outline-none  w-full h-10 bg-black shadow rounded-lg  text-center text-white font-semibold"
                   onClick={() => handleNext()}
-                  name="next"
                 >
                   NEXT (₹ {totalAmount})
                 </button>
@@ -284,7 +282,6 @@ const CartComponent = () => {
                 disabled={totalQuantity == 0 ? true : false}
                 className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-white text-black border font-semibold tracking-wide rounded-[10px] disabled:cursor-not-allowed "
                 onClick={() => setStepState(2)}
-                name="previous"
               >
                 PREVIOUS
               </button>
@@ -293,7 +290,6 @@ const CartComponent = () => {
                 disabled={totalQuantity == 0 ? true : false}
                 className="lg:w-[350px] xl:w-[390px] tracking-wide shadow-xl h-[40px] bg-black text-white rounded-[10px] disabled:cursor-not-allowed "
                 onClick={() => handleNext()}
-                name="next"
               >
                 NEXT
               </button>
@@ -399,7 +395,6 @@ const CartComponent = () => {
                     clearCart();
                     router.push("/manageCards");
                   }}
-                  name="manage cards"
                 >
                   Go to Manage Cards and create your profile
                 </button>
@@ -415,14 +410,12 @@ const CartComponent = () => {
             <button
               className="cursor-pointer tracking-wide outline-none w-full h-10 text-center  bg-white shadow border rounded-lg border-black font-semibold"
               onClick={() => setStepState(1)}
-              name="previous"
             >
               PREVIOUS
             </button>
             <button
               className="cursor-pointer tracking-wide outline-none  w-full h-10 bg-black shadow rounded-lg  text-center text-white font-semibold"
               onClick={() => handleNext()}
-              name="next"
             >
               NEXT (₹ {totalAmount})
             </button>
@@ -432,7 +425,6 @@ const CartComponent = () => {
             disabled={totalQuantity == 0 ? true : false}
             className="w-[350px] justify-center shadow-xl h-[40px] bg-white text-black border font-semibold tracking-wide rounded-[10px] disabled:cursor-not-allowed "
             onClick={() => setStepState(2)}
-            name="previous"
           >
             PREVIOUS
           </button>
@@ -442,7 +434,6 @@ const CartComponent = () => {
               disabled={totalQuantity == 0 ? true : false}
               className="w-[353px]    tracking-wide shadow-xl h-[40px] bg-black text-white rounded-[10px] disabled:cursor-not-allowed "
               onClick={() => handleNext()}
-              name="next"
             >
               NEXT
             </button>

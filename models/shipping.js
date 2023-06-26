@@ -14,6 +14,11 @@ const ShippingSchema = new mongoose.Schema({
     razorpay_payment_id: { type: String, required: true },
     razorpay_order_id: { type: String, required: true },
     razorpay_signature: { type: String, required: true },
+    card_types : {
+        lite:{type:Number ,default: 0} ,
+        elevate:{type:Number ,default: 0},
+        supreme:{type:Number ,default: 0} ,
+    }, //this will contain types of card user buys
     shippingAddress: {
         firstName: {
             type: String,
