@@ -4,31 +4,40 @@ import React from "react";
 import Template from "@/components/Template";
 import themes from "@/components/TemplateComp/Themes";
 import axios from "axios";
+import Image from "next/image";
 
 const Contact = () => {
   const [contactData, setContactData] = useState(null);
   const router = useRouter();
+
+  const [askUserData, setaskUserData] = useState(false)
+
+  const { slug } = router.query;
   useEffect(() => {
-    const { slug } = router.query;
     // console.log(slug);
     async function fetchContact() {
       try {
-        const res = await fetch(`/api/handleFormData?cuuid=${slug}`);
-        const data = await res.json();
-        console.log(data.card);
-        if (data.card !== undefined) {
-          setContactData(data.card);
-          const cardUuid = data.card.cuuid;
-          const userPuuid = data.card.puuid;
-          const userEmail = data.card.mail;
-          const sendDataToAPI = { cardUuid, userEmail, userPuuid };
-          console.log(sendDataToAPI);
-          const settingRemainder = await axios.post(
-            "/api/setRemainder",
-            sendDataToAPI
-          );
-          console.log(settingRemainder);
-          console.log("2");
+        const response = await fetch(`/api/handleFormData?cuuid=${slug}`);
+        const data = await response.json();
+
+        const userPuuid = data.card.puuid;
+
+        const response2 = await fetch(`/api/handleFormData?userPuuid=${userPuuid}`);
+        const data2 = await response2.json();
+
+        if (data2.message === "true") {
+          setaskUserData(true)
+        } else if (data2.message === "false") {
+          setaskUserData(false)
+          if (data.card !== undefined) {
+            setContactData(data.card);
+            const cardUuid = data.card.cuuid;
+            const userPuuid = data.card.puuid;
+            const userEmail = data.card.mail;
+            const sendDataToAPI = { cardUuid, userEmail, userPuuid };
+            const settingRemainder = await axios.post("/api/setRemainder", sendDataToAPI);
+            console.log(settingRemainder);
+          }
         }
       } catch (error) {
         console.error("Error fetching contact:", error);
@@ -37,6 +46,30 @@ const Contact = () => {
 
     fetchContact();
   }, [router.query]);
+
+
+  const [userName, setuserName] = useState('');
+  const [countactNumber, setcountactNumber] = useState('');
+
+  async function sendUserDataToCardOwnerReminderSection() {
+
+    setaskUserData(false)
+
+    const response = await fetch(`/api/handleFormData?cuuid=${slug}`);
+    const data = await response.json();
+
+    if (data.card !== undefined) {
+      setContactData(data.card);
+      const cardUuid = data.card.cuuid;
+      const userPuuid = data.card.puuid;
+      const userEmail = data.card.mail;
+      const sendDataToAPI = { cardUuid, userEmail, userPuuid, userName, countactNumber };
+      const settingRemainder = await axios.post("/api/setRemainder", sendDataToAPI);
+      console.log(settingRemainder);
+    }
+
+
+  }
 
   const [bio, setBio] = useState(
     contactData && contactData.bio ? contactData.bio : ""
@@ -97,25 +130,41 @@ const Contact = () => {
   const [youtube, setYoutube] = useState(
     contactData && contactData.youtube ? contactData.youtube : ""
   );
-  {
-    /*
 
-                company: company,
-                name: name,
-                role: role,
-                companyLink: companyLink,
-                bio: bio,
-                address: address,
-                mobileNumber: phoneNumber,
-                adress: address,
-                selectedTemplate: selectedtemplate,
-                profileImg: profileImg,
-                cover: cover,*/
-  }
   return (
-    <div>
-      {contactData && (
-        <div className="bg-black">
+    <div className={`h-screen bg-red-300 bg-gradient-to-b from-blue-300 to-green-300`}>
+      {askUserData &&
+        <div className="w-[353px] h-[469px] bg-white m-auto text-center capitalize gap-10 flex flex-col justify-center absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] rounded-3xl">
+          <div className="font-bold text-[32px]">stay in touch</div>
+          <div className="name-input relative">
+            <div className="absolute top-0 left-0 -mt-[11px] ml-[88px] bg-white px-1">name</div>
+            <input
+              className="border rounded-lg py-2 pl-2"
+              type="text"
+              value={userName} onChange={(e) => setuserName(e.target.value)}
+            />
+          </div>
+          <div className="contact-number-input relative">
+            <div className="absolute top-0 left-0 -mt-[11px] ml-[88px] bg-white px-1">Phone Number</div>
+            <input
+              className="border rounded-lg py-2 pl-2"
+              type="number"
+              value={countactNumber} onChange={(e) => setcountactNumber(e.target.value)}
+            />
+          </div>
+          <div className="done-button" onClick={sendUserDataToCardOwnerReminderSection}>
+            <button className="bg-black text-white w-[212px] rounded-md py-2 uppercase font-bold">done</button>
+          </div>
+          <div>
+            <div className='text-[10px] flex justify-center gap-2'>
+              made with love by
+              <Image className='' alt='loop' src={'/assets/images/loop-black.png'} width={36} height={14} />
+            </div>
+          </div>
+        </div>
+      }
+      {contactData && !askUserData && (
+        <div className="h-screen bg-black">
           <Template
             gradient1={contactData.cover}
             gradient2={themes[contactData.selectedTemplate].gradient2}

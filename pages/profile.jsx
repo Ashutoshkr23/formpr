@@ -13,6 +13,7 @@ import Link from 'next/link';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import FilterIcon from '@/components/ProfilePage/FilterIcon';
+import { Switch } from '@headlessui/react';
 
 
 const Profile = () => {
@@ -34,6 +35,12 @@ const Profile = () => {
   const currentTime = moment();
   const formattedTime = currentTime.format('DD-MM-YYYY HH:mm');
 
+  async function getUserSessionEmail() {
+    const session = await getSession();
+
+    return session?.user?.email;
+  }
+
   async function getUserRemainders() {
     if (getUserRemaindersCalled) {
       return;
@@ -43,9 +50,7 @@ const Profile = () => {
 
     setgetUserRemaindersCalled(!getUserRemaindersCalled);
 
-    const session = await getSession();
-
-    const userEmail = session?.user?.email;
+    const userEmail = await getUserSessionEmail();
 
     const sendDataToAPI = { userEmail }
 
@@ -242,6 +247,7 @@ const Profile = () => {
 
   useEffect(() => {
     getUserRemainders();
+    getUserShareContactsForUserBooleanDetails();
   }, [])
 
   const block1ForActiveIndex0 = `xl:w-[200px] xl:max-w-[200px] lg:w-[241px] lg:max-w-[241px] w-[200px] max-w-[200px]`
@@ -306,18 +312,48 @@ const Profile = () => {
     }
   }
 
+  const [onOffShareContacts, setonOffShareContacts] = useState(false)
+
+  async function onOffShareContactsForUser() {
+    setonOffShareContacts(!onOffShareContacts)
+
+    const revertOnOffValue = !onOffShareContacts;
+
+    const userEmail = await getUserSessionEmail();
+    const data = { userEmail, revertOnOffValue }
+    const response = await axios.post('/api/profilePage/onOffShareContacts', data)
+    console.log(response);
+  }
+
+  const [enabled, setEnabled] = useState(false);
+
+  const style1 = 'background: linear-gradient(91.67deg, #96FFAD 0.94%, #66D3E1 101.73%);'
+
+  async function getUserShareContactsForUserBooleanDetails() {
+    const userEmail = await getUserSessionEmail();
+    const data = { userEmail }
+    const response = await axios.post('/api/profilePage/onOffShareContacts', data)
+    if (response.data.success === true) {
+      const shareContactsValue = response.data.getUserSharingDetails.shareContacts;
+      setonOffShareContacts(shareContactsValue)
+      setEnabled(shareContactsValue)
+    }
+  }
+
   return (
     <div className=''>
       <div className={`${enableDisableBackgroundCSS}`}>
         <CartNav />
 
-        <div className='max-w-[1209px] mx-auto xl:pr-0 pr-4 text-right capitalize'>
-          <ToggleSwtich
-            outlineCSS='h-[47px] w-[94px]'
-            circleCSS='h-[34px] w-[34px]'
-            rightSideCircleCSS='translate-x-12 bg-black'
-            boolean={setReminderTD}
-          />
+        <div className='max-w-[1209px] mx-auto xl:pr-0 pr-4 text-right capitalize' onClick={onOffShareContactsForUser}>
+          <Switch
+            checked={enabled}
+            onChange={setEnabled}
+            style={{ background: enabled ? 'linear-gradient(91.67deg, #96FFAD 0.94%, #66D3E1 101.73%' : 'white' }}
+            className={`relative inline-flex md:h-[47px] h-[38px] md:w-[94px] w-[85px] shrink-0 rounded-full border-2 border-black transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`} >
+            <span className="sr-only">Use setting</span>
+            <span aria-hidden="true" className={`${enabled ? `translate-x-12 bg-black` : 'translate-x-2 bg-white'} mt-1 pointer-events-none inline-block md:h-[34px] h-[25px] md:w-[34px] w-[25px] transform rounded-full border-2 border-black shadow-lg ring-0 transition duration-200 ease-in-out`} />
+          </Switch>
           <div className='mt-4'>allow contacts to</div>
         </div>
 
@@ -327,7 +363,7 @@ const Profile = () => {
               <Image className='rounded-full' width={130} height={130} src={userAccountImage} alt="profile pic"></Image>
             </div>
             <div className="right-side">
-              <div className="username capitalize text-3xl font-bold md:mb-6 mb-4 md:ml-4 ml-0 md:text-left text-center flex items-center gap-2">
+              <div className="username capitalize text-3xl font-bold md:mb-6 mb-4 md:ml-4 ml-0 md:text-left text-center flex items-center gap-2 md:justify-start justify-center">
                 {userAccountName}
                 <span className='md:block hidden' onClick={() => editUserAccountNameBox()}>
                   <Image width={20} height={20} src={'/assets/images/profilePage/editReminder.png'} alt="profile pic"></Image>

@@ -1,4 +1,5 @@
 import { connectToDatabase } from "@/lib/mongoose";
+import UserData from "@/models/UserData";
 import Card from "@/models/card";
 
 export default async function handle(req, res) {
@@ -28,9 +29,19 @@ export default async function handle(req, res) {
 
   if (req.method === "GET") {
     try {
-      const { cuuid } = req.query;
+      const { cuuid, userPuuid } = req.query;
 
-      if (cuuid) {
+
+      if (userPuuid !== undefined) {
+        const shareContactsstatus = await UserData.findOne({ puuid: userPuuid })
+        if (shareContactsstatus.shareContacts === true) {
+          return res.status(200).json({ message: "Success", success: 200, message: "true", shareContactsstatus: shareContactsstatus });
+        } else if (shareContactsstatus.shareContacts !== true) {
+          return res.status(200).json({ message: "Success", success: 200, message: "false", shareContactsstatus: shareContactsstatus });
+        }
+      }
+
+      if (cuuid !== undefined) {
         const card = await Card.findOne({ cuuid });
         if (card) {
           return res.status(200).json({ card });

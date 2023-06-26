@@ -32,6 +32,10 @@ const UserDataSchema = new mongoose.Schema({
     privateKey: {
         type: String,
         required: true
+    },
+    shareContacts: {
+        type: Boolean,
+        default: false
     }
 }, { timestamps: true });
 
