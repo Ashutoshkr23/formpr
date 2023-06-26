@@ -22,12 +22,14 @@ const Socialpg = ({
       {mail && (
         <div className="flex flex-col  items-center">
           <Link target="_blank" href={`mailto:${mail}`}>
-            <Image
-              src={`/assets/images/social/${type}/email.png`}
-              alt="gmail Logo"
-              width={60}
-              height={60}
-            />
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/email.png`}
+                alt="gmail Logo"
+                width={50}
+                height={50}
+              />
+            </div>
           </Link>
           <p className={`text-[12px] ${text1} `}>Mail</p>
         </div>
@@ -35,12 +37,14 @@ const Socialpg = ({
       {whatsappNumber && (
         <div className="flex flex-col items-center">
           <Link target="_blank" href={`https://wa.me/${whatsappNumber}`}>
-            <Image
-              src={`/assets/images/social/${type}/watsp.png`}
-              alt="WhatsApp Logo"
-              width={60}
-              height={60}
-            />
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/watsp.png`}
+                alt="WhatsApp Logo"
+                width={50}
+                height={50}
+              />
+            </div>
           </Link>
           <p className={`text-[12px] ${text1}  `}>Whatsapp</p>
         </div>
@@ -48,12 +52,14 @@ const Socialpg = ({
       {linkedin && (
         <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${linkedin}`}>
-            <Image
-              src={`/assets/images/social/${type}/linked.png`}
-              alt="linkedin Logo"
-              width={60}
-              height={60}
-            />
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/linked.png`}
+                alt="linkedin Logo"
+                width={50}
+                height={50}
+              />
+            </div>
           </Link>
           <p className={`text-[12px] ${text1}`}>LinkedIn</p>
         </div>
@@ -61,12 +67,14 @@ const Socialpg = ({
       {instagram && (
         <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${instagram}`}>
-            <Image
-              src={`/assets/images/social/${type}/insta.png`}
-              alt="instagram Logo"
-              width={60}
-              height={60}
-            />
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/insta.png`}
+                alt="instagram Logo"
+                width={50}
+                height={50}
+              />
+            </div>
           </Link>
           <p className={`text-[12px] ${text1}`}>Instagram</p>
         </div>
@@ -74,12 +82,14 @@ const Socialpg = ({
       {facebook && (
         <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${facebook}`}>
-            <Image
-              src={`/assets/images/social/${type}/facebook.png`}
-              alt="facebook Logo"
-              width={60}
-              height={60}
-            />
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/facebook.png`}
+                alt="facebook Logo"
+                width={50}
+                height={50}
+              />
+            </div>
           </Link>
           <p className={`text-[12px] ${text1}`}>Facebook</p>
         </div>
@@ -87,12 +97,14 @@ const Socialpg = ({
       {youtube&& (
         <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${youtube}`}>
-            <Image
-              src={`/assets/images/social/${type}/Youtube.png`}
-              alt="Youtube Logo"
-              width={60}
-              height={60}
-            />
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/Youtube.png`}
+                alt="Youtube Logo"
+                width={50}
+                height={50}
+              />
+            </div>
           </Link>
           <p className={`text-[12px] ${text1}`}>Youtube</p>
         </div>
@@ -100,12 +112,14 @@ const Socialpg = ({
       {twitter&& (
         <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${twitter}`}>
-            <Image
-              src={`/assets/images/social/${type}/Twitter.png`}
-              alt="Twitter Logo"
-              width={60}
-              height={60}
-            />
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/Twitter.png`}
+                alt="Twitter Logo"
+                width={50}
+                height={50}
+              />
+            </div>
           </Link>
           <p className={`text-[12px] ${text1}`}>Twitter</p>
         </div>
@@ -113,12 +127,14 @@ const Socialpg = ({
       {reddit && (
         <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${reddit}`}>
-            <Image
-              src={`/assets/images/social/${type}/Reddit.png`}
-              alt="Reddit Logo"
-              width={60}
-              height={60}
-            />
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/Reddit.png`}
+                alt="Reddit Logo"
+                width={50}
+                height={50}
+              />
+            </div>
           </Link>
           <p className={`text-[12px] ${text1}`}>Reddit</p>
         </div>
@@ -126,12 +142,14 @@ const Socialpg = ({
       {behance && (
         <div className="flex flex-col  items-center">
           <Link target="_blank" href={`${behance}`}>
-            <Image
-              src={`/assets/images/social/${type}/Behance.png`}
-              alt="Behance Logo"
-              width={60}
-              height={60}
-            />
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/Behance.png`}
+                alt="Behance Logo"
+                width={50}
+                height={50}
+              />
+            </div>
           </Link>
           <p className={`text-[12px] ${text1}`}>Behance</p>
         </div>

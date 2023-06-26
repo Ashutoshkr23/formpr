@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import ProfileImg from "./ProfileImg";
 import Image from "next/image";
-import BioTemp from "./BioTemp";
+import BioTemp from "../components/TemplateComp/BioTemp";
 import Socialpg from "./Socialpg";
 import { saveAs } from "file-saver"; // Import the file-saver library
 
@@ -94,7 +94,7 @@ END:VCARD`;
               //   onChange={handleChange}
             />
           </div>
-          <div className="flex justify-center mt-[11px] font-semibold text-[16px]">
+          <div className="flex justify-center mt-4 mb-2 font-semibold text-[16px]">
             <input
               className={`text-center bg-transparent ${text2} text-[#7D9695] `}
               type="text"
@@ -106,6 +106,7 @@ END:VCARD`;
           <div>
             <BioTemp
               bio={bio}
+              type={type}
               border={border}
               text1={text1}
               text2={text2}
