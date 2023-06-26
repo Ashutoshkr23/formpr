@@ -16,8 +16,10 @@ export default async function handler(req, res) {
             })
         } else if (userEmail !== undefined && revertOnOffValue !== undefined) {
             const getUserCardDetails = await UserData.findOneAndUpdate({ email: userEmail }, { shareContacts: revertOnOffValue });
+            const shareContactsValue = getUserCardDetails.shareContacts;
             res.json({
                 success: true,
+                shareContactsValue: shareContactsValue
             })
         }
 

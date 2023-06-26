@@ -1,7 +1,7 @@
-import moment from 'moment/moment';
 import { connectToDatabase } from '../../../lib/mongoose';
 import setRemainderModel from '../../../models/setRemainderModel';
 import mongoose from 'mongoose';
+import moment from 'moment-timezone';
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -21,7 +21,8 @@ export default async function handler(req, res) {
         const year = mySelectedDate.getFullYear().toString();
         const hours = mySelectedDate.getHours().toString().padStart(2, '0');
         const minutes = mySelectedDate.getMinutes().toString().padStart(2, '0');
-        const formattedDate = `${day}-${month}-${year} ${hours}:${minutes}`;
+        const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const formattedDate = moment(mySelectedDate).utcOffset(userTimezone).format('DD-MM-YYYY HH:mm');
 
         const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber, customMessage: userCustomMessage, customDate: formattedDate }, { new: true });
         // console.log(updatedReminder);
@@ -38,7 +39,7 @@ export default async function handler(req, res) {
                 // Code to send the reminder to the user
                 try {
                     await sgMail.send(message);
-                    // console.log('Notification email sent successfully');
+                    console.log('Notification email sent successfully');
                 } catch (error) {
                     console.error('Error sending notification email:', error);
                 }

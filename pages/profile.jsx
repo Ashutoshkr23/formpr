@@ -14,7 +14,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import FilterIcon from '@/components/ProfilePage/FilterIcon';
 import { Switch } from '@headlessui/react';
-
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Profile = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -118,7 +119,9 @@ const Profile = () => {
     }
 
     if (enableDisableBackgroundCSS === 'h-screen blur-sm pointer-events-none') {
+      getUserRemainders();
       setenableDisableBackgroundCSS('h-screen blur-none pointer-events-auto')
+      console.log("22");
     }
   };
 
@@ -219,10 +222,10 @@ const Profile = () => {
   const maxTime = new Date(currentDate.getTime() + 100000000);
 
   const userAccountEmail = session?.user?.email;
-  const [userAccountName, setuserAccountName] = useState('John Doe')
+  const [userAccountName, setuserAccountName] = useState('')
   const [userERC20Wallet, setuserERC20Wallet] = useState('Getting Wallet ID....')
   const [stopGetUserDataFunction, setstopGetUserDataFunction] = useState(false)
-  const [userAccountImage, setuserAccountImage] = useState('/assets/images/profilePage/profilePic.png')
+  const [userAccountImage, setuserAccountImage] = useState('')
 
   async function getUserData() {
     if (stopGetUserDataFunction) {
@@ -325,7 +328,7 @@ const Profile = () => {
     console.log(response);
   }
 
-  const [enabled, setEnabled] = useState(false);
+  const [enabledAllowContactsTo, setEnabledAllowContactsTo] = useState(false);
 
   const style1 = 'background: linear-gradient(91.67deg, #96FFAD 0.94%, #66D3E1 101.73%);'
 
@@ -336,7 +339,7 @@ const Profile = () => {
     if (response.data.success === true) {
       const shareContactsValue = response.data.getUserSharingDetails.shareContacts;
       setonOffShareContacts(shareContactsValue)
-      setEnabled(shareContactsValue)
+      setEnabledAllowContactsTo(shareContactsValue)
     }
   }
 
@@ -347,12 +350,12 @@ const Profile = () => {
 
         <div className='max-w-[1209px] mx-auto xl:pr-0 pr-4 text-right capitalize' onClick={onOffShareContactsForUser}>
           <Switch
-            checked={enabled}
-            onChange={setEnabled}
-            style={{ background: enabled ? 'linear-gradient(91.67deg, #96FFAD 0.94%, #66D3E1 101.73%' : 'white' }}
+            checked={enabledAllowContactsTo}
+            onChange={setEnabledAllowContactsTo}
+            style={{ background: enabledAllowContactsTo ? 'linear-gradient(91.67deg, #96FFAD 0.94%, #66D3E1 101.73%' : 'white' }}
             className={`relative inline-flex md:h-[47px] h-[38px] md:w-[94px] w-[85px] shrink-0 rounded-full border-2 border-black transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`} >
             <span className="sr-only">Use setting</span>
-            <span aria-hidden="true" className={`${enabled ? `translate-x-12 bg-black` : 'translate-x-2 bg-white'} mt-1 pointer-events-none inline-block md:h-[34px] h-[25px] md:w-[34px] w-[25px] transform rounded-full border-2 border-black shadow-lg ring-0 transition duration-200 ease-in-out`} />
+            <span aria-hidden="true" className={`${enabledAllowContactsTo ? `translate-x-12 bg-black` : 'translate-x-2 bg-white'} mt-1 pointer-events-none inline-block md:h-[34px] h-[25px] md:w-[34px] w-[25px] transform rounded-full border-2 border-black shadow-lg ring-0 transition duration-200 ease-in-out`} />
           </Switch>
           <div className='mt-4'>allow contacts to</div>
         </div>
@@ -360,11 +363,18 @@ const Profile = () => {
         <div className="profile-page max-w-6xl mx-auto md:mt-24 mt-12 xl:pl-0 md:pl-2 pl-0">
           <div className="profile-section flex md:flex-row flex-col items-center">
             <div className="left-side md:mr-28 mr-0">
-              <Image className='rounded-full' width={130} height={130} src={userAccountImage} alt="profile pic"></Image>
+              {userAccountImage.length === 0 &&
+                <div>
+                  <Skeleton circle={true} height={130} width={130} />
+                </div>
+              }
+              {userAccountImage.length !== 0 &&
+                <Image className='rounded-full' width={130} height={130} src={userAccountImage} alt="profile pic"></Image>
+              }
             </div>
             <div className="right-side">
               <div className="username capitalize text-3xl font-bold md:mb-6 mb-4 md:ml-4 ml-0 md:text-left text-center flex items-center gap-2 md:justify-start justify-center">
-                {userAccountName}
+                {userAccountName.length === 0 ? <Skeleton width={300} height={36} count={1} /> : userAccountName}
                 <span className='md:block hidden' onClick={() => editUserAccountNameBox()}>
                   <Image width={20} height={20} src={'/assets/images/profilePage/editReminder.png'} alt="profile pic"></Image>
                 </span>
