@@ -304,7 +304,7 @@ const CheckoutComp = ({
         </>
       )}
       <div className="  pl-2 pr-0 lg:pr-4 xl:pr-0">
-        <div className="w-full lg:w-[330px]   xl:w-[385px] shadow-xl min-h-[510px] bg-white rounded-xl py-8">
+        <div className="w-full lg:w-[330px]  xl:w-[385px] shadow-xl min-h-[510px] bg-white rounded-xl py-8">
           <p className="text-2xl font-bold text-center">Order Summary</p>
           <div className="px-10 mt-16 space-y-2">
             <div className="flex justify-between items-center">

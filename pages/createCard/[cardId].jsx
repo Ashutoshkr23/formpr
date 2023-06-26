@@ -33,7 +33,7 @@ export default function Page() {
         if (cuuid && puuid) {
             checkCardValid()
         }
-    }, [cuuid, userProfile])
+    }, [cuuid, userProfile,puuid])
     if (loading) {
         return <h5>Loading...</h5>
     }
