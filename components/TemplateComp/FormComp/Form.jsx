@@ -82,7 +82,7 @@ function Form({ cuuid }) {
         setName(cardData.name);
         setProfileImg(cardData.profileImg);
         setCover(cardData.cover);
-        setSelectedTemplate(cardData.selectedTemplate); 
+        setSelectedTemplate(cardData.selectedTemplate || 0); 
         setBio(cardData.bio);
         setRole(cardData.role);
         setCompany(cardData.company);
@@ -136,9 +136,7 @@ function Form({ cuuid }) {
   };
 
   useEffect(() => {
-    if (selectedTemplate === "0") {
-      setCover(themes[0].gradient1);
-    } else if (selectedTemplate === "1") {
+    if (selectedTemplate === "1") {
       setCover(themes[1].gradient1);
     } else if (selectedTemplate === "2") {
       setCover(themes[2].gradient1);
@@ -148,6 +146,8 @@ function Form({ cuuid }) {
       setCover(themes[4].gradient1);
     } else if (selectedTemplate === "5") {
       setCover(themes[5].gradient1);
+    } else if (selectedTemplate === "6") {
+      setCover(themes[6].gradient1);
     } else {
       setCover(themes[0].gradient1); // Set a default value if needed
     }

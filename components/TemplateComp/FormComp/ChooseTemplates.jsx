@@ -1,15 +1,30 @@
 import Image from 'next/image'
-import React from 'react'
+import React , {useState} from 'react'
 
 function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
+  const [isTemplateSelected, setIsTemplateSelected] = useState(false);
+
+  const handleTemplateSelect = (templateId) => {
+    setSelectedTemplate(templateId);
+    setIsTemplateSelected(true);
+  };
+
   console.log(selectedTemplate)
   return (
-    <div className='flex flex-grow drop-shadow-white flex-col h-auto pb-6 rounded-[10px]  mb-5 bg-black-dim px-4 md:pl-9 pt-4'>
-      <p className='font-bold text-white text-xs'>TEMPLATE<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
+    <div className={`flex flex-grow drop-shadow-white flex-col bg-white h-auto pb-6 rounded-[10px]  mb-5  px-4 md:pl-9 pt-4 ${isTemplateSelected ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'
+      }`}>
+      <div className='flex'>
+        <p className='font-bold  text-xs'>TEMPLATE<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
+        {isTemplateSelected && (
+          <div className='h-5 w-5 ml-auto mr-10'>
+            <Image height={20} width={20} src='/assets/images/templateimg/Tick.png' />
+          </div>
+        )}
+      </div>
       <div className='flex flex-wrap gap-y-4 sm:gap-y-8 mt-5 '>
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center '>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('0')}>
-            {selectedTemplate === '0' && (
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('1')}>
+            {selectedTemplate === '1' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0  z-30 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
             )}
             <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
@@ -18,8 +33,8 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
           </div>
         </div>
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center '>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('1')}>
-            {selectedTemplate === '1' && (
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('2')}>
+            {selectedTemplate === '2' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0 z-30 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
             )}
             <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
@@ -28,8 +43,8 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
           </div>
         </div>
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center'>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('3')}>
-            {selectedTemplate === '3' && (
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('4')}>
+            {selectedTemplate === '4' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0 z-30 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
             )}
             <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
@@ -38,8 +53,8 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
           </div>
         </div>
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center'>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('2')}>
-            {selectedTemplate === '2' && (
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('3')}>
+            {selectedTemplate === '3' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0 z-30 bg-[#81919A] bg-opacity-50 rounded-[8px]'></div>
             )}
             <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
@@ -48,8 +63,8 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
           </div>
         </div>
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center'>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('4')}>
-            {selectedTemplate === '4' && (
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('5')}>
+            {selectedTemplate === '5' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0 z-30 bg-[#81919A] bg-opacity-50 rounded-[8px]'></div>
             )}
             <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
@@ -57,10 +72,10 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
             </div>
           </div>
         </div>
-        
+
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center'>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => setSelectedTemplate('5')}>
-            {selectedTemplate === '5' && (
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('6')}>
+            {selectedTemplate === '6' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0 z-30 bg-[#81919A] bg-opacity-50 rounded-[8px]'></div>
             )}
             <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]'>
@@ -68,10 +83,10 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   )
 }
 
-export default ChooseTemplates
+export default ChooseTemplates  

@@ -3,6 +3,8 @@ import React from 'react'
 
 function Cover({ cover, setCover }) {
 
+    
+
 
     const handleCoverUpload = (event) => {
         const file = event.target.files[0];
