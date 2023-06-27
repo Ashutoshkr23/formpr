@@ -1,8 +1,14 @@
-import React , {useState} from 'react'
+import React , {useState , useEffect} from 'react'
 import Image from 'next/image'
 
 function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, handleInputChange }) {
   const [showMenu , setShowMenu] = useState(false)
+  const [isMailGiven , setIsMailGiven] = useState(false)
+
+  useEffect(() => {
+    setIsMailGiven(!!inputValues.mail);
+  }, [inputValues.mail]);
+
 
   const handleButtonClick = () => {
     setShowMenu(!showMenu);
@@ -22,8 +28,16 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
 
   
   return (
-      <div className='flex  flex-grow rounded-[10px] drop-shadow-white flex-col h-auto pb-60 sm:h-[600px] bg-black-dim px-4 sm:px-9 pt-4 my-5'>
-        <p className='font-bold text-white text-xs'>Social Links</p>
+    <div className={`flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto pb-60 sm:h-[600px] bg-black-dim px-4 sm:px-9 pt-4 my-5 ${isMailGiven ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'
+      }`}>
+      <div className='flex'>
+        <p className='font-bold  text-xs'>Social Links<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
+        {isMailGiven && (
+          <div className='h-5 w-5 ml-auto mr-10'>
+            <Image height={20} width={20} src='/assets/images/templateimg/Tick.png' />
+          </div>
+        )}
+      </div>
       <div>
         <div className=''>
           
@@ -33,8 +47,8 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/email.png" alt='mail-icon' height={30} width={30} />
             </div>
-            <input type="text" id="mail" name="mail" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
-            value={inputValues.mail}
+              <input type="text" id="mail" name="mail" className={`bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md ${!inputValues.mail ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}  
+              value={inputValues.mail}
               onChange={handleInputChange}/>
               <div className='h-[20px] w-[20px] invisible' onClick={() => handleHide('mail')}>
               <Image src="/assets/images/social/folder1/Binicon.png" height={20} width={20} alt='bin-icon' />
