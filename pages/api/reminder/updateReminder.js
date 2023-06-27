@@ -1,7 +1,7 @@
-import moment from 'moment/moment';
 import { connectToDatabase } from '../../../lib/mongoose';
 import setRemainderModel from '../../../models/setRemainderModel';
 import mongoose from 'mongoose';
+import moment from 'moment-timezone';
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -21,7 +21,27 @@ export default async function handler(req, res) {
         const year = mySelectedDate.getFullYear().toString();
         const hours = mySelectedDate.getHours().toString().padStart(2, '0');
         const minutes = mySelectedDate.getMinutes().toString().padStart(2, '0');
-        const formattedDate = `${day}-${month}-${year} ${hours}:${minutes}`;
+        const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+        // Get user's timezone offset in minutes
+        const timezoneOffsetMinutes = moment.tz(mySelectedDate, userTimezone).utcOffset();
+
+        // Convert the offset to hours and minutes
+        const timezoneOffsetHours = Math.floor(timezoneOffsetMinutes / 60);
+        const timezoneOffsetMinutesRemaining = timezoneOffsetMinutes % 60;
+
+        // Calculate adjusted hours and minutes
+        const adjustedHours = Number(hours) + timezoneOffsetHours;
+        const adjustedMinutes = Number(minutes) + timezoneOffsetMinutesRemaining;
+
+        // Update the hours and minutes in the formatted date
+        const formattedDate = moment(mySelectedDate)
+            .utcOffset(userTimezone)
+            .set('hour', adjustedHours)
+            .set('minute', adjustedMinutes)
+            .format('DD-MM-YYYY HH:mm');
+
+        console.log(formattedDate);
 
         const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber, customMessage: userCustomMessage, customDate: formattedDate }, { new: true });
         // console.log(updatedReminder);
@@ -38,7 +58,7 @@ export default async function handler(req, res) {
                 // Code to send the reminder to the user
                 try {
                     await sgMail.send(message);
-                    // console.log('Notification email sent successfully');
+                    console.log('Notification email sent successfully');
                 } catch (error) {
                     console.error('Error sending notification email:', error);
                 }

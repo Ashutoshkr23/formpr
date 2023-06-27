@@ -256,18 +256,14 @@ const CheckoutComp = ({
                                 backgroundColor: cardBg,
                               }}
                             >
-                              {data.companyLogo && data.companyLogo.length ? (
+                              {data.companyLogo && data.companyLogo.length &&(
                                 <div className="absolute flex   left-7 bottom-4 justify-center items-center h-[70px] w-[110px] object-cover">
                                   <img
                                     src={data.companyLogo}
                                     className=" object-fill w-[50px] h-[50px] "
                                   />
                                 </div>
-                              ) : (
-                                <div className="absolute lg:left-16 flex justify-center items-center left-[50px] bottom-[40px] lg:bottom-16 h-[90px] w-[200px] lg:w-[260px] lg:h-[130px] bg-slate-200 rounded-md mt-1">
-                                  <h3>upload Company Logo</h3>
-                                </div>
-                              )}
+                              ) }
                             </div>
                           </div>
                         )}

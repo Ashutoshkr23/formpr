@@ -442,11 +442,12 @@ function DetailsInput({
             </div>
             <div className="flex mt-8">
               <input
-                className={`border outline-none ${
-                  checkFormValid &&
-                  card?.companyName?.length == 0 &&
-                  "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[220px] h-10 rounded-xl pl-4`}
+                // className={`border outline-none ${
+                //   checkFormValid &&
+                //   card?.companyName?.length == 0 &&
+                //   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
+                // } w-[220px] h-10 rounded-xl pl-4`}
+                className={`border outline-none  w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -465,13 +466,13 @@ function DetailsInput({
                 </button>
               )}
             </div>
-            {checkFormValid && card?.companyName?.length == 0 && (
+            {/* {checkFormValid && card?.companyName?.length == 0 && (
               <div className="">
                 <p className="text-xs text-red-500 font-bold py-1 px-2">
                   Required *
                 </p>
               </div>
-            )}
+            )} */}
             <div>
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
@@ -504,11 +505,12 @@ function DetailsInput({
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${
-                      checkFormValid &&
-                      card?.fileName?.length == 0 &&
-                      "border-2 border-red-400 "
-                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
+                    // className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm   ${
+                    //   checkFormValid &&
+                    //   card?.fileName?.length == 0 &&
+                    //   "border-2 border-red-400 "
+                    // }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-0 sm:px-4 `}
+                    className={`px-4 cursor-pointer py-2 flex justify-between border text-xs lg:text-sm  w-[220px] h-10 rounded-xl font-semibold pt-2  sm:px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -546,13 +548,13 @@ function DetailsInput({
                   </button>
                 )}
               </div>
-              {checkFormValid && card?.fileName?.length == 0 && (
+              {/* {checkFormValid && card?.fileName?.length == 0 && (
                 <div className="">
                   <p className="text-xs text-red-500 font-bold py-1 px-2">
                     Please Upload Company logo *
                   </p>
                 </div>
-              )}
+              )} */}
             </div>
             <div>
               <input
@@ -775,11 +777,12 @@ function DetailsInput({
             </div>
             <div className="flex mt-6">
               <input
-                className={`border outline-none ${
-                  checkFormValid &&
-                  card?.companyName?.length == 0 &&
-                  "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
-                } w-[220px] h-10 rounded-xl pl-4`}
+                // className={`border outline-none ${
+                //   checkFormValid &&
+                //   card?.companyName?.length == 0 &&
+                //   "border-2 border-red-400 placeholder:text-red-400 placeholder:text-sm"
+                // } w-[220px] h-10 rounded-xl pl-4`}
+                className={`border outline-none w-[220px] h-10 rounded-xl pl-4`}
                 type="text"
                 name="companyName"
                 value={card.companyName}
@@ -798,13 +801,13 @@ function DetailsInput({
                 </button>
               )}
             </div>
-            {checkFormValid && card?.companyName?.length == 0 && (
+            {/* {checkFormValid && card?.companyName?.length == 0 && (
               <div className="">
                 <p className="text-xs text-red-500 font-bold py-1 px-2">
                   Required *
                 </p>
               </div>
-            )}
+            )} */}
             <div>
               <div className="flex mt-8">
                 {card.fileName ? ( // Display the file name if it exists
@@ -833,11 +836,12 @@ function DetailsInput({
                 ) : (
                   <label
                     htmlFor="fileInput"
-                    className={`cursor-pointer py-2 flex justify-between border ${
-                      checkFormValid &&
-                      card?.fileName?.length == 0 &&
-                      "border-2 border-red-400 "
-                    }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
+                    // className={`cursor-pointer py-2 flex justify-between border ${
+                    //   checkFormValid &&
+                    //   card?.fileName?.length == 0 &&
+                    //   "border-2 border-red-400 "
+                    // }  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
+                    className={`cursor-pointer py-2 flex justify-between border  w-[220px] h-10 rounded-xl font-semibold pt-2 px-4 `}
                     onClick={handleLabelClick}
                   >
                     Upload Logo
@@ -875,13 +879,13 @@ function DetailsInput({
                   </button>
                 )}
               </div>
-              {checkFormValid && card?.fileName?.length == 0 && (
+              {/* {checkFormValid && card?.fileName?.length == 0 && (
                 <div className="">
                   <p className="text-xs text-red-500 font-bold py-1 px-2">
                     Please Upload Company logo *
                   </p>
                 </div>
-              )}
+              )} */}
             </div>
             <div className="mt-8">
               <input

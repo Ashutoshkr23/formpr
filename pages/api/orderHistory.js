@@ -9,7 +9,7 @@ export default async function handler(req, res) {
         if (req.method === 'GET') {
             const { puuid } = req.query;
 
-            const orderHistory = await shipping.find({ puuid: puuid });
+            const orderHistory = await shipping.find({ puuid: puuid }).sort({ createdAt: -1 });
             if (orderHistory && orderHistory.length > 0) {
                 return res.status(200).json({ error: false, message: 'purchase found', result: orderHistory });
             } else {

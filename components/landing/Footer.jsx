@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="" id="contact">
       <div className="hidden md:block">
-        <div className="md:px-8 lg:px-4 xl:px-0 bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] ">
+        <div className="md:px-8 lg:px-4 xl:px-0 pb-5 pt-5 bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] ">
           <div className="flex justify-between  items-center h-[200px] max-w-[1208px] mx-auto ">
             <div className="hidden lg:block ">
               <Image
@@ -28,9 +28,18 @@ const Footer = () => {
 
             <div className="flex gap-x-8">
               <div className="flex flex-col gap-y-7 ">
-                <Link href='/PrivacyPolicy'>
+                <Link href="https://merchant.razorpay.com/policy/M3mJHCEN2nkopK/terms">
                   <div>
-                    <p className="text-[14px] font-bold cursor-pointer">PRIVACY POLICY</p>
+                    <p className="text-[14px] font-bold cursor-pointer">
+                      TERMS AND CONDITIONS
+                    </p>
+                  </div>
+                </Link>
+                <Link href="/PrivacyPolicy">
+                  <div>
+                    <p className="text-[14px] font-bold cursor-pointer">
+                      PRIVACY POLICY
+                    </p>
                   </div>
                 </Link>
                 <div className="flex space-x-5  items-center ">
@@ -40,6 +49,7 @@ const Footer = () => {
                       target="_blank"
                     >
                       <Image
+                        className=" hover:scale-110"
                         src={"/assets/images/landing/footerinsta.png"}
                         height={32}
                         width={32}
@@ -53,6 +63,7 @@ const Footer = () => {
                       target="_blank"
                     >
                       <Image
+                        className=" hover:scale-110"
                         src={"/assets/images/landing/footerlink.png"}
                         height={32}
                         width={32}
@@ -62,9 +73,18 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <Link href='/RefundPolicy'>
+              <Link href="/RefundPolicy">
                 <div>
-                  <p className="text-[14px] font-bold cursor-pointer uppercase">refund policy</p>
+                  <p className="text-[14px] font-bold cursor-pointer uppercase">
+                    CANCELLATION AND REFUND POLICY
+                  </p>
+                </div>
+              </Link>
+              <Link href="/ShippingPolicy">
+                <div>
+                  <p className="text-[14px] font-bold cursor-pointer uppercase">
+                    SHIPPING POLICY
+                  </p>
                 </div>
               </Link>
             </div>
@@ -76,6 +96,8 @@ const Footer = () => {
                 </div>
                 <div className=" text-[16px] leading-[154%]">
                   <p> gm@alphamintlabs.com</p>
+                  <p> 2206, Solus Hiranandani Estate, Thane </p>
+                  <p> +91 9920821958 </p>
                 </div>
               </div>
 
@@ -97,7 +119,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="md:hidden max-w-[780px] bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] h-full">
+      <div className="md:hidden max-w-[780px] pb-5 bg-gradient-to-tr from-[#66D3E1] to-[#FDFF96] h-full">
         <div className="flex flex-col justify-center items-center">
           <div className="pt-9">
             <Image
@@ -107,14 +129,25 @@ const Footer = () => {
               alt="loop logo"
             />
           </div>
-          <Link href='/PrivacyPolicy'>
+
+          <Link href="https://merchant.razorpay.com/policy/M3mJHCEN2nkopK/terms">
+            <div className=" pt-10 font-bold cursor-pointer">
+              <p>TERMS AND CONDITIONS</p>
+            </div>
+          </Link>
+          <Link href="/PrivacyPolicy">
             <div className=" pt-10 font-bold cursor-pointer">
               <p>PRIVACY POLICY</p>
             </div>
           </Link>
-          <Link href='/RefundPolicy'>
+          <Link href="/RefundPolicy">
             <div className=" pt-[30px] font-bold cursor-pointer uppercase">
-              <p>refund policy</p>
+              <p>CANCELLATION AND REFUND POLICY</p>
+            </div>
+          </Link>
+          <Link href="/ShippingPolicy">
+            <div className=" pt-[30px] font-bold cursor-pointer uppercase">
+              <p>SHIPPING POLICY</p>
             </div>
           </Link>
           <div className=" pt-[30px] font-bold">
@@ -122,6 +155,8 @@ const Footer = () => {
           </div>
           <div className=" pt-2">
             <p> gm@alphamintlabs.com </p>
+            <p> 2206, Solus Hiranandani Estate, Thane </p>
+            <p> +91 9920821958 </p>
           </div>
 
           <div className="flex  pt-8 space-x-7">

@@ -72,7 +72,7 @@ const CartNav = () => {
           </div>
           <div className="flex gap-10 items-center">
             <Link href={"/profile"}>
-              <div className="relative ">
+              <div className="relative hover:scale-110">
                 <Image
                   src={"/assets/images/profileIcon.png"}
                   alt="loop"
@@ -81,7 +81,7 @@ const CartNav = () => {
                 />
               </div>
             </Link>
-            <div className="relative">
+            <div className="relative hover:scale-110">
               <Image
                 src={"/assets/images/cart-images/CartImage.png"}
                 alt="loop"
