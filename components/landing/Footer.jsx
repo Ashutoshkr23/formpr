@@ -76,7 +76,7 @@ const Footer = () => {
               <Link href="/RefundPolicy">
                 <div>
                   <p className="text-[14px] font-bold cursor-pointer uppercase">
-                    REFUND POLICY
+                    CANCELLATION AND REFUND POLICY
                   </p>
                 </div>
               </Link>
@@ -142,7 +142,7 @@ const Footer = () => {
           </Link>
           <Link href="/RefundPolicy">
             <div className=" pt-[30px] font-bold cursor-pointer uppercase">
-              <p>REFUND POLICY</p>
+              <p>CANCELLATION AND REFUND POLICY</p>
             </div>
           </Link>
           <Link href="/ShippingPolicy">

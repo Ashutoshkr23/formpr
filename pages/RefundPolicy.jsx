@@ -5,7 +5,7 @@ const RefundPolicy = () => {
         <>
             <header class="bg-blue-500 py-4">
                 <div class="container mx-auto px-4">
-                    <h1 class="text-white text-2xl font-bold">Refund Policy</h1>
+                    <h1 class="text-white text-2xl font-bold">Cancellation and Refund Policy</h1>
                 </div>
             </header>
 
@@ -41,6 +41,12 @@ const RefundPolicy = () => {
                 <section class="mt-8">
                     <h2 class="text-2xl font-bold mb-4">Refund Processing Time</h2>
                     <p class="mb-4">Once your returned item is received and inspected, we will notify you of the refund status. The refund processing time may vary depending on the payment method and financial institution, typically ranging from 7 to 10 business days.</p>
+                </section>
+
+                <section class="mt-8">
+                    <h2 class="text-2xl font-bold mb-4">Cancellation Rules</h2>
+                    <p class="mb-4">After placing your order you can cancel your order within 24hrs as post that we sending the card to be printed. Cancellation post 24hrs will not be allowed.
+                    In case of cancellation you will be eligible for a full refund</p>
                 </section>
 
                 <section class="mt-8">
