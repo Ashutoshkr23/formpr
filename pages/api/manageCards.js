@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
             }
 
-            const allCards = await card.find({ puuid: puuid })
+            const allCards = await card.find({ puuid: puuid }).sort({ createdAt: -1 })
 
             return res.status(200).json({ error: false, message: 'Cards fetch successfully', result: allCards });
         } else if (req.method == "GET") {

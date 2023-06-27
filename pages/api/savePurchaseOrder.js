@@ -159,7 +159,7 @@ export default async function handler(req, res) {
             // Save the instance to the database
             const savedShipping = await updateShipping.save();
 
-            const fetchUserCards = await card.find({ puuid: puuid })
+            const fetchUserCards = await card.find({ puuid: puuid }).sort({ createdAt: -1 });
 
             const updateUserProfile = await UserData.updateOne({ puuid: puuid }, { $inc: { totalCards: totalQuantity } })
             res.status(200).json({
