@@ -1,10 +1,11 @@
-import React from 'react'
+import React , {useState , useEffect} from 'react'
 import Image from 'next/image'
 
 
 function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkChange,
-    onBioChange, onAddressChange, onPhoneNumberChange, profileImg, setProfileImg, bio, contactData, name, address, phoneNumber, role, company, companyLink }) {
-
+    onBioChange, onAddressChange, onPhoneNumberChange, profileImg, setProfileImg, bio, contactData, name, address, phoneNumber, role, company, companyLink })
+    
+    {
     const handleProfileUpload = (event) => {
         const file = event.target.files[0];
         const imageUrl = URL.createObjectURL(file);
@@ -80,16 +81,48 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
     };
 
 
+    const [ detailsFilled , setDetailsFilled ] = useState(false);
+    useEffect(() => {
+        const areAllValuesPresent =
+            profileImg !== undefined &&
+            bio !== undefined &&
+            name !== undefined &&
+            address !== undefined &&
+            phoneNumber !== undefined &&
+            role !== undefined &&
+            company !== undefined &&
+            companyLink !== undefined;
+
+        setDetailsFilled(areAllValuesPresent);
+    }, [
+        profileImg,
+        bio,
+        name,
+        address,
+        phoneNumber,
+        role,
+        company,
+        companyLink,
+    ]);
+
 
 
     return (
-        <div className='flex flex-grow text-white rounded-[10px] drop-shadow-white flex-col h-auto pb-5  md:h-[578px] bg-black-dim px-4 md:px-9 pt-4 mb-4'>
-            <p className='font-bold text-white text-xs'>REQUIRED DETAILS</p>
-            <div className='flex flex-col md:flex-row gap-8 mt-9'>
+        <div className={`flex flex-grow  rounded-[10px] drop-shadow-white flex-col h-auto pb-5  md:h-[578px] bg-black-dim px-4 md:px-9 pt-4 mb-4 ${detailsFilled ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'
+            }`}>
+            <div className='flex'>
+                <p className='font-bold  text-xs'>REQUIRED DETAILS<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
+                {detailsFilled && (
+                    <div className='h-5 w-5 ml-auto '>
+                        <Image height={20} width={20} src='/assets/images/templateimg/Tick.png' />
+                    </div>
+                )}
+            </div>
+            <div className='flex flex-col md:flex-row gap-8 mt-6'>
                 <div className='flex flex-col w-full space-y-5'>
                     <div>
                         <p className='text-xs leading-[186%]'>Profile Photo<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
-                        <label htmlFor="logoInput" className="cursor-pointer bg-white flex flex-col space-y-1 justify-center items-center w-[127px] h-[127px] border border-dim-gray rounded-xl">
+                        <label htmlFor="logoInput" className={`cursor-pointer bg-white flex flex-col space-y-1 justify-center items-center w-[127px] h-[127px] border border-dim-gray border-dashed rounded-xl ${!profileImg ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}>
                             <Image src="/assets/images/UploadIcon.png" height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
                             <p className='text-sm'>Upload</p>
                         </label>
@@ -97,7 +130,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                             id="logoInput"
                             type="file"
                             accept=".png, .jpeg, .jpg"
-                            name="companyLogo"
+                            name="ProfileLogo"
                             style={{ display: 'none' }}
                             onChange={handleProfileUpload}
                         />
@@ -106,26 +139,27 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     <div className='hidden md:block'>
                         <div className='flex flex-col'>
                             <label for="Company" className='text-xs leading-[186%]'>Company<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
-                            <input type="text" value={company} id="Company" name="Company" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyChange} />
+                            <input type="text" value={company} id="Company" name="Company" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!company ? 'border border-[#F66F6f]' : 'border-dim-gray'} `} required onChange={handleCompanyChange} />
                         </div>
                         <div className='flex flex-col mt-5'>
                             <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
-                            <input type="text" value={phoneNumber} id="Phone Number" name="Phone Number" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
+                            <input type="text" pattern="[0-9]*"
+                                inputMode="numeric" value={phoneNumber} id="Phone Number" name="Phone Number" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!phoneNumber ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} required onChange={handlePhoneNumberChange} />
                         </div>
                     </div>
                 </div>
                 <div className='flex flex-col w-full space-y-5'>
                     <div className='flex flex-col'>
                         <label for="fullName" className='text-xs leading-[186%]'>Full Name<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
-                        <input type="text" id="fullName" name="fullName" value={name} className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleNameChange} />
+                        <input type="text" id="fullName" name="fullName" value={name} className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!name ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} required onChange={handleNameChange} />
                     </div>
                     <div className='flex flex-col'>
                         <label for="role" className='text-xs leading-[186%]'>Role<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
-                        <input type="text" id="role" value={role} name="role" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleRoleChange} />
+                        <input type="text" id="role" value={role} name="role" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!role ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} required onChange={handleRoleChange} />
                     </div>
                     <div className='flex flex-col'>
                         <label for="Company Link" className='text-xs leading-[186%]'>Company Link<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
-                        <input type="text" maxLength={20} id="Company Link" value={companyLink} name="Company Link" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyLinkChange} />
+                        <input type="text" maxLength={25} id="Company Link" value={companyLink} name="Company Link" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!companyLink ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} required onChange={handleCompanyLinkChange} />
                     </div>
                     <div className='flex flex-col'>
                         <label htmlFor="Location" className='text-xs leading-[186%]'>Location<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
@@ -134,7 +168,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                             id="Location"
                             name="Location"
                             value={address}
-                            className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md'
+                            className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!address ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}
                             onChange={handleAddressChange}
                             required
                         />
@@ -142,11 +176,13 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     <div className='md:hidden'>
                         <div className='flex flex-col'>
                             <label for="Company" className='text-xs leading-[186%]'>Company<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
-                            <input type="text" value={company} id="Company" name="Company" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handleCompanyChange} />
+                            <input type="text" value={company} id="Company" name="Company" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!company ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} required onChange={handleCompanyChange} />
                         </div>
                         <div className='flex flex-col'>
                             <label for="Phone Number" className='text-xs leading-[186%]'>Phone Number<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></label>
-                            <input type="text" value={phoneNumber} id="Phone Number" name="Phone Number" className='bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md' required onChange={handlePhoneNumberChange} />
+                            <input type="number" value={phoneNumber} id="Phone Number" name="Phone Number" pattern="[0-9]*"
+                                inputMode="numeric" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!phoneNumber ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} required onChange={handlePhoneNumberChange}
+                             />
                         </div>
                     </div>
 
@@ -160,7 +196,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     id="Bio"
                     name="Bio"
                     value={bio}
-                    className="bg-white text-black mt-0.5 border px-5 py-2 border-dim-gray rounded-md block w-full resize-none"
+                    className={`bg-white text-black mt-0.5 border px-5 py-2 border-dim-gray rounded-md block w-full resize-none ${!bio ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}
                     rows={4}
                     required
                     onChange={handleBioChange}
