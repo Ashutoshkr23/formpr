@@ -279,7 +279,14 @@ const handleClick = (card) => {
             })}
           </div>
         ) : (
-          <h5 className="text-black text-center">Buy card</h5>
+          <div>
+            <p className='text-[#525252] mx-auto text-base md:text-xl text-center mt-20  w-[300px] md:w-[534px]'>You haven’t purchased any cards yet.
+              Please go to the store to purchase to view your cards.</p>
+            <div className='relative flex justify-center mx-auto mt-20 mb-20 h-72 w-72 md:h-[345px] md:w-[342px]'>
+              <Image fill={true} src={`/assets/images/display/EmptyBox.png`}/>
+            </div>
+          </div>
+          
         )}
     </div>
   );
