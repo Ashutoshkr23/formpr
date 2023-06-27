@@ -84,12 +84,12 @@ const CartComponent = () => {
       if (!card.fullName.length) {
         error = true;
       }
-      if (!card.fileName) {
-        error = true;
-      }
-      if (!card.companyName) {
-        error = true;
-      }
+      // if (!card.fileName) {
+      //   error = true;
+      // }
+      // if (!card.companyName) {
+      //   error = true;
+      // }
     });
     return error;
   };

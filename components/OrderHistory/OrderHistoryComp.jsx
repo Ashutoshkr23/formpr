@@ -42,7 +42,7 @@ const OrderHistoryComp = ({ orderHistory }) => {
             return (
               <>
                 <div
-                  className="grid grid-cols-6 gap-4 bg-white rounded-[10px] p-4 my-4 font-bold uppercase leading-10 text-center text-black  max-h-[104px] text-[14px]"
+                  className="grid grid-cols-6 gap-4 bg-white rounded-[10px] p-4 my-4 font-bold uppercase leading-10 text-center text-black  max-h-[104px] md:text-[12px] lg:text-[14px]"
                   style={{ boxShadow: "0px 10px 15px rgba(0, 25, 38, 0.25)" }}
                 >
                   <div className="text-[12px] ">
