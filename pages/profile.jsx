@@ -336,6 +336,7 @@ const Profile = () => {
     const userEmail = await getUserSessionEmail();
     const data = { userEmail }
     const response = await axios.post('/api/profilePage/onOffShareContacts', data)
+    console.log(response);
     if (response.data.success === true) {
       const shareContactsValue = response.data.getUserSharingDetails.shareContacts;
       setonOffShareContacts(shareContactsValue)
@@ -459,7 +460,7 @@ const Profile = () => {
                       <span className='md:hidden block' onClick={() => editARemainder(item._id)}>
                         <Image width={20} height={20} src={'/assets/images/profilePage/editReminder.png'} alt="profile pic"></Image>
                       </span>
-                      {((item.name.length !== 0 ? item.name : 'John Doe').trim().split(' ')[0])}
+                      {(item.name).trim().split(' ')[0]}
                     </div>
 
                     <div className={`block-2 ${block2ForActiveIndex0} max-w-[241px] m-auto text-center`}>{moment(item.createdAt).format("DD-MM-YY HH:mm")}</div>
@@ -510,7 +511,7 @@ const Profile = () => {
                   <div className='flex flex-row xl:px-8 md:px-6 px-2 mb-2'>
 
                     <div className={`block-1 ${block1ForActiveIndex0} text-left flex items-center gap-2 cursor-pointer justify-center capitalize`}>
-                      {((item.name.length !== 0 ? item.name : 'John Doe').trim().split(' ')[0])}
+                      {(item.name).trim().split(' ')[0]}
                     </div>
 
                     <div className={`block-2 ${block2ForActiveIndex0} max-w-[241px] m-auto text-center`}>

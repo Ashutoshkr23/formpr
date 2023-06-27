@@ -11,7 +11,7 @@ const SetRemainderSchema = new mongoose.Schema({
     },
     name: {
         type: String,
-        default: ''
+        default: 'John Doe'
     },
     contactNumber: {
         type: String,

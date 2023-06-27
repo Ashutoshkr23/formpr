@@ -16,13 +16,8 @@ export default async function handler(req, res) {
 
         // Converting To DD-MM-YYYY HH-MM
         const mySelectedDate = new Date(selectedDate);
-        const day = mySelectedDate.getDate().toString().padStart(2, '0');
-        const month = (mySelectedDate.getMonth() + 1).toString().padStart(2, '0');
-        const year = mySelectedDate.getFullYear().toString();
-        const hours = mySelectedDate.getHours().toString().padStart(2, '0');
-        const minutes = mySelectedDate.getMinutes().toString().padStart(2, '0');
-        const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        const formattedDate = moment(mySelectedDate).utcOffset(userTimezone).format('DD-MM-YYYY HH:mm');
+        const userTimezone = moment.tz.guess();
+        const formattedDate = moment(mySelectedDate).tz(userTimezone).format('DD-MM-YYYY HH:mm');
 
         const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber, customMessage: userCustomMessage, customDate: formattedDate }, { new: true });
         // console.log(updatedReminder);
