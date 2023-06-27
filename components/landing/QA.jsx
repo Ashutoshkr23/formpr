@@ -3,7 +3,7 @@ import { BsFillTriangleFill } from 'react-icons/bs';
 
 
 function QA({ques , ans}) {
-    const [arrowRotation, setArrowRotation] = useState(0);
+    const [arrowRotation, setArrowRotation] = useState(180);
     const [showAnswer, setShowAnswer] = useState(false);
 
 
