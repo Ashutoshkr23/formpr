@@ -16,8 +16,32 @@ export default async function handler(req, res) {
 
         // Converting To DD-MM-YYYY HH-MM
         const mySelectedDate = new Date(selectedDate);
-        const userTimezone = moment.tz.guess();
-        const formattedDate = moment(mySelectedDate).tz(userTimezone).format('DD-MM-YYYY HH:mm');
+        const day = mySelectedDate.getDate().toString().padStart(2, '0');
+        const month = (mySelectedDate.getMonth() + 1).toString().padStart(2, '0');
+        const year = mySelectedDate.getFullYear().toString();
+        const hours = mySelectedDate.getHours().toString().padStart(2, '0');
+        const minutes = mySelectedDate.getMinutes().toString().padStart(2, '0');
+        const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+        // Get user's timezone offset in minutes
+        const timezoneOffsetMinutes = moment.tz(mySelectedDate, userTimezone).utcOffset();
+
+        // Convert the offset to hours and minutes
+        const timezoneOffsetHours = Math.floor(timezoneOffsetMinutes / 60);
+        const timezoneOffsetMinutesRemaining = timezoneOffsetMinutes % 60;
+
+        // Calculate adjusted hours and minutes
+        const adjustedHours = Number(hours) + timezoneOffsetHours;
+        const adjustedMinutes = Number(minutes) + timezoneOffsetMinutesRemaining;
+
+        // Update the hours and minutes in the formatted date
+        const formattedDate = moment(mySelectedDate)
+            .utcOffset(userTimezone)
+            .set('hour', adjustedHours)
+            .set('minute', adjustedMinutes)
+            .format('DD-MM-YYYY HH:mm');
+
+        console.log(formattedDate);
 
         const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber, customMessage: userCustomMessage, customDate: formattedDate }, { new: true });
         // console.log(updatedReminder);
