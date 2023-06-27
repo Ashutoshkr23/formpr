@@ -36,6 +36,10 @@ const UserDataSchema = new mongoose.Schema({
     shareContacts: {
         type: Boolean,
         default: false
+    },
+    enterprise: {
+        type: Boolean,
+        default: false
     }
 }, { timestamps: true });
 
