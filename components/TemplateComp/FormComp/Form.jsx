@@ -28,6 +28,23 @@ function Form({ cuuid }) {
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [step, setStep] = useState(0);
+
+  const handlePrevious = () => {
+    if (step > 0) {
+      setStep(step - 1);
+    }
+  };
+
+  const handleNext = () => {
+    // Replace `numberOfSteps` with the total number of steps you have
+    const numberOfSteps = 4;
+
+    if (step < numberOfSteps - 1) {
+      setStep(step + 1);
+    }
+  };
+
 
   
   const [inputValues, setInputValues] = useState({
@@ -65,7 +82,7 @@ function Form({ cuuid }) {
         setName(cardData.name);
         setProfileImg(cardData.profileImg);
         setCover(cardData.cover);
-        setSelectedTemplate(cardData.selectedTemplate || "0"); 
+        setSelectedTemplate(cardData.selectedTemplate); 
         setBio(cardData.bio);
         setRole(cardData.role);
         setCompany(cardData.company);
@@ -318,44 +335,59 @@ function Form({ cuuid }) {
         </div>
         <div className="flex relative flex-col-reverse items-center lg:items-start lg:flex-row gap-5">
           <div className="flex flex-grow flex-col ">
-            <ChooseTemplates
-              selectedTemplate={selectedTemplate}
-              setSelectedTemplate={setSelectedTemplate}
-            />
-            <Cover cover={cover} setCover={setCover} />
-            <Details
-              name={name}
-              role={role}
-              company={company}
-              address={address}
-              bio={bio}
-              phoneNumber={phoneNumber}
-              contactData={contactData}
-              profileImg={profileImg}
-              companyLink={companyLink}
-              setProfileImg={setProfileImg}
-              onCompanyChange={handleCompanyChange}
-              onNameChange={handleNameChange}
-              onRoleChange={handleRoleChange}
-              onCompanyLinkChange={handleCompanyLinkChange}
-              onBioChange={handleBioChange}
-              onAddressChange={handleAddressChange}
-              onPhoneNumberChange={handlePhoneNumberChange}
-            />
-            <Socials
-              inputValues={inputValues}
-              handleInputChange={handleInputChange}
-              visibleInputs={visibleInputs}
-              setVisibleInputs={setVisibleInputs}
-              onToggleInput={handleToggleInput}
-            />
+            {step === 0 && (
+              <ChooseTemplates
+                selectedTemplate={selectedTemplate}
+                setSelectedTemplate={setSelectedTemplate}
+              />
+            )}
+
+            {step === 1 && (
+              <Cover cover={cover} setCover={setCover} />
+            )}
+
+            {step === 2 && (
+              <Details
+                name={name}
+                role={role}
+                company={company}
+                address={address}
+                bio={bio}
+                phoneNumber={phoneNumber}
+                contactData={contactData}
+                profileImg={profileImg}
+                companyLink={companyLink}
+                setProfileImg={setProfileImg}
+                onCompanyChange={handleCompanyChange}
+                onNameChange={handleNameChange}
+                onRoleChange={handleRoleChange}
+                onCompanyLinkChange={handleCompanyLinkChange}
+                onBioChange={handleBioChange}
+                onAddressChange={handleAddressChange}
+                onPhoneNumberChange={handlePhoneNumberChange}
+              />
+            )}
+
+            {step === 3 && (
+              <Socials
+                inputValues={inputValues}
+                handleInputChange={handleInputChange}
+                visibleInputs={visibleInputs}
+                setVisibleInputs={setVisibleInputs}
+                onToggleInput={handleToggleInput}
+              />
+            )}
+            <div className="flex">
+              <button className="h-10 w-40 bg-black text-white rounded-md" onClick={handlePrevious}>Previous</button>
+              <button className="h-10 w-40 bg-black text-white rounded-md ml-auto" onClick={handleNext}>Next</button>
+            </div>
+
           </div>
           <div className="w-80 lg:sticky lg:top-10 sm:w-[350px]  xl:w-[390px]">
             <div className=" sm:h-[820px] mb-5">
-              {selectedTemplate && (
                 <Template
                   gradient1={cover}
-                  gradient2={themes[selectedTemplate].gradient2}
+                  gradient2={themes[selectedTemplate].gradient2 }
                   text1={themes[selectedTemplate].text1}
                   text2={themes[selectedTemplate].text2}
                   text3={themes[selectedTemplate].text3}
@@ -378,7 +410,7 @@ function Form({ cuuid }) {
                   designation={role}
                   companyLink={companyLink}
                 />
-              )}
+              
             </div>
           </div>
         </div>
