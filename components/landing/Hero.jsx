@@ -17,22 +17,25 @@ const Hero = () => {
 
             <div className="flex flex-col items-center lg:items-start mt-12  lg:mt-0  px-2  mobile:px-4 md:px-0 mx-auto lg:mx-0 max-w-[456px] xl:max-w-[680px] ">
                 <h1 className=' mr-auto text-left anim-typewriter  font-bold '>
-                    Enter The <span className="text-transparent bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] bg-clip-text">
-                        Loop.
-                    </span>
+                   Elavate Your
+                </h1>
+                <h1 className=' mr-auto text-left anim-typewriter2  font-bold '>
+                     <span className="text-transparent bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] bg-clip-text">
+                        Networking 
+                    </span> With Loop.
                 </h1>
                 <motion.h3
                     className="sm:text-sm text-base mt-8 max-w-[500px] text-gray opacity-0"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2.5 }}
+                    transition={{ delay: 3.5 }}
                 >
-                    Welcome to The Loop, a community of high-networking individuals connected through the next generation of NFC-enabled digital visiting cards. 
+                    Experience the future of networking with NFC-enabled Digital Visiting Cards
                 </motion.h3>
                 <motion.button
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2.5 }}
+                    transition={{ delay: 3.5 }}
                     className='hidden lg:block w-[140px] md:w-[165px] h-9 md:h-10 mt-12 bg-black text-white text-xs md:text-base  font-bold rounded-[10px]  text-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]'
                     onClick={handleGetNow}
                     name="Buy Visiting Card"
@@ -45,7 +48,7 @@ const Hero = () => {
                         className="flex flex-wrap items-center  mt-8 gap-4  md:mt-12 lg:min-w-[450px] w-full py-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 3 }}
+                        transition={{ delay: 4 }}
                     >
                         <div className='bg-white w-[215px] items-center flex rounded-2xl h-[74px] drop-shadow-white'>
                             <Image src="/assets/images/landing/Eco-Friendly.png" alt="sustainable" height={50} width={50} className=' mx-6' />
@@ -85,7 +88,7 @@ const Hero = () => {
                         className="flex flex-wrap items-center justify-center  mt-8 gap-2 mb-12 lg:mb-0 md:mt-12 lg:min-w-[450px] w-full py-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 2.5 }}
+                        transition={{ delay: 3.5 }}
                     >
                         <div className='bg-white w-[150px] items-center flex rounded-2xl h-[60px] drop-shadow-white'>
                             <Image src="/assets/images/landing/Eco-Friendly.png" alt="eco-freindly" height={32} width={32} className=' mx-2' />
@@ -125,14 +128,14 @@ const Hero = () => {
             <motion.div className=' hidden md:block mx-auto lg:ml-auto lg:mx-0 lg:pr-32'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1 , delay:3.5  }}
+                transition={{ duration: 1 , delay: 4.5  }}
                 
             >
                 <div className=' relative h-[580px] w-[260px]  '>
                     < motion.div
                         initial={{ x: 150 }}
                         animate={{ x: 0 }}
-                        transition={{ duration: 2, delay:3.5 }}
+                        transition={{ duration: 2, delay: 4.5 }}
 
                         className='absolute  top-[200px] -right-[142px]'
                     >
@@ -141,7 +144,7 @@ const Hero = () => {
                    <motion.div
                         initial={{ y: -250 }}
                         animate={{ y: 0 }} 
-                        transition={{ duration: 2, delay:3.5 }}
+                        transition={{ duration: 2, delay: 4.5 }}
                         
                     >
                     <Image className='absolute top-0 right-0' src={'/assets/images/landing/landingProfileTop.png'}
@@ -155,7 +158,7 @@ const Hero = () => {
                     <motion.div 
                         initial={{ y: 200}}
                         animate={{ y: 0 }} 
-                        transition={{ duration: 2, delay:3.5 }}
+                        transition={{ duration: 2, delay: 4.5 }}
                         className='absolute top-[550px] '>
                     <Image src={'/assets/images/landing/phone2.png'}
                         width={260}
@@ -168,7 +171,7 @@ const Hero = () => {
                         className='absolute top-[90px] -left-[185px] shadow-white  mr-4'
                         initial={{ x: -150 }}
                         animate={{ x: 0 }}
-                        transition={{ duration: 2 , delay:3.5 }}
+                        transition={{ duration: 2 , delay: 4.5 }}
                     >
 
                         <Image src={'/assets/images/landing/CardDark.png'} width={244} height={177} alt='sample nfc visting card' quality={100} />
@@ -209,7 +212,7 @@ const Hero = () => {
             <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 3 }}
+                transition={{ delay: 4 }}
                 className='lg:hidden w-[140px] md:w-[165px] h-9 md:h-10 mt-12 md:mt-56 bg-black text-white text-xs md:text-base  font-bold rounded-[10px]  text-center hover:bg-gradient-to-br from-[#66D3E1] to-[#96FFAD]'
                 onClick={handleGetNow}
             >
