@@ -47,7 +47,7 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/email.png" alt='mail-icon' height={30} width={30} />
             </div>
-              <input type="text" id="mail" name="mail" className={`bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md ${!inputValues.mail ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}  
+              <input type="text" id="mail" name="mail" className={`bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow  rounded-md ${!inputValues.mail ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}  
               value={inputValues.mail}
               onChange={handleInputChange}/>
               <div className='h-[20px] w-[20px] invisible' onClick={() => handleHide('mail')}>
