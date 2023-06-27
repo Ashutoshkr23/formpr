@@ -1,10 +1,15 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState , useEffect} from 'react'
 
 function Cover({ cover, setCover }) {
 
-    
+    const [coverSelected , setCoverSelected] = useState(false);
 
+    useEffect(() => {
+        if (cover) {
+            setCoverSelected(true);
+        }
+    }, [cover]);
 
     const handleCoverUpload = (event) => {
         const file = event.target.files[0];
@@ -49,8 +54,16 @@ function Cover({ cover, setCover }) {
     const Cover12 = "/assets/images/templateimg/BGCover12.png"
     const Cover13 = "/assets/images/templateimg/BGCover13.png"
     return (
-        <div className='flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto bg-black-dim px-4 sm:px-9 py-8 my-5'>
-            <p className='font-bold text-white text-xs mb-5'>COVER<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
+        <div className={`flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto  px-4 sm:px-9 py-8 my-5 ${coverSelected ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'
+            }`}>
+            <div className='flex mb-4'>
+                <p className='font-bold  text-xs'>COVER<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
+                {coverSelected && (
+                    <div className='h-5 w-5 ml-auto '>
+                        <Image height={20} width={20} src='/assets/images/templateimg/Tick.png' />
+                    </div>
+                )}
+            </div>
             <div className='flex flex-wrap justify-between gap-5 md:gap-8 xl:gap-5'>
                 <div>
                     <label htmlFor="fileInput" className="cursor-pointer bg-white  flex flex-col space-y-1 justify-center items-center w-[70px] h-[70px] sm:w-[105px] sm:h-[105px] border border-dim-gray rounded-xl" >
