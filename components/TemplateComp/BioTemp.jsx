@@ -55,10 +55,10 @@ const BioTemp = ({ bio, border, company, website, mobile, text1, text2 ,selected
             />
           </div>
           <Link href={`${website}`}>
-            <p className={`ml-1.5 tracking-[-0.5px] ${website && website.length > 15 ? "text-[8px]" : "text-[10px]"
-              }`}>
+            <p className={`ml-1.5 tracking-[-0.5px] ${website && website.replace(/(https?:\/\/)?(www\.)?/, "").length > 15 ? "text-[8px]" : "text-[10px]"}`}>
               {website ? website.replace(/(https?:\/\/)?(www\.)?/, "") : "www.loremipsum.com"}
             </p>
+
           </Link>
         </div>
       </div>
