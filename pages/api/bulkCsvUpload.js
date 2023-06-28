@@ -6,6 +6,7 @@ import crypto from 'crypto';
 import card from '@/models/card';
 import UserData from '@/models/UserData';
 import { connectToDatabase } from '@/lib/mongoose';
+import bulkOrders from '@/models/bulkOrders';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -45,7 +46,7 @@ export default async function handler(req, res) {
         })
         .on('end', resolve);
     });
-
+    const orderTrackingNumber = uuidv4()
     if (errorsArr.length === 0) {
         if (parsedData.length > 0) {
           for (const row of parsedData) {
@@ -133,6 +134,26 @@ export default async function handler(req, res) {
               console.error(error, 'New card save error');
               return res.status(200).json({ error: true, message: 'Error saving new card.', result: error });
             }
+            const orderId = uuidv4()
+            const orderNumber= await bulkOrders.countDocuments()
+            // save order in bulk orders
+            const saveOrder = new bulkOrders({
+                orderId:orderId,
+                orderNumber: orderNumber + 1,
+                email:row.email,
+                orderAmount:row.cardAmount,
+                companyName:row.companyName,
+                puuid:uuid,
+                cuuid:cuuid,
+                orderTrackingNumber:orderTrackingNumber
+
+            })
+            try {
+                await saveOrder.save();
+              } catch (error) {
+                console.error(error, 'Bulk order save error');
+                return res.status(200).json({ error: true, message: 'Error while saving new order.', result: error });
+              }
           }
         } else {
           return res.status(200).json({
