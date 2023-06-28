@@ -7,13 +7,14 @@ export default async function handler(req, res) {
     try {
         await connectToDatabase();
         if (req.method === 'POST') {
-            const { amount, currency } = req.body;
+            const { amount, currency,cardName } = req.body;
 
             //const cardUuid=uuidv4
 
             const cardTypes = new cardType({
                 amount,
                 currency,
+                cardName
             });
 
             await cardTypes.save();

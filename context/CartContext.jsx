@@ -431,6 +431,7 @@ export const CartProvider = ({ children }) => {
             setCardsArray(newCardArr)
         }
     }
+    console.log(cartItems,"carts")
 
     // Create the cart context value
     const cartContextValue = {

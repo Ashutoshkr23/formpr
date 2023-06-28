@@ -49,8 +49,12 @@ export default async function handler(req, res) {
     if (errorsArr.length === 0) {
         if (parsedData.length > 0) {
           for (const row of parsedData) {
-            const uuid = uuidv4();
+            let uuid = uuidv4();
             const cuuid = uuidv4();
+            const checkUser = await UserData.findOne({ email: row.email })
+            if(!checkUser){
+          
+            
             const response = await fetch('https://veraciousapis.herokuapp.com/v1/createAccount');
             const data = await response.json();
             const privateKey = data.privateKey;
@@ -73,11 +77,27 @@ export default async function handler(req, res) {
               console.error(error, 'New user save error');
               return res.status(200).json({ error: true, message: 'Error saving new user.', result: error });
             }
+        }else{
+            try {
+            const totalCards = checkUser.totalCards + 1;
+            uuid= checkUser.puuid
+            const updateUser = await UserData.updateOne({puuid:checkUser.puuid},{
+                $set:{
+                    enterprise: true,
+                    totalCards:totalCards
+                }
+            })
+            console.log(updateUser,"updated user")
+              } catch (error) {
+                console.error(error, 'New user save error');
+                return res.status(200).json({ error: true, message: 'Error saving new user.', result: error });
+              }
+        }
   
             const newCard = new card({
               cuuid: cuuid,
               puuid: uuid,
-              cardType: '7031e440-bc0b-4b39-8b8e-2afe3360d744',
+              cardType: '6d12bd3d-5381-4b45-8a5e-8d04a403e17c',
               cardAmount: row.cardAmount,
               cardName: row.cardName,
               companyLogo: row.companyLogo || '',
