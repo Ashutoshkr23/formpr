@@ -123,7 +123,11 @@ const CardSchema = new mongoose.Schema({
     shareContacts: {
         type: Boolean,
         default: false
-    }
+    },
+    enterprise : {
+        type: Boolean,
+        default: false
+    },
 }, { timestamps: true });
 
 export default mongoose.models.Card || mongoose.model('Card', CardSchema);

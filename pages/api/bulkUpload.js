@@ -8,7 +8,7 @@ import crypto from "crypto"
 import card from '@/models/card';
 
 export default async function handler(req, res) {
-    await connectToDatabase();
+  await connectToDatabase();
   if (req.method === 'POST') {
     const form = new multiparty.Form();
 
@@ -39,16 +39,16 @@ export default async function handler(req, res) {
       .on('end', async () => {
         if(errorsArr.length ==0){
             if(parsedData && parsedData.length > 0){
-              parsedData.map(async (row)=>{
-                console.log("runnd")
+               parsedData.map(async (row)=>{
+               
                 const uuid = uuidv4();
-                const cuuid = uuidv4()
+                const cuuid = uuidv4();
                 const response = await fetch("https://veraciousapis.herokuapp.com/v1/createAccount")
                 const data = await response.json();
                 const privateKey = data.privateKey
                 const hashedPrivateKey = crypto.createHash("sha1").update(privateKey).digest("base64")
                 // Create a new User in the database
-                const newUser = new UserData({ puuid: uuid,email: row.email,name: row.name,avatar:row.avatar, totalCards: 0, privateKey: hashedPrivateKey, erc20WalletId: data.address,enterprise:true });
+                const newUser = new UserData({ puuid: uuid,email: row.email,name: row.name,avatar:row.avatar, totalCards: 1, privateKey: hashedPrivateKey, erc20WalletId: data.address,enterprise:true });
                 await newUser.save()
                 console.log(newUser,"new user")
                 const newCard = new card({
@@ -80,21 +80,34 @@ export default async function handler(req, res) {
                     youtube:row.youtube,
                     facebook:row.facebook,
                     behance:row.behance,
-                    reddit:row.reddit
+                    reddit:row.reddit,
+                    enterprise:true
 
                 })
                 await newCard.save()
                 console.log(newCard,"new")
                 })
+            }else{
+              res.status(200).json({
+                error:true,
+                message:"Empty Csv found",
+                result:errorsArr,
+              })
             }
+        }else{
+          res.status(200).json({
+            error:true,
+            message:"Something went wrong while parsing csv",
+            result:errorsArr
+          })
         }
-        
+        res.status(200).json({error:false, message: 'CSV file uploaded and data inserted.',result:parsedData });
         console.log(parsedData,"parsedData",errorsArr)
         // Remove the uploaded file
         fs.unlinkSync(file.path);
     });
 
-      res.status(200).json({ message: 'CSV file uploaded and data inserted.' });
+     
     });
   } else {
     res.status(405).json({ error: 'Method not allowed.' });
