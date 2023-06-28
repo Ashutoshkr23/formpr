@@ -65,7 +65,7 @@ function Products() {
                         <h3>Products</h3>
                     </div>
                     <h2 >Step into the Loop</h2>
-                    <h4 className='font-bold text-base md:text-xl mt-4'>Starting at 899</h4>
+                    <h4 className='font-bold text-base md:text-xl mt-4'>Starting at ₹ 899</h4>
                 </div>
 
                 <div className='w-80 mt-12 md:mt-24  mobile:w-full max-w-[360px] md:max-w-[740px] lg:w-full lg:max-w-[1100px] xl:max-w-[1230px] justify-between mx-auto flex items-center' onTouchStart={handleTouchStart}

@@ -17,7 +17,7 @@ const Partners = () => {
                     <div className='hidden lg:flex lg:mt-20 ' >
                     <Marquee speed={100}>
                         
-                        <Image src={'/assets/images/landing/partnerLogos/AMLBW.png'} height={98} width={282} className="mx-8" alt='AML Logo'/>
+                        {/* <Image src={'/assets/images/landing/partnerLogos/AMLBW.png'} height={98} width={282} className="mx-8" alt='AML Logo'/> */}
                         <Image src={'/assets/images/landing/partnerLogos/BravasLogoBW.png'} height={98} width={261} className="mx-8" alt='Bravas Digital Logo'/>
                         <Image src={'/assets/images/landing/partnerLogos/CeomitraLogoBW.png'} height={98} width={271} className="mx-8" alt='Ceomitra Logo'/>
                         <Image src={'/assets/images/landing/partnerLogos/RotaryLogoBW.png'} height={98} width={405} className="mx-8" alt="Rotary Logo"/>
@@ -34,7 +34,7 @@ const Partners = () => {
                         
                     <Marquee className='flex lg:hidden' speed={100}>
                         
-                        <Image src={'/assets/images/landing/partnerLogos/AMLBW.png'} height={49} width={141} className="mx-4" alt='AML Logo'/>
+                        {/* <Image src={'/assets/images/landing/partnerLogos/AMLBW.png'} height={49} width={141} className="mx-4" alt='AML Logo'/> */}
                         <Image src={'/assets/images/landing/partnerLogos/BravasLogoBW.png'} height={49} width={131} className="mx-4" alt='Bravas Digital Logo'/>
                         <Image src={'/assets/images/landing/partnerLogos/CeomitraLogoBW.png'} height={49} width={136} className="mx-4" alt='Ceomitra Logo'/>
                         <Image src={'/assets/images/landing/partnerLogos/RotaryLogoBW.png'} height={49} width={203} className="mx-4" alt="Rotary Logo"/>
