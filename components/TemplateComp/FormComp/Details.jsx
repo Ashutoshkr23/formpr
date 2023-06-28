@@ -138,8 +138,8 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     </div>
                     <div className='hidden md:block'>
                         <div className='flex flex-col'>
-                            <label for="Company" value={company}  className={` bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!company ? 'border border-[#F66F6f]' : 'border-dim-gray'} `}><p className='text-xs leading-[186%] -mt-3 bg-white pl-1 w-16'>Company</p>
-                                <input type="text" id="Company" name="Company" required onChange={handleCompanyChange} style={{ border: 'none', outline: 'none' }} />
+                            <label for="Company"   className={` bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!company ? 'border border-[#F66F6f]' : 'border-dim-gray'} `}><p className='text-xs leading-[186%] -mt-3 bg-white pl-1 w-16'>Company</p>
+                                <input type="text" value={company}  id="Company" name="Company" required onChange={handleCompanyChange} style={{ border: 'none', outline: 'none' }} />
                             </label>
 
                         </div>
@@ -183,8 +183,8 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     </div>
                     <div className='md:hidden'>
                         <div className='flex flex-col'>
-                            <label for="Company" value={company} className={` bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!company ? 'border border-[#F66F6f]' : 'border-dim-gray'} `}><p className='text-xs leading-[186%] -mt-3 bg-white pl-1 w-16'>Company</p>
-                                <input type="text" id="Company" name="Company" required onChange={handleCompanyChange} style={{ border: 'none', outline: 'none' }} />
+                            <label for="Company"  className={` bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!company ? 'border border-[#F66F6f]' : 'border-dim-gray'} `}><p className='text-xs leading-[186%] -mt-3 bg-white pl-1 w-16'>Company</p>
+                                <input type="text" value={company} id="Company" name="Company" required onChange={handleCompanyChange} style={{ border: 'none', outline: 'none' }} />
                             </label>
 
                         </div>

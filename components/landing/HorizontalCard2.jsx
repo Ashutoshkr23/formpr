@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { IoMdAddCircle, } from 'react-icons/io';
-import { RxCrossCircled } from 'react-icons/rx';
+import { RxCrossCircled, } from 'react-icons/rx';
 import ScrollTrigger from 'react-scroll-trigger';
 
 

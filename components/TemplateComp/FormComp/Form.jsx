@@ -31,8 +31,9 @@ function Form({ cuuid }) {
   const [step, setStep] = useState(0);
 
   const handlePrevious = () => {
-    if (step > 0) {
+    if (step > 1) {
       setStep(step - 1);
+      alert(step)
     }
   };
 
@@ -42,6 +43,7 @@ function Form({ cuuid }) {
 
     if (step < numberOfSteps - 1) {
       setStep(step + 1);
+      alert(step)
     }
   };
 
@@ -325,7 +327,8 @@ function Form({ cuuid }) {
             </div>
             <div className="hidden lg:block pl-5">
               <button
-                className="lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px]"
+                className={`lg:w-[350px] xl:w-[390px] shadow-xl h-[40px] bg-black text-white rounded-[10px] ${progress !== 100 ? 'bg-[#B1B1B1]' : 'bg-black'
+              }`}
                 onClick={handleClick}
               >
                 SAVE
@@ -378,8 +381,8 @@ function Form({ cuuid }) {
               />
             )}
             <div className="flex">
-              <button className="h-10 w-40 bg-black text-white rounded-md" onClick={handlePrevious}>Previous</button>
-              <button className="h-10 w-40 bg-black text-white rounded-md ml-auto" onClick={handleNext}>Next</button>
+              <button className={`h-10 w-40 font-bold rounded-md ${step === 0 ? 'bg-white text-black border' : 'bg-black text-white'}`}onClick={handlePrevious}>Previous</button>
+              <button className={`h-10 w-40 font-bold rounded-md ml-auto ${step === 3 ? 'bg-white text-black border' : 'bg-black text-white'}`} onClick={handleNext}>Next</button>
             </div>
 
           </div>
@@ -416,7 +419,8 @@ function Form({ cuuid }) {
         </div>
         <div className="lg:hidden  sm:pl-5 mb-10">
           <button
-            className="w-full shadow-xl h-[40px] bg-black text-white rounded-[10px]"
+            className={`w-full shadow-xl h-[40px] text-white rounded-[10px] ${progress !== 100 ? 'bg-[#B1B1B1]' : 'bg-black'
+              }`}
             onClick={handleClick}
           >
             SAVE
