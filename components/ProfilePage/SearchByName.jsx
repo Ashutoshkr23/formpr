@@ -15,7 +15,7 @@ const SearchByName = ({ onSearch }) => {
 
     return (
         <>
-            <div className='capitalize text-[#686A6C] flex items-center gap-2 pl-4 bg-white rounded-xl'>
+            <div className='capitalize text-[#686A6C] flex items-center gap-2 pl-4 bg-white rounded-xl w-max'>
                 <Image width={17} height={15} src={'/assets/images/profilePage/searchIcon.png'} alt="profile pic" />
                 <input className='outline-none' type="text" placeholder='Search By Name' value={searchQuery} onChange={handleInputChange} />
             </div>
