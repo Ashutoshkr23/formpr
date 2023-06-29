@@ -64,22 +64,26 @@ function ProductComp({
       }}
       className="flex flex-col lg:hover:scale-105 cursor-pointer"
     >
-      <div className=" relative z-20 ml-3 -mb-5  w-[116px] h-9 rounded-lg bg-black pt-2">
-        <p className="text-center  font-semibold text-xs text-white">
+      <div className={`relative overflow-hidden z-20 ml-3 -mb-5 w-[116px] h-9 rounded-lg pt-2 ${cardtype === "Elite" ? 'bg-gradient-to-br from-[#FAE6A3] to-[#FF9766]' : 'bg-black'}`}>
+        <p className="text-center font-semibold text-xs text-white">
           {cardtype}
         </p>
+        {cardtype === "Elite" && <div className="shine "></div>}
       </div>
+
       <div className="flex flex-col items-center">
         <div
-          className={`h-[630px] lg:h-[685px] border relative p-1 mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${
-            isHovered
-              ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] border-0"
+          className={`h-[630px] lg:h-[685px] border relative  mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${isHovered
+              ? cardtype === "Elite"
+                ? "bg-gradient-to-br from-[#FAE6A3] to-[#FF9766] border-0 p-1"
+                : "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] border-0 p-1"
               : "border"
-          }`}
+
+            }`}
           onMouseEnter={handleHover}
           onMouseLeave={handleHover}
         >
-          <div className="h-full  w-full rounded-2xl  bg-white">
+          <div className={`h-full  w-full rounded-2xl  ${cardtype === "Elite" ? 'bg-gradient-to-b from-[#FFFCEB] to-[#F5E8D9]' : 'bg-white'}`}>
             <div className="flex h-full flex-col  items-center">
               <div className="pt-7 lg:pt-4">
                 <p className="text-sm xl:text-xl">{text} </p>
@@ -116,11 +120,10 @@ function ProductComp({
               <p className="font-medium text-xs text-[#686A6C]">{text2} </p>
               <div className="w-[138px] xl:w-[165px] h-9 xl:h-10 text-xs xl:text-base  pt-5">
                 <button
-                  className={`buynow text-center w-full py-[5px] font-bold rounded-[10px] ${
-                    isHovered
+                  className={`buynow text-center w-full py-[5px] font-bold rounded-[10px] ${isHovered
                       ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
                       : "bg-black text-white"
-                  }`}
+                    }`}
                 >
                   {" "}
                   BUY NOW

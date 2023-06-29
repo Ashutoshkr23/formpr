@@ -114,7 +114,7 @@ const DesignComp = ({
                       )}
                     </div>
                   </div>
-                  <div className="pr-2 bg-white h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
+                  <div className="pr-2 relative overflow-hidden bg-gradient-to-br from-[#FAE6A3] to-[#FF9766] h-9 lg:h-12 max-w-[170px] lg:w-[190px] pl-4  rounded-[10px] drop-shadow-lg">
                     <div
                       className={`flex cursor-pointer items-center justify-between pb-2   h-full ${
                         selectedTypeIndex == 2 ? " " : ""
@@ -122,14 +122,17 @@ const DesignComp = ({
                       onClick={() => {
                         handleCardSelection(2);
                       }}
-                    >
-                      <p
-                        className={`text-[#686A6C] text-xs lg:text-sm  pt-3 leading-7 text-center ${
-                          selectedTypeIndex == 2 ? " font-bold text-black" : ""
-                        }`}
-                      >
-                        Loop Supreme
-                      </p>
+                    > 
+                        <p
+                          className={`text-[#686A6C]  text-xs lg:text-sm  pt-3 leading-7 text-center ${selectedTypeIndex == 2 ? " font-bold text-black" : ""
+                            }`}
+                        >
+                          Loop Supreme
+                        </p>
+                        <div className="shine "></div>
+                  
+                      
+
                       {cartItems[2].quantity > 0 && (
                         <span className=" text-md font-semibold h-6 w-6 lg:h-9 lg:w-9  text-center lg:pt-1 mt-2   bg-gradient-to-b from-[#f3f4f6] to-[#d1d5db] drop-shadow-2xl  rounded-full ">
                           {cartItems[2].quantity}
