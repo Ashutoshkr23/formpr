@@ -29,15 +29,14 @@ function Form({ cuuid }) {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [step, setStep] = useState(0);
-
+  const [completedSteps, setCompletedSteps] = useState([]);
   const handlePrevious = () => {
-    if (step > 1) {
+    if (step > 0) {
       setStep(step - 1);
     }
   };
 
   const handleNext = () => {
-    // Replace `numberOfSteps` with the total number of steps you have
     const numberOfSteps = 4;
 
     if (step < numberOfSteps - 1) {
@@ -338,17 +337,24 @@ function Form({ cuuid }) {
           <div className="flex flex-grow flex-col ">
             {step === 0 && (
               <ChooseTemplates
+                setCompletedSteps={setCompletedSteps}
                 selectedTemplate={selectedTemplate}
+                completedSteps={completedSteps}
                 setSelectedTemplate={setSelectedTemplate}
               />
             )}
 
             {step === 1 && (
-              <Cover cover={cover} setCover={setCover} />
+              <Cover 
+              completedSteps={completedSteps}
+              setCompletedSteps={setCompletedSteps}
+              cover={cover} setCover={setCover} />
             )}
 
             {step === 2 && (
               <Details
+                setCompletedSteps={setCompletedSteps}
+                completedSteps={completedSteps}
                 name={name}
                 role={role}
                 company={company}
@@ -371,6 +377,8 @@ function Form({ cuuid }) {
 
             {step === 3 && (
               <Socials
+                setCompletedSteps={setCompletedSteps}
+                completedSteps={completedSteps}
                 inputValues={inputValues}
                 handleInputChange={handleInputChange}
                 visibleInputs={visibleInputs}
@@ -380,7 +388,8 @@ function Form({ cuuid }) {
             )}
             <div className="flex">
               <button className={`h-10 w-40 font-bold rounded-md ${step === 0 ? 'bg-white text-black border' : 'bg-black text-white'}`}onClick={handlePrevious}>Previous</button>
-              <button className={`h-10 w-40 font-bold rounded-md ml-auto ${step === 3 ? 'bg-white text-black border' : 'bg-black text-white'}`} onClick={handleNext}>Next</button>
+              <button disabled={!completedSteps.includes(step)}
+ className={`h-10 w-40 font-bold rounded-md ml-auto ${step === 3 ? 'bg-white hidden text-black border' : 'bg-black text-white'}`} onClick={handleNext}>Next</button>
             </div>
 
           </div>

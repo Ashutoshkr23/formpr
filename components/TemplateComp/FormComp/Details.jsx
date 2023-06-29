@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 
 function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkChange,
-    onBioChange, onAddressChange, onPhoneNumberChange, profileImg, setProfileImg, bio, contactData, name, address, phoneNumber, role, company, companyLink })
+    onBioChange, onAddressChange, onPhoneNumberChange, profileImg, setProfileImg, bio, contactData, name, address, phoneNumber, role, company, companyLink, setCompletedSteps })
     
     {
     const handleProfileUpload = (event) => {
@@ -104,8 +104,12 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
         company,
         companyLink,
     ]);
-
-
+    
+    useEffect(() => {
+        if (detailsFilled) {
+            setCompletedSteps([0, 1, 2]);
+        }
+    }, [detailsFilled]);
 
     return (
         <div className={`flex flex-grow  rounded-[10px] drop-shadow-white flex-col h-auto pb-5  md:h-[578px] bg-black-dim px-4 md:px-9 pt-4 mb-4 ${detailsFilled ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'

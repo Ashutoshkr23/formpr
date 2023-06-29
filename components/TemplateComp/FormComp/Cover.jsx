@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import React, { useState , useEffect} from 'react'
 
-function Cover({ cover, setCover }) {
+function Cover({ cover, setCover, setCompletedSteps }) {
 
-    const [coverSelected , setCoverSelected] = useState(false);
+    const [coverSelected, setCoverSelected ] = useState(false);
 
     useEffect(() => {
         if (cover) {
             setCoverSelected(true);
+            setCompletedSteps([0,1]);
         }
     }, [cover]);
 

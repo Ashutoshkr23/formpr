@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import React , {useState} from 'react'
 
-function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
+function ChooseTemplates({ selectedTemplate, completedSteps, setSelectedTemplate, setCompletedSteps }) {
   const [isTemplateSelected, setIsTemplateSelected] = useState(false);
 
   const handleTemplateSelect = (templateId) => {
     setSelectedTemplate(templateId);
     setIsTemplateSelected(true);
+    setCompletedSteps([0]);
   };
 
   console.log(selectedTemplate)
