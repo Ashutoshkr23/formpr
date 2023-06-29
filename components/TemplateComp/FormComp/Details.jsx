@@ -122,8 +122,8 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                 <div className='flex flex-col w-full space-y-5'>
                     <div>
                         <label htmlFor="logoInput" className={`cursor-pointer  bg-white flex flex-col space-y-1  items-center w-[113px] h-[113px] border border-dim-gray border-dashed rounded-xl ${!profileImg ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}>
-                            <p className='text-xs leading-[186%]  -mt-3 bg-white z-50 px-1'>Profile Photo</p>
-                            <Image src="/assets/images/UploadIcon.png" height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
+                            <p className='text-xs leading-[186%]  -mt-3 mb-5 bg-white z-50 px-1'>Profile Photo</p>
+                            <Image src="/assets/images/UploadIcon.png"  height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
                             <p className='text-sm'>Upload</p>
                         </label>
                         <input
@@ -144,12 +144,22 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
 
                         </div>
                         <div className='flex flex-col mt-5'>
-                            <label for="Phone Number" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!phoneNumber ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} ><p className=' -mt-3 text-xs leading-[186%] bg-white w-24 pl-1'>Phone Number</p>
-                                <input type="text" pattern="[0-9]*"
-                                    inputMode="numeric" value={phoneNumber} id="Phone Number" name="Phone Number" required onChange={handlePhoneNumberChange} style={{ border: 'none', outline: 'none' }} />
+                            <label htmlFor="Phone Number" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!phoneNumber ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}>
+                                <p className='-mt-3 text-xs leading-[186%] bg-white w-24 pl-1'>Phone Number</p>
+                                <input
+                                    type="text"
+                                    pattern="[0-9]*"
+                                    inputMode="numeric"
+                                    value={phoneNumber}
+                                    id="Phone Number"
+                                    name="Phone Number"
+                                    required
+                                    onChange={handlePhoneNumberChange}
+                                    style={{ border: 'none', outline: 'none' }}
+                                />
                             </label>
-                            
                         </div>
+
                     </div>
                 </div>
                 <div className='flex flex-col w-full space-y-5 mt-2 '>
@@ -207,6 +217,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                         name="Bio"
                         value={bio}
                         rows={4}
+                        className='w-full'
                         required
                         onChange={handleBioChange}
                         maxLength={maxLength}

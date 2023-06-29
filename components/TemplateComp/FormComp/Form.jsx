@@ -33,7 +33,6 @@ function Form({ cuuid }) {
   const handlePrevious = () => {
     if (step > 1) {
       setStep(step - 1);
-      alert(step)
     }
   };
 
@@ -43,7 +42,6 @@ function Form({ cuuid }) {
 
     if (step < numberOfSteps - 1) {
       setStep(step + 1);
-      alert(step)
     }
   };
 
