@@ -10,7 +10,7 @@ import { CartContext } from "@/context/CartContext";
 import ProfileCompleted from "./ProfileCompleted";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { CartNav, Footer, LoopMaven } from "@/components";
+import { CartNav, Footer } from "@/components";
 
 function Form({ cuuid }) {
   const [contactData, setContactData] = useState(null);
