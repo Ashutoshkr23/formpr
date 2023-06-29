@@ -127,7 +127,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                 <div className='flex flex-col w-full space-y-5'>
                     <div>
                         <label htmlFor="logoInput" className={`cursor-pointer  bg-white flex flex-col space-y-1  items-center w-[113px] h-[113px] border border-dim-gray border-dashed rounded-xl ${!profileImg ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}>
-                            <p className='text-xs leading-[186%]  -mt-3 mb-5 bg-white z-50 px-1'>Profile Photo</p>
+                            <p className={`text-xs leading-[186%]  -mt-3 mb-5 bg-[#FFFFFF] z-50 px-1`}>Profile Photo</p>
                             <Image src="/assets/images/UploadIcon.png"  height={20} width={20} alt='icon' style={{ objectFit: "contain" }} />
                             <p className='text-sm'>Upload</p>
                         </label>
@@ -143,14 +143,14 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     </div>
                     <div className='hidden md:block'>
                         <div className='flex flex-col'>
-                            <label for="Company"   className={` bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!company ? 'border border-[#F66F6f]' : 'border-dim-gray'} `}><p className='text-xs leading-[186%] -mt-3 bg-white pl-1 w-16'>Company</p>
+                            <label for="Company" className={` bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!company ? 'border border-[#F66F6f]' : 'border-dim-gray'} `}><p className={`text-xs leading-[186%] -mt-3 bg-[#FFFFFF] pl-1 w-16`}>Company</p>
                                 <input type="text" value={company}  id="Company" name="Company" required onChange={handleCompanyChange} style={{ border: 'none', outline: 'none' }} />
                             </label>
 
                         </div>
                         <div className='flex flex-col mt-5'>
                             <label htmlFor="Phone Number" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!phoneNumber ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}>
-                                <p className='-mt-3 text-xs leading-[186%] bg-white w-24 pl-1'>Phone Number</p>
+                                <p className={`-mt-3 text-xs leading-[186%] bg-[#FFFFFF] w-24 pl-1`}>Phone Number</p>
                                 <input
                                     type="text"
                                     pattern="[0-9]*"
@@ -169,22 +169,22 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                 </div>
                 <div className='flex flex-col w-full space-y-5 mt-2 '>
                     <div className='flex flex-col'>
-                        <label for="fullName" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!name ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} ><p className=' -mt-3 text-xs leading-[186%] bg-white w-16 px-0.5 '>Full Name</p>
+                        <label for="fullName" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!name ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} ><p className={` -mt-3 text-xs leading-[186%] bg-[#FFFFFF] w-16 px-0.5`}>Full Name</p>
                             <input type="text" id="fullName" name="fullName" value={name} required onChange={handleNameChange} style={{ border: 'none', outline: 'none' }} /></label>
 
                     </div>
                     <div className='flex flex-col'>
-                        <label for="role" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!role ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}><p className=' -mt-3 text-xs leading-[186%] bg-white w-8 px-1'>Role</p>
+                        <label for="role" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!role ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}><p className={` -mt-3 text-xs leading-[186%] bg-[#FFFFFF] w-8 px-1`}>Role</p>
                             <input type="text" id="role" value={role} name="role" required onChange={handleRoleChange} style={{ border: 'none', outline: 'none' }} /></label>
 
                     </div>
                     <div className='flex flex-col'>
-                        <label for="Company Link" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!companyLink ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} ><p className=' -mt-3 text-xs leading-[186%] bg-white w-24 px-1 '>Company Link</p>
+                        <label for="Company Link" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!companyLink ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} ><p className={` -mt-3 text-xs leading-[186%] bg-[#FFFFFF] w-24 px-1 `}>Company Link</p>
                             <input type="text" maxLength={25} id="Company Link" value={companyLink} name="Company Link" required onChange={handleCompanyLinkChange} style={{ border: 'none', outline: 'none' }} /></label>
                         
                     </div>
                     <div className='flex flex-col'>
-                        <label htmlFor="Location" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!address ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}><p className=' -mt-3 text-xs leading-[186%] px-1 bg-white w-14 '>Location</p>
+                        <label htmlFor="Location" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!address ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}><p className={`-mt-3 text-xs leading-[186%] px-1 bg-[#FFFFFF] w-14 `}>Location</p>
                             <input
                                 type='text'
                                 id="Location"
@@ -198,13 +198,13 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                     </div>
                     <div className='md:hidden'>
                         <div className='flex flex-col'>
-                            <label for="Company"  className={` bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!company ? 'border border-[#F66F6f]' : 'border-dim-gray'} `}><p className='text-xs leading-[186%] -mt-3 bg-white pl-1 w-16'>Company</p>
+                            <label for="Company" className={` bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!company ? 'border border-[#F66F6f]' : 'border-dim-gray'} `}><p className={`text-xs leading-[186%] -mt-3 bg-[#FFFFFF] pl-1 w-16`}>Company</p>
                                 <input type="text" value={company} id="Company" name="Company" required onChange={handleCompanyChange} style={{ border: 'none', outline: 'none' }} />
                             </label>
 
                         </div>
                         <div className='flex flex-col mt-5'>
-                            <label for="Phone Number" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!phoneNumber ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} ><p className=' -mt-3 text-xs leading-[186%] bg-white w-24 pl-1'>Phone Number</p>
+                            <label for="Phone Number" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!phoneNumber ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} ><p className={`-mt-3 text-xs leading-[186%] bg-[#FFFFFF] w-24 pl-1`}>Phone Number</p>
                                 <input type="text" pattern="[0-9]*"
                                     inputMode="numeric" value={phoneNumber} id="Phone Number" name="Phone Number" required onChange={handlePhoneNumberChange} style={{ border: 'none', outline: 'none' }} />
                             </label>
@@ -216,7 +216,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
             </div>
             <div className='flex flex-col mt-5'>
                 <label htmlFor="Bio" className={`bg-white text-black mt-0.5 border px-5 py-2 border-dim-gray rounded-md block w-full resize-none ${!bio ? 'border border-[#F66F6f]' : 'border-dim-gray'}`}>
-                <p className=' -mt-5 text-xs leading-[186%] bg-white px-1 w-6 '>Bio</p>
+                    <p className={`-mt-5 text-xs leading-[186%] bg-[#FFFFFF] px-1 w-6 `}>Bio</p>
                     <textarea
                         id="Bio"
                         name="Bio"
