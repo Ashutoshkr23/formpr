@@ -30,6 +30,19 @@ function Form({ cuuid }) {
   const [errorMessage, setErrorMessage] = useState("");
   const [step, setStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState([]);
+  const [showMenu, setShowMenu] = useState(false)
+  const menuRef = useRef();
+
+  const handleParentClick = (event) => {
+    if (
+      showMenu &&
+      (!menuRef.current ||
+        !menuRef.current.contains(event.target))
+    ) {
+      setShowMenu(false);
+    }
+  };
+
   const handlePrevious = () => {
     if (step > 0) {
       setStep(step - 1);
@@ -296,7 +309,7 @@ function Form({ cuuid }) {
     background: "linear-gradient(to right, #96FFAD, #66D3E1)",
   };
   return (
-    <div className="  ">
+    <div onClick={handleParentClick} className="  ">
       <CartNav/>
       {showProfileComplete && <ProfileCompleted />}
       <div className="max-w-[1208px] px-2 sm:px-8 md:px-8 lg:px-4 xl:px-0 mx-auto relative">
@@ -384,6 +397,8 @@ function Form({ cuuid }) {
                 visibleInputs={visibleInputs}
                 setVisibleInputs={setVisibleInputs}
                 onToggleInput={handleToggleInput}
+                showMenu={showMenu}
+                setShowMenu={setShowMenu}
               />
             )}
             <div className="flex">
