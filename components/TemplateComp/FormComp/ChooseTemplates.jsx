@@ -23,7 +23,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
       </div>
       <div className='flex flex-wrap gap-y-4 sm:gap-y-8 mt-5 '>
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center '>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('1')}>
+          <div className='relative h-[170px]  w-[78px]  sm:h-[255px] sm:w-[118px] cursor-pointer' onClick={() => handleTemplateSelect('1')}>
             {selectedTemplate === '1' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0  z-30 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
             )}
@@ -33,7 +33,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
           </div>
         </div>
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center '>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('2')}>
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px] cursor-pointer' onClick={() => handleTemplateSelect('2')}>
             {selectedTemplate === '2' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0 z-30 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
             )}
@@ -43,7 +43,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
           </div>
         </div>
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center'>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('4')}>
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px] cursor-pointer' onClick={() => handleTemplateSelect('4')}>
             {selectedTemplate === '4' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0 z-30 bg-[#81919A] bg-opacity-50 rounded-[12px]'></div>
             )}
@@ -53,7 +53,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
           </div>
         </div>
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center'>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('3')}>
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px] cursor-pointer' onClick={() => handleTemplateSelect('3')}>
             {selectedTemplate === '3' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0 z-30 bg-[#81919A] bg-opacity-50 rounded-[8px]'></div>
             )}
@@ -63,7 +63,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
           </div>
         </div>
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center'>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('5')}>
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px] cursor-pointer' onClick={() => handleTemplateSelect('5')}>
             {selectedTemplate === '5' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0 z-30 bg-[#81919A] bg-opacity-50 rounded-[8px]'></div>
             )}
@@ -74,7 +74,7 @@ function ChooseTemplates({ selectedTemplate, setSelectedTemplate }) {
         </div>
 
         <div className='w-1/3 sm:w-1/4 xl:w-1/6 flex justify-center'>
-          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px]' onClick={() => handleTemplateSelect('6')}>
+          <div className='relative h-[170px] w-[78px] sm:h-[255px] sm:w-[118px] cursor-pointer' onClick={() => handleTemplateSelect('6')}>
             {selectedTemplate === '6' && (
               <div className='absolute border-2 border-[#66D3E1] inset-0 z-30 bg-[#81919A] bg-opacity-50 rounded-[8px]'></div>
             )}
