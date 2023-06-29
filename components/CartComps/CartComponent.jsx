@@ -231,9 +231,8 @@ const CartComponent = () => {
         <div className="max-w-[1208px] mx-auto flex lg:justify-between justify-center items-center px-4 xl:px-0">
           <div className="bg-white rounded-xl w-full h-[40px] flex  lg:justify-between   cursor-pointer shadow-xl ring-offset-1  ring-offset-transparent ring-[#001926]">
             <div
-              className={`rounded-lg text-[#686A6C] font-bold w-1/3 ${
-                stepState == 1 && "border-2 border-slate-700 text-black"
-              } flex justify-center items-center `}
+              className={`rounded-lg text-[#686A6C] font-bold w-1/3 ${stepState == 1 && "border-2 border-slate-700 text-black"
+                } flex justify-center items-center `}
               onClick={() => setStepState(1)}
             >
               <p className="text-center text-[12px] md:text-sm">
@@ -241,9 +240,8 @@ const CartComponent = () => {
               </p>
             </div>
             <div
-              className={`rounded-lg text-[#686A6C] font-bold  w-1/3 ${
-                stepState == 2 && "border-2 border-slate-700 text-black"
-              } flex justify-center items-center `}
+              className={`rounded-lg text-[#686A6C] font-bold  w-1/3 ${stepState == 2 && "border-2 border-slate-700 text-black"
+                } flex justify-center items-center `}
               onClick={() => setStepState(2)}
             >
               <p className="text-center text-[12px] md:text-sm">
@@ -251,9 +249,8 @@ const CartComponent = () => {
               </p>
             </div>
             <div
-              className={` rounded-lg text-[#686A6C] font-bold w-1/3 ${
-                stepState == 3 && "border-2 border-slate-700 text-black"
-              } flex justify-center items-center `}
+              className={` rounded-lg text-[#686A6C] font-bold w-1/3 ${stepState == 3 && "border-2 border-slate-700 text-black"
+                } flex justify-center items-center `}
               onClick={() => stepThreeOnclick()}
             >
               <p className="text-center text-[12px] md:text-sm">
@@ -364,7 +361,7 @@ const CartComponent = () => {
             <div
               className="fixed inset-0 transition-opacity"
               aria-hidden="true"
-              // onClick={closeModal}
+            // onClick={closeModal}
             >
               <div className="absolute inset-0 bg-black opacity-50"></div>
             </div>

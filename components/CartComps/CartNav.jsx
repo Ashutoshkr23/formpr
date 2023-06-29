@@ -93,11 +93,10 @@ const CartNav = () => {
               </span>
             </div>
             <button
-              className={` h-10 w-[165px] text-[16px] font-bold text-white  rounded-[10px] ${
-                isHovered
-                  ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
-                  : "bg-black text-white"
-              }`}
+              className={` h-10 w-[165px] text-[16px] font-bold text-white  rounded-[10px] ${isHovered
+                ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
+                : "bg-black text-white"
+                }`}
               onMouseEnter={handleHover}
               onMouseLeave={handleHover}
               onClick={handleSignOut}
@@ -142,19 +141,16 @@ const CartNav = () => {
               >
                 <div className={`{} h-3.5 w-5 ${isOpen ? "fixed" : ""}`}>
                   <div
-                    className={` h-0.5 bg-black w-5 origin-top-left ease-in duration-200 rounded-md ${
-                      isOpen ? "rotate-45 translate-x-px" : "rotate-0"
-                    }`}
+                    className={` h-0.5 bg-black w-5 origin-top-left ease-in duration-200 rounded-md ${isOpen ? "rotate-45 translate-x-px" : "rotate-0"
+                      }`}
                   />
                   <div
-                    className={` h-0.5 w-5 bg-black ease-in duration-200 rounded-md mt-1 ${
-                      isOpen ? "hidden" : "block"
-                    }`}
+                    className={` h-0.5 w-5 bg-black ease-in duration-200 rounded-md mt-1 ${isOpen ? "hidden" : "block"
+                      }`}
                   />
                   <div
-                    className={` h-0.5 w-5 bg-black ease-in duration-200  rounded-md mt-1  ${
-                      isOpen ? "-rotate-45 -translate-x-0.5 " : "rotate-0 "
-                    }`}
+                    className={` h-0.5 w-5 bg-black ease-in duration-200  rounded-md mt-1  ${isOpen ? "-rotate-45 -translate-x-0.5 " : "rotate-0 "
+                      }`}
                   />
                 </div>
               </button>

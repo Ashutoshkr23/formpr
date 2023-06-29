@@ -9,12 +9,19 @@ export default async function handler(req, res) {
 
         const gettinguserPuuid = await UserData.findOne({ email: userEmail })
 
-        const userpuuid = gettinguserPuuid.puuid;
+        if (gettinguserPuuid === null) {
+            return res.json({
+                success: false,
+            })
+        } else {
 
-        const getUserRemainders = await setRemainderModel.find({ puuid: userpuuid });
-        res.json({
-            success: true,
-            userRemainderList: getUserRemainders
-        })
+            const userpuuid = gettinguserPuuid.puuid;
+
+            const getUserRemainders = await setRemainderModel.find({ puuid: userpuuid });
+            return res.json({
+                success: true,
+                userRemainderList: getUserRemainders
+            })
+        }
     }
 }

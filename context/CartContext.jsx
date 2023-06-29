@@ -9,12 +9,12 @@ export const CartContext = createContext();
 
 // Create a CartProvider component
 export const CartProvider = ({ children }) => {
-  
+
     const { data: session } = useSession()
 
     // Define the state for the cart items
     const [cartItems, setCartItems] = useState([]);
-    
+
     const [userProfile, setUserProfile] = useState([])
     const [allCards, setAllCards] = useState([])
     const [defaultCart, setDefaultCart] = useState([])
@@ -24,9 +24,9 @@ export const CartProvider = ({ children }) => {
     const [stepState, setStepState] = useState(1);
     const [totalQuantity, setTotalQuantity] = useState(0)
     const [totalAmount, setTotalAmount] = useState(0)
-    const [discountCode,setDiscountCode] = useState("")
-    const [amountDiscounted,setAmountDiscounted] = useState(0)
-    const [finalPrice,setFinalPrice] = useState(0)
+    const [discountCode, setDiscountCode] = useState("")
+    const [amountDiscounted, setAmountDiscounted] = useState(0)
+    const [finalPrice, setFinalPrice] = useState(0)
     const [address, setAddress] = useState({
         email: "",
         phoneNumber: "",
@@ -53,45 +53,45 @@ export const CartProvider = ({ children }) => {
         localStorage.setItem('cartData', JSON.stringify(newArray));
     }
 
-    const handleDiscount =async ()=>{
+    const handleDiscount = async () => {
         if (discountCode) {
-          let postData = {
-            discountCode: discountCode.toUpperCase(),
-          };
-          const response = await axios.put("/api/discount", postData);
-          if (response.status == 200) {
-            if (!response.data.error) {
-            //   console.log(response.data);
-              const discountObj = response.data.result
-              if(discountObj.discountType ==2){
-                const discount = (totalAmount * discountObj.percentage) / 100;
-                setAmountDiscounted(discount)
-                const finalAmount = totalAmount - discount;
-                setFinalPrice(finalAmount)
+            let postData = {
+                discountCode: discountCode.toUpperCase(),
+            };
+            const response = await axios.put("/api/discount", postData);
+            if (response.status == 200) {
+                if (!response.data.error) {
+                    //   console.log(response.data);
+                    const discountObj = response.data.result
+                    if (discountObj.discountType == 2) {
+                        const discount = (totalAmount * discountObj.percentage) / 100;
+                        setAmountDiscounted(discount)
+                        const finalAmount = totalAmount - discount;
+                        setFinalPrice(finalAmount)
 
-              }else{
-                setAmountDiscounted(discountObj.amount)
+                    } else {
+                        setAmountDiscounted(discountObj.amount)
 
-                const finalAmount = totalAmount - discountObj.amount
-                setFinalPrice(finalAmount)
-              }
-              toast.success(response.data.message);
+                        const finalAmount = totalAmount - discountObj.amount
+                        setFinalPrice(finalAmount)
+                    }
+                    toast.success(response.data.message);
+                } else {
+                    toast.error(response.data.message);
+                }
             } else {
-              toast.error(response.data.message);
+                // console.log(response);
+                toast.error("Something went wrong");
             }
-          } else {
-            // console.log(response);
-            toast.error("Something went wrong");
-          }
         }
-      }
+    }
 
 
-    useEffect(()=>{
-        if(totalAmount > 0 && !amountDiscounted && !discountCode){
+    useEffect(() => {
+        if (totalAmount > 0 && !amountDiscounted && !discountCode) {
             setFinalPrice(totalAmount)
         }
-    },[totalAmount])
+    }, [totalAmount])
 
 
     useEffect(() => {
@@ -162,7 +162,7 @@ export const CartProvider = ({ children }) => {
         let totalAmount = 0
         let cards = []
         // Loop over the array and add up the quantity field of each object
-        if(cartItems && cartItems.length){
+        if (cartItems && cartItems.length) {
             for (var i = 0; i < cartItems.length; i++) {
                 totalQuantity += cartItems[i].quantity;
                 totalAmount += cartItems[i].amount * cartItems[i].quantity;
@@ -170,7 +170,7 @@ export const CartProvider = ({ children }) => {
             setTotalQuantity(totalQuantity)
             setTotalAmount(totalAmount)
         }
-        
+
         if (cartItems.length > 0 && stepState == 1) {
 
 
@@ -324,7 +324,7 @@ export const CartProvider = ({ children }) => {
         localStorage.setItem('cartData', JSON.stringify(defaultCart));
         setCartItems(defaultCart)
         setStepState(1)
-        
+
     };
 
     // new
@@ -431,6 +431,7 @@ export const CartProvider = ({ children }) => {
             setCardsArray(newCardArr)
         }
     }
+    // console.log(cartItems,"carts")
 
     // Create the cart context value
     const cartContextValue = {

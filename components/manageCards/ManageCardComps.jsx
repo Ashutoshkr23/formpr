@@ -75,7 +75,7 @@ const handleClick = (card) => {
                   >
                     <div className='flex gap-4'>
                       <div className="flex justify-center items-center h-full">
-                        {card.cardType == "7031e440-bc0b-4b39-8b8e-2afe3360d744" ? (
+                        {card.cardType == "7031e440-bc0b-4b39-8b8e-2afe3360d744" || card.cardType == "6d12bd3d-5381-4b45-8a5e-8d04a403e17c" ? (
                           <>
                             <div className="flex mt-8 lg:mt-0">
                               <div className={`card w-[180px] h-[110px]`}>
@@ -196,12 +196,14 @@ const handleClick = (card) => {
                             Color :
                           </p>
                           {card.cardType ==
-                            "7031e440-bc0b-4b39-8b8e-2afe3360d744" &&
-                            card.hexCode ? (
+                            "7031e440-bc0b-4b39-8b8e-2afe3360d744" ||
+                            card.cardType == "6d12bd3d-5381-4b45-8a5e-8d04a403e17c" ? (
+                              <>
                             <div
                               className={`w-5 h-5 rounded-[45px]`}
                               style={{ backgroundColor: card.hexCode }}
                             ></div>
+                            </>
                           ) : card.cardType == "801baf78-ce33-446f-b132-618f92ccfc5f" ? (
 
                             <Image height={23} width={23} className='rounded-full' alt="color" src={`/assets/images/radio_buttons/elevate/${card.designUuid}.png`} />

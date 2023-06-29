@@ -1,22 +1,50 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
-const BulkUploadComp = ()=>{
+const BulkUploadComp =()=>{
 
     const [fileData,setFileData] = useState(null)
-    console.log(fileData,"file")
-    const handleSubmit =async ()=>{
+  
+    const handleUpload = async () => {
+      try {
+        if(fileData){
         const formData = new FormData();
         formData.append("bulkCsv", fileData);
+
+        const uploadCSV = await axios.post("/api/bulkCsvUpload", formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+        if(uploadCSV){
+          if(uploadCSV.status == 200){
+            let response = uploadCSV.data
+            console.log(response,"response")
+            if(!uploadCSV.data.error){
+              toast.success(response.message)
+            }else{
+              toast.error(response.message)
+            }
+          }else{
+            console.log(uploadCSV,"resp")
+            toast.error("Something went wrong")
+          }
+        }
     
-        const uploadCSV = await axios.post("/api/bulkUpload", formData);
-        console.log(uploadCSV,"uploadCsv")
-    }
+        console.log(uploadCSV, "uploadCsv");
+      }
+      } catch (error) {
+        console.error("Error occurred during file upload:", error);
+        // Handle the error, show an error message, or perform any necessary actions.
+      }
+    };
 
     return (
-      <div className="h-full w-full flex justify-center items-center ">
-        <div>
-          <div className="flex items-center space-6 flex-col" >
+      <div className="h-full w-full flex justify-center items-center">
+        
+          <div className="flex items-center space-6 flex-col mt-20" >
+            <h3 className="text-2xl font-semibold mb-14 mt-10 text-black">Bulk CSV Upload</h3>
             <label className="block">
               <span className="sr-only">Choose CSV file</span>
               <input
@@ -31,13 +59,13 @@ const BulkUploadComp = ()=>{
                     hover:file:bg-violet-100 "
               />
             </label>
-            <button type="button" onClick={()=>handleSubmit()} className="px-4 py-1 mt-2 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Upload</button>
+            <button type="button" onClick={()=>handleUpload()} className="px-4 py-1 mt-2 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Upload</button>
   
 
           </div>
-        </div>
+          <ToastContainer />
       </div>
     );
 }
 
-export default BulkUploadComp
+export default BulkUploadComp;

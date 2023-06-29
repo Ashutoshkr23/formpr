@@ -18,7 +18,7 @@ const SortBy = (props) => {
             <div className='relative capitalize text-[#686A6C] flex items-center px-3 bg-white rounded-xl'>
                 <div className={`cursor-pointer flex items-center gap-1 ${props.sortByCustomClasses}`} onClick={openSortBy}>
                     <Image width={27} height={18} src={'/assets/images/profilePage/sortBy.png'} alt="profile pic"></Image>
-                    <span className='sm:block hidden'>sort by</span>
+                    <span className='sm:block hidden whitespace-nowrap'>sort by</span>
                 </div>
 
                 {sortBy &&
