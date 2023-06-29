@@ -71,65 +71,6 @@ const Contact = () => {
 
   }
 
-  const [bio, setBio] = useState(
-    contactData && contactData.bio ? contactData.bio : ""
-  );
-  const [name, setName] = useState(
-    contactData && contactData.name ? contactData.name : ""
-  );
-  const [role, setRole] = useState(
-    contactData && contactData.role ? contactData.role : ""
-  );
-  const [companyName, setCompanyName] = useState(
-    contactData && contactData.companyName ? contactData.companyName : ""
-  );
-  const [companyLink, setCompanyLink] = useState(
-    contactData && contactData.companylink ? contactData.companylink : ""
-  );
-  const [address, setAddress] = useState(
-    contactData && contactData.address ? contactData.address : ""
-  );
-  const [mobileNumber, setMobileNumber] = useState(
-    contactData && contactData.mobileNumber ? contactData.mobileNumber : ""
-  );
-  const [profileImg, setProfileImg] = useState(
-    contactData && contactData.profileImg ? contactData.profileImg : ""
-  );
-  const [selectedTemplate, setSelectedTemplate] = useState(
-    contactData && contactData.selectedTemplate
-      ? contactData.selectedTemplate
-      : ""
-  );
-  const [cover, setCover] = useState(
-    contactData && contactData.cover ? contactData.cover : ""
-  );
-  const [behance, setBehance] = useState(
-    contactData && contactData.behance ? contactData.behance : ""
-  );
-  const [facebook, setFacebook] = useState(
-    contactData && contactData.facebook ? contactData.facebook : ""
-  );
-  const [instagram, setInstagram] = useState(
-    contactData && contactData.instagram ? contactData.instagram : ""
-  );
-  const [linkedin, setLinkedin] = useState(
-    contactData && contactData.linkedin ? contactData.linkedin : ""
-  );
-  const [mail, setMail] = useState(
-    contactData && contactData.mail ? contactData.mail : ""
-  );
-  const [reddit, setReddit] = useState(
-    contactData && contactData.reddit ? contactData.reddit : ""
-  );
-  const [twitter, setTwitter] = useState(
-    contactData && contactData.twitter ? contactData.twitter : ""
-  );
-  const [whatsappNumber, setWhatsappNumber] = useState(
-    contactData && contactData.whatsappNumber ? contactData.whatsappNumber : ""
-  );
-  const [youtube, setYoutube] = useState(
-    contactData && contactData.youtube ? contactData.youtube : ""
-  );
 
   return (
     <div className={`h-screen bg-red-300 bg-gradient-to-b from-blue-300 to-green-300`}>
