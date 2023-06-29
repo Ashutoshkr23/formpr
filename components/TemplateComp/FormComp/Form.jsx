@@ -402,9 +402,9 @@ function Form({ cuuid }) {
               />
             )}
             <div className="flex">
-              <button className={`h-10 w-40 font-bold rounded-md ${step === 0 ? 'bg-white text-black border' : 'bg-black text-white'}`}onClick={handlePrevious}>Previous</button>
+              <button className={`h-10 w-28 sm:w-40 font-bold rounded-md ${step === 0 ? 'bg-white text-black border' : 'bg-black text-white'}`}onClick={handlePrevious}>Previous</button>
               <button disabled={!completedSteps.includes(step)}
- className={`h-10 w-40 font-bold rounded-md ml-auto ${step === 3 ? 'bg-white hidden text-black border' : 'bg-black text-white'}`} onClick={handleNext}>Next</button>
+ className={`h-10 w-28 sm:w-40 font-bold rounded-md ml-auto ${step === 3 ? 'bg-white hidden text-black border' : 'bg-black text-white mb-8'}`} onClick={handleNext}>Next</button>
             </div>
 
           </div>

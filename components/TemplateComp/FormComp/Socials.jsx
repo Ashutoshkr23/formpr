@@ -30,7 +30,7 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
 
   
   return (
-    <div  className={`flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto pb-60 sm:h-[460px] bg-black-dim px-4 sm:px-9 pt-4 my-5 ${isMailGiven ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'
+    <div  className={`flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto pb-60 sm:h-auto  bg-black-dim px-4 sm:px-9 pt-4 my-5 ${isMailGiven ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'
       }`}>
       <div className='flex'>
         <p className='font-bold  text-xs'>Social Links<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
@@ -78,9 +78,13 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/linked.png" height={30} width={30} alt='linkedin' />
             </div>
-            <input type="text" id="linkedIn" name="linkedin" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
-                value={inputValues.linkedin}
-              onChange={handleInputChange}/>
+              <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' > <p className='mr-2 text-xs sm:text-base'>url</p> <p className='text-xs sm:text-base text-[#6B7280]'>https://www.linkedin.com/in/</p>
+                <input type="text" id="linkedIn" name="linkedin" 
+                  className='w-20 mobile:w-28'
+                  style={{ border: 'none', outline: 'none', maxWidth: '100%' }}
+                  value={inputValues.linkedin}
+                  onChange={handleInputChange} />
+            </div>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('linkedin')}>
               <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
             </div>
@@ -91,9 +95,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/insta.png" height={30} width={30} alt='insta-icon'/>
             </div>
-            <input type="text" id="Insta" name="instagram" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
-            value={inputValues.instagram}
-              onChange={handleInputChange}/>
+              <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' > <p className='mr-2 text-xs sm:text-base'>url</p> <p className='text-xs sm:text-base text-[#6B7280]'>https://www.instagram.com/</p>
+                <input type="text" id="Insta" name="instagram"
+                  style={{ border: 'none', outline: 'none' }}
+                  className='w-20 mobile:w-28 sm:w-auto'
+                  value={inputValues.instagram}
+                  onChange={handleInputChange} /></div>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('instagram')}>
               <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
             </div>
@@ -105,9 +112,13 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/facebook.png" height={30} width={30} alt='fb-icon' />
             </div>
-            <input type="text" id="facebook" name="facebook" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
-            value={inputValues.facebook}
-              onChange={handleInputChange}/>
+            <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' > <p className='mr-2 text-xs sm:text-base'>url</p> <p className='text-xs sm:text-base text-[#6B7280]'>https://www.facebook.com/</p>
+                <input type="text" id="facebook" name="facebook"
+                  style={{ border: 'none', outline: 'none' }}
+                  className='w-20 mobile:w-28 sm:w-auto'
+                  value={inputValues.facebook}
+                  onChange={handleInputChange} /></div>
+
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('facebook')}>
               <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
             </div>
@@ -119,9 +130,13 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/Youtube.png" height={30} width={30} alt='youtube-icon' />
             </div>
-            <input type="text" id="youtube" name="youtube" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
-            value={inputValues.youtube}
-              onChange={handleInputChange}/>
+            <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' > <p className='mr-2 text-xs sm:text-base'>url</p> <p className='text-xs sm:text-base text-[#6B7280]'>https://www.youtube.com/</p>
+                <input type="text" id="youtube" name="youtube"
+                  style={{ border: 'none', outline: 'none' }}
+                  className='w-20 mobile:w-28 sm:w-auto'
+                  value={inputValues.youtube}
+                  onChange={handleInputChange} /></div>
+
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('youtube')}>
               <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
             </div>
@@ -133,9 +148,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/Twitter.png" height={30} width={30} alt='twitter-icon' />
             </div>
-            <input type="text" id="Twitter" name="twitter" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
-            value={inputValues.twitter}
-              onChange={handleInputChange}/>
+            <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' > <p className='mr-2 text-xs sm:text-base'>url</p> <p className='text-xs sm:text-base text-[#6B7280]'>https://www.twitter.com/</p>
+                <input type="text" id="Twitter" name="twitter"
+                  style={{ border: 'none', outline: 'none' }}
+                  className='w-20 mobile:w-28 sm:w-auto'
+                  value={inputValues.twitter}
+                  onChange={handleInputChange} /></div>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('twitter')}>
               <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
             </div>
@@ -147,9 +165,13 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             <div className='h-[30px] w-[30px]'>
               <Image src="/assets/images/social/folder1/Reddit.png" height={30} width={30} alt='reddit-icon' />
             </div>
-            <input type="text" id="Reddit" name="reddit" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
-            value={inputValues.reddit}
-              onChange={handleInputChange}/>
+            <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' > <p className='mr-2 text-xs sm:text-base'>url</p> <p className='text-xs sm:text-base text-[#6B7280]'>https://www.reddit.com/user/</p>
+                <input type="text" id="Reddit" name="reddit"
+                  style={{ border: 'none', outline: 'none' }}
+                  className='w-20 mobile:w-28 sm:w-auto'
+                  value={inputValues.reddit}
+                  onChange={handleInputChange} /></div>
+            
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('reddit')}>
               <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
             </div>
@@ -161,9 +183,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
               <div className='h-[30px] w-[30px]'>
                 <Image src="/assets/images/social/folder1/Behance.png" height={30} width={30} alt='behance-icon' />
               </div>
-              <input type="text" id="Behance" name="behance" className='bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow border-dim-gray rounded-md'  
-              value={inputValues.behance}
-              onChange={handleInputChange}/>
+              <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' > <p className='mr-2 text-xs sm:text-base'>url</p> <p className='text-xs sm:text-base text-[#6B7280]'>https://www.behance.net/</p>
+                <input type="text" id="Behance" name="behance"
+                  style={{ border: 'none', outline: 'none' }}
+                  className='w-20 mobile:w-28 sm:w-auto'
+                  value={inputValues.behance}
+                  onChange={handleInputChange} /></div>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('behance')}>
                 <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
               </div>

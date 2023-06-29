@@ -111,6 +111,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
         }
     }, [detailsFilled]);
 
+
     return (
         <div className={`flex flex-grow  rounded-[10px] drop-shadow-white flex-col h-auto pb-5  md:h-[578px] bg-black-dim px-4 md:px-9 pt-4 mb-4 ${detailsFilled ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'
             }`}>
@@ -202,7 +203,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                             </label>
 
                         </div>
-                        <div className='flex flex-col '>
+                        <div className='flex flex-col mt-5'>
                             <label for="Phone Number" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!phoneNumber ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} ><p className=' -mt-3 text-xs leading-[186%] bg-white w-24 pl-1'>Phone Number</p>
                                 <input type="text" pattern="[0-9]*"
                                     inputMode="numeric" value={phoneNumber} id="Phone Number" name="Phone Number" required onChange={handlePhoneNumberChange} style={{ border: 'none', outline: 'none' }} />
