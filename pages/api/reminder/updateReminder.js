@@ -11,8 +11,10 @@ export default async function handler(req, res) {
         const { itemID, userName, userContactNumber, userCustomMessage, formattedDateTime, reminderPlatform, enableReminder, disableReminder } = req.body;
         const objectLength = Object.keys(req.body).length;
 
+        console.log(req.body);
+
         if (objectLength === 2 && disableReminder === false) {
-            const getSendRemidnerBooleanValue = await setRemainderModel.findOneAndUpdate({ _id: itemID });
+            const getSendRemidnerBooleanValue = await setRemainderModel.findOne({ _id: itemID });
             const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { sendReminder: !getSendRemidnerBooleanValue.sendReminder }, { new: true });
             return res.json({
                 success: true,

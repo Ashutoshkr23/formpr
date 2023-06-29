@@ -65,7 +65,6 @@ const Profile = () => {
     const sendDataToAPI = { userEmail }
 
     const gettingUserRemainder = await axios.post('/api/getRemainder', sendDataToAPI);
-    console.log(gettingUserRemainder.data);
 
     if (gettingUserRemainder.data.success === false) {
       setshowHidePage(false);
@@ -107,11 +106,11 @@ const Profile = () => {
 
   const [reminderID, setreminderID] = useState('')
 
-  const [enableDisableBackgroundCSS, setenableDisableBackgroundCSS] = useState('h-screen blur-none pointer-events-auto')
+  const [enableDisableBackgroundCSS, setenableDisableBackgroundCSS] = useState('h-fit blur-none pointer-events-auto')
 
   const updateAUserDetails = async (idOfTheItem) => {
-    if (enableDisableBackgroundCSS === 'h-screen blur-none pointer-events-auto') {
-      setenableDisableBackgroundCSS('h-screen blur-sm pointer-events-none')
+    if (enableDisableBackgroundCSS === 'h-fit blur-none pointer-events-auto') {
+      setenableDisableBackgroundCSS('h-fit blur-sm pointer-events-none')
     }
 
     setgetUserRemaindersCalled(!getUserRemaindersCalled);
@@ -127,9 +126,9 @@ const Profile = () => {
       setuserCustomMessage(data.customMessage);
     }
 
-    if (enableDisableBackgroundCSS === 'h-screen blur-sm pointer-events-none') {
+    if (enableDisableBackgroundCSS === 'h-fit blur-sm pointer-events-none') {
       getUserRemainders();
-      setenableDisableBackgroundCSS('h-screen blur-none pointer-events-auto')
+      setenableDisableBackgroundCSS('h-fit blur-none pointer-events-auto')
     }
   };
 
@@ -137,8 +136,8 @@ const Profile = () => {
 
   const updateUser = async () => {
 
-    if (enableDisableBackgroundCSS === 'h-screen blur-none pointer-events-auto') {
-      setenableDisableBackgroundCSS('h-screen blur-sm pointer-events-none')
+    if (enableDisableBackgroundCSS === 'h-fit blur-none pointer-events-auto') {
+      setenableDisableBackgroundCSS('h-fit blur-sm pointer-events-none')
     }
 
     const itemID = reminderID;
@@ -151,8 +150,8 @@ const Profile = () => {
     seteditUser(!editUser)
     getUserRemainders();
 
-    if (enableDisableBackgroundCSS === 'h-screen blur-sm pointer-events-none') {
-      setenableDisableBackgroundCSS('h-screen blur-none pointer-events-auto')
+    if (enableDisableBackgroundCSS === 'h-fit blur-sm pointer-events-none') {
+      setenableDisableBackgroundCSS('h-fit blur-none pointer-events-auto')
     }
   };
 
@@ -229,14 +228,14 @@ const Profile = () => {
   };
 
   async function editUserAccountNameBox() {
-    if (enableDisableBackgroundCSS === 'h-screen blur-none pointer-events-auto') {
-      setenableDisableBackgroundCSS('h-screen blur-sm pointer-events-none')
+    if (enableDisableBackgroundCSS === 'h-fit blur-none pointer-events-auto') {
+      setenableDisableBackgroundCSS('h-fit blur-sm pointer-events-none')
     }
 
     seteditUserAccountName(!editUserAccountName)
 
-    if (enableDisableBackgroundCSS === 'h-screen blur-sm pointer-events-none') {
-      setenableDisableBackgroundCSS('h-screen blur-none pointer-events-auto')
+    if (enableDisableBackgroundCSS === 'h-fit blur-sm pointer-events-none') {
+      setenableDisableBackgroundCSS('h-fit blur-none pointer-events-auto')
     }
   }
 
@@ -251,8 +250,8 @@ const Profile = () => {
       getUserData()
     }
 
-    if (enableDisableBackgroundCSS === 'h-screen blur-sm pointer-events-none') {
-      setenableDisableBackgroundCSS('h-screen blur-none pointer-events-auto')
+    if (enableDisableBackgroundCSS === 'h-fit blur-sm pointer-events-none') {
+      setenableDisableBackgroundCSS('h-fit blur-none pointer-events-auto')
     }
   }
 
@@ -266,7 +265,6 @@ const Profile = () => {
     const userEmail = await getUserSessionEmail();
     const data = { userEmail, revertOnOffValue }
     const response = await axios.post('/api/profilePage/onOffShareContacts', data)
-    console.log(response);
   }
 
   const [enabledAllowContactsTo, setEnabledAllowContactsTo] = useState(false);
@@ -275,7 +273,6 @@ const Profile = () => {
     const userEmail = await getUserSessionEmail();
     const data = { userEmail }
     const response = await axios.post('/api/profilePage/onOffShareContacts', data)
-    console.log(response);
     if (response.data.success === true) {
       const shareContactsValue = response.data.getUserSharingDetails.shareContacts;
       setonOffShareContacts(shareContactsValue)
@@ -288,8 +285,8 @@ const Profile = () => {
   const [asdf, setasdf] = useState(false)
 
   async function enableThereminder(idOfTheItem) {
-    if (enableDisableBackgroundCSS === 'h-screen blur-none pointer-events-auto') {
-      setenableDisableBackgroundCSS('h-screen blur-sm pointer-events-none')
+    if (enableDisableBackgroundCSS === 'h-fit blur-none pointer-events-auto') {
+      setenableDisableBackgroundCSS('h-fit blur-sm pointer-events-none')
     }
 
     seteditingReminder(!editingReminder)
@@ -303,16 +300,15 @@ const Profile = () => {
       setuserName(data.name);
       setuserContactNumber(data.contactNumber);
       setuserCustomMessage(data.customMessage);
-      console.log(data.customDate);
       if (data.customDate.length !== 0) {
         const specificDate = new Date(data.customDate);
-        setSelectedDate(specificDate);
-        setSelectedTime(specificDate);
+        // setSelectedDate(specificDate);
+        // setSelectedTime(specificDate);
       }
     }
 
-    if (enableDisableBackgroundCSS === 'h-screen blur-sm pointer-events-none') {
-      setenableDisableBackgroundCSS('h-screen blur-none pointer-events-auto')
+    if (enableDisableBackgroundCSS === 'h-fit blur-sm pointer-events-none') {
+      setenableDisableBackgroundCSS('h-fit blur-none pointer-events-auto')
     }
 
     setgetUserRemaindersCalled(!getUserRemaindersCalled);
@@ -320,7 +316,6 @@ const Profile = () => {
   }
 
   async function disableThereminder(idOfTheItem) {
-    console.log(idOfTheItem);
     const itemID = idOfTheItem;
     const disableReminder = false;
     const data = { itemID, disableReminder }
@@ -366,7 +361,6 @@ const Profile = () => {
 
     const itemID = reminderID;
     const dateTime = new Date(selectedDateTime);
-    console.log(dateTime);
     const formattedDateTime = dateTime.toISOString().slice(0, -5) + "+00:00";
     const reminderPlatform = "Whatsapp"
     const enableReminder = true;
@@ -379,8 +373,8 @@ const Profile = () => {
     setSelectedDate(null)
     setSelectedTime(null)
 
-    if (enableDisableBackgroundCSS === 'h-screen blur-sm pointer-events-none') {
-      setenableDisableBackgroundCSS('h-screen blur-none pointer-events-auto')
+    if (enableDisableBackgroundCSS === 'h-fit blur-sm pointer-events-none') {
+      setenableDisableBackgroundCSS('h-fit blur-none pointer-events-auto')
       seteditingReminder(!editingReminder)
     }
   }
@@ -440,7 +434,7 @@ const Profile = () => {
           </div>
 
           {/* For Desktop */}
-          <div className='max-w-[1208px] mx-auto mt-8 lg:block hidden'>
+          <div className='max-w-[1208px] mx-auto mt-8 lg:block hidden sticky top-2 z-50'>
             <div className='flex justify-between bg-white drop-shadow-xl rounded-xl xl:mx-0 mx-2'>
               <div className='flex font-bold uppercase text-sm gap-10'>
                 <div className={`whitespace-nowrap m-auto px-6 rounded-xl py-3 cursor-pointer ${activeIndex === 0 ? 'border' : 'text-[#686A6C]'}`} onClick={() => { handleClick(0); refreshTab(); }}>
@@ -464,7 +458,7 @@ const Profile = () => {
           </div>
 
           {/* For Tablet & Mobile */}
-          <div className='max-w-[1208px] mx-auto mt-8 lg:hidden block space-y-4'>
+          <div className='max-w-[1208px] mx-auto mt-8 lg:hidden block space-y-4 sticky top-2 z-50'>
             <div className='flex justify-between bg-white drop-shadow-xl rounded-xl xl:mx-0 mx-2 capitalize text-sm font-bold py-4'>
               <div className='flex w-full justify-around'>
                 <div className='flex pointer-events-none'><SortBy /></div>
@@ -473,14 +467,14 @@ const Profile = () => {
               <div className='flex'><SearchByName onSearch={handleSearch} /></div>
             </div>
             <div className='flex justify-between bg-white drop-shadow-xl rounded-xl xl:mx-0 mx-2 capitalize text-sm font-bold'>
-              <div className={`text-center sm:px-6 px-2 rounded-xl py-3 cursor-pointer ${activeIndex === 0 ? 'border' : 'text-[#686A6C]'}`} onClick={() => handleClick(0)}>
+              <div className={`text-center sm:px-6 px-2 rounded-xl py-3 cursor-pointer ${activeIndex === 0 ? 'border' : 'text-[#686A6C]'}`} onClick={() => { handleClick(0); refreshTab(); }}>
                 my contacts
               </div>
-              <div className={`text-center sm:px-6 px-2 rounded-xl py-3 cursor-pointer ${activeIndex === 1 ? 'border' : 'text-[#686A6C]'}`} onClick={() => handleClick(1)}>
+              <div className={`text-center sm:px-6 px-2 rounded-xl py-3 cursor-pointer ${activeIndex === 1 ? 'border' : 'text-[#686A6C]'}`} onClick={() => { handleClick(1); refreshTab(); }}>
                 active reminder
               </div>
               <div className=''>
-                <div className={`text-center sm:px-6 px-2 rounded-xl py-3 ${activeIndex === 2 ? 'border' : 'text-[#686A6C]'}`} onClick={() => handleClick(2)}>
+                <div className={`text-center sm:px-6 px-2 rounded-xl py-3 ${activeIndex === 2 ? 'border' : 'text-[#686A6C]'}`} onClick={() => { handleClick(2); refreshTab(); }}>
                   reminder history
                 </div>
               </div>
