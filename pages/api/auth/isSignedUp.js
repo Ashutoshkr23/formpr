@@ -2,12 +2,14 @@ import { connectToDatabase } from '../../../lib/mongoose'
 import { v4 as uuidv4 } from 'uuid';
 import UserData from '@/models/UserData';
 import crypto from "crypto"
+import logger from '@/lib/logger';
 
 
 export default async function handler(req, res) {
     try {
         await connectToDatabase();
     } catch (error) {
+        logger.fatal(`Error connecting to database ,Location:isSignedUp ,error:${error}`);
         return res.json({ error: "Connection Failed...!" });
     }
 

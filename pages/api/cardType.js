@@ -1,3 +1,4 @@
+import logger from '@/lib/logger';
 import { connectToDatabase } from '../../lib/mongoose';
 // import Purchase from '@/models/purchase';
 import cardType from '@/models/cardType';
@@ -7,7 +8,7 @@ export default async function handler(req, res) {
     try {
         await connectToDatabase();
         if (req.method === 'POST') {
-            const { amount, currency,cardName } = req.body;
+            const { amount, currency, cardName } = req.body;
 
             //const cardUuid=uuidv4
 
