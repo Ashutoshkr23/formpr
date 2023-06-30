@@ -161,7 +161,7 @@ END:VCARD`;
 
         </div>
         {selectedTemplate === "7" && (
-          <div className="flex mt-4 justify-center">
+          <div className="flex mt-4 justify-center pb-4">
             <p className={`text-[10px] flex justify-center items-center   ${text1}`}> made with love by</p>
             <img
               className="h-[12px] w-[27px] ml-1"
