@@ -1,8 +1,15 @@
+import logger from '@/lib/logger';
 import { connectToDatabase } from '../../../lib/mongoose';
 import setRemainderModel from '../../../models/setRemainderModel';
 import mongoose from 'mongoose';
 
 export default async function handler(req, res) {
+    try {
+        await connectToDatabase();
+    } catch (error) {
+        logger.fatal(`Error connecting to database ,Location:isSignedUp ,error:${error}`);
+        return res.json({ error: "Connection Failed...!" });
+    }
     if (req.method === 'POST') {
         const { id } = req.body;
 
@@ -31,11 +38,13 @@ export default async function handler(req, res) {
                 remainder: getUserRemainder,
             });
         } catch (error) {
-            console.error('Error:', error);
-            return res.json({
-                success: false,
-                message: 'Error occurred',
-            });
+            logger.fatal(`Error verify Reminder ,Location:verifyReminderID ,error:${error}`);
+            res.status(400).json({
+                error: true,
+                message: "Something went wrong!",
+                result: error
+            })
+
         }
     }
 }

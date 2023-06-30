@@ -43,6 +43,7 @@ export default async function handler(req, res) {
                 // Create a new User in the database
                 const newUser = new UserData({ puuid: uuid, email, name, avatar, totalCards: 0, privateKey: hashedPrivateKey, erc20WalletId: data.address });
                 newUser.save()
+                logger.info("New user created successfully")
                 res.status(201).json({
                     error: false,
                     message: "New user created successfully",
@@ -60,6 +61,7 @@ export default async function handler(req, res) {
 
 
         } catch (err) {
+            logger.fatal(`Error in POST method isSignedUp ,Location:isSignedUp ,error:${err}`);
             res.status(404).json({
                 error: true,
                 message: err,
