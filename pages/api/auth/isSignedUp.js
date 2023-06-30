@@ -2,12 +2,14 @@ import { connectToDatabase } from '../../../lib/mongoose'
 import { v4 as uuidv4 } from 'uuid';
 import UserData from '@/models/UserData';
 import crypto from "crypto"
+import logger from '@/lib/logger';
 
 
 export default async function handler(req, res) {
     try {
         await connectToDatabase();
     } catch (error) {
+        logger.fatal(`Error connecting to database ,Location:isSignedUp ,error:${error}`);
         return res.json({ error: "Connection Failed...!" });
     }
 
@@ -41,6 +43,7 @@ export default async function handler(req, res) {
                 // Create a new User in the database
                 const newUser = new UserData({ puuid: uuid, email, name, avatar, totalCards: 0, privateKey: hashedPrivateKey, erc20WalletId: data.address });
                 newUser.save()
+                logger.info("New user created successfully")
                 res.status(201).json({
                     error: false,
                     message: "New user created successfully",
@@ -58,6 +61,7 @@ export default async function handler(req, res) {
 
 
         } catch (err) {
+            logger.fatal(`Error in POST method isSignedUp ,Location:isSignedUp ,error:${err}`);
             res.status(404).json({
                 error: true,
                 message: err,
