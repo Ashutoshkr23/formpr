@@ -63,13 +63,14 @@ END:VCARD`;
   return (
     <div className="flex justify-center w-full  md:w-[375px] mx-auto  h-auto">
       <div
-        className={`relative mx-auto min-h-screen md:min-h-[820px] md:h-[820px] w-full md:w-[375px]  md:rounded-[30px] pt-[161px] ${selectedTemplate === "7" ? 'px-3' : ''}`}
+        className={`relative mx-auto h-auto w-full md:w-[375px]  md:rounded-[30px] pt-[161px] ${selectedTemplate === "7" ? 'px-3' : ''}`}
         style={{
-          backgroundImage: `url(${gradient1})`,
+          backgroundImage: selectedTemplate === "7" ? `url(${'/assets/images/templateimg/BGCover14.png'})` : `url(${gradient1})`,
           backgroundSize: selectedTemplate === "7" ? "100% 100%" : "100% auto",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top",
         }}
+
       >
         {selectedTemplate === "7" && (
           <div className="absolute top-6 ">
