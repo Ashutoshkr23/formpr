@@ -13,6 +13,7 @@ const Template = ({
   text1,
   text2,
   text3,
+  selectedTemplate,
   btn,
   btntext,
   type,
@@ -62,14 +63,20 @@ END:VCARD`;
   return (
     <div className="flex justify-center w-full  md:w-[375px] mx-auto  h-auto">
       <div
-        className={`relative mx-auto min-h-screen md:min-h-[820px] md:h-[820px] w-full md:w-[375px]  md:rounded-[30px] pt-[161px]`}
+        className={`relative mx-auto min-h-screen md:min-h-[820px] md:h-[820px] w-full md:w-[375px]  md:rounded-[30px] pt-[161px] ${selectedTemplate === "7" ? 'px-3' : ''}`}
         style={{
           backgroundImage: `url(${gradient1})`,
-          backgroundSize: "100% auto",
+          backgroundSize: selectedTemplate === "7" ? "100% 100%" : "100% auto",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top",
         }}
       >
+        {selectedTemplate === "7" && (
+          <div className="absolute top-6 ">
+            <Image height={36} width={36} src="/assets/images/templateimg/Rotary-Logo.png" alt="Template 7 Image" />
+          </div>
+        )}
+
         {/*
       <Image src="/assets/images/templateimg/Button.png" height={80} width={10} className="absolute top-48 -right-3.5" />
         <Image src="/assets/images/templateimg/PowerButoon.png" height={40} width={10} className="absolute top-28 -left-3.5" />
@@ -77,8 +84,7 @@ END:VCARD`;
         <Image src="/assets/images/templateimg/VolumeButton.png" height={60} width={10} className="absolute top-64 -left-3.5" />*/}
 
         <div
-          className={`${gradient2} relative w-full  md:max-w-[375px] mx-auto h-full  md:rounded-[20px] `}
-        >
+          className={`${gradient2} relative w-full   md:max-w-[375px] mx-auto   md:rounded-[20px] ${selectedTemplate === "7" ? '' : 'h-full'}`}>
           <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
             <ProfileImg profileImg={profileImg} />
           </div>
@@ -90,8 +96,8 @@ END:VCARD`;
               value={fname || "Andrew Darren"}
               placeholder={fname || "Andrew Darren"}
 
-              //   value={inputValue}
-              //   onChange={handleChange}
+            //   value={inputValue}
+            //   onChange={handleChange}
             />
           </div>
           <div className="flex justify-center mt-4 mb-2 font-semibold text-[16px]">
@@ -100,7 +106,7 @@ END:VCARD`;
               type="text"
               placeholder="Design Lead"
               value={designation}
-              //   onChange={handleChange}
+            //   onChange={handleChange}
             />
           </div>
           <div>
@@ -135,24 +141,35 @@ END:VCARD`;
           <div className="flex justify-center">
             <button
               name="save contact card"
-              className={`${btn} border-2 mx-6 text-[20px] ${btntext}  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7`}
+              className={`${btn}  mx-6 text-[20px] ${btntext}  font-extrabold h-[50px] w-[304px] rounded-[14px] mt-7 mb-6`}
               onClick={downloadVCard}
             >
               SAVE CONTACT
             </button>
           </div>
 
-          <div
-            className={`text-[10px] flex justify-center items-center mt-7 pb-7  ${text1}`}
-          >
-            <p> made with love by</p>
+
+          <div className={`${selectedTemplate === "7" ? 'hidden' : ''}`}>
+           
+              <p className={`text-[10px] flex justify-center items-center mt-7 pb-4  ${text1}`}> made with love by</p>
             <img
               className="h-[12px] w-[27px] ml-1"
               src={`/assets/images/display/${loop}`}
               alt="logo"
             />
           </div>
+
         </div>
+        {selectedTemplate === "7" && (
+          <div className="flex mt-4 justify-center">
+            <p className={`text-[10px] flex justify-center items-center   ${text1}`}> made with love by</p>
+            <img
+              className="h-[12px] w-[27px] ml-1"
+              src={`/assets/images/display/${loop}`}
+              alt="logo"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

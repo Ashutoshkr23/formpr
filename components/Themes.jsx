@@ -95,7 +95,22 @@ const themes = [
 
 
     },
+    {
+        id: 6,
+        gradient1: "/assets/images/templateimg/BGCover8.png",
+        gradient2: 'bg-black',
+        text1: 'text-white',
+        text2: 'text-[#FDFF96]',
+        text3: 'text-white',
+        btn: 'bg-black',
+        btntext: 'text-white',
+        border: 'border-0',
+        loop: '/loopwh.svg',
+        profileimg: '/assets/images/templateimg/andrew.png',
+        type: 'folder5'
 
+
+    },
 ];
 
 export default themes;

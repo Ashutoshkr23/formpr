@@ -160,6 +160,8 @@ function Form({ cuuid }) {
       setCover(themes[5].gradient1);
     } else if (selectedTemplate === "6") {
       setCover(themes[6].gradient1);
+    } else if (selectedTemplate === "7") {
+      setCover(themes[7].gradient1);
     } else {
       setCover(themes[0].gradient1); // Set a default value if needed
     }

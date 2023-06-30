@@ -111,6 +111,22 @@ const themes = [
 
 
     },
+    {
+        id: 7,
+        gradient1: "/assets/images/templateimg/BGCover14.png",
+        gradient2: 'bg-gradient-to-b from-white via-white to-white-65',
+        text1: 'text-black',
+        text2: 'text-[#53727D]',
+        text3: 'text-white',
+        btn: 'bg-black',
+        btntext: 'text-white',
+        border: 'border-0',
+        loop: '/loopwh.svg',
+        profileimg: '/assets/images/templateimg/andrew.png',
+        type: 'folder1'
+
+
+    },
 
 ];
 

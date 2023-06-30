@@ -124,6 +124,7 @@ const Contact = () => {
             website={contactData.companylink}
             mobile={contactData.mobileNumber}
             fname={contactData.name}
+            selectedTemplate={contactData.selectedTemplate}
             designation={contactData.role}
             behance={contactData.behance || ""}
             facebook={contactData.facebook || ""}
