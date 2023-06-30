@@ -4,12 +4,12 @@ import UserData from '@/models/UserData';
 import card from '@/models/card';
 
 export default async function handler(req, res) {
-    try {
-        await connectToDatabase();
-    } catch (error) {
-        logger.fatal(`Error connecting to database ,Location:isSignedUp ,error:${error}`);
-        return res.json({ error: "Connection Failed...!" });
-    }
+    // try {
+    //     await connectToDatabase();
+    // } catch (error) {
+    //     logger.fatal(`Error connecting to database ,Location:isSignedUp ,error:${error}`);
+    //     return res.json({ error: "Connection Failed...!" });
+    // }
 
 
     if (req.method === 'POST') {
