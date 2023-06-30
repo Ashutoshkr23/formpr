@@ -1,4 +1,4 @@
-import logger from '@/lib/logger';
+// import logger from '@/lib/logger';
 import { connectToDatabase } from '@/lib/mongoose';
 import UserData from '@/models/UserData';
 import card from '@/models/card';

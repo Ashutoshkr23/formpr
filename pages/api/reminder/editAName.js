@@ -2,7 +2,7 @@ import moment from 'moment/moment';
 import { connectToDatabase } from '../../../lib/mongoose';
 import setRemainderModel from '../../../models/setRemainderModel';
 import mongoose from 'mongoose';
-import logger from '@/lib/logger';
+// import logger from '@/lib/logger';
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
