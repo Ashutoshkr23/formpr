@@ -84,7 +84,7 @@ END:VCARD`;
         <Image src="/assets/images/templateimg/VolumeButton.png" height={60} width={10} className="absolute top-64 -left-3.5" />*/}
 
         <div
-          className={`${gradient2} relative w-full   md:max-w-[375px] mx-auto   md:rounded-[20px] ${selectedTemplate === "7" ? '' : 'h-full'}`}>
+          className={`${gradient2} relative w-full   md:max-w-[375px] mx-auto rounded-2xl  md:rounded-[20px] ${selectedTemplate === "7" ? '' : 'h-full'}`}>
           <div className="-top-[79px] inset-0 mx-auto absolute h-[100px] w-[100px] ">
             <ProfileImg profileImg={profileImg} />
           </div>
