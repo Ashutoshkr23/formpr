@@ -52,7 +52,7 @@ const handleClick = (card) => {
 
   // console.log(allCards)
   return (
-    <div className="w-full h-full lg:px-36 py-4">
+    <div className="w-full h-full lg:px-4 xl:px-0 max-w-[1208px] mx-auto py-4">
       <ToastContainer/>
       <h3 className="text-4xl font-bold  text-black mt-8 text-center xl:text-left">Manage Cards</h3>
       
@@ -281,14 +281,18 @@ const handleClick = (card) => {
             })}
           </div>
         ) : (
-          <div>
-            <p className='text-[#525252] mx-auto text-base md:text-xl text-center mt-20  w-[300px] md:w-[534px]'>You haven’t purchased any cards yet.
-              Please go to the store to purchase to view your cards.</p>
-            <div className='relative flex justify-center mx-auto mt-20 mb-20 h-72 w-72 md:h-[345px] md:w-[342px]'>
-              <Image fill={true} src={`/assets/images/display/EmptyBox.png`}/>
-            </div>
-          </div>
           
+          <div>
+            <div className="px-4 md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto">
+              <p className='text-[#525252] mx-auto text-base md:text-xl text-center mt-20  w-[300px] md:w-[534px]'>You haven’t purchased any cards yet.
+                Please go to the store to purchase to view your cards.</p>
+              <div className='relative flex justify-center mx-auto mb-20 h-80 w-80 md:h-[515px] md:w-[515px]'>
+                <Image fill={true} src={`/assets/images/display/Empty.png`} />
+                <Link href={"/store"} className="absolute top-6 md:top-12  inset-x-0 mx-auto w-28 md:w-36 rounded-md bg-black text-white px-2 h-8 md:h-10">
+                  <div className="mx-auto my-1 md:my-2 text-center">Go to Store</div></Link>
+              </div>
+            </div>
+          </div>  
         )}
     </div>
   );
