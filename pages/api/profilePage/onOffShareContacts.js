@@ -31,7 +31,7 @@ export default async function handler(req, res) {
                 })
             }
         } catch (error) {
-            logger.fatal(`Error on onOffShareContact ,Location:onOffShareContact ,error:${error}`);
+            // logger.fatal(`Error on onOffShareContact ,Location:onOffShareContact ,error:${error}`);
             res.status(400).json({
                 error: true,
                 message: "Something went wrong!",

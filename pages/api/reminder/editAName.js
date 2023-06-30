@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     try {
         await connectToDatabase();
     } catch (error) {
-        logger.fatal(`Error connecting to database ,Location:isSignedUp ,error:${error}`);
+        // logger.fatal(`Error connecting to database ,Location:isSignedUp ,error:${error}`);
         return res.json({ error: "Connection Failed...!" });
     }
 
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
                 updatedReminder: updatedReminder
             });
         } catch (error) {
-            logger.fatal(`Error on editAName ,Location:editAName ,error:${error}`);
+            // logger.fatal(`Error on editAName ,Location:editAName ,error:${error}`);
             res.status(400).json({
                 error: true,
                 message: "Something went wrong!",

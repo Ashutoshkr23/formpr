@@ -27,7 +27,7 @@ export default async function handler(req, res) {
             })
 
         } catch (error) {
-            logger.fatal(`Error on getUserDetails post method ,Location:getUserDetails ,error:${error}`);
+            // logger.fatal(`Error on getUserDetails post method ,Location:getUserDetails ,error:${error}`);
             res.status(400).json({
                 error: true,
                 message: "Something went wrong!",

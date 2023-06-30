@@ -24,7 +24,7 @@ export default async function handler(req, res) {
                 getUserDetails: getUserDetails
             })
         } catch (error) {
-            logger.fatal(`Error changes user detais ,Location:changeUserDetails ,error:${error}`);
+            // logger.fatal(`Error changes user detais ,Location:changeUserDetails ,error:${error}`);
             res.status(400).json({
                 error: true,
                 message: "Something went wrong"
