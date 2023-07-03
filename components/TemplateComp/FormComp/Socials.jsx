@@ -45,7 +45,7 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
 
   
   return (
-    <div  className={`flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto pb-60 sm:h-auto  bg-black-dim px-4 sm:px-9 pt-4 my-5 ${isMailGiven ? 'border border-3 border-[#96FFAD] bg-white' : 'bg-white'
+    <div  className={`flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto pb-20 sm:h-auto  bg-black-dim px-4 sm:px-9 pt-4 my-5 ${isMailGiven ? 'border border-3 border-[#96FFAD] bg-white' : 'bg-white'
       }`}>
       <div className='flex'>
         <p className='font-bold  text-xs'>Social Links<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
@@ -238,7 +238,7 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
           <div className='mt-12 relative w-20 - '>
           <div className=' h-8 sm:h-10 w-28  z-50   text-xs bg-black text-white border-1 flex justify-center items-center rounded-md' onClick={handleButtonClick}>Add Link</div>
             {showMenu && (
-            <div className='absolute flex flex-col bg-white w-40 -right-48 -top-10 px-4 space-y-4 py-4 border rounded-md'>
+            <div className='absolute flex flex-col bg-white w-40 left-0 bottom-10 px-4 space-y-4 py-4 border rounded-md'>
               {!visibleInputs.includes('whatsapp') && (
                 <button onClick={() => handleToggle('whatsapp')}>Whatsapp</button>)}
               {!visibleInputs.includes('mail') && (
