@@ -17,7 +17,9 @@ export default function OrderHistory() {
 
       if (!response.data.error) {
         setLoading(false);
+        if(response.data.result?.length){
         setOrderHistory(response.data.result);
+        }
       } else {
         setLoading(false);
       }
