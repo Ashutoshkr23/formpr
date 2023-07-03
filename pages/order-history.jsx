@@ -38,7 +38,9 @@ export default function OrderHistory() {
       <div className="w-full  min-h-screen py-5">
         <CartNav />
         <div className="px-4 md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto">
-          <h2 className="font-bold">Order History</h2>
+        <p className="text-4xl font-bold  text-black mt-20 mb-8">
+          Order history
+        </p>
           <div
             className="grid grid-cols-6 gap-4 bg-white rounded-[10px] py-2 text-center h-[40px] mt-10"
             style={{ boxShadow: "0px 10px 15px rgba(0, 25, 38, 0.25)" }}
