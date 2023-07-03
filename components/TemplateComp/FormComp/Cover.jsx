@@ -55,7 +55,7 @@ function Cover({ cover, setCover, setCompletedSteps }) {
     const Cover12 = "/assets/images/templateimg/BGCover12.png"
     const Cover13 = "/assets/images/templateimg/BGCover13.png"
     return (
-        <div className={`flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto  px-4 sm:px-9 py-8 my-5 ${coverSelected ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'
+        <div className={`flex flex-grow rounded-[10px] drop-shadow-white flex-col h-auto  px-4 sm:px-9 py-8 my-5 ${coverSelected ? 'border border-3 border-[#96FFAD] bg-white' : 'bg-white'
             }`}>
             <div className='flex mb-4'>
                 <p className='font-bold  text-xs'>COVER<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>

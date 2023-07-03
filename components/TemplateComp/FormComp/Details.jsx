@@ -113,7 +113,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
 
 
     return (
-        <div className={`flex flex-grow  rounded-[10px] drop-shadow-white flex-col h-auto pb-5  md:h-[578px] bg-black-dim px-4 md:px-9 pt-4 mb-4 ${detailsFilled ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'
+        <div className={`flex flex-grow  rounded-[10px] drop-shadow-white flex-col h-auto pb-5  md:h-[578px] bg-black-dim px-4 md:px-9 pt-4 mb-4 ${detailsFilled ? 'border border-3 border-[#96FFAD] bg-white' : 'bg-white'
             }`}>
             <div className='flex'>
                 <p className='font-bold  text-xs'>REQUIRED DETAILS<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>

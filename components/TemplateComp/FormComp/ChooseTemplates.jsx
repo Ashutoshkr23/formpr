@@ -18,7 +18,7 @@ function ChooseTemplates({ selectedTemplate, completedSteps, setSelectedTemplate
 
   console.log(selectedTemplate)
   return (
-    <div className={`flex flex-grow drop-shadow-white flex-col bg-white h-auto pb-6 rounded-[10px]  mb-5  px-4 md:pl-9 pt-4 ${isTemplateSelected ? 'border border-3 border-[#96FFAD] bg-gradient-to-b from-white to-[#E6FDFF]' : 'bg-white'
+    <div className={`flex flex-grow drop-shadow-white flex-col bg-white h-auto pb-6 rounded-[10px]  mb-5  px-4 md:pl-9 pt-4 ${isTemplateSelected ? 'border border-3 border-[#96FFAD] bg-white' : 'bg-white'
       }`}>
       <div className='flex'>
         <p className='font-bold  text-xs'>TEMPLATE<span className='text-[#F66F6f] text-base ml-0.5 '>*</span></p>
