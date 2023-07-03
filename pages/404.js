@@ -7,7 +7,7 @@ function Custom404() {
         <div>
             <CartNav/>
             <div className='relative w-[302px] md:w-[694px] h-[173px] md:h-[394px] mt-20 mx-auto'>
-                <Image fill={true} src={`/assets/images/Error.png`}/>
+                <Image fill={true} src={`/assets/images/Error.png`} alt='error logo'/>
             </div>
         </div>
     );
