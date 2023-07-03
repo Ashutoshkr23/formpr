@@ -70,7 +70,7 @@ const handleClick = (card) => {
               return (
                 <div  key={card.cuuid} className=' flex place-content-center min-[1411px]:block'>
                   <div
-                    className="w-[320px] md:w-[566px] md:pr-5 pb-6 relative h-auto rounded-[10px] pl-4 bg-white flex-col sm:flex-row flex justify-evenly "
+                    className="w-[320px] md:w-[566px] md:pr-5 pb-6 relative min-h-[182px]  rounded-[10px] pl-4 bg-white flex-col sm:flex-row flex justify-evenly "
                     style={{ boxShadow: "0px 10px 15px 0 rgba(0,25,38,0.25)" }}
                   >
                     <div className='flex gap-4'>
@@ -79,7 +79,7 @@ const handleClick = (card) => {
                           <>
                             <div className="flex mt-8 lg:mt-0">
                               <div className={`card w-[180px] h-[110px]`}>
-                                <div className={`card`}>
+                                {!card.enterprise ? <div className={`card`}>
                                   <div
                                     className={` card-inner`}
                                   >
@@ -140,7 +140,9 @@ const handleClick = (card) => {
                                       </div>
                                     </div>
                                   </div>
-                                </div>
+                                </div>:<div className={`card w-[180px] h-[110px]`}>
+                                  <Image src={"/assets/images/enterpriseCard.png"} alt ="card" fill={true} quality={100} /> 
+                                  </div>}
 
                               </div>
                             </div>
@@ -222,18 +224,18 @@ const handleClick = (card) => {
                             Full Name
                           </span>
                           <br />
-                          <p className="text-xs font-medium text-left text-black mt-[2px]">
+                          <span className="text-xs font-medium text-left text-black mt-[2px] block">
                             {card.cardName}
-                          </p>
+                          </span>
                         </p>
                         <p className="font-medium text-left text-black mt-3">
                           <span className="text-xs font-medium text-left text-black">
                             Company Name
                           </span>
 
-                          <p className="text-xs font-medium text-left text-black ">
+                          <span className="text-xs font-medium text-left text-black block ">
                             {card.companyName}
-                          </p>
+                          </span>
                         </p>
                         <div className="flex border border-dashed mt-2 border-[#7D9695] ml-5 px-2 rounded-xl">
                           <p className="w-32 text-[#7D9695] text-[10px]">
