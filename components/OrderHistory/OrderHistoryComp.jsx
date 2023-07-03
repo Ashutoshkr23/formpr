@@ -10,9 +10,9 @@ const OrderHistoryComp = ({ orderHistory }) => {
     return formattedDate;
   }
 
-  const countCardTypes = ()=>{
+  // const countCardTypes = ()=>{
 
-  }
+  // }
 
   return (
     <div className="px-4 md:px-8 lg:px-4 xl:px-0 max-w-[1208px] mx-auto">
