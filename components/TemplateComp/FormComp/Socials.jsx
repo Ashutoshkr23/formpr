@@ -65,18 +65,20 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
               <div className='h-[30px] w-[30px]'>
                 <Image src="/assets/images/social/folder1/email.png" alt='mail-icon' height={30} width={30} />
               </div>
-              <input
-                type="text"
-                id="mail"
-                name="mail"
-                className={`bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow rounded-md ${!inputValues.mail || !isMailValid ? 'border border-[#F66F6f]' : 'border-dim-gray'
-                  }`}
-                value={inputValues.mail}
-                onChange={handleInputChange}
-              />
-              {!isMailValid && (
-                <div className='text-red-500 text-xs mt-1 ml-1'>Please enter a valid email address.</div>
-              )}
+              <div className='flex flex-grow flex-col'>
+                <input
+                  type="text"
+                  id="mail"
+                  name="mail"
+                  className={`bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow rounded-md ${!inputValues.mail || !isMailValid ? 'border border-[#F66F6f]' : 'border-dim-gray'
+                    }`}
+                  value={inputValues.mail}
+                  onChange={handleInputChange}
+                />
+                {!isMailValid && (
+                  <div className='text-red-500 text-xs mt-1 ml-1'>Please enter a valid email address.</div>
+                )}
+              </div>
               <div className='h-[20px] w-[20px] invisible' onClick={() => handleHide('mail')}>
                 <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
               </div>
@@ -90,20 +92,22 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
               <div className='h-[30px] w-[30px]'>
                 <Image src="/assets/images/social/folder1/watsp.png" alt='whatsapp icon' height={30} width={30} />
               </div>
-              <input
-                type="text"
-                id="whatsapp"
-                name="whatsapp"
-                className={`bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow rounded-md ${!isWhatsAppValid ? 'border border-[#F66F6f]' : 'border-dim-gray'
-                  }`}
-                value={inputValues.whatsapp}
-                onChange={handleInputChange}
-              />
-              {!isWhatsAppValid && (
-                <div className='text-red-500 text-xs mt-1 ml-1'>
-                  Please enter a valid 10-digit phone number.
-                </div>
-              )}
+              <div className='flex flex-grow flex-col'>
+                <input
+                  type="text"
+                  id="whatsapp"
+                  name="whatsapp"
+                  className={`bg-white h-8 sm:h-10 px-5 mt-0.5 border flex flex-grow rounded-md ${!isWhatsAppValid ? 'border border-[#F66F6f]' : 'border-dim-gray'
+                    }`}
+                  value={inputValues.whatsapp}
+                  onChange={handleInputChange}
+                />
+                {!isWhatsAppValid && (
+                  <div className='text-red-500 text-xs mt-1 ml-1'>
+                    Please enter a valid 10-digit phone number.
+                  </div>
+                )}
+              </div>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('whatsapp')}>
                 <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
               </div>
