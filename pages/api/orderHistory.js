@@ -13,7 +13,7 @@ export default async function handler(req, res) {
             if (orderHistory && orderHistory.length > 0) {
                 return res.status(200).json({ error: false, message: 'purchase found', result: orderHistory });
             } else {
-                return res.status(404).json({ error: false, message: 'purchase not found', result: [] });
+                return res.status(200).json({ error: false, message: 'purchase not found', result: [] });
             }
         }
 
@@ -23,6 +23,6 @@ export default async function handler(req, res) {
     }
 
     catch (error) {
-        return res.status(500).json({ message: 'Unable to create purchase', error });
+        return res.status(500).json({error:true, message: 'Unable to create purchase',result: error });
     }
 }
