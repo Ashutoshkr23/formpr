@@ -380,17 +380,20 @@ const Profile = () => {
   }
 
   const [navBarMargin, setnavBarMargin] = useState('mt-3')
+  const [changeMenuZIndex, setchangeMenuZIndex] = useState('z-50')
 
   async function changeNavBarMargin() {
     if (navBarMargin === 'mt-3') {
+      setchangeMenuZIndex("z-0")
       setnavBarMargin('mt-0')
     } else if (navBarMargin === 'mt-0') {
+      setchangeMenuZIndex("z-50")
       setnavBarMargin('mt-3')
     }
   }
 
   return (
-    <div className={`${navBarMargin}`}>
+    <div className={`${navBarMargin} h-[200vh]`}>
       {showHidePage &&
         <div className={`${enableDisableBackgroundCSS}`}>
           <div onClick={changeNavBarMargin}><CartNav /></div>
@@ -400,14 +403,14 @@ const Profile = () => {
               checked={enabledAllowContactsTo}
               onChange={setEnabledAllowContactsTo}
               style={{ background: enabledAllowContactsTo ? 'linear-gradient(91.67deg, #96FFAD 0.94%, #66D3E1 101.73%' : 'white' }}
-              className={`relative inline-flex md:h-[47px] h-[38px] md:w-[94px] w-[85px] shrink-0 rounded-full border-2 border-black transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`} >
+              className={`relative inline-flex md:w-[84px] w-[85px] md:h-[37px] h-[38px] shrink-0 rounded-full border-2 border-black transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`} >
               <span className="sr-only">Use setting</span>
-              <span aria-hidden="true" className={`${enabledAllowContactsTo ? `translate-x-12 bg-black` : 'translate-x-2 bg-white'} mt-1 pointer-events-none inline-block md:h-[34px] h-[25px] md:w-[34px] w-[25px] transform rounded-full border-2 border-black shadow-lg ring-0 transition duration-200 ease-in-out`} />
+              <span aria-hidden="true" className={`${enabledAllowContactsTo ? `translate-x-12 bg-black` : 'translate-x-2 bg-white'} mt-1 pointer-events-none inline-block md:h-[24px] h-[25px] md:w-[24px] w-[25px] transform rounded-full border-2 border-black shadow-lg ring-0 transition duration-200 ease-in-out`} />
             </Switch>
-            <div className='mt-4'>allow contacts to</div>
+            <div className='mt-1 text-sm'>allow contact input</div>
           </div>
 
-          <div className="profile-page max-w-6xl mx-auto md:mt-24 mt-12 xl:pl-0 md:pl-2 pl-0">
+          <div className="profile-page max-w-6xl mx-auto md:mt-0 mt-4 xl:pl-0 md:pl-2 pl-0">
             <div className="profile-section flex md:flex-row flex-col items-center">
               <div className="left-side md:mr-28 mr-0">
                 {userAccountImage.length === 0 &&
@@ -427,14 +430,14 @@ const Profile = () => {
                   </span>
                 </div>
                 <div className="wallet-address capitalize font-bold md:ml-4 ml-0 text-sm md:text-left text-center">wallet address</div>
-                <div className="waeelt-id border py-1 px-4 border-dotted rounded-3xl font-bold my-2 sm:text-base text-xs">{userERC20Wallet}</div>
+                <div className="wallet-id border py-1 px-4 border-dotted rounded-3xl font-bold my-2 sm:text-base text-xs bg-[#C1CFD1]">{userERC20Wallet}</div>
                 <div className="stay-tuned text-[#686A6C] text-xs md:ml-4 ml-0">*Stay tuned for upcoming offers with your wallet address</div>
               </div>
             </div>
           </div>
 
           {/* For Desktop */}
-          <div className='max-w-[1208px] mx-auto mt-8 lg:block hidden sticky top-2 z-50'>
+          <div className='max-w-[1208px] mx-auto mt-8 lg:block hidden sticky top-2 z-10'>
             <div className='flex justify-between bg-white drop-shadow-xl rounded-xl xl:mx-0 mx-2'>
               <div className='flex font-bold uppercase text-sm gap-10'>
                 <div className={`whitespace-nowrap m-auto px-6 rounded-xl py-3 cursor-pointer ${activeIndex === 0 ? 'border' : 'text-[#686A6C]'}`} onClick={() => { handleClick(0); refreshTab(); }}>
@@ -458,7 +461,7 @@ const Profile = () => {
           </div>
 
           {/* For Tablet & Mobile */}
-          <div className='max-w-[1208px] mx-auto mt-8 lg:hidden block space-y-4 sticky top-2 z-50'>
+          <div className={`max-w-[1208px] mx-auto mt-8 lg:hidden block space-y-4 sticky top-2 ${changeMenuZIndex}`}>
             <div className='flex justify-between bg-white drop-shadow-xl rounded-xl xl:mx-0 mx-2 capitalize text-sm font-bold py-4'>
               <div className='flex w-full justify-around'>
                 <div className='flex pointer-events-none'><SortBy /></div>

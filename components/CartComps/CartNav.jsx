@@ -166,7 +166,7 @@ const CartNav = () => {
                   >
                     <div className=" w-full h-full bg-white">
                       <div className="flex flex-col h-full  content-between">
-                        <div className="flex flex-col mx-auto mt-20 justify-center items-center text-center font-oswald tracking-light w-10/12 z-20">
+                        <div className="flex flex-col mx-auto mt-20 justify-center items-center text-center font-oswald tracking-light w-10/12 z-20 h-4/5">
                           <div
                             onClick={() => setIsOpen(!isOpen)}
                             className="nav-link-container  py-2  border-b-2 border-white "
