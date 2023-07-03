@@ -1,4 +1,4 @@
-import logger from '@/lib/logger';
+// import logger from '@/lib/logger';
 import { connectToDatabase } from '../../lib/mongoose';
 // import Purchase from '@/models/purchase';
 import cardType from '@/models/cardType';
@@ -24,6 +24,8 @@ export default async function handler(req, res) {
         else if (req.method === 'GET') {
 
             const cardTypes = await cardType.find()
+            // logger.info('This is an informational log message');
+            // logger.error('This is an informational error message');
             if (cardTypes) {
                 return res.status(200).json({ error: false, message: 'cardType found', result: cardTypes });
             } else {
