@@ -45,7 +45,7 @@ const Contact = () => {
     }
 
     fetchContact();
-  }, [router.query]);
+  }, [slug]);
 
 
   const [userName, setuserName] = useState('');
