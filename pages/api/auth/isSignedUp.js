@@ -10,7 +10,7 @@ export default async function handler(req, res) {
         await connectToDatabase();
     } catch (error) {
         // logger.fatal(`Error connecting to database ,Location:isSignedUp ,error:${error}`);
-        return res.json({ error: "Connection Failed...!" });
+        return res.json({ error:true,message: "Connection Failed...!" });
     }
 
     if (req.method === "GET") {
@@ -24,14 +24,14 @@ export default async function handler(req, res) {
     }
 
     if (req.method === "POST") {
-        if (!req.body) return res.status(422).json({ error: "No data received...!" });
+        if (!req.body) return res.status(422).json({ error:true,message: "No data received...!" });
 
         try {
 
 
             const { email, name, avatar } = req.body
             if (!email) {
-                return res.status(422).json({ error: "Missing required fields." });
+                return res.status(422).json({ error:true,message: "Missing required fields." });
             }
             const checkUser = await UserData.find({ email: email })
             if (!checkUser?.length) {
