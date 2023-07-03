@@ -32,7 +32,7 @@ export default function OrderHistory() {
   return (
     <>
       <div className="w-full  min-h-screen py-5">
-        {!loading ? (
+        {!loading &&  orderHistory.length ? (
            <>
            <CartNav />
           <OrderHistoryComp orderHistory={orderHistory} />
@@ -45,7 +45,7 @@ export default function OrderHistory() {
               <p className='text-[#525252] mx-auto text-base md:text-xl text-center mt-20  w-[300px] md:w-[534px]'>You haven’t ordered anything yet.
                 Please go to the store to purchase to view your order history.</p>
               <div className='relative flex justify-center mx-auto mt-20 mb-20 w-[298px] h-[234px] md:h-[515px] md:w-[656px]'>
-                <Image fill={true} src={`/assets/images/display/No-Order.png`} />
+                <Image fill={true} src={`/assets/images/display/No-Order.png`} alt="icon" />
                 <Link href={"/store"} className="absolute top-6 md:top-12  inset-x-0 mx-auto w-28 md:w-36 rounded-md bg-black text-white px-2 h-8 md:h-10">
                 <div className="mx-auto my-1 md:my-2 text-center">Go to Store</div></Link>
               </div>
