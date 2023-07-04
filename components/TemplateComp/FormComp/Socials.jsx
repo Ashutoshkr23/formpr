@@ -218,6 +218,7 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
             </div>
           </div>
           )}
+
           {visibleInputs.includes('behance') && (
             <div className='flex items-center mt-7 gap-2 flex-wrap'>
               <div className='h-8 sm:h-10 w-28 border text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Behance</div>
@@ -235,6 +236,57 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
               </div>
             </div>
           )}
+          {visibleInputs.includes('skype') && (
+            <div className='flex items-center mt-7 gap-2 flex-wrap'>
+              <div className='h-8 sm:h-10 w-28 border text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Skype </div>
+              <div className='h-[30px] w-[30px]'>
+                <Image src="/assets/images/social/folder1/Skype.png" height={30} width={30} alt='linkedin' />
+              </div>
+              <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' > <p className='mr-2 text-xs sm:text-base'>url</p>
+                <input type="text" id="skype" name="skype"
+                  className='w-full h-full'
+                  style={{ border: 'none', outline: 'none', maxWidth: '100%' }}
+                  value={inputValues.skype}
+                  onChange={handleInputChange} />
+              </div>
+              <div className='h-[20px] w-[20px]' onClick={() => handleHide('skype')}>
+                <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
+              </div>
+            </div>)}
+          {visibleInputs.includes('calendly') && (
+            <div className='flex items-center mt-7 gap-2 flex-wrap'>
+              <div className='h-8 sm:h-10 w-28 border text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Calendly </div>
+              <div className='h-[30px] w-[30px]'>
+                <Image src="/assets/images/social/folder1/Calendly.png" height={30} width={30} alt='linkedin' />
+              </div>
+              <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' > <p className='mr-2 text-xs sm:text-base'>url</p>
+                <input type="text" id="calendly" name="calendly"
+                  className='w-full h-full'
+                  style={{ border: 'none', outline: 'none', maxWidth: '100%' }}
+                  value={inputValues.calendly}
+                  onChange={handleInputChange} />
+              </div>
+              <div className='h-[20px] w-[20px]' onClick={() => handleHide('calendly')}>
+                <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
+              </div>
+            </div>)}
+          {visibleInputs.includes('pdf') && (
+            <div className='flex items-center mt-7 gap-2 flex-wrap'>
+              <div className='h-8 sm:h-10 w-28 border text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Add Pdf </div>
+              <div className='h-[30px] w-[30px]'>
+                <Image src="/assets/images/social/folder1/Pdf.png" height={30} width={30} alt='linkedin' />
+              </div>
+              <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' >
+                <input type="text" id="pdf" name="pdf"
+                  className='w-full h-full'
+                  style={{ border: 'none', outline: 'none', maxWidth: '100%' }}
+                  value={inputValues.pdf}
+                  onChange={handleInputChange} />
+              </div>
+              <div className='h-[20px] w-[20px]' onClick={() => handleHide('pdf')}>
+                <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
+              </div>
+            </div>)}
           <div className='mt-12 relative w-20 - '>
           <div className=' h-8 sm:h-10 w-28  z-50   text-xs bg-black text-white border-1 flex justify-center items-center rounded-md' onClick={handleButtonClick}>Add Link</div>
             {showMenu && (
@@ -257,6 +309,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
                 <button onClick={() => handleToggle('reddit')}>Reddit</button>)}
               {!visibleInputs.includes('behance') && (
                   <button onClick={() => handleToggle('behance')}>Behance</button>)}
+                {!visibleInputs.includes('skype') && (
+                  <button onClick={() => handleToggle('skype')}>Skype</button>)}
+                {!visibleInputs.includes('Calendly') && (
+                  <button onClick={() => handleToggle('calendly')}>Calendly</button>)}
+                {!visibleInputs.includes('pdf') && (
+                  <button onClick={() => handleToggle('pdf')}>Add Pdf</button>)}
           </div>
             )}
           </div>

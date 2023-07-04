@@ -147,20 +147,52 @@ const Socialpg = ({
         <p className={`text-[10px] sm:text-xs ${text1}`}>Behance</p>
       </div>
       )}
-      {/*
-      <div className="flex flex-col  items-center">
-        <Link href={"#"}>
-          <Image
-            className="grayscale"
-            src={`/assets/images/social/${type}/pdf.png`}
-            alt="deck Logo"
-            width={50}
-            height={50}
-          />
-        </Link>
-        <p className={`text-[10px] ${text1}`}>Download PDF</p>
-      </div>
-      */}
+      {visibleInputs.includes('skype') && (
+        <div className="flex flex-col  items-center">
+          <Link target="_blank" href={`${inputValues.skype}`}>
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/Skype.png`}
+                alt="Skype Logo"
+                width={50}
+                height={50}
+              />
+            </div>
+          </Link>
+          <p className={`text-[10px] sm:text-xs ${text1}`}>Skype</p>
+        </div>
+      )}
+      {visibleInputs.includes('calendly') && (
+        <div className="flex flex-col  items-center">
+          <Link target="_blank" href={`${inputValues.calendly}`}>
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/Calendly.png`}
+                alt="Behance Logo"
+                width={50}
+                height={50}
+              />
+            </div>
+          </Link>
+          <p className={`text-[10px] sm:text-xs ${text1}`}>Calendly</p>
+        </div>
+      )}
+      {visibleInputs.includes('pdf') && (
+        <div className="flex flex-col  items-center">
+          <Link target="_blank" href={`${inputValues.pdf}`}>
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/Pdf.png`}
+                alt="Behance Logo"
+                width={50}
+                height={50}
+              />
+            </div>
+          </Link>
+          <p className={`text-[10px] sm:text-xs ${text1}`}>Download Pdf</p>
+        </div>
+      )}
+      
     </div>
   );
 };

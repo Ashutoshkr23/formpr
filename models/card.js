@@ -91,6 +91,9 @@ const CardSchema = new mongoose.Schema({
     cover: {
         type: String
     },
+    pdf : {
+        type: string
+    },
 
     //Social
     whatsappNumber: {
@@ -118,6 +121,12 @@ const CardSchema = new mongoose.Schema({
         type: String
     },
     reddit: {
+        type: String
+    },
+    skype:{
+        type: String
+    },
+    calendly: {
         type: String
     },
     shareContacts: {

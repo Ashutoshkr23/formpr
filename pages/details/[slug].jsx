@@ -135,6 +135,9 @@ const Contact = () => {
             twitter={contactData.twitter || ""}
             whatsappNumber={contactData.whatsappNumber || ""}
             youtube={contactData.youtube || ""}
+            skype={contactData.skype || ""}
+            calendly={contactData.calendly || ""}
+            pdf={contactData.pdf || ""}
           />
         </div>
       )}

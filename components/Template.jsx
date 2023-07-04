@@ -35,6 +35,9 @@ const Template = ({
   twitter,
   whatsappNumber,
   youtube,
+  skype,
+  pdf,
+  calendly,
   companyLink,
 }) => {
   console.log({ mail });
@@ -136,6 +139,9 @@ END:VCARD`;
               twitter={twitter}
               whatsappNumber={whatsappNumber}
               youtube={youtube}
+              skype={skype}
+              calendly={calendly}
+              pdf={pdf}
             />
           </div>
 

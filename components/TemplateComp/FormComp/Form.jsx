@@ -69,6 +69,9 @@ function Form({ cuuid }) {
     twitter: "",
     behance: "",
     reddit: "",
+    skype:"",
+    calendly:"",
+    pdf:"",
   });
 
   useEffect(() => {
@@ -112,6 +115,9 @@ function Form({ cuuid }) {
           twitter: cardData.twitter || "",
           behance: cardData.behance || "",
           reddit: cardData.reddit || "",
+          skype: cardData.skype || "",
+          calendly : cardData.calendly || "",
+          pdf : cardData.pdf || "" ,
         });
       })
       .catch((error) => {
@@ -286,6 +292,9 @@ function Form({ cuuid }) {
         facebook: inputValues.facebook,
         behance: inputValues.behance,
         reddit: inputValues.reddit,
+        skype: inputValues.skype,
+        pdf: inputValues.pdf,
+        calendly: inputValues.calendly,
         puuid: userProfile.puuid,
         cuuid: cuuid,
         status: "1",

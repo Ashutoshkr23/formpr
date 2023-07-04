@@ -14,6 +14,9 @@ const Socialpg = ({
   twitter,
   whatsappNumber,
   youtube,
+  skype,
+  calendly,
+  pdf,
 }) => {
   
   return (
@@ -154,20 +157,52 @@ const Socialpg = ({
           <p className={`text-[12px] ${text1}`}>Behance</p>
         </div>
       )}
-      {/*
-      <div className="flex flex-col  items-center">
-        <Link href={"#"}>
-          <Image
-            className="grayscale"
-            src={`/assets/images/social/${type}/pdf.png`}
-            alt="deck Logo"
-            width={60}
-            height={60}
-          />
-        </Link>
-        <p className={`text-[10px] ${text1}`}>Download PDF</p>
-      </div>
-      */}
+      {skype && (
+        <div className="flex flex-col  items-center">
+          <Link target="_blank" href={`${skype}`}>
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/Skype.png`}
+                alt="Behance Logo"
+                width={50}
+                height={50}
+              />
+            </div>
+          </Link>
+          <p className={`text-[12px] ${text1}`}>Skype</p>
+        </div>
+      )}
+      {calendly && (
+        <div className="flex flex-col  items-center">
+          <Link target="_blank" href={`${calendly}`}>
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/Calendly.png`}
+                alt="Behance Logo"
+                width={50}
+                height={50}
+              />
+            </div>
+          </Link>
+          <p className={`text-[12px] ${text1}`}>Calendly</p>
+        </div>
+      )}
+      {pdf && (
+        <div className="flex flex-col  items-center">
+          <Link target="_blank" href={`${pdf}`}>
+            <div className="h-[60px] w-[60px] flex items-center justify-center">
+              <Image
+                src={`/assets/images/social/${type}/Pdf.png`}
+                alt="Behance Logo"
+                width={50}
+                height={50}
+              />
+            </div>
+          </Link>
+          <p className={`text-[12px] ${text1}`}>Download Pdf</p>
+        </div>
+      )}
+      
     </div>
   );
 };
