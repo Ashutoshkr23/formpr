@@ -91,10 +91,10 @@ const CardSchema = new mongoose.Schema({
     cover: {
         type: String
     },
-    pdf : {
-        type: string
+    pdf: {
+        type: String
     },
-
+    
     //Social
     whatsappNumber: {
         type: String

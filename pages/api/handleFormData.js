@@ -12,7 +12,7 @@ export default async function handle(req, res) {
   if (req.method === "POST") {
     try {
       const requestData = req.body;
-      // console.log("Request Body:", requestData);
+       console.log("Request Body:", requestData);
       const filter = {
         cuuid: requestData.cuuid,
         puuid: requestData.puuid,
