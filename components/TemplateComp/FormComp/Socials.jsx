@@ -5,6 +5,8 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
   const [isMailGiven, setIsMailGiven] = useState(false)
   const [isMailValid, setIsMailValid] = useState(true);
   const [isWhatsAppValid, setIsWhatsAppValid] = useState(true);
+  const [location, setLocation] = useState({ latitude: null, longitude: null });
+
   
 
 
@@ -67,6 +69,51 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
   const handleHide = (inputName) => {
     handleHideInput(inputName);
   };
+
+  const handleShareLocation = () => {
+    if (navigator.geolocation) {
+      const options = {
+        enableHighAccuracy: true, // Request higher accuracy
+      };
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+
+          // Update the location state with latitude and longitude values
+          setLocation({ latitude, longitude });
+        },
+        (error) => {
+          console.error('Error retrieving location:', error);
+          // Handle any errors in retrieving the location
+        },
+        options // Pass the options object
+      );
+    } else {
+      // Geolocation is not supported by the browser
+      console.error('Geolocation is not supported');
+    }
+  };
+
+
+
+  const handleOpenLocation = () => {
+    const { latitude, longitude } = location;
+
+    // Check if the user is on an Apple device (iPhone, iPad)
+    const isAppleDevice = /(iPhone|iPod|iPad)/i.test(navigator.userAgent);
+
+    if (isAppleDevice) {
+      // Open Apple Maps
+      window.open(`http://maps.apple.com/?q=${latitude},${longitude}`);
+    } else {
+      // Open Google Maps
+      window.open(`https://maps.google.com/?q=${latitude},${longitude}`);
+    }
+  };
+
+
+
 
 
 
@@ -314,6 +361,22 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
                 <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
               </div>
             </div>)}
+          {visibleInputs.includes('location') && (
+            <div className='flex items-center mt-7 gap-2 flex-wrap'>
+              <div className='h-8 sm:h-10 w-28 border text-xs bg-white border-1 flex pl-4 items-center rounded-md '>Add Location</div>
+              <div className='h-[30px] w-[30px]'>
+                <Image src="/assets/images/social/folder1/Maps.png" height={30} width={30} alt='Maps Icon' />
+              </div>
+              <div className='bg-white h-8 sm:h-10 mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md'>
+                <button className='w-full h-full' onClick={handleShareLocation}>
+                  Share Location
+                </button>
+              </div>
+              <div className='h-[20px] w-[20px]' onClick={() => handleHide('location')}>
+                <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />
+              </div>
+            </div>
+          )}
           <div className='mt-12 relative w-20 - '>
           <div className=' h-8 sm:h-10 w-28  z-50   text-xs bg-black text-white border-1 flex justify-center items-center rounded-md' onClick={handleButtonClick}>Add Link</div>
             {showMenu && (
@@ -342,7 +405,12 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
                   <button onClick={() => handleToggle('calendly')}>Calendly</button>)}
                 {!visibleInputs.includes('pdf') && (
                   <button onClick={() => handleToggle('pdf')}>Add Pdf</button>)}
+                {!visibleInputs.includes('location') && (
+                  <button onClick={() => handleToggle('location')}>Add Location</button>)}
           </div>
+            )}
+            {location.latitude && location.longitude && (
+              <button onClick={handleOpenLocation}>Open Location in Maps</button>
             )}
           </div>
         </div>
