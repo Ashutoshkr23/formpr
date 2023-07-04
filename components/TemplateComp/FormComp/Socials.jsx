@@ -1,15 +1,10 @@
 import React , {useState , useEffect , useRef} from 'react'
 import Image from 'next/image'
 
-function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, handleInputChange, setCompletedSteps , showMenu , setShowMenu ,pdfLink ,setPdfLink }) {
+function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, handleInputChange, setCompletedSteps , showMenu , setShowMenu ,pdfLink ,setPdfLink , location ,setLocation }) {
   const [isMailGiven, setIsMailGiven] = useState(false)
   const [isMailValid, setIsMailValid] = useState(true);
   const [isWhatsAppValid, setIsWhatsAppValid] = useState(true);
-  const [location, setLocation] = useState({ latitude: null, longitude: null });
-
-  
-
-
   useEffect(() => {
     setIsMailGiven(!!inputValues.mail);
     setIsMailValid(validateEmail(inputValues.mail));

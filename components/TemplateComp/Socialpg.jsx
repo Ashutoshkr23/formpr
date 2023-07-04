@@ -7,9 +7,27 @@ const Socialpg = ({
   text1,
   type,
   pdfLink,
+  location,
   visibleInputs,
   inputValues
 }) => {
+
+
+  const handleOpenLocation = () => {
+    const { latitude, longitude } = location;
+
+    // Check if the user is on an Apple device (iPhone, iPad)
+    const isAppleDevice = /(iPhone|iPod|iPad)/i.test(navigator.userAgent);
+
+    if (isAppleDevice) {
+      // Open Apple Maps
+      window.open(`http://maps.apple.com/?q=${latitude},${longitude}`);
+    } else {
+      // Open Google Maps
+      window.open(`https://maps.google.com/?q=${latitude},${longitude}`);
+    }
+  };
+
   return (
     <div className="grid grid-cols-3 gap-y-3 sm:gap-y-6 tracking-[-0.5px] leading-[17px] sm:gap-x-14  pt-4 sm:pt-8 mx-2 sm:mx-6 ">
       
@@ -192,6 +210,16 @@ const Socialpg = ({
           </Link>
           <p className={`text-[10px] sm:text-xs ${text1}`}>Download Pdf</p>
         </div>
+      )}
+      {location.latitude && location.longitude && (
+        <button onClick={handleOpenLocation} className="h-[60px] w-[60px] flex items-center justify-center">
+          <Image
+            src={`/assets/images/social/${type}/Maps.png`}
+            alt="Behance Logo"
+            width={50}
+            height={50}
+          />
+        </button>
       )}
       
     </div>

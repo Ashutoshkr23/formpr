@@ -24,6 +24,7 @@ const Template = ({
   text2,
   text3,
   pdfLink,
+  location,
   selectedTemplate,
   btn,
   loop,
@@ -141,6 +142,7 @@ const Template = ({
 
           <div className="">
             <Socialpg
+              location={location}
               text1={text1}
               type={type}
               pdfLink={pdfLink}

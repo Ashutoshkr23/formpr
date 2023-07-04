@@ -33,6 +33,8 @@ function Form({ cuuid }) {
   const [showMenu, setShowMenu] = useState(false)
   const [pdfLink, setPdfLink] = useState("")
   const menuRef = useRef();
+  const [location, setLocation] = useState({ latitude: null, longitude: null });
+
 
   const handleParentClick = (event) => {
     if (
@@ -413,6 +415,8 @@ function Form({ cuuid }) {
                 onToggleInput={handleToggleInput}
                 showMenu={showMenu}
                 setShowMenu={setShowMenu}
+                location={location}
+                setLocation={setLocation}
               />
             )}
             <div className="flex">
@@ -439,6 +443,7 @@ function Form({ cuuid }) {
                   inputValues={inputValues}
                   pdfLink={pdfLink}
                   visibleInputs={visibleInputs}
+                  location={location}
                   profileImg={
                     profileImg || "/assets/images/templateimg/andrew.png"
                   }
