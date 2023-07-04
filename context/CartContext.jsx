@@ -41,6 +41,7 @@ export const CartProvider = ({ children }) => {
     const fetchCartType = async () => {
         const requestData = await fetch(`/api/cardType`)
         const data = await requestData.json()
+        console.log(data, "response")
         const cardType = !data.error ? data.result : []
 
         const newArray = cardType.map((obj) => {
