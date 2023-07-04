@@ -9,23 +9,23 @@ import SearchByName from '@/components/ProfilePage/SearchByName';
 import Image from 'next/image';
 import ToggleSwtich from '@/components/ToggleSwtich';
 
-const Remainder = () => {
+const Reminder = () => {
 
     const router = useRouter()
 
-    const [userAllRemainder, setuserAllRemainder] = useState([])
+    const [userAllReminder, setuserAllReminder] = useState([])
 
-    const [getUserRemaindersCalled, setgetUserRemaindersCalled] = useState(false)
+    const [getUserRemindersCalled, setgetUserRemindersCalled] = useState(false)
 
-    async function getUserRemainders() {
+    async function getUserReminders() {
 
 
-        if (getUserRemaindersCalled) {
+        if (getUserRemindersCalled) {
             return;
         }
 
 
-        setgetUserRemaindersCalled(true);
+        setgetUserRemindersCalled(true);
 
         const session = await getSession();
 
@@ -33,32 +33,32 @@ const Remainder = () => {
 
         const sendDataToAPI = { userEmail }
 
-        const gettingUserRemainder = await axios.post('/api/getRemainder', sendDataToAPI);
+        const gettingUserReminder = await axios.post('/api/getReminder', sendDataToAPI);
 
-        return setuserAllRemainder(gettingUserRemainder?.data?.userRemainderList);
+        return setuserAllReminder(gettingUserReminder?.data?.userReminderList);
     }
 
     useEffect(() => {
-        getUserRemainders();
+        getUserReminders();
     }, [])
 
 
-    const editARemainder = async (idOfTheItem) => {
+    const editAReminder = async (idOfTheItem) => {
         const itemId = idOfTheItem;
 
         router.push('/editReminder/' + itemId)
     };
 
-    const deleteARemainder = async (idOfTheItem) => {
+    const deleteAReminder = async (idOfTheItem) => {
         const itemId = idOfTheItem;
         const data = { itemId };
 
         try {
             // Call your delete API endpoint here
-            await axios.post('/api/deleteARemainder', data);
+            await axios.post('/api/deleteAReminder', data);
 
-            // Remove the deleted item from the userAllRemainder state
-            setuserAllRemainder(prevRemainders => prevRemainders.filter(item => item._id !== itemId));
+            // Remove the deleted item from the userAllReminder state
+            setuserAllReminder(prevReminders => prevReminders.filter(item => item._id !== itemId));
         } catch (error) {
             console.error('Error:', error);
         }
@@ -84,16 +84,16 @@ const Remainder = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {userAllRemainder?.map((item, index) => (
+                        {userAllReminder?.map((item, index) => (
                             <tr key={index}>
                                 <td className='text-center '>{item.name}</td>
                                 <td className='text-center '>{moment(item.createdAt).format("DD-MM-YY HH:mm")}</td>
                                 <td className='text-center '>{item.contactNumber}</td>
-                                <td className='my-2 text-center cursor-pointer uppercase flex items-center justify-center border-2 rounded-3xl py-2 gap-2 w-[160px] m-auto' onClick={() => editARemainder(item._id)}>
+                                <td className='my-2 text-center cursor-pointer uppercase flex items-center justify-center border-2 rounded-3xl py-2 gap-2 w-[160px] m-auto' onClick={() => editAReminder(item._id)}>
                                     <Image width={20} height={20} src={'/assets/images/reminderPage/bellIcon.png'} alt="profile pic"></Image>
                                     set reminder
                                 </td>
-                                <td className='text-center cursor-pointer' onClick={() => deleteARemainder(item._id)}>Delete</td>
+                                <td className='text-center cursor-pointer' onClick={() => deleteAReminder(item._id)}>Delete</td>
                             </tr>
                         ))}
                     </tbody>
@@ -103,4 +103,4 @@ const Remainder = () => {
     )
 }
 
-export default Remainder
+export default Reminder

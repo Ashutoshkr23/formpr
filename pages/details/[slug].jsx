@@ -35,8 +35,8 @@ const Contact = () => {
             const userPuuid = data.card.puuid;
             const userEmail = data.card.mail;
             const sendDataToAPI = { cardUuid, userEmail, userPuuid };
-            const settingRemainder = await axios.post("/api/setRemainder", sendDataToAPI);
-            console.log(settingRemainder);
+            const settingReminder = await axios.post("/api/setReminder", sendDataToAPI);
+            console.log(settingReminder);
           }
         }
       } catch (error) {
@@ -64,8 +64,8 @@ const Contact = () => {
       const userPuuid = data.card.puuid;
       const userEmail = data.card.mail;
       const sendDataToAPI = { cardUuid, userEmail, userPuuid, userName, countactNumber };
-      const settingRemainder = await axios.post("/api/setRemainder", sendDataToAPI);
-      console.log(settingRemainder);
+      const settingReminder = await axios.post("/api/setReminder", sendDataToAPI);
+      console.log(settingReminder);
     }
 
 

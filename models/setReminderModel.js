@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import moment from 'moment-timezone';
 
-const SetRemainderSchema = new mongoose.Schema(
+const SetReminderSchema = new mongoose.Schema(
     {
         cardUuid: {
             type: String,
@@ -49,11 +49,11 @@ const SetRemainderSchema = new mongoose.Schema(
     }
 );
 
-SetRemainderSchema.pre('save', function (next) {
+SetReminderSchema.pre('save', function (next) {
     if (!this.createdAt) {
         this.createdAt = moment.tz('Asia/Kolkata').toDate();
     }
     next();
 });
 
-export default mongoose.models.Remainder || mongoose.model('Remainder', SetRemainderSchema);
+export default mongoose.models.Reminder || mongoose.model('Reminder', SetReminderSchema);

@@ -1,6 +1,6 @@
 // import logger from '@/lib/logger';
 import { connectToDatabase } from '../../../lib/mongoose';
-import setRemainderModel from '../../../models/setRemainderModel';
+import setReminderModel from '../../../models/setReminderModel';
 import mongoose from 'mongoose';
 
 export default async function handler(req, res) {
@@ -24,8 +24,8 @@ export default async function handler(req, res) {
 
         try {
             // Use findById instead of find to retrieve a single document by id
-            const getUserRemainder = await setRemainderModel.findById(id);
-            if (!getUserRemainder) {
+            const getUserReminder = await setReminderModel.findById(id);
+            if (!getUserReminder) {
                 return res.json({
                     success: false,
                     message: 'Reminder not found',
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
             return res.json({
                 success: true,
                 message: 'Reminder found',
-                remainder: getUserRemainder,
+                reminder: getUserReminder,
             });
         } catch (error) {
             // logger.fatal(`Error verify Reminder ,Location:verifyReminderID ,error:${error}`);

@@ -1,6 +1,6 @@
 import moment from 'moment/moment';
 import { connectToDatabase } from '../../../lib/mongoose';
-import setRemainderModel from '../../../models/setRemainderModel';
+import setReminderModel from '../../../models/setReminderModel';
 import mongoose from 'mongoose';
 // import logger from '@/lib/logger';
 const sgMail = require('@sendgrid/mail');
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         try {
             const { userName, itemID } = req.body;
 
-            const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName });
+            const updatedReminder = await setReminderModel.findOneAndUpdate({ _id: itemID }, { name: userName });
 
             res.json({
                 success: true,
