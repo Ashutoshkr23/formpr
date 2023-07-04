@@ -138,6 +138,7 @@ const Contact = () => {
             skype={contactData.skype || ""}
             calendly={contactData.calendly || ""}
             pdf={contactData.pdf || ""}
+            location={contactData.location}
           />
         </div>
       )}

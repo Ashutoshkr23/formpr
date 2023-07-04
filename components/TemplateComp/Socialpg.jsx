@@ -212,15 +212,19 @@ const Socialpg = ({
         </div>
       )}
       {location.latitude && location.longitude && (
-        <button onClick={handleOpenLocation} className="h-[60px] w-[60px] flex items-center justify-center">
-          <Image
-            src={`/assets/images/social/${type}/Maps.png`}
-            alt="Behance Logo"
-            width={50}
-            height={50}
-          />
-        </button>
+        <div className="flex-col justify-center">
+          <button onClick={handleOpenLocation} className="h-[60px]  w-[60px] flex items-center justify-center ml-2">
+            <Image
+              src={`/assets/images/social/${type}/Maps.png`}
+              alt="Behance Logo"
+              width={50}
+              height={50}
+            />
+          </button>
+          <p className={`text-[12px] text-center ${text1}`}>Location</p>
+        </div>
       )}
+
       
     </div>
   );

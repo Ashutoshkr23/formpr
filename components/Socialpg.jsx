@@ -15,9 +15,25 @@ const Socialpg = ({
   whatsappNumber,
   youtube,
   skype,
+  location,
   calendly,
   pdf,
 }) => {
+  const handleOpenLocation = () => {
+    const { latitude, longitude } = location;
+
+    // Check if the user is on an Apple device (iPhone, iPad)
+    const isAppleDevice = /(iPhone|iPod|iPad)/i.test(navigator.userAgent);
+
+    if (isAppleDevice) {
+      // Open Apple Maps
+      window.open(`http://maps.apple.com/?q=${latitude},${longitude}`);
+    } else {
+      // Open Google Maps
+      window.open(`https://maps.google.com/?q=${latitude},${longitude}`);
+    }
+  };
+
   
   return (
     <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] mx-6 ">
@@ -199,8 +215,21 @@ const Socialpg = ({
               />
             </div>
           </Link>
-          <p className={`text-[12px] ${text1}`}>Download Pdf</p>
+          <p className={`text-[12px] text-center ${text1}`}>Download Pdf</p>
         </div>
+      )}
+      {location.latitude && location.longitude && (
+        <div className="flex-col justify-center">
+          <button onClick={handleOpenLocation} className="h-[60px]  w-[60px] flex items-center justify-center ml-2">
+            <Image
+              src={`/assets/images/social/${type}/Maps.png`}
+              alt="Behance Logo"
+              width={50}
+              height={50}
+            />
+          </button>
+          <p className={`text-[12px] text-center ${text1}`}>Location</p>
+        </div> 
       )}
       
     </div>

@@ -107,6 +107,7 @@ function Form({ cuuid }) {
         setAddress(cardData.adress);
         setPhoneNumber(cardData.mobileNumber);
         setPdfLink(cardData.pdf)
+    
 
         setInputValues({
           whatsapp: cardData.whatsappNumber || "",
@@ -300,6 +301,7 @@ function Form({ cuuid }) {
         puuid: userProfile.puuid,
         cuuid: cuuid,
         status: "1",
+        location: location,
       };
       // console.log(data)
 

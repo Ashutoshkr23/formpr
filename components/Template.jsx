@@ -13,6 +13,7 @@ const Template = ({
   text1,
   text2,
   text3,
+  location,
   selectedTemplate,
   btn,
   btntext,
@@ -140,6 +141,7 @@ END:VCARD`;
               whatsappNumber={whatsappNumber}
               youtube={youtube}
               skype={skype}
+              location={location}
               calendly={calendly}
               pdf={pdf}
             />

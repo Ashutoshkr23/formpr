@@ -137,6 +137,10 @@ const CardSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    location: {
+        type: Object,
+        default: null
+    },
 }, { timestamps: true });
 
 export default mongoose.models.Card || mongoose.model('Card', CardSchema);
