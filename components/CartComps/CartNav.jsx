@@ -81,7 +81,7 @@ const CartNav = () => {
                 />
               </div>
             </Link>
-            <Link href={totalQuantity > 0 ? "/cart" : "/store"} className="relative hover:scale-110">
+            {totalQuantity ? <Link href={totalQuantity > 0 ? "/cart" : "/store"} className="relative hover:scale-110">
               <Image
                 src={"/assets/images/cart-images/CartImage.png"}
                 alt="loop"
@@ -91,7 +91,15 @@ const CartNav = () => {
               <span className="absolute rounded-full border w-6 text-center  h-6 top-[-15px] right-[-23px] font-medium text-black text-md">
                 {totalQuantity}
               </span>
-            </Link>
+            </Link> : <Link href={"/store"} className="relative hover:scale-110">
+              <Image
+                src={"/assets/images/cart-images/CartImage.png"}
+                alt="loop"
+                width={30}
+                height={30}
+              />
+
+            </Link>}
             <button
               className={` h-10 w-[165px] text-[16px] font-bold text-white  rounded-[10px] ${isHovered
                 ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
