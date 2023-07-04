@@ -40,18 +40,24 @@ function ProductComp({
   };
 
   const handleRedirect = () => {
+
     if (session) {
-      if (totalQuantity == 0) {
-        let position = index - 1;
-        let tempObj = cartItems[position];
-        let id = tempObj._id;
-        if (id) {
-          plusCartFunc(id);
-        } else {
-          // console.log("error id")
+      try {
+        if (totalQuantity == 0) {
+          let position = index - 1;
+          let tempObj = cartItems.length ? cartItems[position] : null;
+          let id = tempObj?._id;
+          if (id) {
+            plusCartFunc(id);
+          } else {
+            // console.log("error id")
+          }
         }
+        router.push("/cart");
+      } catch (e) {
+        console.log(e, "E")
+        router.push("/cart");
       }
-      router.push("/cart");
     } else {
       router.push("/login");
     }
@@ -74,10 +80,10 @@ function ProductComp({
       <div className="flex flex-col items-center">
         <div
           className={`h-[630px] lg:h-[685px] border relative  mx-auto w-[280px] mobile:w-[320px] xl:w-[385px] rounded-2xl  ${isHovered
-              ? cardtype === "Elite"
-                ? "bg-gradient-to-br from-[#FAE6A3] to-[#FF9766] border-0 p-1"
-                : "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] border-0 p-1"
-              : "border"
+            ? cardtype === "Elite"
+              ? "bg-gradient-to-br from-[#FAE6A3] to-[#FF9766] border-0 p-1"
+              : "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] border-0 p-1"
+            : "border"
 
             }`}
           onMouseEnter={handleHover}
@@ -121,8 +127,8 @@ function ProductComp({
               <div className="w-[138px] xl:w-[165px] h-9 xl:h-10 text-xs xl:text-base  pt-5">
                 <button
                   className={`buynow text-center w-full py-[5px] font-bold rounded-[10px] ${isHovered
-                      ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
-                      : "bg-black text-white"
+                    ? "bg-gradient-to-br from-[#66D3E1] to-[#96FFAD] text-black"
+                    : "bg-black text-white"
                     }`}
                 >
                   {" "}

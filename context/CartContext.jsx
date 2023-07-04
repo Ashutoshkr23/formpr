@@ -126,7 +126,7 @@ export const CartProvider = ({ children }) => {
 
 
         const storedData = localStorage.getItem('cartData');
-        if (storedData) {
+        if (storedData && storedData?.length) {
             setCartItems(JSON.parse(storedData))
         }
         const storedAddData = localStorage.getItem('addressData');
