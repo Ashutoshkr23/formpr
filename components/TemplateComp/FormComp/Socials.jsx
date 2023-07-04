@@ -1,10 +1,11 @@
 import React , {useState , useEffect , useRef} from 'react'
 import Image from 'next/image'
 
-function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, handleInputChange, setCompletedSteps , showMenu , setShowMenu }) {
+function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, handleInputChange, setCompletedSteps , showMenu , setShowMenu ,pdfLink ,setPdfLink }) {
   const [isMailGiven, setIsMailGiven] = useState(false)
   const [isMailValid, setIsMailValid] = useState(true);
   const [isWhatsAppValid, setIsWhatsAppValid] = useState(true);
+  
 
 
   useEffect(() => {
@@ -12,6 +13,32 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
     setIsMailValid(validateEmail(inputValues.mail));
     setIsWhatsAppValid(validateWhatsApp(inputValues.whatsapp));
   }, [inputValues.mail, inputValues.whatsapp]);
+
+  const handlePdfChange = (event) => {
+    const file = event.target.files[0];
+    const pdfUrl = URL.createObjectURL(file);
+    // Create a new FormData object
+    const formData = new FormData();
+    formData.append('pdf', file);
+    // Send the file to the server
+    fetch('/api/uploadImageAws', {
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response from the server
+        const { result: link } = data;
+        setPdfLink(link);
+        alert(pdfLink)
+        console.log(pdfLink)
+        // ...
+      })
+      .catch((error) => {
+        // Handle any errors
+        // console.log(error);
+      });
+  };
 
 
   const validateEmail = (email) => {
@@ -277,11 +304,11 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
                 <Image src="/assets/images/social/folder1/Pdf.png" height={30} width={30} alt='linkedin' />
               </div>
               <div className='bg-white h-8 sm:h-10  mt-0.5 border flex items-center px-1 flex-grow border-dim-gray rounded-md ' >
-                <input type="text" id="pdf" name="pdf"
+                <input type="file" id="pdf" name="pdf"
                   className='w-full h-full'
                   style={{ border: 'none', outline: 'none', maxWidth: '100%' }}
                   value={inputValues.pdf}
-                  onChange={handleInputChange} />
+                  onChange={handlePdfChange} />
               </div>
               <div className='h-[20px] w-[20px]' onClick={() => handleHide('pdf')}>
                 <Image src="/assets/images/social/folder1/Bin.png" height={20} width={20} alt='bin-icon' />

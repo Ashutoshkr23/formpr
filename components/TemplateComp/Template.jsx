@@ -23,6 +23,7 @@ const Template = ({
   text1,
   text2,
   text3,
+  pdfLink,
   selectedTemplate,
   btn,
   loop,
@@ -142,6 +143,7 @@ const Template = ({
             <Socialpg
               text1={text1}
               type={type}
+              pdfLink={pdfLink}
               inputValues={inputValues}
               visibleInputs={visibleInputs}
             />

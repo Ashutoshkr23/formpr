@@ -56,11 +56,12 @@ export default async function handle(req, res) {
             } else if (files.profileImage) {
                 fileData = files.profileImage;
                 fieldName = 'profileImage';
+            } else if (files.pdf){
+                fileData = files.pdf;
+                fieldName = 'pdf'
             }
 
-            // console.log('File Data:', fileData);
-            // console.log('Field Name:', fieldName);
-
+           
             const file = fileData[0];
 
             const { puuid } = requestData;

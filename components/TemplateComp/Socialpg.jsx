@@ -6,6 +6,7 @@ import Image from "next/image";
 const Socialpg = ({
   text1,
   type,
+  pdfLink,
   visibleInputs,
   inputValues
 }) => {
@@ -179,7 +180,7 @@ const Socialpg = ({
       )}
       {visibleInputs.includes('pdf') && (
         <div className="flex flex-col  items-center">
-          <Link target="_blank" href={`${inputValues.pdf}`}>
+          <Link target="_blank" href={`${pdfLink}`}>
             <div className="h-[60px] w-[60px] flex items-center justify-center">
               <Image
                 src={`/assets/images/social/${type}/Pdf.png`}

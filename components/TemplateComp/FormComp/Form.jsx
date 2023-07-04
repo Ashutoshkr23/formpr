@@ -31,6 +31,7 @@ function Form({ cuuid }) {
   const [step, setStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState([]);
   const [showMenu, setShowMenu] = useState(false)
+  const [pdfLink, setPdfLink] = useState("")
   const menuRef = useRef();
 
   const handleParentClick = (event) => {
@@ -71,7 +72,6 @@ function Form({ cuuid }) {
     reddit: "",
     skype:"",
     calendly:"",
-    pdf:"",
   });
 
   useEffect(() => {
@@ -104,6 +104,7 @@ function Form({ cuuid }) {
         setCompanyLink(cardData.companylink);
         setAddress(cardData.adress);
         setPhoneNumber(cardData.mobileNumber);
+        setPdfLink(cardData.pdf)
 
         setInputValues({
           whatsapp: cardData.whatsappNumber || "",
@@ -117,7 +118,6 @@ function Form({ cuuid }) {
           reddit: cardData.reddit || "",
           skype: cardData.skype || "",
           calendly : cardData.calendly || "",
-          pdf : cardData.pdf || "" ,
         });
       })
       .catch((error) => {
@@ -293,7 +293,7 @@ function Form({ cuuid }) {
         behance: inputValues.behance,
         reddit: inputValues.reddit,
         skype: inputValues.skype,
-        pdf: inputValues.pdf,
+        pdf: pdfLink,
         calendly: inputValues.calendly,
         puuid: userProfile.puuid,
         cuuid: cuuid,
@@ -404,6 +404,9 @@ function Form({ cuuid }) {
                 setCompletedSteps={setCompletedSteps}
                 completedSteps={completedSteps}
                 inputValues={inputValues}
+                pdfLink={pdfLink}
+                setPdfLink={setPdfLink}
+                setInputValues={setInputValues}
                 handleInputChange={handleInputChange}
                 visibleInputs={visibleInputs}
                 setVisibleInputs={setVisibleInputs}
@@ -434,6 +437,7 @@ function Form({ cuuid }) {
                   border={themes[selectedTemplate].border}
                   selectedTemplate={selectedTemplate}
                   inputValues={inputValues}
+                  pdfLink={pdfLink}
                   visibleInputs={visibleInputs}
                   profileImg={
                     profileImg || "/assets/images/templateimg/andrew.png"
