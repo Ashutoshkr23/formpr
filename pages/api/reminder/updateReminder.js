@@ -1,5 +1,5 @@
 import { connectToDatabase } from '../../../lib/mongoose';
-import setRemainderModel from '../../../models/setRemainderModel';
+import setReminderModel from '../../../models/setReminderModel';
 import mongoose from 'mongoose';
 import moment from 'moment-timezone';
 // import logger from '@/lib/logger';
@@ -23,8 +23,8 @@ export default async function handler(req, res) {
             console.log(req.body);
 
             if (objectLength === 2 && disableReminder === false) {
-                const getSendRemidnerBooleanValue = await setRemainderModel.findOne({ _id: itemID });
-                const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { sendReminder: !getSendRemidnerBooleanValue.sendReminder }, { new: true });
+                const getSendRemidnerBooleanValue = await setReminderModel.findOne({ _id: itemID });
+                const updatedReminder = await setReminderModel.findOneAndUpdate({ _id: itemID }, { sendReminder: !getSendRemidnerBooleanValue.sendReminder }, { new: true });
                 return res.json({
                     success: true,
                     updatedReminder: updatedReminder
@@ -32,14 +32,14 @@ export default async function handler(req, res) {
             }
 
             if (objectLength === 4 && userName.length !== 0 && userContactNumber.length !== 0) {
-                const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber }, { new: true });
+                const updatedReminder = await setReminderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber }, { new: true });
                 return res.json({
                     success: true,
                     updatedReminder: updatedReminder
                 });
             } else if (objectLength === 7 && userCustomMessage.length !== 0 && formattedDateTime.length !== 0 && reminderPlatform.length !== 0) {
 
-                const updatedReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber, customMessage: userCustomMessage, customDate: formattedDateTime, reminderPlatform: reminderPlatform, sendReminder: enableReminder }, { new: true });
+                const updatedReminder = await setReminderModel.findOneAndUpdate({ _id: itemID }, { name: userName, contactNumber: userContactNumber, customMessage: userCustomMessage, customDate: formattedDateTime, reminderPlatform: reminderPlatform, sendReminder: enableReminder }, { new: true });
 
                 // Finding Time Difference Between Date Selected By User, & Current Date
                 const timestamp1 = new Date(formattedDateTime);
@@ -58,7 +58,7 @@ export default async function handler(req, res) {
                 // ! It Will Not Send The Reminder
                 if (milliseconds > 2592000000) {
                     setInterval(async () => {
-                        const findReminder = await setRemainderModel.find({ sendReminder: true, expired: false });
+                        const findReminder = await setReminderModel.find({ sendReminder: true, expired: false });
 
                         if (findReminder.length === 0) {
 
@@ -81,7 +81,7 @@ export default async function handler(req, res) {
                                     setTimeout(async () => {
                                         if (findReminder.sendReminder === true && findReminder.expired === false) {
                                             const findReminderID = findReminder._id;
-                                            const expireTheReminder = await setRemainderModel.findOneAndUpdate({ _id: findReminderID }, { expired: true }, { new: true });
+                                            const expireTheReminder = await setReminderModel.findOneAndUpdate({ _id: findReminderID }, { expired: true }, { new: true });
                                             const message = {
                                                 to: findReminder.userEmail,
                                                 from: process.env.SENDGRID_EMAIL_ID,
@@ -111,7 +111,7 @@ export default async function handler(req, res) {
 
                     if (milliseconds > 0) {
                         setTimeout(async () => {
-                            const checkReminder = await setRemainderModel.findOne({ _id: itemID }).select('sendReminder');
+                            const checkReminder = await setReminderModel.findOne({ _id: itemID }).select('sendReminder');
 
                             if (checkReminder === null) {
                                 return false;
@@ -122,7 +122,7 @@ export default async function handler(req, res) {
 
                             // Code To Send The Reminder To The User
                             try {
-                                const expireTheReminder = await setRemainderModel.findOneAndUpdate({ _id: itemID }, { expired: true }, { new: true });
+                                const expireTheReminder = await setReminderModel.findOneAndUpdate({ _id: itemID }, { expired: true }, { new: true });
                                 await sgMail.send(message);
                                 console.log('Notification email sent successfully');
                             } catch (error) {

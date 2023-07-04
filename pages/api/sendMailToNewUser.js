@@ -14,19 +14,19 @@ export default async function handler(req, res) {
         const { userEmail } = req.body;
 
         // Here We Have To Use User Email, Currently No Idea From Where It's Getting Fetched, So It's Hardcoded For Now
-        const getUserRemainders1 = await User.findOne({ email: userEmail });
-        const getUserRemainders2 = await UserSchema.findOne({ email: userEmail });
+        const getUserReminders1 = await User.findOne({ email: userEmail });
+        const getUserReminders2 = await UserSchema.findOne({ email: userEmail });
 
         async function sendMailToNewUser() {
             const message = {
-                to: getUserRemainders1.email,
+                to: getUserReminders1.email,
                 from: process.env.SENDGRID_EMAIL_ID,
                 subject: 'Welcome To Loop Family',
                 text: 'Get Ready For New Experience',
                 html: `
                 <html>
                     <body>
-                     <p>Hello ${getUserRemainders1.email},</p>
+                     <p>Hello ${getUserReminders1.email},</p>
                           
                     <p>Welcome to Loop! Get ready to transform your networking with a digital visiting card that leaves a lasting impression.</p>
                           
@@ -62,9 +62,9 @@ export default async function handler(req, res) {
             }
         }
 
-        if (getUserRemainders2 === null) {
+        if (getUserReminders2 === null) {
             sendMailToNewUser()
-        } else if (getUserRemainders2 !== null) {
+        } else if (getUserReminders2 !== null) {
             // console.log("User Already Exist.");
         }
         res.json({

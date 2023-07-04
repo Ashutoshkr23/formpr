@@ -1,5 +1,5 @@
 import { connectToDatabase } from '../../lib/mongoose'
-import setRemainderModel from '../../models/setRemainderModel'
+import setReminderModel from '../../models/setReminderModel'
 import UserData from '@/models/UserData';
 
 export default async function handler(req, res) {
@@ -17,10 +17,10 @@ export default async function handler(req, res) {
 
             const userpuuid = gettinguserPuuid.puuid;
 
-            const getUserRemainders = await setRemainderModel.find({ puuid: userpuuid });
+            const getUserReminders = await setReminderModel.find({ puuid: userpuuid });
             return res.json({
                 success: true,
-                userRemainderList: getUserRemainders
+                userReminderList: getUserReminders
             })
         }
     }

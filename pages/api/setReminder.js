@@ -1,6 +1,6 @@
 import UserData from '@/models/UserData';
 import { connectToDatabase } from '../../lib/mongoose'
-import setRemainderModel from '../../models/setRemainderModel'
+import setReminderModel from '../../models/setReminderModel'
 
 export default async function handler(req, res) {
 
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         const userPUUID = updateUserProfile.puuid;
 
         if (userName === undefined && countactNumber === undefined) {
-            const saveUser = await new setRemainderModel({
+            const saveUser = await new setReminderModel({
                 cardUuid: cardUuid,
                 userEmail: userEmail,
                 puuid: userPUUID
@@ -31,7 +31,7 @@ export default async function handler(req, res) {
             return res.json({ success: true })
 
         } else if (userName !== undefined && countactNumber !== undefined) {
-            const saveUser = await new setRemainderModel({
+            const saveUser = await new setReminderModel({
                 cardUuid: cardUuid,
                 userEmail: userEmail,
                 puuid: userPUUID,

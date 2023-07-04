@@ -12,7 +12,7 @@ const EditReminder = () => {
     const [itemID, setItemID] = useState(null);
     const [data, setData] = useState(null);
 
-    const [userRemainder, setuserRemainder] = useState([]);
+    const [userReminder, setuserReminder] = useState([]);
 
     const [userName, setuserName] = useState('');
     const handleuserNameChange = (event) => {
@@ -50,12 +50,12 @@ const EditReminder = () => {
                 if (response.data.success === false) {
                     router.push('/profile');
                 } else if (response.data.success === true) {
-                    const userRemainderArray = Object.values(response.data.remainder);
-                    setuserRemainder(userRemainderArray);
-                    setuserName(userRemainderArray[2]);
-                    setuserContactNumber(userRemainderArray[3]);
-                    setuserCustomMessage(userRemainderArray[5]);;
-                    setyourDate(userRemainderArray[6]);
+                    const userReminderArray = Object.values(response.data.reminder);
+                    setuserReminder(userReminderArray);
+                    setuserName(userReminderArray[2]);
+                    setuserContactNumber(userReminderArray[3]);
+                    setuserCustomMessage(userReminderArray[5]);;
+                    setyourDate(userReminderArray[6]);
                     setisDate(true)
                 }
             } catch (error) {

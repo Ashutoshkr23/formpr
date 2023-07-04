@@ -1,5 +1,5 @@
 import { connectToDatabase } from '../../lib/mongoose'
-import setRemainderModel from '../../models/setRemainderModel'
+import setReminderModel from '../../models/setReminderModel'
 
 export default async function handler(req, res) {
 
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         const { itemId } = req.body;
 
         // Here We Have To Use User Email, Currently No Idea From Where It's Getting Fetched, So It's Hardcoded For Now
-        const getUserRemainders = await setRemainderModel.deleteOne({ _id: itemId });
+        const getUserReminders = await setReminderModel.deleteOne({ _id: itemId });
         res.json({
             success: true,
         })

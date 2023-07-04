@@ -24,8 +24,8 @@ const Profile = () => {
   const router = useRouter();
 
   async function refreshTab() {
-    setgetUserRemaindersCalled(!getUserRemaindersCalled);
-    getUserRemainders();
+    setgetUserRemindersCalled(!getUserRemindersCalled);
+    getUserReminders();
   }
 
   const handleClick = (index) => {
@@ -34,10 +34,10 @@ const Profile = () => {
 
   const { data: session } = useSession();
 
-  const [userAllRemainder, setuserAllRemainder] = useState([])
-  const [originalUserAllRemainder, setoriginalUserAllRemainder] = useState([])
+  const [userAllReminder, setuserAllReminder] = useState([])
+  const [originalUserAllReminder, setoriginalUserAllReminder] = useState([])
 
-  const [getUserRemaindersCalled, setgetUserRemaindersCalled] = useState(false)
+  const [getUserRemindersCalled, setgetUserRemindersCalled] = useState(false)
 
   const currentTime = moment();
   const formattedTime = currentTime.format('DD-MM-YYYY HH:mm');
@@ -48,35 +48,35 @@ const Profile = () => {
     return session?.user?.email;
   }
 
-  async function getUserRemainders() {
+  async function getUserReminders() {
 
 
-    if (getUserRemaindersCalled) {
+    if (getUserRemindersCalled) {
       return;
     }
 
 
-    setuserAllRemainder([])
+    setuserAllReminder([])
 
-    setgetUserRemaindersCalled(!getUserRemaindersCalled);
+    setgetUserRemindersCalled(!getUserRemindersCalled);
 
     const userEmail = await getUserSessionEmail();
 
     const sendDataToAPI = { userEmail }
 
-    const gettingUserRemainder = await axios.post('/api/getRemainder', sendDataToAPI);
+    const gettingUserReminder = await axios.post('/api/getReminder', sendDataToAPI);
 
-    if (gettingUserRemainder.data.success === false) {
+    if (gettingUserReminder.data.success === false) {
       setshowHidePage(false);
       router.push('/')
       return;
-    } else if (gettingUserRemainder.data.success === true) {
+    } else if (gettingUserReminder.data.success === true) {
 
       setshowHidePage(true)
 
-      setoriginalUserAllRemainder(gettingUserRemainder?.data?.userRemainderList)
+      setoriginalUserAllReminder(gettingUserReminder?.data?.userReminderList)
 
-      return setuserAllRemainder(gettingUserRemainder?.data?.userRemainderList);
+      return setuserAllReminder(gettingUserReminder?.data?.userReminderList);
     }
   }
 
@@ -113,21 +113,21 @@ const Profile = () => {
       setenableDisableBackgroundCSS('h-fit blur-sm pointer-events-none')
     }
 
-    setgetUserRemaindersCalled(!getUserRemaindersCalled);
+    setgetUserRemindersCalled(!getUserRemindersCalled);
     const id = idOfTheItem;
     setreminderID(id)
 
     seteditUser(!editUser)
     if (editUser) {
       const response = await axios.post('/api/reminder/verifyReminderID', { id });
-      const data = response.data.remainder
+      const data = response.data.reminder
       setuserName(data.name);
       setuserContactNumber(data.contactNumber);
       setuserCustomMessage(data.customMessage);
     }
 
     if (enableDisableBackgroundCSS === 'h-fit blur-sm pointer-events-none') {
-      getUserRemainders();
+      getUserReminders();
       setenableDisableBackgroundCSS('h-fit blur-none pointer-events-auto')
     }
   };
@@ -148,21 +148,21 @@ const Profile = () => {
     const data = { userName, userContactNumber, itemID, userCustomMessage };
     const response = await axios.post('/api/reminder/updateReminder', data);
     seteditUser(!editUser)
-    getUserRemainders();
+    getUserReminders();
 
     if (enableDisableBackgroundCSS === 'h-fit blur-sm pointer-events-none') {
       setenableDisableBackgroundCSS('h-fit blur-none pointer-events-auto')
     }
   };
 
-  const deleteARemainder = async (idOfTheItem) => {
+  const deleteAReminder = async (idOfTheItem) => {
     const itemId = idOfTheItem;
     const data = { itemId };
 
     try {
-      await axios.post('/api/deleteARemainder', data);
+      await axios.post('/api/deleteAReminder', data);
 
-      setuserAllRemainder(prevRemainders => prevRemainders.filter(item => item._id !== itemId));
+      setuserAllReminder(prevReminders => prevReminders.filter(item => item._id !== itemId));
     } catch (error) {
       console.error('Error:', error);
     }
@@ -196,27 +196,27 @@ const Profile = () => {
   getUserData();
 
   useEffect(() => {
-    getUserRemainders();
+    getUserReminders();
     getUserShareContactsForUserBooleanDetails();
   }, [])
 
   const handleSearch = (searchQuery) => {
     if (searchQuery.length === 0) {
-      // If search query is empty, reset the userAllRemainder to its original value
-      setuserAllRemainder(originalUserAllRemainder);
+      // If search query is empty, reset the userAllReminder to its original value
+      setuserAllReminder(originalUserAllReminder);
     } else {
       // Filter the array based on the search query
-      const filteredRemainders = originalUserAllRemainder.filter((remainder) =>
-        remainder.name.slice(0, searchQuery.length).toLowerCase().includes(searchQuery.toLowerCase())
+      const filteredReminders = originalUserAllReminder.filter((reminder) =>
+        reminder.name.slice(0, searchQuery.length).toLowerCase().includes(searchQuery.toLowerCase())
       );
 
       // Sort the filtered results (you can customize the sorting logic)
-      const sortedRemainders = filteredRemainders.sort((a, b) =>
+      const sortedReminders = filteredReminders.sort((a, b) =>
         a.name.localeCompare(b.name)
       );
 
       // Update the state with the filtered and sorted results
-      setuserAllRemainder(sortedRemainders);
+      setuserAllReminder(sortedReminders);
     }
   };
 
@@ -296,7 +296,7 @@ const Profile = () => {
     seteditingReminder(!editingReminder)
     if (editingReminder) {
       const response = await axios.post('/api/reminder/verifyReminderID', { id });
-      const data = response.data.remainder
+      const data = response.data.reminder
       setuserName(data.name);
       setuserContactNumber(data.contactNumber);
       setuserCustomMessage(data.customMessage);
@@ -311,8 +311,8 @@ const Profile = () => {
       setenableDisableBackgroundCSS('h-fit blur-none pointer-events-auto')
     }
 
-    setgetUserRemaindersCalled(!getUserRemaindersCalled);
-    getUserRemainders();
+    setgetUserRemindersCalled(!getUserRemindersCalled);
+    getUserReminders();
   }
 
   async function disableThereminder(idOfTheItem) {
@@ -362,7 +362,7 @@ const Profile = () => {
     const itemID = reminderID;
     const dateTime = new Date(selectedDateTime);
     const formattedDateTime = dateTime.toISOString().slice(0, -5) + "+00:00";
-    const reminderPlatform = "Whatsapp"
+    const reminderPlatform = "Mail"
     const enableReminder = true;
     const data = { itemID, userName, userContactNumber, userCustomMessage, formattedDateTime, reminderPlatform, enableReminder }
     const response = await axios.post('/api/reminder/updateReminder', data);
@@ -513,7 +513,7 @@ const Profile = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {userAllRemainder?.filter(item => item.expired !== true).map((item, index) => (
+                        {userAllReminder?.filter(item => item.expired !== true).map((item, index) => (
                           <tr key={index} className="bg-white border-b dark:bg-gray-900 dark:border-gray-700 text-center font-medium text-black whitespace-nowrap">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                               {item.name}
@@ -600,10 +600,10 @@ const Profile = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {userAllRemainder?.filter(item => item.sendReminder === true && item.expired !== true).map((item, index) => (
+                        {userAllReminder?.filter(item => item.sendReminder === true && item.expired !== true).map((item, index) => (
                           <tr key={index} className="bg-white border-b dark:bg-gray-900 dark:border-gray-700 text-center font-medium text-black whitespace-nowrap">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex items-center justify-between lg:gap-0 gap-2">
-                              <div className={`${item.reminderPlatform === 'Whatsapp' ? 'bg-[#49C958]' : 'bg-[#00A7EB]'} w-[13px] h-[41px]`}></div>
+                              <div className={`${item.reminderPlatform !== 'Whatsapp' ? 'bg-[#49C958]' : 'bg-[#00A7EB]'} w-[13px] h-[41px]`}></div>
                               <div>{item.name}</div>
                               <div></div>
                             </th>
@@ -617,7 +617,7 @@ const Profile = () => {
                               {(item.customMessage)}
                             </td>
                             <td className="px-6 py-4">
-                              {item.reminderPlatform === 'Whatsapp' ? (
+                              {item.reminderPlatform !== 'Whatsapp' ? (
                                 <div className='flex items-center justify-center gap-4'><span>Whatsapp</span><Image width={24} height={24} src="/assets/images/profilePage/whatsappIcon.png" alt="Whatsapp" /></div>
                               ) : (
                                 <div className='flex items-center justify-center gap-4'><span>Mail</span><Image width={24} height={24} src="/assets/images/profilePage/mailIcon.png" alt="Whatsapp" /></div>
@@ -670,7 +670,7 @@ const Profile = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {userAllRemainder?.filter(item => item.expired === true).map((item, index) => (
+                        {userAllReminder?.filter(item => item.expired === true).map((item, index) => (
                           <tr key={index} className="bg-white border-b dark:bg-gray-900 dark:border-gray-700 text-center font-medium text-black whitespace-nowrap">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                               {item.name}
@@ -809,7 +809,7 @@ const Profile = () => {
           </div>
           <div onClick={updateReminder} disabled={isSaveDisabled2} className={`${isSaveDisabled2 ? 'disabled cursor-not-allowed opacity-40' : 'cursor-pointer'} flex justify-center uppercase mt-4`}>
             <div className='flex font-bold gap-2 bg-white border rounded-lg mx-6 py-2 w-full justify-center text-[#7F7F7F]'>
-              remind through whatsapp <Image width={26} height={26} src="/assets/images/profilePage/whatsappIcon.png" alt="" />
+              remind through mail <Image width={26} height={26} src="/assets/images/profilePage/mailIcon.png" alt="" />
             </div>
           </div>
         </div>
