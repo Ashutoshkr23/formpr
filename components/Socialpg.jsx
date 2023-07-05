@@ -219,7 +219,7 @@ const Socialpg = ({
         </div>
       )}
       {location.latitude && location.longitude && (
-        <div className="flex-col justify-center">
+        <div className="flex flex-col items-center">
           <button onClick={handleOpenLocation} className="h-[60px]  w-[60px] flex items-center justify-center">
             <Image
               src={`/assets/images/social/${type}/Maps.png`}
