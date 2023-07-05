@@ -17,11 +17,11 @@ export default NextAuth({
         }),
         EmailProvider({
             server: {
-                host: process.env.NEXT_PUBLIC_EMAIL_SERVER_HOST,
-                port: process.env.NEXT_PUBLIC_EMAIL_SERVER_PORT,
+                host: process.env.EMAIL_SERVER_HOST,
+                port: process.env.EMAIL_SERVER_PORT,
                 auth: {
-                    user: process.env.NEXT_PUBLIC_EMAIL_SERVER_USER,
-                    pass: process.env.NEXT_PUBLIC_EMAIL_SERVER_PASS
+                    user: process.env.EMAIL_SERVER_USER,
+                    pass: process.env.EMAIL_SERVER_PASS
                 }
             },
             from: process.env.NEXT_PUBLIC_EMAIL_FROM
