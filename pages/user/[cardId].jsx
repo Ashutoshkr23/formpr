@@ -6,7 +6,58 @@ import themes from "@/components/TemplateComp/Themes";
 import axios from "axios";
 import Image from "next/image";
 
-const Contact = () => {
+
+
+
+
+export const getStaticPaths = async () => {
+    // Fetch the data for all available posts
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/cards`); // Replace with your data-fetching logic
+  
+  const cards = await response.json();
+  console.log(cards,"Cards")
+   
+  // Generate the paths based on the data
+  const paths = cards?.map((card) => ({
+    params: { cardId: card.cardId },
+  }));
+
+  console.log(paths,"paths")
+  // Return the paths object
+  return {
+    paths,
+    fallback: false,
+  };
+
+  }
+
+  export async function getStaticProps({ params }) {
+    // Fetch the data for the specific post using params.slug
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/cards`,{
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            cuuid:params.cardId
+          })
+    }); // Replace with your data-fetching logic
+    const card = await response.json();
+    console.log(card,"Card")
+  
+    // Return the post data as props
+    return {
+      props: {
+        card: card,
+       
+      },
+    };
+  }
+   
+
+const Contact = ({ card }) => {
+    console.log(card,"Card")
   const [contactData, setContactData] = useState(null);
   const router = useRouter();
 
@@ -149,23 +200,5 @@ const Contact = () => {
 export default Contact;
 
 
-// export const getStaticPaths = async () => {
-//     return {
-//       paths: [
-//         {
-//           params: {
-//             name: 'next.js',
-//           },
-//         }, // See the "paths" section below
-//       ],
-//       fallback: true, // false or "blocking"
-//     }
-//   }
-   
-//   export const getStaticProps = async () => {
-//     const res = await fetch('https://api.github.com/repos/vercel/next.js')
-//     const repo = await res.json()
-//     return { props: { repo } }
-//   }
    
  
