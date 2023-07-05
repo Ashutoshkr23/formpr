@@ -22,17 +22,9 @@ const Socialpg = ({
   const handleOpenLocation = () => {
     const { latitude, longitude } = location;
 
-    // Check if the user is on an Apple device (iPhone, iPad)
-    const isAppleDevice = /(iPhone|iPod|iPad)/i.test(navigator.userAgent);
-
-    if (isAppleDevice) {
-      // Open Apple Maps
-      window.open(`http://maps.apple.com/?q=${latitude},${longitude}`);
-    } else {
-      // Open Google Maps
-      window.open(`https://maps.google.com/?q=${latitude},${longitude}`);
-    }
+    window.open(`https://maps.google.com/?q=${latitude},${longitude}`);
   };
+
 
   
   return (
@@ -204,8 +196,8 @@ const Socialpg = ({
         </div>
       )}
       {pdf && (
-        <div className="flex flex-col  items-center">
-          <Link target="_blank" href={`${pdf}`}>
+        <div className="flex flex-col items-center">
+          <a href={pdf} download>
             <div className="h-[60px] w-[60px] flex items-center justify-center">
               <Image
                 src={`/assets/images/social/${type}/pdf.png`}
@@ -214,10 +206,11 @@ const Socialpg = ({
                 height={50}
               />
             </div>
-          </Link>
+          </a>
           <p className={`text-[12px] text-center ${text1}`}>Download Pdf</p>
         </div>
       )}
+
       {location.latitude && location.longitude && (
         <div className="flex flex-col items-center">
           <button onClick={handleOpenLocation} className="h-[60px]  w-[60px] flex items-center justify-center">
