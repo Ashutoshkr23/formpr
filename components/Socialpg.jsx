@@ -208,7 +208,7 @@ const Socialpg = ({
           <Link target="_blank" href={`${pdf}`}>
             <div className="h-[60px] w-[60px] flex items-center justify-center">
               <Image
-                src={`/assets/images/social/${type}/Pdf.png`}
+                src={`/assets/images/social/${type}/pdf.png`}
                 alt="Behance Logo"
                 width={50}
                 height={50}

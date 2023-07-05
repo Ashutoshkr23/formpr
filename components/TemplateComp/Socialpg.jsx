@@ -201,7 +201,7 @@ const Socialpg = ({
           <Link target="_blank" href={`${pdfLink}`}>
             <div className="h-[60px] w-[60px] flex items-center justify-center">
               <Image
-                src={`/assets/images/social/${type}/Pdf.png`}
+                src={`/assets/images/social/${type}/pdf.png`}
                 alt="Behance Logo"
                 width={50}
                 height={50}
@@ -213,7 +213,7 @@ const Socialpg = ({
       )}
       {location.latitude && location.longitude && (
         <div className="flex-col justify-center">
-          <button onClick={handleOpenLocation} className="h-[60px]  w-[60px] flex items-center justify-center ml-2">
+          <button onClick={handleOpenLocation} className="h-[60px]  w-[60px] flex items-center justify-center ">
             <Image
               src={`/assets/images/social/${type}/Maps.png`}
               alt="Behance Logo"
