@@ -35,9 +35,9 @@ export default async function handle(req, res) {
       if (userPuuid !== undefined) {
         const shareContactsstatus = await UserData.findOne({ puuid: userPuuid })
         if (shareContactsstatus.shareContacts === true) {
-          return res.status(200).json({ message: "Success", success: 200, message: "true", shareContactsstatus: shareContactsstatus });
+          return res.status(200).json({ success: 200, message: "true", shareContactsstatus: shareContactsstatus });
         } else if (shareContactsstatus.shareContacts !== true) {
-          return res.status(200).json({ message: "Success", success: 200, message: "false", shareContactsstatus: shareContactsstatus });
+          return res.status(200).json({ success: 200, message: "false", shareContactsstatus: shareContactsstatus });
         }
       }
 
