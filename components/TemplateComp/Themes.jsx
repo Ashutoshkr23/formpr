@@ -54,7 +54,7 @@ const themes = [
         text1: 'text-white',
         text2: 'text-[#66D3E1]',
         text3: 'text-black',
-        btn: 'bg-[#0F0F0F]',
+        btn: 'bg-[#0F0F0F] border-[3px]',
         btntext: 'text-white',
         border: 'border-[1px] border-white',
         loop: '/loopwh.svg',

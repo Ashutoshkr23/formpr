@@ -36,7 +36,7 @@ const Socialpg = ({
 
   
   return (
-    <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] mx-6 ">
+    <div className="grid grid-cols-3 gap-y-6 tracking-[-0.5px] leading-[17px] gap-x-14 pt-[23px] mx-auto px-2 ">
       
       {mail && (
         <div className="flex flex-col  items-center">
@@ -220,7 +220,7 @@ const Socialpg = ({
       )}
       {location.latitude && location.longitude && (
         <div className="flex-col justify-center">
-          <button onClick={handleOpenLocation} className="h-[60px]  w-[60px] flex items-center justify-center ml-2">
+          <button onClick={handleOpenLocation} className="h-[60px]  w-[60px] flex items-center justify-center">
             <Image
               src={`/assets/images/social/${type}/Maps.png`}
               alt="Behance Logo"

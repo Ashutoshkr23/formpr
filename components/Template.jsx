@@ -65,7 +65,7 @@ END:VCARD`;
   // console.log(profileImg)
 
   return (
-    <div className="flex justify-center w-full  md:w-[375px] mx-auto  h-auto">
+    <div className="flex justify-center w-full  md:w-[375px] mx-auto  h-auto overflow-hidden">
       <div
         className={`relative mx-auto h-auto w-full md:w-[375px]  md:rounded-[30px] pt-[161px] ${selectedTemplate === "7" ? 'px-3' : ''}`}
         style={{
@@ -160,18 +160,20 @@ END:VCARD`;
 
           <div className={`${selectedTemplate === "7" ? 'hidden' : ''}`}>
            
-              <p className={`text-[10px] flex justify-center items-center mt-7 pb-4  ${text1}`}> made with love by</p>
-            <img
-              className="h-[12px] w-[27px] ml-1"
-              src={`/assets/images/display/${loop}`}
-              alt="logo"
-            />
+            <div className="flex mt-4 justify-center pb-4">
+              <p className={`text-[10px]   ${text1}`}> made with love by</p>
+              <img
+                className="h-[12px] w-[27px] ml-1"
+                src={`/assets/images/display/${loop}`}
+                alt="logo"
+              />
+            </div>
           </div>
 
         </div>
         {selectedTemplate === "7" && (
           <div className="flex mt-4 justify-center pb-4">
-            <p className={`text-[10px] flex justify-center items-center   ${text1}`}> made with love by</p>
+            <p className={`text-[10px]   ${text1}`}> made with love by</p>
             <img
               className="h-[12px] w-[27px] ml-1"
               src={`/assets/images/display/${loop}`}
