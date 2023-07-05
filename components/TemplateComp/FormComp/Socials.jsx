@@ -27,8 +27,6 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
         // Handle the response from the server
         const { result: link } = data;
         setPdfLink(link);
-        alert(pdfLink)
-        console.log(pdfLink)
         // ...
       })
       .catch((error) => {
@@ -404,9 +402,7 @@ function Socials({ visibleInputs, onToggleInput, setVisibleInputs, inputValues, 
                   <button onClick={() => handleToggle('location')}>Add Location</button>)}
           </div>
             )}
-            {location.latitude && location.longitude && (
-              <button onClick={handleOpenLocation}>Open Location in Maps</button>
-            )}
+           
           </div>
         </div>
       </div>

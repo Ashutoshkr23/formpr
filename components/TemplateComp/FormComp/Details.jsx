@@ -169,7 +169,7 @@ function Details({ onCompanyChange, onNameChange, onRoleChange, onCompanyLinkCha
                 </div>
                 <div className='flex flex-col w-full space-y-5 mt-2 '>
                     <div className='flex flex-col'>
-                        <label for="fullName" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!name ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} ><p className={` -mt-3 text-xs leading-[186%] bg-[#FFFFFF] w-16 px-0.5`}>Full Name</p>
+                        <label for="fullName" className={`bg-white text-black h-10 px-5 mt-0.5 border border-dim-gray rounded-md ${!name ? 'border border-[#F66F6f]' : 'border-dim-gray'}`} ><p className={` -mt-3 text-xs leading-[186%] bg-[#FFFFFF] w-[68px] px-0.5`}>Full Name</p>
                             <input type="text" id="fullName" name="fullName" value={name} required onChange={handleNameChange} style={{ border: 'none', outline: 'none' }} /></label>
 
                     </div>

@@ -188,9 +188,9 @@ const Socialpg = ({
           <p className={`text-[10px] sm:text-xs ${text1}`}>Calendly</p>
         </div>
       )}
-      {pdf && (
+      {visibleInputs.includes('pdf') && (
         <div className="flex flex-col items-center">
-          <a href={pdf} download>
+          <a href={pdfLink} download>
             <div className="h-[60px] w-[60px] flex items-center justify-center">
               <Image
                 src={`/assets/images/social/${type}/pdf.png`}
