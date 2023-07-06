@@ -55,7 +55,7 @@ export const getStaticPaths = async () => {
    
 
 const Contact = ({ card,userData  }) => {
-    console.log(card,userData)
+  
   const [contactData, setContactData] = useState(null);
   const router = useRouter();
 
@@ -110,18 +110,27 @@ const Contact = ({ card,userData  }) => {
 
     setaskUserData(false)
 
-    const response = await fetch(`/api/handleFormData?cuuid=${cardId}`);
-    const data = await response.json();
+    // const response = await fetch(`/api/handleFormData?cuuid=${cardId}`);
+    // const data = await response.json();
 
-    if (data.card !== undefined) {
-      setContactData(data.card);
-      const cardUuid = data.card.cuuid;
-      const userPuuid = data.card.puuid;
-      const userEmail = data.card.mail;
+    // if (data.card !== undefined) {
+    //   setContactData(data.card);
+    //   const cardUuid = data.card.cuuid;
+    //   const userPuuid = data.card.puuid;
+    //   const userEmail = data.card.mail;
+    //   const sendDataToAPI = { cardUuid, userEmail, userPuuid, userName, countactNumber };
+    //   const settingReminder = await axios.post("/api/setReminder", sendDataToAPI);
+    //   console.log(settingReminder);
+    // }
+   
+      const cardUuid = contactData.cuuid;
+      const userPuuid = contactData.puuid;
+      const userEmail = contactData.mail;
       const sendDataToAPI = { cardUuid, userEmail, userPuuid, userName, countactNumber };
-      const settingReminder = await axios.post("/api/setReminder", sendDataToAPI);
-      console.log(settingReminder);
-    }
+      const response = await axios.post("/api/setReminder", sendDataToAPI);
+      // console.log(response);
+    
+
 
 
   }
