@@ -18,7 +18,7 @@ export const getStaticPaths = async () => {
    
   // Generate the paths based on the data
   const paths = cards.result?.map((card) => ({
-    params: { cardId: card.cuuid },
+    params: { cardId: card.cuuid.toString() },
   }));
 
   // Return the paths object
@@ -42,7 +42,7 @@ export const getStaticPaths = async () => {
           })
     }); // Replace with your data-fetching logic
     const data = await response.json();
-    console.log(data,"data")
+    // console.log(data,"data")
   
     // Return the post data as props
     return {
@@ -144,8 +144,16 @@ const Contact = ({ card,userData  }) => {
             <div className="absolute top-0 left-0 -mt-[11px] ml-[88px] bg-white px-1">Phone Number</div>
             <input
               className="border rounded-lg py-2 pl-2"
-              type="number"
-              value={countactNumber} onChange={(e) => setcountactNumber(e.target.value)}
+              type="text"
+              value={countactNumber}
+              maxLength={13}
+              minLength={10}
+              //  onChange={(e) => setcountactNumber(e.target.value)}
+              onChange={(e) => {
+                let input = e.target.value;
+                let number = input.replace(/\D/g, "");
+                setcountactNumber(number);
+              }}
             />
           </div>
           <div className="done-button" onClick={sendUserDataToCardOwnerReminderSection}>
