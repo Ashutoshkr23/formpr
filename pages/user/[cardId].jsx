@@ -13,16 +13,14 @@ import Image from "next/image";
 export const getStaticPaths = async () => {
     // Fetch the data for all available posts
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/cards`); // Replace with your data-fetching logic
-  
+
   const cards = await response.json();
-  console.log(cards,"Cards")
    
   // Generate the paths based on the data
-  const paths = cards?.map((card) => ({
-    params: { cardId: card.cardId },
+  const paths = cards.result?.map((card) => ({
+    params: { cardId: card.cuuid },
   }));
 
-  console.log(paths,"paths")
   // Return the paths object
   return {
     paths,
@@ -43,21 +41,21 @@ export const getStaticPaths = async () => {
             cuuid:params.cardId
           })
     }); // Replace with your data-fetching logic
-    const card = await response.json();
-    console.log(card,"Card")
+    const data = await response.json();
+    console.log(data,"data")
   
     // Return the post data as props
     return {
       props: {
-        card: card,
-       
+        card: data.result,
+        userData:data.userData
       },
     };
   }
    
 
-const Contact = ({ card }) => {
-    console.log(card,"Card")
+const Contact = ({ card,userData  }) => {
+    console.log(card,userData)
   const [contactData, setContactData] = useState(null);
   const router = useRouter();
 
@@ -67,6 +65,7 @@ const Contact = ({ card }) => {
   useEffect(() => {
     // console.log(cardId);
     async function fetchContact() {
+      console.log("runned")
       try {
         const response = await fetch(`/api/handleFormData?cuuid=${cardId}`);
         const data = await response.json();
@@ -94,8 +93,13 @@ const Contact = ({ card }) => {
         console.error("Error fetching contact:", error);
       }
     }
-
+    if(!card || !userData){
     fetchContact();
+
+    }else{
+      setContactData(card);
+      setaskUserData(userData.shareContacts)
+    }
   }, [cardId]);
 
 

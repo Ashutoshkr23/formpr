@@ -98,7 +98,7 @@ END:VCARD`;
             <input
               className={`text-center bg-transparent ${text1} `}
               type="text"
-              value={fname || "Andrew Darren"}
+              defaultValue={fname || "Andrew Darren"}
               placeholder={fname || "Andrew Darren"}
 
             //   value={inputValue}
@@ -110,7 +110,7 @@ END:VCARD`;
               className={`text-center bg-transparent ${text2} text-[#7D9695] `}
               type="text"
               placeholder="Design Lead"
-              value={designation}
+              defaultValue={designation}
             //   onChange={handleChange}
             />
           </div>

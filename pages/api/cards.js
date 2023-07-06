@@ -1,4 +1,5 @@
 // import logger from '@/lib/logger';
+import UserData from '@/models/UserData';
 import { connectToDatabase } from '../../lib/mongoose';
 // import Purchase from '@/models/purchase';
 import card from '@/models/card';
@@ -11,12 +12,14 @@ export default async function handler(req, res) {
             const { cuuid } = req.body;
 
             const cardObj = await card.findOne({cuuid:cuuid})
+            const userData = await UserData.findOne({puuid:cardObj.puuid})
+
             // logger.info('This is an informational log message');
             // logger.error('This is an informational error message');
-            console.log(cardObj,"Cards server post")
+            // console.log(cardObj,"Cards server post")
 
-            if (cardObj) {
-                return res.status(200).json({ error: false, message: 'card found', result: cardObj });
+            if (cardObj && userData) {
+                return res.status(200).json({ error: false, message: 'card found', result: cardObj ,userData :userData });
             } else {
                 return res.status(404).json({ error: true, message: 'card not found' });
             }
