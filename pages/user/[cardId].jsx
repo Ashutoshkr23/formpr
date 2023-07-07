@@ -11,11 +11,11 @@ import Image from "next/image";
 
 
 export const getStaticPaths = async () => {
-    // Fetch the data for all available posts
+  // Fetch the data for all available posts
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/cards`); // Replace with your data-fetching logic
 
   const cards = await response.json();
-   
+
   // Generate the paths based on the data
   const paths = cards.result?.map((card) => ({
     params: { cardId: card.cuuid.toString() },
@@ -27,35 +27,35 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 
-  }
+}
 
-  export async function getStaticProps({ params }) {
-    // Fetch the data for the specific post using params.slug
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/cards`,{
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            cuuid:params.cardId
-          })
-    }); // Replace with your data-fetching logic
-    const data = await response.json();
-    // console.log(data,"data")
-  
-    // Return the post data as props
-    return {
-      props: {
-        card: data.result,
-        userData:data.userData
-      },
-    };
-  }
-   
+export async function getStaticProps({ params }) {
+  // Fetch the data for the specific post using params.slug
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/cards`, {
+    method: "POST",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      cuuid: params.cardId
+    })
+  }); // Replace with your data-fetching logic
+  const data = await response.json();
+  // console.log(data,"data")
 
-const Contact = ({ card,userData  }) => {
-  
+  // Return the post data as props
+  return {
+    props: {
+      card: data.result,
+      userData: data.userData
+    },
+  };
+}
+
+
+const Contact = ({ card, userData }) => {
+
   const [contactData, setContactData] = useState(null);
   const router = useRouter();
 
@@ -93,10 +93,10 @@ const Contact = ({ card,userData  }) => {
         console.error("Error fetching contact:", error);
       }
     }
-    if(!card || !userData){
-    fetchContact();
+    if (!card || !userData) {
+      fetchContact();
 
-    }else{
+    } else {
       setContactData(card);
       setaskUserData(userData.shareContacts)
     }
@@ -122,14 +122,14 @@ const Contact = ({ card,userData  }) => {
     //   const settingReminder = await axios.post("/api/setReminder", sendDataToAPI);
     //   console.log(settingReminder);
     // }
-   
-      const cardUuid = contactData.cuuid;
-      const userPuuid = contactData.puuid;
-      const userEmail = contactData.mail;
-      const sendDataToAPI = { cardUuid, userEmail, userPuuid, userName, countactNumber };
-      const response = await axios.post("/api/setReminder", sendDataToAPI);
-      // console.log(response);
-    
+
+    const cardUuid = contactData.cuuid;
+    const userPuuid = contactData.puuid;
+    const userEmail = contactData.mail;
+    const sendDataToAPI = { cardUuid, userEmail, userPuuid, userName, countactNumber };
+    const response = await axios.post("/api/setReminder", sendDataToAPI);
+    // console.log(response);
+
 
 
 
@@ -221,5 +221,4 @@ const Contact = ({ card,userData  }) => {
 export default Contact;
 
 
-   
- 
+

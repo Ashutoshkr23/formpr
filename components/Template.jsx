@@ -159,7 +159,7 @@ END:VCARD`;
 
 
           <div className={`${selectedTemplate === "7" ? 'hidden' : ''}`}>
-           
+
             <div className="flex mt-4 justify-center pb-4">
               <p className={`text-[10px]   ${text1}`}> made with love by</p>
               <img

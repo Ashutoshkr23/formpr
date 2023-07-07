@@ -73,33 +73,35 @@ const Contact = () => {
 
 
   return (
-    <div className={`h-screen bg-red-300 bg-gradient-to-b from-blue-300 to-green-300`}>
+    <>
       {askUserData &&
-        <div className="w-[353px] h-[469px] bg-white m-auto text-center capitalize gap-10 flex flex-col justify-center absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] rounded-3xl">
-          <div className="font-bold text-[32px]">stay in touch</div>
-          <div className="name-input relative">
-            <div className="absolute top-0 left-0 -mt-[11px] ml-[88px] bg-white px-1">name</div>
-            <input
-              className="border rounded-lg py-2 pl-2"
-              type="text"
-              value={userName} onChange={(e) => setuserName(e.target.value)}
-            />
-          </div>
-          <div className="contact-number-input relative">
-            <div className="absolute top-0 left-0 -mt-[11px] ml-[88px] bg-white px-1">Phone Number</div>
-            <input
-              className="border rounded-lg py-2 pl-2"
-              type="number"
-              value={countactNumber} onChange={(e) => setcountactNumber(e.target.value)}
-            />
-          </div>
-          <div className="done-button" onClick={sendUserDataToCardOwnerReminderSection}>
-            <button className="bg-black text-white w-[212px] rounded-md py-2 uppercase font-bold">done</button>
-          </div>
-          <div>
-            <div className='text-[10px] flex justify-center gap-2'>
-              made with love by
-              <Image className='' alt='loop' src={'/assets/images/loop-black.png'} width={36} height={14} />
+        <div className={`h-screen bg-red-300 bg-gradient-to-b from-blue-300 to-green-300`}>
+          <div className="w-[353px] h-[469px] bg-white m-auto text-center capitalize gap-10 flex flex-col justify-center absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] rounded-3xl">
+            <div className="font-bold text-[32px]">stay in touch</div>
+            <div className="name-input relative">
+              <div className="absolute top-0 left-0 -mt-[11px] ml-[88px] bg-white px-1">name</div>
+              <input
+                className="border rounded-lg py-2 pl-2"
+                type="text"
+                value={userName} onChange={(e) => setuserName(e.target.value)}
+              />
+            </div>
+            <div className="contact-number-input relative">
+              <div className="absolute top-0 left-0 -mt-[11px] ml-[88px] bg-white px-1">Phone Number</div>
+              <input
+                className="border rounded-lg py-2 pl-2"
+                type="number"
+                value={countactNumber} onChange={(e) => setcountactNumber(e.target.value)}
+              />
+            </div>
+            <div className="done-button" onClick={sendUserDataToCardOwnerReminderSection}>
+              <button className="bg-black text-white w-[212px] rounded-md py-2 uppercase font-bold">done</button>
+            </div>
+            <div>
+              <div className='text-[10px] flex justify-center gap-2'>
+                made with love by
+                <Image className='' alt='loop' src={'/assets/images/loop-black.png'} width={36} height={14} />
+              </div>
             </div>
           </div>
         </div>
@@ -142,7 +144,7 @@ const Contact = () => {
           />
         </div>
       )}
-    </div>
+    </>
   );
 };
 

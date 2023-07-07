@@ -112,8 +112,8 @@ const Template = ({
               }
               placeholder={lname !== undefined ? "" : fname || "Andrew Darren"}
 
-              //   value={inputValue}
-              //   onChange={handleChange}
+            //   value={inputValue}
+            //   onChange={handleChange}
             />
           </div>
           <div className="flex justify-center my-2 sm:mt-4  text-xs sm:text-[14px]">
