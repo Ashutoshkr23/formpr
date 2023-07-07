@@ -129,8 +129,8 @@ const CartNav = () => {
                 height={22}
               />
             </a>
-            <div className="flex gap-10">
-              <div className="relative flex">
+            <div className="flex gap-8">
+              {/* <div className="relative flex">
                 <Image
                   src={"/assets/images/cart-images/CartImage.png"}
                   alt="loop"
@@ -140,7 +140,26 @@ const CartNav = () => {
                 <span className="absolute rounded-full border w-5 text-center  h-5 top-[-15px] right-[-10px] font-medium text-black text-md">
                   {totalQuantity}
                 </span>
-              </div>
+              </div> */}
+              {totalQuantity ? <Link href={totalQuantity > 0 ? "/cart" : "/store"} className="relative flex">
+                <Image
+                  src={"/assets/images/cart-images/CartImage.png"}
+                  alt="loop"
+                  width={23}
+                  height={23}
+                />
+                <span className="absolute rounded-full border w-5 text-center  h-5 top-[-15px] right-[-10px] font-medium text-black text-md">
+                  {totalQuantity}
+                </span>
+              </Link> : <Link href={"/store"} className="relative hover:scale-110">
+                <Image
+                  src={"/assets/images/cart-images/CartImage.png"}
+                  alt="loop"
+                  width={23}
+                  height={23}
+                />
+
+              </Link>}
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
